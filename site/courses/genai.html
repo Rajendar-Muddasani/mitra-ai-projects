@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generative AI Course — Mitra AI Projects</title>
+  <meta name="description" content="Generative AI course covering prompt engineering, RAG, fine-tuning, embeddings, vector databases, LLM evaluation, HuggingFace, and Kaggle with LLMs.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/courses/" class="active">Courses</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/how-it-works.html">How It Works</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="hero hero-sm">
+  <div class="container hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/courses/">Courses</a><span class="breadcrumb-sep">›</span><span>Generative AI</span></div>
+    <div class="hero-eyebrow">generative ai · developers &amp; builders</div>
+    <h1 class="hero-title">Generative AI</h1>
+    <p class="hero-sub">Prompt engineering, RAG, fine-tuning, embeddings, vector databases, LLM evaluation, HuggingFace ecosystem, and Kaggle competition strategies. Mapped to real repos: langchain-learning-guide, chromadb-rag-tutorials, crewai, MCP.</p>
+    <div class="hero-actions">
+      <a href="/cheatsheets.html" class="btn btn-primary">GenAI Prompt Cheatsheet</a>
+      <a href="/projects/document-qa-assistant.html" class="btn btn-outline">Build RAG Project →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="tab-layout">
+      <div class="tab-nav">
+        <button class="tab-btn">✨ What is GenAI</button>
+        <button class="tab-btn">💡 Prompt Engineering</button>
+        <button class="tab-btn">🔍 RAG</button>
+        <button class="tab-btn">🎯 Fine-Tuning</button>
+        <button class="tab-btn">🗄 Embeddings &amp; Vector DBs</button>
+        <button class="tab-btn">📊 LLM Evaluation</button>
+        <button class="tab-btn">🤗 HuggingFace</button>
+        <button class="tab-btn">🏆 Kaggle with LLMs</button>
+      </div>
+
+      <!-- What is GenAI -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// overview</div><h2>What is Generative AI?</h2><p>Generative AI creates new content — text, images, code, audio — by learning statistical patterns from large amounts of training data. LLMs like GPT-4, Claude, and Gemini are the most widely used form today.</p></div>
+        <div class="topic-section"><h3>Key Concepts</h3>
+        <table class="metric-table">
+          <thead><tr><th>Concept</th><th>Plain-English Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Token</td><td>The basic unit of text an LLM processes — roughly 3–4 characters per token</td></tr>
+            <tr><td>Context Window</td><td>Maximum tokens the model can "see" at once (e.g., 128k for Claude 3.5)</td></tr>
+            <tr><td>Temperature</td><td>Controls randomness — 0 = deterministic, 1+ = creative/random</td></tr>
+            <tr><td>Hallucination</td><td>When the model generates plausible-sounding but incorrect facts</td></tr>
+            <tr><td>Foundation Model</td><td>A large pre-trained model that can be adapted to many tasks</td></tr>
+            <tr><td>In-Context Learning</td><td>Guiding the model with examples in the prompt — no retraining needed</td></tr>
+          </tbody>
+        </table></div>
+        <div class="topic-section"><h3>Current Model Landscape (2026)</h3>
+        <div class="tags" style="margin:0 0 1rem;">
+          <span class="tag">Claude Sonnet 4.6</span><span class="tag">GPT-4o</span><span class="tag">Gemini 1.5 Pro</span><span class="tag">Llama 3.1</span><span class="tag">Mistral</span><span class="tag">Qwen</span>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — What is GenAI</h3>
+          <div class="quiz-q" data-correct="c"><p>1. What does temperature = 0 do?</p>
+            <label class="quiz-option"><input type="radio" name="ga-q1" value="a"> Makes the model faster</label>
+            <label class="quiz-option"><input type="radio" name="ga-q1" value="b"> Disables context</label>
+            <label class="quiz-option"><input type="radio" name="ga-q1" value="c"> Makes the model always choose the highest-probability token (deterministic)</label>
+            <label class="quiz-option"><input type="radio" name="ga-q1" value="d"> Removes the system prompt</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- Prompt Engineering -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// prompt patterns</div><h2>Prompt Engineering</h2><p>The art and science of writing prompts that reliably produce the output you want. No retraining required — the right prompt can transform model behavior instantly.</p></div>
+        <div class="topic-section"><h3>Core Patterns</h3>
+        <table class="metric-table">
+          <thead><tr><th>Pattern</th><th>When to use</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td>Zero-shot</td><td>Simple tasks with clear instructions</td><td>"Summarize this in 3 bullet points."</td></tr>
+            <tr><td>Few-shot</td><td>When you need format consistency</td><td>Show 2–3 examples before the actual request</td></tr>
+            <tr><td>Chain of Thought</td><td>Math, reasoning, multi-step problems</td><td>"Think step by step before answering."</td></tr>
+            <tr><td>Role Prompting</td><td>Tone and expertise control</td><td>"You are a senior ML engineer reviewing code."</td></tr>
+            <tr><td>Output Format</td><td>Structured output (JSON, table)</td><td>"Return as JSON with keys: name, score, reason."</td></tr>
+            <tr><td>Delimiters</td><td>Prevent prompt injection</td><td>Wrap user input in &lt;doc&gt;...&lt;/doc&gt;</td></tr>
+          </tbody>
+        </table></div>
+        <div class="topic-section"><h3>Code Example — OpenAI API</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>prompt_engineering.py</span></div>
+          <pre><code><span class="kw">from</span> openai <span class="kw">import</span> OpenAI
+
+client = <span class="cl">OpenAI</span>()
+
+response = client.chat.completions.<span class="fn">create</span>(
+    model=<span class="st">"gpt-4o-mini"</span>,
+    messages=[
+        {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: <span class="st">"You are a Python code reviewer."</span>},
+        {<span class="st">"role"</span>: <span class="st">"user"</span>,   <span class="st">"content"</span>: <span class="st">f"Review this code:\n\n&lt;code&gt;\n{code}\n&lt;/code&gt;"</span>}
+    ],
+    temperature=<span class="num">0.2</span>,
+)
+<span class="fn">print</span>(response.choices[<span class="num">0</span>].message.content)</code></pre>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — Prompt Engineering</h3>
+          <div class="quiz-q" data-correct="b"><p>1. Chain-of-Thought prompting works best for:</p>
+            <label class="quiz-option"><input type="radio" name="pe-q1" value="a"> Simple text classification</label>
+            <label class="quiz-option"><input type="radio" name="pe-q1" value="b"> Multi-step reasoning tasks where intermediate steps matter</label>
+            <label class="quiz-option"><input type="radio" name="pe-q1" value="c"> Reducing API costs</label>
+            <label class="quiz-option"><input type="radio" name="pe-q1" value="d"> Image captioning</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- RAG -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// 074 · postsilicon-validation-rag + chromadb-rag-tutorials</div><h2>RAG — Retrieval-Augmented Generation</h2><p>Ground LLM responses in your own documents. RAG retrieves relevant chunks from a vector database and injects them into the prompt — reducing hallucination and enabling domain-specific Q&A.</p></div>
+        <div class="topic-section"><h3>RAG Architecture</h3>
+        <div class="arch-diagram">
+          <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Indexing Pipeline (offline)</p>
+          <div class="arch-boxes">
+            <div class="arch-box">Documents</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Chunking</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Embeddings</div><div class="arch-arrow">→</div>
+            <div class="arch-box" style="border-color:var(--accent);color:var(--accent);">Vector DB</div>
+          </div>
+          <p style="font-size:0.85rem;color:var(--muted);margin:1rem 0 0.5rem;">Query Pipeline (real-time)</p>
+          <div class="arch-boxes">
+            <div class="arch-box">User Query</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Embed Query</div><div class="arch-arrow">→</div>
+            <div class="arch-box" style="border-color:var(--accent);color:var(--accent);">Similarity Search</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Top-k Chunks</div><div class="arch-arrow">→</div>
+            <div class="arch-box">LLM + Context</div><div class="arch-arrow">→</div>
+            <div class="arch-box" style="border-color:var(--success);color:var(--success);">Grounded Answer</div>
+          </div>
+        </div></div>
+        <div class="topic-section"><h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>rag_pipeline.py</span></div>
+          <pre><code><span class="kw">import</span> chromadb
+<span class="kw">from</span> openai <span class="kw">import</span> OpenAI
+
+client = <span class="cl">OpenAI</span>()
+chroma = chromadb.<span class="fn">Client</span>()
+collection = chroma.get_or_create_collection(<span class="st">"docs"</span>)
+
+<span class="kw">def</span> <span class="fn">embed</span>(text):
+    res = client.embeddings.<span class="fn">create</span>(input=text, model=<span class="st">"text-embedding-3-small"</span>)
+    <span class="kw">return</span> res.data[<span class="num">0</span>].embedding
+
+<span class="kw">def</span> <span class="fn">rag_query</span>(question):
+    q_vec = <span class="fn">embed</span>(question)
+    results = collection.<span class="fn">query</span>(query_embeddings=[q_vec], n_results=<span class="num">3</span>)
+    context = <span class="st">"\n"</span>.<span class="fn">join</span>(results[<span class="st">"documents"</span>][<span class="num">0</span>])
+
+    resp = client.chat.completions.<span class="fn">create</span>(
+        model=<span class="st">"gpt-4o-mini"</span>,
+        messages=[{<span class="st">"role"</span>: <span class="st">"user"</span>,
+                   <span class="st">"content"</span>: <span class="st">f"Context:\n{context}\n\nQ: {question}"</span>}]
+    )
+    <span class="kw">return</span> resp.choices[<span class="num">0</span>].message.content</code></pre>
+        </div></div>
+        <div class="project-callout"><h4>💡 Document Q&amp;A Assistant</h4>
+        <p>This is the core pattern behind project-01 on this platform. Build a full RAG system with document upload, ChromaDB, and FastAPI backend.</p>
+        <a href="/projects/document-qa-assistant.html" class="btn btn-primary btn-sm">Build This Project →</a></div>
+        <div class="quiz-block"><h3>// QUIZ — RAG</h3>
+          <div class="quiz-q" data-correct="d"><p>1. RAG reduces hallucinations by:</p>
+            <label class="quiz-option"><input type="radio" name="rag-q1" value="a"> Fine-tuning the model on your data</label>
+            <label class="quiz-option"><input type="radio" name="rag-q1" value="b"> Using a smaller temperature</label>
+            <label class="quiz-option"><input type="radio" name="rag-q1" value="c"> Using a larger model</label>
+            <label class="quiz-option"><input type="radio" name="rag-q1" value="d"> Grounding the LLM's response in retrieved, factual context from your documents</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- Fine-Tuning -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// 075 · domain-llm-finetuning</div><h2>Fine-Tuning LLMs</h2><p>Adapt a pre-trained LLM to your domain or style using a small labeled dataset. LoRA and PEFT make this feasible on consumer hardware.</p></div>
+        <div class="topic-section"><h3>When Fine-Tuning is Worth It</h3>
+        <div class="grid grid-2" style="gap:1rem;">
+          <div class="highlight-box">
+            <strong style="color:var(--success);">✅ Fine-tune when:</strong>
+            <ul style="margin-top:0.5rem;padding-left:1.25rem;">
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">You need consistent tone/format that prompting can't achieve</li>
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Domain-specific terminology is critical</li>
+              <li style="list-style:disc;font-size:0.875rem;">You have 500+ high-quality examples</li>
+            </ul>
+          </div>
+          <div class="highlight-box">
+            <strong style="color:var(--danger);">❌ Use RAG instead when:</strong>
+            <ul style="margin-top:0.5rem;padding-left:1.25rem;">
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">You need up-to-date or changing information</li>
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">You want to cite sources</li>
+              <li style="list-style:disc;font-size:0.875rem;">Your dataset is &lt;100 examples</li>
+            </ul>
+          </div>
+        </div></div>
+        <div class="topic-section"><h3>LoRA Key Idea</h3>
+        <p>Instead of updating all model weights, LoRA decomposes the weight update matrix into two small low-rank matrices. This dramatically reduces trainable parameters (often by 10,000×) while achieving similar quality to full fine-tuning.</p></div>
+        <div class="quiz-block"><h3>// QUIZ — Fine-Tuning</h3>
+          <div class="quiz-q" data-correct="b"><p>1. LoRA's key advantage is:</p>
+            <label class="quiz-option"><input type="radio" name="ft-q1" value="a"> Faster inference speed</label>
+            <label class="quiz-option"><input type="radio" name="ft-q1" value="b"> Dramatically fewer trainable parameters than full fine-tuning</label>
+            <label class="quiz-option"><input type="radio" name="ft-q1" value="c"> No need for GPU</label>
+            <label class="quiz-option"><input type="radio" name="ft-q1" value="d"> Eliminating the need for a base model</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- Embeddings & Vector DBs -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// chroma, pinecone, supabase pgvector</div><h2>Embeddings &amp; Vector Databases</h2><p>Convert text, images, and code into dense numerical vectors. Use vector similarity search to find semantically similar content — the foundation of RAG, recommendation systems, and semantic search.</p></div>
+        <div class="topic-section"><h3>Vector DB Comparison</h3>
+        <table class="metric-table">
+          <thead><tr><th>Database</th><th>Best for</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>ChromaDB</td><td>Local dev, prototypes</td><td>Easy to run, Python-native</td></tr>
+            <tr><td>Pinecone</td><td>Production, managed</td><td>Scalable, fully managed cloud</td></tr>
+            <tr><td>Supabase pgvector</td><td>Postgres-based apps</td><td>SQL + vector search in one DB</td></tr>
+            <tr><td>Qdrant</td><td>Open-source production</td><td>Payload filtering, self-hosted</td></tr>
+            <tr><td>Weaviate</td><td>Multi-modal search</td><td>GraphQL API, schemas</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — Embeddings</h3>
+          <div class="quiz-q" data-correct="a"><p>1. Cosine similarity between two embeddings measures:</p>
+            <label class="quiz-option"><input type="radio" name="em-q1" value="a"> The angle between the two vectors — semantic similarity</label>
+            <label class="quiz-option"><input type="radio" name="em-q1" value="b"> The Euclidean distance between the vectors</label>
+            <label class="quiz-option"><input type="radio" name="em-q1" value="c"> The dot product of their magnitudes</label>
+            <label class="quiz-option"><input type="radio" name="em-q1" value="d"> The number of matching words</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- LLM Evaluation -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// evaluation patterns</div><h2>LLM Evaluation</h2><p>How do you know your LLM application is working? Evaluation is one of the hardest problems in GenAI engineering. Multiple strategies are needed — no single metric tells the full story.</p></div>
+        <div class="topic-section"><h3>Evaluation Strategies</h3>
+        <table class="metric-table">
+          <thead><tr><th>Strategy</th><th>What it measures</th><th>When to use</th></tr></thead>
+          <tbody>
+            <tr><td>BLEU / ROUGE</td><td>N-gram overlap with reference text</td><td>Translation, summarization with gold references</td></tr>
+            <tr><td>Human Evaluation</td><td>Relevance, coherence, helpfulness</td><td>Gold standard, but expensive</td></tr>
+            <tr><td>LLM-as-Judge</td><td>Use a strong LLM to score outputs</td><td>Scalable, automated, can use Likert or pairwise</td></tr>
+            <tr><td>RAG-Specific</td><td>Faithfulness, answer relevance, context recall</td><td>RAGAs framework</td></tr>
+            <tr><td>Task-specific</td><td>F1, accuracy, exact match on benchmarks</td><td>Classification, extraction tasks</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — LLM Evaluation</h3>
+          <div class="quiz-q" data-correct="c"><p>1. BLEU score measures:</p>
+            <label class="quiz-option"><input type="radio" name="ev-q1" value="a"> Model perplexity</label>
+            <label class="quiz-option"><input type="radio" name="ev-q1" value="b"> Semantic similarity</label>
+            <label class="quiz-option"><input type="radio" name="ev-q1" value="c"> N-gram overlap between generated text and reference translations</label>
+            <label class="quiz-option"><input type="radio" name="ev-q1" value="d"> Hallucination rate</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- HuggingFace -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// huggingface ecosystem</div><h2>HuggingFace Ecosystem</h2><p>The open-source hub for ML models, datasets, and deployment. The transformers library is the standard for accessing pre-trained models in Python.</p></div>
+        <div class="topic-section"><h3>Key Libraries</h3>
+        <table class="metric-table">
+          <thead><tr><th>Library</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td>transformers</td><td>Load and run pre-trained models (BERT, GPT-2, Llama, etc.)</td></tr>
+            <tr><td>datasets</td><td>Access 10,000+ public datasets with one line of code</td></tr>
+            <tr><td>tokenizers</td><td>Fast tokenization library used by all HF models</td></tr>
+            <tr><td>PEFT</td><td>LoRA, prefix tuning, and other efficient fine-tuning methods</td></tr>
+            <tr><td>Spaces</td><td>Deploy ML demos (Gradio/Streamlit) for free on HF</td></tr>
+            <tr><td>Inference API</td><td>Call HF models via REST API without deploying yourself</td></tr>
+          </tbody>
+        </table></div>
+        <div class="topic-section"><h3>Quick Start</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>hf_pipeline.py</span></div>
+          <pre><code><span class="kw">from</span> transformers <span class="kw">import</span> pipeline
+
+<span class="cm"># Sentiment analysis</span>
+clf = <span class="fn">pipeline</span>(<span class="st">"text-classification"</span>)
+result = clf(<span class="st">"This project guide is excellent!"</span>)
+
+<span class="cm"># Text generation</span>
+gen = <span class="fn">pipeline</span>(<span class="st">"text-generation"</span>, model=<span class="st">"gpt2"</span>)
+text = <span class="fn">gen</span>(<span class="st">"Machine learning is"</span>, max_new_tokens=<span class="num">50</span>)</code></pre>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — HuggingFace</h3>
+          <div class="quiz-q" data-correct="d"><p>1. HuggingFace Spaces allows you to:</p>
+            <label class="quiz-option"><input type="radio" name="hf-q1" value="a"> Train models on HF GPUs for free indefinitely</label>
+            <label class="quiz-option"><input type="radio" name="hf-q1" value="b"> Access private models without authentication</label>
+            <label class="quiz-option"><input type="radio" name="hf-q1" value="c"> Fine-tune BERT without code</label>
+            <label class="quiz-option"><input type="radio" name="hf-q1" value="d"> Deploy ML demos using Gradio or Streamlit for free</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- Kaggle with LLMs -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// competition strategy</div><h2>Kaggle with LLMs</h2><p>How to approach NLP and LLM-based Kaggle competitions — from EDA to submission, ensembling, and using free GPU quota effectively.</p></div>
+        <div class="topic-section"><h3>Kaggle LLM Competition Workflow</h3>
+        <div class="step-card" style="text-align:left;padding:1.25rem;"><ol style="padding-left:1.25rem;">
+          <li style="list-style:decimal;font-size:0.9rem;margin-bottom:0.5rem;color:var(--text);"><strong>EDA</strong> — Understand label distribution, text length, class balance</li>
+          <li style="list-style:decimal;font-size:0.9rem;margin-bottom:0.5rem;color:var(--text);"><strong>Baseline</strong> — TF-IDF + Logistic Regression or fine-tuned bert-base</li>
+          <li style="list-style:decimal;font-size:0.9rem;margin-bottom:0.5rem;color:var(--text);"><strong>LLM features</strong> — Use a frozen LLM to generate embeddings or synthetic labels</li>
+          <li style="list-style:decimal;font-size:0.9rem;margin-bottom:0.5rem;color:var(--text);"><strong>Fine-tune</strong> — Fine-tune deberta-v3, roberta, or llama3 on task</li>
+          <li style="list-style:decimal;font-size:0.9rem;margin-bottom:0.5rem;color:var(--text);"><strong>Ensemble</strong> — Blend predictions from multiple models</li>
+          <li style="list-style:decimal;font-size:0.9rem;color:var(--text);"><strong>Submit</strong> — Iterate on public LB, avoid public LB overfitting</li>
+        </ol></div></div>
+        <div class="quiz-block"><h3>// QUIZ — Kaggle</h3>
+          <div class="quiz-q" data-correct="b"><p>1. Public LB overfitting means:</p>
+            <label class="quiz-option"><input type="radio" name="kg-q1" value="a"> Your model is overfitting the training data</label>
+            <label class="quiz-option"><input type="radio" name="kg-q1" value="b"> You over-optimize for the public leaderboard, losing performance on the private test set</label>
+            <label class="quiz-option"><input type="radio" name="kg-q1" value="c"> Using too many submissions per day</label>
+            <label class="quiz-option"><input type="radio" name="kg-q1" value="d"> Not using cross-validation</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+        <div class="completion-banner">
+          <div class="completion-icon">🎓</div>
+          <div class="completion-body"><h3>GenAI Course Complete!</h3><p>Claim your Generative AI completion certificate.</p></div>
+          <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('genai','kaggle-llms')">Claim Certificate →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students.</p></div>
+      <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/ml.html">Machine Learning</a></li><li><a href="/courses/dl.html">Deep Learning</a></li><li><a href="/courses/agentic.html">Agentic AI</a></li><li><a href="/courses/mlops.html">MLOps</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li><li><a href="/faq.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

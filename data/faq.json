@@ -1,0 +1,50 @@
+[
+  {
+    "id": "who-is-this-for",
+    "question": "Who are the project kits designed for?",
+    "answer": "B.Tech, BCA, MCA, diploma, and engineering students in India — primarily final-year and pre-final-year students who need a real project for submission, viva defense, or placement portfolio.",
+    "category": "audience"
+  },
+  {
+    "id": "prior-knowledge",
+    "question": "Do I need prior AI or ML knowledge to start?",
+    "answer": "For most project kits, you need intermediate Python and basic understanding of what an API is. Deep AI or ML knowledge is not required to start.",
+    "category": "audience"
+  },
+  {
+    "id": "is-free",
+    "question": "Is everything on this site free?",
+    "answer": "At launch, yes — the site is openly accessible. All courses, project pages, and cheatsheets are free. There are no payment flows in v1.",
+    "category": "pricing"
+  },
+  {
+    "id": "what-in-kit",
+    "question": "What's actually in a Major Project Kit?",
+    "answer": "Architecture diagram, milestone implementation plan, starter code + README, deployment guide, report template, PPT deck template, viva Q&A (20+), testing checklist, and extension ideas.",
+    "category": "content"
+  },
+  {
+    "id": "openai-key",
+    "question": "Do I need an OpenAI API key for the Document Q&A project?",
+    "answer": "Yes. You'll need an OpenAI API key for embeddings and the chat model. Typical cost: $1–3 for a 6-week build at reasonable usage volumes.",
+    "category": "technical"
+  },
+  {
+    "id": "academic-cheating",
+    "question": "Does this help me cheat on my college project?",
+    "answer": "No. This platform is for guided building and learning. You must build and understand the project yourself. The kit gives you structure, explanation, and support — not work done for you.",
+    "category": "ethics"
+  },
+  {
+    "id": "certificates",
+    "question": "What are the completion certificates?",
+    "answer": "Platform-issued records confirming you completed a course or project on mitraaiprojects.com. They are NOT degree certificates, government-recognized credentials, or university accreditation.",
+    "category": "certificates"
+  },
+  {
+    "id": "production-ready",
+    "question": "Are the projects production-ready software?",
+    "answer": "No. These are learning exercises for academic submission and portfolio display. Real production use needs security review, scaling, and compliance beyond what's covered in these kits.",
+    "category": "ethics"
+  }
+]

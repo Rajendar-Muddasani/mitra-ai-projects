@@ -1,0 +1,77 @@
+{
+  "featured": [
+    {
+      "project_id": "project-01",
+      "slug": "document-qa-assistant",
+      "title": "Document Q&A Assistant",
+      "emoji": "📄",
+      "lane": "major-project-kit",
+      "status": "featured",
+      "difficulty": "intermediate",
+      "duration_weeks": 6,
+      "tech_stack": ["Python", "FastAPI", "OpenAI", "ChromaDB", "RAG"],
+      "url": "/projects/document-qa-assistant.html"
+    },
+    {
+      "project_id": "project-02",
+      "slug": "resume-screener",
+      "title": "AI Resume Screener",
+      "emoji": "📋",
+      "lane": "portfolio-build",
+      "status": "coming-soon",
+      "difficulty": "beginner-friendly",
+      "duration_weeks": 4,
+      "tech_stack": ["Python", "LLM", "Streamlit"],
+      "url": "/projects/"
+    },
+    {
+      "project_id": "project-03",
+      "slug": "inventory-forecasting-dashboard",
+      "title": "Inventory Forecasting Dashboard",
+      "emoji": "📊",
+      "lane": "major-project-kit",
+      "status": "coming-soon",
+      "difficulty": "intermediate",
+      "duration_weeks": 5,
+      "tech_stack": ["Python", "ARIMA", "Prophet", "Streamlit"],
+      "url": "/projects/"
+    },
+    {
+      "project_id": "project-04",
+      "slug": "multilingual-support-bot",
+      "title": "Multilingual Customer Support Assistant",
+      "emoji": "🌐",
+      "lane": "portfolio-build",
+      "status": "planned",
+      "difficulty": "intermediate",
+      "duration_weeks": 6,
+      "tech_stack": ["Python", "FastAPI", "OpenAI", "Multilingual"],
+      "url": "/projects/"
+    },
+    {
+      "project_id": "project-05",
+      "slug": "ai-attendance-dashboard",
+      "title": "AI Attendance & Analytics Dashboard",
+      "emoji": "📅",
+      "lane": "major-project-kit",
+      "status": "planned",
+      "difficulty": "intermediate",
+      "duration_weeks": 8,
+      "tech_stack": ["Python", "OpenCV", "Streamlit"],
+      "url": "/projects/"
+    },
+    {
+      "project_id": "project-06",
+      "slug": "vision-quality-inspection",
+      "title": "Vision-Based Quality Inspection Demo",
+      "emoji": "🔍",
+      "lane": "major-project-kit",
+      "status": "planned",
+      "difficulty": "advanced",
+      "duration_weeks": 8,
+      "tech_stack": ["Python", "YOLO", "PyTorch", "FastAPI"],
+      "url": "/projects/"
+    }
+  ],
+  "last_updated": "2026-06-04"
+}

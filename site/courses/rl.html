@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reinforcement Learning Course — Mitra AI Projects</title>
+  <meta name="description" content="Reinforcement Learning course covering agent-environment interaction, Q-learning, Deep Q-Networks, policy gradients, PPO, and real-world RL applications.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/courses/" class="active">Courses</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/how-it-works.html">How It Works</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="hero hero-sm">
+  <div class="container hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/courses/">Courses</a><span class="breadcrumb-sep">›</span><span>Reinforcement Learning</span></div>
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+      <div class="hero-eyebrow" style="margin:0;">reinforcement learning · advanced track</div>
+      <span class="badge badge-muted">Planned — content coming soon</span>
+    </div>
+    <h1 class="hero-title">Reinforcement Learning</h1>
+    <p class="hero-sub">Agent-environment interaction, reward-driven learning, Q-learning, Deep Q-Networks, policy gradients, PPO, and real-world applications. This track is planned for a future release. The overview below is available now.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="page-banner" style="border-radius:var(--radius);margin-bottom:2rem;padding:1rem;">
+      📌 This course is in the <strong>planned</strong> stage. Full notebook content, quizzes, and projects are being developed. Subscribe to updates via <a href="/contact.html">Contact</a>.
+    </div>
+
+    <div class="tab-layout">
+      <div class="tab-nav">
+        <button class="tab-btn">🎮 What is RL</button>
+        <button class="tab-btn">📋 Q-Learning</button>
+        <button class="tab-btn">🧠 Deep Q-Networks</button>
+        <button class="tab-btn">🎯 Policy Gradients</button>
+        <button class="tab-btn">⚡ PPO</button>
+        <button class="tab-btn">🌍 Real-World RL</button>
+      </div>
+
+      <!-- What is RL -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// fundamentals</div><h2>What is Reinforcement Learning?</h2><p>An agent learns to take actions in an environment by receiving reward signals. Unlike supervised learning, there are no labeled examples — the agent discovers the best strategy by trial and error.</p></div>
+        <div class="topic-section"><h3>Core Components</h3>
+        <table class="metric-table">
+          <thead><tr><th>Component</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td>Agent</td><td>The learner/decision maker</td></tr>
+            <tr><td>Environment</td><td>Everything the agent interacts with</td></tr>
+            <tr><td>State (s)</td><td>The current situation of the agent</td></tr>
+            <tr><td>Action (a)</td><td>What the agent does in a state</td></tr>
+            <tr><td>Reward (r)</td><td>Feedback signal — positive for good actions, negative for bad</td></tr>
+            <tr><td>Policy (π)</td><td>The agent's strategy: state → action mapping</td></tr>
+            <tr><td>Value Function</td><td>Expected future rewards from a state following a policy</td></tr>
+            <tr><td>Markov Decision Process</td><td>The mathematical framework for RL problems</td></tr>
+          </tbody>
+        </table></div>
+        <div class="topic-section"><h3>RL vs. Supervised vs. Unsupervised</h3>
+        <div class="grid grid-3" style="gap:1rem;">
+          <div class="highlight-box">
+            <strong>Supervised</strong>
+            <p style="font-size:0.875rem;margin-top:0.5rem;">Labeled (x, y) pairs. Learn to predict y from x. Teacher provides correct answers.</p>
+          </div>
+          <div class="highlight-box">
+            <strong>Unsupervised</strong>
+            <p style="font-size:0.875rem;margin-top:0.5rem;">No labels. Find structure in data. Clustering, dimensionality reduction.</p>
+          </div>
+          <div class="highlight-box" style="border-color:var(--border);">
+            <strong>Reinforcement</strong>
+            <p style="font-size:0.875rem;margin-top:0.5rem;">No labels — just reward signals. Learn by interacting with an environment. Sequential decisions.</p>
+          </div>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — What is RL</h3>
+          <div class="quiz-q" data-correct="c"><p>1. In reinforcement learning, the reward signal is:</p>
+            <label class="quiz-option"><input type="radio" name="rl-q1" value="a"> Provided by labeled training data</label>
+            <label class="quiz-option"><input type="radio" name="rl-q1" value="b"> The same as the loss function in supervised learning</label>
+            <label class="quiz-option"><input type="radio" name="rl-q1" value="c"> Feedback from the environment indicating how good the agent's action was</label>
+            <label class="quiz-option"><input type="radio" name="rl-q1" value="d"> A fixed function of the agent's state</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- Q-Learning -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// tabular rl</div><h2>Q-Learning</h2><p>Model-free RL for discrete state spaces. Learn a Q-table that maps (state, action) pairs to expected future rewards. The agent picks the action with the highest Q-value.</p></div>
+        <div class="topic-section"><h3>Bellman Equation</h3>
+        <div class="highlight-box"><p style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:var(--primary);">Q(s, a) ← Q(s, a) + α [r + γ · max Q(s', a') − Q(s, a)]</p>
+        <p style="font-size:0.875rem;color:var(--muted);margin-top:0.5rem;">α = learning rate · γ = discount factor (importance of future rewards)</p></div></div>
+        <div class="topic-section"><h3>Key Concepts</h3>
+        <table class="metric-table">
+          <thead><tr><th>Concept</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Exploration vs. Exploitation</td><td>Try new actions (explore) vs. use best known action (exploit)</td></tr>
+            <tr><td>ε-greedy</td><td>With probability ε, take a random action; else take the best action</td></tr>
+            <tr><td>Discount factor γ</td><td>0 = myopic (care only about immediate reward); 1 = far-sighted</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — Q-Learning</h3>
+          <div class="quiz-q" data-correct="b"><p>1. ε-greedy exploration means the agent:</p>
+            <label class="quiz-option"><input type="radio" name="ql-q1" value="a"> Always takes the best known action</label>
+            <label class="quiz-option"><input type="radio" name="ql-q1" value="b"> Randomly explores with probability ε, exploits best action otherwise</label>
+            <label class="quiz-option"><input type="radio" name="ql-q1" value="c"> Explores only at the start of training</label>
+            <label class="quiz-option"><input type="radio" name="ql-q1" value="d"> Sets the learning rate to ε</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- DQN -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// deep q-networks</div><h2>Deep Q-Networks (DQN)</h2><p>Replace the Q-table with a neural network when the state space is too large for a table (e.g., pixel images in Atari games). Two key innovations: experience replay and target networks.</p></div>
+        <div class="topic-section"><h3>DQN Innovations</h3>
+        <table class="metric-table">
+          <thead><tr><th>Innovation</th><th>Why it helps</th></tr></thead>
+          <tbody>
+            <tr><td>Experience Replay</td><td>Store (s, a, r, s') transitions in a buffer; sample mini-batches randomly — breaks correlation</td></tr>
+            <tr><td>Target Network</td><td>A separate slowly-updated copy of the Q-network — stabilizes training by providing a fixed target</td></tr>
+            <tr><td>CNN for pixels</td><td>ConvNet extracts features from raw pixel observations</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — DQN</h3>
+          <div class="quiz-q" data-correct="a"><p>1. Experience replay in DQN helps by:</p>
+            <label class="quiz-option"><input type="radio" name="dq-q1" value="a"> Breaking the correlation between consecutive training samples</label>
+            <label class="quiz-option"><input type="radio" name="dq-q1" value="b"> Reducing the neural network's parameter count</label>
+            <label class="quiz-option"><input type="radio" name="dq-q1" value="c"> Providing immediate reward signals</label>
+            <label class="quiz-option"><input type="radio" name="dq-q1" value="d"> Training faster than tabular Q-learning</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- Policy Gradients -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// policy gradient methods</div><h2>Policy Gradients</h2><p>Directly optimize the policy (the action-selection function) instead of learning a value function. REINFORCE is the baseline algorithm; Actor-Critic combines both approaches.</p></div>
+        <div class="topic-section"><h3>Value-Based vs. Policy-Based</h3>
+        <div class="grid grid-2" style="gap:1rem;">
+          <div class="highlight-box">
+            <strong>Value-Based (Q-learning, DQN)</strong>
+            <ul style="margin-top:0.5rem;padding-left:1.25rem;">
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Learn Q(s,a), then derive policy</li>
+              <li style="list-style:disc;font-size:0.875rem;">Works well for discrete actions</li>
+            </ul>
+          </div>
+          <div class="highlight-box">
+            <strong>Policy-Based (PG, PPO)</strong>
+            <ul style="margin-top:0.5rem;padding-left:1.25rem;">
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Directly parameterize π(a|s)</li>
+              <li style="list-style:disc;font-size:0.875rem;">Works for continuous action spaces</li>
+            </ul>
+          </div>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — Policy Gradients</h3>
+          <div class="quiz-q" data-correct="c"><p>1. Policy gradient methods are preferred for continuous action spaces because:</p>
+            <label class="quiz-option"><input type="radio" name="pg-q1" value="a"> They're faster to train</label>
+            <label class="quiz-option"><input type="radio" name="pg-q1" value="b"> They don't need a reward signal</label>
+            <label class="quiz-option"><input type="radio" name="pg-q1" value="c"> They directly parameterize the action distribution, avoiding the need to maximize over all actions</label>
+            <label class="quiz-option"><input type="radio" name="pg-q1" value="d"> They use less memory than Q-networks</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- PPO -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// proximal policy optimization</div><h2>PPO — Proximal Policy Optimization</h2><p>The most widely used modern RL algorithm. PPO is stable, scalable, and easy to tune. It's used by OpenAI for RLHF (training ChatGPT) and by DeepMind for game-playing agents.</p></div>
+        <div class="topic-section"><h3>PPO Key Ideas</h3>
+        <table class="metric-table">
+          <thead><tr><th>Idea</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td>Clipping objective</td><td>Limits how much the policy can change in a single update — prevents instability</td></tr>
+            <tr><td>Multiple update epochs</td><td>Reuse each batch of experience for K epochs — more sample efficient</td></tr>
+            <tr><td>Advantage estimation (GAE)</td><td>Better estimate of "how much better than average was this action?"</td></tr>
+            <tr><td>Entropy bonus</td><td>Encourages exploration by rewarding uncertainty in the policy</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — PPO</h3>
+          <div class="quiz-q" data-correct="b"><p>1. PPO's clipping objective ensures:</p>
+            <label class="quiz-option"><input type="radio" name="pp-q1" value="a"> The agent always takes the action with maximum Q-value</label>
+            <label class="quiz-option"><input type="radio" name="pp-q1" value="b"> Policy updates don't change the policy too drastically in a single step</label>
+            <label class="quiz-option"><input type="radio" name="pp-q1" value="c"> The discount factor stays below 1.0</label>
+            <label class="quiz-option"><input type="radio" name="pp-q1" value="d"> Training always converges in a fixed number of steps</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- Real-World RL -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// applications</div><h2>Real-World Reinforcement Learning</h2><p>RL beyond games. Real-world applications have sparse rewards, safety constraints, and costly exploration — requiring different approaches than simulated environments.</p></div>
+        <div class="topic-section"><h3>Application Areas</h3>
+        <table class="metric-table">
+          <thead><tr><th>Domain</th><th>RL Application</th><th>Key challenges</th></tr></thead>
+          <tbody>
+            <tr><td>Recommendation Systems</td><td>Choose which item to show next to maximize engagement</td><td>Exploration costly, delayed reward</td></tr>
+            <tr><td>Supply Chain</td><td>Optimize inventory levels and order quantities</td><td>Noisy demand, lead time uncertainty</td></tr>
+            <tr><td>Traffic Control</td><td>Optimize signal timing to reduce congestion</td><td>Multi-agent, non-stationary environment</td></tr>
+            <tr><td>RLHF (LLMs)</td><td>Fine-tune language models to human preferences</td><td>Reward hacking, alignment</td></tr>
+            <tr><td>Robotics</td><td>Teach robots to walk, grasp, and navigate</td><td>Sim-to-real gap, safety</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — Real-World RL</h3>
+          <div class="quiz-q" data-correct="d"><p>1. RLHF (Reinforcement Learning from Human Feedback) is used to:</p>
+            <label class="quiz-option"><input type="radio" name="rw-q1" value="a"> Train agents to play video games</label>
+            <label class="quiz-option"><input type="radio" name="rw-q1" value="b"> Replace supervised pre-training of LLMs</label>
+            <label class="quiz-option"><input type="radio" name="rw-q1" value="c"> Evaluate robot locomotion policies</label>
+            <label class="quiz-option"><input type="radio" name="rw-q1" value="d"> Align LLMs with human preferences using human evaluator feedback as the reward signal</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+
+        <div class="completion-banner">
+          <div class="completion-icon">🎮</div>
+          <div class="completion-body"><h3>RL Overview Complete</h3><p>Full notebook content and projects are coming. Sign up to get notified when this track launches.</p></div>
+          <a href="/contact.html" class="btn btn-outline">Get Notified →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students.</p></div>
+      <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/ml.html">Machine Learning</a></li><li><a href="/courses/dl.html">Deep Learning</a></li><li><a href="/courses/genai.html">Generative AI</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

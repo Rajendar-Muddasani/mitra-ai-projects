@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning Course — Mitra AI Projects</title>
+  <meta name="description" content="Comprehensive Machine Learning course with OneNote-style tabbed layout. Linear regression, classification, trees, boosting, SVM, clustering, anomaly detection, time series, and hyperparameter optimization.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    body { overflow: hidden; }
+    @media (max-width: 768px) { body { overflow: auto; } }
+    .onenote-mobile-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border-dim);
+      padding: 0.75rem 1rem;
+      display: none;
+    }
+    @media (max-width: 768px) { .onenote-mobile-header { display: block; } }
+    select.onenote-mobile-select {
+      background: var(--surface-2);
+      border: 1px solid var(--border-dim);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 0.55rem 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" style="position:relative;">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand">
+      <div class="nav-logo">M</div>
+      <span>Mitra<span class="teal">AI</span> Projects</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/courses/" class="active">Courses</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/how-it-works.html">How It Works</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth">
+      <button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile topic selector -->
+<div class="onenote-mobile-header">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+    <div>
+      <span class="badge badge-primary" style="margin-right:0.5rem;">ML</span>
+      <strong style="font-size:0.95rem;">Machine Learning</strong>
+    </div>
+    <a href="/cheatsheets.html" class="btn btn-ghost btn-sm">Cheatsheet ↓</a>
+  </div>
+  <select class="onenote-mobile-select" style="width:100%;"></select>
+</div>
+
+<!-- OneNote layout -->
+<div class="onenote-wrap">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="onenote-sidebar">
+    <div class="onenote-sidebar-header">
+      <div style="color:var(--primary);font-weight:700;margin-bottom:0.25rem;">Machine Learning</div>
+      10 Topics · Source: AIML-Engineering-Lab
+    </div>
+
+    <div class="onenote-tab" data-idx="0">
+      <span class="onenote-tab-icon">📈</span>
+      <span class="onenote-tab-text">Linear Regression</span>
+      <span class="onenote-tab-badge">001</span>
+    </div>
+    <div class="onenote-tab" data-idx="1">
+      <span class="onenote-tab-icon">🎯</span>
+      <span class="onenote-tab-text">Classification</span>
+      <span class="onenote-tab-badge">002</span>
+    </div>
+    <div class="onenote-tab" data-idx="2">
+      <span class="onenote-tab-icon">🌳</span>
+      <span class="onenote-tab-text">Tree-Based Learning</span>
+      <span class="onenote-tab-badge">003</span>
+    </div>
+    <div class="onenote-tab" data-idx="3">
+      <span class="onenote-tab-icon">🚀</span>
+      <span class="onenote-tab-text">Boosting</span>
+      <span class="onenote-tab-badge">004</span>
+    </div>
+    <div class="onenote-tab" data-idx="4">
+      <span class="onenote-tab-icon">✂️</span>
+      <span class="onenote-tab-text">SVM</span>
+      <span class="onenote-tab-badge">005</span>
+    </div>
+    <div class="onenote-tab" data-idx="5">
+      <span class="onenote-tab-icon">🔵</span>
+      <span class="onenote-tab-text">Clustering</span>
+      <span class="onenote-tab-badge">006</span>
+    </div>
+    <div class="onenote-tab" data-idx="6">
+      <span class="onenote-tab-icon">🚨</span>
+      <span class="onenote-tab-text">Anomaly Detection</span>
+      <span class="onenote-tab-badge">007</span>
+    </div>
+    <div class="onenote-tab" data-idx="7">
+      <span class="onenote-tab-icon">📊</span>
+      <span class="onenote-tab-text">Naive Bayes / LDA</span>
+      <span class="onenote-tab-badge">008</span>
+    </div>
+    <div class="onenote-tab" data-idx="8">
+      <span class="onenote-tab-icon">⏱️</span>
+      <span class="onenote-tab-text">Time Series</span>
+      <span class="onenote-tab-badge">009</span>
+    </div>
+    <div class="onenote-tab" data-idx="9">
+      <span class="onenote-tab-icon">⚡</span>
+      <span class="onenote-tab-text">Hyperparameter Opt.</span>
+      <span class="onenote-tab-badge">010</span>
+    </div>
+
+    <div style="padding:1.25rem;margin-top:1rem;border-top:1px solid var(--border-dim);">
+      <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;" data-track="cheatsheet" data-name="ml-models-at-a-glance">
+        📄 ML Cheatsheet
+      </a>
+      <a href="/projects/document-qa-assistant.html" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;margin-top:0.5rem;">
+        🛠 Related Project →
+      </a>
+    </div>
+  </aside>
+
+  <!-- RIGHT CONTENT -->
+  <main class="onenote-content">
+
+    <!-- ══ Panel 0: Linear Regression ══ -->
+    <div class="onenote-panel active">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">// 001 · linear-regression-engine</div>
+        <h2>Linear Regression</h2>
+        <p>The foundation of supervised learning. Linear regression models the relationship between input features and a continuous output by fitting a straight line (or hyperplane) through the data.</p>
+      </div>
+
+      <div class="topic-section">
+        <h3>Plain-English Explanation</h3>
+        <p>Linear regression assumes that the output (label) is a weighted sum of the input features plus a bias term: <code>ŷ = w₁x₁ + w₂x₂ + … + b</code>. Training finds the weights that minimize the average prediction error (mean squared error) across all training examples. Think of it as fitting the "best straight line" through scattered data points.</p>
+      </div>
+
+      <div class="topic-section">
+        <h3>When to Use / When Not to Use</h3>
+        <div class="grid grid-2" style="gap:1rem;">
+          <div class="highlight-box">
+            <strong style="color:var(--success);">✅ Use when:</strong>
+            <ul style="margin-top:0.5rem;padding-left:1.25rem;">
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Output is a continuous number (price, temperature, score)</li>
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">You need interpretability (explainable coefficients)</li>
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Features have a roughly linear relationship with the target</li>
+              <li style="list-style:disc;font-size:0.875rem;">Baseline model before trying complex approaches</li>
+            </ul>
+          </div>
+          <div class="highlight-box">
+            <strong style="color:var(--danger);">❌ Avoid when:</strong>
+            <ul style="margin-top:0.5rem;padding-left:1.25rem;">
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Output is categorical (use classification instead)</li>
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Features have strong non-linear interactions</li>
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Data has many outliers (OLS is sensitive to them)</li>
+              <li style="list-style:disc;font-size:0.875rem;">Features are highly correlated (multicollinearity)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Algorithm Variants</h3>
+        <table class="metric-table">
+          <thead><tr><th>Variant</th><th>Key difference</th><th>When to use</th></tr></thead>
+          <tbody>
+            <tr><td>Ordinary Least Squares (OLS)</td><td>Minimizes MSE directly</td><td>Baseline, small datasets</td></tr>
+            <tr><td>Ridge (L2 regularization)</td><td>Penalizes large weights</td><td>Multicollinearity, many features</td></tr>
+            <tr><td>Lasso (L1 regularization)</td><td>Can zero out weights</td><td>Feature selection needed</td></tr>
+            <tr><td>ElasticNet</td><td>L1 + L2 combined</td><td>Many features, some correlated</td></tr>
+            <tr><td>Polynomial Regression</td><td>Adds x², x³ terms</td><td>Curved relationships</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="topic-section">
+        <h3>Key Metrics</h3>
+        <table class="metric-table">
+          <thead><tr><th>Metric</th><th>Formula</th><th>What it tells you</th></tr></thead>
+          <tbody>
+            <tr><td>MAE</td><td>mean(|y − ŷ|)</td><td>Average absolute error, robust to outliers</td></tr>
+            <tr><td>MSE</td><td>mean((y − ŷ)²)</td><td>Penalizes large errors more heavily</td></tr>
+            <tr><td>RMSE</td><td>√MSE</td><td>Same units as target, most interpretable</td></tr>
+            <tr><td>R² Score</td><td>1 − SS_res/SS_tot</td><td>% variance explained (1.0 = perfect)</td></tr>
+            <tr><td>Adjusted R²</td><td>Penalizes # features</td><td>Fairer comparison across models</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="topic-section">
+        <h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>linear_regression.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> sklearn.linear_model <span class="kw">import</span> LinearRegression, Ridge
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> train_test_split
+<span class="kw">from</span> sklearn.metrics <span class="kw">import</span> r2_score, mean_squared_error
+<span class="kw">import</span> numpy <span class="kw">as</span> np
+
+<span class="cm"># Load your data</span>
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="num">0.2</span>)
+
+<span class="cm"># Train OLS</span>
+model = <span class="cl">LinearRegression</span>()
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+
+<span class="cm"># Evaluate</span>
+r2  = r2_score(y_test, y_pred)
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+<span class="fn">print</span>(<span class="st">f"R²: {r2:.3f}  RMSE: {rmse:.3f}"</span>)
+
+<span class="cm"># Coefficients</span>
+<span class="fn">print</span>(<span class="st">"Intercept:"</span>, model.intercept_)
+<span class="fn">print</span>(<span class="st">"Weights:"</span>, model.coef_)
+
+<span class="cm"># With Ridge regularization</span>
+ridge = <span class="cl">Ridge</span>(alpha=<span class="num">1.0</span>)
+ridge.fit(X_train, y_train)</code></pre>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Notebook &amp; Demo</h3>
+        <div class="notebook-area">
+          <p>Run the full Linear Regression notebook from AIML-Engineering-Lab (001_linear_regression_engine)</p>
+          <div class="notebook-links">
+            <a href="https://colab.research.google.com/github/Rajendar-Muddasani/AIML-Engineering-Lab/blob/main/001_linear_regression_engine/notebook.ipynb" target="_blank" class="btn btn-outline btn-sm">▶ Open in Colab</a>
+            <a href="https://github.com/Rajendar-Muddasani/AIML-Engineering-Lab/tree/main/001_linear_regression_engine" target="_blank" class="btn btn-ghost btn-sm">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Common Mistakes</h3>
+        <div class="watchout-box">
+          <h4>⚠ Watch-outs</h4>
+          <ul>
+            <li>Not scaling features when using regularized variants (Ridge, Lasso need StandardScaler)</li>
+            <li>Ignoring the residuals plot — always check for patterns in errors</li>
+            <li>Using R² alone without checking absolute error magnitude</li>
+            <li>Assuming linearity without plotting feature vs. target scatter</li>
+            <li>Data leakage: fitting the scaler on all data before splitting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Project Idea</h3>
+        <div class="project-callout">
+          <h4>💡 House Price Predictor</h4>
+          <p>Build a Streamlit app that predicts property prices using area, location, and bedroom count. Train on a public dataset (Bengaluru Housing, Boston Housing). Add Ridge regularization and compare against OLS. Great for understanding feature importance and model transparency.</p>
+          <a href="/projects/" class="btn btn-outline btn-sm">Browse Full Project Kits →</a>
+        </div>
+      </div>
+
+      <div class="quiz-block">
+        <h3>// QUIZ — Linear Regression</h3>
+
+        <div class="quiz-q" data-correct="b">
+          <p>1. Which metric is most interpretable when the target variable is in dollars?</p>
+          <label class="quiz-option"><input type="radio" name="lr-q1" value="a"> R² Score</label>
+          <label class="quiz-option"><input type="radio" name="lr-q1" value="b"> RMSE</label>
+          <label class="quiz-option"><input type="radio" name="lr-q1" value="c"> MSE</label>
+          <label class="quiz-option"><input type="radio" name="lr-q1" value="d"> Adjusted R²</label>
+        </div>
+
+        <div class="quiz-q" data-correct="c">
+          <p>2. Which regularization method can reduce some feature weights to exactly zero?</p>
+          <label class="quiz-option"><input type="radio" name="lr-q2" value="a"> Ridge (L2)</label>
+          <label class="quiz-option"><input type="radio" name="lr-q2" value="b"> ElasticNet only</label>
+          <label class="quiz-option"><input type="radio" name="lr-q2" value="c"> Lasso (L1)</label>
+          <label class="quiz-option"><input type="radio" name="lr-q2" value="d"> OLS</label>
+        </div>
+
+        <div class="quiz-q" data-correct="a">
+          <p>3. Before using Ridge regression, you should:</p>
+          <label class="quiz-option"><input type="radio" name="lr-q3" value="a"> Scale features with StandardScaler</label>
+          <label class="quiz-option"><input type="radio" name="lr-q3" value="b"> Encode all features as binary</label>
+          <label class="quiz-option"><input type="radio" name="lr-q3" value="c"> Remove all null values only</label>
+          <label class="quiz-option"><input type="radio" name="lr-q3" value="d"> Normalize the target variable</label>
+        </div>
+
+        <div class="quiz-q" data-correct="d">
+          <p>4. An R² score of 0.95 means:</p>
+          <label class="quiz-option"><input type="radio" name="lr-q4" value="a"> The model is 95% accurate</label>
+          <label class="quiz-option"><input type="radio" name="lr-q4" value="b"> 95% of predictions are correct</label>
+          <label class="quiz-option"><input type="radio" name="lr-q4" value="c"> RMSE is 5%</label>
+          <label class="quiz-option"><input type="radio" name="lr-q4" value="d"> The model explains 95% of the variance in the target</label>
+        </div>
+
+        <div class="quiz-q" data-correct="b">
+          <p>5. Which is NOT a valid use case for linear regression?</p>
+          <label class="quiz-option"><input type="radio" name="lr-q5" value="a"> Predicting house prices</label>
+          <label class="quiz-option"><input type="radio" name="lr-q5" value="b"> Classifying spam vs. not spam</label>
+          <label class="quiz-option"><input type="radio" name="lr-q5" value="c"> Forecasting next month's sales</label>
+          <label class="quiz-option"><input type="radio" name="lr-q5" value="d"> Estimating student exam scores</label>
+        </div>
+
+        <div class="quiz-actions">
+          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+          <span class="quiz-result"></span>
+        </div>
+      </div>
+
+      <div class="completion-banner">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body">
+          <h3>Mark as Complete</h3>
+          <p>Track your progress and earn a course completion certificate.</p>
+        </div>
+        <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('ml','linear-regression')">Mark Complete ✓</button>
+      </div>
+    </div>
+
+    <!-- ══ Panel 1: Classification ══ -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">// 002 · classification-engine</div>
+        <h2>Classification</h2>
+        <p>Predict which category a data point belongs to. Classification is the most common ML task in placement interviews and practical projects.</p>
+      </div>
+
+      <div class="topic-section">
+        <h3>Plain-English Explanation</h3>
+        <p>Instead of predicting a number (regression), classification predicts a label: spam or not spam, disease or healthy, fraud or legitimate. The model learns a decision boundary that separates classes. Logistic regression is the simplest classifier — despite the name, it outputs a probability of belonging to a class.</p>
+      </div>
+
+      <div class="topic-section">
+        <h3>When to Use</h3>
+        <div class="grid grid-2" style="gap:1rem;">
+          <div class="highlight-box">
+            <strong style="color:var(--success);">✅ Use when:</strong>
+            <ul style="margin-top:0.5rem;padding-left:1.25rem;">
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Output is a category (yes/no, A/B/C)</li>
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">You need probability estimates</li>
+              <li style="list-style:disc;font-size:0.875rem;">Multi-class output is required</li>
+            </ul>
+          </div>
+          <div class="highlight-box">
+            <strong style="color:var(--danger);">❌ Avoid when:</strong>
+            <ul style="margin-top:0.5rem;padding-left:1.25rem;">
+              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Target is continuous (use regression)</li>
+              <li style="list-style:disc;font-size:0.875rem;">Extreme class imbalance without handling</li>
+              <li style="list-style:disc;font-size:0.875rem;">Very few labeled samples per class</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Key Metrics</h3>
+        <table class="metric-table">
+          <thead><tr><th>Metric</th><th>Formula</th><th>When to prioritize</th></tr></thead>
+          <tbody>
+            <tr><td>Accuracy</td><td>(TP+TN)/total</td><td>Balanced classes</td></tr>
+            <tr><td>Precision</td><td>TP/(TP+FP)</td><td>Cost of false positives is high (spam filter)</td></tr>
+            <tr><td>Recall</td><td>TP/(TP+FN)</td><td>Cost of false negatives is high (cancer detection)</td></tr>
+            <tr><td>F1 Score</td><td>2·(P·R)/(P+R)</td><td>Imbalanced classes, need balance of P and R</td></tr>
+            <tr><td>ROC-AUC</td><td>Area under ROC curve</td><td>Threshold-independent performance</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="topic-section">
+        <h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>classification.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> sklearn.linear_model <span class="kw">import</span> LogisticRegression
+<span class="kw">from</span> sklearn.metrics <span class="kw">import</span> classification_report, roc_auc_score
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> StandardScaler
+
+scaler = <span class="cl">StandardScaler</span>()
+X_train_sc = scaler.fit_transform(X_train)
+X_test_sc  = scaler.transform(X_test)
+
+clf = <span class="cl">LogisticRegression</span>(max_iter=<span class="num">1000</span>)
+clf.fit(X_train_sc, y_train)
+
+y_pred  = clf.predict(X_test_sc)
+y_proba = clf.predict_proba(X_test_sc)[:, <span class="num">1</span>]
+
+<span class="fn">print</span>(classification_report(y_test, y_pred))
+<span class="fn">print</span>(<span class="st">f"ROC-AUC: {roc_auc_score(y_test, y_proba):.3f}"</span>)</code></pre>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Common Mistakes</h3>
+        <div class="watchout-box">
+          <h4>⚠ Watch-outs</h4>
+          <ul>
+            <li>Using accuracy alone on imbalanced datasets (use F1 or AUC instead)</li>
+            <li>Not applying SMOTE or class_weight when classes are skewed</li>
+            <li>Confusing precision and recall — always ask which error is costlier</li>
+            <li>Choosing the threshold at 0.5 without evaluating the full ROC curve</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Project Idea</h3>
+        <div class="project-callout">
+          <h4>💡 Placement Predictor</h4>
+          <p>Build a logistic regression model to predict whether a student will get placed based on CGPA, internships, projects, and branch. Add a confusion matrix visualization and deploy on Streamlit.</p>
+        </div>
+      </div>
+
+      <div class="quiz-block">
+        <h3>// QUIZ — Classification</h3>
+        <div class="quiz-q" data-correct="c">
+          <p>1. Which metric should you prioritize for cancer detection where missing a case is costly?</p>
+          <label class="quiz-option"><input type="radio" name="cl-q1" value="a"> Precision</label>
+          <label class="quiz-option"><input type="radio" name="cl-q1" value="b"> Accuracy</label>
+          <label class="quiz-option"><input type="radio" name="cl-q1" value="c"> Recall</label>
+          <label class="quiz-option"><input type="radio" name="cl-q1" value="d"> Specificity</label>
+        </div>
+        <div class="quiz-q" data-correct="b">
+          <p>2. ROC-AUC = 0.5 means:</p>
+          <label class="quiz-option"><input type="radio" name="cl-q2" value="a"> Perfect classifier</label>
+          <label class="quiz-option"><input type="radio" name="cl-q2" value="b"> Random guessing</label>
+          <label class="quiz-option"><input type="radio" name="cl-q2" value="c"> Worst possible classifier</label>
+          <label class="quiz-option"><input type="radio" name="cl-q2" value="d"> 50% accuracy</label>
+        </div>
+        <div class="quiz-q" data-correct="d">
+          <p>3. When you have 95% class 0 and 5% class 1, what is the best baseline accuracy a naive model can achieve?</p>
+          <label class="quiz-option"><input type="radio" name="cl-q3" value="a"> 50%</label>
+          <label class="quiz-option"><input type="radio" name="cl-q3" value="b"> 5%</label>
+          <label class="quiz-option"><input type="radio" name="cl-q3" value="c"> 75%</label>
+          <label class="quiz-option"><input type="radio" name="cl-q3" value="d"> 95%</label>
+        </div>
+        <div class="quiz-q" data-correct="a">
+          <p>4. F1 score is the harmonic mean of:</p>
+          <label class="quiz-option"><input type="radio" name="cl-q4" value="a"> Precision and Recall</label>
+          <label class="quiz-option"><input type="radio" name="cl-q4" value="b"> Accuracy and Recall</label>
+          <label class="quiz-option"><input type="radio" name="cl-q4" value="c"> Precision and Specificity</label>
+          <label class="quiz-option"><input type="radio" name="cl-q4" value="d"> AUC and Recall</label>
+        </div>
+        <div class="quiz-q" data-correct="b">
+          <p>5. Logistic regression outputs:</p>
+          <label class="quiz-option"><input type="radio" name="cl-q5" value="a"> A continuous number</label>
+          <label class="quiz-option"><input type="radio" name="cl-q5" value="b"> A probability between 0 and 1</label>
+          <label class="quiz-option"><input type="radio" name="cl-q5" value="c"> An integer class label only</label>
+          <label class="quiz-option"><input type="radio" name="cl-q5" value="d"> A log-odds value as the final prediction</label>
+        </div>
+        <div class="quiz-actions">
+          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+          <span class="quiz-result"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ Panel 2: Tree-Based Learning ══ -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">// 003 · tree-based-learning</div>
+        <h2>Tree-Based Learning</h2>
+        <p>Decision trees, random forests, and their variants. One of the most interview-tested ML family of algorithms.</p>
+      </div>
+      <div class="topic-section">
+        <h3>Plain-English Explanation</h3>
+        <p>A decision tree splits data by asking yes/no questions about features. At each node, it picks the split that best separates the classes (using Gini or entropy). Random Forest builds many trees on random subsets of data and features, then averages their outputs — reducing variance through ensemble averaging.</p>
+      </div>
+      <div class="topic-section">
+        <h3>Key Metrics &amp; Hyperparameters</h3>
+        <table class="metric-table">
+          <thead><tr><th>Parameter</th><th>Effect</th><th>Typical range</th></tr></thead>
+          <tbody>
+            <tr><td>max_depth</td><td>Controls tree depth, limits overfitting</td><td>3–15</td></tr>
+            <tr><td>n_estimators (RF)</td><td>More trees = lower variance, more compute</td><td>100–500</td></tr>
+            <tr><td>min_samples_split</td><td>Min samples to allow a split</td><td>2–20</td></tr>
+            <tr><td>max_features</td><td>Features considered per split</td><td>sqrt(n), log2(n)</td></tr>
+            <tr><td>criterion</td><td>Split quality measure</td><td>gini, entropy</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="topic-section">
+        <h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>random_forest.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> sklearn.ensemble <span class="kw">import</span> RandomForestClassifier
+<span class="kw">import</span> pandas <span class="kw">as</span> pd
+
+rf = <span class="cl">RandomForestClassifier</span>(n_estimators=<span class="num">200</span>, max_depth=<span class="num">8</span>, random_state=<span class="num">42</span>)
+rf.fit(X_train, y_train)
+
+<span class="cm"># Feature importance</span>
+fi = pd.<span class="cl">Series</span>(rf.feature_importances_, index=feature_names)
+fi.sort_values(ascending=<span class="kw">False</span>).plot(kind=<span class="st">'bar'</span>)</code></pre>
+        </div>
+      </div>
+      <div class="topic-section">
+        <h3>Common Mistakes</h3>
+        <div class="watchout-box">
+          <h4>⚠ Watch-outs</h4>
+          <ul>
+            <li>Single decision trees overfit badly — always use ensembles (RF or Boosting)</li>
+            <li>Assuming feature importance from RF handles correlated features well (it does not)</li>
+            <li>Forgetting that RF can still overfit if max_depth is unconstrained</li>
+          </ul>
+        </div>
+      </div>
+      <div class="quiz-block">
+        <h3>// QUIZ — Trees</h3>
+        <div class="quiz-q" data-correct="b">
+          <p>1. Random Forest reduces variance by:</p>
+          <label class="quiz-option"><input type="radio" name="tr-q1" value="a"> Using a deeper tree</label>
+          <label class="quiz-option"><input type="radio" name="tr-q1" value="b"> Averaging predictions of many trees on random subsets</label>
+          <label class="quiz-option"><input type="radio" name="tr-q1" value="c"> Pruning all trees aggressively</label>
+          <label class="quiz-option"><input type="radio" name="tr-q1" value="d"> Removing correlated features</label>
+        </div>
+        <div class="quiz-q" data-correct="a">
+          <p>2. Gini impurity measures:</p>
+          <label class="quiz-option"><input type="radio" name="tr-q2" value="a"> How often a randomly chosen element would be incorrectly labeled</label>
+          <label class="quiz-option"><input type="radio" name="tr-q2" value="b"> Average tree depth</label>
+          <label class="quiz-option"><input type="radio" name="tr-q2" value="c"> Information entropy of the full dataset</label>
+          <label class="quiz-option"><input type="radio" name="tr-q2" value="d"> Number of misclassified nodes</label>
+        </div>
+        <div class="quiz-q" data-correct="c">
+          <p>3. Which hyperparameter most directly limits overfitting in a decision tree?</p>
+          <label class="quiz-option"><input type="radio" name="tr-q3" value="a"> n_estimators</label>
+          <label class="quiz-option"><input type="radio" name="tr-q3" value="b"> criterion</label>
+          <label class="quiz-option"><input type="radio" name="tr-q3" value="c"> max_depth</label>
+          <label class="quiz-option"><input type="radio" name="tr-q3" value="d"> random_state</label>
+        </div>
+        <div class="quiz-actions">
+          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+          <span class="quiz-result"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ Panel 3: Boosting ══ -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">// 004 · boosting-revolution</div>
+        <h2>Boosting</h2>
+        <p>XGBoost, LightGBM, and gradient boosting. The algorithm that wins Kaggle competitions. Sequentially trains weak learners, each correcting the previous one's errors.</p>
+      </div>
+      <div class="topic-section">
+        <h3>Plain-English Explanation</h3>
+        <p>Boosting trains trees sequentially. Each new tree focuses on the data points the previous ensemble got wrong. Gradient Boosting does this by fitting each tree to the residual errors. XGBoost and LightGBM add regularization, histogram-based splits, and speed optimizations on top of this idea.</p>
+      </div>
+      <div class="topic-section">
+        <h3>Algorithm Comparison</h3>
+        <table class="metric-table">
+          <thead><tr><th>Algorithm</th><th>Speed</th><th>Memory</th><th>Best for</th></tr></thead>
+          <tbody>
+            <tr><td>Gradient Boosting (sklearn)</td><td>Slow</td><td>Medium</td><td>Small-medium datasets, baseline</td></tr>
+            <tr><td>XGBoost</td><td>Fast</td><td>Higher</td><td>Structured data, Kaggle</td></tr>
+            <tr><td>LightGBM</td><td>Fastest</td><td>Low</td><td>Large datasets, categorical features</td></tr>
+            <tr><td>CatBoost</td><td>Fast</td><td>Medium</td><td>Many categorical features</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="topic-section">
+        <h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>xgboost_example.py</span>
+          </div>
+          <pre><code><span class="kw">import</span> xgboost <span class="kw">as</span> xgb
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> cross_val_score
+
+model = xgb.<span class="cl">XGBClassifier</span>(
+    n_estimators=<span class="num">300</span>,
+    learning_rate=<span class="num">0.05</span>,
+    max_depth=<span class="num">6</span>,
+    subsample=<span class="num">0.8</span>,
+    colsample_bytree=<span class="num">0.8</span>,
+    use_label_encoder=<span class="kw">False</span>,
+    eval_metric=<span class="st">'logloss'</span>
+)
+
+scores = cross_val_score(model, X, y, cv=<span class="num">5</span>, scoring=<span class="st">'roc_auc'</span>)
+<span class="fn">print</span>(<span class="st">f"CV AUC: {scores.mean():.3f} ± {scores.std():.3f}"</span>)</code></pre>
+        </div>
+      </div>
+      <div class="watchout-box">
+        <h4>⚠ Watch-outs</h4>
+        <ul>
+          <li>Low learning_rate requires more n_estimators — balance them together</li>
+          <li>Early stopping on a validation set prevents overfitting and saves compute</li>
+          <li>XGBoost handles missing values natively — don't impute blindly before using it</li>
+        </ul>
+      </div>
+      <div class="quiz-block">
+        <h3>// QUIZ — Boosting</h3>
+        <div class="quiz-q" data-correct="b">
+          <p>1. In gradient boosting, each new tree is trained on:</p>
+          <label class="quiz-option"><input type="radio" name="bo-q1" value="a"> A random subset of the original data</label>
+          <label class="quiz-option"><input type="radio" name="bo-q1" value="b"> The residual errors of the current ensemble</label>
+          <label class="quiz-option"><input type="radio" name="bo-q1" value="c"> The same data as the first tree</label>
+          <label class="quiz-option"><input type="radio" name="bo-q1" value="d"> Only the misclassified samples</label>
+        </div>
+        <div class="quiz-q" data-correct="c">
+          <p>2. Which library is fastest for very large datasets?</p>
+          <label class="quiz-option"><input type="radio" name="bo-q2" value="a"> sklearn GradientBoostingClassifier</label>
+          <label class="quiz-option"><input type="radio" name="bo-q2" value="b"> XGBoost</label>
+          <label class="quiz-option"><input type="radio" name="bo-q2" value="c"> LightGBM</label>
+          <label class="quiz-option"><input type="radio" name="bo-q2" value="d"> CatBoost</label>
+        </div>
+        <div class="quiz-actions">
+          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+          <span class="quiz-result"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ Panel 4: SVM ══ -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">// 005 · support-vector-machines</div>
+        <h2>Support Vector Machines</h2>
+        <p>SVMs find the maximum-margin hyperplane that separates classes. They are powerful for high-dimensional data and work well when classes are clearly separable.</p>
+      </div>
+      <div class="topic-section">
+        <h3>Plain-English Explanation</h3>
+        <p>SVM tries to find the widest possible "street" (margin) between two classes. The data points closest to the margin are called support vectors. The kernel trick lets SVMs work in higher-dimensional spaces without explicitly computing those dimensions — enabling non-linear decision boundaries.</p>
+      </div>
+      <div class="topic-section">
+        <h3>Kernel Options</h3>
+        <table class="metric-table">
+          <thead><tr><th>Kernel</th><th>When to use</th></tr></thead>
+          <tbody>
+            <tr><td>Linear</td><td>Linearly separable data, text classification</td></tr>
+            <tr><td>RBF (Radial Basis Function)</td><td>Non-linear data, most common default</td></tr>
+            <tr><td>Polynomial</td><td>Polynomial feature interactions</td></tr>
+            <tr><td>Sigmoid</td><td>Neural network-like, less common</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="topic-section">
+        <h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>svm.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> sklearn.svm <span class="kw">import</span> SVC
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> Pipeline
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> StandardScaler
+
+pipe = <span class="cl">Pipeline</span>([
+    (<span class="st">'scaler'</span>, <span class="cl">StandardScaler</span>()),
+    (<span class="st">'svm'</span>, <span class="cl">SVC</span>(kernel=<span class="st">'rbf'</span>, C=<span class="num">1.0</span>, gamma=<span class="st">'scale'</span>, probability=<span class="kw">True</span>))
+])
+pipe.fit(X_train, y_train)</code></pre>
+        </div>
+      </div>
+      <div class="watchout-box">
+        <h4>⚠ Watch-outs</h4>
+        <ul>
+          <li>SVMs are slow on large datasets — prefer XGBoost or Random Forest when n &gt; 50k</li>
+          <li>Always scale features before SVM — it is margin-based and very sensitive to scale</li>
+          <li>Hyperparameter C controls the trade-off between margin width and misclassifications</li>
+        </ul>
+      </div>
+      <div class="quiz-block">
+        <h3>// QUIZ — SVM</h3>
+        <div class="quiz-q" data-correct="c">
+          <p>1. Support vectors are:</p>
+          <label class="quiz-option"><input type="radio" name="sv-q1" value="a"> All training data points</label>
+          <label class="quiz-option"><input type="radio" name="sv-q1" value="b"> The center of each class cluster</label>
+          <label class="quiz-option"><input type="radio" name="sv-q1" value="c"> The data points closest to the decision boundary</label>
+          <label class="quiz-option"><input type="radio" name="sv-q1" value="d"> The misclassified data points</label>
+        </div>
+        <div class="quiz-q" data-correct="a">
+          <p>2. Before using SVM you must:</p>
+          <label class="quiz-option"><input type="radio" name="sv-q2" value="a"> Scale features to the same range</label>
+          <label class="quiz-option"><input type="radio" name="sv-q2" value="b"> Encode all features as one-hot</label>
+          <label class="quiz-option"><input type="radio" name="sv-q2" value="c"> Remove all outliers</label>
+          <label class="quiz-option"><input type="radio" name="sv-q2" value="d"> Reduce dimensions to 2D</label>
+        </div>
+        <div class="quiz-actions">
+          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+          <span class="quiz-result"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ Panel 5: Clustering ══ -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">// 006 · unsupervised-discovery</div>
+        <h2>Clustering &amp; Unsupervised Learning</h2>
+        <p>Find natural groups in data without labels. Used in customer segmentation, document grouping, image compression, and anomaly detection preprocessing.</p>
+      </div>
+      <div class="topic-section">
+        <h3>Algorithm Comparison</h3>
+        <table class="metric-table">
+          <thead><tr><th>Algorithm</th><th>Must specify K?</th><th>Handles noise?</th><th>Best for</th></tr></thead>
+          <tbody>
+            <tr><td>K-Means</td><td>Yes</td><td>No</td><td>Compact spherical clusters</td></tr>
+            <tr><td>DBSCAN</td><td>No</td><td>Yes</td><td>Arbitrary shapes, outlier detection</td></tr>
+            <tr><td>Hierarchical</td><td>No (choose post)</td><td>Partially</td><td>Dendrogram visualization</td></tr>
+            <tr><td>GMM</td><td>Yes</td><td>Soft</td><td>Overlapping clusters, soft assignment</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="topic-section">
+        <h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>clustering.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> sklearn.cluster <span class="kw">import</span> KMeans
+<span class="kw">from</span> sklearn.metrics <span class="kw">import</span> silhouette_score
+
+<span class="cm"># Elbow method to choose K</span>
+inertias = []
+<span class="kw">for</span> k <span class="kw">in</span> range(<span class="num">2</span>, <span class="num">11</span>):
+    km = <span class="cl">KMeans</span>(n_clusters=k, random_state=<span class="num">42</span>)
+    km.fit(X)
+    inertias.append(km.inertia_)
+
+<span class="cm"># Silhouette score for validation</span>
+labels = <span class="cl">KMeans</span>(n_clusters=<span class="num">4</span>).fit_predict(X)
+score  = silhouette_score(X, labels)
+<span class="fn">print</span>(<span class="st">f"Silhouette: {score:.3f}"</span>)  <span class="cm"># higher is better</span></code></pre>
+        </div>
+      </div>
+      <div class="quiz-block">
+        <h3>// QUIZ — Clustering</h3>
+        <div class="quiz-q" data-correct="b">
+          <p>1. Silhouette score ranges from -1 to 1. A score near 1 means:</p>
+          <label class="quiz-option"><input type="radio" name="cl2-q1" value="a"> Clusters are overlapping</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q1" value="b"> Data points are well-matched to their cluster</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q1" value="c"> Wrong number of clusters</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q1" value="d"> The model has overfit</label>
+        </div>
+        <div class="quiz-q" data-correct="c">
+          <p>2. DBSCAN requires you to specify:</p>
+          <label class="quiz-option"><input type="radio" name="cl2-q2" value="a"> Number of clusters K</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q2" value="b"> Initial cluster centroids</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q2" value="c"> Epsilon (neighborhood radius) and min_samples</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q2" value="d"> Maximum number of iterations</label>
+        </div>
+        <div class="quiz-actions">
+          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+          <span class="quiz-result"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ Panel 6: Anomaly Detection ══ -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">// 007 · anomaly-detection-dimensionality</div>
+        <h2>Anomaly Detection</h2>
+        <p>Identify unusual data points — fraud, system failures, manufacturing defects. Most anomaly problems are highly imbalanced.</p>
+      </div>
+      <div class="topic-section">
+        <h3>Key Approaches</h3>
+        <table class="metric-table">
+          <thead><tr><th>Method</th><th>How it works</th><th>Best for</th></tr></thead>
+          <tbody>
+            <tr><td>Isolation Forest</td><td>Anomalies are easier to isolate in random trees</td><td>Tabular data, general use</td></tr>
+            <tr><td>Local Outlier Factor</td><td>Compares density to k nearest neighbors</td><td>Cluster-based outliers</td></tr>
+            <tr><td>Z-Score</td><td>Flags points beyond n standard deviations</td><td>Gaussian, simple baselines</td></tr>
+            <tr><td>Autoencoder</td><td>High reconstruction error = anomaly</td><td>Complex patterns, images</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="topic-section">
+        <h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>anomaly.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> sklearn.ensemble <span class="kw">import</span> IsolationForest
+
+iso = <span class="cl">IsolationForest</span>(contamination=<span class="num">0.05</span>, random_state=<span class="num">42</span>)
+labels = iso.fit_predict(X)
+<span class="cm"># -1 = anomaly, 1 = normal</span>
+anomalies = X[labels == -<span class="num">1</span>]</code></pre>
+        </div>
+      </div>
+      <div class="quiz-block">
+        <h3>// QUIZ — Anomaly Detection</h3>
+        <div class="quiz-q" data-correct="b">
+          <p>1. Isolation Forest labels -1 for:</p>
+          <label class="quiz-option"><input type="radio" name="an-q1" value="a"> Normal points</label>
+          <label class="quiz-option"><input type="radio" name="an-q1" value="b"> Anomalies</label>
+          <label class="quiz-option"><input type="radio" name="an-q1" value="c"> Borderline cases</label>
+          <label class="quiz-option"><input type="radio" name="an-q1" value="d"> Duplicate rows</label>
+        </div>
+        <div class="quiz-actions">
+          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+          <span class="quiz-result"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ Panel 7: Naive Bayes / LDA ══ -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">// 008 · naive-bayes-lda</div>
+        <h2>Naive Bayes &amp; LDA</h2>
+        <p>Probabilistic classifiers grounded in Bayes' theorem. Fast, interpretable, and surprisingly effective for text classification and small datasets.</p>
+      </div>
+      <div class="topic-section">
+        <h3>Plain-English Explanation</h3>
+        <p>Naive Bayes applies Bayes' theorem with the "naive" assumption that all features are independent given the class. Despite this oversimplification, it works very well for text (bag-of-words). LDA (Linear Discriminant Analysis) finds the linear combination of features that best separates classes — it also doubles as a dimensionality reduction tool.</p>
+      </div>
+      <div class="topic-section">
+        <h3>Variants</h3>
+        <table class="metric-table">
+          <thead><tr><th>Variant</th><th>Input type</th><th>Best for</th></tr></thead>
+          <tbody>
+            <tr><td>GaussianNB</td><td>Continuous features</td><td>Real-valued features</td></tr>
+            <tr><td>MultinomialNB</td><td>Count features</td><td>Text, word frequency</td></tr>
+            <tr><td>BernoulliNB</td><td>Binary features</td><td>Binary feature vectors</td></tr>
+            <tr><td>LDA</td><td>Continuous</td><td>Multi-class + dimensionality reduction</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="quiz-block">
+        <h3>// QUIZ — Naive Bayes</h3>
+        <div class="quiz-q" data-correct="c">
+          <p>1. Which Naive Bayes variant is best for text classification with word counts?</p>
+          <label class="quiz-option"><input type="radio" name="nb-q1" value="a"> GaussianNB</label>
+          <label class="quiz-option"><input type="radio" name="nb-q1" value="b"> BernoulliNB</label>
+          <label class="quiz-option"><input type="radio" name="nb-q1" value="c"> MultinomialNB</label>
+          <label class="quiz-option"><input type="radio" name="nb-q1" value="d"> ComplementNB</label>
+        </div>
+        <div class="quiz-actions">
+          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+          <span class="quiz-result"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ Panel 8: Time Series ══ -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">// 009 · time-series-forecasting</div>
+        <h2>Time Series Forecasting</h2>
+        <p>Predict future values based on historical sequences. Used in stock prices, sales forecasting, energy demand, and inventory planning.</p>
+      </div>
+      <div class="topic-section">
+        <h3>Key Concepts</h3>
+        <table class="metric-table">
+          <thead><tr><th>Concept</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Stationarity</td><td>Mean and variance don't change over time. Required for ARIMA.</td></tr>
+            <tr><td>Seasonality</td><td>Repeating patterns at fixed intervals (weekly, monthly)</td></tr>
+            <tr><td>Trend</td><td>Long-term upward or downward movement in the data</td></tr>
+            <tr><td>Autocorrelation (ACF)</td><td>Correlation of the series with its own past values</td></tr>
+            <tr><td>Partial Autocorrelation (PACF)</td><td>Direct correlation at each lag, removing intermediate lags</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="topic-section">
+        <h3>Algorithm Family</h3>
+        <table class="metric-table">
+          <thead><tr><th>Model</th><th>Best for</th></tr></thead>
+          <tbody>
+            <tr><td>ARIMA</td><td>Stationary or differenced series, no seasonal component</td></tr>
+            <tr><td>SARIMA</td><td>Seasonal patterns with ARIMA</td></tr>
+            <tr><td>Prophet (Meta)</td><td>Business time series with holidays and multiple seasonalities</td></tr>
+            <tr><td>LSTM/GRU</td><td>Long sequences, complex non-linear patterns</td></tr>
+            <tr><td>XGBoost with lags</td><td>Tabular approach to time series</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="topic-section">
+        <h3>Project Idea</h3>
+        <div class="project-callout">
+          <h4>💡 Sales Forecast Dashboard</h4>
+          <p>Build an Inventory Forecasting Dashboard using ARIMA and Prophet on retail sales data. Show actual vs. predicted with confidence intervals. Add Streamlit UI and a CSV upload feature. This maps directly to project-03 on this platform.</p>
+          <a href="/projects/" class="btn btn-outline btn-sm">See Inventory Forecasting Kit →</a>
+        </div>
+      </div>
+      <div class="quiz-block">
+        <h3>// QUIZ — Time Series</h3>
+        <div class="quiz-q" data-correct="a">
+          <p>1. ARIMA requires the input series to be:</p>
+          <label class="quiz-option"><input type="radio" name="ts-q1" value="a"> Stationary</label>
+          <label class="quiz-option"><input type="radio" name="ts-q1" value="b"> Normalized</label>
+          <label class="quiz-option"><input type="radio" name="ts-q1" value="c"> Seasonal</label>
+          <label class="quiz-option"><input type="radio" name="ts-q1" value="d"> Log-transformed</label>
+        </div>
+        <div class="quiz-q" data-correct="b">
+          <p>2. Which metric is commonly used for time series forecasting evaluation?</p>
+          <label class="quiz-option"><input type="radio" name="ts-q2" value="a"> ROC-AUC</label>
+          <label class="quiz-option"><input type="radio" name="ts-q2" value="b"> MAPE (Mean Absolute Percentage Error)</label>
+          <label class="quiz-option"><input type="radio" name="ts-q2" value="c"> F1 Score</label>
+          <label class="quiz-option"><input type="radio" name="ts-q2" value="d"> Silhouette Score</label>
+        </div>
+        <div class="quiz-actions">
+          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+          <span class="quiz-result"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ Panel 9: Hyperparameter Optimization ══ -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">// 010 · hyperparameter-optimization</div>
+        <h2>Hyperparameter Optimization</h2>
+        <p>Systematically search for the best model configuration. Moving from manual tuning to automated, principled search.</p>
+      </div>
+      <div class="topic-section">
+        <h3>Search Strategies</h3>
+        <table class="metric-table">
+          <thead><tr><th>Strategy</th><th>How it works</th><th>Speed</th><th>Quality</th></tr></thead>
+          <tbody>
+            <tr><td>Grid Search</td><td>Try every combination in a defined grid</td><td>Slow</td><td>Exhaustive</td></tr>
+            <tr><td>Random Search</td><td>Sample random combinations from distributions</td><td>Faster</td><td>Often better than grid</td></tr>
+            <tr><td>Bayesian Optimization</td><td>Builds a surrogate model of the objective</td><td>Efficient</td><td>Best for expensive models</td></tr>
+            <tr><td>Optuna / Hyperopt</td><td>Tree-structured Parzen Estimator (TPE)</td><td>Very efficient</td><td>State of the art</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="topic-section">
+        <h3>Code Example — Optuna</h3>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>optuna_search.py</span>
+          </div>
+          <pre><code><span class="kw">import</span> optuna
+
+<span class="kw">def</span> <span class="fn">objective</span>(trial):
+    params = {
+        <span class="st">'n_estimators'</span>: trial.suggest_int(<span class="st">'n_estimators'</span>, <span class="num">100</span>, <span class="num">500</span>),
+        <span class="st">'max_depth'</span>:    trial.suggest_int(<span class="st">'max_depth'</span>, <span class="num">3</span>, <span class="num">12</span>),
+        <span class="st">'learning_rate'</span>: trial.suggest_float(<span class="st">'lr'</span>, <span class="num">0.01</span>, <span class="num">0.3</span>, log=<span class="kw">True</span>),
+    }
+    model = xgb.<span class="cl">XGBClassifier</span>(**params)
+    score = cross_val_score(model, X, y, cv=<span class="num">3</span>, scoring=<span class="st">'roc_auc'</span>).mean()
+    <span class="kw">return</span> score
+
+study = optuna.create_study(direction=<span class="st">'maximize'</span>)
+study.optimize(objective, n_trials=<span class="num">50</span>)
+<span class="fn">print</span>(study.best_params)</code></pre>
+        </div>
+      </div>
+      <div class="quiz-block">
+        <h3>// QUIZ — Hyperparameter Optimization</h3>
+        <div class="quiz-q" data-correct="c">
+          <p>1. Which approach is most efficient for expensive-to-train models?</p>
+          <label class="quiz-option"><input type="radio" name="hp-q1" value="a"> Grid Search</label>
+          <label class="quiz-option"><input type="radio" name="hp-q1" value="b"> Random Search</label>
+          <label class="quiz-option"><input type="radio" name="hp-q1" value="c"> Bayesian Optimization (Optuna)</label>
+          <label class="quiz-option"><input type="radio" name="hp-q1" value="d"> Manual trial and error</label>
+        </div>
+        <div class="quiz-q" data-correct="b">
+          <p>2. Cross-validation during hyperparameter search helps:</p>
+          <label class="quiz-option"><input type="radio" name="hp-q2" value="a"> Reduce training time</label>
+          <label class="quiz-option"><input type="radio" name="hp-q2" value="b"> Avoid overfitting to a single validation split</label>
+          <label class="quiz-option"><input type="radio" name="hp-q2" value="c"> Increase model complexity</label>
+          <label class="quiz-option"><input type="radio" name="hp-q2" value="d"> Remove outliers automatically</label>
+        </div>
+        <div class="quiz-actions">
+          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+          <span class="quiz-result"></span>
+        </div>
+      </div>
+
+      <div class="completion-banner">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body">
+          <h3>Course Complete!</h3>
+          <p>You've covered all 10 ML topics. Claim your Machine Learning course completion certificate.</p>
+        </div>
+        <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('ml','hyperparameter-optimization')">Claim Certificate →</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ── Footer (compact for this layout) ── -->
+<style>
+  /* Adjust footer for OneNote layout */
+  .footer { position: static; }
+  body { overflow-y: auto; }
+</style>
+
+<div class="chat-widget">
+  <button class="chat-btn" aria-label="Open AI chat">💬</button>
+</div>
+
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

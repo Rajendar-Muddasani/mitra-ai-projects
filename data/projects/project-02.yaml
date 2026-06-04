@@ -1,0 +1,50 @@
+project_id: project-02
+slug: resume-screener
+title: AI Resume Screener and Interview Copilot
+lane: portfolio-build
+difficulty: beginner-friendly
+audience:
+  - final-year students
+  - freshers seeking placement
+  - HR tech interested learners
+language_launch: en
+translation_status:
+  te: planned
+status: coming-soon
+duration_weeks: 4
+core_problem: Automatically score and rank resumes against a job description using LLM
+
+tech_stack:
+  - Python 3.11
+  - Streamlit
+  - OpenAI API
+  - PyPDF2
+  - Pandas
+
+deliverables:
+  - source code
+  - README
+  - setup guide
+  - deployment guide
+  - report template
+  - PPT template
+  - viva questions
+  - sample job descriptions and resumes for testing
+
+milestones:
+  - week: 1
+    title: PDF parsing and text extraction
+  - week: 2
+    title: LLM scoring with structured JSON output
+  - week: 3
+    title: Streamlit UI with ranking dashboard
+  - week: 4
+    title: Deployment and demo polish
+
+related_courses:
+  - genai
+  - programming
+
+seo:
+  title: AI Resume Screener — Portfolio Build | Mitra AI Projects
+  description: Build a resume screening tool with Python, LLM, and Streamlit. Score resumes, rank candidates, and explain the reasoning.

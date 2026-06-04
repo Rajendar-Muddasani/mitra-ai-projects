@@ -1,0 +1,80 @@
+course_id: ml
+title: Machine Learning
+layout: onenote-tabs
+source_org: AIML-Engineering-Lab
+status: live
+audience:
+  - engineering students
+  - data analysts
+  - placement aspirants
+
+topics:
+  - slug: linear-regression
+    title: Linear Regression
+    source_repo: 001_linear_regression_engine
+    cheatsheet: ml-models-at-a-glance
+    metrics: [MAE, MSE, RMSE, R2, Adjusted R2]
+    algorithms: [OLS, Ridge, Lasso, ElasticNet, Polynomial]
+
+  - slug: classification
+    title: Classification
+    source_repo: 002_classification_engine
+    cheatsheet: ml-models-at-a-glance
+    metrics: [Accuracy, Precision, Recall, F1, ROC-AUC]
+    algorithms: [Logistic Regression, SVM, KNN, Naive Bayes]
+
+  - slug: tree-based-learning
+    title: Tree-Based Learning
+    source_repo: 003_tree_based_learning
+    cheatsheet: ml-models-at-a-glance
+    metrics: [Gini, Entropy, Feature Importance]
+    algorithms: [Decision Tree, Random Forest, Extra Trees]
+
+  - slug: boosting
+    title: Boosting
+    source_repo: 004_boosting_revolution
+    cheatsheet: ml-models-at-a-glance
+    metrics: [AUC-ROC, Logloss]
+    algorithms: [GradientBoosting, XGBoost, LightGBM, CatBoost]
+
+  - slug: svm
+    title: Support Vector Machines
+    source_repo: 005_support_vector_machines
+    cheatsheet: ml-models-at-a-glance
+    metrics: [Accuracy, Precision, Recall]
+    algorithms: [Linear SVM, RBF SVM, Polynomial SVM]
+
+  - slug: clustering
+    title: Clustering and Unsupervised Learning
+    source_repo: 006_unsupervised_discovery
+    cheatsheet: ml-models-at-a-glance
+    metrics: [Silhouette Score, Inertia, DBSCAN core points]
+    algorithms: [KMeans, DBSCAN, Hierarchical, GMM]
+
+  - slug: anomaly-detection
+    title: Anomaly Detection
+    source_repo: 007_anomaly_detection_dimensionality
+    cheatsheet: ml-models-at-a-glance
+    metrics: [Precision, Recall at contamination rate]
+    algorithms: [Isolation Forest, LOF, Z-Score, Autoencoder]
+
+  - slug: naive-bayes-lda
+    title: Naive Bayes and LDA
+    source_repo: 008_naive_bayes_lda
+    cheatsheet: ml-models-at-a-glance
+    metrics: [Accuracy, Log-Likelihood]
+    algorithms: [GaussianNB, MultinomialNB, BernoulliNB, LDA]
+
+  - slug: time-series
+    title: Time Series Forecasting
+    source_repo: 009_time_series_forecasting
+    cheatsheet: ml-models-at-a-glance
+    metrics: [MAPE, MAE, RMSE, AIC/BIC]
+    algorithms: [ARIMA, SARIMA, Prophet, XGBoost with lags]
+
+  - slug: hyperparameter-optimization
+    title: Hyperparameter Optimization
+    source_repo: 010_hyperparameter_optimization
+    cheatsheet: ml-models-at-a-glance
+    metrics: [CV Score, Best params]
+    algorithms: [GridSearch, RandomSearch, Optuna, Hyperopt]

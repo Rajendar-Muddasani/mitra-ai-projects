@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic AI and MCP Course — Mitra AI Projects</title>
+  <meta name="description" content="Agentic AI and MCP course covering agents, LangGraph, CrewAI, Model Context Protocol, OpenAI Assistants API, multi-agent systems, and safety patterns.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/courses/" class="active">Courses</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/how-it-works.html">How It Works</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="hero hero-sm">
+  <div class="container hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/courses/">Courses</a><span class="breadcrumb-sep">›</span><span>Agentic AI &amp; MCP</span></div>
+    <div class="hero-eyebrow">agentic ai &amp; mcp · tool &amp; agent builders</div>
+    <h1 class="hero-title">Agentic AI &amp; MCP</h1>
+    <p class="hero-sub">Build AI agents that plan, use tools, remember context, and collaborate. Covers LangGraph, CrewAI, MCP protocol, OpenAI Assistants, multi-agent patterns, and safety. Mapped to mcp-learning-guide and crewai-course-materials repos.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="tab-layout">
+      <div class="tab-nav">
+        <button class="tab-btn">🤖 What is an Agent</button>
+        <button class="tab-btn">📊 LangGraph</button>
+        <button class="tab-btn">👥 CrewAI</button>
+        <button class="tab-btn">🔌 MCP</button>
+        <button class="tab-btn">🛠 OpenAI Assistants</button>
+        <button class="tab-btn">🌐 Multi-Agent Systems</button>
+        <button class="tab-btn">🛡 Evaluation &amp; Safety</button>
+      </div>
+
+      <!-- What is an Agent -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// fundamentals</div><h2>What is an AI Agent?</h2><p>An agent is an LLM with the ability to plan actions, use tools, and remember context across steps. It solves complex tasks by breaking them into sub-tasks and choosing the right tool at each step.</p></div>
+        <div class="topic-section"><h3>Agent Core Loop</h3>
+        <div class="arch-diagram">
+          <div class="arch-boxes">
+            <div class="arch-box">User Goal</div><div class="arch-arrow">→</div>
+            <div class="arch-box" style="border-color:var(--accent);color:var(--accent);">LLM Planner</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Select Tool</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Execute Tool</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Observe Result</div><div class="arch-arrow">→</div>
+            <div class="arch-box" style="border-color:var(--success);color:var(--success);">Final Answer</div>
+          </div>
+          <p style="font-size:0.8rem;color:var(--muted);margin-top:0.75rem;">Loop continues until goal is reached or max steps exceeded</p>
+        </div></div>
+        <div class="topic-section"><h3>Key Agent Components</h3>
+        <table class="metric-table">
+          <thead><tr><th>Component</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td>Planner (LLM)</td><td>Reasons about which tool to use next given the goal and history</td></tr>
+            <tr><td>Tools</td><td>Python functions, APIs, databases, web browsers, code interpreters</td></tr>
+            <tr><td>Memory</td><td>Short-term (conversation), long-term (vector DB), episodic (past runs)</td></tr>
+            <tr><td>Executor</td><td>Runs the chosen tool and captures the output</td></tr>
+            <tr><td>Scratchpad</td><td>Stores intermediate reasoning and tool outputs</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — What is an Agent</h3>
+          <div class="quiz-q" data-correct="c"><p>1. What distinguishes an agent from a standard LLM call?</p>
+            <label class="quiz-option"><input type="radio" name="ag-q1" value="a"> Agents use a different model architecture</label>
+            <label class="quiz-option"><input type="radio" name="ag-q1" value="b"> Agents have a larger context window</label>
+            <label class="quiz-option"><input type="radio" name="ag-q1" value="c"> Agents can take actions with tools across multiple steps to reach a goal</label>
+            <label class="quiz-option"><input type="radio" name="ag-q1" value="d"> Agents don't use language models</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- LangGraph -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// langchain-learning-guide</div><h2>LangGraph</h2><p>Build stateful, multi-step agent workflows as directed graphs. LangGraph gives you control flow, branching, state management, and checkpointing — solving the reliability problems of simple chain-based agents.</p></div>
+        <div class="topic-section"><h3>Core Concepts</h3>
+        <table class="metric-table">
+          <thead><tr><th>Concept</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Node</td><td>A Python function that processes the graph state and returns updates</td></tr>
+            <tr><td>Edge</td><td>Connection between nodes — can be conditional or unconditional</td></tr>
+            <tr><td>State</td><td>Typed dictionary shared across all nodes in the graph</td></tr>
+            <tr><td>Conditional Edge</td><td>Routes to different nodes based on the current state value</td></tr>
+            <tr><td>Checkpointing</td><td>Save graph state so you can pause, resume, or rollback</td></tr>
+          </tbody>
+        </table></div>
+        <div class="topic-section"><h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>langgraph_agent.py</span></div>
+          <pre><code><span class="kw">from</span> langgraph.graph <span class="kw">import</span> StateGraph, END
+<span class="kw">from</span> typing <span class="kw">import</span> TypedDict
+
+<span class="kw">class</span> <span class="cl">AgentState</span>(<span class="cl">TypedDict</span>):
+    question: str
+    answer:   str
+    tool_output: str
+
+<span class="kw">def</span> <span class="fn">call_llm</span>(state):
+    <span class="cm"># call LLM with state["question"]</span>
+    <span class="kw">return</span> {<span class="st">"answer"</span>: llm.invoke(state[<span class="st">"question"</span>])}
+
+<span class="kw">def</span> <span class="fn">should_continue</span>(state):
+    <span class="kw">return</span> <span class="st">"tools"</span> <span class="kw">if</span> needs_tool(state) <span class="kw">else</span> <span class="st">"end"</span>
+
+graph = <span class="cl">StateGraph</span>(<span class="cl">AgentState</span>)
+graph.<span class="fn">add_node</span>(<span class="st">"llm"</span>, call_llm)
+graph.<span class="fn">add_conditional_edges</span>(<span class="st">"llm"</span>, should_continue, {
+    <span class="st">"tools"</span>: <span class="st">"tool_node"</span>, <span class="st">"end"</span>: END
+})
+app = graph.<span class="fn">compile</span>()</code></pre>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — LangGraph</h3>
+          <div class="quiz-q" data-correct="b"><p>1. Conditional edges in LangGraph allow:</p>
+            <label class="quiz-option"><input type="radio" name="lg-q1" value="a"> Running multiple nodes simultaneously</label>
+            <label class="quiz-option"><input type="radio" name="lg-q1" value="b"> Routing the graph to different next nodes based on the current state</label>
+            <label class="quiz-option"><input type="radio" name="lg-q1" value="c"> Sharing state between separate graphs</label>
+            <label class="quiz-option"><input type="radio" name="lg-q1" value="d"> Auto-generating nodes from prompts</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- CrewAI -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// crewai-course-materials</div><h2>CrewAI</h2><p>Build multi-agent systems where specialized agents collaborate on a shared mission. Each agent has a role, goal, backstory, and set of tools — like a team of people with different expertise.</p></div>
+        <div class="topic-section"><h3>CrewAI Components</h3>
+        <table class="metric-table">
+          <thead><tr><th>Component</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td>Agent</td><td>Has a role (e.g., "Researcher"), goal, backstory, and optional LLM override</td></tr>
+            <tr><td>Task</td><td>A specific piece of work with a description, expected output, and assigned agent</td></tr>
+            <tr><td>Crew</td><td>A group of agents and tasks with a defined process (sequential or hierarchical)</td></tr>
+            <tr><td>Tool</td><td>A Python function or external API the agent can call</td></tr>
+          </tbody>
+        </table></div>
+        <div class="topic-section"><h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>crew_agents.py</span></div>
+          <pre><code><span class="kw">from</span> crewai <span class="kw">import</span> Agent, Task, Crew
+
+researcher = <span class="cl">Agent</span>(
+    role=<span class="st">"Research Analyst"</span>,
+    goal=<span class="st">"Find the latest AI papers on RAG"</span>,
+    backstory=<span class="st">"Expert in LLM research and arxiv papers"</span>,
+    tools=[search_tool]
+)
+
+writer = <span class="cl">Agent</span>(
+    role=<span class="st">"Technical Writer"</span>,
+    goal=<span class="st">"Summarize findings into a clear report"</span>,
+    backstory=<span class="st">"Clear communicator for technical audiences"</span>
+)
+
+crew = <span class="cl">Crew</span>(agents=[researcher, writer], process=<span class="st">"sequential"</span>)
+result = crew.<span class="fn">kickoff</span>()</code></pre>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — CrewAI</h3>
+          <div class="quiz-q" data-correct="d"><p>1. In CrewAI, a "sequential" process means:</p>
+            <label class="quiz-option"><input type="radio" name="cr-q1" value="a"> All agents work on all tasks simultaneously</label>
+            <label class="quiz-option"><input type="radio" name="cr-q1" value="b"> Tasks are randomly assigned to agents</label>
+            <label class="quiz-option"><input type="radio" name="cr-q1" value="c"> Each agent runs independently without sharing output</label>
+            <label class="quiz-option"><input type="radio" name="cr-q1" value="d"> Tasks are executed in order, with each agent's output feeding the next</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- MCP -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// mcp-learning-guide</div><h2>Model Context Protocol (MCP)</h2><p>MCP is an open standard for connecting AI models to external tools and data sources. It defines a standard way for LLM applications to call tools, access resources, and receive prompts from MCP servers.</p></div>
+        <div class="topic-section"><h3>MCP Architecture</h3>
+        <table class="metric-table">
+          <thead><tr><th>Component</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td>MCP Host</td><td>The AI application (Claude Desktop, Claude Code, etc.)</td></tr>
+            <tr><td>MCP Client</td><td>Manages the connection between host and servers</td></tr>
+            <tr><td>MCP Server</td><td>Exposes tools, resources, and prompts to the host</td></tr>
+            <tr><td>Tools</td><td>Functions the LLM can invoke via MCP</td></tr>
+            <tr><td>Resources</td><td>Files, databases, APIs the LLM can read</td></tr>
+            <tr><td>Prompts</td><td>Reusable prompt templates exposed by the server</td></tr>
+          </tbody>
+        </table></div>
+        <div class="topic-section"><h3>Creating an MCP Server (Python SDK)</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>mcp_server.py</span></div>
+          <pre><code><span class="kw">from</span> mcp.server.fastmcp <span class="kw">import</span> FastMCP
+
+mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span>)
+
+@mcp.<span class="fn">tool</span>()
+<span class="kw">def</span> <span class="fn">search_docs</span>(query: str) -> str:
+    <span class="st">"""Search project documentation"""</span>
+    results = vector_db.<span class="fn">search</span>(query, top_k=<span class="num">3</span>)
+    <span class="kw">return</span> <span class="st">"\n"</span>.<span class="fn">join</span>(r.content <span class="kw">for</span> r <span class="kw">in</span> results)
+
+@mcp.<span class="fn">resource</span>(<span class="st">"docs://{filename}"</span>)
+<span class="kw">def</span> <span class="fn">get_doc</span>(filename: str) -> str:
+    <span class="kw">return</span> <span class="fn">open</span>(<span class="st">f"docs/{filename}"</span>).<span class="fn">read</span>()
+
+<span class="kw">if</span> __name__ == <span class="st">"__main__"</span>:
+    mcp.<span class="fn">run</span>()</code></pre>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — MCP</h3>
+          <div class="quiz-q" data-correct="b"><p>1. An MCP Server exposes:</p>
+            <label class="quiz-option"><input type="radio" name="mcp-q1" value="a"> The LLM model weights to external systems</label>
+            <label class="quiz-option"><input type="radio" name="mcp-q1" value="b"> Tools, resources, and prompts that AI hosts can use</label>
+            <label class="quiz-option"><input type="radio" name="mcp-q1" value="c"> A web interface for chatting with the model</label>
+            <label class="quiz-option"><input type="radio" name="mcp-q1" value="d"> Authentication tokens for API access</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- OpenAI Assistants -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// openai assistants api</div><h2>OpenAI Assistants API</h2><p>Build persistent AI assistants with managed threads, file search, code interpreter, and function calling — without managing conversation state yourself.</p></div>
+        <div class="topic-section"><h3>Key Objects</h3>
+        <table class="metric-table">
+          <thead><tr><th>Object</th><th>What it is</th></tr></thead>
+          <tbody>
+            <tr><td>Assistant</td><td>A configured AI with tools, instructions, and a model</td></tr>
+            <tr><td>Thread</td><td>A conversation session — stores message history automatically</td></tr>
+            <tr><td>Message</td><td>A single turn in the conversation (user or assistant)</td></tr>
+            <tr><td>Run</td><td>An invocation of the Assistant on a Thread</td></tr>
+            <tr><td>File Search</td><td>Built-in RAG over uploaded files</td></tr>
+            <tr><td>Code Interpreter</td><td>Executes Python code in a sandboxed environment</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — Assistants API</h3>
+          <div class="quiz-q" data-correct="c"><p>1. OpenAI Threads automatically:</p>
+            <label class="quiz-option"><input type="radio" name="oa-q1" value="a"> Delete after each conversation</label>
+            <label class="quiz-option"><input type="radio" name="oa-q1" value="b"> Generate embeddings for all messages</label>
+            <label class="quiz-option"><input type="radio" name="oa-q1" value="c"> Store and manage conversation history so you don't have to</label>
+            <label class="quiz-option"><input type="radio" name="oa-q1" value="d"> Split long messages into chunks</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- Multi-Agent -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// multi-agent patterns</div><h2>Multi-Agent Systems</h2><p>When a single agent isn't enough, multiple specialized agents collaborate — passing tasks between each other through defined handoff patterns.</p></div>
+        <div class="topic-section"><h3>Common Patterns</h3>
+        <table class="metric-table">
+          <thead><tr><th>Pattern</th><th>Description</th><th>Best for</th></tr></thead>
+          <tbody>
+            <tr><td>Sequential</td><td>Agent A → Agent B → Agent C (output feeds next)</td><td>Research → write → review pipelines</td></tr>
+            <tr><td>Supervisor</td><td>Manager agent routes tasks to specialist agents</td><td>Complex tasks with routing logic</td></tr>
+            <tr><td>Parallel</td><td>Multiple agents work on the same task independently</td><td>Ensemble / redundancy for critical tasks</td></tr>
+            <tr><td>Hierarchical</td><td>Supervisor agents manage sub-supervisor agents</td><td>Very large, deeply nested workflows</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — Multi-Agent</h3>
+          <div class="quiz-q" data-correct="b"><p>1. A Supervisor agent pattern is best when:</p>
+            <label class="quiz-option"><input type="radio" name="ma-q1" value="a"> All tasks are identical and can be parallelized</label>
+            <label class="quiz-option"><input type="radio" name="ma-q1" value="b"> You need intelligent routing of diverse tasks to specialized agents</label>
+            <label class="quiz-option"><input type="radio" name="ma-q1" value="c"> You want the simplest possible implementation</label>
+            <label class="quiz-option"><input type="radio" name="ma-q1" value="d"> Tasks must run strictly in sequence</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- Safety -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// evaluation &amp; safety</div><h2>Agent Evaluation &amp; Safety</h2><p>Agentic systems can fail in subtle ways — infinite loops, unexpected tool use, prompt injection. These patterns help you build reliable, safe agents.</p></div>
+        <div class="topic-section"><h3>Safety Patterns</h3>
+        <table class="metric-table">
+          <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+          <tbody>
+            <tr><td>Infinite loops</td><td>Set max_iterations, detect repeated states, add step counter</td></tr>
+            <tr><td>Prompt injection</td><td>Sanitize tool outputs before injecting into prompts</td></tr>
+            <tr><td>Tool misuse</td><td>Validate tool arguments, require human approval for destructive actions</td></tr>
+            <tr><td>Hallucinated tool calls</td><td>Strict JSON schema validation on tool call arguments</td></tr>
+            <tr><td>Cost runaway</td><td>Budget caps on tokens and tool executions per run</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — Safety</h3>
+          <div class="quiz-q" data-correct="c"><p>1. Prompt injection in agentic systems occurs when:</p>
+            <label class="quiz-option"><input type="radio" name="sf-q1" value="a"> The agent runs too many iterations</label>
+            <label class="quiz-option"><input type="radio" name="sf-q1" value="b"> The LLM generates incorrect JSON</label>
+            <label class="quiz-option"><input type="radio" name="sf-q1" value="c"> Malicious content in tool outputs manipulates the agent's instructions</label>
+            <label class="quiz-option"><input type="radio" name="sf-q1" value="d"> The model refuses to call tools</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+        <div class="completion-banner">
+          <div class="completion-icon">🎓</div>
+          <div class="completion-body"><h3>Agentic AI Course Complete!</h3><p>Claim your Agentic AI &amp; MCP completion certificate.</p></div>
+          <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('agentic','safety')">Claim Certificate →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students.</p></div>
+      <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/ml.html">Machine Learning</a></li><li><a href="/courses/genai.html">Generative AI</a></li><li><a href="/courses/mlops.html">MLOps</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

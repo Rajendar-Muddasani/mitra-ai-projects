@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Mitra AI Projects</title>
+  <meta name="description" content="Contact Mitra AI Projects — ask about a project kit, get course guidance, request a custom roadmap, or report an issue.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/how-it-works.html">How It Works</a></li>
+      <li><a href="/contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="hero hero-sm">
+  <div class="container hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Contact</span></div>
+    <div class="hero-eyebrow">get in touch</div>
+    <h1 class="hero-title">Contact Us</h1>
+    <p class="hero-sub">Ask which project fits your deadline, request course guidance, or tell us what you're building. We respond within 2 business days.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="gap:3rem;align-items:start;">
+
+      <!-- Form -->
+      <div>
+        <div class="contact-form">
+          <h3 style="margin-bottom:1.5rem;">Send a Message</h3>
+          <form class="contact-form-el">
+            <div class="form-group">
+              <label class="form-label" for="name">Your Name *</label>
+              <input class="form-control" type="text" id="name" name="name" placeholder="Arjun Sharma" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address *</label>
+              <input class="form-control" type="email" id="email" name="email" placeholder="arjun@college.edu" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="college">College / Company</label>
+              <input class="form-control" type="text" id="college" name="college" placeholder="VIT Vellore / TCS / Self-learner">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="interest">Interest Area *</label>
+              <select class="form-select" id="interest" name="interest" required>
+                <option value="" disabled selected>Select your interest</option>
+                <option value="project-01">Document Q&A Assistant (project-01)</option>
+                <option value="project-02">AI Resume Screener (project-02)</option>
+                <option value="project-03">Inventory Forecasting (project-03)</option>
+                <option value="project-other">Other project / custom need</option>
+                <option value="course-ml">Machine Learning course</option>
+                <option value="course-genai">Generative AI course</option>
+                <option value="course-other">Other course</option>
+                <option value="cheatsheets">Cheatsheets</option>
+                <option value="general">General question</option>
+                <option value="feedback">Feedback / bug report</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message *</label>
+              <textarea class="form-control" id="message" name="message" placeholder="Tell us what you're building, your deadline, your branch, and what specific help you need." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Send Message →</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Side info -->
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:1rem;">what to ask us</div>
+        <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;">
+          <div class="card" style="padding:1rem;">
+            <div style="font-size:1.1rem;margin-bottom:0.3rem;">📋 Which project fits my deadline?</div>
+            <p style="font-size:0.85rem;color:var(--muted);">Tell us your branch, submission month, and team size — we'll suggest the best-fit project kit.</p>
+          </div>
+          <div class="card" style="padding:1rem;">
+            <div style="font-size:1.1rem;margin-bottom:0.3rem;">📚 Which course should I start with?</div>
+            <p style="font-size:0.85rem;color:var(--muted);">Tell us your current Python level and what role you're targeting — we'll map you to the right learning track.</p>
+          </div>
+          <div class="card" style="padding:1rem;">
+            <div style="font-size:1.1rem;margin-bottom:0.3rem;">🗺 Can I get a custom roadmap?</div>
+            <p style="font-size:0.85rem;color:var(--muted);">For specific placement targets or viva topics, we can suggest a combined course + project path.</p>
+          </div>
+          <div class="card" style="padding:1rem;">
+            <div style="font-size:1.1rem;margin-bottom:0.3rem;">🐛 Bug or content issue?</div>
+            <p style="font-size:0.85rem;color:var(--muted);">Use the feedback option — we fix content errors quickly.</p>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">direct email</div>
+          <p style="font-size:0.875rem;"><strong>hello@mitraaiprojects.com</strong></p>
+          <p style="font-size:0.8rem;color:var(--muted);margin-top:0.25rem;">Response time: 2 business days. Telugu responses welcome.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students.</p></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="/courses/">Courses</a></li><li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li></ul></div>
+      <div class="footer-col"><h4>Help</h4><ul><li><a href="/how-it-works.html">How It Works</a></li><li><a href="/faq.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/about.html">About</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

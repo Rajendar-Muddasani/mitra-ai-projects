@@ -1,0 +1,79 @@
+project_id: project-01
+slug: document-qa-assistant
+title: Document Q&A Assistant
+lane: major-project-kit
+difficulty: intermediate
+audience:
+  - final-year students
+  - placement-focused learners
+  - BCA/B.Tech/MCA students
+language_launch: en
+translation_status:
+  te: planned
+status: featured
+duration_weeks: 6
+core_problem: Answer questions from uploaded documents using RAG
+demo_type: web-app
+
+tech_stack:
+  - Python 3.11
+  - FastAPI
+  - OpenAI API (gpt-4o-mini + text-embedding-3-small)
+  - ChromaDB
+  - LangChain (text splitters)
+  - Docker
+  - HTML/CSS/JS (frontend)
+
+deliverables:
+  - source code + README
+  - architecture diagram
+  - setup guide
+  - deployment guide (Render.com)
+  - report template (A4 Google Docs)
+  - PPT template (10 slides)
+  - viva questions (20+)
+  - testing checklist
+  - known limitations
+  - extension ideas
+
+milestones:
+  - week: 1
+    title: Project Setup & Document Parsing
+    output: Python script that prints all text chunks from a PDF
+  - week: 2
+    title: Embedding & Vector Storage
+    output: Persistent ChromaDB collection queryable by similarity
+  - week: 3
+    title: RAG Query Engine
+    output: query() function returning grounded answers with citations
+  - week: 4
+    title: FastAPI Backend
+    output: Running API with /upload, /query, /documents endpoints
+  - week: 5
+    title: Frontend Interface
+    output: Web page for document upload and Q&A
+  - week: 6
+    title: Deployment & Demo Polish
+    output: Live public URL on Render.com, README, demo video
+
+assets:
+  hero_image: https://mitra-ai-life-assets.s3.us-west-2.amazonaws.com/projects/project-01/hero/hero-16x9.jpg
+  poster_image: https://mitra-ai-life-assets.s3.us-west-2.amazonaws.com/projects/project-01/posters/overview-en-poster.jpg
+  overview_video: https://mitra-ai-life-assets.s3.us-west-2.amazonaws.com/projects/project-01/videos/overview-en.mp4
+  architecture_diagram: https://mitra-ai-life-assets.s3.us-west-2.amazonaws.com/projects/project-01/diagrams/architecture.png
+  social_share: https://mitra-ai-life-assets.s3.us-west-2.amazonaws.com/projects/project-01/og.jpg
+
+related_courses:
+  - genai
+  - programming
+
+seo:
+  title: Document Q&A Assistant — Final Year AI Project Kit | Mitra AI Projects
+  description: Build a document chatbot with RAG, FastAPI, OpenAI, and ChromaDB. Includes architecture diagram, 6-milestone plan, deployment guide, viva Q&A, report and PPT templates.
+  keywords:
+    - final year project AI
+    - document qa python
+    - RAG project for college
+    - FastAPI project B.Tech
+    - chatbot project MCA
+    - openai project engineering students

@@ -1,0 +1,103 @@
+course_id: programming
+title: Programming Foundation
+layout: standard-tabs
+status: live
+audience:
+  - complete beginners
+  - intermediate developers
+  - engineering students building data/ML skills
+
+tracks:
+  - slug: python-basics
+    title: Python Basics
+    audience: Complete beginners
+    cheatsheet: python-basics
+    topics:
+      - Variables and data types
+      - Control flow (if/for/while)
+      - Functions and modules
+      - File I/O
+      - Error handling (try/except)
+      - List comprehensions
+      - Dictionaries and sets
+
+  - slug: python-for-data
+    title: Python for Data
+    audience: Students and analysts
+    cheatsheet: python-for-data
+    topics:
+      - Pandas DataFrame operations
+      - NumPy arrays and vectorization
+      - Matplotlib and Seaborn plots
+      - Data cleaning and EDA
+      - GroupBy and aggregation
+      - Merging and joining DataFrames
+
+  - slug: shell-bash
+    title: Shell / Bash
+    audience: Developers and ML engineers
+    cheatsheet: shell-bash
+    topics:
+      - Navigation and file operations
+      - Grep, awk, sed
+      - Pipes and redirection
+      - Shell scripting (variables, loops)
+      - Cron jobs
+      - SSH and SCP
+
+  - slug: sql
+    title: SQL
+    audience: Everyone
+    cheatsheet: sql-quick-reference
+    topics:
+      - SELECT, WHERE, ORDER BY, LIMIT
+      - JOINs (INNER, LEFT, OUTER)
+      - GROUP BY and HAVING
+      - Window functions (RANK, ROW_NUMBER, LAG)
+      - CTEs and subqueries
+      - Indexing basics
+
+  - slug: excel-formulas
+    title: Excel Formulas
+    audience: Office users and analysts
+    cheatsheet: excel-formula-bible
+    topics:
+      - VLOOKUP and XLOOKUP
+      - INDEX+MATCH
+      - SUMIF, SUMIFS, COUNTIF
+      - IF and IFS
+      - TEXT and DATE functions
+      - Pivot tables
+
+  - slug: c-cpp
+    title: C / C++
+    audience: Engineering students
+    cheatsheet: c-cpp-memory
+    topics:
+      - Pointers and references
+      - Dynamic memory (malloc/calloc/free)
+      - Structs and unions
+      - Arrays and strings
+      - C++ STL containers
+      - OOP in C++ (classes, inheritance, virtual)
+
+  - slug: perl
+    title: Perl
+    audience: Legacy engineers and bioinformatics
+    topics:
+      - Regular expressions
+      - File processing (open/while/<fh>)
+      - Hashes and arrays
+      - References and complex data structures
+      - CPAN modules
+
+  - slug: javascript
+    title: JavaScript
+    audience: Web developers
+    topics:
+      - Variables (let/const/var)
+      - Array methods (map/filter/reduce)
+      - async/await and fetch API
+      - DOM manipulation
+      - Modules (import/export)
+      - Node.js basics and Express

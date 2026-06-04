@@ -1,0 +1,39 @@
+project_id: project-03
+slug: inventory-forecasting-dashboard
+title: Inventory Forecasting Dashboard
+lane: major-project-kit
+difficulty: intermediate
+audience:
+  - final-year B.Tech/BCA/MCA students
+  - data science track learners
+language_launch: en
+translation_status:
+  te: planned
+status: coming-soon
+duration_weeks: 5
+core_problem: Forecast inventory demand and present results in a live interactive dashboard
+
+tech_stack:
+  - Python 3.11
+  - Streamlit
+  - statsmodels (ARIMA/SARIMA)
+  - Prophet (Meta)
+  - Plotly
+  - Pandas
+
+deliverables:
+  - source code
+  - README
+  - setup guide
+  - deployment guide
+  - report template
+  - PPT template
+  - viva questions (focus on time series)
+  - sample retail dataset
+
+related_courses:
+  - ml
+
+seo:
+  title: Inventory Forecasting Dashboard — Final Year Project | Mitra AI Projects
+  description: Build a time series forecasting dashboard with ARIMA, Prophet, and Streamlit. Final-year project with report, PPT, and viva prep.

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programming Foundation — Mitra AI Projects</title>
+  <meta name="description" content="Practical programming foundation for engineers and data scientists. Python, SQL, Shell/Bash, Excel, C/C++, Perl, and JavaScript — with AI learning prompts, code examples, and quizzes.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/courses/" class="active">Courses</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/how-it-works.html">How It Works</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="hero hero-sm">
+  <div class="container hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/courses/">Courses</a><span class="breadcrumb-sep">›</span><span>Programming</span></div>
+    <div class="hero-eyebrow">programming foundation</div>
+    <h1 class="hero-title">Programming for <em>Engineers &amp; Data People</em></h1>
+    <p class="hero-sub">Eight practical programming tracks. Python, SQL, Shell, Excel, C/C++, Perl, JavaScript — with AI learning prompts, code examples, quizzes, and cheatsheets.</p>
+    <div class="hero-actions">
+      <a href="/cheatsheets.html" class="btn btn-primary">Get Cheatsheets</a>
+      <a href="/courses/" class="btn btn-outline">All Courses</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="tab-layout">
+      <div class="tab-nav" role="tablist">
+        <button class="tab-btn" role="tab" data-label="Python Basics">🐍 Python Basics</button>
+        <button class="tab-btn" role="tab" data-label="Python for Data">📊 Python for Data</button>
+        <button class="tab-btn" role="tab" data-label="Shell/Bash">🖥 Shell / Bash</button>
+        <button class="tab-btn" role="tab" data-label="SQL">🗄 SQL</button>
+        <button class="tab-btn" role="tab" data-label="Excel">📋 Excel Formulas</button>
+        <button class="tab-btn" role="tab" data-label="C/C++">⚡ C / C++</button>
+        <button class="tab-btn" role="tab" data-label="Perl">🔤 Perl</button>
+        <button class="tab-btn" role="tab" data-label="JavaScript">🌐 JavaScript</button>
+      </div>
+
+      <!-- ── Python Basics ── -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// track 01</div><h2>Python Basics</h2><p>Variables, data types, control flow, functions, and file I/O. The universal starting point for AI, data science, and automation.</p></div>
+
+        <div class="topic-section"><h3>What it is &amp; When to Use</h3>
+        <p>Python is the primary language for data science, ML, automation, and AI development. Its readable syntax and extensive library ecosystem make it the right starting point for almost every technical learner today.</p></div>
+
+        <div class="topic-section"><h3>Essential Patterns</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>python_basics.py</span></div>
+          <pre><code><span class="cm"># Variables and types</span>
+name = <span class="st">"Arjun"</span>
+score = <span class="num">87.5</span>
+passed = score >= <span class="num">60</span>
+
+<span class="cm"># List comprehension</span>
+squares = [x**<span class="num">2</span> <span class="kw">for</span> x <span class="kw">in</span> range(<span class="num">10</span>)]
+
+<span class="cm"># Function with default arg</span>
+<span class="kw">def</span> <span class="fn">greet</span>(name, prefix=<span class="st">"Hello"</span>):
+    <span class="kw">return</span> <span class="st">f"{prefix}, {name}!"</span>
+
+<span class="cm"># File I/O</span>
+<span class="kw">with</span> <span class="fn">open</span>(<span class="st">"data.txt"</span>, <span class="st">"r"</span>) <span class="kw">as</span> f:
+    lines = f.readlines()
+
+<span class="cm"># Error handling</span>
+<span class="kw">try</span>:
+    result = <span class="fn">int</span>(<span class="st">"abc"</span>)
+<span class="kw">except</span> <span class="cl">ValueError</span> <span class="kw">as</span> e:
+    <span class="fn">print</span>(<span class="st">f"Error: {e}"</span>)
+
+<span class="cm"># Dictionary operations</span>
+student = {<span class="st">"name"</span>: <span class="st">"Priya"</span>, <span class="st">"cgpa"</span>: <span class="num">8.4</span>}
+student[<span class="st">"branch"</span>] = <span class="st">"CSE"</span>
+keys = list(student.keys())</code></pre>
+        </div></div>
+
+        <div class="topic-section"><h3>10 AI Learning Prompts</h3>
+        <div class="ai-prompts"><h4>// Copy into ChatGPT or Claude to learn faster</h4>
+        <ol>
+          <li>"Explain Python list comprehensions with 5 real examples."</li>
+          <li>"What's the difference between a list and a tuple in Python?"</li>
+          <li>"Show me Python file I/O patterns for reading CSV, JSON, and text files."</li>
+          <li>"What are Python decorators and when should I use them?"</li>
+          <li>"Explain Python generators vs. regular functions with memory usage examples."</li>
+          <li>"What's the difference between *args and **kwargs? Show examples."</li>
+          <li>"How does Python's GIL affect multi-threading?"</li>
+          <li>"Show me how to use Python dataclasses with validation."</li>
+          <li>"What are common Python anti-patterns I should avoid?"</li>
+          <li>"How do I write Python unit tests with pytest for a simple function?"</li>
+        </ol></div></div>
+
+        <div class="quiz-block"><h3>// QUIZ — Python Basics</h3>
+          <div class="quiz-q" data-correct="b"><p>1. What does <code>range(2, 10, 3)</code> produce?</p>
+            <label class="quiz-option"><input type="radio" name="py-q1" value="a"> [2, 5, 8, 11]</label>
+            <label class="quiz-option"><input type="radio" name="py-q1" value="b"> [2, 5, 8]</label>
+            <label class="quiz-option"><input type="radio" name="py-q1" value="c"> [2, 3, 4, 5, 6, 7, 8, 9]</label>
+            <label class="quiz-option"><input type="radio" name="py-q1" value="d"> [2, 10, 3]</label>
+          </div>
+          <div class="quiz-q" data-correct="c"><p>2. What is the output of <code>[x*2 for x in range(3)]</code>?</p>
+            <label class="quiz-option"><input type="radio" name="py-q2" value="a"> [1, 2, 3]</label>
+            <label class="quiz-option"><input type="radio" name="py-q2" value="b"> [0, 2, 4, 6]</label>
+            <label class="quiz-option"><input type="radio" name="py-q2" value="c"> [0, 2, 4]</label>
+            <label class="quiz-option"><input type="radio" name="py-q2" value="d"> [2, 4, 6]</label>
+          </div>
+          <div class="quiz-q" data-correct="a"><p>3. Which is used for context management (auto closing files)?</p>
+            <label class="quiz-option"><input type="radio" name="py-q3" value="a"> with statement</label>
+            <label class="quiz-option"><input type="radio" name="py-q3" value="b"> try/finally</label>
+            <label class="quiz-option"><input type="radio" name="py-q3" value="c"> open().close()</label>
+            <label class="quiz-option"><input type="radio" name="py-q3" value="d"> file.flush()</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;display:flex;gap:1rem;">
+          <a href="/cheatsheets.html" class="btn btn-outline btn-sm" data-track="cheatsheet" data-name="python-basics">📄 Python Basics Cheatsheet</a>
+          <button class="btn btn-ghost btn-sm claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('programming','python-basics')">Mark Complete ✓</button>
+        </div>
+      </div>
+
+      <!-- ── Python for Data ── -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// track 02</div><h2>Python for Data</h2><p>Pandas, NumPy, and Matplotlib — the core data manipulation and visualization stack every ML engineer uses daily.</p></div>
+
+        <div class="topic-section"><h3>Essential Operations</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>data_operations.py</span></div>
+          <pre><code><span class="kw">import</span> pandas <span class="kw">as</span> pd
+<span class="kw">import</span> numpy <span class="kw">as</span> np
+<span class="kw">import</span> matplotlib.pyplot <span class="kw">as</span> plt
+
+<span class="cm"># Load and inspect</span>
+df = pd.read_csv(<span class="st">"students.csv"</span>)
+<span class="fn">print</span>(df.shape, df.dtypes, df.head())
+
+<span class="cm"># Filter, group, aggregate</span>
+top = df[df[<span class="st">"cgpa"</span>] > <span class="num">8.0</span>]
+avg_by_branch = df.groupby(<span class="st">"branch"</span>)[<span class="st">"cgpa"</span>].mean()
+
+<span class="cm"># Handle missing values</span>
+df[<span class="st">"salary"</span>].fillna(df[<span class="st">"salary"</span>].median(), inplace=<span class="kw">True</span>)
+df.dropna(subset=[<span class="st">"name"</span>], inplace=<span class="kw">True</span>)
+
+<span class="cm"># NumPy operations</span>
+X = np.array([[<span class="num">1</span>, <span class="num">2</span>], [<span class="num">3</span>, <span class="num">4</span>]])
+mean = X.mean(axis=<span class="num">0</span>)   <span class="cm"># column means</span>
+norm = (X - mean) / X.std(axis=<span class="num">0</span>)
+
+<span class="cm"># Plot</span>
+df[<span class="st">"cgpa"</span>].hist(bins=<span class="num">20</span>, color=<span class="st">"#00d4aa"</span>)
+plt.title(<span class="st">"CGPA Distribution"</span>)
+plt.savefig(<span class="st">"cgpa.png"</span>, dpi=<span class="num">150</span>)</code></pre>
+        </div></div>
+
+        <div class="topic-section"><h3>10 AI Learning Prompts</h3>
+        <div class="ai-prompts"><h4>// Copy into ChatGPT or Claude</h4>
+        <ol>
+          <li>"Show me the top 10 Pandas operations I need for EDA."</li>
+          <li>"How do I handle missing values in a DataFrame — compare fillna, dropna, and interpolate."</li>
+          <li>"Explain the difference between apply, map, and applymap in Pandas."</li>
+          <li>"How do I merge and join DataFrames? Show inner, left, outer joins."</li>
+          <li>"What is vectorization in NumPy and why is it faster than Python loops?"</li>
+          <li>"How do I create a multi-panel figure in Matplotlib with subplots?"</li>
+          <li>"Show me how to use Seaborn for correlation heatmaps and distribution plots."</li>
+          <li>"How do I profile Pandas performance on a 1M row DataFrame?"</li>
+          <li>"Explain Pandas groupby with multiple aggregation functions."</li>
+          <li>"What's the best way to read and write Parquet files in Python?"</li>
+        </ol></div></div>
+
+        <div class="quiz-block"><h3>// QUIZ — Python for Data</h3>
+          <div class="quiz-q" data-correct="b"><p>1. <code>df.groupby("branch")["cgpa"].mean()</code> returns:</p>
+            <label class="quiz-option"><input type="radio" name="pd-q1" value="a"> A single mean value</label>
+            <label class="quiz-option"><input type="radio" name="pd-q1" value="b"> Mean CGPA per branch</label>
+            <label class="quiz-option"><input type="radio" name="pd-q1" value="c"> All rows grouped by branch</label>
+            <label class="quiz-option"><input type="radio" name="pd-q1" value="d"> A boolean mask</label>
+          </div>
+          <div class="quiz-q" data-correct="a"><p>2. <code>np.array.mean(axis=0)</code> computes means along:</p>
+            <label class="quiz-option"><input type="radio" name="pd-q2" value="a"> Each column</label>
+            <label class="quiz-option"><input type="radio" name="pd-q2" value="b"> Each row</label>
+            <label class="quiz-option"><input type="radio" name="pd-q2" value="c"> The entire array</label>
+            <label class="quiz-option"><input type="radio" name="pd-q2" value="d"> The diagonal</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+        <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="python-for-data">📄 Python for Data Cheatsheet</a>
+      </div>
+
+      <!-- ── Shell / Bash ── -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// track 03</div><h2>Shell / Bash</h2><p>Command-line power for developers, data engineers, and ML engineers. Navigate files, automate tasks, write scripts, and chain tools with pipes.</p></div>
+
+        <div class="topic-section"><h3>Essential Commands</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>shell_essentials.sh</span></div>
+          <pre><code><span class="cm"># Navigation and files</span>
+ls -la           <span class="cm"># list with details</span>
+cd ~/projects    <span class="cm"># change directory</span>
+find . -name <span class="st">"*.py"</span> -mtime -7   <span class="cm"># files modified last 7d</span>
+grep -r <span class="st">"TODO"</span> src/              <span class="cm"># search in files</span>
+
+<span class="cm"># Text processing</span>
+cat data.csv | head -20
+sort file.txt | uniq -c | sort -rn
+awk -F, <span class="st">'{print $1, $3}'</span> data.csv
+
+<span class="cm"># Variables and loops</span>
+<span class="kw">for</span> f <span class="kw">in</span> *.csv; <span class="kw">do</span>
+    echo <span class="st">"Processing $f"</span>
+    python process.py <span class="st">"$f"</span>
+<span class="kw">done</span>
+
+<span class="cm"># Environment and processes</span>
+export API_KEY=<span class="st">"abc123"</span>
+ps aux | grep python
+kill -9 <span class="num">12345</span>
+
+<span class="cm"># Cron job (run script daily at 9am)</span>
+<span class="cm"># 0 9 * * * /path/to/run.sh >> /var/log/run.log 2>&1</span></code></pre>
+        </div></div>
+
+        <div class="topic-section"><h3>10 AI Learning Prompts</h3>
+        <div class="ai-prompts"><h4>// Copy into ChatGPT or Claude</h4>
+        <ol>
+          <li>"Explain pipes and redirects in Bash with 5 practical examples."</li>
+          <li>"How do I write a Bash script that processes all CSV files in a directory?"</li>
+          <li>"What does set -euo pipefail do and why should I use it?"</li>
+          <li>"Show me how to parse command-line arguments in a Bash script."</li>
+          <li>"How do I use grep, awk, and sed together to transform log files?"</li>
+          <li>"What's the difference between single quotes and double quotes in Bash?"</li>
+          <li>"How do I schedule a Python script to run every hour with cron?"</li>
+          <li>"Explain SSH key setup and how to scp files to a remote server."</li>
+          <li>"How do I create a .env file and source it safely in a Bash script?"</li>
+          <li>"Show me how to use tmux for running long ML training jobs."</li>
+        </ol></div></div>
+
+        <div class="quiz-block"><h3>// QUIZ — Shell / Bash</h3>
+          <div class="quiz-q" data-correct="c"><p>1. What does <code>grep -r "import" src/</code> do?</p>
+            <label class="quiz-option"><input type="radio" name="sh-q1" value="a"> Finds files named "import"</label>
+            <label class="quiz-option"><input type="radio" name="sh-q1" value="b"> Lists all src/ files</label>
+            <label class="quiz-option"><input type="radio" name="sh-q1" value="c"> Searches for "import" in all files under src/ recursively</label>
+            <label class="quiz-option"><input type="radio" name="sh-q1" value="d"> Removes the word "import" from files</label>
+          </div>
+          <div class="quiz-q" data-correct="b"><p>2. The pipe character <code>|</code> in Bash:</p>
+            <label class="quiz-option"><input type="radio" name="sh-q2" value="a"> Runs two commands in parallel</label>
+            <label class="quiz-option"><input type="radio" name="sh-q2" value="b"> Passes the output of one command as input to the next</label>
+            <label class="quiz-option"><input type="radio" name="sh-q2" value="c"> Appends output to a file</label>
+            <label class="quiz-option"><input type="radio" name="sh-q2" value="d"> Redirects stderr to stdout</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+        <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="shell-bash">📄 Shell/Bash Cheatsheet</a>
+      </div>
+
+      <!-- ── SQL ── -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// track 04</div><h2>SQL</h2><p>The universal language of data. Every analyst, data scientist, and backend developer needs solid SQL — especially for placement interviews.</p></div>
+
+        <div class="topic-section"><h3>Essential Patterns</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>sql_patterns.sql</span></div>
+          <pre><code><span class="cm">-- Basic SELECT</span>
+<span class="kw">SELECT</span> name, cgpa, branch
+<span class="kw">FROM</span> students
+<span class="kw">WHERE</span> cgpa > <span class="num">8.0</span> <span class="kw">AND</span> branch = <span class="st">'CSE'</span>
+<span class="kw">ORDER BY</span> cgpa <span class="kw">DESC</span>
+<span class="kw">LIMIT</span> <span class="num">10</span>;
+
+<span class="cm">-- JOIN</span>
+<span class="kw">SELECT</span> s.name, p.company, p.salary
+<span class="kw">FROM</span> students s
+<span class="kw">INNER JOIN</span> placements p <span class="kw">ON</span> s.id = p.student_id;
+
+<span class="cm">-- GROUP BY with aggregates</span>
+<span class="kw">SELECT</span> branch,
+       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> total,
+       <span class="fn">AVG</span>(cgpa) <span class="kw">AS</span> avg_cgpa,
+       <span class="fn">MAX</span>(salary) <span class="kw">AS</span> top_salary
+<span class="kw">FROM</span> students s
+<span class="kw">JOIN</span> placements p <span class="kw">ON</span> s.id = p.student_id
+<span class="kw">GROUP BY</span> branch
+<span class="kw">HAVING</span> <span class="fn">COUNT</span>(*) > <span class="num">5</span>;
+
+<span class="cm">-- Window function</span>
+<span class="kw">SELECT</span> name, salary,
+       <span class="fn">RANK</span>() <span class="kw">OVER</span> (<span class="kw">PARTITION BY</span> branch <span class="kw">ORDER BY</span> salary <span class="kw">DESC</span>) <span class="kw">AS</span> rank_in_branch
+<span class="kw">FROM</span> students;</code></pre>
+        </div></div>
+
+        <div class="topic-section"><h3>10 AI Learning Prompts</h3>
+        <div class="ai-prompts"><h4>// Copy into ChatGPT or Claude</h4>
+        <ol>
+          <li>"Explain the difference between WHERE and HAVING in SQL."</li>
+          <li>"Show me 10 common SQL interview questions for data roles."</li>
+          <li>"What is the difference between INNER JOIN, LEFT JOIN, and FULL OUTER JOIN?"</li>
+          <li>"How do window functions like ROW_NUMBER, RANK, and LAG work?"</li>
+          <li>"How do I write a SQL query to find the second highest salary?"</li>
+          <li>"Explain CTEs (Common Table Expressions) with a real example."</li>
+          <li>"What are subqueries vs. CTEs — when do I use each?"</li>
+          <li>"How do I optimize a slow SQL query? What are indexes?"</li>
+          <li>"Show me how to pivot rows to columns in SQL."</li>
+          <li>"What's the difference between UNION and UNION ALL?"</li>
+        </ol></div></div>
+
+        <div class="quiz-block"><h3>// QUIZ — SQL</h3>
+          <div class="quiz-q" data-correct="c"><p>1. Which clause filters results AFTER grouping?</p>
+            <label class="quiz-option"><input type="radio" name="sq-q1" value="a"> WHERE</label>
+            <label class="quiz-option"><input type="radio" name="sq-q1" value="b"> ORDER BY</label>
+            <label class="quiz-option"><input type="radio" name="sq-q1" value="c"> HAVING</label>
+            <label class="quiz-option"><input type="radio" name="sq-q1" value="d"> FILTER</label>
+          </div>
+          <div class="quiz-q" data-correct="a"><p>2. LEFT JOIN returns:</p>
+            <label class="quiz-option"><input type="radio" name="sq-q2" value="a"> All rows from the left table, matching rows from right (nulls for non-matches)</label>
+            <label class="quiz-option"><input type="radio" name="sq-q2" value="b"> Only matching rows from both tables</label>
+            <label class="quiz-option"><input type="radio" name="sq-q2" value="c"> All rows from both tables</label>
+            <label class="quiz-option"><input type="radio" name="sq-q2" value="d"> All rows from the right table only</label>
+          </div>
+          <div class="quiz-q" data-correct="d"><p>3. RANK() vs ROW_NUMBER(): the key difference is:</p>
+            <label class="quiz-option"><input type="radio" name="sq-q3" value="a"> RANK is faster</label>
+            <label class="quiz-option"><input type="radio" name="sq-q3" value="b"> ROW_NUMBER assigns letters</label>
+            <label class="quiz-option"><input type="radio" name="sq-q3" value="c"> Both are identical</label>
+            <label class="quiz-option"><input type="radio" name="sq-q3" value="d"> RANK leaves gaps for ties; ROW_NUMBER doesn't</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+        <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="sql-quick-reference">📄 SQL Cheatsheet</a>
+      </div>
+
+      <!-- ── Excel Formulas ── -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// track 05</div><h2>Excel Formulas</h2><p>High-value Excel and Google Sheets formulas for analysis, reporting, and data prep. Still the #1 tool in most Indian offices.</p></div>
+
+        <div class="topic-section"><h3>High-Value Formulas</h3>
+        <table class="metric-table">
+          <thead><tr><th>Formula</th><th>What it does</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td>VLOOKUP</td><td>Lookup value in first column, return from another</td><td>=VLOOKUP(A2, Sheet2!A:C, 3, FALSE)</td></tr>
+            <tr><td>XLOOKUP</td><td>Modern replacement for VLOOKUP, searches any direction</td><td>=XLOOKUP(A2, D:D, E:E)</td></tr>
+            <tr><td>INDEX+MATCH</td><td>Flexible lookup, works with any column order</td><td>=INDEX(C:C, MATCH(A2, B:B, 0))</td></tr>
+            <tr><td>SUMIF / SUMIFS</td><td>Sum with single/multiple conditions</td><td>=SUMIFS(D:D, B:B, "CSE", C:C, ">8")</td></tr>
+            <tr><td>COUNTIF</td><td>Count rows matching a condition</td><td>=COUNTIF(B:B, "Placed")</td></tr>
+            <tr><td>IF / IFS</td><td>Conditional logic</td><td>=IF(C2>=8, "Merit", "Normal")</td></tr>
+            <tr><td>TEXT</td><td>Format numbers as text</td><td>=TEXT(A2, "DD-MMM-YYYY")</td></tr>
+            <tr><td>PIVOT TABLE</td><td>Summarize large datasets interactively</td><td>Insert → PivotTable</td></tr>
+          </tbody>
+        </table></div>
+
+        <div class="topic-section"><h3>10 AI Learning Prompts</h3>
+        <div class="ai-prompts"><h4>// Copy into ChatGPT or Claude</h4>
+        <ol>
+          <li>"Show me how XLOOKUP differs from VLOOKUP with examples."</li>
+          <li>"How do I use INDEX+MATCH to look up values in any direction?"</li>
+          <li>"Explain SUMIFS with multiple criteria on date ranges."</li>
+          <li>"How do I build a dynamic pivot table that auto-updates?"</li>
+          <li>"What's the best formula to remove duplicates and extract unique values?"</li>
+          <li>"How do I use conditional formatting to highlight rows based on cell values?"</li>
+          <li>"Show me how to build a simple dashboard in Excel with charts and slicers."</li>
+          <li>"How do I use TEXTJOIN and CONCAT to merge text from multiple cells?"</li>
+          <li>"What is POWER QUERY and when should I use it over formulas?"</li>
+          <li>"How do I write a macro to automate repetitive Excel tasks?"</li>
+        </ol></div></div>
+
+        <div class="quiz-block"><h3>// QUIZ — Excel</h3>
+          <div class="quiz-q" data-correct="b"><p>1. VLOOKUP's third argument specifies:</p>
+            <label class="quiz-option"><input type="radio" name="xl-q1" value="a"> The lookup value</label>
+            <label class="quiz-option"><input type="radio" name="xl-q1" value="b"> Which column number to return from the range</label>
+            <label class="quiz-option"><input type="radio" name="xl-q1" value="c"> Whether the match is exact</label>
+            <label class="quiz-option"><input type="radio" name="xl-q1" value="d"> The range to search in</label>
+          </div>
+          <div class="quiz-q" data-correct="d"><p>2. SUMIFS differs from SUMIF by:</p>
+            <label class="quiz-option"><input type="radio" name="xl-q2" value="a"> Being faster</label>
+            <label class="quiz-option"><input type="radio" name="xl-q2" value="b"> Working with text only</label>
+            <label class="quiz-option"><input type="radio" name="xl-q2" value="c"> Using * wildcards</label>
+            <label class="quiz-option"><input type="radio" name="xl-q2" value="d"> Supporting multiple condition ranges</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+        <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="excel-formula-bible">📄 Excel Formula Cheatsheet</a>
+      </div>
+
+      <!-- ── C / C++ ── -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// track 06</div><h2>C / C++</h2><p>Pointers, memory management, structs, and core systems programming. Required for many engineering viva exams and embedded/systems roles.</p></div>
+
+        <div class="topic-section"><h3>Essential Patterns</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>c_essentials.c</span></div>
+          <pre><code><span class="cm">// Pointers</span>
+<span class="cl">int</span> x = <span class="num">42</span>;
+<span class="cl">int</span>* ptr = &x;
+<span class="fn">printf</span>(<span class="st">"%d\n"</span>, *ptr);  <span class="cm">// dereference: 42</span>
+*ptr = <span class="num">100</span>;              <span class="cm">// x is now 100</span>
+
+<span class="cm">// Dynamic memory</span>
+<span class="cl">int</span>* arr = (<span class="cl">int</span>*) <span class="fn">malloc</span>(<span class="num">5</span> * <span class="kw">sizeof</span>(<span class="cl">int</span>));
+<span class="kw">if</span> (!arr) { <span class="fn">perror</span>(<span class="st">"malloc failed"</span>); <span class="kw">return</span> <span class="num">1</span>; }
+arr[<span class="num">0</span>] = <span class="num">10</span>;
+<span class="fn">free</span>(arr);   <span class="cm">// always free</span>
+
+<span class="cm">// Struct</span>
+<span class="kw">typedef struct</span> {
+    <span class="cl">char</span> name[<span class="num">50</span>];
+    <span class="cl">float</span> cgpa;
+} <span class="cl">Student</span>;
+
+<span class="cl">Student</span> s = {<span class="st">"Arjun"</span>, <span class="num">8.7</span>};
+<span class="fn">printf</span>(<span class="st">"%s: %.1f\n"</span>, s.name, s.cgpa);</code></pre>
+        </div></div>
+
+        <div class="topic-section"><h3>10 AI Learning Prompts</h3>
+        <div class="ai-prompts"><h4>// Copy into ChatGPT or Claude</h4>
+        <ol>
+          <li>"Explain the difference between stack and heap memory allocation in C."</li>
+          <li>"What is a dangling pointer and how do I avoid it?"</li>
+          <li>"Show me how to implement a linked list in C with insert and delete."</li>
+          <li>"What is the difference between struct and union in C?"</li>
+          <li>"How does pass-by-reference work in C++ vs. pass-by-pointer?"</li>
+          <li>"Explain malloc, calloc, realloc — when to use each."</li>
+          <li>"What are common memory leak patterns in C and how to detect them?"</li>
+          <li>"Explain virtual functions and polymorphism in C++."</li>
+          <li>"Show me how to use C++ STL vector, map, and set."</li>
+          <li>"What is RAII and how does it prevent resource leaks in C++?"</li>
+        </ol></div></div>
+
+        <div class="quiz-block"><h3>// QUIZ — C/C++</h3>
+          <div class="quiz-q" data-correct="c"><p>1. In C, what does <code>*ptr</code> do when ptr is a pointer to int?</p>
+            <label class="quiz-option"><input type="radio" name="cc-q1" value="a"> Returns the pointer address</label>
+            <label class="quiz-option"><input type="radio" name="cc-q1" value="b"> Allocates memory</label>
+            <label class="quiz-option"><input type="radio" name="cc-q1" value="c"> Dereferences the pointer to access the int value</label>
+            <label class="quiz-option"><input type="radio" name="cc-q1" value="d"> Frees the memory</label>
+          </div>
+          <div class="quiz-q" data-correct="b"><p>2. After calling malloc(), you must:</p>
+            <label class="quiz-option"><input type="radio" name="cc-q2" value="a"> Call realloc() immediately</label>
+            <label class="quiz-option"><input type="radio" name="cc-q2" value="b"> Check if the returned pointer is NULL, and free() when done</label>
+            <label class="quiz-option"><input type="radio" name="cc-q2" value="c"> Initialize all bytes to zero manually</label>
+            <label class="quiz-option"><input type="radio" name="cc-q2" value="d"> Use calloc() instead</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+        <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="c-cpp-memory">📄 C/C++ Memory Cheatsheet</a>
+      </div>
+
+      <!-- ── Perl ── -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// track 07</div><h2>Perl</h2><p>Regular expressions, file processing, and text transformation. Still used in bioinformatics, legacy enterprise systems, and ops scripting.</p></div>
+
+        <div class="topic-section"><h3>Essential Patterns</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>perl_basics.pl</span></div>
+          <pre><code><span class="cm">#!/usr/bin/perl</span>
+<span class="kw">use strict</span>; <span class="kw">use warnings</span>;
+
+<span class="cm"># Regex match and substitution</span>
+<span class="kw">my</span> $line = <span class="st">"Score: 87.5"</span>;
+<span class="kw">if</span> ($line =~ /Score:\s+(\d+\.\d+)/) {
+    <span class="fn">print</span> <span class="st">"Found: $1\n"</span>;
+}
+(my $clean = $line) =~ s/\d+\.\d+/<span class="st">"XX"</span>/;
+
+<span class="cm"># File processing</span>
+<span class="kw">open</span>(my $fh, <span class="st">'<'</span>, <span class="st">'data.txt'</span>) <span class="kw">or die</span> $!;
+<span class="kw">while</span> (my $l = <$fh>) {
+    chomp $l;
+    <span class="fn">print</span> <span class="st">"$l\n"</span> <span class="kw">if</span> $l =~ /error/i;
+}
+<span class="kw">close</span>($fh);</code></pre>
+        </div></div>
+
+        <div class="topic-section"><h3>10 AI Learning Prompts</h3>
+        <div class="ai-prompts"><h4>// Copy into ChatGPT or Claude</h4>
+        <ol>
+          <li>"Show me Perl regex patterns for extracting emails, IPs, and dates."</li>
+          <li>"How do I process a large log file line by line in Perl?"</li>
+          <li>"What is the difference between chomp and chop in Perl?"</li>
+          <li>"How do I use Perl hashes and arrays for data aggregation?"</li>
+          <li>"Show me how to write a Perl one-liner to transform CSV columns."</li>
+          <li>"What are Perl references and how do they enable complex data structures?"</li>
+          <li>"When would you use Perl in 2026 instead of Python?"</li>
+          <li>"How do I install and use CPAN modules in Perl?"</li>
+          <li>"Show me a Perl script to batch rename files with regex."</li>
+          <li>"How does Perl's special variable $_ work?"</li>
+        </ol></div></div>
+
+        <div class="quiz-block"><h3>// QUIZ — Perl</h3>
+          <div class="quiz-q" data-correct="b"><p>1. In Perl, =~ is used for:</p>
+            <label class="quiz-option"><input type="radio" name="pl-q1" value="a"> Assignment</label>
+            <label class="quiz-option"><input type="radio" name="pl-q1" value="b"> Binding a regex to a string</label>
+            <label class="quiz-option"><input type="radio" name="pl-q1" value="c"> Numeric comparison</label>
+            <label class="quiz-option"><input type="radio" name="pl-q1" value="d"> String equality</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── JavaScript ── -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// track 08</div><h2>JavaScript</h2><p>DOM manipulation, fetch API, async/await, and Node.js basics. Essential for frontend development, APIs, and full-stack AI apps.</p></div>
+
+        <div class="topic-section"><h3>Essential Patterns</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>js_patterns.js</span></div>
+          <pre><code><span class="cm">// async/await with fetch</span>
+<span class="kw">async function</span> <span class="fn">getModels</span>() {
+  <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="st">'/api/models'</span>);
+  <span class="kw">if</span> (!res.ok) <span class="kw">throw new</span> <span class="cl">Error</span>(res.status);
+  <span class="kw">const</span> data = <span class="kw">await</span> res.<span class="fn">json</span>();
+  <span class="kw">return</span> data.models;
+}
+
+<span class="cm">// Array methods</span>
+<span class="kw">const</span> scores = [<span class="num">87</span>, <span class="num">92</span>, <span class="num">78</span>, <span class="num">65</span>];
+<span class="kw">const</span> passing = scores.<span class="fn">filter</span>(s => s >= <span class="num">70</span>);
+<span class="kw">const</span> avg = scores.<span class="fn">reduce</span>((a, b) => a + b, <span class="num">0</span>) / scores.length;
+
+<span class="cm">// DOM manipulation</span>
+document.<span class="fn">querySelector</span>(<span class="st">'.btn'</span>)
+        .<span class="fn">addEventListener</span>(<span class="st">'click'</span>, <span class="kw">async</span> () => {
+  <span class="kw">const</span> models = <span class="kw">await</span> <span class="fn">getModels</span>();
+  <span class="fn">renderList</span>(models);
+});
+
+<span class="cm">// Destructuring</span>
+<span class="kw">const</span> { name, score, ...rest } = student;
+<span class="kw">const</span> [first, ...others] = scores;</code></pre>
+        </div></div>
+
+        <div class="topic-section"><h3>10 AI Learning Prompts</h3>
+        <div class="ai-prompts"><h4>// Copy into ChatGPT or Claude</h4>
+        <ol>
+          <li>"Explain JavaScript Promises vs. async/await with error handling examples."</li>
+          <li>"What is the event loop in JavaScript and how does it handle async code?"</li>
+          <li>"Show me how to fetch data from an API and update the DOM without a framework."</li>
+          <li>"What's the difference between let, const, and var?"</li>
+          <li>"Explain closure in JavaScript with a practical example."</li>
+          <li>"How do I use localStorage and sessionStorage in the browser?"</li>
+          <li>"Show me how to build a simple Node.js Express REST API."</li>
+          <li>"What are JavaScript modules (import/export) vs. CommonJS (require)?"</li>
+          <li>"How does the Array.prototype.reduce method work? Show complex examples."</li>
+          <li>"What are Web Workers and when should I use them for heavy computation?"</li>
+        </ol></div></div>
+
+        <div class="quiz-block"><h3>// QUIZ — JavaScript</h3>
+          <div class="quiz-q" data-correct="c"><p>1. <code>await fetch(url)</code> requires the enclosing function to be:</p>
+            <label class="quiz-option"><input type="radio" name="js-q1" value="a"> A generator function</label>
+            <label class="quiz-option"><input type="radio" name="js-q1" value="b"> A regular function</label>
+            <label class="quiz-option"><input type="radio" name="js-q1" value="c"> An async function</label>
+            <label class="quiz-option"><input type="radio" name="js-q1" value="d"> A class method</label>
+          </div>
+          <div class="quiz-q" data-correct="b"><p>2. <code>const [a, ...rest] = [1,2,3,4]</code> — what is rest?</p>
+            <label class="quiz-option"><input type="radio" name="js-q2" value="a"> [1]</label>
+            <label class="quiz-option"><input type="radio" name="js-q2" value="b"> [2, 3, 4]</label>
+            <label class="quiz-option"><input type="radio" name="js-q2" value="c"> 4</label>
+            <label class="quiz-option"><input type="radio" name="js-q2" value="d"> [1, 2, 3]</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+
+        <div class="completion-banner">
+          <div class="completion-icon">🎓</div>
+          <div class="completion-body">
+            <h3>Programming Track Complete!</h3>
+            <p>Claim your Programming Foundation course completion certificate.</p>
+          </div>
+          <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('programming','javascript')">Claim Certificate →</button>
+        </div>
+      </div>
+
+    </div><!-- end .tab-layout -->
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div>
+        <p class="footer-tagline">Guided AI and ML project kits for engineering students.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="/courses/ml.html">Machine Learning</a></li>
+          <li><a href="/courses/dl.html">Deep Learning</a></li>
+          <li><a href="/courses/genai.html">Generative AI</a></li>
+          <li><a href="/courses/agentic.html">Agentic AI</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

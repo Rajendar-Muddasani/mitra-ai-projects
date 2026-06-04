@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Learning Course — Mitra AI Projects</title>
+  <meta name="description" content="Deep Learning course covering neural networks, CNNs, RNNs, LSTMs, autoencoders, GANs, transformers, multimodal models, transfer learning, and model compression.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/courses/" class="active">Courses</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/how-it-works.html">How It Works</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="hero hero-sm">
+  <div class="container hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/courses/">Courses</a><span class="breadcrumb-sep">›</span><span>Deep Learning</span></div>
+    <div class="hero-eyebrow">deep learning · ml practitioners</div>
+    <h1 class="hero-title">Deep Learning</h1>
+    <p class="hero-sub">Neural networks, CNNs, RNNs, LSTMs, autoencoders, GANs, transformers, multimodal models, transfer learning, and model compression — with source notebooks from AIML-Engineering-Lab.</p>
+    <div class="hero-actions">
+      <a href="/cheatsheets.html" class="btn btn-primary">Deep Learning Cheatsheet</a>
+      <a href="/courses/ml.html" class="btn btn-outline">← ML Course First</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="tab-layout">
+      <div class="tab-nav">
+        <button class="tab-btn" data-label="Neural Networks">🧠 Neural Nets</button>
+        <button class="tab-btn" data-label="CNNs">🖼 CNNs</button>
+        <button class="tab-btn" data-label="RNNs/LSTMs">🔄 RNNs / LSTMs</button>
+        <button class="tab-btn" data-label="Autoencoders & GANs">🎨 Autoencoders &amp; GANs</button>
+        <button class="tab-btn" data-label="Transformers">⚡ Transformers</button>
+        <button class="tab-btn" data-label="Multimodal">👁 Multimodal</button>
+        <button class="tab-btn" data-label="Transfer Learning">🔄 Transfer Learning</button>
+        <button class="tab-btn" data-label="Model Compression">📦 Compression</button>
+      </div>
+
+      <!-- Neural Networks -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// new content</div><h2>Neural Network Basics</h2><p>The foundational building block of all deep learning. Understand layers, activation functions, backpropagation, and gradient descent before moving to specialized architectures.</p></div>
+        <div class="topic-section"><h3>Core Concepts</h3>
+        <table class="metric-table">
+          <thead><tr><th>Concept</th><th>Plain-English Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Neuron / Node</td><td>Takes weighted inputs, applies activation, outputs a value</td></tr>
+            <tr><td>Layer</td><td>A group of neurons — input, hidden, or output layers</td></tr>
+            <tr><td>Activation Function</td><td>Adds non-linearity — ReLU, Sigmoid, Tanh, Softmax</td></tr>
+            <tr><td>Forward Pass</td><td>Data flows from input → layers → output prediction</td></tr>
+            <tr><td>Loss Function</td><td>Measures how wrong the prediction is (MSE, Cross-Entropy)</td></tr>
+            <tr><td>Backpropagation</td><td>Computes gradients of loss w.r.t. each weight</td></tr>
+            <tr><td>Gradient Descent</td><td>Updates weights in the direction that reduces loss</td></tr>
+            <tr><td>Batch Normalization</td><td>Normalizes layer inputs — stabilizes and speeds training</td></tr>
+          </tbody>
+        </table></div>
+
+        <div class="topic-section"><h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>neural_net.py</span></div>
+          <pre><code><span class="kw">import</span> torch
+<span class="kw">import</span> torch.nn <span class="kw">as</span> nn
+
+<span class="kw">class</span> <span class="cl">MLP</span>(nn.<span class="cl">Module</span>):
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, in_dim, hidden, out_dim):
+        <span class="fn">super</span>().__init__()
+        self.net = nn.<span class="cl">Sequential</span>(
+            nn.<span class="cl">Linear</span>(in_dim, hidden),
+            nn.<span class="cl">BatchNorm1d</span>(hidden),
+            nn.<span class="cl">ReLU</span>(),
+            nn.<span class="cl">Dropout</span>(<span class="num">0.3</span>),
+            nn.<span class="cl">Linear</span>(hidden, out_dim)
+        )
+    <span class="kw">def</span> <span class="fn">forward</span>(self, x):
+        <span class="kw">return</span> self.net(x)
+
+model = <span class="cl">MLP</span>(<span class="num">784</span>, <span class="num">256</span>, <span class="num">10</span>)
+optim = torch.optim.<span class="cl">Adam</span>(model.parameters(), lr=<span class="num">1e-3</span>)
+loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
+        </div></div>
+
+        <div class="watchout-box"><h4>⚠ Watch-outs</h4><ul>
+          <li>Vanishing gradients in deep networks — use ReLU not Sigmoid for hidden layers</li>
+          <li>Always normalize input features before feeding into a neural network</li>
+          <li>Dropout is only active during training — use model.eval() for inference</li>
+        </ul></div>
+
+        <div class="quiz-block"><h3>// QUIZ — Neural Networks</h3>
+          <div class="quiz-q" data-correct="b"><p>1. Backpropagation computes:</p>
+            <label class="quiz-option"><input type="radio" name="nn-q1" value="a"> The forward pass predictions</label>
+            <label class="quiz-option"><input type="radio" name="nn-q1" value="b"> Gradients of the loss with respect to each weight</label>
+            <label class="quiz-option"><input type="radio" name="nn-q1" value="c"> The batch normalization statistics</label>
+            <label class="quiz-option"><input type="radio" name="nn-q1" value="d"> The softmax output probabilities</label>
+          </div>
+          <div class="quiz-q" data-correct="c"><p>2. Batch Normalization helps by:</p>
+            <label class="quiz-option"><input type="radio" name="nn-q2" value="a"> Reducing the number of parameters</label>
+            <label class="quiz-option"><input type="radio" name="nn-q2" value="b"> Making the model smaller</label>
+            <label class="quiz-option"><input type="radio" name="nn-q2" value="c"> Stabilizing the distribution of layer inputs during training</label>
+            <label class="quiz-option"><input type="radio" name="nn-q2" value="d"> Removing the need for activation functions</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CNNs -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// 054 · wafer-defect-yolo</div><h2>Convolutional Neural Networks (CNNs)</h2><p>The dominant architecture for image classification, object detection, and visual inspection. CNNs learn spatial hierarchies of features through shared convolutional filters.</p></div>
+        <div class="topic-section"><h3>Core Components</h3>
+        <table class="metric-table">
+          <thead><tr><th>Layer</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td>Conv2D</td><td>Slides a filter over the image to detect local patterns (edges, textures)</td></tr>
+            <tr><td>MaxPool2D</td><td>Reduces spatial dimensions, provides translation invariance</td></tr>
+            <tr><td>BatchNorm</td><td>Normalizes feature maps for stable training</td></tr>
+            <tr><td>Flatten</td><td>Converts 2D feature map to 1D vector for FC layers</td></tr>
+            <tr><td>Dense / FC</td><td>Final classification or regression head</td></tr>
+          </tbody>
+        </table></div>
+        <div class="topic-section"><h3>Architectures Timeline</h3>
+        <div class="tags">
+          <span class="tag">LeNet (1998)</span><span class="tag">AlexNet (2012)</span><span class="tag">VGG (2014)</span><span class="tag">ResNet (2015)</span><span class="tag">EfficientNet (2019)</span><span class="tag">YOLO (detection)</span>
+        </div></div>
+        <div class="project-callout"><h4>💡 Vision Quality Inspection</h4>
+        <p>Build a CNN-based defect detection system for manufacturing images using YOLO. See project-06 on this platform for a full guided kit.</p></div>
+        <div class="quiz-block"><h3>// QUIZ — CNNs</h3>
+          <div class="quiz-q" data-correct="a"><p>1. MaxPooling primarily helps with:</p>
+            <label class="quiz-option"><input type="radio" name="cnn-q1" value="a"> Reducing spatial dimensions and providing translation invariance</label>
+            <label class="quiz-option"><input type="radio" name="cnn-q1" value="b"> Increasing the number of channels</label>
+            <label class="quiz-option"><input type="radio" name="cnn-q1" value="c"> Computing attention scores</label>
+            <label class="quiz-option"><input type="radio" name="cnn-q1" value="d"> Normalizing feature maps</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RNNs/LSTMs -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// 015 · time-series-deep-learning</div><h2>RNNs &amp; LSTMs</h2><p>Recurrent architectures for sequential data — text, time series, speech, and music. LSTMs solve the vanishing gradient problem of vanilla RNNs.</p></div>
+        <div class="topic-section"><h3>LSTM Gates</h3>
+        <table class="metric-table">
+          <thead><tr><th>Gate</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td>Forget Gate</td><td>Decides what information to discard from the cell state</td></tr>
+            <tr><td>Input Gate</td><td>Decides which new information to add to the cell state</td></tr>
+            <tr><td>Output Gate</td><td>Decides what part of the cell state to output as hidden state</td></tr>
+            <tr><td>Cell State</td><td>Long-term memory that flows through the sequence</td></tr>
+          </tbody>
+        </table></div>
+        <div class="topic-section"><h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>lstm.py</span></div>
+          <pre><code><span class="kw">class</span> <span class="cl">LSTMForecaster</span>(nn.<span class="cl">Module</span>):
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, input_size, hidden, layers, out):
+        <span class="fn">super</span>().__init__()
+        self.lstm = nn.<span class="cl">LSTM</span>(input_size, hidden, layers, batch_first=<span class="kw">True</span>)
+        self.fc   = nn.<span class="cl">Linear</span>(hidden, out)
+
+    <span class="kw">def</span> <span class="fn">forward</span>(self, x):
+        out, _ = self.lstm(x)
+        <span class="kw">return</span> self.fc(out[:, -<span class="num">1</span>, :])</code></pre>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — RNNs/LSTMs</h3>
+          <div class="quiz-q" data-correct="c"><p>1. LSTMs solve which problem of vanilla RNNs?</p>
+            <label class="quiz-option"><input type="radio" name="rnn-q1" value="a"> Slow training speed</label>
+            <label class="quiz-option"><input type="radio" name="rnn-q1" value="b"> High memory usage</label>
+            <label class="quiz-option"><input type="radio" name="rnn-q1" value="c"> Vanishing gradients over long sequences</label>
+            <label class="quiz-option"><input type="radio" name="rnn-q1" value="d"> Inability to handle variable-length inputs</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Autoencoders & GANs -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// 014 · autoencoders-and-gans</div><h2>Autoencoders &amp; GANs</h2><p>Generative and representation learning architectures. Autoencoders compress data into latent codes. GANs generate realistic new data through adversarial training.</p></div>
+        <div class="topic-section"><h3>Autoencoder Structure</h3>
+        <div class="arch-diagram">
+          <div class="arch-boxes">
+            <div class="arch-box">Input X</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Encoder</div><div class="arch-arrow">→</div>
+            <div class="arch-box" style="border-color:var(--accent);color:var(--accent);">Latent z</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Decoder</div><div class="arch-arrow">→</div>
+            <div class="arch-box">X̂ (reconstruction)</div>
+          </div>
+          <p style="font-size:0.8rem;color:var(--muted);margin-top:0.75rem;">Loss = ||X − X̂||² · Train to minimize reconstruction error</p>
+        </div></div>
+        <div class="topic-section"><h3>GAN Training</h3>
+        <p>Generator creates fake data. Discriminator tries to distinguish real from fake. They compete: Generator improves until Discriminator can't tell the difference. The Generator is trained to maximize the Discriminator's error.</p></div>
+        <div class="quiz-block"><h3>// QUIZ — Autoencoders &amp; GANs</h3>
+          <div class="quiz-q" data-correct="b"><p>1. In a GAN, the Generator is trained to:</p>
+            <label class="quiz-option"><input type="radio" name="gan-q1" value="a"> Classify real vs. fake data correctly</label>
+            <label class="quiz-option"><input type="radio" name="gan-q1" value="b"> Fool the Discriminator into classifying its output as real</label>
+            <label class="quiz-option"><input type="radio" name="gan-q1" value="c"> Minimize reconstruction error</label>
+            <label class="quiz-option"><input type="radio" name="gan-q1" value="d"> Encode data into a compact latent space</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transformers -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// 073 · dtfs-transformer-system</div><h2>Transformers</h2><p>The architecture behind GPT, BERT, ViT, and Whisper. Self-attention allows every position in a sequence to attend to every other position — enabling parallelism and long-range dependencies.</p></div>
+        <div class="topic-section"><h3>Self-Attention Intuition</h3>
+        <p>For each token, attention computes how much to "attend" to every other token. Mathematically: Attention(Q, K, V) = softmax(QKᵀ / √d_k) · V where Q = queries, K = keys, V = values. Multi-head attention runs this in parallel with different learned projections.</p></div>
+        <div class="topic-section"><h3>Architecture Components</h3>
+        <table class="metric-table">
+          <thead><tr><th>Component</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td>Multi-Head Attention</td><td>Attend to different positions with different representation subspaces</td></tr>
+            <tr><td>Feed-Forward Network</td><td>Per-position fully connected layer applied identically to each token</td></tr>
+            <tr><td>Layer Normalization</td><td>Stabilizes training across the sequence dimension</td></tr>
+            <tr><td>Positional Encoding</td><td>Injects position information (transformers have no recurrence)</td></tr>
+            <tr><td>Residual Connections</td><td>Skip connections help gradients flow in deep transformers</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — Transformers</h3>
+          <div class="quiz-q" data-correct="c"><p>1. Why do transformers need positional encoding?</p>
+            <label class="quiz-option"><input type="radio" name="tr2-q1" value="a"> To reduce training time</label>
+            <label class="quiz-option"><input type="radio" name="tr2-q1" value="b"> To handle multi-head attention</label>
+            <label class="quiz-option"><input type="radio" name="tr2-q1" value="c"> Because self-attention is permutation-invariant and has no notion of sequence order</label>
+            <label class="quiz-option"><input type="radio" name="tr2-q1" value="d"> To increase the model's parameter count</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Multimodal -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// 034 · multimodal-vision-language</div><h2>Multimodal Models (Vision + Language)</h2><p>Models that understand and generate across multiple data modalities — images, text, audio. CLIP, LLaVA, GPT-4V, Gemini are all multimodal.</p></div>
+        <div class="topic-section"><h3>Key Models</h3>
+        <table class="metric-table">
+          <thead><tr><th>Model</th><th>Capability</th><th>Use case</th></tr></thead>
+          <tbody>
+            <tr><td>CLIP (OpenAI)</td><td>Joint image-text embeddings</td><td>Image search, zero-shot classification</td></tr>
+            <tr><td>LLaVA</td><td>Visual instruction following</td><td>Image Q&amp;A, captioning</td></tr>
+            <tr><td>GPT-4V</td><td>Vision + language reasoning</td><td>Document parsing, chart analysis</td></tr>
+            <tr><td>Whisper</td><td>Speech-to-text</td><td>Audio transcription, translation</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — Multimodal</h3>
+          <div class="quiz-q" data-correct="b"><p>1. CLIP enables zero-shot image classification by:</p>
+            <label class="quiz-option"><input type="radio" name="mm-q1" value="a"> Fine-tuning on each new dataset</label>
+            <label class="quiz-option"><input type="radio" name="mm-q1" value="b"> Comparing image embeddings to text embeddings of class labels</label>
+            <label class="quiz-option"><input type="radio" name="mm-q1" value="c"> Using a CNN followed by a softmax layer</label>
+            <label class="quiz-option"><input type="radio" name="mm-q1" value="d"> Generating synthetic training images</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transfer Learning -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// new content</div><h2>Transfer Learning</h2><p>Use a model pre-trained on a large dataset as a starting point for your task. Dramatically reduces training time and data requirements.</p></div>
+        <div class="topic-section"><h3>Two Approaches</h3>
+        <div class="grid grid-2" style="gap:1rem;">
+          <div class="highlight-box">
+            <strong>Feature Extraction</strong>
+            <p style="font-size:0.875rem;margin-top:0.5rem;">Freeze the pre-trained backbone. Only train a new head on top. Fast, works with small datasets.</p>
+          </div>
+          <div class="highlight-box">
+            <strong>Fine-Tuning</strong>
+            <p style="font-size:0.875rem;margin-top:0.5rem;">Unfreeze some or all pre-trained layers. Continue training on your data with a small learning rate. Better accuracy, needs more data.</p>
+          </div>
+        </div></div>
+        <div class="topic-section"><h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>transfer.py</span></div>
+          <pre><code><span class="kw">from</span> torchvision.models <span class="kw">import</span> resnet50
+<span class="kw">import</span> torch.nn <span class="kw">as</span> nn
+
+model = <span class="fn">resnet50</span>(pretrained=<span class="kw">True</span>)
+
+<span class="cm"># Feature extraction: freeze backbone</span>
+<span class="kw">for</span> p <span class="kw">in</span> model.parameters():
+    p.requires_grad = <span class="kw">False</span>
+
+<span class="cm"># Replace classifier head</span>
+model.fc = nn.<span class="cl">Linear</span>(<span class="num">2048</span>, num_classes)</code></pre>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — Transfer Learning</h3>
+          <div class="quiz-q" data-correct="a"><p>1. Fine-tuning with a small learning rate helps because:</p>
+            <label class="quiz-option"><input type="radio" name="tl-q1" value="a"> It prevents overwriting the useful pre-trained features too quickly</label>
+            <label class="quiz-option"><input type="radio" name="tl-q1" value="b"> It reduces model size</label>
+            <label class="quiz-option"><input type="radio" name="tl-q1" value="c"> It enables training without GPU</label>
+            <label class="quiz-option"><input type="radio" name="tl-q1" value="d"> It prevents data augmentation issues</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Model Compression -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// new content</div><h2>Model Compression</h2><p>Techniques to make large models smaller, faster, and deployable on edge devices — without sacrificing too much accuracy.</p></div>
+        <div class="topic-section"><h3>Compression Techniques</h3>
+        <table class="metric-table">
+          <thead><tr><th>Technique</th><th>How it works</th><th>Typical size reduction</th></tr></thead>
+          <tbody>
+            <tr><td>Quantization</td><td>Reduce weight precision from float32 to int8</td><td>4× smaller, 2–4× faster</td></tr>
+            <tr><td>Pruning</td><td>Remove weights or neurons below a threshold</td><td>Variable (10–90%)</td></tr>
+            <tr><td>Knowledge Distillation</td><td>Train a small "student" model to mimic a large "teacher"</td><td>10–100× smaller</td></tr>
+            <tr><td>ONNX Export</td><td>Convert to runtime-optimized format</td><td>Inference speedup</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — Model Compression</h3>
+          <div class="quiz-q" data-correct="c"><p>1. Knowledge Distillation trains:</p>
+            <label class="quiz-option"><input type="radio" name="mc-q1" value="a"> The teacher model on unlabeled data</label>
+            <label class="quiz-option"><input type="radio" name="mc-q1" value="b"> Both teacher and student simultaneously</label>
+            <label class="quiz-option"><input type="radio" name="mc-q1" value="c"> A small student model to replicate the soft outputs of a larger teacher</label>
+            <label class="quiz-option"><input type="radio" name="mc-q1" value="d"> The model using int8 arithmetic</label>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+            <span class="quiz-result"></span>
+          </div>
+        </div>
+        <div class="completion-banner">
+          <div class="completion-icon">🎓</div>
+          <div class="completion-body"><h3>Deep Learning Course Complete!</h3><p>Claim your Deep Learning completion certificate.</p></div>
+          <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('dl','model-compression')">Claim Certificate →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students.</p></div>
+      <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/ml.html">Machine Learning</a></li><li><a href="/courses/genai.html">Generative AI</a></li><li><a href="/courses/agentic.html">Agentic AI</a></li><li><a href="/courses/mlops.html">MLOps</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li><li><a href="/faq.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

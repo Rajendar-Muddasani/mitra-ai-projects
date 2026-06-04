@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitra AI Projects — Build Real AI Projects. Explain Them. Deploy Them.</title>
+  <meta name="description" content="Guided AI and ML project kits for B.Tech, BCA, MCA, and engineering students. Build Document Q&A systems, forecasting dashboards, chatbots, and more — with code, deployment notes, viva prep, and real explanation support.">
+  <meta property="og:title" content="Mitra AI Projects">
+  <meta property="og:description" content="Build real AI projects with code, explanation, deployment guidance, and viva prep.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mitraaiprojects.com/">
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand">
+      <div class="nav-logo">M</div>
+      <span>Mitra<span class="teal">AI</span> Projects</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/how-it-works.html">How It Works</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth">
+      <button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-eyebrow">for engineering students &amp; developers</div>
+    <h1 class="hero-title">Build Real AI Projects.<br><em>Explain Them. Deploy Them.</em></h1>
+    <p class="hero-sub">Guided project kits and concept courses for B.Tech, BCA, MCA, and engineering students. Code-first. Notebook-first. Project-first.</p>
+    <div class="hero-actions">
+      <a href="/projects/" class="btn btn-primary btn-xl" onclick="trackEvent('home_cta_projects')">Browse Projects</a>
+      <a href="/courses/" class="btn btn-outline btn-xl" onclick="trackEvent('home_cta_courses')">Explore Courses</a>
+    </div>
+
+    <div class="trust-strip">
+      <div class="trust-item"><span class="icon">✅</span> Final-year project ready</div>
+      <div class="trust-item"><span class="icon">💻</span> Code + notebooks included</div>
+      <div class="trust-item"><span class="icon">🎓</span> Viva prep &amp; report templates</div>
+      <div class="trust-item"><span class="icon">🚀</span> Deployment guides</div>
+      <div class="trust-item"><span class="icon">🇮🇳</span> Designed for Indian engineering colleges</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Two lanes ── -->
+<section class="section" style="padding-top:4rem;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">two parallel lanes</div>
+      <h2>Learn the Concepts. Build the Project.</h2>
+      <p>Mitra AI Projects gives you two clear paths — use both, or start with the one that fits your timeline.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card" style="border-color:rgba(0,212,170,0.2);">
+        <div class="card-header">
+          <div class="card-icon" style="font-size:1.8rem;">📚</div>
+          <span class="badge badge-primary">Courses</span>
+        </div>
+        <div class="card-title" style="font-size:1.25rem;margin-bottom:0.5rem;">Concept-First Learning</div>
+        <div class="card-desc">Tab-based courses in ML, Deep Learning, GenAI, Agentic AI, MLOps, and more. Each topic has plain-English explanation, code examples, quizzes, and cheatsheet downloads.</div>
+        <div style="margin-top:1.25rem;">
+          <a href="/courses/" class="btn btn-primary">Explore Courses →</a>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:rgba(240,180,41,0.2);">
+        <div class="card-header">
+          <div class="card-icon" style="font-size:1.8rem;background:rgba(240,180,41,0.1);">🛠️</div>
+          <span class="badge badge-accent">Projects</span>
+        </div>
+        <div class="card-title" style="font-size:1.25rem;margin-bottom:0.5rem;">Outcome-First Builds</div>
+        <div class="card-desc">Guided project kits with architecture diagrams, milestone breakdowns, starter code, deployment guides, PPT templates, report templates, and viva Q&amp;A.</div>
+        <div style="margin-top:1.25rem;">
+          <a href="/projects/" class="btn btn-outline" style="border-color:var(--accent);color:var(--accent);" onmouseover="this.style.background='rgba(240,180,41,0.08)'" onmouseout="this.style.background=''">Browse Projects →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Featured Courses ── -->
+<section class="section" style="background:var(--surface);padding:4rem 0;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">learning tracks</div>
+      <h2>Courses Built for Technical Learners</h2>
+      <p>Not generic AI theory. Concept-deep, code-forward courses mapped to real engineering syllabi and placement needs.</p>
+    </div>
+
+    <div class="grid grid-3">
+
+      <a href="/courses/ml.html" class="card card-track" style="text-decoration:none;" onclick="trackEvent('course_page_view',{course:'ml'})">
+        <div class="card-header">
+          <div class="card-icon">🤖</div>
+          <span class="badge badge-success badge-dot">Live</span>
+        </div>
+        <div class="card-title">Machine Learning</div>
+        <div class="card-desc">Linear regression, classification, trees, boosting, SVM, clustering, anomaly detection, time series, hyperparameter optimization. OneNote-style tabbed layout.</div>
+        <div class="card-footer">
+          <span class="card-meta">10 topics · Source: AIML-Engineering-Lab</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+      <a href="/courses/programming.html" class="card card-track" style="text-decoration:none;" onclick="trackEvent('course_page_view',{course:'programming'})">
+        <div class="card-header">
+          <div class="card-icon">💻</div>
+          <span class="badge badge-success badge-dot">Live</span>
+        </div>
+        <div class="card-title">Programming Foundation</div>
+        <div class="card-desc">Python Basics, Python for Data, Shell/Bash, SQL, Excel, C/C++, Perl, JavaScript. Practical programming for engineers and analysts.</div>
+        <div class="card-footer">
+          <span class="card-meta">8 tracks · Beginner to intermediate</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+      <a href="/courses/genai.html" class="card card-track" style="text-decoration:none;" onclick="trackEvent('course_page_view',{course:'genai'})">
+        <div class="card-header">
+          <div class="card-icon">✨</div>
+          <span class="badge badge-accent">Partial</span>
+        </div>
+        <div class="card-title">Generative AI</div>
+        <div class="card-desc">Prompt engineering, RAG, fine-tuning, embeddings, vector databases, LLM evaluation, HuggingFace, and Kaggle with LLMs.</div>
+        <div class="card-footer">
+          <span class="card-meta">8 topics · Developers &amp; builders</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+      <a href="/courses/dl.html" class="card card-track" style="text-decoration:none;" onclick="trackEvent('course_page_view',{course:'dl'})">
+        <div class="card-header">
+          <div class="card-icon">🧠</div>
+          <span class="badge badge-accent">Partial</span>
+        </div>
+        <div class="card-title">Deep Learning</div>
+        <div class="card-desc">Neural networks, CNNs, RNNs/LSTMs, autoencoders, GANs, transformers, multimodal models, transfer learning, and model compression.</div>
+        <div class="card-footer">
+          <span class="card-meta">8 topics · ML practitioners</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+      <a href="/courses/agentic.html" class="card card-track" style="text-decoration:none;" onclick="trackEvent('course_page_view',{course:'agentic'})">
+        <div class="card-header">
+          <div class="card-icon">🤝</div>
+          <span class="badge badge-accent">Partial</span>
+        </div>
+        <div class="card-title">Agentic AI &amp; MCP</div>
+        <div class="card-desc">Agents, LangGraph, CrewAI, MCP protocol, OpenAI Assistants, multi-agent systems, evaluation, and safety patterns.</div>
+        <div class="card-footer">
+          <span class="card-meta">7 topics · Tool &amp; agent builders</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+      <a href="/courses/mlops.html" class="card card-track" style="text-decoration:none;" onclick="trackEvent('course_page_view',{course:'mlops'})">
+        <div class="card-header">
+          <div class="card-icon">⚙️</div>
+          <span class="badge badge-accent">Partial</span>
+        </div>
+        <div class="card-title">MLOps &amp; Tools</div>
+        <div class="card-desc">Airflow, Spark, MLflow, Kubernetes, SageMaker, Docker, and CI/CD for models. Production-minded engineering.</div>
+        <div class="card-footer">
+          <span class="card-meta">7 topics · Production learners</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="/courses/" class="btn btn-outline">View All Courses →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Featured Projects ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">project kits</div>
+      <h2>Projects That Strengthen Your Portfolio</h2>
+      <p>Each project kit is built to be explained, presented, and defended — not just submitted.</p>
+    </div>
+
+    <div class="grid grid-3">
+
+      <a href="/projects/document-qa-assistant.html" class="card" style="text-decoration:none;" onclick="trackEvent('project_page_view',{project:'document-qa-assistant'})">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem;">
+          <span class="badge badge-accent">Featured</span>
+          <span class="badge badge-primary">Major Kit</span>
+        </div>
+        <div style="font-size:1.4rem;margin-bottom:0.5rem;">📄</div>
+        <div class="card-title">Document Q&amp;A Assistant</div>
+        <div class="card-desc" style="margin-top:0.35rem;">RAG-based chatbot that answers questions from your uploaded documents. Python, FastAPI, OpenAI, vector store. Final-year project ready.</div>
+        <div class="tags" style="margin-top:0.75rem;">
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">RAG</span>
+          <span class="tag">OpenAI API</span>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">~6 weeks · Intermediate</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+      <div class="card" style="opacity:0.7;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem;">
+          <span class="badge badge-muted">Coming Soon</span>
+          <span class="badge badge-primary">Portfolio Build</span>
+        </div>
+        <div style="font-size:1.4rem;margin-bottom:0.5rem;">📋</div>
+        <div class="card-title">AI Resume Screener</div>
+        <div class="card-desc" style="margin-top:0.35rem;">Placement-focused tool that scores and ranks resumes. Interview prep assistant included. Great for HR tech internship demos.</div>
+        <div class="tags" style="margin-top:0.75rem;">
+          <span class="tag">Python</span>
+          <span class="tag">LLM</span>
+          <span class="tag">Streamlit</span>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">~4 weeks · Beginner friendly</span>
+          <span style="color:var(--muted)">Coming soon</span>
+        </div>
+      </div>
+
+      <div class="card" style="opacity:0.7;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem;">
+          <span class="badge badge-muted">Coming Soon</span>
+          <span class="badge badge-primary">Major Kit</span>
+        </div>
+        <div style="font-size:1.4rem;margin-bottom:0.5rem;">📊</div>
+        <div class="card-title">Inventory Forecasting Dashboard</div>
+        <div class="card-desc" style="margin-top:0.35rem;">Time series forecasting with a live dashboard. Report, viva prep, and PPT deck included. Industry-ready presentation.</div>
+        <div class="tags" style="margin-top:0.75rem;">
+          <span class="tag">Python</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">ARIMA</span>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">~5 weeks · Intermediate</span>
+          <span style="color:var(--muted)">Coming soon</span>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="/projects/" class="btn btn-outline">View All Projects →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── How it works ── -->
+<section class="section" style="background:var(--surface);padding:4rem 0;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">how it works</div>
+      <h2>From Idea to Demo in Four Steps</h2>
+    </div>
+    <div class="grid grid-4">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon">📖</div>
+        <h3>Pick Your Track</h3>
+        <p style="font-size:0.875rem;color:var(--muted)">Choose a course or project kit that matches your final-year deadline or placement goal.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon">🔨</div>
+        <h3>Build Milestone by Milestone</h3>
+        <p style="font-size:0.875rem;color:var(--muted)">Follow the guided breakdown. Each milestone gives you working code and a clear checkpoint.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon">🚀</div>
+        <h3>Deploy &amp; Demo</h3>
+        <p style="font-size:0.875rem;color:var(--muted)">Follow the deployment guide. Get a live demo URL you can share with your college or interviewer.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-icon">🎤</div>
+        <h3>Explain &amp; Defend</h3>
+        <p style="font-size:0.875rem;color:var(--muted)">Use viva Q&amp;A, the report template, and the PPT deck to present and defend confidently.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="/how-it-works.html" class="btn btn-ghost">Full How It Works →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Cheatsheets strip ── -->
+<section class="section-sm">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,rgba(0,212,170,0.07),rgba(124,58,237,0.04));border:1px solid var(--border-dim);border-radius:var(--radius-lg);padding:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">free downloads</div>
+        <h3 style="margin-bottom:0.35rem;">11 Cheatsheets. Instantly downloadable.</h3>
+        <p style="color:var(--muted);font-size:0.9rem;">Python, SQL, ML Models, Shell, Deep Learning Layers, GenAI Prompts, and more.</p>
+      </div>
+      <a href="/cheatsheets.html" class="btn btn-primary btn-lg" onclick="trackEvent('cheatsheet_page_view')">Get Cheatsheets →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to build your first real AI project?</h2>
+    <p>Start with Document Q&amp;A Assistant — the most popular final-year project kit on the platform.</p>
+    <a href="/projects/document-qa-assistant.html" class="btn btn-primary btn-xl" onclick="trackEvent('home_cta_project_01')">Start Building →</a>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="nav-logo">M</div>
+          <span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span>
+        </div>
+        <p class="footer-tagline">Guided AI and ML project kits for engineering students. Build, explain, deploy, and defend your final-year project with confidence.</p>
+        <p style="margin-top:0.75rem;font-size:0.75rem;color:var(--muted);">Some images on this site are AI-generated.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="/courses/programming.html">Programming</a></li>
+          <li><a href="/courses/ml.html">Machine Learning</a></li>
+          <li><a href="/courses/dl.html">Deep Learning</a></li>
+          <li><a href="/courses/genai.html">Generative AI</a></li>
+          <li><a href="/courses/agentic.html">Agentic AI &amp; MCP</a></li>
+          <li><a href="/courses/mlops.html">MLOps &amp; Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Projects</h4>
+        <ul>
+          <li><a href="/projects/">All Projects</a></li>
+          <li><a href="/projects/document-qa-assistant.html">Document Q&amp;A</a></li>
+          <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Chatbot widget -->
+<div class="chat-widget">
+  <button class="chat-btn" aria-label="Open AI chat assistant">💬</button>
+</div>
+
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

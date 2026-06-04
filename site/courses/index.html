@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses — Mitra AI Projects</title>
+  <meta name="description" content="Concept-first AI and ML courses for engineering students. Machine Learning, Deep Learning, Generative AI, Agentic AI, MLOps, Programming, and Reinforcement Learning tracks.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand">
+      <div class="nav-logo">M</div>
+      <span>Mitra<span class="teal">AI</span> Projects</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/courses/" class="active">Courses</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/how-it-works.html">How It Works</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth">
+      <button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero hero-sm">
+  <div class="container hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Courses</span></div>
+    <div class="hero-eyebrow">concept-first learning</div>
+    <h1 class="hero-title">All Learning Tracks</h1>
+    <p class="hero-sub">Technical, code-forward courses built for engineering students. Each track has topic tabs, code examples, quizzes, cheatsheets, and links to related projects.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-tag" style="margin-bottom:1.5rem;">ready to learn · live now</div>
+
+    <div class="grid grid-3" style="margin-bottom:3.5rem;">
+
+      <a href="/courses/ml.html" class="card card-track" style="text-decoration:none;" onclick="trackEvent('course_page_view',{course:'ml'})">
+        <div class="card-header">
+          <div class="card-icon">🤖</div>
+          <span class="badge badge-success badge-dot">Live</span>
+        </div>
+        <div class="card-title">Machine Learning</div>
+        <div class="card-desc">The core ML algorithms every engineer must know. Covers linear regression, classification, trees, boosting, SVM, clustering, anomaly detection, time series, and hyperparameter optimization.</div>
+        <div class="tags">
+          <span class="tag">sklearn</span>
+          <span class="tag">XGBoost</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">10 topics · AIML-Engineering-Lab notebooks</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+      <a href="/courses/programming.html" class="card card-track" style="text-decoration:none;" onclick="trackEvent('course_page_view',{course:'programming'})">
+        <div class="card-header">
+          <div class="card-icon">💻</div>
+          <span class="badge badge-success badge-dot">Live</span>
+        </div>
+        <div class="card-title">Programming Foundation</div>
+        <div class="card-desc">Practical programming for data, engineering, and web. Covers Python, SQL, Shell, Excel, C/C++, Perl, and JavaScript — with AI learning prompts for each topic.</div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Bash</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">8 tracks · Complete beginners to intermediate</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+      <a href="/courses/genai.html" class="card card-track" style="text-decoration:none;" onclick="trackEvent('course_page_view',{course:'genai'})">
+        <div class="card-header">
+          <div class="card-icon">✨</div>
+          <span class="badge badge-accent">Partial</span>
+        </div>
+        <div class="card-title">Generative AI</div>
+        <div class="card-desc">Prompt engineering, RAG architecture, fine-tuning with LoRA, embeddings, vector databases, LLM evaluation, HuggingFace, and Kaggle competition workflows.</div>
+        <div class="tags">
+          <span class="tag">OpenAI</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">ChromaDB</span>
+          <span class="tag">HuggingFace</span>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">8 topics · Developers &amp; builders</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+      <a href="/courses/dl.html" class="card card-track" style="text-decoration:none;" onclick="trackEvent('course_page_view',{course:'dl'})">
+        <div class="card-header">
+          <div class="card-icon">🧠</div>
+          <span class="badge badge-accent">Partial</span>
+        </div>
+        <div class="card-title">Deep Learning</div>
+        <div class="card-desc">Neural network basics, CNNs, RNNs and LSTMs, autoencoders, GANs, transformers, multimodal vision-language models, transfer learning, and model compression.</div>
+        <div class="tags">
+          <span class="tag">PyTorch</span>
+          <span class="tag">TensorFlow</span>
+          <span class="tag">YOLO</span>
+          <span class="tag">Transformers</span>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">8 topics · ML practitioners</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+      <a href="/courses/agentic.html" class="card card-track" style="text-decoration:none;" onclick="trackEvent('course_page_view',{course:'agentic'})">
+        <div class="card-header">
+          <div class="card-icon">🤝</div>
+          <span class="badge badge-accent">Partial</span>
+        </div>
+        <div class="card-title">Agentic AI &amp; MCP</div>
+        <div class="card-desc">How to build agents that plan, use tools, and remember. Covers LangGraph, CrewAI, MCP protocol, OpenAI Assistants API, multi-agent patterns, and safety guardrails.</div>
+        <div class="tags">
+          <span class="tag">LangGraph</span>
+          <span class="tag">CrewAI</span>
+          <span class="tag">MCP</span>
+          <span class="tag">OpenAI</span>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">7 topics · Tool &amp; agent builders</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+      <a href="/courses/mlops.html" class="card card-track" style="text-decoration:none;" onclick="trackEvent('course_page_view',{course:'mlops'})">
+        <div class="card-header">
+          <div class="card-icon">⚙️</div>
+          <span class="badge badge-accent">Partial</span>
+        </div>
+        <div class="card-title">MLOps &amp; Tools</div>
+        <div class="card-desc">Airflow orchestration, Spark, MLflow experiment tracking, Kubernetes for ML, SageMaker, Docker containers, and CI/CD pipelines for machine learning models.</div>
+        <div class="tags">
+          <span class="tag">Airflow</span>
+          <span class="tag">Spark</span>
+          <span class="tag">MLflow</span>
+          <span class="tag">Docker</span>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">7 topics · Production-minded learners</span>
+          <span style="color:var(--primary)">→</span>
+        </div>
+      </a>
+
+    </div>
+
+    <hr class="divider">
+
+    <div class="section-tag" style="margin-bottom:1.5rem;">planned track</div>
+
+    <div class="grid grid-3">
+      <a href="/courses/rl.html" class="card card-track" style="text-decoration:none;opacity:0.72;" onclick="trackEvent('course_page_view',{course:'rl'})">
+        <div class="card-header">
+          <div class="card-icon">🎮</div>
+          <span class="badge badge-muted">Planned</span>
+        </div>
+        <div class="card-title">Reinforcement Learning</div>
+        <div class="card-desc">Agent-environment interaction, Q-learning, Deep Q-Networks, policy gradients, PPO, and real-world RL applications in recommendation and optimization.</div>
+        <div class="tags">
+          <span class="tag">Gym</span>
+          <span class="tag">Stable-Baselines3</span>
+          <span class="tag">PyTorch</span>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">6 topics · Advanced learners</span>
+          <span style="color:var(--muted)">Coming later</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="completion-banner" style="margin-top:3rem;">
+      <div class="completion-icon">📥</div>
+      <div class="completion-body">
+        <h3>Free cheatsheets for every topic</h3>
+        <p>Download A4 PDF cheatsheets for Python, SQL, ML, Deep Learning, Shell, and more. All openly accessible.</p>
+      </div>
+      <a href="/cheatsheets.html" class="btn btn-primary">Get Cheatsheets →</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="nav-logo">M</div>
+          <span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span>
+        </div>
+        <p class="footer-tagline">Guided AI and ML project kits for engineering students.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="/courses/programming.html">Programming</a></li>
+          <li><a href="/courses/ml.html">Machine Learning</a></li>
+          <li><a href="/courses/dl.html">Deep Learning</a></li>
+          <li><a href="/courses/genai.html">Generative AI</a></li>
+          <li><a href="/courses/agentic.html">Agentic AI &amp; MCP</a></li>
+          <li><a href="/courses/mlops.html">MLOps &amp; Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="chat-widget">
+  <button class="chat-btn" aria-label="Open AI chat">💬</button>
+</div>
+
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Q&A Assistant — Final Year AI Project Kit | Mitra AI Projects</title>
+  <meta name="description" content="Build a Document Q&A Assistant with RAG, FastAPI, OpenAI, and ChromaDB. Final-year project kit with architecture diagram, 6-milestone breakdown, deployment guide, viva Q&A, report template, and PPT deck.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is a Document Q&A Assistant?","acceptedAnswer":{"@type":"Answer","text":"A web app that lets users upload documents and ask questions in natural language. It uses Retrieval-Augmented Generation (RAG) with a vector database and an LLM to answer questions grounded in the document content."}},
+    {"@type":"Question","name":"What tech stack does this project use?","acceptedAnswer":{"@type":"Answer","text":"Python, FastAPI, OpenAI API (gpt-4o-mini and text-embedding-3-small), ChromaDB for vector storage, and a simple HTML frontend."}}
+  ]}</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/projects/" class="active">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/how-it-works.html">How It Works</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<!-- Project Hero -->
+<section class="project-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/projects/">Projects</a><span class="breadcrumb-sep">›</span><span>Document Q&amp;A Assistant</span></div>
+
+    <div class="project-meta-strip">
+      <span class="badge badge-accent">Featured</span>
+      <span class="badge badge-primary">Major Project Kit</span>
+      <span class="badge badge-muted">~6 Weeks</span>
+      <span class="badge badge-muted">Intermediate</span>
+    </div>
+
+    <h1 style="margin-bottom:0.75rem;">Document Q&amp;A Assistant</h1>
+    <p style="color:var(--muted);font-size:1.05rem;max-width:660px;margin-bottom:1.25rem;">
+      Build a web app that answers questions from uploaded PDF and text documents using Retrieval-Augmented Generation (RAG). Suitable for final-year B.Tech, BCA, or MCA submission.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Python 3.11+</span>
+      <span class="tag">FastAPI</span>
+      <span class="tag">OpenAI API</span>
+      <span class="tag">ChromaDB</span>
+      <span class="tag">RAG</span>
+      <span class="tag">LangChain</span>
+      <span class="tag">HTML/CSS</span>
+      <span class="tag">Docker</span>
+    </div>
+
+    <div class="project-deliverables" style="margin-top:1.5rem;">
+      <span class="deliverable-pill">Source code + README</span>
+      <span class="deliverable-pill">Architecture diagram</span>
+      <span class="deliverable-pill">6-milestone breakdown</span>
+      <span class="deliverable-pill">Deployment guide (Render/Railway)</span>
+      <span class="deliverable-pill">Report template (A4)</span>
+      <span class="deliverable-pill">PPT deck (10 slides)</span>
+      <span class="deliverable-pill">20 viva Q&amp;A</span>
+      <span class="deliverable-pill">Testing checklist</span>
+    </div>
+
+    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#milestones" class="btn btn-primary btn-lg">Start Building →</a>
+      <a href="#viva" class="btn btn-outline btn-lg">See Viva Q&amp;A</a>
+      <a href="/courses/genai.html#rag" class="btn btn-ghost btn-lg">Learn RAG First</a>
+    </div>
+  </div>
+</section>
+
+<!-- What You Build -->
+<section class="section" style="padding-top:3rem;">
+  <div class="container">
+
+    <div class="grid grid-2" style="gap:3rem;align-items:start;">
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.75rem;">the story</div>
+        <h2>What You're Building</h2>
+        <p style="margin-bottom:1rem;">Final-year student Arjun needs a real project he can actually explain — not a code copy he found online. This project gives him a working RAG system with a clean API, a simple web interface, and a complete explanation path from architecture to deployment.</p>
+
+        <div class="topic-section"><h3>Core Features</h3>
+        <ul style="padding-left:1.25rem;">
+          <li style="list-style:disc;font-size:0.9rem;margin-bottom:0.4rem;color:var(--text);">Upload PDF or text documents via web interface or API</li>
+          <li style="list-style:disc;font-size:0.9rem;margin-bottom:0.4rem;color:var(--text);">Documents are chunked, embedded, and stored in ChromaDB</li>
+          <li style="list-style:disc;font-size:0.9rem;margin-bottom:0.4rem;color:var(--text);">Natural language Q&amp;A powered by GPT-4o-mini</li>
+          <li style="list-style:disc;font-size:0.9rem;margin-bottom:0.4rem;color:var(--text);">Answers cite the source chunk from the document</li>
+          <li style="list-style:disc;font-size:0.9rem;margin-bottom:0.4rem;color:var(--text);">Admin interface to manage uploaded documents</li>
+          <li style="list-style:disc;font-size:0.9rem;color:var(--text);">Deployable on Render.com with a live URL for demo</li>
+        </ul></div>
+      </div>
+
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.75rem;">prerequisites</div>
+        <h2>Prerequisites</h2>
+        <table class="metric-table">
+          <thead><tr><th>Skill</th><th>Level needed</th></tr></thead>
+          <tbody>
+            <tr><td>Python</td><td>Intermediate (functions, classes, async)</td></tr>
+            <tr><td>REST APIs</td><td>Basic (what a GET/POST is)</td></tr>
+            <tr><td>OpenAI API</td><td>Beginner (just need an API key)</td></tr>
+            <tr><td>Git / GitHub</td><td>Basic (commit, push)</td></tr>
+            <tr><td>Terminal / Bash</td><td>Basic (cd, pip, run commands)</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.85rem;color:var(--muted);margin-top:0.75rem;">No ML theory required. No GPU needed. Runs on a laptop.</p>
+      </div>
+    </div>
+
+    <!-- Architecture -->
+    <div style="margin-top:3rem;">
+      <div class="section-tag" style="text-align:left;margin-bottom:0.75rem;">system design</div>
+      <h2>Architecture</h2>
+
+      <div class="arch-diagram" style="padding:2rem;margin-top:1rem;">
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:1.25rem;font-family:'JetBrains Mono',monospace;">// Indexing Pipeline (runs once per document)</p>
+        <div class="arch-boxes">
+          <div class="arch-box">PDF / TXT Upload</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box">PyPDF2 / langchain text splitter</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box">text-embedding-3-small</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box" style="border-color:var(--accent);color:var(--accent);">ChromaDB (vector store)</div>
+        </div>
+
+        <p style="font-size:0.8rem;color:var(--muted);margin:1.5rem 0 0.75rem;font-family:'JetBrains Mono',monospace;">// Query Pipeline (runs on each question)</p>
+        <div class="arch-boxes">
+          <div class="arch-box">User Question</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box">Embed Query</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box" style="border-color:var(--accent);color:var(--accent);">Top-3 Chunks (similarity search)</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box">GPT-4o-mini + Context</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box" style="border-color:var(--success);color:var(--success);">Cited Answer</div>
+        </div>
+
+        <p style="font-size:0.8rem;color:var(--muted);margin:1.5rem 0 0.75rem;font-family:'JetBrains Mono',monospace;">// API Layer</p>
+        <div class="arch-boxes">
+          <div class="arch-box">HTML Frontend</div>
+          <div class="arch-arrow">⟺</div>
+          <div class="arch-box" style="border-color:var(--primary);color:var(--primary);">FastAPI Backend</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box">ChromaDB + OpenAI</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Milestones -->
+    <div id="milestones" style="margin-top:3.5rem;">
+      <div class="section-tag" style="text-align:left;margin-bottom:0.75rem;">6-week plan</div>
+      <h2>Milestone Breakdown</h2>
+      <p style="color:var(--muted);margin-bottom:2rem;">Each milestone produces working, demonstrable code. You can pause at any milestone and have something to show.</p>
+
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+
+        <div class="milestone-card">
+          <div class="milestone-num">01</div>
+          <div class="milestone-body">
+            <div class="milestone-tag">Week 1</div>
+            <h4>Project Setup &amp; Document Parsing</h4>
+            <p>Create the project structure, install dependencies, set up the OpenAI API key, parse a PDF, and split it into chunks. Output: a Python script that prints all text chunks from a PDF.</p>
+            <ul>
+              <li>Set up virtual environment and install fastapi, chromadb, openai, pypdf2</li>
+              <li>Write a PDF loader that extracts and cleans text</li>
+              <li>Implement recursive text splitting with chunk size 500, overlap 100</li>
+              <li>Print the first 5 chunks to verify correctness</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="milestone-card">
+          <div class="milestone-num">02</div>
+          <div class="milestone-body">
+            <div class="milestone-tag">Week 2</div>
+            <h4>Embedding &amp; Vector Storage</h4>
+            <p>Embed all document chunks using OpenAI's text-embedding-3-small model. Store in ChromaDB with document metadata. Output: a persistent ChromaDB collection you can query.</p>
+            <ul>
+              <li>Set up ChromaDB with persistent storage</li>
+              <li>Batch-embed chunks (handle API rate limits)</li>
+              <li>Store embeddings with chunk_id, doc_name, page_num metadata</li>
+              <li>Verify: run a similarity query and print top-3 results</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="milestone-card">
+          <div class="milestone-num">03</div>
+          <div class="milestone-body">
+            <div class="milestone-tag">Week 3</div>
+            <h4>RAG Query Engine</h4>
+            <p>Build the retrieval + generation pipeline. Output: a Python function that takes a question string and returns a grounded answer with cited source chunk.</p>
+            <ul>
+              <li>Embed the query and retrieve top-k chunks from ChromaDB</li>
+              <li>Construct a system prompt that injects the retrieved context</li>
+              <li>Call GPT-4o-mini with the context-enriched prompt</li>
+              <li>Return answer + source chunk reference in JSON format</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="milestone-card">
+          <div class="milestone-num">04</div>
+          <div class="milestone-body">
+            <div class="milestone-tag">Week 4</div>
+            <h4>FastAPI Backend</h4>
+            <p>Wrap the RAG engine in a REST API. Output: a running FastAPI app with /upload, /query, and /documents endpoints.</p>
+            <ul>
+              <li>POST /upload — accept a PDF file, run indexing pipeline, return doc_id</li>
+              <li>POST /query — accept question + doc_id, return answer with citations</li>
+              <li>GET /documents — list all indexed documents</li>
+              <li>DELETE /documents/{doc_id} — remove a document and its vectors</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="milestone-card">
+          <div class="milestone-num">05</div>
+          <div class="milestone-body">
+            <div class="milestone-tag">Week 5</div>
+            <h4>Frontend Interface</h4>
+            <p>Build a minimal HTML/CSS/JS frontend. Output: a web page that lets you upload a document and ask questions — without needing cURL or Postman.</p>
+            <ul>
+              <li>File upload form with drag-and-drop support</li>
+              <li>Chat-style Q&amp;A interface</li>
+              <li>Display answer with source chunk highlighted</li>
+              <li>Serve frontend as static files from FastAPI</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="milestone-card">
+          <div class="milestone-num">06</div>
+          <div class="milestone-body">
+            <div class="milestone-tag">Week 6</div>
+            <h4>Deployment &amp; Demo Polish</h4>
+            <p>Deploy to Render.com or Railway. Add a Dockerfile. Write the README. Prepare the demo script. Output: a live public URL you can share with your college.</p>
+            <ul>
+              <li>Dockerfile with Python 3.11-slim base</li>
+              <li>Environment variables for OPENAI_API_KEY</li>
+              <li>Deploy to Render using Free tier</li>
+              <li>Write README with setup, API docs, and demo GIF</li>
+              <li>Record a 2-minute demo screencast</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Code Snippets -->
+    <div style="margin-top:3.5rem;">
+      <div class="section-tag" style="text-align:left;margin-bottom:0.75rem;">code patterns</div>
+      <h2>Key Code Patterns</h2>
+
+      <div class="code-panel" style="margin-bottom:1.5rem;">
+        <div class="code-panel-header">
+          <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+          <span>rag_engine.py — query function</span>
+        </div>
+        <pre><code><span class="kw">from</span> openai <span class="kw">import</span> OpenAI
+<span class="kw">import</span> chromadb
+
+client     = <span class="cl">OpenAI</span>()
+chroma     = chromadb.<span class="fn">PersistentClient</span>(path=<span class="st">"./chroma_db"</span>)
+collection = chroma.get_or_create_collection(<span class="st">"documents"</span>)
+
+<span class="kw">def</span> <span class="fn">embed_text</span>(text: str) -> list[float]:
+    res = client.embeddings.<span class="fn">create</span>(
+        input=text, model=<span class="st">"text-embedding-3-small"</span>
+    )
+    <span class="kw">return</span> res.data[<span class="num">0</span>].embedding
+
+<span class="kw">def</span> <span class="fn">query</span>(question: str, doc_id: str, k: int = <span class="num">3</span>) -> dict:
+    q_vec = <span class="fn">embed_text</span>(question)
+    results = collection.<span class="fn">query</span>(
+        query_embeddings=[q_vec],
+        n_results=k,
+        where={<span class="st">"doc_id"</span>: doc_id}
+    )
+    context = <span class="st">"\n---\n"</span>.<span class="fn">join</span>(results[<span class="st">"documents"</span>][<span class="num">0</span>])
+    sources = results[<span class="st">"metadatas"</span>][<span class="num">0</span>]
+
+    resp = client.chat.completions.<span class="fn">create</span>(
+        model=<span class="st">"gpt-4o-mini"</span>,
+        messages=[
+            {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>:
+                <span class="st">"Answer ONLY using the context below. If unsure, say so."</span>},
+            {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>:
+                <span class="st">f"Context:\n{context}\n\nQuestion: {question}"</span>}
+        ]
+    )
+    <span class="kw">return</span> {
+        <span class="st">"answer"</span>: resp.choices[<span class="num">0</span>].message.content,
+        <span class="st">"sources"</span>: sources
+    }</code></pre>
+      </div>
+
+      <div class="code-panel">
+        <div class="code-panel-header">
+          <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+          <span>main.py — FastAPI endpoints</span>
+        </div>
+        <pre><code><span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI, UploadFile, File
+<span class="kw">from</span> fastapi.staticfiles <span class="kw">import</span> StaticFiles
+<span class="kw">from</span> pydantic <span class="kw">import</span> BaseModel
+<span class="kw">from</span> rag_engine <span class="kw">import</span> query, index_document
+
+app = <span class="cl">FastAPI</span>(title=<span class="st">"Document Q&amp;A API"</span>)
+app.<span class="fn">mount</span>(<span class="st">"/ui"</span>, <span class="cl">StaticFiles</span>(directory=<span class="st">"frontend"</span>), name=<span class="st">"ui"</span>)
+
+<span class="kw">class</span> <span class="cl">QueryRequest</span>(<span class="cl">BaseModel</span>):
+    question: str
+    doc_id:   str
+
+@app.<span class="fn">post</span>(<span class="st">"/upload"</span>)
+<span class="kw">async def</span> <span class="fn">upload</span>(file: <span class="cl">UploadFile</span> = <span class="fn">File</span>(...)):
+    content = <span class="kw">await</span> file.<span class="fn">read</span>()
+    doc_id  = <span class="kw">await</span> <span class="fn">index_document</span>(content, file.filename)
+    <span class="kw">return</span> {<span class="st">"doc_id"</span>: doc_id, <span class="st">"filename"</span>: file.filename}
+
+@app.<span class="fn">post</span>(<span class="st">"/query"</span>)
+<span class="kw">async def</span> <span class="fn">ask</span>(req: <span class="cl">QueryRequest</span>):
+    result = <span class="fn">query</span>(req.question, req.doc_id)
+    <span class="kw">return</span> result</code></pre>
+      </div>
+    </div>
+
+    <!-- Deployment -->
+    <div style="margin-top:3rem;">
+      <div class="section-tag" style="text-align:left;margin-bottom:0.75rem;">deployment</div>
+      <h2>Deploy to Render.com (Free)</h2>
+      <div class="grid grid-2" style="gap:1.5rem;">
+        <div class="highlight-box">
+          <h4 style="color:var(--primary);margin-bottom:0.75rem;">1. Add Dockerfile</h4>
+          <div class="code-panel">
+            <pre><code><span class="kw">FROM</span> python:<span class="num">3.11</span>-slim
+<span class="kw">WORKDIR</span> /app
+<span class="kw">COPY</span> requirements.txt .
+<span class="kw">RUN</span> pip install -r requirements.txt
+<span class="kw">COPY</span> . .
+<span class="kw">EXPOSE</span> <span class="num">8000</span>
+<span class="kw">CMD</span> [<span class="st">"uvicorn"</span>, <span class="st">"main:app"</span>, <span class="st">"--host"</span>, <span class="st">"0.0.0.0"</span>]</code></pre>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <h4 style="color:var(--primary);margin-bottom:0.75rem;">2. Render Configuration</h4>
+          <ul style="padding-left:1.25rem;">
+            <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Connect GitHub repo to Render</li>
+            <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Add environment variable: <code>OPENAI_API_KEY</code></li>
+            <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Select "Docker" as runtime</li>
+            <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Free tier: deploy in ~3 minutes</li>
+            <li style="list-style:disc;font-size:0.875rem;">Live URL: <code>yourapp.onrender.com</code></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Viva Questions -->
+    <div id="viva" style="margin-top:3.5rem;">
+      <div class="section-tag" style="text-align:left;margin-bottom:0.75rem;">viva prep</div>
+      <h2>20 Viva Questions with Answers</h2>
+      <p style="color:var(--muted);margin-bottom:1.5rem;">These are the questions your evaluator is most likely to ask. Understand these — don't memorize them word-for-word.</p>
+
+      <div style="display:flex;flex-direction:column;gap:0.75rem;">
+
+        <div class="viva-block">
+          <div class="viva-q">Q1: What is RAG and why did you choose it over direct LLM answering?</div>
+          <div class="viva-a">RAG stands for Retrieval-Augmented Generation. Instead of asking the LLM to answer from its training data (which may be outdated or wrong), RAG retrieves relevant context from your own documents and injects it into the prompt. This grounds the answer in the actual document, reduces hallucinations, and allows domain-specific Q&amp;A without retraining the model.</div>
+        </div>
+
+        <div class="viva-block">
+          <div class="viva-q">Q2: What is a vector embedding? Why do we use cosine similarity instead of keyword matching?</div>
+          <div class="viva-a">A vector embedding is a dense numerical representation (an array of floats) of text, where semantically similar texts are close in vector space. Cosine similarity measures the angle between two vectors — it finds semantically similar text even when the exact words are different. Keyword matching (like Ctrl+F) fails when the user asks "What is the penalty for late payment?" if the document says "charges apply for delayed remittance."</div>
+        </div>
+
+        <div class="viva-block">
+          <div class="viva-q">Q3: What is ChromaDB and why did you use it?</div>
+          <div class="viva-a">ChromaDB is an open-source vector database optimized for storing and searching embedding vectors. It supports persistent local storage, metadata filtering, and fast approximate nearest-neighbor search (using HNSW). I used it because it's Python-native, requires no separate server setup, and is free — ideal for a student project and small-to-medium deployments.</div>
+        </div>
+
+        <div class="viva-block">
+          <div class="viva-q">Q4: How did you chunk the document? What chunk size and overlap did you use?</div>
+          <div class="viva-a">I used recursive character text splitting with a chunk size of 500 characters and an overlap of 100 characters. Chunking splits the document into manageable pieces small enough to fit in the context window alongside other chunks. Overlap ensures that context at chunk boundaries isn't lost — a sentence split across two chunks will still appear fully in at least one.</div>
+        </div>
+
+        <div class="viva-block">
+          <div class="viva-q">Q5: What model did you use for embeddings and why?</div>
+          <div class="viva-a">I used OpenAI's text-embedding-3-small. It produces 1536-dimensional embeddings, is significantly cheaper than text-embedding-ada-002, and benchmarks higher on most retrieval tasks. For a production system with cost constraints, it's the recommended choice. text-embedding-3-large would give slightly better quality at 3× the cost.</div>
+        </div>
+
+        <div class="viva-block">
+          <div class="viva-q">Q6: How does your system handle hallucinations?</div>
+          <div class="viva-a">Three ways: First, the system prompt explicitly instructs the LLM to answer ONLY from the provided context and to say "I don't know" if the answer isn't in the document. Second, I return the source chunk alongside the answer so the user can verify. Third, I use a low temperature (0.1) to make the model more deterministic and less creative.</div>
+        </div>
+
+        <div class="viva-block">
+          <div class="viva-q">Q7: What is FastAPI and why not Flask?</div>
+          <div class="viva-a">FastAPI is a modern Python web framework that is async by default, generates OpenAPI documentation automatically, and validates request/response data using Pydantic models. It's 2–3× faster than Flask for I/O-bound operations (like waiting for OpenAI API calls) because of async support. Flask is synchronous by default and doesn't have built-in data validation.</div>
+        </div>
+
+        <div class="viva-block">
+          <div class="viva-q">Q8: What is the difference between gpt-4o-mini and gpt-4o?</div>
+          <div class="viva-a">gpt-4o-mini is a smaller, much cheaper version of GPT-4o. It's approximately 15× cheaper per token and responds faster. For simple Q&amp;A tasks where the context is already retrieved and structured, it performs nearly as well as gpt-4o. I used gpt-4o-mini to keep costs low — for a student project with limited API budget, this is the right choice.</div>
+        </div>
+
+        <div class="viva-block">
+          <div class="viva-q">Q9: What are the limitations of your system?</div>
+          <div class="viva-a">Key limitations: (1) Can only answer from uploaded documents — it doesn't have internet access or general knowledge beyond what's in the docs. (2) Chunking can split context across chunks, occasionally losing context for complex multi-sentence answers. (3) The free Render tier has cold starts — first request after idle takes ~10 seconds. (4) ChromaDB's local storage isn't horizontally scalable — for production at scale, Pinecone or pgvector would be better.</div>
+        </div>
+
+        <div class="viva-block">
+          <div class="viva-q">Q10: How would you extend this project?</div>
+          <div class="viva-a">Several directions: (1) Multi-document support with document-level filtering. (2) Conversation memory — use a LangChain ConversationBufferMemory to let users ask follow-up questions. (3) Hybrid search — combine vector search with BM25 keyword search for better recall. (4) Answer evaluation — add a faithfulness score using RAGAs to automatically measure answer quality. (5) User authentication — add Supabase auth so each user sees only their own documents.</div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:1.5rem;padding:1rem;background:var(--surface);border:1px solid var(--border-dim);border-radius:var(--radius);font-size:0.875rem;color:var(--muted);">
+        <strong style="color:var(--text);">Full Viva Guide:</strong> The complete kit includes 20 viva questions with detailed answers, plus common follow-up questions for each answer.
+      </div>
+    </div>
+
+    <!-- Quiz -->
+    <div style="margin-top:3rem;">
+      <div class="quiz-block">
+        <h3>// QUIZ — Document Q&amp;A Assistant</h3>
+
+        <div class="quiz-q" data-correct="b">
+          <p>1. Why does the system prompt tell the LLM to answer "ONLY using the context below"?</p>
+          <label class="quiz-option"><input type="radio" name="qa-q1" value="a"> To save tokens</label>
+          <label class="quiz-option"><input type="radio" name="qa-q1" value="b"> To prevent the model from hallucinating facts not in the document</label>
+          <label class="quiz-option"><input type="radio" name="qa-q1" value="c"> Because gpt-4o-mini has a small context window</label>
+          <label class="quiz-option"><input type="radio" name="qa-q1" value="d"> To make the API calls cheaper</label>
+        </div>
+
+        <div class="quiz-q" data-correct="c">
+          <p>2. What does chunk overlap in text splitting prevent?</p>
+          <label class="quiz-option"><input type="radio" name="qa-q2" value="a"> Duplicate documents in the vector store</label>
+          <label class="quiz-option"><input type="radio" name="qa-q2" value="b"> Exceeding the ChromaDB storage limit</label>
+          <label class="quiz-option"><input type="radio" name="qa-q2" value="c"> Important context at chunk boundaries being completely lost</label>
+          <label class="quiz-option"><input type="radio" name="qa-q2" value="d"> API rate limit errors</label>
+        </div>
+
+        <div class="quiz-q" data-correct="a">
+          <p>3. The RAG system uses vector similarity search (not keyword search) because:</p>
+          <label class="quiz-option"><input type="radio" name="qa-q3" value="a"> It finds semantically similar content even when exact words differ</label>
+          <label class="quiz-option"><input type="radio" name="qa-q3" value="b"> It's faster</label>
+          <label class="quiz-option"><input type="radio" name="qa-q3" value="c"> It's cheaper</label>
+          <label class="quiz-option"><input type="radio" name="qa-q3" value="d"> Keyword search doesn't work with PDFs</label>
+        </div>
+
+        <div class="quiz-q" data-correct="d">
+          <p>4. Why use gpt-4o-mini instead of gpt-4o for this project?</p>
+          <label class="quiz-option"><input type="radio" name="qa-q4" value="a"> gpt-4o is unavailable via API</label>
+          <label class="quiz-option"><input type="radio" name="qa-q4" value="b"> gpt-4o-mini has a larger context window</label>
+          <label class="quiz-option"><input type="radio" name="qa-q4" value="c"> gpt-4o doesn't support system prompts</label>
+          <label class="quiz-option"><input type="radio" name="qa-q4" value="d"> It's ~15× cheaper, fast enough, and performs well when context is pre-retrieved</label>
+        </div>
+
+        <div class="quiz-q" data-correct="b">
+          <p>5. What does the DELETE /documents/{doc_id} endpoint need to do for correctness?</p>
+          <label class="quiz-option"><input type="radio" name="qa-q5" value="a"> Delete the PDF from the filesystem only</label>
+          <label class="quiz-option"><input type="radio" name="qa-q5" value="b"> Remove all vector embeddings for that document from ChromaDB AND delete the file</label>
+          <label class="quiz-option"><input type="radio" name="qa-q5" value="c"> Reset the entire ChromaDB collection</label>
+          <label class="quiz-option"><input type="radio" name="qa-q5" value="d"> Call the OpenAI API to clear cached embeddings</label>
+        </div>
+
+        <div class="quiz-actions">
+          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
+          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
+          <span class="quiz-result"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Completion -->
+    <div class="completion-banner" style="margin-top:2rem;">
+      <div class="completion-icon">🎓</div>
+      <div class="completion-body">
+        <h3>Mark Project Complete</h3>
+        <p>When you've completed all 6 milestones, mark it done and claim your project completion certificate.</p>
+      </div>
+      <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordProjectCompletion('project-01')">Mark Complete &amp; Claim →</button>
+    </div>
+
+    <!-- Related course link -->
+    <div class="project-callout" style="margin-top:2rem;">
+      <h4>💡 Learn the RAG concepts behind this project</h4>
+      <p>The Generative AI course covers RAG architecture, embeddings, vector databases, and LLM evaluation in depth — before you build.</p>
+      <a href="/courses/genai.html" class="btn btn-outline btn-sm">GenAI Course → RAG Topic</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students. Projects are learning exercises — real production use needs security review, scaling, and compliance consideration beyond what's covered here.</p></div>
+      <div class="footer-col"><h4>Projects</h4><ul><li><a href="/projects/">All Projects</a></li></ul></div>
+      <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/genai.html">Generative AI</a></li><li><a href="/courses/ml.html">Machine Learning</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life. All rights reserved.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

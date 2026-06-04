@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MLOps and Tools Course — Mitra AI Projects</title>
+  <meta name="description" content="MLOps and Tools course covering Airflow, Spark, MLflow, Kubernetes, SageMaker, Docker, and CI/CD for machine learning models.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/courses/" class="active">Courses</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/how-it-works.html">How It Works</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="hero hero-sm">
+  <div class="container hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/courses/">Courses</a><span class="breadcrumb-sep">›</span><span>MLOps &amp; Tools</span></div>
+    <div class="hero-eyebrow">mlops &amp; tools · production-minded learners</div>
+    <h1 class="hero-title">MLOps &amp; Tools</h1>
+    <p class="hero-sub">Airflow orchestration, Spark and Big Data, MLflow experiment tracking, Kubernetes for ML, SageMaker, Docker, and CI/CD for models. Mapped to AIML-Engineering-Lab patterns and spark-learning-guide.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="tab-layout">
+      <div class="tab-nav">
+        <button class="tab-btn">⚡ Airflow</button>
+        <button class="tab-btn">🔥 Spark</button>
+        <button class="tab-btn">📊 MLflow</button>
+        <button class="tab-btn">☸ Kubernetes</button>
+        <button class="tab-btn">☁ SageMaker</button>
+        <button class="tab-btn">🐳 Docker</button>
+        <button class="tab-btn">🔁 CI/CD for Models</button>
+      </div>
+
+      <!-- Airflow -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// 053 · airflow patterns</div><h2>Apache Airflow</h2><p>Workflow orchestration for data pipelines and ML jobs. Define pipelines as Directed Acyclic Graphs (DAGs) in Python. Schedule, monitor, and retry jobs from a web UI.</p></div>
+        <div class="topic-section"><h3>Core Concepts</h3>
+        <table class="metric-table">
+          <thead><tr><th>Concept</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>DAG</td><td>Directed Acyclic Graph — your pipeline definition</td></tr>
+            <tr><td>Task</td><td>A single unit of work (PythonOperator, BashOperator, etc.)</td></tr>
+            <tr><td>Operator</td><td>Template for a task type — Python, Bash, SQL, HTTP, etc.</td></tr>
+            <tr><td>Scheduler</td><td>Parses DAGs and triggers runs based on schedule intervals</td></tr>
+            <tr><td>XCom</td><td>Cross-communication — pass small values between tasks</td></tr>
+            <tr><td>Sensor</td><td>Waits for a condition (file exists, API ready, time elapsed)</td></tr>
+          </tbody>
+        </table></div>
+        <div class="topic-section"><h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>ml_pipeline_dag.py</span></div>
+          <pre><code><span class="kw">from</span> airflow <span class="kw">import</span> DAG
+<span class="kw">from</span> airflow.operators.python <span class="kw">import</span> PythonOperator
+<span class="kw">from</span> datetime <span class="kw">import</span> datetime
+
+<span class="kw">def</span> <span class="fn">train_model</span>(**ctx):
+    <span class="cm"># load data, train, save model</span>
+    <span class="fn">print</span>(<span class="st">"Training..."</span>)
+
+<span class="kw">def</span> <span class="fn">evaluate_model</span>(**ctx):
+    <span class="fn">print</span>(<span class="st">"Evaluating..."</span>)
+
+<span class="kw">with</span> <span class="cl">DAG</span>(<span class="st">"ml_pipeline"</span>,
+          schedule=<span class="st">"0 2 * * *"</span>,   <span class="cm"># daily at 2am</span>
+          start_date=<span class="fn">datetime</span>(<span class="num">2026</span>, <span class="num">1</span>, <span class="num">1</span>)) <span class="kw">as</span> dag:
+
+    train = <span class="cl">PythonOperator</span>(task_id=<span class="st">"train"</span>, python_callable=train_model)
+    eval_  = <span class="cl">PythonOperator</span>(task_id=<span class="st">"eval"</span>,  python_callable=evaluate_model)
+    train >> eval_   <span class="cm"># train runs first</span></code></pre>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — Airflow</h3>
+          <div class="quiz-q" data-correct="b"><p>1. In Airflow, XCom is used to:</p>
+            <label class="quiz-option"><input type="radio" name="af-q1" value="a"> Schedule DAG runs</label>
+            <label class="quiz-option"><input type="radio" name="af-q1" value="b"> Pass small values between tasks within a DAG run</label>
+            <label class="quiz-option"><input type="radio" name="af-q1" value="c"> Connect to external databases</label>
+            <label class="quiz-option"><input type="radio" name="af-q1" value="d"> Monitor task execution logs</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- Spark -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// spark-learning-guide</div><h2>Apache Spark &amp; Big Data</h2><p>Distributed data processing for datasets too large for a single machine. Spark processes data in-memory across a cluster, making it 10–100× faster than Hadoop MapReduce for iterative algorithms.</p></div>
+        <div class="topic-section"><h3>Core Abstractions</h3>
+        <table class="metric-table">
+          <thead><tr><th>Abstraction</th><th>What it is</th></tr></thead>
+          <tbody>
+            <tr><td>RDD</td><td>Resilient Distributed Dataset — the original Spark abstraction</td></tr>
+            <tr><td>DataFrame</td><td>Distributed table with schema — preferred for most use cases</td></tr>
+            <tr><td>Dataset</td><td>Typed DataFrame — JVM languages (Scala/Java)</td></tr>
+            <tr><td>Spark SQL</td><td>SQL interface on top of DataFrames</td></tr>
+            <tr><td>MLlib</td><td>Spark's distributed ML library</td></tr>
+            <tr><td>Structured Streaming</td><td>Real-time stream processing with DataFrame API</td></tr>
+          </tbody>
+        </table></div>
+        <div class="topic-section"><h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>spark_job.py</span></div>
+          <pre><code><span class="kw">from</span> pyspark.sql <span class="kw">import</span> SparkSession
+<span class="kw">from</span> pyspark.sql.functions <span class="kw">import</span> col, avg
+
+spark = <span class="cl">SparkSession</span>.builder.<span class="fn">appName</span>(<span class="st">"MLPipeline"</span>).<span class="fn">getOrCreate</span>()
+
+df = spark.read.<span class="fn">parquet</span>(<span class="st">"s3://bucket/data/"</span>)
+result = (df
+    .<span class="fn">filter</span>(col(<span class="st">"score"</span>) > <span class="num">0</span>)
+    .<span class="fn">groupBy</span>(<span class="st">"category"</span>)
+    .<span class="fn">agg</span>(<span class="fn">avg</span>(<span class="st">"score"</span>).alias(<span class="st">"avg_score"</span>))
+    .<span class="fn">orderBy</span>(<span class="st">"avg_score"</span>, ascending=<span class="kw">False</span>))
+
+result.<span class="fn">show</span>(<span class="num">10</span>)</code></pre>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — Spark</h3>
+          <div class="quiz-q" data-correct="c"><p>1. Spark DataFrames are preferred over RDDs because:</p>
+            <label class="quiz-option"><input type="radio" name="sp-q1" value="a"> DataFrames don't need a SparkSession</label>
+            <label class="quiz-option"><input type="radio" name="sp-q1" value="b"> RDDs are only available in Scala</label>
+            <label class="quiz-option"><input type="radio" name="sp-q1" value="c"> DataFrames have a schema, enabling Catalyst optimizer to auto-optimize queries</label>
+            <label class="quiz-option"><input type="radio" name="sp-q1" value="d"> DataFrames work without a cluster</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- MLflow -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// experiment tracking</div><h2>MLflow — Experiment Tracking</h2><p>Track, compare, and reproduce ML experiments. MLflow records parameters, metrics, artifacts, and code versions — so you always know which run produced the best model.</p></div>
+        <div class="topic-section"><h3>MLflow Components</h3>
+        <table class="metric-table">
+          <thead><tr><th>Component</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td>Tracking</td><td>Log parameters, metrics, and artifacts for each run</td></tr>
+            <tr><td>Projects</td><td>Package ML code for reproducible runs</td></tr>
+            <tr><td>Models</td><td>Standard model packaging format for multiple deployment targets</td></tr>
+            <tr><td>Registry</td><td>Centralized model store with versioning and staging</td></tr>
+          </tbody>
+        </table></div>
+        <div class="topic-section"><h3>Code Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>mlflow_tracking.py</span></div>
+          <pre><code><span class="kw">import</span> mlflow
+<span class="kw">import</span> mlflow.sklearn
+
+mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-predictor"</span>)
+
+<span class="kw">with</span> mlflow.<span class="fn">start_run</span>():
+    mlflow.<span class="fn">log_param</span>(<span class="st">"alpha"</span>, <span class="num">0.5</span>)
+    mlflow.<span class="fn">log_param</span>(<span class="st">"model"</span>, <span class="st">"ridge"</span>)
+
+    model.<span class="fn">fit</span>(X_train, y_train)
+    rmse = <span class="fn">compute_rmse</span>(model, X_test, y_test)
+
+    mlflow.<span class="fn">log_metric</span>(<span class="st">"rmse"</span>, rmse)
+    mlflow.sklearn.<span class="fn">log_model</span>(model, <span class="st">"model"</span>)
+    <span class="fn">print</span>(<span class="st">f"Run ID: {mlflow.active_run().info.run_id}"</span>)</code></pre>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — MLflow</h3>
+          <div class="quiz-q" data-correct="b"><p>1. MLflow's Model Registry is used for:</p>
+            <label class="quiz-option"><input type="radio" name="mf-q1" value="a"> Training models on distributed clusters</label>
+            <label class="quiz-option"><input type="radio" name="mf-q1" value="b"> Versioning, staging, and managing models for production deployment</label>
+            <label class="quiz-option"><input type="radio" name="mf-q1" value="c"> Real-time model serving</label>
+            <label class="quiz-option"><input type="radio" name="mf-q1" value="d"> Hyperparameter search</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- Kubernetes -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// kubernetes for ml</div><h2>Kubernetes for ML</h2><p>Container orchestration at scale. Kubernetes manages your ML workloads across clusters — scheduling training jobs, scaling inference services, and ensuring reliability.</p></div>
+        <div class="topic-section"><h3>Key Objects</h3>
+        <table class="metric-table">
+          <thead><tr><th>Object</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td>Pod</td><td>Smallest deployable unit — one or more containers</td></tr>
+            <tr><td>Deployment</td><td>Manages replicas of a Pod, handles rolling updates</td></tr>
+            <tr><td>Service</td><td>Exposes Pods via a stable IP or DNS name</td></tr>
+            <tr><td>ConfigMap / Secret</td><td>Inject config and credentials without rebuilding images</td></tr>
+            <tr><td>Job / CronJob</td><td>Run batch tasks (model training) once or on a schedule</td></tr>
+            <tr><td>PersistentVolume</td><td>Durable storage for datasets and model artifacts</td></tr>
+          </tbody>
+        </table></div>
+        <div class="quiz-block"><h3>// QUIZ — Kubernetes</h3>
+          <div class="quiz-q" data-correct="a"><p>1. A Kubernetes Deployment manages:</p>
+            <label class="quiz-option"><input type="radio" name="k8-q1" value="a"> Desired replica count for Pods and rolling updates</label>
+            <label class="quiz-option"><input type="radio" name="k8-q1" value="b"> Network routing between pods</label>
+            <label class="quiz-option"><input type="radio" name="k8-q1" value="c"> Secret storage</label>
+            <label class="quiz-option"><input type="radio" name="k8-q1" value="d"> Node scheduling priorities</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- SageMaker -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// aws sagemaker</div><h2>AWS SageMaker</h2><p>Fully managed ML platform — from training to deployment. SageMaker handles infrastructure provisioning, model hosting, batch transform, and A/B testing in production.</p></div>
+        <div class="topic-section"><h3>Core Workflow</h3>
+        <div class="arch-diagram">
+          <div class="arch-boxes">
+            <div class="arch-box">S3 (data)</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Training Job</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Model Registry</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Endpoint</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Your App</div>
+          </div>
+        </div></div>
+        <div class="topic-section"><h3>Key Features</h3>
+        <div class="tags"><span class="tag">Managed Spot Training</span><span class="tag">Autopilot (AutoML)</span><span class="tag">Feature Store</span><span class="tag">Pipelines</span><span class="tag">Studio</span><span class="tag">JumpStart</span></div></div>
+        <div class="watchout-box"><h4>⚠ Watch-outs</h4><ul>
+          <li>SageMaker endpoints have an idle cost — always delete endpoints when not in use during development</li>
+          <li>Use Spot Instances for training to cut costs by 70–90%</li>
+        </ul></div>
+        <div class="quiz-block"><h3>// QUIZ — SageMaker</h3>
+          <div class="quiz-q" data-correct="c"><p>1. SageMaker Spot Training reduces costs by:</p>
+            <label class="quiz-option"><input type="radio" name="sm-q1" value="a"> Using smaller model architectures automatically</label>
+            <label class="quiz-option"><input type="radio" name="sm-q1" value="b"> Running training on CPU instead of GPU</label>
+            <label class="quiz-option"><input type="radio" name="sm-q1" value="c"> Using spare AWS compute capacity at 70–90% discount (with interruption risk)</label>
+            <label class="quiz-option"><input type="radio" name="sm-q1" value="d"> Caching model weights across training runs</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- Docker -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// docker for ml</div><h2>Docker for ML</h2><p>Package your ML models and their dependencies into containers. Docker eliminates "works on my machine" problems and enables consistent deployment across dev, staging, and production.</p></div>
+        <div class="topic-section"><h3>ML Dockerfile Pattern</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>Dockerfile</span></div>
+          <pre><code><span class="cm"># Use Python 3.11 slim base</span>
+<span class="kw">FROM</span> python:<span class="num">3.11</span>-slim
+
+<span class="kw">WORKDIR</span> /app
+
+<span class="cm"># Install dependencies first (for layer caching)</span>
+<span class="kw">COPY</span> requirements.txt .
+<span class="kw">RUN</span> pip install --no-cache-dir -r requirements.txt
+
+<span class="cm"># Copy app code</span>
+<span class="kw">COPY</span> . .
+
+<span class="cm"># Copy model artifact</span>
+<span class="kw">COPY</span> models/model.pkl /app/models/
+
+<span class="kw">EXPOSE</span> <span class="num">8000</span>
+<span class="kw">CMD</span> [<span class="st">"uvicorn"</span>, <span class="st">"app.main:app"</span>, <span class="st">"--host"</span>, <span class="st">"0.0.0.0"</span>, <span class="st">"--port"</span>, <span class="st">"8000"</span>]</code></pre>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — Docker</h3>
+          <div class="quiz-q" data-correct="b"><p>1. Copying requirements.txt and installing dependencies before copying the application code helps:</p>
+            <label class="quiz-option"><input type="radio" name="dk-q1" value="a"> Reduce the final image size</label>
+            <label class="quiz-option"><input type="radio" name="dk-q1" value="b"> Cache the pip install layer so rebuilds are faster when only code changes</label>
+            <label class="quiz-option"><input type="radio" name="dk-q1" value="c"> Allow parallel installation of packages</label>
+            <label class="quiz-option"><input type="radio" name="dk-q1" value="d"> Enable GPU access inside the container</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+      </div>
+
+      <!-- CI/CD -->
+      <div class="tab-panel">
+        <div class="topic-hero"><div class="topic-eyebrow">// ci/cd for models</div><h2>CI/CD for ML Models</h2><p>Automate the path from code commit to deployed model. ML-specific CI/CD adds model performance gates, data validation, and rollback triggers on top of standard software CI/CD.</p></div>
+        <div class="topic-section"><h3>ML CI/CD Pipeline</h3>
+        <div class="arch-diagram">
+          <div class="arch-boxes">
+            <div class="arch-box">Git Push</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Run Tests</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Train Model</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Eval Gate</div><div class="arch-arrow">→</div>
+            <div class="arch-box">Deploy</div>
+          </div>
+          <p style="font-size:0.8rem;color:var(--muted);margin-top:0.75rem;">Eval Gate: block deployment if new model is worse than baseline by more than X%</p>
+        </div></div>
+        <div class="topic-section"><h3>GitHub Actions ML Example</h3>
+        <div class="code-panel">
+          <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>.github/workflows/ml-pipeline.yml</span></div>
+          <pre><code><span class="kw">name:</span> ML Pipeline
+<span class="kw">on:</span> [push]
+<span class="kw">jobs:</span>
+  <span class="kw">train-and-eval:</span>
+    <span class="kw">runs-on:</span> ubuntu-latest
+    <span class="kw">steps:</span>
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        <span class="kw">with:</span> { python-version: <span class="st">"3.11"</span> }
+      - run: pip install -r requirements.txt
+      - run: python train.py
+      - run: python evaluate.py  <span class="cm"># exits 1 if model below threshold</span>
+      - run: python deploy.py     <span class="cm"># pushes to SageMaker or Docker</span></code></pre>
+        </div></div>
+        <div class="quiz-block"><h3>// QUIZ — CI/CD for Models</h3>
+          <div class="quiz-q" data-correct="c"><p>1. An "eval gate" in ML CI/CD blocks deployment when:</p>
+            <label class="quiz-option"><input type="radio" name="cd-q1" value="a"> The training job takes too long</label>
+            <label class="quiz-option"><input type="radio" name="cd-q1" value="b"> Code linting fails</label>
+            <label class="quiz-option"><input type="radio" name="cd-q1" value="c"> The new model's performance is worse than the current production model</label>
+            <label class="quiz-option"><input type="radio" name="cd-q1" value="d"> The Docker image is too large</label>
+          </div>
+          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+        </div>
+        <div class="completion-banner">
+          <div class="completion-icon">🎓</div>
+          <div class="completion-body"><h3>MLOps Course Complete!</h3><p>Claim your MLOps &amp; Tools completion certificate.</p></div>
+          <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('mlops','cicd')">Claim Certificate →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students.</p></div>
+      <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/ml.html">Machine Learning</a></li><li><a href="/courses/genai.html">Generative AI</a></li><li><a href="/courses/agentic.html">Agentic AI</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>
