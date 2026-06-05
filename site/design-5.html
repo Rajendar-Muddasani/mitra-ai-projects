@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design 5 — Saffron (Warm Dark · Amber Premium)</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0a0805;--surface:#161008;--surface2:#1f1710;
+  --primary:#f59e0b;--primary-warm:#e07b2a;--primary-soft:rgba(245,158,11,0.12);
+  --text:#f5ede0;--muted:#8c7a66;--text-dim:#b89880;
+  --border:rgba(245,158,11,0.16);--border-dim:rgba(255,255,255,0.06);
+  --r:10px;--r-lg:16px;
+}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.65;}
+a{color:inherit;text-decoration:none;}
+.container{max-width:1160px;margin:0 auto;padding:0 1.5rem;}
+
+/* Warm texture */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 80% 60% at 30% -10%,rgba(245,158,11,0.05) 0%,transparent 65%),
+             radial-gradient(ellipse 60% 50% at 80% 80%,rgba(224,123,42,0.04) 0%,transparent 60%);
+}
+
+nav{border-bottom:1px solid var(--border-dim);backdrop-filter:blur(14px);position:sticky;top:0;z-index:50;background:rgba(10,8,5,0.9);}
+.nav-inner{display:flex;align-items:center;gap:2rem;height:62px;position:relative;z-index:1;}
+.brand{font-family:'DM Sans',sans-serif;font-weight:800;font-size:1.2rem;display:flex;align-items:center;gap:0.6rem;}
+.brand-dot{
+  width:34px;height:34px;
+  background:linear-gradient(135deg,var(--primary),var(--primary-warm));
+  border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:0.88rem;color:#000;
+}
+.amber{color:var(--primary);}
+.nav-links{display:flex;gap:2rem;margin-left:auto;list-style:none;}
+.nav-links a{font-size:0.875rem;font-weight:600;color:var(--muted);transition:color 0.2s;}
+.nav-links a:hover{color:var(--text);}
+.btn-ghost{background:var(--primary-soft);border:1px solid var(--border);color:var(--primary);padding:0.4rem 1rem;border-radius:7px;font-family:inherit;font-size:0.8rem;font-weight:700;cursor:pointer;transition:all 0.2s;}
+.btn-ghost:hover{background:rgba(245,158,11,0.2);}
+
+.hero{padding:6rem 0 4.5rem;position:relative;overflow:hidden;}
+.hero::before{
+  content:'';position:absolute;top:-20%;right:5%;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(245,158,11,0.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:var(--primary-soft);border:1px solid var(--border);
+  border-radius:7px;padding:0.3rem 0.9rem;
+  font-family:'JetBrains Mono',monospace;font-size:0.72rem;
+  color:var(--primary);letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+.eyebrow::before{content:'✦';font-size:0.6rem;}
+h1{font-family:'DM Sans',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.09;margin-bottom:0.8rem;}
+h1 .em{color:var(--primary);}
+.tagline{
+  font-family:'JetBrains Mono',monospace;font-size:0.88rem;font-weight:600;
+  color:var(--primary);letter-spacing:0.2em;margin-bottom:1.5rem;opacity:0.85;
+}
+.subtitle{font-size:1.05rem;color:var(--muted);max-width:590px;margin-bottom:2.5rem;line-height:1.8;}
+.cta-row{display:flex;gap:0.85rem;flex-wrap:wrap;margin-bottom:1.25rem;}
+.btn-p{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:linear-gradient(135deg,var(--primary),var(--primary-warm));
+  color:#000;padding:0.78rem 1.85rem;border-radius:var(--r);
+  font-weight:800;font-size:0.95rem;border:none;cursor:pointer;transition:all 0.2s;
+  box-shadow:0 4px 24px rgba(245,158,11,0.28);
+}
+.btn-p:hover{transform:translateY(-1px);box-shadow:0 6px 36px rgba(245,158,11,0.4);}
+.btn-o{background:transparent;color:var(--text);padding:0.78rem 1.85rem;border-radius:var(--r);font-weight:700;font-size:0.95rem;border:1px solid var(--border-dim);cursor:pointer;transition:all 0.2s;}
+.btn-o:hover{border-color:var(--border);color:var(--primary);}
+.chips{display:flex;flex-wrap:wrap;gap:0.45rem;align-items:center;margin-bottom:3rem;}
+.chip-lbl{font-size:0.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+.chip{
+  display:inline-flex;align-items:center;gap:0.3rem;padding:0.28rem 0.7rem;
+  background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.15);
+  border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--text-dim);
+  transition:all 0.2s;cursor:pointer;
+}
+.chip:hover{background:rgba(245,158,11,0.13);border-color:rgba(245,158,11,0.35);color:var(--primary);}
+.trust{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:1.75rem;border-top:1px solid var(--border-dim);}
+.ti{display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:var(--muted);font-weight:600;}
+
+.sec{padding:4.5rem 0;position:relative;z-index:1;}
+.sec-bg{background:var(--surface);}
+.section-tag{font-family:'JetBrains Mono',monospace;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--primary);margin-bottom:0.5rem;}
+h2{font-family:'DM Sans',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:0.5rem;}
+.sec-sub{color:var(--muted);font-size:0.95rem;max-width:500px;margin:0 auto 2.5rem;text-align:center;}
+.sh{text-align:center;margin-bottom:2.5rem;}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;}
+@media(max-width:900px){.g2{grid-template-columns:1fr;}.g4{grid-template-columns:1fr 1fr;}}
+@media(max-width:540px){.g4{grid-template-columns:1fr;}}
+
+.card{background:var(--surface);border:1px solid var(--border-dim);border-radius:var(--r-lg);padding:1.6rem;transition:all 0.2s;}
+.card:hover{border-color:var(--border);transform:translateY(-2px);box-shadow:0 10px 36px rgba(245,158,11,0.08);}
+.ci{font-size:1.75rem;margin-bottom:0.75rem;}
+.ct{font-family:'DM Sans',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.4rem;}
+.cd{font-size:0.85rem;color:var(--muted);line-height:1.65;}
+.cc{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--primary);margin-top:1rem;display:block;}
+.badge{display:inline-block;padding:0.2rem 0.6rem;border-radius:5px;font-size:0.68rem;font-weight:700;font-family:'JetBrains Mono',monospace;margin-bottom:0.75rem;}
+.b-amber{background:rgba(245,158,11,0.12);color:var(--primary);}
+.b-warm{background:rgba(224,123,42,0.12);color:var(--primary-warm);}
+
+.step{text-align:center;padding:1rem;}
+.sn{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--primary);opacity:0.6;margin-bottom:0.35rem;font-weight:700;}
+.si{font-size:1.75rem;margin-bottom:0.5rem;}
+.step h3{font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.98rem;margin-bottom:0.35rem;}
+.step p{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+
+.cta-band{
+  background:linear-gradient(135deg,rgba(245,158,11,0.12),rgba(224,123,42,0.08));
+  border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:3rem 2rem;text-align:center;margin-top:4rem;
+}
+.cta-band h2{margin-bottom:0.5rem;}
+.cta-band p{color:var(--muted);margin-bottom:1.5rem;}
+
+footer{border-top:1px solid var(--border-dim);padding:2rem 0;position:relative;z-index:1;}
+.fi{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.fb{font-family:'DM Sans',sans-serif;font-weight:800;}
+.fc{font-size:0.78rem;color:var(--muted);}
+.fl{display:flex;gap:1rem;font-size:0.78rem;color:var(--muted);}
+.design-label{position:fixed;bottom:1rem;right:1rem;background:linear-gradient(135deg,var(--primary),var(--primary-warm));border-radius:999px;padding:0.4rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#000;font-weight:700;z-index:100;}
+</style>
+</head>
+<body>
+
+<div class="design-label">Design 5 — Saffron</div>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="brand"><div class="brand-dot">M</div>Mitra<span class="amber">AI</span> Projects</div>
+    <ul class="nav-links">
+      <li><a href="#">Courses</a></li><li><a href="#">Projects</a></li>
+      <li><a href="#">Cheatsheets</a></li><li><a href="#">How It Works</a></li><li><a href="#">Contact</a></li>
+    </ul>
+    <button class="btn-ghost">Sign In</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="eyebrow">final-year project kits &amp; concept courses</div>
+    <h1>Real-World AI Projects —<br><em class="em">Built, Explained, Deployed, Documented.</em></h1>
+    <p class="tagline">Build &nbsp;·&nbsp; Explain &nbsp;·&nbsp; Deploy &nbsp;·&nbsp; Document</p>
+    <p class="subtitle">Guided concept courses and project kits for B.E., B.Tech, BCA, MCA, and Diploma students. Code-first. Notebook-first. Project-first.</p>
+    <div class="cta-row">
+      <a href="/projects/" class="btn-p">Browse Projects</a>
+      <a href="/courses/" class="btn-o">Explore Courses</a>
+    </div>
+    <div class="chips">
+      <span class="chip-lbl">courses →</span>
+      <a href="/courses/ml.html" class="chip">🤖 Machine Learning</a>
+      <a href="/courses/programming.html" class="chip">💻 Programming</a>
+      <a href="/courses/genai.html" class="chip">✨ Generative AI</a>
+      <a href="/courses/dl.html" class="chip">🧠 Deep Learning</a>
+      <a href="/courses/agentic.html" class="chip">🤝 Agentic AI</a>
+      <a href="/courses/mlops.html" class="chip">⚙️ MLOps</a>
+    </div>
+    <div class="trust">
+      <div class="ti"><span>✅</span> Final-year project ready</div>
+      <div class="ti"><span>💻</span> Code + notebooks included</div>
+      <div class="ti"><span>🎓</span> Viva prep &amp; report templates</div>
+      <div class="ti"><span>🚀</span> Deployment guides included</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="sh"><div class="section-tag">parallel lanes</div><h2>Learn the Concepts. Build the Project.</h2><p class="sec-sub">Clear paths for every timeline — use both, or start with the one that fits where you are.</p></div>
+    <div class="g2">
+      <div class="card" style="border-color:rgba(245,158,11,0.2);">
+        <div class="ci">📚</div><span class="badge b-amber">Courses</span>
+        <div class="ct">Concept-First Learning</div>
+        <div class="cd">Tab-based courses in ML, Deep Learning, GenAI, Agentic AI, MLOps, and Programming. Plain-English explanation, code, quizzes, cheatsheet downloads.</div>
+      </div>
+      <div class="card" style="border-color:rgba(224,123,42,0.2);">
+        <div class="ci">🛠️</div><span class="badge b-warm">Projects</span>
+        <div class="ct">Outcome-First Builds</div>
+        <div class="cd">Guided project kits with architecture, milestones, code, deployment, PPT, report, and viva Q&amp;A — everything from first line of code to final presentation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-bg">
+  <div class="container">
+    <div class="sh"><div class="section-tag">browse by type</div><h2>Find the Right Project for Where You Are</h2><p class="sec-sub">Pick the lane that matches your year, deadline, and goal.</p></div>
+    <div class="g4">
+      <a href="/projects/?lane=mini" class="card"><div class="ci">⚡</div><div class="ct">Guided Mini Projects</div><div class="cd">2–4 weeks · 2nd &amp; 3rd year · Quick working build</div><span class="cc">Browse →</span></a>
+      <a href="/projects/?lane=major" class="card" style="border-color:rgba(245,158,11,0.2);"><div class="ci">🎓</div><div class="ct">Major Project Kits</div><div class="cd">8–16 weeks · Final-year · Thesis-ready submission</div><span class="cc">Browse →</span></a>
+      <a href="/projects/?lane=portfolio" class="card" style="border-color:rgba(224,123,42,0.18);"><div class="ci">💼</div><div class="ct">Portfolio Builds</div><div class="cd">4–8 weeks · Freshers · Company-ready demo + GitHub</div><span class="cc">Browse →</span></a>
+      <a href="/projects/?lane=viva" class="card"><div class="ci">🎤</div><div class="ct">Viva &amp; Submission Packs</div><div class="cd">Report, PPT, demo script &amp; viva defense support</div><span class="cc">Browse →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="sh"><div class="section-tag">how it works</div><h2>From Idea to Demo in Four Steps</h2></div>
+    <div class="g4">
+      <div class="step"><div class="sn">01</div><div class="si">📖</div><h3>Pick Your Track</h3><p>Choose a course or project kit that matches your deadline or placement goal.</p></div>
+      <div class="step"><div class="sn">02</div><div class="si">🔨</div><h3>Build Milestone by Milestone</h3><p>Follow the guided breakdown. Working code and clear checkpoints every step.</p></div>
+      <div class="step"><div class="sn">03</div><div class="si">🚀</div><h3>Deploy &amp; Demo</h3><p>Get a live demo URL to share with your college or interviewer.</p></div>
+      <div class="step"><div class="sn">04</div><div class="si">🎤</div><h3>Explain &amp; Defend</h3><p>Viva Q&amp;A, report template, and PPT deck — present with confidence.</p></div>
+    </div>
+    <div class="cta-band"><h2>Ready to build your first real AI project?</h2><p>Start with Document Q&amp;A Assistant — complete final-year kit with code, deployment, report, and viva prep.</p><a href="/projects/document-qa-assistant.html" class="btn-p">Start Building →</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container fi">
+    <div class="fb">Mitra<span class="amber">AI</span> Projects</div>
+    <div class="fc">© 2026 Mitra AI Life. All rights reserved.</div>
+    <div class="fl"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design 1 — Terminal Craft (Dark Teal Refined)</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d1117; --surface:#161b22; --surface2:#1c2333;
+  --primary:#00d4aa; --accent:#f0b429; --purple:#7c3aed;
+  --text:#e6edf3; --muted:#7d8590;
+  --border:rgba(0,212,170,0.14); --border-dim:rgba(255,255,255,0.06);
+  --r:12px; --r-lg:16px;
+}
+body{background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+.container{max-width:1160px;margin:0 auto;padding:0 1.5rem;}
+
+/* Nav */
+nav{border-bottom:1px solid var(--border-dim);backdrop-filter:blur(12px);position:sticky;top:0;z-index:50;background:rgba(13,17,23,0.88);}
+.nav-inner{display:flex;align-items:center;gap:2rem;height:60px;}
+.brand{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.2rem;display:flex;align-items:center;gap:0.5rem;}
+.brand-dot{width:32px;height:32px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:#000;}
+.teal{color:var(--primary);}
+.nav-links{display:flex;gap:1.75rem;margin-left:auto;list-style:none;}
+.nav-links a{font-size:0.875rem;font-weight:600;color:var(--muted);transition:color 0.2s;}
+.nav-links a:hover{color:var(--text);}
+.btn-ghost{background:transparent;border:1px solid var(--border-dim);color:var(--muted);padding:0.35rem 0.85rem;border-radius:6px;font-family:inherit;font-size:0.8rem;font-weight:700;cursor:pointer;transition:all 0.2s;}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary);}
+
+/* Hero */
+.hero{
+  padding:5rem 0 4rem;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%,rgba(0,212,170,0.08) 0%,transparent 70%),
+    radial-gradient(ellipse 40% 40% at 90% 50%,rgba(124,58,237,0.05) 0%,transparent 70%),
+    var(--bg);
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(0,212,170,0.025) 39px,rgba(0,212,170,0.025) 40px),
+             repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(0,212,170,0.025) 39px,rgba(0,212,170,0.025) 40px);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--primary);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.6rem;}
+.eyebrow::before{content:'→';font-size:0.85rem;}
+h1{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;margin-bottom:0.75rem;}
+h1 em{font-style:normal;color:var(--primary);}
+.tagline{font-family:'JetBrains Mono',monospace;font-size:0.9rem;font-weight:600;color:var(--primary);letter-spacing:0.18em;margin-bottom:1.5rem;opacity:0.8;}
+.subtitle{font-size:1.05rem;color:var(--muted);max-width:600px;margin-bottom:2rem;line-height:1.75;}
+.cta-block{display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem;}
+.cta-row{display:flex;gap:0.75rem;flex-wrap:wrap;}
+.btn-primary{background:var(--primary);color:#000;padding:0.7rem 1.6rem;border-radius:8px;font-weight:800;font-size:0.95rem;font-family:'Nunito',sans-serif;border:none;cursor:pointer;transition:all 0.2s;}
+.btn-primary:hover{background:#00e6b8;transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--text);padding:0.7rem 1.6rem;border-radius:8px;font-weight:800;font-size:0.95rem;font-family:'Nunito',sans-serif;border:1px solid var(--border-dim);cursor:pointer;transition:all 0.2s;}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary);}
+.chips{display:flex;flex-wrap:wrap;gap:0.45rem;align-items:center;}
+.chip-label{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted);margin-right:0.25rem;}
+.chip{display:inline-flex;align-items:center;gap:0.3rem;padding:0.28rem 0.7rem;background:rgba(0,212,170,0.06);border:1px solid rgba(0,212,170,0.16);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text);transition:all 0.2s;cursor:pointer;}
+.chip:hover{background:rgba(0,212,170,0.13);border-color:rgba(0,212,170,0.4);color:var(--primary);}
+.trust{display:flex;gap:2rem;flex-wrap:wrap;padding-top:1.75rem;border-top:1px solid var(--border-dim);}
+.trust-item{display:flex;align-items:center;gap:0.45rem;font-size:0.82rem;color:var(--muted);font-weight:700;}
+.trust-icon{color:var(--primary);}
+
+/* Sections */
+.section{padding:4rem 0;}
+.section-bg{background:var(--surface);}
+.section-tag{font-family:'JetBrains Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--primary);margin-bottom:0.6rem;}
+h2{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:0.6rem;}
+.section-sub{color:var(--muted);font-size:0.95rem;max-width:520px;margin:0 auto 2.5rem;text-align:center;}
+.section-header{text-align:center;margin-bottom:2.5rem;}
+
+/* Cards */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;}
+@media(max-width:900px){.grid2{grid-template-columns:1fr;}.grid4{grid-template-columns:1fr 1fr;}}
+@media(max-width:540px){.grid4{grid-template-columns:1fr;}}
+.card{background:var(--surface);border:1px solid var(--border-dim);border-radius:var(--r-lg);padding:1.5rem;transition:all 0.2s;}
+.card:hover{border-color:var(--border);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,212,170,0.06);}
+.card-icon{font-size:1.75rem;margin-bottom:0.75rem;}
+.card-title{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.05rem;margin-bottom:0.4rem;}
+.card-desc{font-size:0.85rem;color:var(--muted);line-height:1.65;}
+.badge{display:inline-block;padding:0.2rem 0.55rem;border-radius:5px;font-size:0.7rem;font-weight:800;font-family:'JetBrains Mono',monospace;}
+.badge-teal{background:rgba(0,212,170,0.12);color:var(--primary);}
+.badge-amber{background:rgba(240,180,41,0.12);color:var(--accent);}
+.card-cta{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--primary);margin-top:1rem;display:block;}
+
+/* Steps */
+.step{text-align:center;}
+.step-num{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--primary);margin-bottom:0.4rem;opacity:0.7;}
+.step-icon{font-size:1.75rem;margin-bottom:0.5rem;}
+.step h3{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1rem;margin-bottom:0.4rem;}
+.step p{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+
+/* CTA */
+.cta-band{background:linear-gradient(135deg,rgba(0,212,170,0.1),rgba(124,58,237,0.07));border:1px solid var(--border);border-radius:var(--r-lg);padding:3rem 2rem;text-align:center;margin-top:4rem;}
+.cta-band h2{margin-bottom:0.5rem;}
+.cta-band p{color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;}
+
+/* Footer */
+footer{border-top:1px solid var(--border-dim);padding:2rem 0;margin-top:4rem;}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-brand{font-family:'Baloo 2',sans-serif;font-weight:800;}
+.footer-copy{font-size:0.8rem;color:var(--muted);}
+.design-label{position:fixed;bottom:1rem;right:1rem;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:0.4rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--primary);z-index:100;}
+</style>
+</head>
+<body>
+
+<div class="design-label">Design 1 — Terminal Craft</div>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="brand">
+      <div class="brand-dot">M</div>
+      Mitra<span class="teal">AI</span> Projects
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Courses</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Cheatsheets</a></li>
+      <li><a href="#">How It Works</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <button class="btn-ghost">Sign In</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="eyebrow">final-year project kits &amp; concept courses</div>
+    <h1>Real-World AI Projects —<br><em>Built, Explained, Deployed, Documented.</em></h1>
+    <p class="tagline">Build &nbsp;·&nbsp; Explain &nbsp;·&nbsp; Deploy &nbsp;·&nbsp; Document</p>
+    <p class="subtitle">Guided concept courses and project kits for B.E., B.Tech, BCA, MCA, and Diploma students. Code-first. Notebook-first. Project-first.</p>
+
+    <div class="cta-block">
+      <div class="cta-row">
+        <a href="/projects/" class="btn-primary">Browse Projects</a>
+        <a href="/courses/" class="btn-outline">Explore Courses</a>
+      </div>
+      <div class="chips">
+        <span class="chip-label">courses →</span>
+        <a href="/courses/ml.html" class="chip">🤖 Machine Learning</a>
+        <a href="/courses/programming.html" class="chip">💻 Programming</a>
+        <a href="/courses/genai.html" class="chip">✨ Generative AI</a>
+        <a href="/courses/dl.html" class="chip">🧠 Deep Learning</a>
+        <a href="/courses/agentic.html" class="chip">🤝 Agentic AI</a>
+        <a href="/courses/mlops.html" class="chip">⚙️ MLOps</a>
+      </div>
+    </div>
+
+    <div class="trust">
+      <div class="trust-item"><span class="trust-icon">✅</span> Final-year project ready</div>
+      <div class="trust-item"><span class="trust-icon">💻</span> Code + notebooks included</div>
+      <div class="trust-item"><span class="trust-icon">🎓</span> Viva prep &amp; report templates</div>
+      <div class="trust-item"><span class="trust-icon">🚀</span> Deployment guides included</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">parallel lanes</div>
+      <h2>Learn the Concepts. Build the Project.</h2>
+      <p class="section-sub">Mitra AI Projects gives you clear paths — use both, or start with the one that fits your timeline.</p>
+    </div>
+    <div class="grid2">
+      <div class="card" style="border-color:rgba(0,212,170,0.2);">
+        <div class="card-icon">📚</div>
+        <span class="badge badge-teal" style="margin-bottom:0.6rem;display:inline-block;">Courses</span>
+        <div class="card-title">Concept-First Learning</div>
+        <div class="card-desc">Tab-based courses in ML, Deep Learning, GenAI, Agentic AI, MLOps, and Programming. Plain-English explanation, code examples, quizzes, and cheatsheet downloads for every topic.</div>
+      </div>
+      <div class="card" style="border-color:rgba(240,180,41,0.2);">
+        <div class="card-icon">🛠️</div>
+        <span class="badge badge-amber" style="margin-bottom:0.6rem;display:inline-block;">Projects</span>
+        <div class="card-title">Outcome-First Builds</div>
+        <div class="card-desc">Guided project kits with architecture diagrams, milestone breakdowns, starter code, deployment guides, PPT templates, report templates, and viva Q&amp;A — everything from first line of code to final presentation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">browse by type</div>
+      <h2>Find the Right Project for Where You Are</h2>
+      <p class="section-sub">Pick the lane that matches your year, deadline, and goal.</p>
+    </div>
+    <div class="grid4">
+      <a href="/projects/?lane=mini" class="card" style="cursor:pointer;">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">Guided Mini Projects</div>
+        <div class="card-desc">2–4 weeks · 2nd &amp; 3rd year · Quick working build</div>
+        <span class="card-cta">Browse →</span>
+      </a>
+      <a href="/projects/?lane=major" class="card" style="border-color:rgba(0,212,170,0.18);cursor:pointer;">
+        <div class="card-icon">🎓</div>
+        <div class="card-title">Major Project Kits</div>
+        <div class="card-desc">8–16 weeks · Final-year · Thesis-ready submission</div>
+        <span class="card-cta">Browse →</span>
+      </a>
+      <a href="/projects/?lane=portfolio" class="card" style="border-color:rgba(240,180,41,0.18);cursor:pointer;">
+        <div class="card-icon">💼</div>
+        <div class="card-title">Portfolio Builds</div>
+        <div class="card-desc">4–8 weeks · Freshers · Company-ready demo + GitHub</div>
+        <span class="card-cta">Browse →</span>
+      </a>
+      <a href="/projects/?lane=viva" class="card" style="border-color:rgba(124,58,237,0.18);cursor:pointer;">
+        <div class="card-icon">🎤</div>
+        <div class="card-title">Viva &amp; Submission Packs</div>
+        <div class="card-desc">Report, PPT, demo script &amp; viva defense support</div>
+        <span class="card-cta">Browse →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">how it works</div>
+      <h2>From Idea to Demo in Four Steps</h2>
+    </div>
+    <div class="grid4">
+      <div class="step"><div class="step-num">01</div><div class="step-icon">📖</div><h3>Pick Your Track</h3><p>Choose a course or project kit that matches your deadline or placement goal.</p></div>
+      <div class="step"><div class="step-num">02</div><div class="step-icon">🔨</div><h3>Build Milestone by Milestone</h3><p>Follow the guided breakdown. Each milestone gives you working code and a clear checkpoint.</p></div>
+      <div class="step"><div class="step-num">03</div><div class="step-icon">🚀</div><h3>Deploy &amp; Demo</h3><p>Follow the deployment guide. Get a live demo URL to share with your college or interviewer.</p></div>
+      <div class="step"><div class="step-num">04</div><div class="step-icon">🎤</div><h3>Explain &amp; Defend</h3><p>Use viva Q&amp;A, the report template, and PPT deck to present and defend confidently.</p></div>
+    </div>
+    <div class="cta-band">
+      <h2>Ready to build your first real AI project?</h2>
+      <p>Start with Document Q&amp;A Assistant — complete final-year kit with code, deployment, report, and viva prep.</p>
+      <a href="/projects/document-qa-assistant.html" class="btn-primary">Start Building →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">Mitra<span class="teal">AI</span> Projects</div>
+    <div class="footer-copy">© 2026 Mitra AI Life. All rights reserved.</div>
+    <div style="display:flex;gap:1rem;font-size:0.8rem;color:var(--muted);">
+      <a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

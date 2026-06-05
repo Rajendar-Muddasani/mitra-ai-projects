@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design 3 — Clean Academic (Light Mode · Navy + Orange)</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#ffffff;--surface:#f4f6fb;--surface2:#eaeff8;
+  --primary:#1a3c8f;--blue-mid:#2d5be3;--accent:#e55c1a;
+  --text:#0f1629;--muted:#5a6987;--light-muted:#8b9dc8;
+  --border:rgba(26,60,143,0.12);--border-dim:rgba(0,0,0,0.07);
+  --r:10px;--r-lg:14px;
+}
+body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;line-height:1.65;}
+a{color:inherit;text-decoration:none;}
+.container{max-width:1160px;margin:0 auto;padding:0 1.5rem;}
+
+nav{border-bottom:1px solid var(--border-dim);position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);}
+.nav-inner{display:flex;align-items:center;gap:2rem;height:64px;}
+.brand{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2rem;display:flex;align-items:center;gap:0.6rem;color:var(--primary);}
+.brand-dot{width:34px;height:34px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem;color:#fff;}
+.accent-text{color:var(--accent);}
+.nav-links{display:flex;gap:2rem;margin-left:auto;list-style:none;}
+.nav-links a{font-size:0.875rem;font-weight:600;color:var(--muted);transition:color 0.2s;}
+.nav-links a:hover{color:var(--primary);}
+.btn-primary-sm{background:var(--accent);color:#fff;padding:0.45rem 1.1rem;border-radius:7px;font-weight:700;font-size:0.82rem;border:none;cursor:pointer;transition:all 0.2s;}
+.btn-primary-sm:hover{background:#cc4e13;transform:translateY(-1px);}
+
+.hero{padding:5.5rem 0 4rem;background:linear-gradient(160deg,#f4f7ff 0%,#edf1fb 50%,#fff 100%);position:relative;overflow:hidden;}
+.hero::after{
+  content:'';position:absolute;top:0;right:0;width:45%;height:100%;
+  background:url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='200' cy='200' r='160' fill='none' stroke='%231a3c8f' stroke-width='0.5' stroke-dasharray='4 6' opacity='0.12'/%3E%3Ccircle cx='200' cy='200' r='110' fill='none' stroke='%231a3c8f' stroke-width='0.5' stroke-dasharray='3 5' opacity='0.09'/%3E%3Ccircle cx='200' cy='200' r='60' fill='none' stroke='%231a3c8f' stroke-width='0.5' stroke-dasharray='2 4' opacity='0.07'/%3E%3C/svg%3E") center/contain no-repeat;
+  pointer-events:none;opacity:0.6;
+}
+.hero-inner{position:relative;z-index:1;max-width:680px;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(26,60,143,0.08);border:1px solid rgba(26,60,143,0.16);
+  border-radius:6px;padding:0.3rem 0.8rem;
+  font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:600;
+  color:var(--primary);letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+h1{font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.1;color:var(--primary);margin-bottom:0.75rem;}
+h1 .em{color:var(--accent);}
+.tagline{font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:600;color:var(--accent);letter-spacing:0.18em;margin-bottom:1.5rem;}
+.subtitle{font-size:1.05rem;color:var(--muted);max-width:560px;margin-bottom:2.5rem;line-height:1.8;}
+.cta-row{display:flex;gap:0.85rem;flex-wrap:wrap;margin-bottom:1.25rem;}
+.btn-p{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#fff;padding:0.75rem 1.85rem;border-radius:var(--r);font-weight:700;font-size:0.95rem;border:none;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 16px rgba(229,92,26,0.3);}
+.btn-p:hover{background:#cc4e13;transform:translateY(-1px);}
+.btn-o{background:transparent;color:var(--primary);padding:0.75rem 1.85rem;border-radius:var(--r);font-weight:700;font-size:0.95rem;border:2px solid var(--border);cursor:pointer;transition:all 0.2s;}
+.btn-o:hover{border-color:var(--primary);background:rgba(26,60,143,0.05);}
+.chips{display:flex;flex-wrap:wrap;gap:0.45rem;align-items:center;margin-bottom:3rem;}
+.chip-lbl{font-size:0.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+.chip{display:inline-flex;align-items:center;gap:0.3rem;padding:0.3rem 0.75rem;background:var(--surface);border:1px solid var(--border-dim);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted);transition:all 0.2s;cursor:pointer;}
+.chip:hover{background:rgba(26,60,143,0.07);border-color:var(--border);color:var(--primary);}
+.trust{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:1.75rem;border-top:1px solid var(--border-dim);}
+.ti{display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:var(--muted);font-weight:600;}
+
+.sec{padding:4.5rem 0;}
+.sec-bg{background:var(--surface);}
+.section-tag{font-family:'JetBrains Mono',monospace;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);margin-bottom:0.5rem;}
+h2{font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.3rem);color:var(--primary);margin-bottom:0.5rem;}
+.sec-sub{color:var(--muted);font-size:0.95rem;max-width:500px;margin:0 auto 2.5rem;text-align:center;}
+.sh{text-align:center;margin-bottom:2.5rem;}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;}
+@media(max-width:900px){.g2{grid-template-columns:1fr;}.g4{grid-template-columns:1fr 1fr;}}
+@media(max-width:540px){.g4{grid-template-columns:1fr;}}
+
+.card{background:#fff;border:1px solid var(--border-dim);border-radius:var(--r-lg);padding:1.6rem;transition:all 0.2s;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+.card:hover{border-color:var(--border);transform:translateY(-2px);box-shadow:0 8px 28px rgba(26,60,143,0.1);}
+.ci{font-size:1.75rem;margin-bottom:0.75rem;}
+.ct{font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;color:var(--primary);margin-bottom:0.4rem;}
+.cd{font-size:0.85rem;color:var(--muted);line-height:1.65;}
+.cc{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--accent);margin-top:1rem;display:block;font-weight:600;}
+.badge{display:inline-block;padding:0.2rem 0.6rem;border-radius:5px;font-size:0.68rem;font-weight:700;font-family:'JetBrains Mono',monospace;margin-bottom:0.75rem;}
+.b-navy{background:rgba(26,60,143,0.1);color:var(--primary);}
+.b-orange{background:rgba(229,92,26,0.1);color:var(--accent);}
+
+.step{text-align:center;padding:1.5rem;}
+.sn{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--accent);opacity:0.7;margin-bottom:0.35rem;font-weight:600;}
+.si{font-size:1.75rem;margin-bottom:0.5rem;}
+.step h3{font-family:'Outfit',sans-serif;font-weight:700;font-size:0.98rem;color:var(--primary);margin-bottom:0.35rem;}
+.step p{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+
+.cta-band{
+  background:linear-gradient(135deg,var(--primary),#2d5be3);
+  border-radius:var(--r-lg);padding:3rem 2rem;text-align:center;margin-top:4rem;color:#fff;
+}
+.cta-band h2{color:#fff;margin-bottom:0.5rem;}
+.cta-band p{color:rgba(255,255,255,0.75);margin-bottom:1.5rem;}
+.btn-white{background:#fff;color:var(--primary);padding:0.75rem 2rem;border-radius:var(--r);font-weight:800;font-size:0.95rem;border:none;cursor:pointer;transition:all 0.2s;}
+.btn-white:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,0.15);}
+
+footer{border-top:1px solid var(--border-dim);padding:2rem 0;background:var(--surface);}
+.fi{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.fb{font-family:'Outfit',sans-serif;font-weight:800;color:var(--primary);}
+.fc{font-size:0.78rem;color:var(--muted);}
+.fl{display:flex;gap:1rem;font-size:0.78rem;color:var(--muted);}
+.design-label{position:fixed;bottom:1rem;right:1rem;background:var(--primary);border-radius:999px;padding:0.4rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#fff;z-index:100;}
+</style>
+</head>
+<body>
+
+<div class="design-label">Design 3 — Clean Academic</div>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="brand"><div class="brand-dot">M</div>MitraAI <span class="accent-text">Projects</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Courses</a></li><li><a href="#">Projects</a></li>
+      <li><a href="#">Cheatsheets</a></li><li><a href="#">How It Works</a></li><li><a href="#">Contact</a></li>
+    </ul>
+    <button class="btn-primary-sm">Sign In</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="eyebrow">final-year project kits &amp; concept courses</div>
+    <h1>Real-World AI Projects —<br><span class="em">Built, Explained, Deployed, Documented.</span></h1>
+    <p class="tagline">Build &nbsp;·&nbsp; Explain &nbsp;·&nbsp; Deploy &nbsp;·&nbsp; Document</p>
+    <p class="subtitle">Guided concept courses and project kits for B.E., B.Tech, BCA, MCA, and Diploma students. Code-first. Notebook-first. Project-first.</p>
+    <div class="cta-row">
+      <a href="/projects/" class="btn-p">Browse Projects</a>
+      <a href="/courses/" class="btn-o">Explore Courses</a>
+    </div>
+    <div class="chips">
+      <span class="chip-lbl">courses →</span>
+      <a href="/courses/ml.html" class="chip">🤖 Machine Learning</a>
+      <a href="/courses/programming.html" class="chip">💻 Programming</a>
+      <a href="/courses/genai.html" class="chip">✨ Generative AI</a>
+      <a href="/courses/dl.html" class="chip">🧠 Deep Learning</a>
+      <a href="/courses/agentic.html" class="chip">🤝 Agentic AI</a>
+      <a href="/courses/mlops.html" class="chip">⚙️ MLOps</a>
+    </div>
+    <div class="trust">
+      <div class="ti"><span>✅</span> Final-year project ready</div>
+      <div class="ti"><span>💻</span> Code + notebooks included</div>
+      <div class="ti"><span>🎓</span> Viva prep &amp; report templates</div>
+      <div class="ti"><span>🚀</span> Deployment guides included</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="sh"><div class="section-tag">parallel lanes</div><h2>Learn the Concepts. Build the Project.</h2><p class="sec-sub">Clear paths for every timeline — use both, or start with the one that fits where you are.</p></div>
+    <div class="g2">
+      <div class="card" style="border-left:4px solid var(--primary);">
+        <div class="ci">📚</div><span class="badge b-navy">Courses</span>
+        <div class="ct">Concept-First Learning</div>
+        <div class="cd">Tab-based courses in ML, Deep Learning, GenAI, Agentic AI, MLOps, and Programming. Plain-English explanation, code, quizzes, cheatsheet downloads.</div>
+      </div>
+      <div class="card" style="border-left:4px solid var(--accent);">
+        <div class="ci">🛠️</div><span class="badge b-orange">Projects</span>
+        <div class="ct">Outcome-First Builds</div>
+        <div class="cd">Guided project kits with architecture, milestones, code, deployment, PPT, report, and viva Q&amp;A — everything from first line of code to final presentation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-bg">
+  <div class="container">
+    <div class="sh"><div class="section-tag">browse by type</div><h2>Find the Right Project for Where You Are</h2><p class="sec-sub">Pick the lane that matches your year, deadline, and goal.</p></div>
+    <div class="g4">
+      <a href="/projects/?lane=mini" class="card"><div class="ci">⚡</div><div class="ct">Guided Mini Projects</div><div class="cd">2–4 weeks · 2nd &amp; 3rd year · Quick working build</div><span class="cc">Browse →</span></a>
+      <a href="/projects/?lane=major" class="card" style="border-left:3px solid var(--primary);"><div class="ci">🎓</div><div class="ct">Major Project Kits</div><div class="cd">8–16 weeks · Final-year · Thesis-ready submission</div><span class="cc">Browse →</span></a>
+      <a href="/projects/?lane=portfolio" class="card" style="border-left:3px solid var(--accent);"><div class="ci">💼</div><div class="ct">Portfolio Builds</div><div class="cd">4–8 weeks · Freshers · Company-ready demo + GitHub</div><span class="cc">Browse →</span></a>
+      <a href="/projects/?lane=viva" class="card"><div class="ci">🎤</div><div class="ct">Viva &amp; Submission Packs</div><div class="cd">Report, PPT, demo script &amp; viva defense support</div><span class="cc">Browse →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="sh"><div class="section-tag">how it works</div><h2>From Idea to Demo in Four Steps</h2></div>
+    <div class="g4">
+      <div class="step"><div class="sn">01</div><div class="si">📖</div><h3>Pick Your Track</h3><p>Choose a course or project kit that matches your deadline or placement goal.</p></div>
+      <div class="step"><div class="sn">02</div><div class="si">🔨</div><h3>Build Milestone by Milestone</h3><p>Follow the guided breakdown. Working code and clear checkpoints every step.</p></div>
+      <div class="step"><div class="sn">03</div><div class="si">🚀</div><h3>Deploy &amp; Demo</h3><p>Get a live demo URL to share with your college or interviewer.</p></div>
+      <div class="step"><div class="sn">04</div><div class="si">🎤</div><h3>Explain &amp; Defend</h3><p>Viva Q&amp;A, report template, and PPT deck — present with confidence.</p></div>
+    </div>
+    <div class="cta-band"><h2>Ready to build your first real AI project?</h2><p>Start with Document Q&amp;A Assistant — complete final-year kit with code, deployment, report, and viva prep.</p><a href="/projects/document-qa-assistant.html" class="btn-white">Start Building →</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container fi">
+    <div class="fb">MitraAI <span class="accent-text">Projects</span></div>
+    <div class="fc">© 2026 Mitra AI Life. All rights reserved.</div>
+    <div class="fl"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></div>
+  </div>
+</footer>
+</body>
+</html>
