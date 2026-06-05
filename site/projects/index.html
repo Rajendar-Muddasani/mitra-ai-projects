@@ -4,13 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Project Kits — Mitra AI Projects</title>
-  <meta name="description" content="Guided AI and ML project kits for B.Tech, BCA, MCA, and engineering students. Final-year project ready with code, deployment notes, report templates, PPT decks, and viva preparation.">
+  <meta name="description" content="Guided AI and ML project kits for B.E., B.Tech, BCA, MCA, and Diploma students. Final-year project ready with code, deployment notes, report templates, PPT decks, and viva preparation.">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .lane-filters { display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:2.5rem; }
+    .lane-filter-btn {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      padding:0.55rem 1.1rem;
+      border:1px solid var(--border-dim);
+      border-radius:999px;
+      background:transparent;
+      color:var(--muted);
+      font-family:'Nunito',sans-serif;
+      font-size:0.875rem; font-weight:700;
+      cursor:pointer;
+      transition:all var(--transition);
+    }
+    .lane-filter-btn:hover { border-color:var(--primary); color:var(--primary); background:rgba(0,212,170,0.06); }
+    .lane-filter-btn.active { border-color:var(--primary); color:var(--bg-dark); background:var(--primary); }
+    .lane-filter-btn .lane-count { font-size:0.7rem; opacity:0.75; }
+    .project-card-wrap { transition: opacity 0.2s, transform 0.2s; }
+    .project-card-wrap.hidden { display:none; }
+    .no-results { text-align:center; padding:3rem; color:var(--muted); display:none; }
+    .no-results.visible { display:block; }
+    .lane-header { margin-bottom:0.5rem; }
+  </style>
 </head>
 <body>
 <nav class="nav">
@@ -33,160 +56,173 @@
     <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Projects</span></div>
     <div class="hero-eyebrow">outcome-first builds</div>
     <h1 class="hero-title">Project Kits for <em>Final-Year &amp; Placement</em></h1>
-    <p class="hero-sub">Each project kit is built to be explained, presented, and defended — not just submitted. Architecture, code, deployment guide, report template, PPT deck, and viva Q&A included.</p>
-  </div>
-</section>
-
-<!-- Lane explanation -->
-<section class="section-sm" style="background:var(--surface);">
-  <div class="container">
-    <div class="grid grid-4">
-      <div style="padding:1.25rem 0;">
-        <div class="section-tag" style="text-align:left;margin-bottom:0.4rem;">Guided Mini Projects</div>
-        <p style="font-size:0.85rem;color:var(--muted);">2–4 weeks · 2nd and 3rd year students · Quick working build</p>
-      </div>
-      <div style="padding:1.25rem 0;">
-        <div class="section-tag" style="text-align:left;margin-bottom:0.4rem;">Major Project Kits</div>
-        <p style="font-size:0.85rem;color:var(--muted);">8–16 weeks · Final-year · Thesis-ready submission</p>
-      </div>
-      <div style="padding:1.25rem 0;">
-        <div class="section-tag" style="text-align:left;margin-bottom:0.4rem;">Portfolio Builds</div>
-        <p style="font-size:0.85rem;color:var(--muted);">4–8 weeks · Freshers · Company-ready demo + GitHub</p>
-      </div>
-      <div style="padding:1.25rem 0;">
-        <div class="section-tag" style="text-align:left;margin-bottom:0.4rem;">Viva &amp; Submission Packs</div>
-        <p style="font-size:0.85rem;color:var(--muted);">Report, PPT, demo script, viva defense support</p>
-      </div>
-    </div>
+    <p class="hero-sub">Each kit is built to be explained, presented, and defended — not just submitted. Architecture, code, deployment guide, report template, PPT deck, and viva Q&amp;A included.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="section-header">
-      <div class="section-tag">project catalog</div>
-      <h2>First Six Projects</h2>
-      <p>Featured projects with full guided kits. More being built. Contact us if you have a specific project need.</p>
+
+    <!-- Lane filter buttons -->
+    <div class="lane-filters" id="laneFilters">
+      <button class="lane-filter-btn active" data-lane="all" onclick="filterLane('all',this)">
+        All Projects
+      </button>
+      <button class="lane-filter-btn" data-lane="mini" onclick="filterLane('mini',this)">
+        ⚡ Guided Mini Projects
+        <span class="lane-count">2–4 weeks</span>
+      </button>
+      <button class="lane-filter-btn" data-lane="major" onclick="filterLane('major',this)">
+        🎓 Major Project Kits
+        <span class="lane-count">8–16 weeks</span>
+      </button>
+      <button class="lane-filter-btn" data-lane="portfolio" onclick="filterLane('portfolio',this)">
+        💼 Portfolio Builds
+        <span class="lane-count">4–8 weeks</span>
+      </button>
+      <button class="lane-filter-btn" data-lane="viva" onclick="filterLane('viva',this)">
+        🎤 Viva &amp; Submission Packs
+      </button>
     </div>
 
-    <div class="grid grid-3">
+    <!-- Lane description bar -->
+    <div id="laneDesc" style="margin-bottom:2rem;min-height:2.5rem;"></div>
 
-      <!-- Project 01 - LIVE -->
-      <a href="/projects/document-qa-assistant.html" class="card" style="text-decoration:none;border-color:rgba(0,212,170,0.2);" onclick="trackEvent('project_page_view',{project:'document-qa-assistant'})">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem;">
-          <span class="badge badge-accent">Featured</span>
-          <span class="badge badge-primary">Major Kit</span>
-        </div>
-        <div style="font-size:1.5rem;margin-bottom:0.6rem;">📄</div>
-        <div class="card-title">Document Q&amp;A Assistant</div>
-        <p style="font-size:0.875rem;color:var(--muted);margin-top:0.35rem;margin-bottom:0.75rem;">Build a RAG-based chatbot that answers questions from uploaded documents. Python, FastAPI, OpenAI API, ChromaDB.</p>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">RAG</span><span class="tag">OpenAI</span><span class="tag">ChromaDB</span>
-        </div>
-        <div class="project-deliverables">
-          <span class="deliverable-pill">Source code</span>
-          <span class="deliverable-pill">Architecture diagram</span>
-          <span class="deliverable-pill">Deployment guide</span>
-          <span class="deliverable-pill">Viva Q&amp;A</span>
-          <span class="deliverable-pill">PPT template</span>
-          <span class="deliverable-pill">Report template</span>
-        </div>
-        <div class="card-footer">
-          <span class="card-meta">~6 weeks · Intermediate · <span style="color:var(--success)">●</span> Available</span>
-          <span style="color:var(--primary)">View Kit →</span>
-        </div>
-      </a>
+    <!-- Project cards -->
+    <div class="grid grid-3" id="projectGrid">
 
-      <!-- Project 02 - Coming Soon -->
-      <div class="card" style="opacity:0.72;">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem;">
-          <span class="badge badge-muted">Coming Soon</span>
-          <span class="badge badge-primary">Portfolio Build</span>
-        </div>
-        <div style="font-size:1.5rem;margin-bottom:0.6rem;">📋</div>
-        <div class="card-title">AI Resume Screener &amp; Interview Copilot</div>
-        <p style="font-size:0.875rem;color:var(--muted);margin-top:0.35rem;margin-bottom:0.75rem;">Score and rank resumes. Built-in interview prep assistant. Great for HR tech demos and placement-focused portfolios.</p>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">LLM</span><span class="tag">Streamlit</span><span class="tag">PDF parsing</span>
-        </div>
-        <div class="card-footer">
-          <span class="card-meta">~4 weeks · Beginner friendly</span>
-          <span style="color:var(--muted)">Coming soon</span>
+      <!-- Project 01 - LIVE | Major Kit -->
+      <div class="project-card-wrap" data-lane="major">
+        <a href="/projects/document-qa-assistant.html" class="card" style="text-decoration:none;border-color:rgba(0,212,170,0.2);height:100%;" onclick="trackEvent('project_page_view',{project:'document-qa-assistant'})">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem;">
+            <span class="badge badge-accent">Featured</span>
+            <span class="badge badge-primary">Major Kit</span>
+          </div>
+          <div style="font-size:1.5rem;margin-bottom:0.6rem;">📄</div>
+          <div class="card-title">Document Q&amp;A Assistant</div>
+          <p style="font-size:0.875rem;color:var(--muted);margin-top:0.35rem;margin-bottom:0.75rem;">Build a RAG-based chatbot that answers questions from uploaded documents. Python, FastAPI, OpenAI API, ChromaDB.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">RAG</span><span class="tag">OpenAI</span><span class="tag">ChromaDB</span>
+          </div>
+          <div class="project-deliverables">
+            <span class="deliverable-pill">Source code</span>
+            <span class="deliverable-pill">Architecture diagram</span>
+            <span class="deliverable-pill">Deployment guide</span>
+            <span class="deliverable-pill">Viva Q&amp;A</span>
+            <span class="deliverable-pill">PPT template</span>
+            <span class="deliverable-pill">Report template</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-meta">~6 weeks · Intermediate · <span style="color:var(--success)">●</span> Available</span>
+            <span style="color:var(--primary)">View Kit →</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Project 02 - Coming Soon | Portfolio Build -->
+      <div class="project-card-wrap" data-lane="portfolio">
+        <div class="card" style="opacity:0.75;height:100%;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem;">
+            <span class="badge badge-muted">Coming Soon</span>
+            <span class="badge badge-primary">Portfolio Build</span>
+          </div>
+          <div style="font-size:1.5rem;margin-bottom:0.6rem;">📋</div>
+          <div class="card-title">AI Resume Screener &amp; Interview Copilot</div>
+          <p style="font-size:0.875rem;color:var(--muted);margin-top:0.35rem;margin-bottom:0.75rem;">Score and rank resumes. Built-in interview prep assistant. Great for HR tech demos and placement-focused portfolios.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">LLM</span><span class="tag">Streamlit</span><span class="tag">PDF parsing</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-meta">~4 weeks · Beginner friendly</span>
+            <span style="color:var(--muted)">Coming soon</span>
+          </div>
         </div>
       </div>
 
-      <!-- Project 03 -->
-      <div class="card" style="opacity:0.72;">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem;">
-          <span class="badge badge-muted">Coming Soon</span>
-          <span class="badge badge-primary">Major Kit</span>
-        </div>
-        <div style="font-size:1.5rem;margin-bottom:0.6rem;">📊</div>
-        <div class="card-title">Inventory Forecasting Dashboard</div>
-        <p style="font-size:0.875rem;color:var(--muted);margin-top:0.35rem;margin-bottom:0.75rem;">Time series forecasting with ARIMA and Prophet. Live dashboard, report template, and PPT deck included.</p>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">ARIMA</span><span class="tag">Prophet</span>
-        </div>
-        <div class="card-footer">
-          <span class="card-meta">~5 weeks · Intermediate</span>
-          <span style="color:var(--muted)">Coming soon</span>
-        </div>
-      </div>
-
-      <!-- Project 04 -->
-      <div class="card" style="opacity:0.65;">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem;">
-          <span class="badge badge-muted">Planned</span>
-          <span class="badge badge-primary">Portfolio Build</span>
-        </div>
-        <div style="font-size:1.5rem;margin-bottom:0.6rem;">🌐</div>
-        <div class="card-title">Multilingual Customer Support Assistant</div>
-        <p style="font-size:0.875rem;color:var(--muted);margin-top:0.35rem;margin-bottom:0.75rem;">Deployable chatbot with escalation path. Multi-language input with auto-detect. Build for the company use case demo.</p>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">OpenAI</span><span class="tag">Multilingual</span>
-        </div>
-        <div class="card-footer">
-          <span class="card-meta">~6 weeks · Intermediate</span>
-          <span style="color:var(--muted)">Planned</span>
+      <!-- Project 03 - Coming Soon | Major Kit -->
+      <div class="project-card-wrap" data-lane="major">
+        <div class="card" style="opacity:0.75;height:100%;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem;">
+            <span class="badge badge-muted">Coming Soon</span>
+            <span class="badge badge-primary">Major Kit</span>
+          </div>
+          <div style="font-size:1.5rem;margin-bottom:0.6rem;">📊</div>
+          <div class="card-title">Inventory Forecasting Dashboard</div>
+          <p style="font-size:0.875rem;color:var(--muted);margin-top:0.35rem;margin-bottom:0.75rem;">Time series forecasting with ARIMA and Prophet. Live dashboard, report template, and PPT deck included.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">ARIMA</span><span class="tag">Prophet</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-meta">~5 weeks · Intermediate</span>
+            <span style="color:var(--muted)">Coming soon</span>
+          </div>
         </div>
       </div>
 
-      <!-- Project 05 -->
-      <div class="card" style="opacity:0.65;">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem;">
-          <span class="badge badge-muted">Planned</span>
-          <span class="badge badge-primary">Major Kit</span>
-        </div>
-        <div style="font-size:1.5rem;margin-bottom:0.6rem;">📅</div>
-        <div class="card-title">AI Attendance &amp; Analytics Dashboard</div>
-        <p style="font-size:0.875rem;color:var(--muted);margin-top:0.35rem;margin-bottom:0.75rem;">Face recognition-based attendance system with reporting dashboard. Computer vision + analytics combo project.</p>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Streamlit</span>
-        </div>
-        <div class="card-footer">
-          <span class="card-meta">~8 weeks · Intermediate</span>
-          <span style="color:var(--muted)">Planned</span>
-        </div>
-      </div>
-
-      <!-- Project 06 -->
-      <div class="card" style="opacity:0.65;">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem;">
-          <span class="badge badge-muted">Planned</span>
-          <span class="badge badge-primary">Major Kit</span>
-        </div>
-        <div style="font-size:1.5rem;margin-bottom:0.6rem;">🔍</div>
-        <div class="card-title">Vision-Based Quality Inspection Demo</div>
-        <p style="font-size:0.875rem;color:var(--muted);margin-top:0.35rem;margin-bottom:0.75rem;">YOLO-based defect detection for manufacturing images. Company-style computer vision project with real-time demo.</p>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">PyTorch</span><span class="tag">FastAPI</span>
-        </div>
-        <div class="card-footer">
-          <span class="card-meta">~8 weeks · Advanced</span>
-          <span style="color:var(--muted)">Planned</span>
+      <!-- Project 04 - Planned | Portfolio Build -->
+      <div class="project-card-wrap" data-lane="portfolio">
+        <div class="card" style="opacity:0.65;height:100%;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem;">
+            <span class="badge badge-muted">Planned</span>
+            <span class="badge badge-primary">Portfolio Build</span>
+          </div>
+          <div style="font-size:1.5rem;margin-bottom:0.6rem;">🌐</div>
+          <div class="card-title">Multilingual Customer Support Assistant</div>
+          <p style="font-size:0.875rem;color:var(--muted);margin-top:0.35rem;margin-bottom:0.75rem;">Deployable chatbot with escalation path. Multi-language input with auto-detect. Company-style demo build.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">OpenAI</span><span class="tag">Multilingual</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-meta">~6 weeks · Intermediate</span>
+            <span style="color:var(--muted)">Planned</span>
+          </div>
         </div>
       </div>
 
+      <!-- Project 05 - Planned | Major Kit -->
+      <div class="project-card-wrap" data-lane="major">
+        <div class="card" style="opacity:0.65;height:100%;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem;">
+            <span class="badge badge-muted">Planned</span>
+            <span class="badge badge-primary">Major Kit</span>
+          </div>
+          <div style="font-size:1.5rem;margin-bottom:0.6rem;">📅</div>
+          <div class="card-title">AI Attendance &amp; Analytics Dashboard</div>
+          <p style="font-size:0.875rem;color:var(--muted);margin-top:0.35rem;margin-bottom:0.75rem;">Face recognition-based attendance with reporting dashboard. Computer vision + analytics combo project.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Streamlit</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-meta">~8 weeks · Intermediate</span>
+            <span style="color:var(--muted)">Planned</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 06 - Planned | Major Kit -->
+      <div class="project-card-wrap" data-lane="major">
+        <div class="card" style="opacity:0.65;height:100%;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem;">
+            <span class="badge badge-muted">Planned</span>
+            <span class="badge badge-primary">Major Kit</span>
+          </div>
+          <div style="font-size:1.5rem;margin-bottom:0.6rem;">🔍</div>
+          <div class="card-title">Vision-Based Quality Inspection Demo</div>
+          <p style="font-size:0.875rem;color:var(--muted);margin-top:0.35rem;margin-bottom:0.75rem;">YOLO-based defect detection for manufacturing images. Company-style computer vision project with real-time demo.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">PyTorch</span><span class="tag">FastAPI</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-meta">~8 weeks · Advanced</span>
+            <span style="color:var(--muted)">Planned</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="no-results" id="noResults">
+      No projects in this lane yet — more kits are being built. <a href="/contact.html">Tell us what you need →</a>
     </div>
 
     <!-- What every kit includes -->
@@ -196,46 +232,14 @@
         <h2>Not Just Code. A Complete Submission System.</h2>
       </div>
       <div class="grid grid-4">
-        <div class="card" style="text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">🏗</div>
-          <div class="card-title" style="font-size:0.95rem;">Architecture Diagram</div>
-          <div class="card-desc">System design explained visually — tech stack, data flow, components.</div>
-        </div>
-        <div class="card" style="text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">📍</div>
-          <div class="card-title" style="font-size:0.95rem;">Milestone Breakdown</div>
-          <div class="card-desc">Week-by-week plan. Know exactly what to build in what order.</div>
-        </div>
-        <div class="card" style="text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">💻</div>
-          <div class="card-title" style="font-size:0.95rem;">Starter &amp; Final Code</div>
-          <div class="card-desc">GitHub-ready code with README, setup guide, and .env.example.</div>
-        </div>
-        <div class="card" style="text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">🚀</div>
-          <div class="card-title" style="font-size:0.95rem;">Deployment Guide</div>
-          <div class="card-desc">Step-by-step guide to deploy on Render, Railway, or AWS.</div>
-        </div>
-        <div class="card" style="text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">📝</div>
-          <div class="card-title" style="font-size:0.95rem;">Report Template</div>
-          <div class="card-desc">A4 Word/Google Docs template pre-filled with section headings and guidance.</div>
-        </div>
-        <div class="card" style="text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">📊</div>
-          <div class="card-title" style="font-size:0.95rem;">PPT Deck Template</div>
-          <div class="card-desc">10-slide seminar presentation outline ready for viva day.</div>
-        </div>
-        <div class="card" style="text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">🎤</div>
-          <div class="card-title" style="font-size:0.95rem;">Viva Q&amp;A Guide</div>
-          <div class="card-desc">20+ likely viva questions with clear, technical answers you can defend.</div>
-        </div>
-        <div class="card" style="text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">✅</div>
-          <div class="card-title" style="font-size:0.95rem;">Testing Checklist</div>
-          <div class="card-desc">Known limitations, edge cases, and extension ideas for discussion.</div>
-        </div>
+        <div class="card" style="text-align:center;"><div style="font-size:1.5rem;margin-bottom:0.5rem;">🏗</div><div class="card-title" style="font-size:0.95rem;">Architecture Diagram</div><div class="card-desc">System design explained visually — tech stack, data flow, components.</div></div>
+        <div class="card" style="text-align:center;"><div style="font-size:1.5rem;margin-bottom:0.5rem;">📍</div><div class="card-title" style="font-size:0.95rem;">Milestone Breakdown</div><div class="card-desc">Week-by-week plan. Know exactly what to build in what order.</div></div>
+        <div class="card" style="text-align:center;"><div style="font-size:1.5rem;margin-bottom:0.5rem;">💻</div><div class="card-title" style="font-size:0.95rem;">Starter &amp; Final Code</div><div class="card-desc">GitHub-ready code with README, setup guide, and .env.example.</div></div>
+        <div class="card" style="text-align:center;"><div style="font-size:1.5rem;margin-bottom:0.5rem;">🚀</div><div class="card-title" style="font-size:0.95rem;">Deployment Guide</div><div class="card-desc">Step-by-step guide to deploy on Render, Railway, or AWS.</div></div>
+        <div class="card" style="text-align:center;"><div style="font-size:1.5rem;margin-bottom:0.5rem;">📝</div><div class="card-title" style="font-size:0.95rem;">Report Template</div><div class="card-desc">A4 Word/Google Docs template pre-filled with section headings and guidance.</div></div>
+        <div class="card" style="text-align:center;"><div style="font-size:1.5rem;margin-bottom:0.5rem;">📊</div><div class="card-title" style="font-size:0.95rem;">PPT Deck Template</div><div class="card-desc">10-slide seminar presentation outline ready for viva day.</div></div>
+        <div class="card" style="text-align:center;"><div style="font-size:1.5rem;margin-bottom:0.5rem;">🎤</div><div class="card-title" style="font-size:0.95rem;">Viva Q&amp;A Guide</div><div class="card-desc">20+ likely viva questions with clear, technical answers you can defend.</div></div>
+        <div class="card" style="text-align:center;"><div style="font-size:1.5rem;margin-bottom:0.5rem;">✅</div><div class="card-title" style="font-size:0.95rem;">Testing Checklist</div><div class="card-desc">Known limitations, edge cases, and extension ideas for discussion.</div></div>
       </div>
     </div>
 
@@ -251,7 +255,7 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students.</p></div>
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for B.E., B.Tech, BCA, MCA, and Diploma students.</p></div>
       <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/ml.html">Machine Learning</a></li><li><a href="/courses/genai.html">Generative AI</a></li><li><a href="/courses/agentic.html">Agentic AI</a></li></ul></div>
       <div class="footer-col"><h4>Platform</h4><ul><li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li><li><a href="/how-it-works.html">How It Works</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
@@ -263,5 +267,56 @@
 <script src="/assets/js/main.js"></script>
 <script src="/auth.js"></script>
 <script src="/mitra-chat.js"></script>
+<script>
+const laneDescriptions = {
+  all:       '',
+  mini:      '⚡ <strong>Guided Mini Projects</strong> — 2–4 weeks · 2nd &amp; 3rd year students · Quick working build with guided code and explanation.',
+  major:     '🎓 <strong>Major Project Kits</strong> — 8–16 weeks · Final-year · Thesis-ready submission with full documentation, report, and viva prep.',
+  portfolio: '💼 <strong>Portfolio Builds</strong> — 4–8 weeks · Freshers · Company-ready demo + GitHub proof for placements and internship interviews.',
+  viva:      '🎤 <strong>Viva &amp; Submission Packs</strong> — Report, PPT, demo script, and viva defense support for any project you are already building.'
+};
+
+function filterLane(lane, btn) {
+  // Update active button
+  document.querySelectorAll('.lane-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Show/hide cards
+  const cards = document.querySelectorAll('.project-card-wrap');
+  let visible = 0;
+  cards.forEach(card => {
+    const match = lane === 'all' || card.dataset.lane === lane;
+    card.classList.toggle('hidden', !match);
+    if (match) visible++;
+  });
+
+  // Show no-results if needed
+  const noResults = document.getElementById('noResults');
+  noResults.classList.toggle('visible', visible === 0);
+
+  // Update lane description
+  document.getElementById('laneDesc').innerHTML = laneDescriptions[lane]
+    ? `<p style="font-size:0.9rem;color:var(--muted);padding:0.75rem 1rem;background:var(--surface);border-radius:var(--radius);border-left:3px solid var(--primary);">${laneDescriptions[lane]}</p>`
+    : '';
+
+  // Update URL without reload
+  const url = new URL(window.location);
+  if (lane === 'all') url.searchParams.delete('lane');
+  else url.searchParams.set('lane', lane);
+  history.replaceState(null, '', url);
+
+  trackEvent('lane_filter', { lane });
+}
+
+// Read ?lane= param on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const lane = params.get('lane');
+  if (lane) {
+    const btn = document.querySelector(`.lane-filter-btn[data-lane="${lane}"]`);
+    if (btn) filterLane(lane, btn);
+  }
+});
+</script>
 </body>
 </html>

@@ -268,19 +268,67 @@ code, .mono {
   align-items: center;
   gap: 0.5rem;
 }
-.hero-eyebrow::before { content: '//'; opacity: 0.5; }
-.hero-title { margin-bottom: 1.25rem; }
+.hero-title { margin-bottom: 0.75rem; }
 .hero-title em {
   font-style: normal;
   color: var(--primary);
 }
-.hero-sub {
-  font-size: 1.1rem;
-  color: var(--muted);
-  max-width: 600px;
-  margin-bottom: 2rem;
+.hero-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.15em;
+  margin-bottom: 1.25rem;
+  opacity: 0.85;
 }
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 620px;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+.hero-cta-block { display: flex; flex-direction: column; gap: 1.25rem; }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-sneak {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.sneak-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  background: rgba(0,212,170,0.07);
+  border: 1px solid rgba(0,212,170,0.18);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.sneak-chip:hover {
+  background: rgba(0,212,170,0.14);
+  border-color: rgba(0,212,170,0.4);
+  color: var(--primary);
+}
+/* Lane filter cards */
+.lane-card {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 1.75rem 1.5rem;
+}
+.lane-card:hover { transform: translateY(-3px); }
+.lane-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.lane-card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--text); }
+.lane-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.9rem; }
+.lane-card .lane-cta { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--primary); }
 
 /* ── Trust strip ── */
 .trust-strip {
