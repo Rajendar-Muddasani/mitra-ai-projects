@@ -19,7 +19,7 @@
 | S1-T8 | Page load speed — Google Lighthouse 90+ | ❌ | After content is in |
 | S1-T9 | GA4 wired in all pages | ✅ | G-QGY0LH6W93 |
 | S1-T10 | GA4 custom events (tab change, quiz, cert, video, download) | ✅ | All in main.js |
-| S1-T11 | Google Search Console setup | ❌ | After domain live |
+| S1-T11 | Google Search Console setup | ✅ | Done — sitemap.xml submitted, 18 pages indexed |
 | S1-T12 | sitemap.xml in site/ root | ✅ | All 18 pages listed |
 | S1-T13 | Supabase anon key — config.js wired in all pages | ✅ | Done — real key added, committed |
 | S1-T14 | Supabase table: contact_submissions | ✅ | Done — tables created |
