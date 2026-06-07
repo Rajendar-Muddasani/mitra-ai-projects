@@ -138,28 +138,24 @@
 
 ## S3 — Embedded Notebooks
 
-### Notebook Options Comparison
-| Option | Runs in-browser | Saves state | Works on GitHub Pages | Setup effort | Best for |
-|---|---|---|---|---|---|
-| **Colab links** | ❌ Opens externally | In Google Drive | ✅ Just a link | Zero | Quick launch, all courses |
-| **JupyterLite** | ✅ Yes | ✅ Browser IndexedDB | ✅ Deployable to Pages | Low | Full notebook experience, persistent work |
-| **Pyodide embedded** | ✅ Yes | ❌ No persistence | ✅ Yes | Medium | Interactive code demos in page |
-
-> **Colab detail:** When a student clicks "Open in Colab", a read-only copy opens on Google's servers. Student must click "Save to Drive" to keep it in THEIR Google Drive. Notebook code runs on Google's servers, not yours.
+> **DECISION (final, do not revisit):** Use **JupyterLite only**. No Colab links, no Pyodide.
 >
-> **JupyterLite detail:** Deploys to `mitraaiprojects.com/lab/`. Notebooks saved in the student's own browser (IndexedDB). Exit and come back — work is still there (unless browser data cleared). Can export `.ipynb` to save locally. Embed in course pages via `<iframe>`.
+> - Colab opens externally (Google's site), notebooks live in student's Google Drive — not in our platform. Adds no value to our UX and creates intermediate/throwaway work.
+> - Pyodide requires building a custom editor, has no notebook persistence.
+> - **JupyterLite** runs entirely in-browser, saves to student's browser IndexedDB (persistent across sessions), exports `.ipynb` anytime, familiar Jupyter UI, deploys to GitHub Pages for free via one GitHub Action template. This is the final production solution.
 >
-> **Recommendation: JupyterLite is NOT too much work.** GitHub has a [jupyterlite-demo](https://github.com/jupyterlite/demo) template — deploy in 10 minutes via GitHub Actions. It's the best balance of zero server cost + real persistence + familiar notebook UI.
+> How it works for students: Notebooks live at `mitraaiprojects.com/lab/`. Each course tab embeds the relevant notebook via `<iframe>`. Student opens it, does their work, closes tab, comes back later — work is still there. Can export `.ipynb` to save locally or continue on another device.
 
 | ID | Task | Status |
 |---|---|---|
-| S3-T1 | Set up JupyterLite deploy on GitHub Pages subpath /lab/ | ❌ |
-| S3-T2 | Add "Open in Colab" button component to course tab HTML | ❌ |
-| S3-T3 | Map all 10 ML topics to AIML-Engineering-Lab Colab URLs | ❌ |
-| S3-T4 | Map DL topics (014, 015, 034, 054, 073) to Colab URLs | ❌ |
-| S3-T5 | Create starter notebooks for Programming track (Python Basics) | ❌ |
-| S3-T6 | Create starter notebooks for Key Concepts track (PyTorch, TF) | ❌ |
-| S3-T7 | Embed JupyterLite iframe in course tab panels (ML + Programming first) | ❌ |
+| S3-T1 | Set up JupyterLite repo (use jupyterlite/demo GitHub template) | ❌ |
+| S3-T2 | Configure GitHub Action to deploy JupyterLite to /lab/ subpath | ❌ |
+| S3-T3 | Create starter .ipynb notebooks for ML track (10 notebooks, one per topic) | ❌ |
+| S3-T4 | Create starter .ipynb notebooks for Programming track (Python Basics first) | ❌ |
+| S3-T5 | Create starter .ipynb notebooks for Key Concepts track (PyTorch, TF) | ❌ |
+| S3-T6 | Create starter .ipynb notebooks for DL track (sourced from AIML-Lab 014,015,034,054,073) | ❌ |
+| S3-T7 | Embed JupyterLite iframe component in course tab HTML panels | ❌ |
+| S3-T8 | Test persistence: close browser, reopen, verify notebook state is retained | ❌ |
 
 ---
 
@@ -359,16 +355,15 @@ Do NOT share or announce the site until all are ✅.
 
 ---
 
-## Recommended Sprint Order
+## How We Work
 
-| Sprint | Focus | Key tasks |
-|---|---|---|
-| **Sprint 1** | Get live with minimal content | S1-T19 to T22 (GitHub Pages + domain), S1-T13 to T16 (Supabase), S3-T2 to T4 (Colab links for ML), C1+C3 (first 2 cheatsheets to S3), P-J1 full kit, verify L1–L15 |
-| **Sprint 2** | Fill ML course content | S2-T9 to T18 (all 10 ML tabs), add real Colab links, build quizzes |
-| **Sprint 3** | Project kits | P-J2, P-J3 full kits, P-M1, P-M2 mini projects |
-| **Sprint 4** | JupyterLite notebooks | S3-T1 (deploy /lab/), S3-T5 to T7 (embed in pages) |
-| **Sprint 5** | Portfolio track | S5-T1 to T8 — portfolio guide, README templates, interview prep |
-| **Sprint 6** | Certificates + remaining courses | S8, remaining S2 tracks |
+No sprints, no phases. We work **section by section** in order: S1 → S2 → S3 → S4 → S5 → S6 → S7 → S8 → S9 → S10.
+
+Every task we complete gets marked ✅ in this file. When all rows in a section are ✅, that section is done and we move to the next.
+
+Reference any task as **S\<section\>-T\<number\>** (e.g. "let's do S1-T19") or by launch gate **L\<number\>** to keep conversations precise.
+
+> **No intermediate/throwaway work.** Every task done here is the final production version deployed for real users.
 
 ---
 
