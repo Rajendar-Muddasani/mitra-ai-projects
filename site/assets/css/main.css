@@ -1,23 +1,23 @@
 /* ═══════════════════════════════════════════════════
    Mitra AI Projects — Main Stylesheet
-   Design: Forest Academic — clean white, forest green, amber
+   Design: Plum Emerald Academic — white, plum/purple, emerald green
    ═══════════════════════════════════════════════════ */
 
 /* ── Variables ── */
 :root {
-  --primary:    #1a5c2a;
-  --primary-dim:#2d7a40;
+  --primary:    #6b21a8;
+  --primary-dim:#7c3aed;
   --bg-dark:    #ffffff;
-  --surface:    #f0f7f2;
-  --surface-2:  #e2eee5;
-  --accent:     #d97706;
-  --text:       #111c14;
-  --muted:      #4d6b55;
-  --border:     rgba(26,92,42,0.16);
+  --surface:    #faf5ff;
+  --surface-2:  #f3e8ff;
+  --accent:     #059669;
+  --text:       #1a0533;
+  --muted:      #6b4f88;
+  --border:     rgba(107,33,168,0.14);
   --border-dim: rgba(0,0,0,0.08);
-  --purple:     #6b21a8;
+  --purple:     #7c3aed;
   --danger:     #dc2626;
-  --success:    #16a34a;
+  --success:    #059669;
   --nav-h:      64px;
   --radius:     8px;
   --radius-lg:  14px;
@@ -233,17 +233,17 @@ code, .mono {
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
-.badge-primary { background: rgba(26,92,42,0.1);  color: var(--primary); border: 1px solid rgba(26,92,42,0.2); }
-.badge-accent  { background: rgba(217,119,6,0.1); color: var(--accent);  border: 1px solid rgba(217,119,6,0.2); }
-.badge-purple  { background: rgba(107,33,168,0.1);color: var(--purple);  border: 1px solid rgba(107,33,168,0.2); }
-.badge-muted   { background: rgba(0,0,0,0.04);    color: var(--muted);   border: 1px solid var(--border-dim); }
-.badge-success { background: rgba(22,163,74,0.1); color: var(--success); border: 1px solid rgba(22,163,74,0.2); }
-.badge-danger  { background: rgba(220,38,38,0.1); color: var(--danger);  border: 1px solid rgba(220,38,38,0.2); }
+.badge-primary { background: rgba(107,33,168,0.1); color: var(--primary); border: 1px solid rgba(107,33,168,0.2); }
+.badge-accent  { background: rgba(5,150,105,0.1);  color: var(--accent);  border: 1px solid rgba(5,150,105,0.2); }
+.badge-purple  { background: rgba(124,58,237,0.1); color: var(--purple);  border: 1px solid rgba(124,58,237,0.2); }
+.badge-muted   { background: rgba(0,0,0,0.04);     color: var(--muted);   border: 1px solid var(--border-dim); }
+.badge-success { background: rgba(5,150,105,0.1);  color: var(--success); border: 1px solid rgba(5,150,105,0.2); }
+.badge-danger  { background: rgba(220,38,38,0.1);  color: var(--danger);  border: 1px solid rgba(220,38,38,0.2); }
 .badge-dot::before { content: '●'; font-size: 0.5rem; vertical-align: middle; }
 
 /* ── Hero ── */
 .hero {
-  background: linear-gradient(160deg, #f0f7f2 0%, #e2eee5 40%, #ffffff 80%);
+  background: linear-gradient(160deg, #faf5ff 0%, #f3e8ff 40%, #ffffff 80%);
   padding: 5.5rem 0 4rem;
   position: relative;
   overflow: hidden;
@@ -253,8 +253,8 @@ code, .mono {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 40% at 20% 60%, rgba(26,92,42,0.06) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 30% at 80% 30%, rgba(217,119,6,0.04) 0%, transparent 70%);
+    radial-gradient(ellipse 60% 40% at 20% 60%, rgba(107,33,168,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 80% 30%, rgba(5,150,105,0.04) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero-inner { position: relative; z-index: 1; }
@@ -303,8 +303,8 @@ code, .mono {
   align-items: center;
   gap: 0.35rem;
   padding: 0.3rem 0.75rem;
-  background: rgba(26,92,42,0.07);
-  border: 1px solid rgba(26,92,42,0.18);
+  background: rgba(107,33,168,0.07);
+  border: 1px solid rgba(107,33,168,0.18);
   border-radius: 999px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
@@ -314,8 +314,8 @@ code, .mono {
   white-space: nowrap;
 }
 .sneak-chip:hover {
-  background: rgba(26,92,42,0.13);
-  border-color: rgba(26,92,42,0.35);
+  background: rgba(107,33,168,0.13);
+  border-color: rgba(107,33,168,0.35);
   color: var(--primary);
 }
 /* Lane filter cards */
