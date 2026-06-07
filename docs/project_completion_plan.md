@@ -27,11 +27,11 @@
 | S1-T16 | Supabase table: project_completions + certificates | ❌ | Manual: same SQL file |
 | S1-T17 | Login UI — Sign In modal (Google + email magic link) | ✅ | Injected via main.js |
 | S1-T18 | User profile page /profile.html | ✅ | Shows completions + certificates |
-| S1-T19 | GitHub Pages enabled (Settings → Pages → GitHub Actions) | ❌ | One click in GitHub UI |
-| S1-T20 | Domain purchased: mitraaiprojects.com on Namecheap | ❌ | ~$11/yr |
-| S1-T21 | DNS: 4 A records + www CNAME → GitHub Pages | ❌ | After S1-T20 |
-| S1-T22 | HTTPS enforced in GitHub Pages settings | ❌ | After S1-T21 |
-| S1-T23 | AWS S3 .env configured for asset uploads | ❌ | Copy from mitraailife .env |
+| S1-T19 | GitHub Pages enabled (Settings → Pages → GitHub Actions) | ✅ | Done |
+| S1-T20 | Domain purchased: mitraaiprojects.com on Namecheap | ✅ | Done |
+| S1-T21 | DNS: 4 A records + www CNAME → GitHub Pages | ✅ | Done — DNS check successful |
+| S1-T22 | HTTPS enforced in GitHub Pages settings | ✅ | Done — certificate issued |
+| S1-T23 | AWS S3 .env configured for asset uploads | ✅ | Done — .env copied |
 | S1-T24 | Cloudflare Worker deployed: mitra-projects-worker | ❌ | `wrangler deploy` |
 
 ---
