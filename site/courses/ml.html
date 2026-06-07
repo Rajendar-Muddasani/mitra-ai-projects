@@ -247,7 +247,7 @@ ridge.fit(X_train, y_train)</code></pre>
         <div class="notebook-area">
           <p>Run the full Linear Regression notebook from AIML-Engineering-Lab (001_linear_regression_engine)</p>
           <div class="notebook-links">
-            <a href="https://colab.research.google.com/github/Rajendar-Muddasani/AIML-Engineering-Lab/blob/main/001_linear_regression_engine/notebook.ipynb" target="_blank" class="btn btn-outline btn-sm">▶ Open in Colab</a>
+            <a href="/lab/" class="btn btn-outline btn-sm" style="opacity:0.6;pointer-events:none;">⚡ Notebook (launching soon)</a>
             <a href="https://github.com/Rajendar-Muddasani/AIML-Engineering-Lab/tree/main/001_linear_regression_engine" target="_blank" class="btn btn-ghost btn-sm">GitHub →</a>
           </div>
         </div>
@@ -432,6 +432,16 @@ y_proba = clf.predict_proba(X_test_sc)[:, <span class="num">1</span>]
         </div>
       </div>
 
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-area">
+          <p>The hands-on notebook for this topic runs in your browser via our JupyterLite environment — no setup, saves your work automatically.</p>
+          <div class="notebook-links">
+            <a href="/lab/" class="btn btn-outline btn-sm" style="opacity:0.6;pointer-events:none;">⚡ Notebook (launching soon)</a>
+            <a href="https://github.com/Rajendar-Muddasani/AIML-Engineering-Lab" target="_blank" class="btn btn-ghost btn-sm">GitHub Source →</a>
+          </div>
+        </div>
+      </div>
       <div class="quiz-block">
         <h3>// QUIZ — Classification</h3>
         <div class="quiz-q" data-correct="c">
@@ -476,6 +486,17 @@ y_proba = clf.predict_proba(X_test_sc)[:, <span class="num">1</span>]
         </div>
       </div>
     </div>
+
+      <div class="completion-banner">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body">
+          <h3>Mark as Complete</h3>
+          <p>Track your progress and earn a course completion certificate.</p>
+        </div>
+        <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordCourseCompletion('ml','classification')">
+          Mark Complete ✓
+        </button>
+      </div>
 
     <!-- ══ Panel 2: Tree-Based Learning ══ -->
     <div class="onenote-panel">
@@ -530,6 +551,16 @@ fi.sort_values(ascending=<span class="kw">False</span>).plot(kind=<span class="s
           </ul>
         </div>
       </div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-area">
+          <p>The hands-on notebook for this topic runs in your browser via our JupyterLite environment — no setup, saves your work automatically.</p>
+          <div class="notebook-links">
+            <a href="/lab/" class="btn btn-outline btn-sm" style="opacity:0.6;pointer-events:none;">⚡ Notebook (launching soon)</a>
+            <a href="https://github.com/Rajendar-Muddasani/AIML-Engineering-Lab" target="_blank" class="btn btn-ghost btn-sm">GitHub Source →</a>
+          </div>
+        </div>
+      </div>
       <div class="quiz-block">
         <h3>// QUIZ — Trees</h3>
         <div class="quiz-q" data-correct="b">
@@ -553,6 +584,21 @@ fi.sort_values(ascending=<span class="kw">False</span>).plot(kind=<span class="s
           <label class="quiz-option"><input type="radio" name="tr-q3" value="c"> max_depth</label>
           <label class="quiz-option"><input type="radio" name="tr-q3" value="d"> random_state</label>
         </div>
+
+        <div class="quiz-q" data-correct="b">
+          <p>4. In a decision tree, "pruning" is done to:</p>
+          <label class="quiz-option"><input type="radio" name="tb-q4" value="a"> Speed up training</label>
+          <label class="quiz-option"><input type="radio" name="tb-q4" value="b"> Reduce overfitting by removing low-value branches</label>
+          <label class="quiz-option"><input type="radio" name="tb-q4" value="c"> Add more features</label>
+          <label class="quiz-option"><input type="radio" name="tb-q4" value="d"> Increase tree depth</label>
+        </div>
+        <div class="quiz-q" data-correct="c">
+          <p>5. Random Forest reduces variance compared to a single tree by:</p>
+          <label class="quiz-option"><input type="radio" name="tb-q5" value="a"> Using deeper trees</label>
+          <label class="quiz-option"><input type="radio" name="tb-q5" value="b"> Using only the best features</label>
+          <label class="quiz-option"><input type="radio" name="tb-q5" value="c"> Averaging predictions across many decorrelated trees</label>
+          <label class="quiz-option"><input type="radio" name="tb-q5" value="d"> Training on the full dataset each time</label>
+        </div>
         <div class="quiz-actions">
           <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
           <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
@@ -560,6 +606,17 @@ fi.sort_values(ascending=<span class="kw">False</span>).plot(kind=<span class="s
         </div>
       </div>
     </div>
+
+      <div class="completion-banner">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body">
+          <h3>Mark as Complete</h3>
+          <p>Track your progress and earn a course completion certificate.</p>
+        </div>
+        <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordCourseCompletion('ml','tree-based-learning')">
+          Mark Complete ✓
+        </button>
+      </div>
 
     <!-- ══ Panel 3: Boosting ══ -->
     <div class="onenote-panel">
@@ -616,6 +673,16 @@ scores = cross_val_score(model, X, y, cv=<span class="num">5</span>, scoring=<sp
           <li>XGBoost handles missing values natively — don't impute blindly before using it</li>
         </ul>
       </div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-area">
+          <p>The hands-on notebook for this topic runs in your browser via our JupyterLite environment — no setup, saves your work automatically.</p>
+          <div class="notebook-links">
+            <a href="/lab/" class="btn btn-outline btn-sm" style="opacity:0.6;pointer-events:none;">⚡ Notebook (launching soon)</a>
+            <a href="https://github.com/Rajendar-Muddasani/AIML-Engineering-Lab" target="_blank" class="btn btn-ghost btn-sm">GitHub Source →</a>
+          </div>
+        </div>
+      </div>
       <div class="quiz-block">
         <h3>// QUIZ — Boosting</h3>
         <div class="quiz-q" data-correct="b">
@@ -632,6 +699,28 @@ scores = cross_val_score(model, X, y, cv=<span class="num">5</span>, scoring=<sp
           <label class="quiz-option"><input type="radio" name="bo-q2" value="c"> LightGBM</label>
           <label class="quiz-option"><input type="radio" name="bo-q2" value="d"> CatBoost</label>
         </div>
+
+        <div class="quiz-q" data-correct="a">
+          <p>3. XGBoost improved over original GBM primarily by adding:</p>
+          <label class="quiz-option"><input type="radio" name="bo-q3" value="a"> Regularization (L1/L2) and system optimizations</label>
+          <label class="quiz-option"><input type="radio" name="bo-q3" value="b"> Deeper trees</label>
+          <label class="quiz-option"><input type="radio" name="bo-q3" value="c"> More estimators by default</label>
+          <label class="quiz-option"><input type="radio" name="bo-q3" value="d"> GPU support only</label>
+        </div>
+        <div class="quiz-q" data-correct="b">
+          <p>4. A lower learning_rate in gradient boosting means:</p>
+          <label class="quiz-option"><input type="radio" name="bo-q4" value="a"> Faster training</label>
+          <label class="quiz-option"><input type="radio" name="bo-q4" value="b"> More trees needed but better generalization</label>
+          <label class="quiz-option"><input type="radio" name="bo-q4" value="c"> Higher variance</label>
+          <label class="quiz-option"><input type="radio" name="bo-q4" value="d"> Less regularization</label>
+        </div>
+        <div class="quiz-q" data-correct="c">
+          <p>5. Early stopping in XGBoost is used to:</p>
+          <label class="quiz-option"><input type="radio" name="bo-q5" value="a"> Speed up predictions</label>
+          <label class="quiz-option"><input type="radio" name="bo-q5" value="b"> Reduce memory usage</label>
+          <label class="quiz-option"><input type="radio" name="bo-q5" value="c"> Stop training when validation score stops improving</label>
+          <label class="quiz-option"><input type="radio" name="bo-q5" value="d"> Remove outliers from training data</label>
+        </div>
         <div class="quiz-actions">
           <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
           <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
@@ -639,6 +728,17 @@ scores = cross_val_score(model, X, y, cv=<span class="num">5</span>, scoring=<sp
         </div>
       </div>
     </div>
+
+      <div class="completion-banner">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body">
+          <h3>Mark as Complete</h3>
+          <p>Track your progress and earn a course completion certificate.</p>
+        </div>
+        <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordCourseCompletion('ml','boosting')">
+          Mark Complete ✓
+        </button>
+      </div>
 
     <!-- ══ Panel 4: SVM ══ -->
     <div class="onenote-panel">
@@ -689,6 +789,16 @@ pipe.fit(X_train, y_train)</code></pre>
           <li>Hyperparameter C controls the trade-off between margin width and misclassifications</li>
         </ul>
       </div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-area">
+          <p>The hands-on notebook for this topic runs in your browser via our JupyterLite environment — no setup, saves your work automatically.</p>
+          <div class="notebook-links">
+            <a href="/lab/" class="btn btn-outline btn-sm" style="opacity:0.6;pointer-events:none;">⚡ Notebook (launching soon)</a>
+            <a href="https://github.com/Rajendar-Muddasani/AIML-Engineering-Lab" target="_blank" class="btn btn-ghost btn-sm">GitHub Source →</a>
+          </div>
+        </div>
+      </div>
       <div class="quiz-block">
         <h3>// QUIZ — SVM</h3>
         <div class="quiz-q" data-correct="c">
@@ -705,6 +815,28 @@ pipe.fit(X_train, y_train)</code></pre>
           <label class="quiz-option"><input type="radio" name="sv-q2" value="c"> Remove all outliers</label>
           <label class="quiz-option"><input type="radio" name="sv-q2" value="d"> Reduce dimensions to 2D</label>
         </div>
+
+        <div class="quiz-q" data-correct="c">
+          <p>3. To handle non-linearly separable data, SVM uses:</p>
+          <label class="quiz-option"><input type="radio" name="sv-q3" value="a"> Deeper decision boundaries</label>
+          <label class="quiz-option"><input type="radio" name="sv-q3" value="b"> Ensemble of linear SVMs</label>
+          <label class="quiz-option"><input type="radio" name="sv-q3" value="c"> Kernel trick (e.g. RBF) to map to higher dimensions</label>
+          <label class="quiz-option"><input type="radio" name="sv-q3" value="d"> Gradient descent on weights</label>
+        </div>
+        <div class="quiz-q" data-correct="a">
+          <p>4. The C parameter in SVM controls:</p>
+          <label class="quiz-option"><input type="radio" name="sv-q4" value="a"> Trade-off between margin size and misclassification penalty</label>
+          <label class="quiz-option"><input type="radio" name="sv-q4" value="b"> Number of support vectors</label>
+          <label class="quiz-option"><input type="radio" name="sv-q4" value="c"> Kernel bandwidth</label>
+          <label class="quiz-option"><input type="radio" name="sv-q4" value="d"> Learning rate</label>
+        </div>
+        <div class="quiz-q" data-correct="d">
+          <p>5. SVM is NOT recommended when:</p>
+          <label class="quiz-option"><input type="radio" name="sv-q5" value="a"> Data is linearly separable</label>
+          <label class="quiz-option"><input type="radio" name="sv-q5" value="b"> Features need scaling</label>
+          <label class="quiz-option"><input type="radio" name="sv-q5" value="c"> You want a maximum-margin classifier</label>
+          <label class="quiz-option"><input type="radio" name="sv-q5" value="d"> The dataset has millions of rows (quadratic complexity)</label>
+        </div>
         <div class="quiz-actions">
           <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
           <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
@@ -712,6 +844,17 @@ pipe.fit(X_train, y_train)</code></pre>
         </div>
       </div>
     </div>
+
+      <div class="completion-banner">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body">
+          <h3>Mark as Complete</h3>
+          <p>Track your progress and earn a course completion certificate.</p>
+        </div>
+        <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordCourseCompletion('ml','svm')">
+          Mark Complete ✓
+        </button>
+      </div>
 
     <!-- ══ Panel 5: Clustering ══ -->
     <div class="onenote-panel">
@@ -755,6 +898,16 @@ score  = silhouette_score(X, labels)
 <span class="fn">print</span>(<span class="st">f"Silhouette: {score:.3f}"</span>)  <span class="cm"># higher is better</span></code></pre>
         </div>
       </div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-area">
+          <p>The hands-on notebook for this topic runs in your browser via our JupyterLite environment — no setup, saves your work automatically.</p>
+          <div class="notebook-links">
+            <a href="/lab/" class="btn btn-outline btn-sm" style="opacity:0.6;pointer-events:none;">⚡ Notebook (launching soon)</a>
+            <a href="https://github.com/Rajendar-Muddasani/AIML-Engineering-Lab" target="_blank" class="btn btn-ghost btn-sm">GitHub Source →</a>
+          </div>
+        </div>
+      </div>
       <div class="quiz-block">
         <h3>// QUIZ — Clustering</h3>
         <div class="quiz-q" data-correct="b">
@@ -771,6 +924,28 @@ score  = silhouette_score(X, labels)
           <label class="quiz-option"><input type="radio" name="cl2-q2" value="c"> Epsilon (neighborhood radius) and min_samples</label>
           <label class="quiz-option"><input type="radio" name="cl2-q2" value="d"> Maximum number of iterations</label>
         </div>
+
+        <div class="quiz-q" data-correct="b">
+          <p>3. K-Means assumes clusters are:</p>
+          <label class="quiz-option"><input type="radio" name="cl2-q3" value="a"> Arbitrarily shaped</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q3" value="b"> Spherical and of similar size</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q3" value="c"> Linearly separable</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q3" value="d"> Hierarchically nested</label>
+        </div>
+        <div class="quiz-q" data-correct="a">
+          <p>4. The elbow method helps choose:</p>
+          <label class="quiz-option"><input type="radio" name="cl2-q4" value="a"> The optimal number of clusters K</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q4" value="b"> The distance metric</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q4" value="c"> Epsilon for DBSCAN</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q4" value="d"> Number of outliers</label>
+        </div>
+        <div class="quiz-q" data-correct="c">
+          <p>5. DBSCAN can discover clusters of:</p>
+          <label class="quiz-option"><input type="radio" name="cl2-q5" value="a"> Only spherical shape</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q5" value="b"> Fixed size only</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q5" value="c"> Arbitrary shape, and identifies outliers as noise</label>
+          <label class="quiz-option"><input type="radio" name="cl2-q5" value="d"> Exactly K clusters always</label>
+        </div>
         <div class="quiz-actions">
           <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
           <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
@@ -778,6 +953,17 @@ score  = silhouette_score(X, labels)
         </div>
       </div>
     </div>
+
+      <div class="completion-banner">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body">
+          <h3>Mark as Complete</h3>
+          <p>Track your progress and earn a course completion certificate.</p>
+        </div>
+        <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordCourseCompletion('ml','clustering')">
+          Mark Complete ✓
+        </button>
+      </div>
 
     <!-- ══ Panel 6: Anomaly Detection ══ -->
     <div class="onenote-panel">
@@ -813,6 +999,16 @@ labels = iso.fit_predict(X)
 anomalies = X[labels == -<span class="num">1</span>]</code></pre>
         </div>
       </div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-area">
+          <p>The hands-on notebook for this topic runs in your browser via our JupyterLite environment — no setup, saves your work automatically.</p>
+          <div class="notebook-links">
+            <a href="/lab/" class="btn btn-outline btn-sm" style="opacity:0.6;pointer-events:none;">⚡ Notebook (launching soon)</a>
+            <a href="https://github.com/Rajendar-Muddasani/AIML-Engineering-Lab" target="_blank" class="btn btn-ghost btn-sm">GitHub Source →</a>
+          </div>
+        </div>
+      </div>
       <div class="quiz-block">
         <h3>// QUIZ — Anomaly Detection</h3>
         <div class="quiz-q" data-correct="b">
@@ -822,6 +1018,35 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
           <label class="quiz-option"><input type="radio" name="an-q1" value="c"> Borderline cases</label>
           <label class="quiz-option"><input type="radio" name="an-q1" value="d"> Duplicate rows</label>
         </div>
+
+        <div class="quiz-q" data-correct="d">
+          <p>2. Z-score outlier detection typically flags points beyond:</p>
+          <label class="quiz-option"><input type="radio" name="an-q2" value="a"> ±1 standard deviations</label>
+          <label class="quiz-option"><input type="radio" name="an-q2" value="b"> ±2 standard deviations</label>
+          <label class="quiz-option"><input type="radio" name="an-q2" value="c"> ±5 standard deviations</label>
+          <label class="quiz-option"><input type="radio" name="an-q2" value="d"> ±3 standard deviations</label>
+        </div>
+        <div class="quiz-q" data-correct="b">
+          <p>3. Local Outlier Factor (LOF) detects anomalies by comparing:</p>
+          <label class="quiz-option"><input type="radio" name="an-q3" value="a"> Distance to centroid</label>
+          <label class="quiz-option"><input type="radio" name="an-q3" value="b"> Local density to that of k nearest neighbors</label>
+          <label class="quiz-option"><input type="radio" name="an-q3" value="c"> Z-score of each feature</label>
+          <label class="quiz-option"><input type="radio" name="an-q3" value="d"> Reconstruction error</label>
+        </div>
+        <div class="quiz-q" data-correct="c">
+          <p>4. The main challenge with real-world anomaly detection datasets is:</p>
+          <label class="quiz-option"><input type="radio" name="an-q4" value="a"> Too many features</label>
+          <label class="quiz-option"><input type="radio" name="an-q4" value="b"> Missing labels</label>
+          <label class="quiz-option"><input type="radio" name="an-q4" value="c"> Extreme class imbalance (anomalies are rare)</label>
+          <label class="quiz-option"><input type="radio" name="an-q4" value="d"> Data is always structured</label>
+        </div>
+        <div class="quiz-q" data-correct="a">
+          <p>5. When using an Autoencoder for anomaly detection, an anomaly shows:</p>
+          <label class="quiz-option"><input type="radio" name="an-q5" value="a"> High reconstruction error (model fails to recreate it)</label>
+          <label class="quiz-option"><input type="radio" name="an-q5" value="b"> Low reconstruction error</label>
+          <label class="quiz-option"><input type="radio" name="an-q5" value="c"> Zero latent representation</label>
+          <label class="quiz-option"><input type="radio" name="an-q5" value="d"> Perfect output match</label>
+        </div>
         <div class="quiz-actions">
           <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
           <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
@@ -829,6 +1054,17 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
         </div>
       </div>
     </div>
+
+      <div class="completion-banner">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body">
+          <h3>Mark as Complete</h3>
+          <p>Track your progress and earn a course completion certificate.</p>
+        </div>
+        <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordCourseCompletion('ml','anomaly-detection')">
+          Mark Complete ✓
+        </button>
+      </div>
 
     <!-- ══ Panel 7: Naive Bayes / LDA ══ -->
     <div class="onenote-panel">
@@ -853,6 +1089,16 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
           </tbody>
         </table>
       </div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-area">
+          <p>The hands-on notebook for this topic runs in your browser via our JupyterLite environment — no setup, saves your work automatically.</p>
+          <div class="notebook-links">
+            <a href="/lab/" class="btn btn-outline btn-sm" style="opacity:0.6;pointer-events:none;">⚡ Notebook (launching soon)</a>
+            <a href="https://github.com/Rajendar-Muddasani/AIML-Engineering-Lab" target="_blank" class="btn btn-ghost btn-sm">GitHub Source →</a>
+          </div>
+        </div>
+      </div>
       <div class="quiz-block">
         <h3>// QUIZ — Naive Bayes</h3>
         <div class="quiz-q" data-correct="c">
@@ -862,6 +1108,35 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
           <label class="quiz-option"><input type="radio" name="nb-q1" value="c"> MultinomialNB</label>
           <label class="quiz-option"><input type="radio" name="nb-q1" value="d"> ComplementNB</label>
         </div>
+
+        <div class="quiz-q" data-correct="c">
+          <p>2. The "Naive" in Naive Bayes means:</p>
+          <label class="quiz-option"><input type="radio" name="nb-q2" value="a"> The algorithm is simple to implement</label>
+          <label class="quiz-option"><input type="radio" name="nb-q2" value="b"> It uses very few parameters</label>
+          <label class="quiz-option"><input type="radio" name="nb-q2" value="c"> Features are assumed to be conditionally independent given the class</label>
+          <label class="quiz-option"><input type="radio" name="nb-q2" value="d"> It only works on small datasets</label>
+        </div>
+        <div class="quiz-q" data-correct="a">
+          <p>3. MultinomialNB is the best fit for:</p>
+          <label class="quiz-option"><input type="radio" name="nb-q3" value="a"> Text classification with word frequency counts</label>
+          <label class="quiz-option"><input type="radio" name="nb-q3" value="b"> Continuous numeric features</label>
+          <label class="quiz-option"><input type="radio" name="nb-q3" value="c"> Binary yes/no features</label>
+          <label class="quiz-option"><input type="radio" name="nb-q3" value="d"> Image pixel data</label>
+        </div>
+        <div class="quiz-q" data-correct="d">
+          <p>4. LDA (Linear Discriminant Analysis) serves a dual purpose as:</p>
+          <label class="quiz-option"><input type="radio" name="nb-q4" value="a"> Clustering and regression</label>
+          <label class="quiz-option"><input type="radio" name="nb-q4" value="b"> Anomaly detection and feature selection</label>
+          <label class="quiz-option"><input type="radio" name="nb-q4" value="c"> Boosting and bagging</label>
+          <label class="quiz-option"><input type="radio" name="nb-q4" value="d"> Classifier and supervised dimensionality reduction</label>
+        </div>
+        <div class="quiz-q" data-correct="b">
+          <p>5. Laplace smoothing in Naive Bayes prevents:</p>
+          <label class="quiz-option"><input type="radio" name="nb-q5" value="a"> Overfitting on large datasets</label>
+          <label class="quiz-option"><input type="radio" name="nb-q5" value="b"> Zero-probability issue when a word/feature is unseen in training</label>
+          <label class="quiz-option"><input type="radio" name="nb-q5" value="c"> Multicollinearity between features</label>
+          <label class="quiz-option"><input type="radio" name="nb-q5" value="d"> Data imbalance</label>
+        </div>
         <div class="quiz-actions">
           <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
           <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
@@ -869,6 +1144,17 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
         </div>
       </div>
     </div>
+
+      <div class="completion-banner">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body">
+          <h3>Mark as Complete</h3>
+          <p>Track your progress and earn a course completion certificate.</p>
+        </div>
+        <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordCourseCompletion('ml','naive-bayes-lda')">
+          Mark Complete ✓
+        </button>
+      </div>
 
     <!-- ══ Panel 8: Time Series ══ -->
     <div class="onenote-panel">
@@ -911,6 +1197,16 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
           <a href="/projects/" class="btn btn-outline btn-sm">See Inventory Forecasting Kit →</a>
         </div>
       </div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-area">
+          <p>The hands-on notebook for this topic runs in your browser via our JupyterLite environment — no setup, saves your work automatically.</p>
+          <div class="notebook-links">
+            <a href="/lab/" class="btn btn-outline btn-sm" style="opacity:0.6;pointer-events:none;">⚡ Notebook (launching soon)</a>
+            <a href="https://github.com/Rajendar-Muddasani/AIML-Engineering-Lab" target="_blank" class="btn btn-ghost btn-sm">GitHub Source →</a>
+          </div>
+        </div>
+      </div>
       <div class="quiz-block">
         <h3>// QUIZ — Time Series</h3>
         <div class="quiz-q" data-correct="a">
@@ -927,6 +1223,28 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
           <label class="quiz-option"><input type="radio" name="ts-q2" value="c"> F1 Score</label>
           <label class="quiz-option"><input type="radio" name="ts-q2" value="d"> Silhouette Score</label>
         </div>
+
+        <div class="quiz-q" data-correct="a">
+          <p>3. In ARIMA(p, d, q), the 'd' parameter represents:</p>
+          <label class="quiz-option"><input type="radio" name="ts-q3" value="a"> Degree of differencing to achieve stationarity</label>
+          <label class="quiz-option"><input type="radio" name="ts-q3" value="b"> Number of seasonal patterns</label>
+          <label class="quiz-option"><input type="radio" name="ts-q3" value="c"> Number of moving average terms</label>
+          <label class="quiz-option"><input type="radio" name="ts-q3" value="d"> Data smoothing window</label>
+        </div>
+        <div class="quiz-q" data-correct="c">
+          <p>4. Facebook/Meta Prophet was specifically designed for:</p>
+          <label class="quiz-option"><input type="radio" name="ts-q4" value="a"> Stock price prediction</label>
+          <label class="quiz-option"><input type="radio" name="ts-q4" value="b"> Real-time sensor data</label>
+          <label class="quiz-option"><input type="radio" name="ts-q4" value="c"> Business time series with holidays and multiple seasonalities</label>
+          <label class="quiz-option"><input type="radio" name="ts-q4" value="d"> High-frequency financial data</label>
+        </div>
+        <div class="quiz-q" data-correct="b">
+          <p>5. The Augmented Dickey-Fuller (ADF) test checks for:</p>
+          <label class="quiz-option"><input type="radio" name="ts-q5" value="a"> Autocorrelation in residuals</label>
+          <label class="quiz-option"><input type="radio" name="ts-q5" value="b"> Stationarity of a time series</label>
+          <label class="quiz-option"><input type="radio" name="ts-q5" value="c"> Seasonality components</label>
+          <label class="quiz-option"><input type="radio" name="ts-q5" value="d"> Forecast accuracy</label>
+        </div>
         <div class="quiz-actions">
           <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
           <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
@@ -934,6 +1252,17 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
         </div>
       </div>
     </div>
+
+      <div class="completion-banner">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body">
+          <h3>Mark as Complete</h3>
+          <p>Track your progress and earn a course completion certificate.</p>
+        </div>
+        <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordCourseCompletion('ml','time-series')">
+          Mark Complete ✓
+        </button>
+      </div>
 
     <!-- ══ Panel 9: Hyperparameter Optimization ══ -->
     <div class="onenote-panel">
@@ -978,6 +1307,16 @@ study.optimize(objective, n_trials=<span class="num">50</span>)
 <span class="fn">print</span>(study.best_params)</code></pre>
         </div>
       </div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-area">
+          <p>The hands-on notebook for this topic runs in your browser via our JupyterLite environment — no setup, saves your work automatically.</p>
+          <div class="notebook-links">
+            <a href="/lab/" class="btn btn-outline btn-sm" style="opacity:0.6;pointer-events:none;">⚡ Notebook (launching soon)</a>
+            <a href="https://github.com/Rajendar-Muddasani/AIML-Engineering-Lab" target="_blank" class="btn btn-ghost btn-sm">GitHub Source →</a>
+          </div>
+        </div>
+      </div>
       <div class="quiz-block">
         <h3>// QUIZ — Hyperparameter Optimization</h3>
         <div class="quiz-q" data-correct="c">
@@ -993,6 +1332,28 @@ study.optimize(objective, n_trials=<span class="num">50</span>)
           <label class="quiz-option"><input type="radio" name="hp-q2" value="b"> Avoid overfitting to a single validation split</label>
           <label class="quiz-option"><input type="radio" name="hp-q2" value="c"> Increase model complexity</label>
           <label class="quiz-option"><input type="radio" name="hp-q2" value="d"> Remove outliers automatically</label>
+        </div>
+
+        <div class="quiz-q" data-correct="a">
+          <p>3. In k-fold cross-validation, the dataset is:</p>
+          <label class="quiz-option"><input type="radio" name="hp-q3" value="a"> Split into k folds; each fold serves as test set once</label>
+          <label class="quiz-option"><input type="radio" name="hp-q3" value="b"> Shuffled k times before training</label>
+          <label class="quiz-option"><input type="radio" name="hp-q3" value="c"> Used k times with replacement</label>
+          <label class="quiz-option"><input type="radio" name="hp-q3" value="d"> Duplicated k times for more data</label>
+        </div>
+        <div class="quiz-q" data-correct="d">
+          <p>4. Using the same test set repeatedly during hyperparameter search causes:</p>
+          <label class="quiz-option"><input type="radio" name="hp-q4" value="a"> Underfitting</label>
+          <label class="quiz-option"><input type="radio" name="hp-q4" value="b"> Faster convergence</label>
+          <label class="quiz-option"><input type="radio" name="hp-q4" value="c"> High bias</label>
+          <label class="quiz-option"><input type="radio" name="hp-q4" value="d"> Data leakage — test set "leaks" into the tuning process</label>
+        </div>
+        <div class="quiz-q" data-correct="b">
+          <p>5. Using sklearn Pipeline during hyperparameter search ensures:</p>
+          <label class="quiz-option"><input type="radio" name="hp-q5" value="a"> Faster grid search</label>
+          <label class="quiz-option"><input type="radio" name="hp-q5" value="b"> Scaler and model are fitted only on training folds, preventing leakage</label>
+          <label class="quiz-option"><input type="radio" name="hp-q5" value="c"> Features are automatically selected</label>
+          <label class="quiz-option"><input type="radio" name="hp-q5" value="d"> Model is re-trained on each trial</label>
         </div>
         <div class="quiz-actions">
           <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
