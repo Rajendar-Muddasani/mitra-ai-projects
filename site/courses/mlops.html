@@ -54,7 +54,7 @@
 
       <!-- Airflow -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// 053 · airflow patterns</div><h2>Apache Airflow</h2><p>Workflow orchestration for data pipelines and ML jobs. Define pipelines as Directed Acyclic Graphs (DAGs) in Python. Schedule, monitor, and retry jobs from a web UI.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">053 · airflow patterns</div><h2>Apache Airflow</h2><p>Workflow orchestration for data pipelines and ML jobs. Define pipelines as Directed Acyclic Graphs (DAGs) in Python. Schedule, monitor, and retry jobs from a web UI.</p></div>
         <div class="topic-section"><h3>Core Concepts</h3>
         <table class="metric-table">
           <thead><tr><th>Concept</th><th>Meaning</th></tr></thead>
@@ -89,7 +89,7 @@
     eval_  = <span class="cl">PythonOperator</span>(task_id=<span class="st">"eval"</span>,  python_callable=evaluate_model)
     train >> eval_   <span class="cm"># train runs first</span></code></pre>
         </div></div>
-        <div class="quiz-block"><h3>// QUIZ — Airflow</h3>
+        <div class="quiz-block"><h3>Quiz — Airflow</h3>
           <div class="quiz-q" data-correct="b"><p>1. In Airflow, XCom is used to:</p>
             <label class="quiz-option"><input type="radio" name="af-q1" value="a"> Schedule DAG runs</label>
             <label class="quiz-option"><input type="radio" name="af-q1" value="b"> Pass small values between tasks within a DAG run</label>
@@ -102,7 +102,7 @@
 
       <!-- Spark -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// spark-learning-guide</div><h2>Apache Spark &amp; Big Data</h2><p>Distributed data processing for datasets too large for a single machine. Spark processes data in-memory across a cluster, making it 10–100× faster than Hadoop MapReduce for iterative algorithms.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">spark-learning-guide</div><h2>Apache Spark &amp; Big Data</h2><p>Distributed data processing for datasets too large for a single machine. Spark processes data in-memory across a cluster, making it 10–100× faster than Hadoop MapReduce for iterative algorithms.</p></div>
         <div class="topic-section"><h3>Core Abstractions</h3>
         <table class="metric-table">
           <thead><tr><th>Abstraction</th><th>What it is</th></tr></thead>
@@ -132,7 +132,7 @@ result = (df
 
 result.<span class="fn">show</span>(<span class="num">10</span>)</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>// QUIZ — Spark</h3>
+        <div class="quiz-block"><h3>Quiz — Spark</h3>
           <div class="quiz-q" data-correct="c"><p>1. Spark DataFrames are preferred over RDDs because:</p>
             <label class="quiz-option"><input type="radio" name="sp-q1" value="a"> DataFrames don't need a SparkSession</label>
             <label class="quiz-option"><input type="radio" name="sp-q1" value="b"> RDDs are only available in Scala</label>
@@ -145,7 +145,7 @@ result.<span class="fn">show</span>(<span class="num">10</span>)</code></pre>
 
       <!-- MLflow -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// experiment tracking</div><h2>MLflow — Experiment Tracking</h2><p>Track, compare, and reproduce ML experiments. MLflow records parameters, metrics, artifacts, and code versions — so you always know which run produced the best model.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">experiment tracking</div><h2>MLflow — Experiment Tracking</h2><p>Track, compare, and reproduce ML experiments. MLflow records parameters, metrics, artifacts, and code versions — so you always know which run produced the best model.</p></div>
         <div class="topic-section"><h3>MLflow Components</h3>
         <table class="metric-table">
           <thead><tr><th>Component</th><th>What it does</th></tr></thead>
@@ -175,7 +175,7 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
     mlflow.sklearn.<span class="fn">log_model</span>(model, <span class="st">"model"</span>)
     <span class="fn">print</span>(<span class="st">f"Run ID: {mlflow.active_run().info.run_id}"</span>)</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>// QUIZ — MLflow</h3>
+        <div class="quiz-block"><h3>Quiz — MLflow</h3>
           <div class="quiz-q" data-correct="b"><p>1. MLflow's Model Registry is used for:</p>
             <label class="quiz-option"><input type="radio" name="mf-q1" value="a"> Training models on distributed clusters</label>
             <label class="quiz-option"><input type="radio" name="mf-q1" value="b"> Versioning, staging, and managing models for production deployment</label>
@@ -188,7 +188,7 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
 
       <!-- Kubernetes -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// kubernetes for ml</div><h2>Kubernetes for ML</h2><p>Container orchestration at scale. Kubernetes manages your ML workloads across clusters — scheduling training jobs, scaling inference services, and ensuring reliability.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">kubernetes for ml</div><h2>Kubernetes for ML</h2><p>Container orchestration at scale. Kubernetes manages your ML workloads across clusters — scheduling training jobs, scaling inference services, and ensuring reliability.</p></div>
         <div class="topic-section"><h3>Key Objects</h3>
         <table class="metric-table">
           <thead><tr><th>Object</th><th>Role</th></tr></thead>
@@ -201,7 +201,7 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
             <tr><td>PersistentVolume</td><td>Durable storage for datasets and model artifacts</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>// QUIZ — Kubernetes</h3>
+        <div class="quiz-block"><h3>Quiz — Kubernetes</h3>
           <div class="quiz-q" data-correct="a"><p>1. A Kubernetes Deployment manages:</p>
             <label class="quiz-option"><input type="radio" name="k8-q1" value="a"> Desired replica count for Pods and rolling updates</label>
             <label class="quiz-option"><input type="radio" name="k8-q1" value="b"> Network routing between pods</label>
@@ -214,7 +214,7 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
 
       <!-- SageMaker -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// aws sagemaker</div><h2>AWS SageMaker</h2><p>Fully managed ML platform — from training to deployment. SageMaker handles infrastructure provisioning, model hosting, batch transform, and A/B testing in production.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">aws sagemaker</div><h2>AWS SageMaker</h2><p>Fully managed ML platform — from training to deployment. SageMaker handles infrastructure provisioning, model hosting, batch transform, and A/B testing in production.</p></div>
         <div class="topic-section"><h3>Core Workflow</h3>
         <div class="arch-diagram">
           <div class="arch-boxes">
@@ -231,7 +231,7 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
           <li>SageMaker endpoints have an idle cost — always delete endpoints when not in use during development</li>
           <li>Use Spot Instances for training to cut costs by 70–90%</li>
         </ul></div>
-        <div class="quiz-block"><h3>// QUIZ — SageMaker</h3>
+        <div class="quiz-block"><h3>Quiz — SageMaker</h3>
           <div class="quiz-q" data-correct="c"><p>1. SageMaker Spot Training reduces costs by:</p>
             <label class="quiz-option"><input type="radio" name="sm-q1" value="a"> Using smaller model architectures automatically</label>
             <label class="quiz-option"><input type="radio" name="sm-q1" value="b"> Running training on CPU instead of GPU</label>
@@ -244,7 +244,7 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
 
       <!-- Docker -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// docker for ml</div><h2>Docker for ML</h2><p>Package your ML models and their dependencies into containers. Docker eliminates "works on my machine" problems and enables consistent deployment across dev, staging, and production.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">docker for ml</div><h2>Docker for ML</h2><p>Package your ML models and their dependencies into containers. Docker eliminates "works on my machine" problems and enables consistent deployment across dev, staging, and production.</p></div>
         <div class="topic-section"><h3>ML Dockerfile Pattern</h3>
         <div class="code-panel">
           <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>Dockerfile</span></div>
@@ -266,7 +266,7 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
 <span class="kw">EXPOSE</span> <span class="num">8000</span>
 <span class="kw">CMD</span> [<span class="st">"uvicorn"</span>, <span class="st">"app.main:app"</span>, <span class="st">"--host"</span>, <span class="st">"0.0.0.0"</span>, <span class="st">"--port"</span>, <span class="st">"8000"</span>]</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>// QUIZ — Docker</h3>
+        <div class="quiz-block"><h3>Quiz — Docker</h3>
           <div class="quiz-q" data-correct="b"><p>1. Copying requirements.txt and installing dependencies before copying the application code helps:</p>
             <label class="quiz-option"><input type="radio" name="dk-q1" value="a"> Reduce the final image size</label>
             <label class="quiz-option"><input type="radio" name="dk-q1" value="b"> Cache the pip install layer so rebuilds are faster when only code changes</label>
@@ -279,7 +279,7 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
 
       <!-- CI/CD -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// ci/cd for models</div><h2>CI/CD for ML Models</h2><p>Automate the path from code commit to deployed model. ML-specific CI/CD adds model performance gates, data validation, and rollback triggers on top of standard software CI/CD.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">ci/cd for models</div><h2>CI/CD for ML Models</h2><p>Automate the path from code commit to deployed model. ML-specific CI/CD adds model performance gates, data validation, and rollback triggers on top of standard software CI/CD.</p></div>
         <div class="topic-section"><h3>ML CI/CD Pipeline</h3>
         <div class="arch-diagram">
           <div class="arch-boxes">
@@ -308,7 +308,7 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
       - run: python evaluate.py  <span class="cm"># exits 1 if model below threshold</span>
       - run: python deploy.py     <span class="cm"># pushes to SageMaker or Docker</span></code></pre>
         </div></div>
-        <div class="quiz-block"><h3>// QUIZ — CI/CD for Models</h3>
+        <div class="quiz-block"><h3>Quiz — CI/CD for Models</h3>
           <div class="quiz-q" data-correct="c"><p>1. An "eval gate" in ML CI/CD blocks deployment when:</p>
             <label class="quiz-option"><input type="radio" name="cd-q1" value="a"> The training job takes too long</label>
             <label class="quiz-option"><input type="radio" name="cd-q1" value="b"> Code linting fails</label>

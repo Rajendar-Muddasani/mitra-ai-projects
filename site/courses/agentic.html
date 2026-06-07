@@ -54,7 +54,7 @@
 
       <!-- What is an Agent -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// fundamentals</div><h2>What is an AI Agent?</h2><p>An agent is an LLM with the ability to plan actions, use tools, and remember context across steps. It solves complex tasks by breaking them into sub-tasks and choosing the right tool at each step.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">fundamentals</div><h2>What is an AI Agent?</h2><p>An agent is an LLM with the ability to plan actions, use tools, and remember context across steps. It solves complex tasks by breaking them into sub-tasks and choosing the right tool at each step.</p></div>
         <div class="topic-section"><h3>Agent Core Loop</h3>
         <div class="arch-diagram">
           <div class="arch-boxes">
@@ -78,7 +78,7 @@
             <tr><td>Scratchpad</td><td>Stores intermediate reasoning and tool outputs</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>// QUIZ — What is an Agent</h3>
+        <div class="quiz-block"><h3>Quiz — What is an Agent</h3>
           <div class="quiz-q" data-correct="c"><p>1. What distinguishes an agent from a standard LLM call?</p>
             <label class="quiz-option"><input type="radio" name="ag-q1" value="a"> Agents use a different model architecture</label>
             <label class="quiz-option"><input type="radio" name="ag-q1" value="b"> Agents have a larger context window</label>
@@ -91,7 +91,7 @@
 
       <!-- LangGraph -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// langchain-learning-guide</div><h2>LangGraph</h2><p>Build stateful, multi-step agent workflows as directed graphs. LangGraph gives you control flow, branching, state management, and checkpointing — solving the reliability problems of simple chain-based agents.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">langchain-learning-guide</div><h2>LangGraph</h2><p>Build stateful, multi-step agent workflows as directed graphs. LangGraph gives you control flow, branching, state management, and checkpointing — solving the reliability problems of simple chain-based agents.</p></div>
         <div class="topic-section"><h3>Core Concepts</h3>
         <table class="metric-table">
           <thead><tr><th>Concept</th><th>Meaning</th></tr></thead>
@@ -128,7 +128,7 @@ graph.<span class="fn">add_conditional_edges</span>(<span class="st">"llm"</span
 })
 app = graph.<span class="fn">compile</span>()</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>// QUIZ — LangGraph</h3>
+        <div class="quiz-block"><h3>Quiz — LangGraph</h3>
           <div class="quiz-q" data-correct="b"><p>1. Conditional edges in LangGraph allow:</p>
             <label class="quiz-option"><input type="radio" name="lg-q1" value="a"> Running multiple nodes simultaneously</label>
             <label class="quiz-option"><input type="radio" name="lg-q1" value="b"> Routing the graph to different next nodes based on the current state</label>
@@ -141,7 +141,7 @@ app = graph.<span class="fn">compile</span>()</code></pre>
 
       <!-- CrewAI -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// crewai-course-materials</div><h2>CrewAI</h2><p>Build multi-agent systems where specialized agents collaborate on a shared mission. Each agent has a role, goal, backstory, and set of tools — like a team of people with different expertise.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">crewai-course-materials</div><h2>CrewAI</h2><p>Build multi-agent systems where specialized agents collaborate on a shared mission. Each agent has a role, goal, backstory, and set of tools — like a team of people with different expertise.</p></div>
         <div class="topic-section"><h3>CrewAI Components</h3>
         <table class="metric-table">
           <thead><tr><th>Component</th><th>Description</th></tr></thead>
@@ -173,7 +173,7 @@ writer = <span class="cl">Agent</span>(
 crew = <span class="cl">Crew</span>(agents=[researcher, writer], process=<span class="st">"sequential"</span>)
 result = crew.<span class="fn">kickoff</span>()</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>// QUIZ — CrewAI</h3>
+        <div class="quiz-block"><h3>Quiz — CrewAI</h3>
           <div class="quiz-q" data-correct="d"><p>1. In CrewAI, a "sequential" process means:</p>
             <label class="quiz-option"><input type="radio" name="cr-q1" value="a"> All agents work on all tasks simultaneously</label>
             <label class="quiz-option"><input type="radio" name="cr-q1" value="b"> Tasks are randomly assigned to agents</label>
@@ -186,7 +186,7 @@ result = crew.<span class="fn">kickoff</span>()</code></pre>
 
       <!-- MCP -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// mcp-learning-guide</div><h2>Model Context Protocol (MCP)</h2><p>MCP is an open standard for connecting AI models to external tools and data sources. It defines a standard way for LLM applications to call tools, access resources, and receive prompts from MCP servers.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">mcp-learning-guide</div><h2>Model Context Protocol (MCP)</h2><p>MCP is an open standard for connecting AI models to external tools and data sources. It defines a standard way for LLM applications to call tools, access resources, and receive prompts from MCP servers.</p></div>
         <div class="topic-section"><h3>MCP Architecture</h3>
         <table class="metric-table">
           <thead><tr><th>Component</th><th>Role</th></tr></thead>
@@ -219,7 +219,7 @@ mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span
 <span class="kw">if</span> __name__ == <span class="st">"__main__"</span>:
     mcp.<span class="fn">run</span>()</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>// QUIZ — MCP</h3>
+        <div class="quiz-block"><h3>Quiz — MCP</h3>
           <div class="quiz-q" data-correct="b"><p>1. An MCP Server exposes:</p>
             <label class="quiz-option"><input type="radio" name="mcp-q1" value="a"> The LLM model weights to external systems</label>
             <label class="quiz-option"><input type="radio" name="mcp-q1" value="b"> Tools, resources, and prompts that AI hosts can use</label>
@@ -232,7 +232,7 @@ mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span
 
       <!-- OpenAI Assistants -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// openai assistants api</div><h2>OpenAI Assistants API</h2><p>Build persistent AI assistants with managed threads, file search, code interpreter, and function calling — without managing conversation state yourself.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">openai assistants api</div><h2>OpenAI Assistants API</h2><p>Build persistent AI assistants with managed threads, file search, code interpreter, and function calling — without managing conversation state yourself.</p></div>
         <div class="topic-section"><h3>Key Objects</h3>
         <table class="metric-table">
           <thead><tr><th>Object</th><th>What it is</th></tr></thead>
@@ -245,7 +245,7 @@ mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span
             <tr><td>Code Interpreter</td><td>Executes Python code in a sandboxed environment</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>// QUIZ — Assistants API</h3>
+        <div class="quiz-block"><h3>Quiz — Assistants API</h3>
           <div class="quiz-q" data-correct="c"><p>1. OpenAI Threads automatically:</p>
             <label class="quiz-option"><input type="radio" name="oa-q1" value="a"> Delete after each conversation</label>
             <label class="quiz-option"><input type="radio" name="oa-q1" value="b"> Generate embeddings for all messages</label>
@@ -258,7 +258,7 @@ mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span
 
       <!-- Multi-Agent -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// multi-agent patterns</div><h2>Multi-Agent Systems</h2><p>When a single agent isn't enough, multiple specialized agents collaborate — passing tasks between each other through defined handoff patterns.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">multi-agent patterns</div><h2>Multi-Agent Systems</h2><p>When a single agent isn't enough, multiple specialized agents collaborate — passing tasks between each other through defined handoff patterns.</p></div>
         <div class="topic-section"><h3>Common Patterns</h3>
         <table class="metric-table">
           <thead><tr><th>Pattern</th><th>Description</th><th>Best for</th></tr></thead>
@@ -269,7 +269,7 @@ mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span
             <tr><td>Hierarchical</td><td>Supervisor agents manage sub-supervisor agents</td><td>Very large, deeply nested workflows</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>// QUIZ — Multi-Agent</h3>
+        <div class="quiz-block"><h3>Quiz — Multi-Agent</h3>
           <div class="quiz-q" data-correct="b"><p>1. A Supervisor agent pattern is best when:</p>
             <label class="quiz-option"><input type="radio" name="ma-q1" value="a"> All tasks are identical and can be parallelized</label>
             <label class="quiz-option"><input type="radio" name="ma-q1" value="b"> You need intelligent routing of diverse tasks to specialized agents</label>
@@ -282,7 +282,7 @@ mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span
 
       <!-- Safety -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// evaluation &amp; safety</div><h2>Agent Evaluation &amp; Safety</h2><p>Agentic systems can fail in subtle ways — infinite loops, unexpected tool use, prompt injection. These patterns help you build reliable, safe agents.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">evaluation &amp; safety</div><h2>Agent Evaluation &amp; Safety</h2><p>Agentic systems can fail in subtle ways — infinite loops, unexpected tool use, prompt injection. These patterns help you build reliable, safe agents.</p></div>
         <div class="topic-section"><h3>Safety Patterns</h3>
         <table class="metric-table">
           <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
@@ -294,7 +294,7 @@ mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span
             <tr><td>Cost runaway</td><td>Budget caps on tokens and tool executions per run</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>// QUIZ — Safety</h3>
+        <div class="quiz-block"><h3>Quiz — Safety</h3>
           <div class="quiz-q" data-correct="c"><p>1. Prompt injection in agentic systems occurs when:</p>
             <label class="quiz-option"><input type="radio" name="sf-q1" value="a"> The agent runs too many iterations</label>
             <label class="quiz-option"><input type="radio" name="sf-q1" value="b"> The LLM generates incorrect JSON</label>

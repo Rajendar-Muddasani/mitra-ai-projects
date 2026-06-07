@@ -59,7 +59,7 @@
 
       <!-- Neural Networks -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// new content</div><h2>Neural Network Basics</h2><p>The foundational building block of all deep learning. Understand layers, activation functions, backpropagation, and gradient descent before moving to specialized architectures.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">new content</div><h2>Neural Network Basics</h2><p>The foundational building block of all deep learning. Understand layers, activation functions, backpropagation, and gradient descent before moving to specialized architectures.</p></div>
         <div class="topic-section"><h3>Core Concepts</h3>
         <table class="metric-table">
           <thead><tr><th>Concept</th><th>Plain-English Meaning</th></tr></thead>
@@ -105,7 +105,7 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
           <li>Dropout is only active during training — use model.eval() for inference</li>
         </ul></div>
 
-        <div class="quiz-block"><h3>// QUIZ — Neural Networks</h3>
+        <div class="quiz-block"><h3>Quiz — Neural Networks</h3>
           <div class="quiz-q" data-correct="b"><p>1. Backpropagation computes:</p>
             <label class="quiz-option"><input type="radio" name="nn-q1" value="a"> The forward pass predictions</label>
             <label class="quiz-option"><input type="radio" name="nn-q1" value="b"> Gradients of the loss with respect to each weight</label>
@@ -128,7 +128,7 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
 
       <!-- CNNs -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// 054 · wafer-defect-yolo</div><h2>Convolutional Neural Networks (CNNs)</h2><p>The dominant architecture for image classification, object detection, and visual inspection. CNNs learn spatial hierarchies of features through shared convolutional filters.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">054 · wafer-defect-yolo</div><h2>Convolutional Neural Networks (CNNs)</h2><p>The dominant architecture for image classification, object detection, and visual inspection. CNNs learn spatial hierarchies of features through shared convolutional filters.</p></div>
         <div class="topic-section"><h3>Core Components</h3>
         <table class="metric-table">
           <thead><tr><th>Layer</th><th>What it does</th></tr></thead>
@@ -146,7 +146,7 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
         </div></div>
         <div class="project-callout"><h4>💡 Vision Quality Inspection</h4>
         <p>Build a CNN-based defect detection system for manufacturing images using YOLO. See project-06 on this platform for a full guided kit.</p></div>
-        <div class="quiz-block"><h3>// QUIZ — CNNs</h3>
+        <div class="quiz-block"><h3>Quiz — CNNs</h3>
           <div class="quiz-q" data-correct="a"><p>1. MaxPooling primarily helps with:</p>
             <label class="quiz-option"><input type="radio" name="cnn-q1" value="a"> Reducing spatial dimensions and providing translation invariance</label>
             <label class="quiz-option"><input type="radio" name="cnn-q1" value="b"> Increasing the number of channels</label>
@@ -163,7 +163,7 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
 
       <!-- RNNs/LSTMs -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// 015 · time-series-deep-learning</div><h2>RNNs &amp; LSTMs</h2><p>Recurrent architectures for sequential data — text, time series, speech, and music. LSTMs solve the vanishing gradient problem of vanilla RNNs.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">015 · time-series-deep-learning</div><h2>RNNs &amp; LSTMs</h2><p>Recurrent architectures for sequential data — text, time series, speech, and music. LSTMs solve the vanishing gradient problem of vanilla RNNs.</p></div>
         <div class="topic-section"><h3>LSTM Gates</h3>
         <table class="metric-table">
           <thead><tr><th>Gate</th><th>Purpose</th></tr></thead>
@@ -187,7 +187,7 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
         out, _ = self.lstm(x)
         <span class="kw">return</span> self.fc(out[:, -<span class="num">1</span>, :])</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>// QUIZ — RNNs/LSTMs</h3>
+        <div class="quiz-block"><h3>Quiz — RNNs/LSTMs</h3>
           <div class="quiz-q" data-correct="c"><p>1. LSTMs solve which problem of vanilla RNNs?</p>
             <label class="quiz-option"><input type="radio" name="rnn-q1" value="a"> Slow training speed</label>
             <label class="quiz-option"><input type="radio" name="rnn-q1" value="b"> High memory usage</label>
@@ -204,7 +204,7 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
 
       <!-- Autoencoders & GANs -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// 014 · autoencoders-and-gans</div><h2>Autoencoders &amp; GANs</h2><p>Generative and representation learning architectures. Autoencoders compress data into latent codes. GANs generate realistic new data through adversarial training.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">014 · autoencoders-and-gans</div><h2>Autoencoders &amp; GANs</h2><p>Generative and representation learning architectures. Autoencoders compress data into latent codes. GANs generate realistic new data through adversarial training.</p></div>
         <div class="topic-section"><h3>Autoencoder Structure</h3>
         <div class="arch-diagram">
           <div class="arch-boxes">
@@ -218,7 +218,7 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
         </div></div>
         <div class="topic-section"><h3>GAN Training</h3>
         <p>Generator creates fake data. Discriminator tries to distinguish real from fake. They compete: Generator improves until Discriminator can't tell the difference. The Generator is trained to maximize the Discriminator's error.</p></div>
-        <div class="quiz-block"><h3>// QUIZ — Autoencoders &amp; GANs</h3>
+        <div class="quiz-block"><h3>Quiz — Autoencoders &amp; GANs</h3>
           <div class="quiz-q" data-correct="b"><p>1. In a GAN, the Generator is trained to:</p>
             <label class="quiz-option"><input type="radio" name="gan-q1" value="a"> Classify real vs. fake data correctly</label>
             <label class="quiz-option"><input type="radio" name="gan-q1" value="b"> Fool the Discriminator into classifying its output as real</label>
@@ -235,7 +235,7 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
 
       <!-- Transformers -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// 073 · dtfs-transformer-system</div><h2>Transformers</h2><p>The architecture behind GPT, BERT, ViT, and Whisper. Self-attention allows every position in a sequence to attend to every other position — enabling parallelism and long-range dependencies.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">073 · dtfs-transformer-system</div><h2>Transformers</h2><p>The architecture behind GPT, BERT, ViT, and Whisper. Self-attention allows every position in a sequence to attend to every other position — enabling parallelism and long-range dependencies.</p></div>
         <div class="topic-section"><h3>Self-Attention Intuition</h3>
         <p>For each token, attention computes how much to "attend" to every other token. Mathematically: Attention(Q, K, V) = softmax(QKᵀ / √d_k) · V where Q = queries, K = keys, V = values. Multi-head attention runs this in parallel with different learned projections.</p></div>
         <div class="topic-section"><h3>Architecture Components</h3>
@@ -249,7 +249,7 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
             <tr><td>Residual Connections</td><td>Skip connections help gradients flow in deep transformers</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>// QUIZ — Transformers</h3>
+        <div class="quiz-block"><h3>Quiz — Transformers</h3>
           <div class="quiz-q" data-correct="c"><p>1. Why do transformers need positional encoding?</p>
             <label class="quiz-option"><input type="radio" name="tr2-q1" value="a"> To reduce training time</label>
             <label class="quiz-option"><input type="radio" name="tr2-q1" value="b"> To handle multi-head attention</label>
@@ -266,7 +266,7 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
 
       <!-- Multimodal -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// 034 · multimodal-vision-language</div><h2>Multimodal Models (Vision + Language)</h2><p>Models that understand and generate across multiple data modalities — images, text, audio. CLIP, LLaVA, GPT-4V, Gemini are all multimodal.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">034 · multimodal-vision-language</div><h2>Multimodal Models (Vision + Language)</h2><p>Models that understand and generate across multiple data modalities — images, text, audio. CLIP, LLaVA, GPT-4V, Gemini are all multimodal.</p></div>
         <div class="topic-section"><h3>Key Models</h3>
         <table class="metric-table">
           <thead><tr><th>Model</th><th>Capability</th><th>Use case</th></tr></thead>
@@ -277,7 +277,7 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
             <tr><td>Whisper</td><td>Speech-to-text</td><td>Audio transcription, translation</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>// QUIZ — Multimodal</h3>
+        <div class="quiz-block"><h3>Quiz — Multimodal</h3>
           <div class="quiz-q" data-correct="b"><p>1. CLIP enables zero-shot image classification by:</p>
             <label class="quiz-option"><input type="radio" name="mm-q1" value="a"> Fine-tuning on each new dataset</label>
             <label class="quiz-option"><input type="radio" name="mm-q1" value="b"> Comparing image embeddings to text embeddings of class labels</label>
@@ -294,7 +294,7 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
 
       <!-- Transfer Learning -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// new content</div><h2>Transfer Learning</h2><p>Use a model pre-trained on a large dataset as a starting point for your task. Dramatically reduces training time and data requirements.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">new content</div><h2>Transfer Learning</h2><p>Use a model pre-trained on a large dataset as a starting point for your task. Dramatically reduces training time and data requirements.</p></div>
         <div class="topic-section"><h3>Two Approaches</h3>
         <div class="grid grid-2" style="gap:1rem;">
           <div class="highlight-box">
@@ -321,7 +321,7 @@ model = <span class="fn">resnet50</span>(pretrained=<span class="kw">True</span>
 <span class="cm"># Replace classifier head</span>
 model.fc = nn.<span class="cl">Linear</span>(<span class="num">2048</span>, num_classes)</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>// QUIZ — Transfer Learning</h3>
+        <div class="quiz-block"><h3>Quiz — Transfer Learning</h3>
           <div class="quiz-q" data-correct="a"><p>1. Fine-tuning with a small learning rate helps because:</p>
             <label class="quiz-option"><input type="radio" name="tl-q1" value="a"> It prevents overwriting the useful pre-trained features too quickly</label>
             <label class="quiz-option"><input type="radio" name="tl-q1" value="b"> It reduces model size</label>
@@ -338,7 +338,7 @@ model.fc = nn.<span class="cl">Linear</span>(<span class="num">2048</span>, num_
 
       <!-- Model Compression -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// new content</div><h2>Model Compression</h2><p>Techniques to make large models smaller, faster, and deployable on edge devices — without sacrificing too much accuracy.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">new content</div><h2>Model Compression</h2><p>Techniques to make large models smaller, faster, and deployable on edge devices — without sacrificing too much accuracy.</p></div>
         <div class="topic-section"><h3>Compression Techniques</h3>
         <table class="metric-table">
           <thead><tr><th>Technique</th><th>How it works</th><th>Typical size reduction</th></tr></thead>
@@ -349,7 +349,7 @@ model.fc = nn.<span class="cl">Linear</span>(<span class="num">2048</span>, num_
             <tr><td>ONNX Export</td><td>Convert to runtime-optimized format</td><td>Inference speedup</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>// QUIZ — Model Compression</h3>
+        <div class="quiz-block"><h3>Quiz — Model Compression</h3>
           <div class="quiz-q" data-correct="c"><p>1. Knowledge Distillation trains:</p>
             <label class="quiz-option"><input type="radio" name="mc-q1" value="a"> The teacher model on unlabeled data</label>
             <label class="quiz-option"><input type="radio" name="mc-q1" value="b"> Both teacher and student simultaneously</label>

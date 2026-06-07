@@ -61,7 +61,7 @@
 
       <!-- What is RL -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// fundamentals</div><h2>What is Reinforcement Learning?</h2><p>An agent learns to take actions in an environment by receiving reward signals. Unlike supervised learning, there are no labeled examples — the agent discovers the best strategy by trial and error.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">fundamentals</div><h2>What is Reinforcement Learning?</h2><p>An agent learns to take actions in an environment by receiving reward signals. Unlike supervised learning, there are no labeled examples — the agent discovers the best strategy by trial and error.</p></div>
         <div class="topic-section"><h3>Core Components</h3>
         <table class="metric-table">
           <thead><tr><th>Component</th><th>Description</th></tr></thead>
@@ -91,7 +91,7 @@
             <p style="font-size:0.875rem;margin-top:0.5rem;">No labels — just reward signals. Learn by interacting with an environment. Sequential decisions.</p>
           </div>
         </div></div>
-        <div class="quiz-block"><h3>// QUIZ — What is RL</h3>
+        <div class="quiz-block"><h3>Quiz — What is RL</h3>
           <div class="quiz-q" data-correct="c"><p>1. In reinforcement learning, the reward signal is:</p>
             <label class="quiz-option"><input type="radio" name="rl-q1" value="a"> Provided by labeled training data</label>
             <label class="quiz-option"><input type="radio" name="rl-q1" value="b"> The same as the loss function in supervised learning</label>
@@ -104,7 +104,7 @@
 
       <!-- Q-Learning -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// tabular rl</div><h2>Q-Learning</h2><p>Model-free RL for discrete state spaces. Learn a Q-table that maps (state, action) pairs to expected future rewards. The agent picks the action with the highest Q-value.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">tabular rl</div><h2>Q-Learning</h2><p>Model-free RL for discrete state spaces. Learn a Q-table that maps (state, action) pairs to expected future rewards. The agent picks the action with the highest Q-value.</p></div>
         <div class="topic-section"><h3>Bellman Equation</h3>
         <div class="highlight-box"><p style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:var(--primary);">Q(s, a) ← Q(s, a) + α [r + γ · max Q(s', a') − Q(s, a)]</p>
         <p style="font-size:0.875rem;color:var(--muted);margin-top:0.5rem;">α = learning rate · γ = discount factor (importance of future rewards)</p></div></div>
@@ -117,7 +117,7 @@
             <tr><td>Discount factor γ</td><td>0 = myopic (care only about immediate reward); 1 = far-sighted</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>// QUIZ — Q-Learning</h3>
+        <div class="quiz-block"><h3>Quiz — Q-Learning</h3>
           <div class="quiz-q" data-correct="b"><p>1. ε-greedy exploration means the agent:</p>
             <label class="quiz-option"><input type="radio" name="ql-q1" value="a"> Always takes the best known action</label>
             <label class="quiz-option"><input type="radio" name="ql-q1" value="b"> Randomly explores with probability ε, exploits best action otherwise</label>
@@ -130,7 +130,7 @@
 
       <!-- DQN -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// deep q-networks</div><h2>Deep Q-Networks (DQN)</h2><p>Replace the Q-table with a neural network when the state space is too large for a table (e.g., pixel images in Atari games). Two key innovations: experience replay and target networks.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">deep q-networks</div><h2>Deep Q-Networks (DQN)</h2><p>Replace the Q-table with a neural network when the state space is too large for a table (e.g., pixel images in Atari games). Two key innovations: experience replay and target networks.</p></div>
         <div class="topic-section"><h3>DQN Innovations</h3>
         <table class="metric-table">
           <thead><tr><th>Innovation</th><th>Why it helps</th></tr></thead>
@@ -140,7 +140,7 @@
             <tr><td>CNN for pixels</td><td>ConvNet extracts features from raw pixel observations</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>// QUIZ — DQN</h3>
+        <div class="quiz-block"><h3>Quiz — DQN</h3>
           <div class="quiz-q" data-correct="a"><p>1. Experience replay in DQN helps by:</p>
             <label class="quiz-option"><input type="radio" name="dq-q1" value="a"> Breaking the correlation between consecutive training samples</label>
             <label class="quiz-option"><input type="radio" name="dq-q1" value="b"> Reducing the neural network's parameter count</label>
@@ -153,7 +153,7 @@
 
       <!-- Policy Gradients -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// policy gradient methods</div><h2>Policy Gradients</h2><p>Directly optimize the policy (the action-selection function) instead of learning a value function. REINFORCE is the baseline algorithm; Actor-Critic combines both approaches.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">policy gradient methods</div><h2>Policy Gradients</h2><p>Directly optimize the policy (the action-selection function) instead of learning a value function. REINFORCE is the baseline algorithm; Actor-Critic combines both approaches.</p></div>
         <div class="topic-section"><h3>Value-Based vs. Policy-Based</h3>
         <div class="grid grid-2" style="gap:1rem;">
           <div class="highlight-box">
@@ -171,7 +171,7 @@
             </ul>
           </div>
         </div></div>
-        <div class="quiz-block"><h3>// QUIZ — Policy Gradients</h3>
+        <div class="quiz-block"><h3>Quiz — Policy Gradients</h3>
           <div class="quiz-q" data-correct="c"><p>1. Policy gradient methods are preferred for continuous action spaces because:</p>
             <label class="quiz-option"><input type="radio" name="pg-q1" value="a"> They're faster to train</label>
             <label class="quiz-option"><input type="radio" name="pg-q1" value="b"> They don't need a reward signal</label>
@@ -184,7 +184,7 @@
 
       <!-- PPO -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// proximal policy optimization</div><h2>PPO — Proximal Policy Optimization</h2><p>The most widely used modern RL algorithm. PPO is stable, scalable, and easy to tune. It's used by OpenAI for RLHF (training ChatGPT) and by DeepMind for game-playing agents.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">proximal policy optimization</div><h2>PPO — Proximal Policy Optimization</h2><p>The most widely used modern RL algorithm. PPO is stable, scalable, and easy to tune. It's used by OpenAI for RLHF (training ChatGPT) and by DeepMind for game-playing agents.</p></div>
         <div class="topic-section"><h3>PPO Key Ideas</h3>
         <table class="metric-table">
           <thead><tr><th>Idea</th><th>What it does</th></tr></thead>
@@ -195,7 +195,7 @@
             <tr><td>Entropy bonus</td><td>Encourages exploration by rewarding uncertainty in the policy</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>// QUIZ — PPO</h3>
+        <div class="quiz-block"><h3>Quiz — PPO</h3>
           <div class="quiz-q" data-correct="b"><p>1. PPO's clipping objective ensures:</p>
             <label class="quiz-option"><input type="radio" name="pp-q1" value="a"> The agent always takes the action with maximum Q-value</label>
             <label class="quiz-option"><input type="radio" name="pp-q1" value="b"> Policy updates don't change the policy too drastically in a single step</label>
@@ -208,7 +208,7 @@
 
       <!-- Real-World RL -->
       <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">// applications</div><h2>Real-World Reinforcement Learning</h2><p>RL beyond games. Real-world applications have sparse rewards, safety constraints, and costly exploration — requiring different approaches than simulated environments.</p></div>
+        <div class="topic-hero"><div class="topic-eyebrow">applications</div><h2>Real-World Reinforcement Learning</h2><p>RL beyond games. Real-world applications have sparse rewards, safety constraints, and costly exploration — requiring different approaches than simulated environments.</p></div>
         <div class="topic-section"><h3>Application Areas</h3>
         <table class="metric-table">
           <thead><tr><th>Domain</th><th>RL Application</th><th>Key challenges</th></tr></thead>
@@ -220,7 +220,7 @@
             <tr><td>Robotics</td><td>Teach robots to walk, grasp, and navigate</td><td>Sim-to-real gap, safety</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>// QUIZ — Real-World RL</h3>
+        <div class="quiz-block"><h3>Quiz — Real-World RL</h3>
           <div class="quiz-q" data-correct="d"><p>1. RLHF (Reinforcement Learning from Human Feedback) is used to:</p>
             <label class="quiz-option"><input type="radio" name="rw-q1" value="a"> Train agents to play video games</label>
             <label class="quiz-option"><input type="radio" name="rw-q1" value="b"> Replace supervised pre-training of LLMs</label>

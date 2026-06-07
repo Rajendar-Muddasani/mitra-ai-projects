@@ -145,7 +145,7 @@
     <!-- ══ Panel 0: Linear Regression ══ -->
     <div class="onenote-panel active">
       <div class="topic-hero">
-        <div class="topic-eyebrow">// 001 · linear-regression-engine</div>
+        <div class="topic-eyebrow">001 · linear-regression-engine</div>
         <h2>Linear Regression</h2>
         <p>The foundation of supervised learning. Linear regression models the relationship between input features and a continuous output by fitting a straight line (or hyperplane) through the data.</p>
       </div>
@@ -277,7 +277,7 @@ ridge.fit(X_train, y_train)</code></pre>
       </div>
 
       <div class="quiz-block">
-        <h3>// QUIZ — Linear Regression</h3>
+        <h3>Quiz — Linear Regression</h3>
 
         <div class="quiz-q" data-correct="b">
           <p>1. Which metric is most interpretable when the target variable is in dollars?</p>
@@ -339,7 +339,7 @@ ridge.fit(X_train, y_train)</code></pre>
     <!-- ══ Panel 1: Classification ══ -->
     <div class="onenote-panel">
       <div class="topic-hero">
-        <div class="topic-eyebrow">// 002 · classification-engine</div>
+        <div class="topic-eyebrow">002 · classification-engine</div>
         <h2>Classification</h2>
         <p>Predict which category a data point belongs to. Classification is the most common ML task in placement interviews and practical projects.</p>
       </div>
@@ -443,7 +443,7 @@ y_proba = clf.predict_proba(X_test_sc)[:, <span class="num">1</span>]
         </div>
       </div>
       <div class="quiz-block">
-        <h3>// QUIZ — Classification</h3>
+        <h3>Quiz — Classification</h3>
         <div class="quiz-q" data-correct="c">
           <p>1. Which metric should you prioritize for cancer detection where missing a case is costly?</p>
           <label class="quiz-option"><input type="radio" name="cl-q1" value="a"> Precision</label>
@@ -501,7 +501,7 @@ y_proba = clf.predict_proba(X_test_sc)[:, <span class="num">1</span>]
     <!-- ══ Panel 2: Tree-Based Learning ══ -->
     <div class="onenote-panel">
       <div class="topic-hero">
-        <div class="topic-eyebrow">// 003 · tree-based-learning</div>
+        <div class="topic-eyebrow">003 · tree-based-learning</div>
         <h2>Tree-Based Learning</h2>
         <p>Decision trees, random forests, and their variants. One of the most interview-tested ML family of algorithms.</p>
       </div>
@@ -562,7 +562,7 @@ fi.sort_values(ascending=<span class="kw">False</span>).plot(kind=<span class="s
         </div>
       </div>
       <div class="quiz-block">
-        <h3>// QUIZ — Trees</h3>
+        <h3>Quiz — Trees</h3>
         <div class="quiz-q" data-correct="b">
           <p>1. Random Forest reduces variance by:</p>
           <label class="quiz-option"><input type="radio" name="tr-q1" value="a"> Using a deeper tree</label>
@@ -621,7 +621,7 @@ fi.sort_values(ascending=<span class="kw">False</span>).plot(kind=<span class="s
     <!-- ══ Panel 3: Boosting ══ -->
     <div class="onenote-panel">
       <div class="topic-hero">
-        <div class="topic-eyebrow">// 004 · boosting-revolution</div>
+        <div class="topic-eyebrow">004 · boosting-revolution</div>
         <h2>Boosting</h2>
         <p>XGBoost, LightGBM, and gradient boosting. The algorithm that wins Kaggle competitions. Sequentially trains weak learners, each correcting the previous one's errors.</p>
       </div>
@@ -684,7 +684,7 @@ scores = cross_val_score(model, X, y, cv=<span class="num">5</span>, scoring=<sp
         </div>
       </div>
       <div class="quiz-block">
-        <h3>// QUIZ — Boosting</h3>
+        <h3>Quiz — Boosting</h3>
         <div class="quiz-q" data-correct="b">
           <p>1. In gradient boosting, each new tree is trained on:</p>
           <label class="quiz-option"><input type="radio" name="bo-q1" value="a"> A random subset of the original data</label>
@@ -743,7 +743,7 @@ scores = cross_val_score(model, X, y, cv=<span class="num">5</span>, scoring=<sp
     <!-- ══ Panel 4: SVM ══ -->
     <div class="onenote-panel">
       <div class="topic-hero">
-        <div class="topic-eyebrow">// 005 · support-vector-machines</div>
+        <div class="topic-eyebrow">005 · support-vector-machines</div>
         <h2>Support Vector Machines</h2>
         <p>SVMs find the maximum-margin hyperplane that separates classes. They are powerful for high-dimensional data and work well when classes are clearly separable.</p>
       </div>
@@ -800,7 +800,7 @@ pipe.fit(X_train, y_train)</code></pre>
         </div>
       </div>
       <div class="quiz-block">
-        <h3>// QUIZ — SVM</h3>
+        <h3>Quiz — SVM</h3>
         <div class="quiz-q" data-correct="c">
           <p>1. Support vectors are:</p>
           <label class="quiz-option"><input type="radio" name="sv-q1" value="a"> All training data points</label>
@@ -859,7 +859,7 @@ pipe.fit(X_train, y_train)</code></pre>
     <!-- ══ Panel 5: Clustering ══ -->
     <div class="onenote-panel">
       <div class="topic-hero">
-        <div class="topic-eyebrow">// 006 · unsupervised-discovery</div>
+        <div class="topic-eyebrow">006 · unsupervised-discovery</div>
         <h2>Clustering &amp; Unsupervised Learning</h2>
         <p>Find natural groups in data without labels. Used in customer segmentation, document grouping, image compression, and anomaly detection preprocessing.</p>
       </div>
@@ -909,7 +909,7 @@ score  = silhouette_score(X, labels)
         </div>
       </div>
       <div class="quiz-block">
-        <h3>// QUIZ — Clustering</h3>
+        <h3>Quiz — Clustering</h3>
         <div class="quiz-q" data-correct="b">
           <p>1. Silhouette score ranges from -1 to 1. A score near 1 means:</p>
           <label class="quiz-option"><input type="radio" name="cl2-q1" value="a"> Clusters are overlapping</label>
@@ -968,7 +968,7 @@ score  = silhouette_score(X, labels)
     <!-- ══ Panel 6: Anomaly Detection ══ -->
     <div class="onenote-panel">
       <div class="topic-hero">
-        <div class="topic-eyebrow">// 007 · anomaly-detection-dimensionality</div>
+        <div class="topic-eyebrow">007 · anomaly-detection-dimensionality</div>
         <h2>Anomaly Detection</h2>
         <p>Identify unusual data points — fraud, system failures, manufacturing defects. Most anomaly problems are highly imbalanced.</p>
       </div>
@@ -1010,7 +1010,7 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
         </div>
       </div>
       <div class="quiz-block">
-        <h3>// QUIZ — Anomaly Detection</h3>
+        <h3>Quiz — Anomaly Detection</h3>
         <div class="quiz-q" data-correct="b">
           <p>1. Isolation Forest labels -1 for:</p>
           <label class="quiz-option"><input type="radio" name="an-q1" value="a"> Normal points</label>
@@ -1069,7 +1069,7 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
     <!-- ══ Panel 7: Naive Bayes / LDA ══ -->
     <div class="onenote-panel">
       <div class="topic-hero">
-        <div class="topic-eyebrow">// 008 · naive-bayes-lda</div>
+        <div class="topic-eyebrow">008 · naive-bayes-lda</div>
         <h2>Naive Bayes &amp; LDA</h2>
         <p>Probabilistic classifiers grounded in Bayes' theorem. Fast, interpretable, and surprisingly effective for text classification and small datasets.</p>
       </div>
@@ -1100,7 +1100,7 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
         </div>
       </div>
       <div class="quiz-block">
-        <h3>// QUIZ — Naive Bayes</h3>
+        <h3>Quiz — Naive Bayes</h3>
         <div class="quiz-q" data-correct="c">
           <p>1. Which Naive Bayes variant is best for text classification with word counts?</p>
           <label class="quiz-option"><input type="radio" name="nb-q1" value="a"> GaussianNB</label>
@@ -1159,7 +1159,7 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
     <!-- ══ Panel 8: Time Series ══ -->
     <div class="onenote-panel">
       <div class="topic-hero">
-        <div class="topic-eyebrow">// 009 · time-series-forecasting</div>
+        <div class="topic-eyebrow">009 · time-series-forecasting</div>
         <h2>Time Series Forecasting</h2>
         <p>Predict future values based on historical sequences. Used in stock prices, sales forecasting, energy demand, and inventory planning.</p>
       </div>
@@ -1208,7 +1208,7 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
         </div>
       </div>
       <div class="quiz-block">
-        <h3>// QUIZ — Time Series</h3>
+        <h3>Quiz — Time Series</h3>
         <div class="quiz-q" data-correct="a">
           <p>1. ARIMA requires the input series to be:</p>
           <label class="quiz-option"><input type="radio" name="ts-q1" value="a"> Stationary</label>
@@ -1267,7 +1267,7 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
     <!-- ══ Panel 9: Hyperparameter Optimization ══ -->
     <div class="onenote-panel">
       <div class="topic-hero">
-        <div class="topic-eyebrow">// 010 · hyperparameter-optimization</div>
+        <div class="topic-eyebrow">010 · hyperparameter-optimization</div>
         <h2>Hyperparameter Optimization</h2>
         <p>Systematically search for the best model configuration. Moving from manual tuning to automated, principled search.</p>
       </div>
@@ -1318,7 +1318,7 @@ study.optimize(objective, n_trials=<span class="num">50</span>)
         </div>
       </div>
       <div class="quiz-block">
-        <h3>// QUIZ — Hyperparameter Optimization</h3>
+        <h3>Quiz — Hyperparameter Optimization</h3>
         <div class="quiz-q" data-correct="c">
           <p>1. Which approach is most efficient for expensive-to-train models?</p>
           <label class="quiz-option"><input type="radio" name="hp-q1" value="a"> Grid Search</label>
