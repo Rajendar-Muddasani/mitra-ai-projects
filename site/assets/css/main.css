@@ -1186,6 +1186,24 @@ textarea.form-control { min-height: 120px; resize: vertical; }
   .quiz-block { padding: 1.25rem; }
 }
 
+/* ── Notebook iframe embed ── */
+.notebook-embed {
+  margin: 0.5rem 0 1rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-dim);
+  background: var(--surface);
+}
+.notebook-embed iframe {
+  width: 100%;
+  height: 520px;
+  border: none;
+  display: block;
+}
+@media (max-width: 768px) {
+  .notebook-embed iframe { height: 380px; }
+}
+
 /* ── Sign-in modal ── */
 .auth-modal-overlay {
   position: fixed; inset: 0; z-index: 500;

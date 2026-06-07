@@ -24,6 +24,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build JupyterLite
+        run: |
+          pip install jupyterlite-core==0.4.1 jupyterlite-pyodide-kernel==0.4.1
+          mkdir -p site/lab
+          jupyter lite build \
+            --contents notebooks/ \
+            --output-dir site/lab/ \
+            --no-sourcemaps
+        env:
+          JUPYTERLITE_NO_SOURCEMAPS: "1"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
