@@ -22,9 +22,9 @@
 | S1-T11 | Google Search Console setup | ❌ | After domain live |
 | S1-T12 | sitemap.xml in site/ root | ✅ | All 18 pages listed |
 | S1-T13 | Supabase anon key — config.js wired in all pages | ✅ | Done — real key added, committed |
-| S1-T14 | Supabase table: contact_submissions | ❌ | Manual: run scripts/supabase_setup.sql |
-| S1-T15 | Supabase table: course_completions | ❌ | Manual: same SQL file |
-| S1-T16 | Supabase table: project_completions + certificates | ❌ | Manual: same SQL file |
+| S1-T14 | Supabase table: contact_submissions | ✅ | Done — tables created |
+| S1-T15 | Supabase table: course_completions | ✅ | Done |
+| S1-T16 | Supabase table: project_completions + certificates | ✅ | Done |
 | S1-T17 | Login UI — Sign In modal (Google + email magic link) | ✅ | Injected via main.js |
 | S1-T18 | User profile page /profile.html | ✅ | Shows completions + certificates |
 | S1-T19 | GitHub Pages enabled (Settings → Pages → GitHub Actions) | ✅ | Done |
