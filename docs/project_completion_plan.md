@@ -21,7 +21,7 @@
 | S1-T10 | GA4 custom events (tab change, quiz, cert, video, download) | ✅ | All in main.js |
 | S1-T11 | Google Search Console setup | ❌ | After domain live |
 | S1-T12 | sitemap.xml in site/ root | ✅ | All 18 pages listed |
-| S1-T13 | Supabase anon key — config.js wired in all pages | ✅ | Edit site/config.js with real key |
+| S1-T13 | Supabase anon key — config.js wired in all pages | ✅ | Done — real key added, committed |
 | S1-T14 | Supabase table: contact_submissions | ❌ | Manual: run scripts/supabase_setup.sql |
 | S1-T15 | Supabase table: course_completions | ❌ | Manual: same SQL file |
 | S1-T16 | Supabase table: project_completions + certificates | ❌ | Manual: same SQL file |

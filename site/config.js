@@ -1,8 +1,9 @@
 /* ═══════════════════════════════════════════════════
    Mitra AI Projects — Site Configuration
-   Fill in your values here. This file is gitignored.
-   Get your Supabase anon key from:
-   Supabase Dashboard → Project Settings → API → anon/public key
+   The Supabase anon key below is a PUBLIC key — safe to commit.
+   It is designed to be shipped in browser code (read-only access
+   enforced by Row Level Security on Supabase).
+   Never put the service_role key here.
    ═══════════════════════════════════════════════════ */
 
-window.__SUPABASE_ANON_KEY__ = 'YOUR_SUPABASE_ANON_KEY_HERE';
+window.__SUPABASE_ANON_KEY__ = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt1cml3YXlzZGxxbnpxcXphYnRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgwNTE5NzYsImV4cCI6MjA5MzYyNzk3Nn0.UA2AgEmnA6r_evrAyXz0MTVhohziKdspkjuB6wHD6fw';
