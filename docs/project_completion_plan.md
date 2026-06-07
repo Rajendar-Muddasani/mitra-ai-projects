@@ -55,16 +55,16 @@
 ### Machine Learning Track — 10 tabs (OneNote layout)
 | ID | Tab | Content | Colab link | Quiz | Cheatsheet |
 |---|---|---|---|---|---|
-| S2-T9 | Linear Regression | 🔶 Stub | ❌ AIML-Lab 001 | ❌ | ❌ |
-| S2-T10 | Classification | 🔶 Stub | ❌ AIML-Lab 002 | ❌ | ❌ |
-| S2-T11 | Tree-Based Learning | 🔶 Stub | ❌ AIML-Lab 003 | ❌ | ❌ |
-| S2-T12 | Boosting | 🔶 Stub | ❌ AIML-Lab 004 | ❌ | ❌ |
-| S2-T13 | SVM | 🔶 Stub | ❌ AIML-Lab 005 | ❌ | ❌ |
-| S2-T14 | Clustering | 🔶 Stub | ❌ AIML-Lab 006 | ❌ | ❌ |
-| S2-T15 | Anomaly Detection | 🔶 Stub | ❌ AIML-Lab 007 | ❌ | ❌ |
-| S2-T16 | Naive Bayes / LDA | 🔶 Stub | ❌ AIML-Lab 008 | ❌ | ❌ |
-| S2-T17 | Time Series | 🔶 Stub | ❌ AIML-Lab 009 | ❌ | ❌ |
-| S2-T18 | Hyperparameter Opt | 🔶 Stub | ❌ AIML-Lab 010 | ❌ | ❌ |
+| S2-T9 | Linear Regression | ✅ | ❌ AIML-Lab 001 | ❌ | ❌ |
+| S2-T10 | Classification | ✅ | ❌ AIML-Lab 002 | ❌ | ❌ |
+| S2-T11 | Tree-Based Learning | ✅ | ❌ AIML-Lab 003 | ❌ | ❌ |
+| S2-T12 | Boosting | ✅ | ❌ AIML-Lab 004 | ❌ | ❌ |
+| S2-T13 | SVM | ✅ | ❌ AIML-Lab 005 | ❌ | ❌ |
+| S2-T14 | Clustering | ✅ | ❌ AIML-Lab 006 | ❌ | ❌ |
+| S2-T15 | Anomaly Detection | ✅ | ❌ AIML-Lab 007 | ❌ | ❌ |
+| S2-T16 | Naive Bayes / LDA | ✅ | ❌ AIML-Lab 008 | ❌ | ❌ |
+| S2-T17 | Time Series | ✅ | ❌ AIML-Lab 009 | ❌ | ❌ |
+| S2-T18 | Hyperparameter Opt | ✅ | ❌ AIML-Lab 010 | ❌ | ❌ |
 
 ### Deep Learning Track — 8 tabs
 | ID | Tab | Content | Source repo | Quiz | Cheatsheet |
