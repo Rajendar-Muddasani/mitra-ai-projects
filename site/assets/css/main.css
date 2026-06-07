@@ -1186,22 +1186,47 @@ textarea.form-control { min-height: 120px; resize: vertical; }
   .quiz-block { padding: 1.25rem; }
 }
 
-/* ── Notebook iframe embed ── */
-.notebook-embed {
-  margin: 0.5rem 0 1rem;
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--border-dim);
+/* ── Notebook card (open in new tab) ── */
+.notebook-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
   background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin: 0.5rem 0 1rem;
+  flex-wrap: wrap;
 }
-.notebook-embed iframe {
-  width: 100%;
-  height: 520px;
-  border: none;
-  display: block;
+.notebook-card-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
 }
-@media (max-width: 768px) {
-  .notebook-embed iframe { height: 380px; }
+.notebook-card-body {
+  flex: 1;
+  min-width: 200px;
+}
+.notebook-card-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+.notebook-card-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+  line-height: 1.5;
+}
+.notebook-card-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--primary);
+  opacity: 0.75;
+}
+.notebook-open-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* ── Sign-in modal ── */
