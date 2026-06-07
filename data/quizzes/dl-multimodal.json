@@ -1,0 +1,116 @@
+{
+  "course_label": "Deep Learning",
+  "title": "Multimodal Models",
+  "questions": [
+    {
+      "question": "CLIP (Contrastive Language-Image Pretraining) aligns:",
+      "options": [
+        "Pixels and labels",
+        "Image embeddings and text embeddings in a shared space",
+        "Audio and video",
+        "Different image resolutions"
+      ],
+      "correct": "b",
+      "explanation": "CLIP trains an image encoder and text encoder to maximise similarity for matching pairs, minimise for non-matching."
+    },
+    {
+      "question": "Zero-shot classification with CLIP works because:",
+      "options": [
+        "CLIP was trained on ImageNet",
+        "Any category can be described as text \u2014 CLIP matches image to text descriptions without fine-tuning",
+        "CLIP uses random forests",
+        "The model memorises all categories"
+      ],
+      "correct": "b",
+      "explanation": "'A photo of a cat' embedds to nearly the same space as actual cat photos \u2014 enabling classification of unseen categories."
+    },
+    {
+      "question": "BLIP-2 for image captioning uses:",
+      "options": [
+        "Only a CNN",
+        "A frozen image encoder + a frozen LLM connected by a lightweight Q-Former bridge",
+        "Two separate training phases only",
+        "Only attention mechanisms"
+      ],
+      "correct": "b",
+      "explanation": "BLIP-2's Q-Former is a small transformer that queries visual features and translates them for the frozen LLM."
+    },
+    {
+      "question": "Visual Question Answering (VQA) takes as input:",
+      "options": [
+        "Only the image",
+        "An image + a natural language question, outputs a natural language answer",
+        "Only the question",
+        "A template of possible answers"
+      ],
+      "correct": "b",
+      "explanation": "VQA = multimodal: model must understand both the image content and the question semantics to answer correctly."
+    },
+    {
+      "question": "GPT-4V's advantage over text-only GPT-4 is:",
+      "options": [
+        "Faster inference",
+        "Processing and reasoning about images in addition to text",
+        "Larger context window",
+        "Better code generation"
+      ],
+      "correct": "b",
+      "explanation": "GPT-4V can describe images, read text in images, explain diagrams, and reason about visual content alongside text."
+    },
+    {
+      "question": "The main challenge in multimodal learning is:",
+      "options": [
+        "Getting large models",
+        "Aligning representations from fundamentally different modalities (image pixels vs text tokens)",
+        "Using GPU memory",
+        "Collecting labelled data only"
+      ],
+      "correct": "b",
+      "explanation": "Image patches and text tokens live in very different spaces. Learning a shared embedding space is the core challenge."
+    },
+    {
+      "question": "Stable Diffusion generates images using:",
+      "options": [
+        "GANs",
+        "A diffusion process \u2014 gradually denoising random noise conditioned on text embeddings",
+        "Autoregressive pixel prediction",
+        "VAE encoding only"
+      ],
+      "correct": "b",
+      "explanation": "Diffusion models learn to reverse a noise process. Text embeddings guide the denoising via cross-attention."
+    },
+    {
+      "question": "The COCO dataset is commonly used for:",
+      "options": [
+        "Text classification",
+        "Object detection, segmentation, and image captioning benchmarks",
+        "Audio recognition",
+        "Video understanding"
+      ],
+      "correct": "b",
+      "explanation": "COCO: 330K images with bounding boxes, segmentation masks, and 5 captions each \u2014 a standard multimodal benchmark."
+    },
+    {
+      "question": "LLaVA (Large Language and Vision Assistant) is notable for:",
+      "options": [
+        "Being the largest model",
+        "Showing that strong vision-language models can be built with instruction tuning using GPT-4-generated data",
+        "Using only supervised learning",
+        "Being closed-source only"
+      ],
+      "correct": "b",
+      "explanation": "LLaVA used GPT-4 to generate instruction-following data from COCO image captions, creating an effective open-source VLM."
+    },
+    {
+      "question": "Cross-attention in multimodal transformers allows:",
+      "options": [
+        "Only self-referential queries",
+        "The decoder (e.g., text) to attend to encoder outputs (e.g., image features)",
+        "Faster training only",
+        "The image to query text features"
+      ],
+      "correct": "b",
+      "explanation": "Cross-attention: queries from one modality (text decoder) attend to keys/values from another (image encoder) \u2014 the fusion mechanism."
+    }
+  ]
+}

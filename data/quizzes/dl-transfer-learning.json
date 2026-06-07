@@ -1,0 +1,116 @@
+{
+  "course_label": "Deep Learning",
+  "title": "Transfer Learning",
+  "questions": [
+    {
+      "question": "The main benefit of transfer learning is:",
+      "options": [
+        "Larger models",
+        "Reusing learned representations from a large dataset for a related task with less data",
+        "Faster hardware",
+        "No need for labelled data at all"
+      ],
+      "correct": "b",
+      "explanation": "Pre-trained features (edges, textures, semantic concepts) reduce data and compute requirements for new tasks."
+    },
+    {
+      "question": "Feature extraction in transfer learning means:",
+      "options": [
+        "Training the full model",
+        "Freezing all pre-trained layers and only training a new classification head",
+        "Training only early layers",
+        "Using no pre-training"
+      ],
+      "correct": "b",
+      "explanation": "With frozen weights, only the new head (typically 1-2 FC layers) is trained. Fast and effective for small datasets."
+    },
+    {
+      "question": "Fine-tuning differs from feature extraction by:",
+      "options": [
+        "Using different data",
+        "Unfreezing some or all pre-trained layers and training with a low learning rate",
+        "Using a different loss function",
+        "Using larger batch sizes"
+      ],
+      "correct": "b",
+      "explanation": "Fine-tuning allows gradual adaptation of pre-trained features to the new domain \u2014 more powerful but requires more data."
+    },
+    {
+      "question": "Why use a very low learning rate when fine-tuning?",
+      "options": [
+        "To speed up convergence",
+        "To avoid destroying the pre-trained knowledge (catastrophic forgetting)",
+        "To increase regularisation",
+        "To reduce batch size"
+      ],
+      "correct": "b",
+      "explanation": "High learning rate overwrites pre-trained weights too aggressively. Very low lr (1e-5) makes small, careful adjustments."
+    },
+    {
+      "question": "Domain adaptation handles the case when:",
+      "options": [
+        "Training and test data are from the same distribution",
+        "Source domain (ImageNet) and target domain (medical images) have different distributions",
+        "The model is too large",
+        "Labels are unavailable in both domains"
+      ],
+      "correct": "b",
+      "explanation": "Domain shift = different data distributions. Domain adaptation techniques help transfer knowledge across this gap."
+    },
+    {
+      "question": "ImageNet pre-training transfers well to medical imaging because:",
+      "options": [
+        "Medical images are identical to ImageNet",
+        "Low-level features (edges, textures, gradients) are universal across visual domains",
+        "ImageNet contains X-ray images",
+        "The number of classes is similar"
+      ],
+      "correct": "b",
+      "explanation": "Despite domain difference, edge/texture detectors learned from natural images are useful for medical images too."
+    },
+    {
+      "question": "Progressive unfreezing in fine-tuning means:",
+      "options": [
+        "Using different learning rates",
+        "Unfreezing layers gradually from top to bottom during training",
+        "Training only early layers",
+        "Using curriculum learning"
+      ],
+      "correct": "b",
+      "explanation": "Start by training only the head, then unfreeze the last block, then earlier blocks. Each stage uses a lower lr."
+    },
+    {
+      "question": "Knowledge distillation is a form of transfer learning where:",
+      "options": [
+        "A small model copies architecture",
+        "A small student model learns from the soft predictions of a large teacher model",
+        "The pre-training data is reused",
+        "Only the first layer is transferred"
+      ],
+      "correct": "b",
+      "explanation": "Teacher's soft probabilities contain rich inter-class relationships \u2014 the student learns these 'dark knowledge' patterns."
+    },
+    {
+      "question": "Few-shot learning aims to:",
+      "options": [
+        "Use the largest possible training set",
+        "Generalise to new classes with only a few labelled examples per class",
+        "Reduce model size",
+        "Replace transfer learning"
+      ],
+      "correct": "b",
+      "explanation": "Few-shot models leverage meta-learning or metric learning to quickly adapt to new tasks from very few examples."
+    },
+    {
+      "question": "Which freezing strategy is typically best for a small target dataset?",
+      "options": [
+        "Freeze nothing \u2014 full fine-tuning",
+        "Freeze all layers, train only the head (feature extraction)",
+        "Freeze only batch normalisation",
+        "Freeze the input layer only"
+      ],
+      "correct": "b",
+      "explanation": "Small dataset + full fine-tuning = overfitting. Frozen backbone acts as a fixed feature extractor \u2014 safer choice."
+    }
+  ]
+}

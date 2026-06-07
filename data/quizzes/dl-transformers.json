@@ -1,0 +1,116 @@
+{
+  "course_label": "Deep Learning",
+  "title": "Transformers",
+  "questions": [
+    {
+      "question": "Self-attention allows each token to:",
+      "options": [
+        "Only attend to the previous token",
+        "Attend to all other tokens in the sequence simultaneously",
+        "Ignore context",
+        "Attend only to nearby tokens"
+      ],
+      "correct": "b",
+      "explanation": "Each query attends to all keys: Attention(Q,K,V) = softmax(QK^T/sqrt(d_k))V. Full sequence context in one operation."
+    },
+    {
+      "question": "Multi-head attention runs multiple attention heads to:",
+      "options": [
+        "Speed up training",
+        "Capture different types of relationships at different representation subspaces",
+        "Reduce memory usage",
+        "Replace positional encoding"
+      ],
+      "correct": "b",
+      "explanation": "Each head can focus on different aspects (syntax, coreference, semantic). Outputs are concatenated and projected."
+    },
+    {
+      "question": "Positional encoding in transformers provides:",
+      "options": [
+        "Attention weights",
+        "Information about the position of each token \u2014 since attention is order-invariant",
+        "The embedding dimensions",
+        "The layer norms"
+      ],
+      "correct": "b",
+      "explanation": "Without positional encoding, the model treats 'cat sat mat' and 'mat sat cat' identically. PE adds position information."
+    },
+    {
+      "question": "BERT uses which training objective?",
+      "options": [
+        "Next sentence prediction only",
+        "Masked Language Model (MLM) \u2014 predict randomly masked tokens",
+        "Causal language model",
+        "Contrastive learning"
+      ],
+      "correct": "b",
+      "explanation": "BERT masks 15% of tokens randomly and trains to predict them, learning bidirectional context."
+    },
+    {
+      "question": "GPT's autoregressive generation works by:",
+      "options": [
+        "Predicting all tokens simultaneously",
+        "Predicting one token at a time, each conditioned on all previous tokens",
+        "Using beam search only",
+        "Sampling from the full vocabulary at once"
+      ],
+      "correct": "b",
+      "explanation": "GPT: P(x_t | x_1,...,x_{t-1}). At inference, generate token, append, generate next \u2014 until EOS token."
+    },
+    {
+      "question": "The Feed-Forward Network (FFN) in each transformer layer:",
+      "options": [
+        "Applies attention",
+        "Applies the same two-layer MLP to each position independently",
+        "Reduces sequence length",
+        "Adds positional encoding"
+      ],
+      "correct": "b",
+      "explanation": "FFN = Linear \u2192 ReLU \u2192 Linear. Same parameters applied to each token position \u2014 adds non-linearity after attention."
+    },
+    {
+      "question": "Layer Normalisation in transformers is applied:",
+      "options": [
+        "Only at the start",
+        "Before or after each sub-layer (pre-LN or post-LN) to stabilise training",
+        "Only in the encoder",
+        "Once at the end"
+      ],
+      "correct": "b",
+      "explanation": "LayerNorm normalises across the feature dimension (not batch), stabilising deep transformer training."
+    },
+    {
+      "question": "The T5 (Text-To-Text Transfer Transformer) model treats all NLP tasks as:",
+      "options": [
+        "Classification",
+        "Text-to-text: input and output are always text strings",
+        "Regression",
+        "Sequence labelling only"
+      ],
+      "correct": "b",
+      "explanation": "T5: 'translate English to German: The cat sat' \u2192 'Die Katze sa\u00df'. Unifies translation, QA, summarisation under one framework."
+    },
+    {
+      "question": "KV-cache in transformer inference:",
+      "options": [
+        "Reduces model size",
+        "Caches key and value matrices from previous tokens to avoid recomputation",
+        "Applies attention caching",
+        "Reduces embedding size"
+      ],
+      "correct": "b",
+      "explanation": "During autoregressive generation, only the new token needs new Q. Old K,V are cached \u2014 avoiding O(n) recomputation."
+    },
+    {
+      "question": "Flash Attention improves transformer training efficiency by:",
+      "options": [
+        "Reducing model depth",
+        "Using tiling to compute attention in SRAM rather than HBM \u2014 reducing memory I/O",
+        "Removing positional encoding",
+        "Using sparse attention"
+      ],
+      "correct": "b",
+      "explanation": "FlashAttention reorganises the attention computation to minimise slow HBM reads/writes, achieving 2-4x speedup."
+    }
+  ]
+}

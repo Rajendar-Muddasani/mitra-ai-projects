@@ -368,3 +368,66 @@ Reference any task as **S\<section\>-T\<number\>** (e.g. "let's do S1-T19") or b
 ---
 
 *Last updated: 2026-06-07. Reference by S\<n\>-T\<n\> or L\<n\> in conversation.*
+
+---
+
+## S11 — Monetisation Model
+
+> These are paid offerings built on top of the free course and project kit content.
+
+| ID | Offering | Price model | Notes |
+|---|---|---|---|
+| M1 | **User-specific project guidance** | Per session or per week | Student shares their project code/doc; expert reviews and guides. 1:1 or async. |
+| M2 | **Special project guidance packs** | Fixed fee per kit | Curated advanced kits (e.g. RAG with production infra, MLOps pipeline) with dedicated Q&A support. |
+| M3 | **ML Crash Course** | Per participant | 1-day intensive (4 hours). All core ML algorithms, code, intuition. Live or recorded. |
+| M4 | **DL Crash Course** | Per participant | 1-day intensive (4 hours). Neural nets → CNNs → Transformers. |
+| M5 | **GenAI Crash Course** | Per participant | 1-day intensive (4 hours). Prompting → RAG → Agents. |
+| M6 | **ML Full Course** | Per participant | 1-week deep dive. Theory + code + projects + viva prep. |
+| M7 | **DL Full Course** | Per participant | 1-week deep dive. Full DL stack with labs. |
+| M8 | **GenAI Full Course** | Per participant | 1-week. Prompt engineering through agentic systems. |
+| M9 | **1-to-1 mentoring** | Hourly rate | Dedicated mentor session for final-year project or placement prep. |
+| M10 | **1-to-group (5-10)** | Group rate | Small group session for college teams building a shared project. |
+| M11 | **1-to-many (webinar)** | Ticket pricing | Live cohort sessions, recorded and replayed. |
+| M12 | **Certificate verification premium** | Optional add-on | LinkedIn-shareable verified certificate with skill endorsement. |
+
+**Pricing to research:** Compare Udemy (~₹499), Scaler (~₹3-5L), iNeuron (₹5-10K), college workshops (₹1-3K/day).
+
+---
+
+## S12 — Data Visualisation & Analysis Course
+
+**New track: `/courses/dataviz.html`**
+
+Goal: In-depth, notebook-first course covering the full EDA and visualisation stack.
+
+| Tab | Topics | Notebook |
+|---|---|---|
+| EDA with Pandas | `.describe()`, `.info()`, `.value_counts()`, `.corr()`, missing values | ✅ Create |
+| Matplotlib Deep Dive | Subplots, styles, annotations, publication-quality plots | ✅ Create |
+| Seaborn | Statistical plots: heatmap, violin, pairplot, FacetGrid | ✅ Create |
+| Plotly & Dash | Interactive charts, choropleth maps, Dash dashboards | ✅ Create |
+| Tableau / Power BI basics | When to use BI tools vs code | ❌ Text + screenshots |
+| Storytelling with Data | Chart choice, colour, labels, audience | ❌ Markdown notebook |
+| Real-world EDA Project | Full EDA on a Kaggle dataset (e.g. Titanic or House Prices) | ✅ Create |
+
+**Status:** ❌ Not started — add to S2 track list.
+
+---
+
+## S13 — Big Data & Tools Coverage
+
+Currently: Airflow and Spark are covered in MLOps track (S2-T42, T43).
+Additional coverage needed:
+
+| Tool | Where | Status |
+|---|---|---|
+| Apache Spark | MLOps tab — expand with PySpark notebook | ❌ Notebook needed |
+| Apache Airflow | MLOps tab — DAG examples, operators | ❌ Notebook needed |
+| Kafka (streaming) | New tab in MLOps or separate | ❌ Planned |
+| dbt (data transform) | New tab in MLOps | ❌ Planned |
+| Great Expectations | Data quality — MLOps tab | ❌ Planned |
+| Kubernetes basics | Already in MLOps S2-T45 | 🔶 Stub |
+| Docker for ML | Already in MLOps S2-T46 | 🔶 Stub |
+
+**Decision:** Cover Spark and Airflow deeply in MLOps course with real notebooks. Kafka and dbt in v2.
+

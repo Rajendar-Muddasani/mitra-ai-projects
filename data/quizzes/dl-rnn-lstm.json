@@ -1,0 +1,116 @@
+{
+  "course_label": "Deep Learning",
+  "title": "RNNs & LSTMs",
+  "questions": [
+    {
+      "question": "RNNs maintain state by:",
+      "options": [
+        "Using attention",
+        "Passing a hidden state vector h(t) from the previous timestep",
+        "Using skip connections",
+        "Applying batch normalisation"
+      ],
+      "correct": "b",
+      "explanation": "h(t) = tanh(Wh\u00b7h(t-1) + Wx\u00b7x(t)). This hidden state is the 'memory' of the RNN."
+    },
+    {
+      "question": "The vanishing gradient problem in vanilla RNNs occurs because:",
+      "options": [
+        "The sequence is too short",
+        "Gradients shrink exponentially as they backpropagate through many timesteps",
+        "The learning rate is too high",
+        "The hidden state is too large"
+      ],
+      "correct": "b",
+      "explanation": "BPTT through long sequences multiplies gradients repeatedly by small values \u2014 early timesteps get near-zero gradients."
+    },
+    {
+      "question": "LSTM's forget gate controls:",
+      "options": [
+        "Adding new information",
+        "How much of the previous cell state to keep or discard",
+        "The output activation",
+        "The learning rate"
+      ],
+      "correct": "b",
+      "explanation": "forget gate = sigmoid(Wf\u00b7[h(t-1),x(t)]). Near 0 = forget, near 1 = keep. Trained to learn what to remember."
+    },
+    {
+      "question": "GRU differs from LSTM by:",
+      "options": [
+        "Having more gates",
+        "Having 2 gates instead of 3 \u2014 simpler, often comparable performance",
+        "Being deeper",
+        "Using attention instead of gates"
+      ],
+      "correct": "b",
+      "explanation": "GRU has reset and update gates. ~33% fewer parameters than LSTM. Preferred when speed matters."
+    },
+    {
+      "question": "Teacher forcing during RNN training means:",
+      "options": [
+        "Using the ground-truth previous output as input during training",
+        "Randomly dropping hidden states",
+        "Using attention",
+        "Freezing early layers"
+      ],
+      "correct": "a",
+      "explanation": "Teacher forcing: feed the true target y(t-1) as input at step t during training, even if the model's prediction was wrong."
+    },
+    {
+      "question": "Bidirectional RNNs process sequences:",
+      "options": [
+        "In batches",
+        "Both forward and backward, combining both hidden states",
+        "One token at a time",
+        "With attention only"
+      ],
+      "correct": "b",
+      "explanation": "BiRNN runs two RNNs (forward + backward). At each step, h = [h_forward; h_backward] captures past AND future context."
+    },
+    {
+      "question": "Time series cross-validation must:",
+      "options": [
+        "Use k-fold randomly",
+        "Preserve temporal order \u2014 train on past, test on future only",
+        "Use leave-one-out",
+        "Use bootstrapping"
+      ],
+      "correct": "b",
+      "explanation": "Using future data to train on past = data leakage. Time-series CV uses expanding or rolling windows."
+    },
+    {
+      "question": "The 'sequence-to-sequence' architecture is used for:",
+      "options": [
+        "Classification",
+        "Translation, summarisation \u2014 encoder reads input, decoder generates output",
+        "Regression",
+        "Clustering"
+      ],
+      "correct": "b",
+      "explanation": "Seq2Seq: encoder encodes the full input sequence to a context vector; decoder generates the output sequence."
+    },
+    {
+      "question": "MAPE (Mean Absolute Percentage Error) is preferred for forecasting because:",
+      "options": [
+        "It's faster to compute",
+        "It's scale-free \u2014 5% error means the same regardless of absolute values",
+        "It penalises large errors more",
+        "It requires no normalisation"
+      ],
+      "correct": "b",
+      "explanation": "MAPE = mean(|actual-pred|/|actual|)*100. Allows comparison across series with different magnitudes."
+    },
+    {
+      "question": "Stationary time series means:",
+      "options": [
+        "Constant prediction",
+        "Mean and variance don't change over time \u2014 required for ARIMA",
+        "The series is seasonal",
+        "All values are positive"
+      ],
+      "correct": "b",
+      "explanation": "Non-stationarity (trend, changing variance) violates ARIMA assumptions. Use differencing or transformation first."
+    }
+  ]
+}

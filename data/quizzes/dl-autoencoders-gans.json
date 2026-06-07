@@ -1,0 +1,116 @@
+{
+  "course_label": "Deep Learning",
+  "title": "Autoencoders & GANs",
+  "questions": [
+    {
+      "question": "An autoencoder's bottleneck layer forces the model to:",
+      "options": [
+        "Generate images",
+        "Learn a compressed latent representation of the input",
+        "Classify inputs",
+        "Apply attention"
+      ],
+      "correct": "b",
+      "explanation": "The bottleneck has fewer dimensions than input \u2014 the encoder must learn to preserve the most important information."
+    },
+    {
+      "question": "Denoising autoencoders are trained to:",
+      "options": [
+        "Generate new samples",
+        "Reconstruct clean input from noisy input \u2014 learning robust features",
+        "Classify noisy images",
+        "Compress images only"
+      ],
+      "correct": "b",
+      "explanation": "Input: noisy x. Target: clean x. The model learns features that are robust to noise."
+    },
+    {
+      "question": "A Variational Autoencoder (VAE) differs from a standard autoencoder by:",
+      "options": [
+        "Being faster",
+        "Encoding inputs as probability distributions, enabling smooth sampling",
+        "Using more layers",
+        "Removing the decoder"
+      ],
+      "correct": "b",
+      "explanation": "VAE encoder outputs (mu, sigma) defining a Gaussian. Sampling from this space allows generation of new realistic examples."
+    },
+    {
+      "question": "In a GAN, the discriminator is trained to:",
+      "options": [
+        "Generate realistic images",
+        "Distinguish real samples from generator fakes",
+        "Encode images to latent space",
+        "Apply attention"
+      ],
+      "correct": "b",
+      "explanation": "D outputs P(real). Trained with real=1, fake=0 labels. G tries to fool D into outputting 1 for generated samples."
+    },
+    {
+      "question": "Mode collapse in GAN training means:",
+      "options": [
+        "The model is too accurate",
+        "The generator produces limited variety, ignoring most of the data distribution",
+        "The discriminator is too good",
+        "Training is unstable only at the start"
+      ],
+      "correct": "b",
+      "explanation": "G finds a small set of outputs that consistently fool D, ignoring diversity. The generated samples look similar to each other."
+    },
+    {
+      "question": "The Wasserstein GAN (WGAN) improves training stability by:",
+      "options": [
+        "Using a deeper discriminator",
+        "Replacing the JS-divergence with Wasserstein distance as the GAN loss",
+        "Removing the generator",
+        "Adding batch normalisation"
+      ],
+      "correct": "b",
+      "explanation": "Wasserstein distance provides meaningful gradients even when real and fake distributions don't overlap \u2014 avoiding mode collapse."
+    },
+    {
+      "question": "Cycle-GAN is used for:",
+      "options": [
+        "Image classification",
+        "Unpaired image-to-image translation (e.g. horse \u2194 zebra) without paired data",
+        "Sequence generation",
+        "Anomaly detection"
+      ],
+      "correct": "b",
+      "explanation": "CycleGAN trains two generators (A\u2192B and B\u2192A) with cycle-consistency loss \u2014 no paired examples needed."
+    },
+    {
+      "question": "A high reconstruction error in a trained autoencoder indicates:",
+      "options": [
+        "The model is well-fitted",
+        "An anomaly \u2014 the model cannot reconstruct unusual inputs",
+        "Normal input",
+        "The bottleneck is too large"
+      ],
+      "correct": "b",
+      "explanation": "Autoencoders trained on normal data encode normal patterns well. Anomalies have high reconstruction error \u2014 a free anomaly detector."
+    },
+    {
+      "question": "The latent space of a VAE is:",
+      "options": [
+        "Random",
+        "Continuous and structured \u2014 nearby points decode to similar outputs",
+        "Sparse",
+        "Discrete"
+      ],
+      "correct": "b",
+      "explanation": "The KL divergence term in VAE loss regularises the latent space to be continuous and approximately Gaussian."
+    },
+    {
+      "question": "StyleGAN controls image generation at different levels by:",
+      "options": [
+        "Using dropout",
+        "Injecting style vectors at each layer \u2014 coarse (pose) vs fine (colour) control",
+        "Using attention",
+        "Using skip connections"
+      ],
+      "correct": "b",
+      "explanation": "StyleGAN's mapping network converts latent z to styles w, injected at each resolution \u2014 enabling disentangled control."
+    }
+  ]
+}

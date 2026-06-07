@@ -1,0 +1,116 @@
+{
+  "course_label": "Deep Learning",
+  "title": "Convolutional Neural Networks",
+  "questions": [
+    {
+      "question": "What do early CNN layers typically detect?",
+      "options": [
+        "Objects",
+        "Edges and textures",
+        "Full faces",
+        "Semantic categories"
+      ],
+      "correct": "b",
+      "explanation": "Early layers learn low-level features (edges, gradients). Later layers combine them into high-level semantic features."
+    },
+    {
+      "question": "MaxPooling reduces spatial dimensions by:",
+      "options": [
+        "Learning a pooling filter",
+        "Taking the maximum value in each pooling window",
+        "Averaging over channels",
+        "Applying a 1x1 convolution"
+      ],
+      "correct": "b",
+      "explanation": "MaxPool2d(2) halves height and width by selecting the max in each 2x2 window \u2014 retaining dominant features."
+    },
+    {
+      "question": "The 'depth' of a convolutional layer output refers to:",
+      "options": [
+        "Number of input channels",
+        "Number of learned filters (output channels)",
+        "Image height",
+        "Kernel size"
+      ],
+      "correct": "b",
+      "explanation": "Each filter produces one output channel (feature map). 32 filters \u2192 depth 32."
+    },
+    {
+      "question": "ResNet's key innovation was:",
+      "options": [
+        "Deeper networks",
+        "Skip/residual connections that allow gradients to flow directly",
+        "Larger kernels",
+        "More pooling layers"
+      ],
+      "correct": "b",
+      "explanation": "Skip connections: output = F(x) + x. Solves vanishing gradients in very deep (50-200 layer) networks."
+    },
+    {
+      "question": "A 1x1 convolution is used to:",
+      "options": [
+        "Detect edges",
+        "Change the number of channels (channel-wise mixing) without spatial processing",
+        "Apply max pooling",
+        "Implement attention"
+      ],
+      "correct": "b",
+      "explanation": "1x1 conv applies a linear combination across channels at each spatial location \u2014 used in Inception and ResNet for dimensionality reduction."
+    },
+    {
+      "question": "Transfer learning from ImageNet works well because:",
+      "options": [
+        "ImageNet is similar to all tasks",
+        "Early layers detect universal features (edges, textures) useful across domains",
+        "ImageNet labels are available",
+        "The model architecture is simple"
+      ],
+      "correct": "b",
+      "explanation": "Low-level visual features (edges, gradients, textures) transfer across domains; only the final task-specific layers need retraining."
+    },
+    {
+      "question": "What does 'stride=2' in a convolution mean?",
+      "options": [
+        "Filter size is 2",
+        "The filter moves 2 pixels at a time, halving spatial dimensions",
+        "Output has 2 channels",
+        "Dilation is 2"
+      ],
+      "correct": "b",
+      "explanation": "Stride controls how much the filter shifts per step. Stride=2 reduces output size by 2x without pooling."
+    },
+    {
+      "question": "Global Average Pooling (GAP) before the final classifier:",
+      "options": [
+        "Increases spatial resolution",
+        "Averages each feature map to a single value, replacing FC layers",
+        "Adds spatial information",
+        "Applies dropout"
+      ],
+      "correct": "b",
+      "explanation": "GAP converts each feature map (H\u00d7W\u00d7C) to (1\u00d71\u00d7C), drastically reducing parameters vs FC layers."
+    },
+    {
+      "question": "Data augmentation during training helps because:",
+      "options": [
+        "It increases model size",
+        "It creates more diverse training examples, reducing overfitting",
+        "It reduces training time",
+        "It replaces batch normalisation"
+      ],
+      "correct": "b",
+      "explanation": "Random crops, flips, colour jitter expose the model to varied versions of each image \u2014 improving generalisation."
+    },
+    {
+      "question": "EfficientNet achieves high accuracy with fewer parameters by:",
+      "options": [
+        "Using more layers",
+        "Scaling width, depth and resolution together using compound scaling",
+        "Using more training data",
+        "Removing pooling layers"
+      ],
+      "correct": "b",
+      "explanation": "Compound scaling balances all three dimensions (width/depth/resolution) simultaneously for optimal efficiency."
+    }
+  ]
+}

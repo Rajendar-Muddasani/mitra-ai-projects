@@ -1,0 +1,116 @@
+{
+  "course_label": "Deep Learning",
+  "title": "Model Compression",
+  "questions": [
+    {
+      "question": "Magnitude-based pruning removes:",
+      "options": [
+        "Large weights",
+        "Weights with small absolute values \u2014 assumed to contribute least",
+        "Random weights",
+        "All weights in a layer"
+      ],
+      "correct": "b",
+      "explanation": "Pruning: set weights below a threshold to zero. Structured pruning removes entire neurons/filters for actual speedup."
+    },
+    {
+      "question": "INT8 quantisation reduces memory by approximately:",
+      "options": [
+        "2x",
+        "4x (32-bit float to 8-bit integer)",
+        "10x",
+        "100x"
+      ],
+      "correct": "b",
+      "explanation": "float32 = 4 bytes per weight. int8 = 1 byte. 4x compression with ~1% accuracy loss typically."
+    },
+    {
+      "question": "Knowledge distillation trains a student to:",
+      "options": [
+        "Match the teacher's architecture",
+        "Mimic the teacher's output probability distribution (soft labels), not just class labels",
+        "Use the same training data",
+        "Have fewer layers than the teacher"
+      ],
+      "correct": "b",
+      "explanation": "Soft labels from the teacher reveal inter-class similarities \u2014 richer supervision than one-hot labels."
+    },
+    {
+      "question": "Post-training quantisation (PTQ) vs Quantisation-Aware Training (QAT):",
+      "options": [
+        "PTQ is more accurate",
+        "PTQ quantises after training (fast, small accuracy loss); QAT simulates quantisation during training (slower, more accurate)",
+        "QAT is always preferred",
+        "They produce identical results"
+      ],
+      "correct": "b",
+      "explanation": "PTQ is easier but less accurate. QAT lets the model adapt to quantisation noise \u2014 better for tight accuracy requirements."
+    },
+    {
+      "question": "MobileNet uses depthwise separable convolutions to:",
+      "options": [
+        "Increase accuracy",
+        "Reduce computation by factoring standard convolutions into depthwise + pointwise \u2014 ~8-9x fewer FLOPs",
+        "Increase depth",
+        "Improve batch normalisation"
+      ],
+      "correct": "b",
+      "explanation": "Depthwise: one filter per input channel. Pointwise: 1x1 conv to mix channels. Together ~8x cheaper than standard conv."
+    },
+    {
+      "question": "Neural Architecture Search (NAS) automatically finds:",
+      "options": [
+        "Hyperparameters only",
+        "Efficient model architectures for a given compute/accuracy constraint",
+        "Training recipes",
+        "Data augmentation strategies"
+      ],
+      "correct": "b",
+      "explanation": "NAS searches over architecture space (layer types, connections, widths) to optimise accuracy under hardware constraints."
+    },
+    {
+      "question": "The lottery ticket hypothesis states:",
+      "options": [
+        "Larger models always win",
+        "Sparse subnetworks exist in dense networks that can achieve comparable accuracy when trained from their original initialisation",
+        "Pruning always reduces accuracy",
+        "Small models can never match large ones"
+      ],
+      "correct": "b",
+      "explanation": "Frankle & Carlin (2019): a dense network contains a 'winning ticket' sparse subnetwork \u2014 identifiable by iterative magnitude pruning."
+    },
+    {
+      "question": "Structured pruning vs unstructured pruning:",
+      "options": [
+        "Identical results",
+        "Structured removes entire filters/channels (actual hardware speedup); unstructured sets individual weights to zero (sparse matrices)",
+        "Unstructured is always better",
+        "Structured is always more accurate"
+      ],
+      "correct": "b",
+      "explanation": "Sparse matrices from unstructured pruning need special hardware/libraries to accelerate. Structured pruning gives real speedup on standard hardware."
+    },
+    {
+      "question": "Low-rank factorisation compresses a weight matrix W (m\u00d7n) by:",
+      "options": [
+        "Setting small values to zero",
+        "Decomposing W \u2248 U\u00b7V where U is (m\u00d7r) and V is (r\u00d7n) with r << min(m,n)",
+        "Quantising to int8",
+        "Removing entire layers"
+      ],
+      "correct": "b",
+      "explanation": "Rank-r approximation reduces parameters from m*n to r*(m+n). LoRA uses this to efficiently fine-tune large models."
+    },
+    {
+      "question": "LoRA (Low-Rank Adaptation) is used for:",
+      "options": [
+        "Model compression at inference",
+        "Parameter-efficient fine-tuning of large models by adding small trainable rank-decomposition matrices",
+        "Pruning transformers",
+        "Knowledge distillation"
+      ],
+      "correct": "b",
+      "explanation": "LoRA: freeze pre-trained weights W, add trainable delta_W=B*A (rank r). Only B,A train \u2014 <1% of original parameters."
+    }
+  ]
+}

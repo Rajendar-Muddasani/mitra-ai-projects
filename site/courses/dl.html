@@ -43,22 +43,115 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="tab-layout">
-      <div class="tab-nav">
-        <button class="tab-btn" data-label="Neural Networks">🧠 Neural Nets</button>
-        <button class="tab-btn" data-label="CNNs">🖼 CNNs</button>
-        <button class="tab-btn" data-label="RNNs/LSTMs">🔄 RNNs / LSTMs</button>
-        <button class="tab-btn" data-label="Autoencoders & GANs">🎨 Autoencoders &amp; GANs</button>
-        <button class="tab-btn" data-label="Transformers">⚡ Transformers</button>
-        <button class="tab-btn" data-label="Multimodal">👁 Multimodal</button>
-        <button class="tab-btn" data-label="Transfer Learning">🔄 Transfer Learning</button>
-        <button class="tab-btn" data-label="Model Compression">📦 Compression</button>
-      </div>
+<style>
+  body { overflow: hidden; }
+  @media (max-width: 768px) { body { overflow: auto; } }
+  .onenote-mobile-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border-dim);
+    padding: 0.75rem 1rem;
+    display: none;
+  }
+  @media (max-width: 768px) { .onenote-mobile-header { display: block; } }
+  select.onenote-mobile-select {
+    background: var(--surface-2);
+    border: 1px solid var(--border-dim);
+    color: var(--text);
+    border-radius: 8px;
+    padding: 0.55rem 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+  }
+</style>
 
-      <!-- Neural Networks -->
-      <div class="tab-panel">
+<!-- Mobile topic selector -->
+<div class="onenote-mobile-header">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+    <div>
+      <span class="badge badge-primary" style="margin-right:0.5rem;">DL</span>
+      <strong style="font-size:0.95rem;">Deep Learning</strong>
+    </div>
+    <a href="/courses/" class="btn btn-ghost btn-sm">All Courses ↗</a>
+  </div>
+  <select class="onenote-mobile-select" style="width:100%;">
+        <option value="0">🧠 Neural Networks</option>
+        <option value="1">🖼 CNNs</option>
+        <option value="2">🔄 RNNs / LSTMs</option>
+        <option value="3">🎨 Autoencoders & GANs</option>
+        <option value="4">⚡ Transformers</option>
+        <option value="5">👁 Multimodal</option>
+        <option value="6">🔀 Transfer Learning</option>
+        <option value="7">📦 Model Compression</option>
+  </select>
+</div>
+
+<!-- OneNote layout -->
+<div class="onenote-wrap">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="onenote-sidebar">
+    <div class="onenote-sidebar-header">
+      <div style="color:var(--primary);font-weight:700;margin-bottom:0.25rem;">Deep Learning</div>
+      8 Topics · AIML-Engineering-Lab
+    </div>
+
+    <div class="onenote-tab" data-idx="0">
+      <span class="onenote-tab-icon">🧠</span>
+      <span class="onenote-tab-text">Neural Networks</span>
+      <span class="onenote-tab-badge">001</span>
+    </div>
+    <div class="onenote-tab" data-idx="1">
+      <span class="onenote-tab-icon">🖼</span>
+      <span class="onenote-tab-text">CNNs</span>
+      <span class="onenote-tab-badge">002</span>
+    </div>
+    <div class="onenote-tab" data-idx="2">
+      <span class="onenote-tab-icon">🔄</span>
+      <span class="onenote-tab-text">RNNs / LSTMs</span>
+      <span class="onenote-tab-badge">003</span>
+    </div>
+    <div class="onenote-tab" data-idx="3">
+      <span class="onenote-tab-icon">🎨</span>
+      <span class="onenote-tab-text">Autoencoders & GANs</span>
+      <span class="onenote-tab-badge">004</span>
+    </div>
+    <div class="onenote-tab" data-idx="4">
+      <span class="onenote-tab-icon">⚡</span>
+      <span class="onenote-tab-text">Transformers</span>
+      <span class="onenote-tab-badge">005</span>
+    </div>
+    <div class="onenote-tab" data-idx="5">
+      <span class="onenote-tab-icon">👁</span>
+      <span class="onenote-tab-text">Multimodal</span>
+      <span class="onenote-tab-badge">006</span>
+    </div>
+    <div class="onenote-tab" data-idx="6">
+      <span class="onenote-tab-icon">🔀</span>
+      <span class="onenote-tab-text">Transfer Learning</span>
+      <span class="onenote-tab-badge">007</span>
+    </div>
+    <div class="onenote-tab" data-idx="7">
+      <span class="onenote-tab-icon">📦</span>
+      <span class="onenote-tab-text">Model Compression</span>
+      <span class="onenote-tab-badge">008</span>
+    </div>
+
+    <div style="padding:1.25rem;margin-top:1rem;border-top:1px solid var(--border-dim);">
+      <a href="/courses/" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-bottom:0.5rem;">
+        ← All Courses
+      </a>
+      <a href="/cheatsheets.html" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;" data-track="cheatsheet" data-name="dl-cheatsheet">
+        📄 DL Cheatsheet
+      </a>
+    </div>
+  </aside>
+
+  <!-- RIGHT CONTENT -->
+  <main class="onenote-content">
+
+    <!-- Panel 0: Neural Networks -->
+    <div class="onenote-panel active">
+
         <div class="topic-hero"><div class="topic-eyebrow">new content</div><h2>Neural Network Basics</h2><p>The foundational building block of all deep learning. Understand layers, activation functions, backpropagation, and gradient descent before moving to specialized architectures.</p></div>
         <div class="topic-section"><h3>Core Concepts</h3>
         <table class="metric-table">
@@ -105,29 +198,35 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
           <li>Dropout is only active during training — use model.eval() for inference</li>
         </ul></div>
 
-        <div class="quiz-block"><h3>Quiz — Neural Networks</h3>
-          <div class="quiz-q" data-correct="b"><p>1. Backpropagation computes:</p>
-            <label class="quiz-option"><input type="radio" name="nn-q1" value="a"> The forward pass predictions</label>
-            <label class="quiz-option"><input type="radio" name="nn-q1" value="b"> Gradients of the loss with respect to each weight</label>
-            <label class="quiz-option"><input type="radio" name="nn-q1" value="c"> The batch normalization statistics</label>
-            <label class="quiz-option"><input type="radio" name="nn-q1" value="d"> The softmax output probabilities</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Neural Networks</div>
+            <div class="notebook-card-desc">Neural network concepts, activation functions, backpropagation, MLP classification</div>
+            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
           </div>
-          <div class="quiz-q" data-correct="c"><p>2. Batch Normalization helps by:</p>
-            <label class="quiz-option"><input type="radio" name="nn-q2" value="a"> Reducing the number of parameters</label>
-            <label class="quiz-option"><input type="radio" name="nn-q2" value="b"> Making the model smaller</label>
-            <label class="quiz-option"><input type="radio" name="nn-q2" value="c"> Stabilizing the distribution of layer inputs during training</label>
-            <label class="quiz-option"><input type="radio" name="nn-q2" value="d"> Removing the need for activation functions</label>
-          </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
+          <a href="/lab/index.html?path=dl-01-neural-networks.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn"
+             onclick="trackEvent('notebook_open',{notebook:'dl-01-neural-networks'})">Open Notebook →</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Neural Networks with 10 questions. Pass 70% to mark complete.</p>
+        <a href="/quiz.html?course=dl&topic=neural-networks"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'dl',topic:'neural-networks'})">Take Quiz →</a>
+      </div>
       </div>
 
       <!-- CNNs -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 1: CNNs -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">054 · wafer-defect-yolo</div><h2>Convolutional Neural Networks (CNNs)</h2><p>The dominant architecture for image classification, object detection, and visual inspection. CNNs learn spatial hierarchies of features through shared convolutional filters.</p></div>
         <div class="topic-section"><h3>Core Components</h3>
         <table class="metric-table">
@@ -146,23 +245,35 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
         </div></div>
         <div class="project-callout"><h4>💡 Vision Quality Inspection</h4>
         <p>Build a CNN-based defect detection system for manufacturing images using YOLO. See project-06 on this platform for a full guided kit.</p></div>
-        <div class="quiz-block"><h3>Quiz — CNNs</h3>
-          <div class="quiz-q" data-correct="a"><p>1. MaxPooling primarily helps with:</p>
-            <label class="quiz-option"><input type="radio" name="cnn-q1" value="a"> Reducing spatial dimensions and providing translation invariance</label>
-            <label class="quiz-option"><input type="radio" name="cnn-q1" value="b"> Increasing the number of channels</label>
-            <label class="quiz-option"><input type="radio" name="cnn-q1" value="c"> Computing attention scores</label>
-            <label class="quiz-option"><input type="radio" name="cnn-q1" value="d"> Normalizing feature maps</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: CNNs</div>
+            <div class="notebook-card-desc">CIFAR-10 image classification, famous models, datasets, HuggingFace</div>
+            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
           </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
+          <a href="/lab/index.html?path=dl-02-cnns-cifar10.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn"
+             onclick="trackEvent('notebook_open',{notebook:'dl-02-cnns-cifar10'})">Open Notebook →</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of CNNs with 10 questions. Pass 70% to mark complete.</p>
+        <a href="/quiz.html?course=dl&topic=cnns"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'dl',topic:'cnns'})">Take Quiz →</a>
+      </div>
       </div>
 
       <!-- RNNs/LSTMs -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 2: RNNs / LSTMs -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">015 · time-series-deep-learning</div><h2>RNNs &amp; LSTMs</h2><p>Recurrent architectures for sequential data — text, time series, speech, and music. LSTMs solve the vanishing gradient problem of vanilla RNNs.</p></div>
         <div class="topic-section"><h3>LSTM Gates</h3>
         <table class="metric-table">
@@ -187,23 +298,35 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
         out, _ = self.lstm(x)
         <span class="kw">return</span> self.fc(out[:, -<span class="num">1</span>, :])</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — RNNs/LSTMs</h3>
-          <div class="quiz-q" data-correct="c"><p>1. LSTMs solve which problem of vanilla RNNs?</p>
-            <label class="quiz-option"><input type="radio" name="rnn-q1" value="a"> Slow training speed</label>
-            <label class="quiz-option"><input type="radio" name="rnn-q1" value="b"> High memory usage</label>
-            <label class="quiz-option"><input type="radio" name="rnn-q1" value="c"> Vanishing gradients over long sequences</label>
-            <label class="quiz-option"><input type="radio" name="rnn-q1" value="d"> Inability to handle variable-length inputs</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: RNNs / LSTMs</div>
+            <div class="notebook-card-desc">Stock price trend prediction, sliding window, LSTM vs GRU</div>
+            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
           </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
+          <a href="/lab/index.html?path=dl-03-rnn-lstm-stock.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn"
+             onclick="trackEvent('notebook_open',{notebook:'dl-03-rnn-lstm-stock'})">Open Notebook →</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of RNNs / LSTMs with 10 questions. Pass 70% to mark complete.</p>
+        <a href="/quiz.html?course=dl&topic=rnn-lstm"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'dl',topic:'rnn-lstm'})">Take Quiz →</a>
+      </div>
       </div>
 
       <!-- Autoencoders & GANs -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 3: Autoencoders & GANs -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">014 · autoencoders-and-gans</div><h2>Autoencoders &amp; GANs</h2><p>Generative and representation learning architectures. Autoencoders compress data into latent codes. GANs generate realistic new data through adversarial training.</p></div>
         <div class="topic-section"><h3>Autoencoder Structure</h3>
         <div class="arch-diagram">
@@ -218,23 +341,35 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
         </div></div>
         <div class="topic-section"><h3>GAN Training</h3>
         <p>Generator creates fake data. Discriminator tries to distinguish real from fake. They compete: Generator improves until Discriminator can't tell the difference. The Generator is trained to maximize the Discriminator's error.</p></div>
-        <div class="quiz-block"><h3>Quiz — Autoencoders &amp; GANs</h3>
-          <div class="quiz-q" data-correct="b"><p>1. In a GAN, the Generator is trained to:</p>
-            <label class="quiz-option"><input type="radio" name="gan-q1" value="a"> Classify real vs. fake data correctly</label>
-            <label class="quiz-option"><input type="radio" name="gan-q1" value="b"> Fool the Discriminator into classifying its output as real</label>
-            <label class="quiz-option"><input type="radio" name="gan-q1" value="c"> Minimize reconstruction error</label>
-            <label class="quiz-option"><input type="radio" name="gan-q1" value="d"> Encode data into a compact latent space</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Autoencoders & GANs</div>
+            <div class="notebook-card-desc">MNIST compression, denoising, face generation with DCGAN</div>
+            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
           </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
+          <a href="/lab/index.html?path=dl-04-autoencoders-gans.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn"
+             onclick="trackEvent('notebook_open',{notebook:'dl-04-autoencoders-gans'})">Open Notebook →</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Autoencoders & GANs with 10 questions. Pass 70% to mark complete.</p>
+        <a href="/quiz.html?course=dl&topic=autoencoders-gans"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'dl',topic:'autoencoders-gans'})">Take Quiz →</a>
+      </div>
       </div>
 
       <!-- Transformers -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 4: Transformers -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">073 · dtfs-transformer-system</div><h2>Transformers</h2><p>The architecture behind GPT, BERT, ViT, and Whisper. Self-attention allows every position in a sequence to attend to every other position — enabling parallelism and long-range dependencies.</p></div>
         <div class="topic-section"><h3>Self-Attention Intuition</h3>
         <p>For each token, attention computes how much to "attend" to every other token. Mathematically: Attention(Q, K, V) = softmax(QKᵀ / √d_k) · V where Q = queries, K = keys, V = values. Multi-head attention runs this in parallel with different learned projections.</p></div>
@@ -249,23 +384,35 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
             <tr><td>Residual Connections</td><td>Skip connections help gradients flow in deep transformers</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>Quiz — Transformers</h3>
-          <div class="quiz-q" data-correct="c"><p>1. Why do transformers need positional encoding?</p>
-            <label class="quiz-option"><input type="radio" name="tr2-q1" value="a"> To reduce training time</label>
-            <label class="quiz-option"><input type="radio" name="tr2-q1" value="b"> To handle multi-head attention</label>
-            <label class="quiz-option"><input type="radio" name="tr2-q1" value="c"> Because self-attention is permutation-invariant and has no notion of sequence order</label>
-            <label class="quiz-option"><input type="radio" name="tr2-q1" value="d"> To increase the model's parameter count</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Transformers</div>
+            <div class="notebook-card-desc">Sentiment analysis, extractive summarisation, BERT vs GPT</div>
+            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
           </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
+          <a href="/lab/index.html?path=dl-05-transformers-nlp.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn"
+             onclick="trackEvent('notebook_open',{notebook:'dl-05-transformers-nlp'})">Open Notebook →</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Transformers with 10 questions. Pass 70% to mark complete.</p>
+        <a href="/quiz.html?course=dl&topic=transformers"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'dl',topic:'transformers'})">Take Quiz →</a>
+      </div>
       </div>
 
       <!-- Multimodal -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 5: Multimodal -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">034 · multimodal-vision-language</div><h2>Multimodal Models (Vision + Language)</h2><p>Models that understand and generate across multiple data modalities — images, text, audio. CLIP, LLaVA, GPT-4V, Gemini are all multimodal.</p></div>
         <div class="topic-section"><h3>Key Models</h3>
         <table class="metric-table">
@@ -277,23 +424,35 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
             <tr><td>Whisper</td><td>Speech-to-text</td><td>Audio transcription, translation</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>Quiz — Multimodal</h3>
-          <div class="quiz-q" data-correct="b"><p>1. CLIP enables zero-shot image classification by:</p>
-            <label class="quiz-option"><input type="radio" name="mm-q1" value="a"> Fine-tuning on each new dataset</label>
-            <label class="quiz-option"><input type="radio" name="mm-q1" value="b"> Comparing image embeddings to text embeddings of class labels</label>
-            <label class="quiz-option"><input type="radio" name="mm-q1" value="c"> Using a CNN followed by a softmax layer</label>
-            <label class="quiz-option"><input type="radio" name="mm-q1" value="d"> Generating synthetic training images</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Multimodal Models</div>
+            <div class="notebook-card-desc">BLIP image captioning, Visual Q&A, CLIP zero-shot</div>
+            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
           </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
+          <a href="/lab/index.html?path=dl-06-multimodal.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn"
+             onclick="trackEvent('notebook_open',{notebook:'dl-06-multimodal'})">Open Notebook →</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Multimodal Models with 10 questions. Pass 70% to mark complete.</p>
+        <a href="/quiz.html?course=dl&topic=multimodal"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'dl',topic:'multimodal'})">Take Quiz →</a>
+      </div>
       </div>
 
       <!-- Transfer Learning -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 6: Transfer Learning -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">new content</div><h2>Transfer Learning</h2><p>Use a model pre-trained on a large dataset as a starting point for your task. Dramatically reduces training time and data requirements.</p></div>
         <div class="topic-section"><h3>Two Approaches</h3>
         <div class="grid grid-2" style="gap:1rem;">
@@ -321,23 +480,35 @@ model = <span class="fn">resnet50</span>(pretrained=<span class="kw">True</span>
 <span class="cm"># Replace classifier head</span>
 model.fc = nn.<span class="cl">Linear</span>(<span class="num">2048</span>, num_classes)</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — Transfer Learning</h3>
-          <div class="quiz-q" data-correct="a"><p>1. Fine-tuning with a small learning rate helps because:</p>
-            <label class="quiz-option"><input type="radio" name="tl-q1" value="a"> It prevents overwriting the useful pre-trained features too quickly</label>
-            <label class="quiz-option"><input type="radio" name="tl-q1" value="b"> It reduces model size</label>
-            <label class="quiz-option"><input type="radio" name="tl-q1" value="c"> It enables training without GPU</label>
-            <label class="quiz-option"><input type="radio" name="tl-q1" value="d"> It prevents data augmentation issues</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Transfer Learning</div>
+            <div class="notebook-card-desc">ResNet50 dog breed classifier, fine-tuning strategy, 120 breeds</div>
+            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
           </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
+          <a href="/lab/index.html?path=dl-07-transfer-learning.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn"
+             onclick="trackEvent('notebook_open',{notebook:'dl-07-transfer-learning'})">Open Notebook →</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Transfer Learning with 10 questions. Pass 70% to mark complete.</p>
+        <a href="/quiz.html?course=dl&topic=transfer-learning"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'dl',topic:'transfer-learning'})">Take Quiz →</a>
+      </div>
       </div>
 
       <!-- Model Compression -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 7: Model Compression -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">new content</div><h2>Model Compression</h2><p>Techniques to make large models smaller, faster, and deployable on edge devices — without sacrificing too much accuracy.</p></div>
         <div class="topic-section"><h3>Compression Techniques</h3>
         <table class="metric-table">
@@ -349,24 +520,28 @@ model.fc = nn.<span class="cl">Linear</span>(<span class="num">2048</span>, num_
             <tr><td>ONNX Export</td><td>Convert to runtime-optimized format</td><td>Inference speedup</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>Quiz — Model Compression</h3>
-          <div class="quiz-q" data-correct="c"><p>1. Knowledge Distillation trains:</p>
-            <label class="quiz-option"><input type="radio" name="mc-q1" value="a"> The teacher model on unlabeled data</label>
-            <label class="quiz-option"><input type="radio" name="mc-q1" value="b"> Both teacher and student simultaneously</label>
-            <label class="quiz-option"><input type="radio" name="mc-q1" value="c"> A small student model to replicate the soft outputs of a larger teacher</label>
-            <label class="quiz-option"><input type="radio" name="mc-q1" value="d"> The model using int8 arithmetic</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Model Compression</div>
+            <div class="notebook-card-desc">Pruning, quantisation, knowledge distillation demo</div>
+            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
           </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
+          <a href="/lab/index.html?path=dl-08-model-compression.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn"
+             onclick="trackEvent('notebook_open',{notebook:'dl-08-model-compression'})">Open Notebook →</a>
         </div>
-        <div class="completion-banner">
-          <div class="completion-icon">🎓</div>
-          <div class="completion-body"><h3>Deep Learning Course Complete!</h3><p>Claim your Deep Learning completion certificate.</p></div>
-          <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('dl','model-compression')">Claim Certificate →</button>
-        </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Model Compression with 10 questions. Pass 70% to mark complete.</p>
+        <a href="/quiz.html?course=dl&topic=model-compression"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'dl',topic:'model-compression'})">Take Quiz →</a>
+      </div>
+        
       </div>
 
     </div>
@@ -380,6 +555,39 @@ model.fc = nn.<span class="cl">Linear</span>(<span class="num">2048</span>, num_
       <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/ml.html">Machine Learning</a></li><li><a href="/courses/genai.html">Generative AI</a></li><li><a href="/courses/agentic.html">Agentic AI</a></li><li><a href="/courses/mlops.html">MLOps</a></li></ul></div>
       <div class="footer-col"><h4>Platform</h4><ul><li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li><li><a href="/faq.html">FAQ</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>
+    </div>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students.</p></div>
+      <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/ml.html">Machine Learning</a></li><li><a href="/courses/genai.html">Generative AI</a></li><li><a href="/courses/agentic.html">Agentic AI</a></li><li><a href="/courses/mlops.html">MLOps</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li><li><a href="/faq.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+
+      <div class="completion-banner" style="margin-top:2rem;">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body">
+          <h3>Deep Learning Complete!</h3>
+          <p>Pass all 8 topic quizzes to earn your Deep Learning certificate.</p>
+        </div>
+        <a href="/courses/" class="btn btn-primary">Browse Next Course →</a>
+      </div>
     </div>
     <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
   </div>

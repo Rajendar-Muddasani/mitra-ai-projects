@@ -44,22 +44,115 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="tab-layout">
-      <div class="tab-nav" role="tablist">
-        <button class="tab-btn" role="tab" data-label="Python Basics">🐍 Python Basics</button>
-        <button class="tab-btn" role="tab" data-label="Python for Data">📊 Python for Data</button>
-        <button class="tab-btn" role="tab" data-label="Shell/Bash">🖥 Shell / Bash</button>
-        <button class="tab-btn" role="tab" data-label="SQL">🗄 SQL</button>
-        <button class="tab-btn" role="tab" data-label="Excel">📋 Excel Formulas</button>
-        <button class="tab-btn" role="tab" data-label="C/C++">⚡ C / C++</button>
-        <button class="tab-btn" role="tab" data-label="Perl">🔤 Perl</button>
-        <button class="tab-btn" role="tab" data-label="JavaScript">🌐 JavaScript</button>
-      </div>
+<style>
+  body { overflow: hidden; }
+  @media (max-width: 768px) { body { overflow: auto; } }
+  .onenote-mobile-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border-dim);
+    padding: 0.75rem 1rem;
+    display: none;
+  }
+  @media (max-width: 768px) { .onenote-mobile-header { display: block; } }
+  select.onenote-mobile-select {
+    background: var(--surface-2);
+    border: 1px solid var(--border-dim);
+    color: var(--text);
+    border-radius: 8px;
+    padding: 0.55rem 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+  }
+</style>
 
-      <!-- ── Python Basics ── -->
-      <div class="tab-panel">
+<!-- Mobile topic selector -->
+<div class="onenote-mobile-header">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+    <div>
+      <span class="badge badge-primary" style="margin-right:0.5rem;">PROG</span>
+      <strong style="font-size:0.95rem;">Programming Foundation</strong>
+    </div>
+    <a href="/courses/" class="btn btn-ghost btn-sm">All Courses ↗</a>
+  </div>
+  <select class="onenote-mobile-select" style="width:100%;">
+        <option value="0">🐍 Python Basics</option>
+        <option value="1">📊 Python for Data</option>
+        <option value="2">🖥 Shell / Bash</option>
+        <option value="3">🗄 SQL</option>
+        <option value="4">📋 Excel Formulas</option>
+        <option value="5">⚡ C / C++</option>
+        <option value="6">🔤 Perl</option>
+        <option value="7">🌐 JavaScript</option>
+  </select>
+</div>
+
+<!-- OneNote layout -->
+<div class="onenote-wrap">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="onenote-sidebar">
+    <div class="onenote-sidebar-header">
+      <div style="color:var(--primary);font-weight:700;margin-bottom:0.25rem;">Programming Foundation</div>
+      8 Tracks · Beginner to Intermediate
+    </div>
+
+    <div class="onenote-tab" data-idx="0">
+      <span class="onenote-tab-icon">🐍</span>
+      <span class="onenote-tab-text">Python Basics</span>
+      <span class="onenote-tab-badge">001</span>
+    </div>
+    <div class="onenote-tab" data-idx="1">
+      <span class="onenote-tab-icon">📊</span>
+      <span class="onenote-tab-text">Python for Data</span>
+      <span class="onenote-tab-badge">002</span>
+    </div>
+    <div class="onenote-tab" data-idx="2">
+      <span class="onenote-tab-icon">🖥</span>
+      <span class="onenote-tab-text">Shell / Bash</span>
+      <span class="onenote-tab-badge">003</span>
+    </div>
+    <div class="onenote-tab" data-idx="3">
+      <span class="onenote-tab-icon">🗄</span>
+      <span class="onenote-tab-text">SQL</span>
+      <span class="onenote-tab-badge">004</span>
+    </div>
+    <div class="onenote-tab" data-idx="4">
+      <span class="onenote-tab-icon">📋</span>
+      <span class="onenote-tab-text">Excel Formulas</span>
+      <span class="onenote-tab-badge">005</span>
+    </div>
+    <div class="onenote-tab" data-idx="5">
+      <span class="onenote-tab-icon">⚡</span>
+      <span class="onenote-tab-text">C / C++</span>
+      <span class="onenote-tab-badge">006</span>
+    </div>
+    <div class="onenote-tab" data-idx="6">
+      <span class="onenote-tab-icon">🔤</span>
+      <span class="onenote-tab-text">Perl</span>
+      <span class="onenote-tab-badge">007</span>
+    </div>
+    <div class="onenote-tab" data-idx="7">
+      <span class="onenote-tab-icon">🌐</span>
+      <span class="onenote-tab-text">JavaScript</span>
+      <span class="onenote-tab-badge">008</span>
+    </div>
+
+    <div style="padding:1.25rem;margin-top:1rem;border-top:1px solid var(--border-dim);">
+      <a href="/courses/" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-bottom:0.5rem;">
+        ← All Courses
+      </a>
+      <a href="/cheatsheets.html" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;" data-track="cheatsheet" data-name="prog-cheatsheet">
+        📄 PROG Cheatsheet
+      </a>
+    </div>
+  </aside>
+
+  <!-- RIGHT CONTENT -->
+  <main class="onenote-content">
+
+    <!-- Panel 0: Python Basics -->
+    <div class="onenote-panel active">
+
         <div class="topic-hero"><div class="topic-eyebrow">track 01</div><h2>Python Basics</h2><p>Variables, data types, control flow, functions, and file I/O. The universal starting point for AI, data science, and automation.</p></div>
 
         <div class="topic-section"><h3>What it is &amp; When to Use</h3>
@@ -118,7 +211,7 @@ keys = list(student.keys())</code></pre>
             <div class="notebook-card-body">
               <div class="notebook-card-title">Interactive Notebook: Python Basics</div>
               <div class="notebook-card-desc">Variables, loops, functions, list comprehensions, exception handling</div>
-              <div class="notebook-card-note">Runs in your browser · Saves automatically · No setup needed</div>
+              <div class="notebook-card-note">First load: ~30–60 seconds (Pyodide Python runtime downloads) · Work saves automatically</div>
             </div>
             <a href="/lab/index.html?path=prog-01-python-basics.ipynb" target="_blank" rel="noopener"
                class="btn btn-primary notebook-open-btn"
@@ -127,15 +220,14 @@ keys = list(student.keys())</code></pre>
         <a href="/quiz.html?course=programming&topic=python-basics"
            class="btn btn-primary btn-sm"
            onclick="trackEvent('quiz_open',{topic:'python-basics'})">Take Quiz →</a>
-
-        <div style="margin-top:1.5rem;display:flex;gap:1rem;">
-          <a href="/cheatsheets.html" class="btn btn-outline btn-sm" data-track="cheatsheet" data-name="python-basics">📄 Python Basics Cheatsheet</a>
-          <button class="btn btn-ghost btn-sm claim-certificate" onclick="window.MitraAuth?.recordCourseCompletion('programming','python-basics')">Mark Complete ✓</button>
-        </div>
       </div>
 
       <!-- ── Python for Data ── -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 1: Python for Data -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">track 02</div><h2>Python for Data</h2><p>Pandas, NumPy, and Matplotlib — the core data manipulation and visualization stack every ML engineer uses daily.</p></div>
 
         <div class="topic-section"><h3>Essential Operations</h3>
@@ -190,7 +282,7 @@ plt.savefig(<span class="st">"cgpa.png"</span>, dpi=<span class="num">150</span>
             <div class="notebook-card-body">
               <div class="notebook-card-title">Interactive Notebook: Python for Data</div>
               <div class="notebook-card-desc">Pandas groupby, NumPy, matplotlib — student grade analysis</div>
-              <div class="notebook-card-note">Runs in your browser · Saves automatically · No setup needed</div>
+              <div class="notebook-card-note">First load: ~30–60 seconds (Pyodide Python runtime downloads) · Work saves automatically</div>
             </div>
             <a href="/lab/index.html?path=prog-02-python-for-data.ipynb" target="_blank" rel="noopener"
                class="btn btn-primary notebook-open-btn"
@@ -201,11 +293,14 @@ plt.savefig(<span class="st">"cgpa.png"</span>, dpi=<span class="num">150</span>
            onclick="trackEvent('quiz_open',{topic:'python-for-data'})">Take Quiz →</a>
 
         <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="python-for-data">📄 Python for Data Cheatsheet</a>
-        <button class="btn btn-ghost btn-sm claim-certificate" style="margin-top:0.75rem;" onclick="window.MitraAuth?.recordCourseCompletion('programming','python-for-data')">Mark Complete ✓</button>
       </div>
 
       <!-- ── Shell / Bash ── -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 2: Shell / Bash -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">track 03</div><h2>Shell / Bash</h2><p>Command-line power for developers, data engineers, and ML engineers. Navigate files, automate tasks, write scripts, and chain tools with pipes.</p></div>
 
         <div class="topic-section"><h3>Essential Commands</h3>
@@ -259,7 +354,7 @@ kill -9 <span class="num">12345</span>
             <div class="notebook-card-body">
               <div class="notebook-card-title">Interactive Notebook: Shell / Bash</div>
               <div class="notebook-card-desc">Python equivalents of grep, find, chmod, pipe, redirection</div>
-              <div class="notebook-card-note">Runs in your browser · Saves automatically · No setup needed</div>
+              <div class="notebook-card-note">First load: ~30–60 seconds (Pyodide Python runtime downloads) · Work saves automatically</div>
             </div>
             <a href="/lab/index.html?path=prog-03-shell-bash.ipynb" target="_blank" rel="noopener"
                class="btn btn-primary notebook-open-btn"
@@ -270,11 +365,14 @@ kill -9 <span class="num">12345</span>
            onclick="trackEvent('quiz_open',{topic:'shell-bash'})">Take Quiz →</a>
 
         <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="shell-bash">📄 Shell/Bash Cheatsheet</a>
-        <button class="btn btn-ghost btn-sm claim-certificate" style="margin-top:0.75rem;" onclick="window.MitraAuth?.recordCourseCompletion('programming','shell-bash')">Mark Complete ✓</button>
       </div>
 
       <!-- ── SQL ── -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 3: SQL -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">track 04</div><h2>SQL</h2><p>The universal language of data. Every analyst, data scientist, and backend developer needs solid SQL — especially for placement interviews.</p></div>
 
         <div class="topic-section"><h3>Essential Patterns</h3>
@@ -330,7 +428,7 @@ kill -9 <span class="num">12345</span>
             <div class="notebook-card-body">
               <div class="notebook-card-title">Interactive Notebook: SQL</div>
               <div class="notebook-card-desc">SQLite in-memory DB — SELECT, JOIN, GROUP BY, HAVING, window functions</div>
-              <div class="notebook-card-note">Runs in your browser · Saves automatically · No setup needed</div>
+              <div class="notebook-card-note">First load: ~30–60 seconds (Pyodide Python runtime downloads) · Work saves automatically</div>
             </div>
             <a href="/lab/index.html?path=prog-04-sql.ipynb" target="_blank" rel="noopener"
                class="btn btn-primary notebook-open-btn"
@@ -341,11 +439,14 @@ kill -9 <span class="num">12345</span>
            onclick="trackEvent('quiz_open',{topic:'sql'})">Take Quiz →</a>
 
         <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="sql-quick-reference">📄 SQL Cheatsheet</a>
-        <button class="btn btn-ghost btn-sm claim-certificate" style="margin-top:0.75rem;" onclick="window.MitraAuth?.recordCourseCompletion('programming','sql')">Mark Complete ✓</button>
       </div>
 
       <!-- ── Excel Formulas ── -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 4: Excel Formulas -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">track 05</div><h2>Excel Formulas</h2><p>High-value Excel and Google Sheets formulas for analysis, reporting, and data prep. Still the #1 tool in most Indian offices.</p></div>
 
         <div class="topic-section"><h3>High-Value Formulas</h3>
@@ -385,7 +486,7 @@ kill -9 <span class="num">12345</span>
             <div class="notebook-card-body">
               <div class="notebook-card-title">Interactive Notebook: Excel Formulas</div>
               <div class="notebook-card-desc">VLOOKUP, SUMIFS, COUNTIFS, pivot tables via Python/Pandas</div>
-              <div class="notebook-card-note">Runs in your browser · Saves automatically · No setup needed</div>
+              <div class="notebook-card-note">First load: ~30–60 seconds (Pyodide Python runtime downloads) · Work saves automatically</div>
             </div>
             <a href="/lab/index.html?path=prog-05-excel.ipynb" target="_blank" rel="noopener"
                class="btn btn-primary notebook-open-btn"
@@ -396,11 +497,14 @@ kill -9 <span class="num">12345</span>
            onclick="trackEvent('quiz_open',{topic:'excel'})">Take Quiz →</a>
 
         <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="excel-formula-bible">📄 Excel Formula Cheatsheet</a>
-        <button class="btn btn-ghost btn-sm claim-certificate" style="margin-top:0.75rem;" onclick="window.MitraAuth?.recordCourseCompletion('programming','excel')">Mark Complete ✓</button>
       </div>
 
       <!-- ── C / C++ ── -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 5: C / C++ -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">track 06</div><h2>C / C++</h2><p>Pointers, memory management, structs, and core systems programming. Required for many engineering viva exams and embedded/systems roles.</p></div>
 
         <div class="topic-section"><h3>Essential Patterns</h3>
@@ -450,7 +554,7 @@ arr[<span class="num">0</span>] = <span class="num">10</span>;
             <div class="notebook-card-body">
               <div class="notebook-card-title">Interactive Notebook: C / C++</div>
               <div class="notebook-card-desc">Pointer concepts, malloc/free, structs — Python side-by-side explanations</div>
-              <div class="notebook-card-note">Runs in your browser · Saves automatically · No setup needed</div>
+              <div class="notebook-card-note">First load: ~30–60 seconds (Pyodide Python runtime downloads) · Work saves automatically</div>
             </div>
             <a href="/lab/index.html?path=prog-06-c-cpp.ipynb" target="_blank" rel="noopener"
                class="btn btn-primary notebook-open-btn"
@@ -461,11 +565,14 @@ arr[<span class="num">0</span>] = <span class="num">10</span>;
            onclick="trackEvent('quiz_open',{topic:'c-cpp'})">Take Quiz →</a>
 
         <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="c-cpp-memory">📄 C/C++ Memory Cheatsheet</a>
-        <button class="btn btn-ghost btn-sm claim-certificate" style="margin-top:0.75rem;" onclick="window.MitraAuth?.recordCourseCompletion('programming','c-cpp')">Mark Complete ✓</button>
       </div>
 
       <!-- ── Perl ── -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 6: Perl -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">track 07</div><h2>Perl</h2><p>Regular expressions, file processing, and text transformation. Still used in bioinformatics, legacy enterprise systems, and ops scripting.</p></div>
 
         <div class="topic-section"><h3>Essential Patterns</h3>
@@ -512,7 +619,7 @@ arr[<span class="num">0</span>] = <span class="num">10</span>;
             <div class="notebook-card-body">
               <div class="notebook-card-title">Interactive Notebook: Perl</div>
               <div class="notebook-card-desc">Regex, split, chomp — Python equivalents for legacy engineers</div>
-              <div class="notebook-card-note">Runs in your browser · Saves automatically · No setup needed</div>
+              <div class="notebook-card-note">First load: ~30–60 seconds (Pyodide Python runtime downloads) · Work saves automatically</div>
             </div>
             <a href="/lab/index.html?path=prog-07-perl.ipynb" target="_blank" rel="noopener"
                class="btn btn-primary notebook-open-btn"
@@ -521,12 +628,14 @@ arr[<span class="num">0</span>] = <span class="num">10</span>;
         <a href="/quiz.html?course=programming&topic=perl"
            class="btn btn-primary btn-sm"
            onclick="trackEvent('quiz_open',{topic:'perl'})">Take Quiz →</a>
-
-        <button class="btn btn-ghost btn-sm claim-certificate" style="margin-top:0.75rem;" onclick="window.MitraAuth?.recordCourseCompletion('programming','perl')">Mark Complete ✓</button>
       </div>
 
       <!-- ── JavaScript ── -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 7: JavaScript -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">track 08</div><h2>JavaScript</h2><p>DOM manipulation, fetch API, async/await, and Node.js basics. Essential for frontend development, APIs, and full-stack AI apps.</p></div>
 
         <div class="topic-section"><h3>Essential Patterns</h3>
@@ -579,7 +688,7 @@ document.<span class="fn">querySelector</span>(<span class="st">'.btn'</span>)
             <div class="notebook-card-body">
               <div class="notebook-card-title">Interactive Notebook: JavaScript</div>
               <div class="notebook-card-desc">Arrow functions, map/filter, async/await — Python parallels</div>
-              <div class="notebook-card-note">Runs in your browser · Saves automatically · No setup needed</div>
+              <div class="notebook-card-note">First load: ~30–60 seconds (Pyodide Python runtime downloads) · Work saves automatically</div>
             </div>
             <a href="/lab/index.html?path=prog-08-javascript.ipynb" target="_blank" rel="noopener"
                class="btn btn-primary notebook-open-btn"
@@ -590,17 +699,10 @@ document.<span class="fn">querySelector</span>(<span class="st">'.btn'</span>)
            onclick="trackEvent('quiz_open',{topic:'javascript'})">Take Quiz →</a>
 
 
-        <div class="completion-banner">
-          <div class="completion-icon">🎓</div>
-          <div class="completion-body">
-            <h3>Programming Track Complete!</h3>
-            <p>Claim your Programming Foundation course completion certificate.</p>
-          </div>
-          <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('programming','javascript')">Claim Certificate →</button>
-        </div>
+        
       </div>
 
-    </div><!-- end .tab-layout -->
+
   </div>
 </section>
 
@@ -642,6 +744,68 @@ document.<span class="fn">querySelector</span>(<span class="st">'.btn'</span>)
       <span>© 2026 Mitra AI Life.</span>
       <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div>
     </div>
+  </div>
+</footer>
+
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>
+    </div>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div>
+        <p class="footer-tagline">Guided AI and ML project kits for engineering students.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="/courses/ml.html">Machine Learning</a></li>
+          <li><a href="/courses/dl.html">Deep Learning</a></li>
+          <li><a href="/courses/genai.html">Generative AI</a></li>
+          <li><a href="/courses/agentic.html">Agentic AI</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div>
+
+      <div class="completion-banner" style="margin-top:2rem;">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body">
+          <h3>Programming Foundation Complete!</h3>
+          <p>Pass all topic quizzes to earn your Programming Foundation certificate.</p>
+        </div>
+        <a href="/courses/" class="btn btn-primary">Browse Next Course →</a>
+      </div>    </div>
   </div>
 </footer>
 

@@ -1,0 +1,116 @@
+{
+  "course_label": "Deep Learning",
+  "title": "Neural Network Basics",
+  "questions": [
+    {
+      "question": "Which activation function outputs values between 0 and 1?",
+      "options": [
+        "ReLU",
+        "Tanh",
+        "Sigmoid",
+        "Softmax"
+      ],
+      "correct": "c",
+      "explanation": "Sigmoid: 1/(1+e^(-x)) maps any input to (0,1). Used in binary output layers."
+    },
+    {
+      "question": "Backpropagation computes:",
+      "options": [
+        "Forward predictions",
+        "Gradients of loss w.r.t. each weight",
+        "Feature importance",
+        "Attention weights"
+      ],
+      "correct": "b",
+      "explanation": "Backprop applies the chain rule to compute how much each weight contributed to the loss."
+    },
+    {
+      "question": "Batch Normalisation helps training by:",
+      "options": [
+        "Removing outliers",
+        "Normalising layer inputs \u2014 stabilising and accelerating training",
+        "Reducing model size",
+        "Increasing learning rate"
+      ],
+      "correct": "b",
+      "explanation": "BN normalises activations to zero mean/unit variance per batch, reducing internal covariate shift."
+    },
+    {
+      "question": "The vanishing gradient problem occurs when:",
+      "options": [
+        "Gradients are too large",
+        "Gradients become extremely small in early layers, preventing learning",
+        "The learning rate is too high",
+        "Batch size is too small"
+      ],
+      "correct": "b",
+      "explanation": "In deep networks, gradients shrink exponentially as they backpropagate \u2014 early layers barely learn."
+    },
+    {
+      "question": "Dropout in neural networks:",
+      "options": [
+        "Removes neurons permanently",
+        "Randomly deactivates neurons during training to prevent overfitting",
+        "Reduces model depth",
+        "Speeds up inference"
+      ],
+      "correct": "b",
+      "explanation": "Dropout forces the network to learn redundant representations, acting as ensemble regularisation."
+    },
+    {
+      "question": "The Adam optimiser combines:",
+      "options": [
+        "SGD and Adagrad",
+        "Momentum and RMSProp (adaptive learning rates + momentum)",
+        "Batch normalisation and dropout",
+        "L1 and L2 regularisation"
+      ],
+      "correct": "b",
+      "explanation": "Adam maintains per-parameter adaptive learning rates (RMSProp) and exponential moving average gradients (momentum)."
+    },
+    {
+      "question": "A network with no hidden layers is called:",
+      "options": [
+        "Deep network",
+        "Perceptron (logistic regression)",
+        "Convolutional network",
+        "Recurrent network"
+      ],
+      "correct": "b",
+      "explanation": "Zero hidden layers = input directly to output = linear/logistic regression \u2014 no representational power for non-linear data."
+    },
+    {
+      "question": "Weight initialisation matters because:",
+      "options": [
+        "Poorly initialised weights cause symmetry \u2014 neurons learn identical features",
+        "It determines the final accuracy",
+        "It sets the learning rate",
+        "It defines the loss function"
+      ],
+      "correct": "a",
+      "explanation": "If all weights are equal, all neurons compute the same gradient and never diverge. Random init breaks symmetry."
+    },
+    {
+      "question": "The learning rate controls:",
+      "options": [
+        "Model depth",
+        "Step size when updating weights during gradient descent",
+        "Number of training epochs",
+        "Batch size"
+      ],
+      "correct": "b",
+      "explanation": "Too high: oscillates, diverges. Too low: very slow convergence. Learning rate scheduling helps."
+    },
+    {
+      "question": "Cross-entropy loss is most appropriate for:",
+      "options": [
+        "Regression",
+        "Multi-class classification",
+        "Clustering",
+        "Anomaly detection"
+      ],
+      "correct": "b",
+      "explanation": "Cross-entropy = -sum(y_true * log(y_pred)). Maximises log-likelihood of correct class probabilities."
+    }
+  ]
+}
