@@ -14,19 +14,19 @@
 | S1-T3 | Fix teal remnants — all rgba colors updated to plum | ✅ | |
 | S1-T4 | Mobile nav — white background, shadow | ✅ | |
 | S1-T5 | Mobile responsiveness — grid collapse, hero, tabs | 🔶 | CSS done, needs real device test |
-| S1-T6 | Favicon (512×512 PNG) | ❌ | Upload to site/ root |
+| S1-T6 | Favicon SVG | ✅ | site/favicon.svg, linked in all pages |
 | S1-T7 | OG image (1200×630) for social share preview | ❌ | Upload to S3 shared/ |
 | S1-T8 | Page load speed — Google Lighthouse 90+ | ❌ | After content is in |
 | S1-T9 | GA4 wired in all pages | ✅ | G-QGY0LH6W93 |
-| S1-T10 | GA4 custom events (tab change, quiz, cert, download) | 🔶 | Core events done |
+| S1-T10 | GA4 custom events (tab change, quiz, cert, video, download) | ✅ | All in main.js |
 | S1-T11 | Google Search Console setup | ❌ | After domain live |
-| S1-T12 | sitemap.xml in site/ root | ❌ | |
-| S1-T13 | Supabase anon key wired in all HTML pages | ❌ | `<script>window.__SUPABASE_ANON_KEY__='eyJ...'</script>` before auth.js |
-| S1-T14 | Supabase table: contact_submissions | ❌ | SQL in STATUS.md |
-| S1-T15 | Supabase table: course_completions | ❌ | SQL in STATUS.md |
-| S1-T16 | Supabase table: project_completions | ❌ | SQL in STATUS.md |
-| S1-T17 | Login UI (Sign In modal or page) | ❌ | Email link or Google OAuth |
-| S1-T18 | User profile page /profile.html | ❌ | Show completions + certificates |
+| S1-T12 | sitemap.xml in site/ root | ✅ | All 18 pages listed |
+| S1-T13 | Supabase anon key — config.js wired in all pages | ✅ | Edit site/config.js with real key |
+| S1-T14 | Supabase table: contact_submissions | ❌ | Manual: run scripts/supabase_setup.sql |
+| S1-T15 | Supabase table: course_completions | ❌ | Manual: same SQL file |
+| S1-T16 | Supabase table: project_completions + certificates | ❌ | Manual: same SQL file |
+| S1-T17 | Login UI — Sign In modal (Google + email magic link) | ✅ | Injected via main.js |
+| S1-T18 | User profile page /profile.html | ✅ | Shows completions + certificates |
 | S1-T19 | GitHub Pages enabled (Settings → Pages → GitHub Actions) | ❌ | One click in GitHub UI |
 | S1-T20 | Domain purchased: mitraaiprojects.com on Namecheap | ❌ | ~$11/yr |
 | S1-T21 | DNS: 4 A records + www CNAME → GitHub Pages | ❌ | After S1-T20 |

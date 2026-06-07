@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://mitraaiprojects.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/courses/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/courses/ml.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/courses/programming.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/courses/dl.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/courses/genai.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/courses/agentic.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/courses/mlops.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/courses/rl.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/projects/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/projects/document-qa-assistant.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/cheatsheets.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/how-it-works.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/faq.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/about.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/contact.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/privacy.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://mitraaiprojects.com/terms.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+</urlset>

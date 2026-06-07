@@ -177,10 +177,9 @@ function initContactForm() {
     const data = Object.fromEntries(new FormData(form));
 
     try {
-      // Supabase insert — hook point
-      const { supabase } = window;
-      if (supabase) {
-        await supabase.from('contact_submissions').insert([{
+      const client = window._supabaseClient;
+      if (client) {
+        await client.from('contact_submissions').insert([{
           name: data.name,
           email: data.email,
           college: data.college,
@@ -251,6 +250,85 @@ function initCertificate() {
   });
 }
 
+/* ── Sign-in modal ── */
+function initSignInModal() {
+  const modal = document.createElement('div');
+  modal.id = 'signInModal';
+  modal.className = 'auth-modal-overlay';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-label', 'Sign in to Mitra AI Projects');
+  modal.innerHTML = `
+    <div class="auth-modal-card">
+      <button class="auth-modal-close" aria-label="Close" onclick="window.closeSignInModal()">✕</button>
+      <div class="auth-modal-brand">
+        <div class="nav-logo">M</div>
+        <span style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.1rem;">Mitra<span class="teal">AI</span> Projects</span>
+      </div>
+      <h2 class="auth-modal-title">Sign in to track progress</h2>
+      <p class="auth-modal-sub">Save your course completions, project milestones, and earn certificates.</p>
+      <button class="btn btn-primary auth-google-btn" onclick="window.MitraAuth?.signInWithGoogle()">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 01-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#fff" opacity=".9"/>
+          <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#fff" opacity=".8"/>
+          <path d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#fff" opacity=".7"/>
+          <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#fff" opacity=".6"/>
+        </svg>
+        Continue with Google
+      </button>
+      <div class="auth-divider"><span>or</span></div>
+      <div class="auth-email-form">
+        <input type="email" id="authEmailInput" class="auth-email-input" placeholder="your@email.com" autocomplete="email" />
+        <button class="btn btn-outline auth-email-btn" id="authEmailBtn">Send magic link</button>
+      </div>
+      <p class="auth-modal-notice" id="authNotice"></p>
+    </div>`;
+
+  document.body.appendChild(modal);
+
+  // Close on overlay click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) window.closeSignInModal();
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) window.closeSignInModal();
+  });
+
+  // Email magic link
+  document.getElementById('authEmailBtn')?.addEventListener('click', async () => {
+    const email = document.getElementById('authEmailInput')?.value?.trim();
+    const notice = document.getElementById('authNotice');
+    if (!email || !email.includes('@')) {
+      if (notice) { notice.textContent = 'Please enter a valid email.'; notice.style.color = 'var(--danger)'; }
+      return;
+    }
+    const btn = document.getElementById('authEmailBtn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const result = await window.MitraAuth?.signInWithEmail(email);
+    if (result?.error) {
+      if (notice) { notice.textContent = 'Could not send link. Please try Google sign-in.'; notice.style.color = 'var(--danger)'; }
+      btn.textContent = 'Send magic link';
+      btn.disabled = false;
+    } else {
+      if (notice) { notice.textContent = `✅ Magic link sent to ${email}. Check your inbox!`; notice.style.color = 'var(--success)'; }
+      btn.textContent = 'Sent!';
+    }
+  });
+}
+
+window.openSignInModal = () => {
+  const modal = document.getElementById('signInModal');
+  if (modal) { modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+};
+window.closeSignInModal = () => {
+  const modal = document.getElementById('signInModal');
+  if (modal) { modal.classList.remove('open'); document.body.style.overflow = ''; }
+};
+
 /* ── Mobile select for OneNote ── */
 function buildMobileSelect() {
   const tabs = document.querySelectorAll('.onenote-tab');
@@ -279,4 +357,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initOneNoteTabs();
 
   document.querySelectorAll('.tab-layout').forEach(initTabs);
+  initSignInModal();
 });
