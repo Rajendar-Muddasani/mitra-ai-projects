@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — Mitra AI Projects</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .quiz-page { max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    .quiz-header { margin-bottom: 2.5rem; }
+    .quiz-header .back-link { font-size:0.85rem; color:var(--muted); text-decoration:none; display:inline-flex;align-items:center;gap:0.3rem;margin-bottom:1rem; }
+    .quiz-header .back-link:hover { color:var(--primary); }
+    .quiz-meta { display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.5rem;margin-bottom:1.5rem; }
+    .quiz-meta span { font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--muted); }
+    .q-block { background:var(--surface);border:1px solid var(--border-dim);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.25rem;transition:border-color 0.2s; }
+    .q-block.correct  { border-color:var(--success);background:rgba(5,150,105,0.05); }
+    .q-block.wrong    { border-color:var(--danger);background:rgba(220,38,38,0.05); }
+    .q-num { font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--primary);font-weight:700;margin-bottom:0.4rem; }
+    .q-text { font-weight:700;font-size:1rem;margin-bottom:1rem;line-height:1.5; }
+    .q-options { display:flex;flex-direction:column;gap:0.6rem; }
+    .q-option { display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1rem;border:1px solid var(--border-dim);border-radius:var(--radius);cursor:pointer;transition:all 0.15s;background:var(--bg-dark); }
+    .q-option:hover { border-color:var(--primary);background:rgba(107,33,168,0.05); }
+    .q-option.selected { border-color:var(--primary);background:rgba(107,33,168,0.08); }
+    .q-option.answer-correct { border-color:var(--success);background:rgba(5,150,105,0.1);color:var(--text); }
+    .q-option.answer-wrong   { border-color:var(--danger);background:rgba(220,38,38,0.08); }
+    .q-option input[type=radio] { margin-top:2px;flex-shrink:0;accent-color:var(--primary); }
+    .q-explanation { font-size:0.85rem;color:var(--muted);margin-top:0.75rem;padding:0.6rem 0.9rem;background:var(--surface-2);border-radius:var(--radius);border-left:3px solid var(--primary);display:none; }
+    .q-block.submitted .q-explanation { display:block; }
+    .quiz-actions-bar { display:flex;gap:1rem;margin-top:2rem;align-items:center;flex-wrap:wrap; }
+    .quiz-score-box { background:var(--surface);border:1px solid var(--border-dim);border-radius:var(--radius-lg);padding:2rem;text-align:center;margin-top:2rem;display:none; }
+    .score-num { font-size:3rem;font-weight:800;font-family:'Baloo 2',sans-serif;color:var(--primary); }
+    .score-label { color:var(--muted);margin-bottom:1rem; }
+    .score-actions { display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem; }
+    .progress-bar { height:4px;background:var(--border-dim);border-radius:999px;margin-bottom:2rem;overflow:hidden; }
+    .progress-fill { height:100%;background:var(--primary);border-radius:999px;transition:width 0.3s; }
+    #loadingState { text-align:center;padding:3rem;color:var(--muted); }
+    #errorState  { text-align:center;padding:3rem;color:var(--danger);display:none; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/" class="active">Courses</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<div class="quiz-page">
+  <div id="loadingState">Loading quiz…</div>
+  <div id="errorState">Quiz not found. <a href="/courses/">Back to Courses →</a></div>
+
+  <div id="quizContent" style="display:none;">
+    <div class="quiz-header">
+      <a href="#" class="back-link" id="backLink">← Back to course</a>
+      <div class="section-tag" id="quizCourse"></div>
+      <h1 id="quizTitle"></h1>
+      <div class="quiz-meta">
+        <span id="quizMeta1"></span>
+        <span id="quizMeta2">Pass score: 70%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    </div>
+
+    <div id="questionsContainer"></div>
+
+    <div class="quiz-actions-bar">
+      <button class="btn btn-primary" id="submitBtn">Submit Answers</button>
+      <button class="btn btn-ghost" id="retryBtn" style="display:none;">Retry Quiz</button>
+      <span id="submitMsg" style="font-size:0.85rem;color:var(--muted);"></span>
+    </div>
+
+    <div class="quiz-score-box" id="scoreBox">
+      <div class="score-num" id="scoreNum">0%</div>
+      <div class="score-label" id="scoreLabel"></div>
+      <div class="score-actions">
+        <a href="#" class="btn btn-primary" id="scoreBackBtn">Back to Course →</a>
+        <button class="btn btn-outline" id="scoreRetryBtn">Try Again</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/config.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script>
+const params   = new URLSearchParams(window.location.search);
+const course   = params.get('course') || '';
+const topic    = params.get('topic')  || '';
+const BACK_URL = course ? `/courses/${course}.html` : '/courses/';
+
+document.getElementById('backLink').href  = BACK_URL;
+document.getElementById('scoreBackBtn').href = BACK_URL;
+
+async function loadQuiz() {
+  try {
+    const res = await fetch(`/data/quizzes/${course}-${topic}.json`);
+    if (!res.ok) throw new Error('not found');
+    const data = await res.json();
+    renderQuiz(data);
+  } catch {
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('errorState').style.display   = 'block';
+  }
+}
+
+function renderQuiz(data) {
+  document.title = `Quiz: ${data.title} — Mitra AI Projects`;
+  document.getElementById('quizCourse').textContent = data.course_label || course.toUpperCase();
+  document.getElementById('quizTitle').textContent  = data.title;
+  document.getElementById('quizMeta1').textContent  = `${data.questions.length} questions`;
+  document.getElementById('progressFill').style.width = '0%';
+
+  const container = document.getElementById('questionsContainer');
+  container.innerHTML = '';
+
+  data.questions.forEach((q, idx) => {
+    const block = document.createElement('div');
+    block.className = 'q-block';
+    block.dataset.correct = q.correct;
+
+    const optionsHTML = q.options.map((opt, oi) => {
+      const letter = String.fromCharCode(97 + oi);
+      return `<label class="q-option">
+        <input type="radio" name="q${idx}" value="${letter}">
+        <span>${opt}</span>
+      </label>`;
+    }).join('');
+
+    block.innerHTML = `
+      <div class="q-num">Q${idx + 1} of ${data.questions.length}</div>
+      <div class="q-text">${q.question}</div>
+      <div class="q-options">${optionsHTML}</div>
+      <div class="q-explanation">${q.explanation || ''}</div>`;
+
+    // Track progress on answer
+    block.querySelectorAll('input[type=radio]').forEach(inp => {
+      inp.addEventListener('change', () => {
+        block.querySelectorAll('.q-option').forEach(o => o.classList.remove('selected'));
+        inp.closest('.q-option').classList.add('selected');
+        updateProgress();
+      });
+    });
+
+    container.appendChild(block);
+  });
+
+  document.getElementById('loadingState').style.display  = 'none';
+  document.getElementById('quizContent').style.display   = 'block';
+  document.getElementById('submitBtn').onclick   = () => submitQuiz(data);
+  document.getElementById('retryBtn').onclick    = () => location.reload();
+  document.getElementById('scoreRetryBtn').onclick = () => location.reload();
+  trackEvent('quiz_page_view', { course, topic });
+}
+
+function updateProgress() {
+  const total    = document.querySelectorAll('.q-block').length;
+  const answered = document.querySelectorAll('input[type=radio]:checked').length;
+  document.getElementById('progressFill').style.width = `${(answered/total)*100}%`;
+}
+
+function submitQuiz(data) {
+  const blocks = document.querySelectorAll('.q-block');
+  let correct = 0, answered = 0;
+
+  blocks.forEach((block, idx) => {
+    const selected = block.querySelector('input[type=radio]:checked');
+    const correctVal = block.dataset.correct;
+    block.classList.add('submitted');
+    if (!selected) return;
+    answered++;
+    const selectedLetter = selected.value;
+    if (selectedLetter === correctVal) {
+      selected.closest('.q-option').classList.add('answer-correct');
+      block.classList.add('correct');
+      correct++;
+    } else {
+      selected.closest('.q-option').classList.add('answer-wrong');
+      block.classList.add('wrong');
+      // Highlight correct answer
+      const opts = block.querySelectorAll('.q-option');
+      const correctIdx = correctVal.charCodeAt(0) - 97;
+      if (opts[correctIdx]) opts[correctIdx].classList.add('answer-correct');
+    }
+    block.querySelectorAll('input[type=radio]').forEach(i => i.disabled = true);
+  });
+
+  if (answered < blocks.length) {
+    document.getElementById('submitMsg').textContent = `Please answer all ${blocks.length} questions.`;
+    return;
+  }
+
+  const pct = Math.round((correct / blocks.length) * 100);
+  const passed = pct >= 70;
+
+  document.getElementById('submitBtn').style.display = 'none';
+  document.getElementById('retryBtn').style.display  = 'inline-flex';
+  document.getElementById('scoreBox').style.display  = 'block';
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('scoreNum').textContent = `${pct}%`;
+  document.getElementById('scoreNum').style.color = passed ? 'var(--success)' : 'var(--danger)';
+  document.getElementById('scoreLabel').textContent =
+    passed ? `✅ Passed! ${correct}/${blocks.length} correct.` :
+             `❌ ${correct}/${blocks.length} correct — review and retry.`;
+
+  trackEvent('quiz_submit', { course, topic, score: pct, passed });
+
+  if (passed && window.MitraAuth) {
+    window.MitraAuth.recordCourseCompletion(course, topic);
+    trackEvent('quiz_pass_completion_recorded', { course, topic });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadQuiz);
+</script>
+</body>
+</html>

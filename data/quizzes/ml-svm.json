@@ -1,0 +1,116 @@
+{
+  "course_label": "Machine Learning",
+  "title": "Support Vector Machines",
+  "questions": [
+    {
+      "question": "The support vectors are:",
+      "options": [
+        "All training data points",
+        "The closest data points to the decision boundary",
+        "The misclassified points",
+        "Feature weights"
+      ],
+      "correct": "b",
+      "explanation": "Support vectors are the training examples that lie on or closest to the margin boundary. Only they determine the hyperplane."
+    },
+    {
+      "question": "The 'margin' in SVM refers to:",
+      "options": [
+        "The model's accuracy",
+        "The distance between the decision boundary and the nearest support vectors",
+        "The regularisation penalty",
+        "The number of features"
+      ],
+      "correct": "b",
+      "explanation": "SVM maximises this margin \u2014 the wider it is, the better the generalisation to new data."
+    },
+    {
+      "question": "The RBF (Radial Basis Function) kernel is used when:",
+      "options": [
+        "Data is linearly separable",
+        "Data requires non-linear decision boundaries",
+        "You have very large datasets",
+        "Features are all categorical"
+      ],
+      "correct": "b",
+      "explanation": "RBF maps data to infinite dimensions implicitly using the kernel trick, enabling non-linear boundaries."
+    },
+    {
+      "question": "The C parameter in SVM controls:",
+      "options": [
+        "Number of support vectors",
+        "Trade-off between margin size and misclassification penalty",
+        "Kernel bandwidth",
+        "Learning rate"
+      ],
+      "correct": "a",
+      "explanation": "High C = smaller margin, fewer misclassifications (risk of overfitting). Low C = wider margin, more tolerance for errors."
+    },
+    {
+      "question": "SVM is NOT recommended when:",
+      "options": [
+        "Data is linearly separable",
+        "You need maximum-margin classification",
+        "The dataset has millions of rows",
+        "Features are already scaled"
+      ],
+      "correct": "c",
+      "explanation": "SVM training scales quadratically with data size. For millions of rows, tree-based methods or neural nets are far more efficient."
+    },
+    {
+      "question": "The kernel trick in SVM allows:",
+      "options": [
+        "Faster gradient descent",
+        "Computing similarity in a higher-dimensional space without explicitly mapping there",
+        "Automatic feature selection",
+        "Handling missing values"
+      ],
+      "correct": "b",
+      "explanation": "The kernel computes dot products in the transformed space implicitly \u2014 avoiding the computational cost of explicit transformation."
+    },
+    {
+      "question": "SVR (Support Vector Regression) uses an 'epsilon tube' to:",
+      "options": [
+        "Regularise the model",
+        "Ignore errors smaller than epsilon \u2014 only support vectors outside the tube matter",
+        "Remove outliers",
+        "Scale features automatically"
+      ],
+      "correct": "b",
+      "explanation": "Data points within the epsilon tube contribute zero loss. Only points outside it become support vectors and influence the fit."
+    },
+    {
+      "question": "If you have a 3-class problem, OvO (One-vs-One) SVM trains:",
+      "options": [
+        "3 classifiers",
+        "6 classifiers",
+        "9 classifiers",
+        "1 classifier"
+      ],
+      "correct": "b",
+      "explanation": "OvO trains C(n,2) = n*(n-1)/2 classifiers. For 3 classes: 3*2/2 = 3 classifiers."
+    },
+    {
+      "question": "Feature scaling is mandatory for SVM because:",
+      "options": [
+        "SVM requires integer inputs",
+        "The kernel distance is sensitive to feature magnitudes \u2014 unscaled features dominate",
+        "SVM cannot handle negative values",
+        "The algorithm uses log-loss"
+      ],
+      "correct": "b",
+      "explanation": "Without scaling, features with large ranges dominate the distance metric, skewing the decision boundary."
+    },
+    {
+      "question": "Which SVM kernel is equivalent to applying polynomial regression?",
+      "options": [
+        "Linear kernel",
+        "RBF kernel",
+        "Polynomial kernel",
+        "Sigmoid kernel"
+      ],
+      "correct": "c",
+      "explanation": "The polynomial kernel K(x,z) = (x\u00b7z + c)^d computes dot products in polynomial feature space."
+    }
+  ]
+}

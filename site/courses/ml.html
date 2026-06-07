@@ -246,14 +246,14 @@ ridge.fit(X_train, y_train)</code></pre>
         <h3>Notebook &amp; Demo</h3>
         <div class="notebook-embed">
           <iframe
-            src="/lab/retro/notebooks/?path=ml-01-linear-regression.ipynb"
+            src="/lab/edit/index.html?path=ml-01-linear-regression.ipynb"
             title="Interactive Python notebook"
             loading="lazy"
             allow="autoplay; clipboard-read; clipboard-write">
           </iframe>
           <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
             Edit and run code in your browser. Work saves automatically.
-            <a href="/lab/?path=ml-01-linear-regression.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+            <a href="/lab/index.html?path=ml-01-linear-regression.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
           </p>
         </div>
       </div>
@@ -281,56 +281,17 @@ ridge.fit(X_train, y_train)</code></pre>
         </div>
       </div>
 
-      <div class="quiz-block">
-        <h3>Quiz — Linear Regression</h3>
 
-        <div class="quiz-q" data-correct="b">
-          <p>1. Which metric is most interpretable when the target variable is in dollars?</p>
-          <label class="quiz-option"><input type="radio" name="lr-q1" value="a"> R² Score</label>
-          <label class="quiz-option"><input type="radio" name="lr-q1" value="b"> RMSE</label>
-          <label class="quiz-option"><input type="radio" name="lr-q1" value="c"> MSE</label>
-          <label class="quiz-option"><input type="radio" name="lr-q1" value="d"> Adjusted R²</label>
-        </div>
 
-        <div class="quiz-q" data-correct="c">
-          <p>2. Which regularization method can reduce some feature weights to exactly zero?</p>
-          <label class="quiz-option"><input type="radio" name="lr-q2" value="a"> Ridge (L2)</label>
-          <label class="quiz-option"><input type="radio" name="lr-q2" value="b"> ElasticNet only</label>
-          <label class="quiz-option"><input type="radio" name="lr-q2" value="c"> Lasso (L1)</label>
-          <label class="quiz-option"><input type="radio" name="lr-q2" value="d"> OLS</label>
-        </div>
-
-        <div class="quiz-q" data-correct="a">
-          <p>3. Before using Ridge regression, you should:</p>
-          <label class="quiz-option"><input type="radio" name="lr-q3" value="a"> Scale features with StandardScaler</label>
-          <label class="quiz-option"><input type="radio" name="lr-q3" value="b"> Encode all features as binary</label>
-          <label class="quiz-option"><input type="radio" name="lr-q3" value="c"> Remove all null values only</label>
-          <label class="quiz-option"><input type="radio" name="lr-q3" value="d"> Normalize the target variable</label>
-        </div>
-
-        <div class="quiz-q" data-correct="d">
-          <p>4. An R² score of 0.95 means:</p>
-          <label class="quiz-option"><input type="radio" name="lr-q4" value="a"> The model is 95% accurate</label>
-          <label class="quiz-option"><input type="radio" name="lr-q4" value="b"> 95% of predictions are correct</label>
-          <label class="quiz-option"><input type="radio" name="lr-q4" value="c"> RMSE is 5%</label>
-          <label class="quiz-option"><input type="radio" name="lr-q4" value="d"> The model explains 95% of the variance in the target</label>
-        </div>
-
-        <div class="quiz-q" data-correct="b">
-          <p>5. Which is NOT a valid use case for linear regression?</p>
-          <label class="quiz-option"><input type="radio" name="lr-q5" value="a"> Predicting house prices</label>
-          <label class="quiz-option"><input type="radio" name="lr-q5" value="b"> Classifying spam vs. not spam</label>
-          <label class="quiz-option"><input type="radio" name="lr-q5" value="c"> Forecasting next month's sales</label>
-          <label class="quiz-option"><input type="radio" name="lr-q5" value="d"> Estimating student exam scores</label>
-        </div>
-
-        <div class="quiz-actions">
-          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-          <span class="quiz-result"></span>
-        </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Linear Regression with 10 questions. Pass 70% to mark this topic complete.</p>
+        <a href="/quiz.html?course=ml&topic=linear-regression"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'ml',topic:'linear-regression'})">
+          Take Quiz →
+        </a>
       </div>
-
       <div class="completion-banner">
         <div class="completion-icon">🎓</div>
         <div class="completion-body">
@@ -441,62 +402,28 @@ y_proba = clf.predict_proba(X_test_sc)[:, <span class="num">1</span>]
         <h3>Interactive Notebook</h3>
         <div class="notebook-embed">
           <iframe
-            src="/lab/retro/notebooks/?path=ml-02-classification.ipynb"
+            src="/lab/edit/index.html?path=ml-02-classification.ipynb"
             title="Interactive Python notebook"
             loading="lazy"
             allow="autoplay; clipboard-read; clipboard-write">
           </iframe>
           <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
             Edit and run code in your browser. Work saves automatically.
-            <a href="/lab/?path=ml-02-classification.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+            <a href="/lab/index.html?path=ml-02-classification.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
           </p>
         </div>
       </div>
-      <div class="quiz-block">
-        <h3>Quiz — Classification</h3>
-        <div class="quiz-q" data-correct="c">
-          <p>1. Which metric should you prioritize for cancer detection where missing a case is costly?</p>
-          <label class="quiz-option"><input type="radio" name="cl-q1" value="a"> Precision</label>
-          <label class="quiz-option"><input type="radio" name="cl-q1" value="b"> Accuracy</label>
-          <label class="quiz-option"><input type="radio" name="cl-q1" value="c"> Recall</label>
-          <label class="quiz-option"><input type="radio" name="cl-q1" value="d"> Specificity</label>
-        </div>
-        <div class="quiz-q" data-correct="b">
-          <p>2. ROC-AUC = 0.5 means:</p>
-          <label class="quiz-option"><input type="radio" name="cl-q2" value="a"> Perfect classifier</label>
-          <label class="quiz-option"><input type="radio" name="cl-q2" value="b"> Random guessing</label>
-          <label class="quiz-option"><input type="radio" name="cl-q2" value="c"> Worst possible classifier</label>
-          <label class="quiz-option"><input type="radio" name="cl-q2" value="d"> 50% accuracy</label>
-        </div>
-        <div class="quiz-q" data-correct="d">
-          <p>3. When you have 95% class 0 and 5% class 1, what is the best baseline accuracy a naive model can achieve?</p>
-          <label class="quiz-option"><input type="radio" name="cl-q3" value="a"> 50%</label>
-          <label class="quiz-option"><input type="radio" name="cl-q3" value="b"> 5%</label>
-          <label class="quiz-option"><input type="radio" name="cl-q3" value="c"> 75%</label>
-          <label class="quiz-option"><input type="radio" name="cl-q3" value="d"> 95%</label>
-        </div>
-        <div class="quiz-q" data-correct="a">
-          <p>4. F1 score is the harmonic mean of:</p>
-          <label class="quiz-option"><input type="radio" name="cl-q4" value="a"> Precision and Recall</label>
-          <label class="quiz-option"><input type="radio" name="cl-q4" value="b"> Accuracy and Recall</label>
-          <label class="quiz-option"><input type="radio" name="cl-q4" value="c"> Precision and Specificity</label>
-          <label class="quiz-option"><input type="radio" name="cl-q4" value="d"> AUC and Recall</label>
-        </div>
-        <div class="quiz-q" data-correct="b">
-          <p>5. Logistic regression outputs:</p>
-          <label class="quiz-option"><input type="radio" name="cl-q5" value="a"> A continuous number</label>
-          <label class="quiz-option"><input type="radio" name="cl-q5" value="b"> A probability between 0 and 1</label>
-          <label class="quiz-option"><input type="radio" name="cl-q5" value="c"> An integer class label only</label>
-          <label class="quiz-option"><input type="radio" name="cl-q5" value="d"> A log-odds value as the final prediction</label>
-        </div>
-        <div class="quiz-actions">
-          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-          <span class="quiz-result"></span>
-        </div>
-      </div>
-    </div>
 
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Classification with 10 questions. Pass 70% to mark this topic complete.</p>
+        <a href="/quiz.html?course=ml&topic=classification"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'ml',topic:'classification'})">
+          Take Quiz →
+        </a>
+      </div>
       <div class="completion-banner">
         <div class="completion-icon">🎓</div>
         <div class="completion-body">
@@ -507,6 +434,7 @@ y_proba = clf.predict_proba(X_test_sc)[:, <span class="num">1</span>]
           Mark Complete ✓
         </button>
       </div>
+    </div>
 
     <!-- ══ Panel 2: Tree-Based Learning ══ -->
     <div class="onenote-panel">
@@ -565,63 +493,28 @@ fi.sort_values(ascending=<span class="kw">False</span>).plot(kind=<span class="s
         <h3>Interactive Notebook</h3>
         <div class="notebook-embed">
           <iframe
-            src="/lab/retro/notebooks/?path=ml-03-tree-based-learning.ipynb"
+            src="/lab/edit/index.html?path=ml-03-tree-based-learning.ipynb"
             title="Interactive Python notebook"
             loading="lazy"
             allow="autoplay; clipboard-read; clipboard-write">
           </iframe>
           <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
             Edit and run code in your browser. Work saves automatically.
-            <a href="/lab/?path=ml-03-tree-based-learning.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+            <a href="/lab/index.html?path=ml-03-tree-based-learning.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
           </p>
         </div>
       </div>
-      <div class="quiz-block">
-        <h3>Quiz — Trees</h3>
-        <div class="quiz-q" data-correct="b">
-          <p>1. Random Forest reduces variance by:</p>
-          <label class="quiz-option"><input type="radio" name="tr-q1" value="a"> Using a deeper tree</label>
-          <label class="quiz-option"><input type="radio" name="tr-q1" value="b"> Averaging predictions of many trees on random subsets</label>
-          <label class="quiz-option"><input type="radio" name="tr-q1" value="c"> Pruning all trees aggressively</label>
-          <label class="quiz-option"><input type="radio" name="tr-q1" value="d"> Removing correlated features</label>
-        </div>
-        <div class="quiz-q" data-correct="a">
-          <p>2. Gini impurity measures:</p>
-          <label class="quiz-option"><input type="radio" name="tr-q2" value="a"> How often a randomly chosen element would be incorrectly labeled</label>
-          <label class="quiz-option"><input type="radio" name="tr-q2" value="b"> Average tree depth</label>
-          <label class="quiz-option"><input type="radio" name="tr-q2" value="c"> Information entropy of the full dataset</label>
-          <label class="quiz-option"><input type="radio" name="tr-q2" value="d"> Number of misclassified nodes</label>
-        </div>
-        <div class="quiz-q" data-correct="c">
-          <p>3. Which hyperparameter most directly limits overfitting in a decision tree?</p>
-          <label class="quiz-option"><input type="radio" name="tr-q3" value="a"> n_estimators</label>
-          <label class="quiz-option"><input type="radio" name="tr-q3" value="b"> criterion</label>
-          <label class="quiz-option"><input type="radio" name="tr-q3" value="c"> max_depth</label>
-          <label class="quiz-option"><input type="radio" name="tr-q3" value="d"> random_state</label>
-        </div>
 
-        <div class="quiz-q" data-correct="b">
-          <p>4. In a decision tree, "pruning" is done to:</p>
-          <label class="quiz-option"><input type="radio" name="tb-q4" value="a"> Speed up training</label>
-          <label class="quiz-option"><input type="radio" name="tb-q4" value="b"> Reduce overfitting by removing low-value branches</label>
-          <label class="quiz-option"><input type="radio" name="tb-q4" value="c"> Add more features</label>
-          <label class="quiz-option"><input type="radio" name="tb-q4" value="d"> Increase tree depth</label>
-        </div>
-        <div class="quiz-q" data-correct="c">
-          <p>5. Random Forest reduces variance compared to a single tree by:</p>
-          <label class="quiz-option"><input type="radio" name="tb-q5" value="a"> Using deeper trees</label>
-          <label class="quiz-option"><input type="radio" name="tb-q5" value="b"> Using only the best features</label>
-          <label class="quiz-option"><input type="radio" name="tb-q5" value="c"> Averaging predictions across many decorrelated trees</label>
-          <label class="quiz-option"><input type="radio" name="tb-q5" value="d"> Training on the full dataset each time</label>
-        </div>
-        <div class="quiz-actions">
-          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-          <span class="quiz-result"></span>
-        </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Tree Based Learning with 10 questions. Pass 70% to mark this topic complete.</p>
+        <a href="/quiz.html?course=ml&topic=tree-based-learning"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'ml',topic:'tree-based-learning'})">
+          Take Quiz →
+        </a>
       </div>
-    </div>
-
       <div class="completion-banner">
         <div class="completion-icon">🎓</div>
         <div class="completion-body">
@@ -632,6 +525,7 @@ fi.sort_values(ascending=<span class="kw">False</span>).plot(kind=<span class="s
           Mark Complete ✓
         </button>
       </div>
+    </div>
 
     <!-- ══ Panel 3: Boosting ══ -->
     <div class="onenote-panel">
@@ -692,63 +586,28 @@ scores = cross_val_score(model, X, y, cv=<span class="num">5</span>, scoring=<sp
         <h3>Interactive Notebook</h3>
         <div class="notebook-embed">
           <iframe
-            src="/lab/retro/notebooks/?path=ml-04-boosting.ipynb"
+            src="/lab/edit/index.html?path=ml-04-boosting.ipynb"
             title="Interactive Python notebook"
             loading="lazy"
             allow="autoplay; clipboard-read; clipboard-write">
           </iframe>
           <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
             Edit and run code in your browser. Work saves automatically.
-            <a href="/lab/?path=ml-04-boosting.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+            <a href="/lab/index.html?path=ml-04-boosting.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
           </p>
         </div>
       </div>
-      <div class="quiz-block">
-        <h3>Quiz — Boosting</h3>
-        <div class="quiz-q" data-correct="b">
-          <p>1. In gradient boosting, each new tree is trained on:</p>
-          <label class="quiz-option"><input type="radio" name="bo-q1" value="a"> A random subset of the original data</label>
-          <label class="quiz-option"><input type="radio" name="bo-q1" value="b"> The residual errors of the current ensemble</label>
-          <label class="quiz-option"><input type="radio" name="bo-q1" value="c"> The same data as the first tree</label>
-          <label class="quiz-option"><input type="radio" name="bo-q1" value="d"> Only the misclassified samples</label>
-        </div>
-        <div class="quiz-q" data-correct="c">
-          <p>2. Which library is fastest for very large datasets?</p>
-          <label class="quiz-option"><input type="radio" name="bo-q2" value="a"> sklearn GradientBoostingClassifier</label>
-          <label class="quiz-option"><input type="radio" name="bo-q2" value="b"> XGBoost</label>
-          <label class="quiz-option"><input type="radio" name="bo-q2" value="c"> LightGBM</label>
-          <label class="quiz-option"><input type="radio" name="bo-q2" value="d"> CatBoost</label>
-        </div>
 
-        <div class="quiz-q" data-correct="a">
-          <p>3. XGBoost improved over original GBM primarily by adding:</p>
-          <label class="quiz-option"><input type="radio" name="bo-q3" value="a"> Regularization (L1/L2) and system optimizations</label>
-          <label class="quiz-option"><input type="radio" name="bo-q3" value="b"> Deeper trees</label>
-          <label class="quiz-option"><input type="radio" name="bo-q3" value="c"> More estimators by default</label>
-          <label class="quiz-option"><input type="radio" name="bo-q3" value="d"> GPU support only</label>
-        </div>
-        <div class="quiz-q" data-correct="b">
-          <p>4. A lower learning_rate in gradient boosting means:</p>
-          <label class="quiz-option"><input type="radio" name="bo-q4" value="a"> Faster training</label>
-          <label class="quiz-option"><input type="radio" name="bo-q4" value="b"> More trees needed but better generalization</label>
-          <label class="quiz-option"><input type="radio" name="bo-q4" value="c"> Higher variance</label>
-          <label class="quiz-option"><input type="radio" name="bo-q4" value="d"> Less regularization</label>
-        </div>
-        <div class="quiz-q" data-correct="c">
-          <p>5. Early stopping in XGBoost is used to:</p>
-          <label class="quiz-option"><input type="radio" name="bo-q5" value="a"> Speed up predictions</label>
-          <label class="quiz-option"><input type="radio" name="bo-q5" value="b"> Reduce memory usage</label>
-          <label class="quiz-option"><input type="radio" name="bo-q5" value="c"> Stop training when validation score stops improving</label>
-          <label class="quiz-option"><input type="radio" name="bo-q5" value="d"> Remove outliers from training data</label>
-        </div>
-        <div class="quiz-actions">
-          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-          <span class="quiz-result"></span>
-        </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Boosting with 10 questions. Pass 70% to mark this topic complete.</p>
+        <a href="/quiz.html?course=ml&topic=boosting"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'ml',topic:'boosting'})">
+          Take Quiz →
+        </a>
       </div>
-    </div>
-
       <div class="completion-banner">
         <div class="completion-icon">🎓</div>
         <div class="completion-body">
@@ -759,6 +618,7 @@ scores = cross_val_score(model, X, y, cv=<span class="num">5</span>, scoring=<sp
           Mark Complete ✓
         </button>
       </div>
+    </div>
 
     <!-- ══ Panel 4: SVM ══ -->
     <div class="onenote-panel">
@@ -813,63 +673,28 @@ pipe.fit(X_train, y_train)</code></pre>
         <h3>Interactive Notebook</h3>
         <div class="notebook-embed">
           <iframe
-            src="/lab/retro/notebooks/?path=ml-05-svm.ipynb"
+            src="/lab/edit/index.html?path=ml-05-svm.ipynb"
             title="Interactive Python notebook"
             loading="lazy"
             allow="autoplay; clipboard-read; clipboard-write">
           </iframe>
           <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
             Edit and run code in your browser. Work saves automatically.
-            <a href="/lab/?path=ml-05-svm.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+            <a href="/lab/index.html?path=ml-05-svm.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
           </p>
         </div>
       </div>
-      <div class="quiz-block">
-        <h3>Quiz — SVM</h3>
-        <div class="quiz-q" data-correct="c">
-          <p>1. Support vectors are:</p>
-          <label class="quiz-option"><input type="radio" name="sv-q1" value="a"> All training data points</label>
-          <label class="quiz-option"><input type="radio" name="sv-q1" value="b"> The center of each class cluster</label>
-          <label class="quiz-option"><input type="radio" name="sv-q1" value="c"> The data points closest to the decision boundary</label>
-          <label class="quiz-option"><input type="radio" name="sv-q1" value="d"> The misclassified data points</label>
-        </div>
-        <div class="quiz-q" data-correct="a">
-          <p>2. Before using SVM you must:</p>
-          <label class="quiz-option"><input type="radio" name="sv-q2" value="a"> Scale features to the same range</label>
-          <label class="quiz-option"><input type="radio" name="sv-q2" value="b"> Encode all features as one-hot</label>
-          <label class="quiz-option"><input type="radio" name="sv-q2" value="c"> Remove all outliers</label>
-          <label class="quiz-option"><input type="radio" name="sv-q2" value="d"> Reduce dimensions to 2D</label>
-        </div>
 
-        <div class="quiz-q" data-correct="c">
-          <p>3. To handle non-linearly separable data, SVM uses:</p>
-          <label class="quiz-option"><input type="radio" name="sv-q3" value="a"> Deeper decision boundaries</label>
-          <label class="quiz-option"><input type="radio" name="sv-q3" value="b"> Ensemble of linear SVMs</label>
-          <label class="quiz-option"><input type="radio" name="sv-q3" value="c"> Kernel trick (e.g. RBF) to map to higher dimensions</label>
-          <label class="quiz-option"><input type="radio" name="sv-q3" value="d"> Gradient descent on weights</label>
-        </div>
-        <div class="quiz-q" data-correct="a">
-          <p>4. The C parameter in SVM controls:</p>
-          <label class="quiz-option"><input type="radio" name="sv-q4" value="a"> Trade-off between margin size and misclassification penalty</label>
-          <label class="quiz-option"><input type="radio" name="sv-q4" value="b"> Number of support vectors</label>
-          <label class="quiz-option"><input type="radio" name="sv-q4" value="c"> Kernel bandwidth</label>
-          <label class="quiz-option"><input type="radio" name="sv-q4" value="d"> Learning rate</label>
-        </div>
-        <div class="quiz-q" data-correct="d">
-          <p>5. SVM is NOT recommended when:</p>
-          <label class="quiz-option"><input type="radio" name="sv-q5" value="a"> Data is linearly separable</label>
-          <label class="quiz-option"><input type="radio" name="sv-q5" value="b"> Features need scaling</label>
-          <label class="quiz-option"><input type="radio" name="sv-q5" value="c"> You want a maximum-margin classifier</label>
-          <label class="quiz-option"><input type="radio" name="sv-q5" value="d"> The dataset has millions of rows (quadratic complexity)</label>
-        </div>
-        <div class="quiz-actions">
-          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-          <span class="quiz-result"></span>
-        </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Svm with 10 questions. Pass 70% to mark this topic complete.</p>
+        <a href="/quiz.html?course=ml&topic=svm"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'ml',topic:'svm'})">
+          Take Quiz →
+        </a>
       </div>
-    </div>
-
       <div class="completion-banner">
         <div class="completion-icon">🎓</div>
         <div class="completion-body">
@@ -880,6 +705,7 @@ pipe.fit(X_train, y_train)</code></pre>
           Mark Complete ✓
         </button>
       </div>
+    </div>
 
     <!-- ══ Panel 5: Clustering ══ -->
     <div class="onenote-panel">
@@ -927,63 +753,28 @@ score  = silhouette_score(X, labels)
         <h3>Interactive Notebook</h3>
         <div class="notebook-embed">
           <iframe
-            src="/lab/retro/notebooks/?path=ml-06-clustering.ipynb"
+            src="/lab/edit/index.html?path=ml-06-clustering.ipynb"
             title="Interactive Python notebook"
             loading="lazy"
             allow="autoplay; clipboard-read; clipboard-write">
           </iframe>
           <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
             Edit and run code in your browser. Work saves automatically.
-            <a href="/lab/?path=ml-06-clustering.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+            <a href="/lab/index.html?path=ml-06-clustering.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
           </p>
         </div>
       </div>
-      <div class="quiz-block">
-        <h3>Quiz — Clustering</h3>
-        <div class="quiz-q" data-correct="b">
-          <p>1. Silhouette score ranges from -1 to 1. A score near 1 means:</p>
-          <label class="quiz-option"><input type="radio" name="cl2-q1" value="a"> Clusters are overlapping</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q1" value="b"> Data points are well-matched to their cluster</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q1" value="c"> Wrong number of clusters</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q1" value="d"> The model has overfit</label>
-        </div>
-        <div class="quiz-q" data-correct="c">
-          <p>2. DBSCAN requires you to specify:</p>
-          <label class="quiz-option"><input type="radio" name="cl2-q2" value="a"> Number of clusters K</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q2" value="b"> Initial cluster centroids</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q2" value="c"> Epsilon (neighborhood radius) and min_samples</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q2" value="d"> Maximum number of iterations</label>
-        </div>
 
-        <div class="quiz-q" data-correct="b">
-          <p>3. K-Means assumes clusters are:</p>
-          <label class="quiz-option"><input type="radio" name="cl2-q3" value="a"> Arbitrarily shaped</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q3" value="b"> Spherical and of similar size</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q3" value="c"> Linearly separable</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q3" value="d"> Hierarchically nested</label>
-        </div>
-        <div class="quiz-q" data-correct="a">
-          <p>4. The elbow method helps choose:</p>
-          <label class="quiz-option"><input type="radio" name="cl2-q4" value="a"> The optimal number of clusters K</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q4" value="b"> The distance metric</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q4" value="c"> Epsilon for DBSCAN</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q4" value="d"> Number of outliers</label>
-        </div>
-        <div class="quiz-q" data-correct="c">
-          <p>5. DBSCAN can discover clusters of:</p>
-          <label class="quiz-option"><input type="radio" name="cl2-q5" value="a"> Only spherical shape</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q5" value="b"> Fixed size only</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q5" value="c"> Arbitrary shape, and identifies outliers as noise</label>
-          <label class="quiz-option"><input type="radio" name="cl2-q5" value="d"> Exactly K clusters always</label>
-        </div>
-        <div class="quiz-actions">
-          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-          <span class="quiz-result"></span>
-        </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Clustering with 10 questions. Pass 70% to mark this topic complete.</p>
+        <a href="/quiz.html?course=ml&topic=clustering"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'ml',topic:'clustering'})">
+          Take Quiz →
+        </a>
       </div>
-    </div>
-
       <div class="completion-banner">
         <div class="completion-icon">🎓</div>
         <div class="completion-body">
@@ -994,6 +785,7 @@ score  = silhouette_score(X, labels)
           Mark Complete ✓
         </button>
       </div>
+    </div>
 
     <!-- ══ Panel 6: Anomaly Detection ══ -->
     <div class="onenote-panel">
@@ -1033,63 +825,28 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
         <h3>Interactive Notebook</h3>
         <div class="notebook-embed">
           <iframe
-            src="/lab/retro/notebooks/?path=ml-07-anomaly-detection.ipynb"
+            src="/lab/edit/index.html?path=ml-07-anomaly-detection.ipynb"
             title="Interactive Python notebook"
             loading="lazy"
             allow="autoplay; clipboard-read; clipboard-write">
           </iframe>
           <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
             Edit and run code in your browser. Work saves automatically.
-            <a href="/lab/?path=ml-07-anomaly-detection.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+            <a href="/lab/index.html?path=ml-07-anomaly-detection.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
           </p>
         </div>
       </div>
-      <div class="quiz-block">
-        <h3>Quiz — Anomaly Detection</h3>
-        <div class="quiz-q" data-correct="b">
-          <p>1. Isolation Forest labels -1 for:</p>
-          <label class="quiz-option"><input type="radio" name="an-q1" value="a"> Normal points</label>
-          <label class="quiz-option"><input type="radio" name="an-q1" value="b"> Anomalies</label>
-          <label class="quiz-option"><input type="radio" name="an-q1" value="c"> Borderline cases</label>
-          <label class="quiz-option"><input type="radio" name="an-q1" value="d"> Duplicate rows</label>
-        </div>
 
-        <div class="quiz-q" data-correct="d">
-          <p>2. Z-score outlier detection typically flags points beyond:</p>
-          <label class="quiz-option"><input type="radio" name="an-q2" value="a"> ±1 standard deviations</label>
-          <label class="quiz-option"><input type="radio" name="an-q2" value="b"> ±2 standard deviations</label>
-          <label class="quiz-option"><input type="radio" name="an-q2" value="c"> ±5 standard deviations</label>
-          <label class="quiz-option"><input type="radio" name="an-q2" value="d"> ±3 standard deviations</label>
-        </div>
-        <div class="quiz-q" data-correct="b">
-          <p>3. Local Outlier Factor (LOF) detects anomalies by comparing:</p>
-          <label class="quiz-option"><input type="radio" name="an-q3" value="a"> Distance to centroid</label>
-          <label class="quiz-option"><input type="radio" name="an-q3" value="b"> Local density to that of k nearest neighbors</label>
-          <label class="quiz-option"><input type="radio" name="an-q3" value="c"> Z-score of each feature</label>
-          <label class="quiz-option"><input type="radio" name="an-q3" value="d"> Reconstruction error</label>
-        </div>
-        <div class="quiz-q" data-correct="c">
-          <p>4. The main challenge with real-world anomaly detection datasets is:</p>
-          <label class="quiz-option"><input type="radio" name="an-q4" value="a"> Too many features</label>
-          <label class="quiz-option"><input type="radio" name="an-q4" value="b"> Missing labels</label>
-          <label class="quiz-option"><input type="radio" name="an-q4" value="c"> Extreme class imbalance (anomalies are rare)</label>
-          <label class="quiz-option"><input type="radio" name="an-q4" value="d"> Data is always structured</label>
-        </div>
-        <div class="quiz-q" data-correct="a">
-          <p>5. When using an Autoencoder for anomaly detection, an anomaly shows:</p>
-          <label class="quiz-option"><input type="radio" name="an-q5" value="a"> High reconstruction error (model fails to recreate it)</label>
-          <label class="quiz-option"><input type="radio" name="an-q5" value="b"> Low reconstruction error</label>
-          <label class="quiz-option"><input type="radio" name="an-q5" value="c"> Zero latent representation</label>
-          <label class="quiz-option"><input type="radio" name="an-q5" value="d"> Perfect output match</label>
-        </div>
-        <div class="quiz-actions">
-          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-          <span class="quiz-result"></span>
-        </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Anomaly Detection with 10 questions. Pass 70% to mark this topic complete.</p>
+        <a href="/quiz.html?course=ml&topic=anomaly-detection"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'ml',topic:'anomaly-detection'})">
+          Take Quiz →
+        </a>
       </div>
-    </div>
-
       <div class="completion-banner">
         <div class="completion-icon">🎓</div>
         <div class="completion-body">
@@ -1100,6 +857,7 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
           Mark Complete ✓
         </button>
       </div>
+    </div>
 
     <!-- ══ Panel 7: Naive Bayes / LDA ══ -->
     <div class="onenote-panel">
@@ -1128,63 +886,28 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
         <h3>Interactive Notebook</h3>
         <div class="notebook-embed">
           <iframe
-            src="/lab/retro/notebooks/?path=ml-08-naive-bayes-lda.ipynb"
+            src="/lab/edit/index.html?path=ml-08-naive-bayes-lda.ipynb"
             title="Interactive Python notebook"
             loading="lazy"
             allow="autoplay; clipboard-read; clipboard-write">
           </iframe>
           <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
             Edit and run code in your browser. Work saves automatically.
-            <a href="/lab/?path=ml-08-naive-bayes-lda.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+            <a href="/lab/index.html?path=ml-08-naive-bayes-lda.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
           </p>
         </div>
       </div>
-      <div class="quiz-block">
-        <h3>Quiz — Naive Bayes</h3>
-        <div class="quiz-q" data-correct="c">
-          <p>1. Which Naive Bayes variant is best for text classification with word counts?</p>
-          <label class="quiz-option"><input type="radio" name="nb-q1" value="a"> GaussianNB</label>
-          <label class="quiz-option"><input type="radio" name="nb-q1" value="b"> BernoulliNB</label>
-          <label class="quiz-option"><input type="radio" name="nb-q1" value="c"> MultinomialNB</label>
-          <label class="quiz-option"><input type="radio" name="nb-q1" value="d"> ComplementNB</label>
-        </div>
 
-        <div class="quiz-q" data-correct="c">
-          <p>2. The "Naive" in Naive Bayes means:</p>
-          <label class="quiz-option"><input type="radio" name="nb-q2" value="a"> The algorithm is simple to implement</label>
-          <label class="quiz-option"><input type="radio" name="nb-q2" value="b"> It uses very few parameters</label>
-          <label class="quiz-option"><input type="radio" name="nb-q2" value="c"> Features are assumed to be conditionally independent given the class</label>
-          <label class="quiz-option"><input type="radio" name="nb-q2" value="d"> It only works on small datasets</label>
-        </div>
-        <div class="quiz-q" data-correct="a">
-          <p>3. MultinomialNB is the best fit for:</p>
-          <label class="quiz-option"><input type="radio" name="nb-q3" value="a"> Text classification with word frequency counts</label>
-          <label class="quiz-option"><input type="radio" name="nb-q3" value="b"> Continuous numeric features</label>
-          <label class="quiz-option"><input type="radio" name="nb-q3" value="c"> Binary yes/no features</label>
-          <label class="quiz-option"><input type="radio" name="nb-q3" value="d"> Image pixel data</label>
-        </div>
-        <div class="quiz-q" data-correct="d">
-          <p>4. LDA (Linear Discriminant Analysis) serves a dual purpose as:</p>
-          <label class="quiz-option"><input type="radio" name="nb-q4" value="a"> Clustering and regression</label>
-          <label class="quiz-option"><input type="radio" name="nb-q4" value="b"> Anomaly detection and feature selection</label>
-          <label class="quiz-option"><input type="radio" name="nb-q4" value="c"> Boosting and bagging</label>
-          <label class="quiz-option"><input type="radio" name="nb-q4" value="d"> Classifier and supervised dimensionality reduction</label>
-        </div>
-        <div class="quiz-q" data-correct="b">
-          <p>5. Laplace smoothing in Naive Bayes prevents:</p>
-          <label class="quiz-option"><input type="radio" name="nb-q5" value="a"> Overfitting on large datasets</label>
-          <label class="quiz-option"><input type="radio" name="nb-q5" value="b"> Zero-probability issue when a word/feature is unseen in training</label>
-          <label class="quiz-option"><input type="radio" name="nb-q5" value="c"> Multicollinearity between features</label>
-          <label class="quiz-option"><input type="radio" name="nb-q5" value="d"> Data imbalance</label>
-        </div>
-        <div class="quiz-actions">
-          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-          <span class="quiz-result"></span>
-        </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Naive Bayes Lda with 10 questions. Pass 70% to mark this topic complete.</p>
+        <a href="/quiz.html?course=ml&topic=naive-bayes-lda"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'ml',topic:'naive-bayes-lda'})">
+          Take Quiz →
+        </a>
       </div>
-    </div>
-
       <div class="completion-banner">
         <div class="completion-icon">🎓</div>
         <div class="completion-body">
@@ -1195,6 +918,7 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
           Mark Complete ✓
         </button>
       </div>
+    </div>
 
     <!-- ══ Panel 8: Time Series ══ -->
     <div class="onenote-panel">
@@ -1241,63 +965,28 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
         <h3>Interactive Notebook</h3>
         <div class="notebook-embed">
           <iframe
-            src="/lab/retro/notebooks/?path=ml-09-time-series.ipynb"
+            src="/lab/edit/index.html?path=ml-09-time-series.ipynb"
             title="Interactive Python notebook"
             loading="lazy"
             allow="autoplay; clipboard-read; clipboard-write">
           </iframe>
           <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
             Edit and run code in your browser. Work saves automatically.
-            <a href="/lab/?path=ml-09-time-series.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+            <a href="/lab/index.html?path=ml-09-time-series.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
           </p>
         </div>
       </div>
-      <div class="quiz-block">
-        <h3>Quiz — Time Series</h3>
-        <div class="quiz-q" data-correct="a">
-          <p>1. ARIMA requires the input series to be:</p>
-          <label class="quiz-option"><input type="radio" name="ts-q1" value="a"> Stationary</label>
-          <label class="quiz-option"><input type="radio" name="ts-q1" value="b"> Normalized</label>
-          <label class="quiz-option"><input type="radio" name="ts-q1" value="c"> Seasonal</label>
-          <label class="quiz-option"><input type="radio" name="ts-q1" value="d"> Log-transformed</label>
-        </div>
-        <div class="quiz-q" data-correct="b">
-          <p>2. Which metric is commonly used for time series forecasting evaluation?</p>
-          <label class="quiz-option"><input type="radio" name="ts-q2" value="a"> ROC-AUC</label>
-          <label class="quiz-option"><input type="radio" name="ts-q2" value="b"> MAPE (Mean Absolute Percentage Error)</label>
-          <label class="quiz-option"><input type="radio" name="ts-q2" value="c"> F1 Score</label>
-          <label class="quiz-option"><input type="radio" name="ts-q2" value="d"> Silhouette Score</label>
-        </div>
 
-        <div class="quiz-q" data-correct="a">
-          <p>3. In ARIMA(p, d, q), the 'd' parameter represents:</p>
-          <label class="quiz-option"><input type="radio" name="ts-q3" value="a"> Degree of differencing to achieve stationarity</label>
-          <label class="quiz-option"><input type="radio" name="ts-q3" value="b"> Number of seasonal patterns</label>
-          <label class="quiz-option"><input type="radio" name="ts-q3" value="c"> Number of moving average terms</label>
-          <label class="quiz-option"><input type="radio" name="ts-q3" value="d"> Data smoothing window</label>
-        </div>
-        <div class="quiz-q" data-correct="c">
-          <p>4. Facebook/Meta Prophet was specifically designed for:</p>
-          <label class="quiz-option"><input type="radio" name="ts-q4" value="a"> Stock price prediction</label>
-          <label class="quiz-option"><input type="radio" name="ts-q4" value="b"> Real-time sensor data</label>
-          <label class="quiz-option"><input type="radio" name="ts-q4" value="c"> Business time series with holidays and multiple seasonalities</label>
-          <label class="quiz-option"><input type="radio" name="ts-q4" value="d"> High-frequency financial data</label>
-        </div>
-        <div class="quiz-q" data-correct="b">
-          <p>5. The Augmented Dickey-Fuller (ADF) test checks for:</p>
-          <label class="quiz-option"><input type="radio" name="ts-q5" value="a"> Autocorrelation in residuals</label>
-          <label class="quiz-option"><input type="radio" name="ts-q5" value="b"> Stationarity of a time series</label>
-          <label class="quiz-option"><input type="radio" name="ts-q5" value="c"> Seasonality components</label>
-          <label class="quiz-option"><input type="radio" name="ts-q5" value="d"> Forecast accuracy</label>
-        </div>
-        <div class="quiz-actions">
-          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-          <span class="quiz-result"></span>
-        </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Time Series with 10 questions. Pass 70% to mark this topic complete.</p>
+        <a href="/quiz.html?course=ml&topic=time-series"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'ml',topic:'time-series'})">
+          Take Quiz →
+        </a>
       </div>
-    </div>
-
       <div class="completion-banner">
         <div class="completion-icon">🎓</div>
         <div class="completion-body">
@@ -1308,6 +997,7 @@ anomalies = X[labels == -<span class="num">1</span>]</code></pre>
           Mark Complete ✓
         </button>
       </div>
+    </div>
 
     <!-- ══ Panel 9: Hyperparameter Optimization ══ -->
     <div class="onenote-panel">
@@ -1356,62 +1046,28 @@ study.optimize(objective, n_trials=<span class="num">50</span>)
         <h3>Interactive Notebook</h3>
         <div class="notebook-embed">
           <iframe
-            src="/lab/retro/notebooks/?path=ml-10-hyperparameter-optimization.ipynb"
+            src="/lab/edit/index.html?path=ml-10-hyperparameter-optimization.ipynb"
             title="Interactive Python notebook"
             loading="lazy"
             allow="autoplay; clipboard-read; clipboard-write">
           </iframe>
           <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
             Edit and run code in your browser. Work saves automatically.
-            <a href="/lab/?path=ml-10-hyperparameter-optimization.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+            <a href="/lab/index.html?path=ml-10-hyperparameter-optimization.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
           </p>
         </div>
       </div>
-      <div class="quiz-block">
-        <h3>Quiz — Hyperparameter Optimization</h3>
-        <div class="quiz-q" data-correct="c">
-          <p>1. Which approach is most efficient for expensive-to-train models?</p>
-          <label class="quiz-option"><input type="radio" name="hp-q1" value="a"> Grid Search</label>
-          <label class="quiz-option"><input type="radio" name="hp-q1" value="b"> Random Search</label>
-          <label class="quiz-option"><input type="radio" name="hp-q1" value="c"> Bayesian Optimization (Optuna)</label>
-          <label class="quiz-option"><input type="radio" name="hp-q1" value="d"> Manual trial and error</label>
-        </div>
-        <div class="quiz-q" data-correct="b">
-          <p>2. Cross-validation during hyperparameter search helps:</p>
-          <label class="quiz-option"><input type="radio" name="hp-q2" value="a"> Reduce training time</label>
-          <label class="quiz-option"><input type="radio" name="hp-q2" value="b"> Avoid overfitting to a single validation split</label>
-          <label class="quiz-option"><input type="radio" name="hp-q2" value="c"> Increase model complexity</label>
-          <label class="quiz-option"><input type="radio" name="hp-q2" value="d"> Remove outliers automatically</label>
-        </div>
 
-        <div class="quiz-q" data-correct="a">
-          <p>3. In k-fold cross-validation, the dataset is:</p>
-          <label class="quiz-option"><input type="radio" name="hp-q3" value="a"> Split into k folds; each fold serves as test set once</label>
-          <label class="quiz-option"><input type="radio" name="hp-q3" value="b"> Shuffled k times before training</label>
-          <label class="quiz-option"><input type="radio" name="hp-q3" value="c"> Used k times with replacement</label>
-          <label class="quiz-option"><input type="radio" name="hp-q3" value="d"> Duplicated k times for more data</label>
-        </div>
-        <div class="quiz-q" data-correct="d">
-          <p>4. Using the same test set repeatedly during hyperparameter search causes:</p>
-          <label class="quiz-option"><input type="radio" name="hp-q4" value="a"> Underfitting</label>
-          <label class="quiz-option"><input type="radio" name="hp-q4" value="b"> Faster convergence</label>
-          <label class="quiz-option"><input type="radio" name="hp-q4" value="c"> High bias</label>
-          <label class="quiz-option"><input type="radio" name="hp-q4" value="d"> Data leakage — test set "leaks" into the tuning process</label>
-        </div>
-        <div class="quiz-q" data-correct="b">
-          <p>5. Using sklearn Pipeline during hyperparameter search ensures:</p>
-          <label class="quiz-option"><input type="radio" name="hp-q5" value="a"> Faster grid search</label>
-          <label class="quiz-option"><input type="radio" name="hp-q5" value="b"> Scaler and model are fitted only on training folds, preventing leakage</label>
-          <label class="quiz-option"><input type="radio" name="hp-q5" value="c"> Features are automatically selected</label>
-          <label class="quiz-option"><input type="radio" name="hp-q5" value="d"> Model is re-trained on each trial</label>
-        </div>
-        <div class="quiz-actions">
-          <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-          <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-          <span class="quiz-result"></span>
-        </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Hyperparameter Optimization with 10 questions. Pass 70% to mark this topic complete.</p>
+        <a href="/quiz.html?course=ml&topic=hyperparameter-optimization"
+           class="btn btn-primary"
+           onclick="trackEvent('quiz_open',{course:'ml',topic:'hyperparameter-optimization'})">
+          Take Quiz →
+        </a>
       </div>
-
       <div class="completion-banner">
         <div class="completion-icon">🎓</div>
         <div class="completion-body">

@@ -1,0 +1,116 @@
+{
+  "course_label": "Machine Learning",
+  "title": "Anomaly Detection",
+  "questions": [
+    {
+      "question": "Isolation Forest labels -1 for:",
+      "options": [
+        "Normal points",
+        "Anomalies",
+        "Borderline cases",
+        "Duplicate rows"
+      ],
+      "correct": "b",
+      "explanation": "IsolationForest.predict() returns -1 for anomalies and 1 for normal points."
+    },
+    {
+      "question": "Z-score outlier detection typically flags points beyond:",
+      "options": [
+        "\u00b11 SD",
+        "\u00b12 SD",
+        "\u00b13 SD",
+        "\u00b15 SD"
+      ],
+      "correct": "c",
+      "explanation": "3 standard deviations captures 99.7% of normally distributed data. Points beyond are flagged as outliers."
+    },
+    {
+      "question": "LOF detects anomalies by comparing:",
+      "options": [
+        "Distance to centroid",
+        "Local density to that of k nearest neighbours",
+        "Z-score",
+        "Reconstruction error"
+      ],
+      "correct": "b",
+      "explanation": "LOF measures how isolated a point is relative to its local neighbourhood density."
+    },
+    {
+      "question": "The main challenge with real-world anomaly detection is:",
+      "options": [
+        "Too many features",
+        "Missing labels",
+        "Extreme class imbalance (anomalies are rare)",
+        "Data is always structured"
+      ],
+      "correct": "c",
+      "explanation": "In fraud or fault detection, anomalies may be <1% of data, making standard accuracy metrics meaningless."
+    },
+    {
+      "question": "An Autoencoder detects anomalies because:",
+      "options": [
+        "High reconstruction error indicates the model cannot recreate unusual inputs",
+        "Low reconstruction error",
+        "Zero latent representation",
+        "Perfect output match"
+      ],
+      "correct": "a",
+      "explanation": "Autoencoders trained on normal data struggle to reconstruct anomalies, resulting in high reconstruction error."
+    },
+    {
+      "question": "The 'contamination' parameter in IsolationForest sets:",
+      "options": [
+        "Tree depth",
+        "The expected fraction of anomalies in the dataset",
+        "Number of trees",
+        "Random seed"
+      ],
+      "correct": "b",
+      "explanation": "contamination tells the algorithm what fraction of samples to label as anomalies when calling predict()."
+    },
+    {
+      "question": "One-Class SVM is useful when:",
+      "options": [
+        "Both normal and anomaly labels are available",
+        "Only normal data is available during training",
+        "Data has many features",
+        "Speed is critical"
+      ],
+      "correct": "b",
+      "explanation": "One-Class SVM learns a boundary around normal data without any anomaly examples."
+    },
+    {
+      "question": "ROC-AUC is preferred for anomaly detection evaluation because:",
+      "options": [
+        "It is fast to compute",
+        "It is threshold-independent and works well with imbalanced classes",
+        "It measures absolute error",
+        "It requires no labels"
+      ],
+      "correct": "b",
+      "explanation": "ROC-AUC summarises performance across all classification thresholds, important when the optimal threshold is unknown."
+    },
+    {
+      "question": "DBSCAN can be used for anomaly detection because:",
+      "options": [
+        "It removes outliers by default",
+        "Points in sparse regions are labelled as noise (-1)",
+        "It always finds the right number of clusters",
+        "It scales to large datasets"
+      ],
+      "correct": "b",
+      "explanation": "DBSCAN's noise points (label -1) are naturally isolated from dense clusters \u2014 effectively anomaly candidates."
+    },
+    {
+      "question": "Which metric should NOT be used as the only metric for imbalanced anomaly detection?",
+      "options": [
+        "Precision",
+        "Recall",
+        "F1 Score",
+        "Raw accuracy"
+      ],
+      "correct": "d",
+      "explanation": "With 99% normal data, a model that always predicts 'normal' gets 99% accuracy \u2014 completely useless."
+    }
+  ]
+}

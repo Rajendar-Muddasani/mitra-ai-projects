@@ -1,0 +1,116 @@
+{
+  "course_label": "Machine Learning",
+  "title": "Naive Bayes / LDA",
+  "questions": [
+    {
+      "question": "The 'Naive' in Naive Bayes means:",
+      "options": [
+        "Simple to implement",
+        "Uses few parameters",
+        "Features are assumed conditionally independent given the class",
+        "Only works on small data"
+      ],
+      "correct": "c",
+      "explanation": "Naive Bayes assumes P(x1,x2|y) = P(x1|y) * P(x2|y). This independence assumption is often violated but the model still works well in practice."
+    },
+    {
+      "question": "MultinomialNB is best for:",
+      "options": [
+        "Continuous numeric features",
+        "Text classification with word frequency counts",
+        "Binary yes/no features",
+        "Image pixels"
+      ],
+      "correct": "b",
+      "explanation": "MultinomialNB models word count distributions, making it ideal for document classification tasks."
+    },
+    {
+      "question": "LDA serves dual purposes as:",
+      "options": [
+        "Clustering and regression",
+        "Anomaly detection and feature selection",
+        "Classifier and supervised dimensionality reduction",
+        "Boosting and bagging"
+      ],
+      "correct": "c",
+      "explanation": "LDA finds directions that maximise class separation, both for classification and projecting to lower dimensions."
+    },
+    {
+      "question": "Laplace smoothing prevents:",
+      "options": [
+        "Overfitting on large datasets",
+        "Zero-probability for unseen features",
+        "Multicollinearity",
+        "Class imbalance"
+      ],
+      "correct": "b",
+      "explanation": "Without smoothing, a word unseen in training gives probability 0, zeroing out the entire posterior. Laplace adds a small constant."
+    },
+    {
+      "question": "GaussianNB assumes features follow:",
+      "options": [
+        "Uniform distribution",
+        "Binomial distribution",
+        "Gaussian (normal) distribution",
+        "Poisson distribution"
+      ],
+      "correct": "c",
+      "explanation": "GaussianNB models continuous features as normally distributed within each class."
+    },
+    {
+      "question": "LDA assumes:",
+      "options": [
+        "Non-linear class boundaries",
+        "All classes share the same covariance matrix",
+        "Features are independent",
+        "No distributional assumptions"
+      ],
+      "correct": "b",
+      "explanation": "LDA (Fisher's) assumes equal class covariance. When this is violated, QDA (Quadratic DA) is preferred."
+    },
+    {
+      "question": "Naive Bayes works well with text because:",
+      "options": [
+        "Text features are always independent",
+        "Word counts are large sparse vectors where the independence assumption is practically useful",
+        "Text has no missing values",
+        "Word order matters"
+      ],
+      "correct": "b",
+      "explanation": "Despite the false independence assumption, NB handles high-dimensional sparse text features efficiently and generalises well."
+    },
+    {
+      "question": "BernoulliNB is most appropriate when:",
+      "options": [
+        "Features are word counts",
+        "Features are binary (word present/absent)",
+        "Features are continuous",
+        "Classes are imbalanced"
+      ],
+      "correct": "b",
+      "explanation": "BernoulliNB models binary features \u2014 suitable for bag-of-words where you only care whether a word appears, not how often."
+    },
+    {
+      "question": "Compared to logistic regression, Naive Bayes is generally:",
+      "options": [
+        "Slower to train",
+        "More accurate on large data",
+        "Faster to train but less accurate when independence assumption is violated",
+        "Better at handling correlated features"
+      ],
+      "correct": "c",
+      "explanation": "NB is very fast and effective when features are roughly independent. LR usually outperforms NB when features are correlated."
+    },
+    {
+      "question": "QDA (Quadratic DA) differs from LDA by:",
+      "options": [
+        "Using fewer features",
+        "Allowing each class to have its own covariance matrix",
+        "Being faster to train",
+        "Requiring fewer samples"
+      ],
+      "correct": "b",
+      "explanation": "QDA relaxes LDA's equal-covariance assumption, allowing quadratic boundaries \u2014 more flexible but needs more data."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "course_label": "Programming",
+  "title": "Python Basics",
+  "questions": [
+    {
+      "question": "What does range(2, 10, 3) produce?",
+      "options": [
+        "[2,5,8,11]",
+        "[2,5,8]",
+        "[2,4,6,8]",
+        "[2,5,8,10]"
+      ],
+      "correct": "b",
+      "explanation": "range(start, stop, step) produces 2, 5, 8 \u2014 stopping before 10."
+    },
+    {
+      "question": "What is the output of [x*2 for x in range(3)]?",
+      "options": [
+        "[0,1,2]",
+        "[2,4,6]",
+        "[0,2,4]",
+        "[1,2,3]"
+      ],
+      "correct": "c",
+      "explanation": "range(3) gives 0,1,2. Multiplied by 2: [0,2,4]."
+    },
+    {
+      "question": "Which is used for context management (auto-closing files)?",
+      "options": [
+        "try/except",
+        "with statement",
+        "if/else",
+        "for loop"
+      ],
+      "correct": "a",
+      "explanation": "The 'with' statement invokes __enter__ and __exit__, ensuring resources are released even if an error occurs."
+    },
+    {
+      "question": "What is the key difference between a list and a tuple?",
+      "options": [
+        "Lists are ordered, tuples are not",
+        "Tuples are immutable, lists are mutable",
+        "Tuples support indexing, lists do not",
+        "Lists can store mixed types, tuples cannot"
+      ],
+      "correct": "b",
+      "explanation": "Tuples cannot be modified after creation (immutable). Lists support append, remove, etc."
+    },
+    {
+      "question": "Which block catches exceptions in Python?",
+      "options": [
+        "catch",
+        "rescue",
+        "except",
+        "handle"
+      ],
+      "correct": "c",
+      "explanation": "Python uses try/except. Java/C++ use try/catch \u2014 Python's keyword is 'except'."
+    },
+    {
+      "question": "What does *args in a function definition do?",
+      "options": [
+        "Passes keyword arguments",
+        "Collects extra positional arguments into a tuple",
+        "Returns multiple values",
+        "Marks the function as async"
+      ],
+      "correct": "b",
+      "explanation": "*args collects any number of positional arguments beyond the defined parameters into a tuple."
+    },
+    {
+      "question": "Dictionary comprehension syntax in Python is:",
+      "options": [
+        "{k: v for k, v in items}",
+        "[k:v for k,v in items]",
+        "(k:v for k in items)",
+        "dict(k=v for k,v in items)"
+      ],
+      "correct": "a",
+      "explanation": "{key: value for item in iterable} creates a dict from an iteration."
+    },
+    {
+      "question": "Which built-in function returns the memory address of an object?",
+      "options": [
+        "addr()",
+        "memory()",
+        "id()",
+        "ref()"
+      ],
+      "correct": "c",
+      "explanation": "id() returns the identity of an object \u2014 its memory address in CPython."
+    },
+    {
+      "question": "'else' in a for loop executes when:",
+      "options": [
+        "The loop body raises an exception",
+        "The loop completes without hitting a 'break'",
+        "Always after the loop",
+        "Only if the loop ran zero iterations"
+      ],
+      "correct": "b",
+      "explanation": "The for-else construct: the else block runs only if the loop wasn't exited via break."
+    },
+    {
+      "question": "A generator function uses which keyword?",
+      "options": [
+        "return",
+        "async",
+        "yield",
+        "defer"
+      ],
+      "correct": "c",
+      "explanation": "yield pauses the function and returns a value. On next call, execution resumes from where it left off \u2014 memory-efficient for large sequences."
+    }
+  ]
+}

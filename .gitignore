@@ -40,3 +40,6 @@ node_modules/
 # Cloudflare
 .wrangler/
 wrangler.toml.local
+
+# Source notebooks (cloned from AIML-Engineering-Lab — not committed)
+notebooks-source/

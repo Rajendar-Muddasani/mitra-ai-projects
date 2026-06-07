@@ -1,0 +1,116 @@
+{
+  "course_label": "Machine Learning",
+  "title": "Time Series Forecasting",
+  "questions": [
+    {
+      "question": "ARIMA requires the input series to be:",
+      "options": [
+        "Seasonal",
+        "Stationary",
+        "Normalized",
+        "Log-transformed"
+      ],
+      "correct": "b",
+      "explanation": "ARIMA (AutoRegressive Integrated Moving Average) requires stationarity. The 'I' (integrated) component handles differencing to achieve it."
+    },
+    {
+      "question": "MAPE measures:",
+      "options": [
+        "Mean Absolute Percentage Error",
+        "Mean Absolute Prediction Error",
+        "Model Accuracy Per Epoch",
+        "Maximum Absolute Prediction Error"
+      ],
+      "correct": "a",
+      "explanation": "MAPE = mean(|actual - predicted| / |actual|) * 100. A scale-free metric good for comparing across datasets."
+    },
+    {
+      "question": "In ARIMA(p, d, q), 'd' represents:",
+      "options": [
+        "Number of autoregressive terms",
+        "Degree of differencing",
+        "Number of moving average terms",
+        "Seasonal period"
+      ],
+      "correct": "b",
+      "explanation": "'d' is the order of differencing needed to make the series stationary. d=1 means first differencing."
+    },
+    {
+      "question": "Prophet was designed for:",
+      "options": [
+        "Stock price prediction",
+        "Real-time sensor data",
+        "Business time series with holidays and multiple seasonalities",
+        "High-frequency financial data"
+      ],
+      "correct": "c",
+      "explanation": "Meta's Prophet handles daily/weekly/yearly seasonality and holiday effects automatically with minimal configuration."
+    },
+    {
+      "question": "The Augmented Dickey-Fuller (ADF) test checks for:",
+      "options": [
+        "Autocorrelation in residuals",
+        "Stationarity of a time series",
+        "Seasonality",
+        "Forecast accuracy"
+      ],
+      "correct": "b",
+      "explanation": "Low ADF p-value (< 0.05) rejects the unit root hypothesis \u2014 indicating stationarity."
+    },
+    {
+      "question": "ACF (Autocorrelation Function) plots help determine:",
+      "options": [
+        "Trend direction",
+        "The lag at which correlation drops to near-zero \u2014 guiding MA terms",
+        "Feature importance",
+        "Outliers"
+      ],
+      "correct": "b",
+      "explanation": "ACF shows correlation at each lag. It helps choose the 'q' (MA order) in ARIMA \u2014 q is where ACF cuts off."
+    },
+    {
+      "question": "LSTM networks are preferred for time series when:",
+      "options": [
+        "The series is stationary",
+        "Complex non-linear long-range dependencies exist",
+        "Fewer than 100 data points are available",
+        "Speed is critical"
+      ],
+      "correct": "b",
+      "explanation": "LSTMs can learn long-range dependencies through gated memory cells \u2014 useful for complex sequential patterns OLS/ARIMA cannot capture."
+    },
+    {
+      "question": "Cross-validation for time series differs from standard k-fold because:",
+      "options": [
+        "It uses more folds",
+        "It must preserve temporal order \u2014 future data cannot train a model evaluated on past data",
+        "It requires scaling",
+        "It uses bootstrap sampling"
+      ],
+      "correct": "b",
+      "explanation": "Time series CV uses expanding or rolling windows, always training on past data and validating on future data."
+    },
+    {
+      "question": "Seasonal differencing removes:",
+      "options": [
+        "Trend from the series",
+        "The seasonal pattern at lag s (e.g., 12 for monthly)",
+        "Random noise",
+        "All autocorrelation"
+      ],
+      "correct": "b",
+      "explanation": "Seasonal differencing: y(t) - y(t-s) removes the periodic component, useful before fitting SARIMA."
+    },
+    {
+      "question": "XGBoost with lag features can be used for time series by:",
+      "options": [
+        "Treating it as a sequence prediction problem using RNNs",
+        "Converting the series to a supervised problem using lagged values as features",
+        "Using the raw series as target",
+        "Applying it directly without feature engineering"
+      ],
+      "correct": "b",
+      "explanation": "Creating features lag_1, lag_2 \u2026 lag_n from the series allows standard ML models to treat forecasting as regression."
+    }
+  ]
+}

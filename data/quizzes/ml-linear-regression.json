@@ -1,0 +1,116 @@
+{
+  "course_label": "Machine Learning",
+  "title": "Linear Regression",
+  "questions": [
+    {
+      "question": "Which metric is most interpretable when the target is in dollars?",
+      "options": [
+        "R\u00b2 Score",
+        "RMSE",
+        "MSE",
+        "Adjusted R\u00b2"
+      ],
+      "correct": "b",
+      "explanation": "RMSE is in the same units as the target variable, making it directly interpretable."
+    },
+    {
+      "question": "Which regularization method can reduce some feature weights to exactly zero?",
+      "options": [
+        "Ridge (L2)",
+        "ElasticNet only",
+        "Lasso (L1)",
+        "OLS"
+      ],
+      "correct": "c",
+      "explanation": "Lasso (L1) applies absolute-value penalty which can zero out weights entirely \u2014 useful for feature selection."
+    },
+    {
+      "question": "Before using Ridge regression, you should:",
+      "options": [
+        "Scale features with StandardScaler",
+        "Encode all features as binary",
+        "Remove all null values only",
+        "Normalize the target variable"
+      ],
+      "correct": "a",
+      "explanation": "Ridge is sensitive to feature magnitudes. StandardScaler ensures all features contribute equally to the penalty."
+    },
+    {
+      "question": "An R\u00b2 score of 0.95 means:",
+      "options": [
+        "The model is 95% accurate",
+        "95% of predictions are correct",
+        "RMSE is 5%",
+        "The model explains 95% of the variance in the target"
+      ],
+      "correct": "d",
+      "explanation": "R\u00b2 measures explained variance, not accuracy. 0.95 means 95% of the target's variability is captured by the model."
+    },
+    {
+      "question": "Which is NOT a valid use case for linear regression?",
+      "options": [
+        "Predicting house prices",
+        "Classifying spam vs. not spam",
+        "Forecasting next month's sales",
+        "Estimating student exam scores"
+      ],
+      "correct": "b",
+      "explanation": "Classification requires predicting categories. Linear regression outputs continuous values, not class probabilities."
+    },
+    {
+      "question": "What problem does Ridge regression solve that OLS cannot?",
+      "options": [
+        "High bias",
+        "Multicollinearity between features",
+        "Non-linear relationships",
+        "Missing data"
+      ],
+      "correct": "b",
+      "explanation": "Ridge adds an L2 penalty that shrinks correlated feature weights, stabilising estimates when multicollinearity is present."
+    },
+    {
+      "question": "The intercept (b) in y = wx + b represents:",
+      "options": [
+        "The slope of the line",
+        "The target value when all features are zero",
+        "The regularisation term",
+        "The error term"
+      ],
+      "correct": "b",
+      "explanation": "The intercept is the predicted value when all input features equal zero."
+    },
+    {
+      "question": "Which loss function does Ordinary Least Squares minimise?",
+      "options": [
+        "Mean Absolute Error",
+        "Mean Squared Error",
+        "Log Loss",
+        "Hinge Loss"
+      ],
+      "correct": "b",
+      "explanation": "OLS minimises the sum (and mean) of squared residuals between predicted and actual values."
+    },
+    {
+      "question": "A residual plot showing a clear curve pattern suggests:",
+      "options": [
+        "The model is well-fitted",
+        "Heteroscedasticity",
+        "A non-linear relationship not captured by the model",
+        "Multicollinearity"
+      ],
+      "correct": "c",
+      "explanation": "Curved patterns in residuals indicate the linear model is missing non-linear structure in the data."
+    },
+    {
+      "question": "ElasticNet combines which two regularisation methods?",
+      "options": [
+        "OLS and Ridge",
+        "Lasso and Ridge",
+        "OLS and Lasso",
+        "Ridge and Polynomial"
+      ],
+      "correct": "b",
+      "explanation": "ElasticNet = alpha * L1 + (1-alpha) * L2, letting you control the mixture."
+    }
+  ]
+}

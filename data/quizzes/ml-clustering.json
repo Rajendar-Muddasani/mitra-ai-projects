@@ -1,0 +1,116 @@
+{
+  "course_label": "Machine Learning",
+  "title": "Clustering",
+  "questions": [
+    {
+      "question": "Silhouette score near +1 means:",
+      "options": [
+        "Clusters are overlapping",
+        "Data points are well-matched to their cluster, far from others",
+        "Wrong number of clusters",
+        "The model has overfit"
+      ],
+      "correct": "b",
+      "explanation": "Silhouette = (b - a) / max(a,b) where a = intra-cluster distance, b = nearest-cluster distance. Near 1 = tight, well-separated clusters."
+    },
+    {
+      "question": "DBSCAN requires you to specify:",
+      "options": [
+        "Number of clusters K",
+        "Initial cluster centroids",
+        "Epsilon (neighbourhood radius) and min_samples",
+        "Maximum number of iterations"
+      ],
+      "correct": "c",
+      "explanation": "DBSCAN defines clusters as dense regions separated by low-density areas. Epsilon and min_samples define 'dense'."
+    },
+    {
+      "question": "K-Means assumes clusters are:",
+      "options": [
+        "Arbitrarily shaped",
+        "Spherical and of similar size",
+        "Linearly separable",
+        "Hierarchically nested"
+      ],
+      "correct": "b",
+      "explanation": "K-Means minimises Euclidean distance to centroids, which implicitly assumes spherical, equally-sized clusters."
+    },
+    {
+      "question": "The elbow method helps choose:",
+      "options": [
+        "The optimal number of clusters K",
+        "The distance metric",
+        "Epsilon for DBSCAN",
+        "Number of outliers"
+      ],
+      "correct": "a",
+      "explanation": "Plot inertia vs K. The 'elbow' \u2014 where inertia reduction slows sharply \u2014 suggests the optimal K."
+    },
+    {
+      "question": "DBSCAN can discover clusters of:",
+      "options": [
+        "Only spherical shape",
+        "Fixed size only",
+        "Arbitrary shape, and labels low-density points as noise",
+        "Exactly K clusters always"
+      ],
+      "correct": "c",
+      "explanation": "DBSCAN is density-based and makes no shape assumptions. Points in sparse regions are labelled -1 (noise/outlier)."
+    },
+    {
+      "question": "What are 'core points' in DBSCAN?",
+      "options": [
+        "Points on the cluster boundary",
+        "Points with at least min_samples neighbours within epsilon",
+        "The cluster centroids",
+        "The outlier points"
+      ],
+      "correct": "b",
+      "explanation": "A core point has \u2265 min_samples neighbours within its epsilon neighbourhood. It forms the dense core of a cluster."
+    },
+    {
+      "question": "Hierarchical clustering produces:",
+      "options": [
+        "A fixed K clusters",
+        "A dendrogram showing merges/splits at all distances",
+        "A single centroid",
+        "Binary decision trees"
+      ],
+      "correct": "b",
+      "explanation": "Hierarchical clustering builds a tree of merges (agglomerative) or splits (divisive). You choose the cut level to get K clusters."
+    },
+    {
+      "question": "When K-Means is run multiple times with 'n_init > 1', it:",
+      "options": [
+        "Uses different datasets each time",
+        "Runs with different random initialisations and picks the best result",
+        "Changes K each time",
+        "Applies regularisation"
+      ],
+      "correct": "b",
+      "explanation": "Different random starting centroids can converge to different local minima. Multiple initialisations help find the global optimum."
+    },
+    {
+      "question": "Cluster inertia measures:",
+      "options": [
+        "Distance between cluster centres",
+        "Sum of squared distances from each point to its cluster centroid",
+        "Number of outliers",
+        "Model accuracy"
+      ],
+      "correct": "b",
+      "explanation": "Inertia = \u03a3 min distance\u00b2 to assigned centroid. Lower inertia means tighter, more compact clusters."
+    },
+    {
+      "question": "Gaussian Mixture Models (GMM) differ from K-Means by:",
+      "options": [
+        "Using fewer clusters",
+        "Assigning soft probabilities of cluster membership instead of hard assignments",
+        "Requiring feature scaling",
+        "Using L1 distance"
+      ],
+      "correct": "b",
+      "explanation": "GMM is a probabilistic model \u2014 each point has a probability distribution over clusters rather than a hard assignment."
+    }
+  ]
+}

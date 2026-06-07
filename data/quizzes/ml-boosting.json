@@ -1,0 +1,116 @@
+{
+  "course_label": "Machine Learning",
+  "title": "Boosting",
+  "questions": [
+    {
+      "question": "In gradient boosting, each new tree is trained to:",
+      "options": [
+        "Replicate the previous tree",
+        "Correct the errors (residuals) of the previous ensemble",
+        "Randomly sample features",
+        "Reduce training data size"
+      ],
+      "correct": "b",
+      "explanation": "Each tree fits the negative gradient of the loss \u2014 effectively the residuals from the current ensemble."
+    },
+    {
+      "question": "A lower learning_rate in gradient boosting means:",
+      "options": [
+        "Faster training",
+        "More trees needed but usually better generalisation",
+        "Higher variance",
+        "Less regularisation"
+      ],
+      "correct": "b",
+      "explanation": "Lower learning rate shrinks each tree's contribution, requiring more trees to converge but reducing overfitting risk."
+    },
+    {
+      "question": "XGBoost improved over classic GBM primarily by adding:",
+      "options": [
+        "Regularisation (L1/L2) and system optimisations",
+        "Deeper trees",
+        "More estimators by default",
+        "GPU support only"
+      ],
+      "correct": "a",
+      "explanation": "XGBoost adds column subsampling, row subsampling, L1/L2 regularisation, and tree pruning \u2014 improvements over sklearn GBM."
+    },
+    {
+      "question": "Early stopping in XGBoost stops training when:",
+      "options": [
+        "All features have been used",
+        "Validation score stops improving for N consecutive rounds",
+        "Training loss reaches zero",
+        "Memory limit is reached"
+      ],
+      "correct": "b",
+      "explanation": "Early stopping monitors a validation metric. If it doesn't improve for `early_stopping_rounds`, training stops to prevent overfitting."
+    },
+    {
+      "question": "LightGBM's 'leaf-wise' tree growth differs from 'level-wise' by:",
+      "options": [
+        "Growing the entire level before moving deeper",
+        "Always splitting the leaf with the highest loss reduction regardless of depth",
+        "Using fewer features",
+        "Requiring more memory"
+      ],
+      "correct": "b",
+      "explanation": "Leaf-wise growth can create deeper trees faster and achieve lower loss, but can overfit on small datasets without constraints."
+    },
+    {
+      "question": "The 'subsample' parameter in XGBoost controls:",
+      "options": [
+        "Fraction of features used per tree",
+        "Fraction of training rows sampled per tree",
+        "L2 regularisation strength",
+        "Number of parallel threads"
+      ],
+      "correct": "b",
+      "explanation": "subsample < 1.0 means each tree is trained on a random fraction of rows \u2014 reducing variance and adding diversity."
+    },
+    {
+      "question": "CatBoost is specifically designed to handle:",
+      "options": [
+        "Missing values",
+        "Categorical features natively without label encoding",
+        "GPU training only",
+        "Very small datasets"
+      ],
+      "correct": "b",
+      "explanation": "CatBoost implements ordered target statistics to handle categorical features without leakage \u2014 a common issue with simple label encoding."
+    },
+    {
+      "question": "Which metric should you optimise for imbalanced binary classification in boosting?",
+      "options": [
+        "Accuracy",
+        "AUC-ROC",
+        "RMSE",
+        "Gini impurity"
+      ],
+      "correct": "b",
+      "explanation": "AUC-ROC is threshold-independent and robust to class imbalance. Accuracy is misleading when classes are skewed."
+    },
+    {
+      "question": "The 'n_estimators' parameter controls:",
+      "options": [
+        "Maximum tree depth",
+        "Number of boosting rounds (trees)",
+        "Learning rate decay",
+        "Feature sampling fraction"
+      ],
+      "correct": "b",
+      "explanation": "Each 'estimator' in boosting is one sequential tree. More estimators = longer training but potentially better fit."
+    },
+    {
+      "question": "To prevent overfitting in XGBoost, you should NOT:",
+      "options": [
+        "Use early stopping",
+        "Increase max_depth without limit",
+        "Reduce learning_rate",
+        "Use column subsampling"
+      ],
+      "correct": "b",
+      "explanation": "Increasing max_depth makes trees more complex and more likely to overfit. Keeping it in range 3\u20138 is typical."
+    }
+  ]
+}

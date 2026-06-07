@@ -1,0 +1,116 @@
+{
+  "course_label": "Programming",
+  "title": "Shell / Bash",
+  "questions": [
+    {
+      "question": "grep -r 'import' src/ does:",
+      "options": [
+        "Replaces 'import' in all files",
+        "Recursively searches all files under src/ for lines containing 'import'",
+        "Counts lines containing 'import'",
+        "Removes lines with 'import'"
+      ],
+      "correct": "b",
+      "explanation": "-r = recursive. grep searches file contents and prints matching lines with filenames."
+    },
+    {
+      "question": "The pipe character | in Bash:",
+      "options": [
+        "Runs commands in parallel",
+        "Passes stdout of the left command as stdin of the right command",
+        "Redirects output to a file",
+        "Terminates a command"
+      ],
+      "correct": "b",
+      "explanation": "Piping: `cmd1 | cmd2` sends cmd1's output directly to cmd2's input without creating a temp file."
+    },
+    {
+      "question": "chmod +x script.sh does:",
+      "options": [
+        "Makes the file executable",
+        "Compresses the file",
+        "Changes the file owner",
+        "Deletes execute permissions"
+      ],
+      "correct": "a",
+      "explanation": "+x adds execute permission. Without it, you'll get 'Permission denied' when trying to run the script."
+    },
+    {
+      "question": "To redirect both stdout and stderr to a file:",
+      "options": [
+        "cmd > file",
+        "cmd >> file",
+        "cmd 2> file",
+        "cmd &> file"
+      ],
+      "correct": "d",
+      "explanation": "&> redirects both file descriptors. Equivalent to cmd > file 2>&1 in older syntax."
+    },
+    {
+      "question": "$1 in a bash script refers to:",
+      "options": [
+        "The script's process ID",
+        "The first command-line argument passed to the script",
+        "The last exit code",
+        "The script filename"
+      ],
+      "correct": "b",
+      "explanation": "$0=script name, $1=first arg, $2=second arg, $@=all args as separate words."
+    },
+    {
+      "question": "What does 'set -e' do at the top of a script?",
+      "options": [
+        "Sets environment variables",
+        "Exits the script immediately if any command returns a non-zero exit code",
+        "Enables debug mode",
+        "Silences all output"
+      ],
+      "correct": "b",
+      "explanation": "set -e is a safety mechanism \u2014 your script won't silently continue after a failed command."
+    },
+    {
+      "question": "find . -name '*.py' -type f locates:",
+      "options": [
+        "Python processes",
+        "All .py files (regular files only) in the current directory tree",
+        "All directories named .py",
+        "Files modified today"
+      ],
+      "correct": "b",
+      "explanation": "-type f restricts to regular files. -name uses glob patterns. '.' starts from the current directory."
+    },
+    {
+      "question": "'&&' between two commands means:",
+      "options": [
+        "Run both commands in parallel",
+        "Run the second command only if the first succeeds",
+        "Always run both",
+        "Run the second command only if the first fails"
+      ],
+      "correct": "b",
+      "explanation": "cmd1 && cmd2: cmd2 runs only if cmd1 exits with status 0 (success)."
+    },
+    {
+      "question": "The difference between > and >> for redirection is:",
+      "options": [
+        "No difference",
+        ">> appends to the file; > overwrites it",
+        "> creates a new file only",
+        ">> is faster"
+      ],
+      "correct": "b",
+      "explanation": "> truncates and overwrites. >> appends. Use >> when you want to add to existing content."
+    },
+    {
+      "question": "What does $? contain?",
+      "options": [
+        "Current user's home directory",
+        "The last command's exit code (0=success, non-zero=error)",
+        "All environment variables",
+        "The script's arguments"
+      ],
+      "correct": "b",
+      "explanation": "$? is tested after commands to check if they succeeded. Common in if [ $? -eq 0 ]; then ... patterns."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "course_label": "Machine Learning",
+  "title": "Tree-Based Learning",
+  "questions": [
+    {
+      "question": "What is 'information gain' in a decision tree?",
+      "options": [
+        "The depth of the tree",
+        "The reduction in entropy after a split",
+        "The number of features used",
+        "The regularisation strength"
+      ],
+      "correct": "b",
+      "explanation": "Information gain = entropy before split \u2212 weighted entropy after split. Higher gain = better split."
+    },
+    {
+      "question": "Pruning a decision tree helps to:",
+      "options": [
+        "Speed up training",
+        "Reduce overfitting by removing low-value branches",
+        "Add more features",
+        "Increase tree depth"
+      ],
+      "correct": "b",
+      "explanation": "Without pruning, trees memorise training data. Pruning removes branches that provide little predictive power."
+    },
+    {
+      "question": "Random Forest reduces variance compared to a single tree by:",
+      "options": [
+        "Using deeper trees",
+        "Using only the best features",
+        "Averaging predictions across many decorrelated trees",
+        "Training on the full dataset each time"
+      ],
+      "correct": "c",
+      "explanation": "Each tree sees a random feature subset, reducing correlation. Averaging their predictions lowers variance."
+    },
+    {
+      "question": "The 'max_features' parameter in Random Forest controls:",
+      "options": [
+        "Maximum tree depth",
+        "Number of trees",
+        "Number of features considered at each split",
+        "Minimum samples per leaf"
+      ],
+      "correct": "c",
+      "explanation": "Reducing max_features increases tree diversity, which generally improves the ensemble's generalisation."
+    },
+    {
+      "question": "Gini impurity measures:",
+      "options": [
+        "Tree depth",
+        "The probability of misclassifying a randomly chosen sample",
+        "The number of features",
+        "Regularisation strength"
+      ],
+      "correct": "b",
+      "explanation": "Gini = 1 - \u03a3(p\u1d62\u00b2). A pure node (one class) has Gini=0. Used as an alternative to entropy for splitting."
+    },
+    {
+      "question": "What does 'bagging' mean in Random Forest?",
+      "options": [
+        "Removing outliers",
+        "Training each tree on a random bootstrap sample of the data",
+        "Selecting the best features",
+        "Pruning weak trees"
+      ],
+      "correct": "b",
+      "explanation": "Bootstrap Aggregating (Bagging) trains each tree on a different random sample with replacement."
+    },
+    {
+      "question": "A very deep decision tree with no pruning is likely to:",
+      "options": [
+        "Underfit the training data",
+        "Overfit \u2014 memorise training data but generalise poorly",
+        "Have high bias",
+        "Have high regularisation"
+      ],
+      "correct": "b",
+      "explanation": "Deep trees partition the training space very finely, capturing noise rather than signal."
+    },
+    {
+      "question": "Extra Trees differ from Random Forest primarily because:",
+      "options": [
+        "They use boosting instead of bagging",
+        "Splits are chosen randomly rather than optimally at each node",
+        "They use fewer trees",
+        "They require feature scaling"
+      ],
+      "correct": "b",
+      "explanation": "Extra Trees (Extremely Randomised Trees) add another layer of randomness by choosing split thresholds randomly."
+    },
+    {
+      "question": "Feature importance in Random Forest is typically measured by:",
+      "options": [
+        "Correlation coefficient",
+        "How much each feature reduces impurity across all trees",
+        "Lasso coefficient magnitude",
+        "P-values from t-tests"
+      ],
+      "correct": "b",
+      "explanation": "Mean Decrease in Impurity sums each feature's contribution to reducing Gini/entropy across all splits in all trees."
+    },
+    {
+      "question": "When would you prefer a single decision tree over a Random Forest?",
+      "options": [
+        "When you need the highest accuracy",
+        "When interpretability and explainability are the primary requirement",
+        "When training speed is not important",
+        "When data is large"
+      ],
+      "correct": "b",
+      "explanation": "A single tree can be visualised and explained to stakeholders; a forest of 500 trees cannot be easily interpreted."
+    }
+  ]
+}

@@ -115,57 +115,24 @@ keys = list(student.keys())</code></pre>
           <h3>Interactive Notebook</h3>
           <div class="notebook-embed">
             <iframe
-              src="/lab/retro/notebooks/?path=prog-01-python-basics.ipynb"
+              src="/lab/edit/index.html?path=prog-01-python-basics.ipynb"
               title="Interactive Python notebook — prog-01-python-basics.ipynb"
               loading="lazy"
               allow="autoplay; clipboard-read; clipboard-write">
             </iframe>
             <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
               ↑ Edit and run code in your browser. Work is saved automatically.
-              <a href="/lab/?path=prog-01-python-basics.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+              <a href="/lab/index.html?path=prog-01-python-basics.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
             </p>
           </div>
         </div>
-        <div class="quiz-block"><h3>Quiz — Python Basics</h3>
-          <div class="quiz-q" data-correct="b"><p>1. What does <code>range(2, 10, 3)</code> produce?</p>
-            <label class="quiz-option"><input type="radio" name="py-q1" value="a"> [2, 5, 8, 11]</label>
-            <label class="quiz-option"><input type="radio" name="py-q1" value="b"> [2, 5, 8]</label>
-            <label class="quiz-option"><input type="radio" name="py-q1" value="c"> [2, 3, 4, 5, 6, 7, 8, 9]</label>
-            <label class="quiz-option"><input type="radio" name="py-q1" value="d"> [2, 10, 3]</label>
-          </div>
-          <div class="quiz-q" data-correct="c"><p>2. What is the output of <code>[x*2 for x in range(3)]</code>?</p>
-            <label class="quiz-option"><input type="radio" name="py-q2" value="a"> [1, 2, 3]</label>
-            <label class="quiz-option"><input type="radio" name="py-q2" value="b"> [0, 2, 4, 6]</label>
-            <label class="quiz-option"><input type="radio" name="py-q2" value="c"> [0, 2, 4]</label>
-            <label class="quiz-option"><input type="radio" name="py-q2" value="d"> [2, 4, 6]</label>
-          </div>
-          <div class="quiz-q" data-correct="a"><p>3. Which is used for context management (auto closing files)?</p>
-            <label class="quiz-option"><input type="radio" name="py-q3" value="a"> with statement</label>
-            <label class="quiz-option"><input type="radio" name="py-q3" value="b"> try/finally</label>
-            <label class="quiz-option"><input type="radio" name="py-q3" value="c"> open().close()</label>
-            <label class="quiz-option"><input type="radio" name="py-q3" value="d"> file.flush()</label>
-          </div>
 
-          <div class="quiz-q" data-correct="b">
-            <p>4. What is the key difference between a list and a tuple in Python?</p>
-            <label class="quiz-option"><input type="radio" name="py-q4" value="a"> Lists are ordered, tuples are not</label>
-            <label class="quiz-option"><input type="radio" name="py-q4" value="b"> Tuples are immutable (cannot be changed after creation), lists are mutable</label>
-            <label class="quiz-option"><input type="radio" name="py-q4" value="c"> Tuples support indexing, lists do not</label>
-            <label class="quiz-option"><input type="radio" name="py-q4" value="d"> Lists can store mixed types, tuples cannot</label>
-          </div>
-          <div class="quiz-q" data-correct="c">
-            <p>5. Which block catches an exception in Python?</p>
-            <label class="quiz-option"><input type="radio" name="py-q5" value="a"> <code>catch</code></label>
-            <label class="quiz-option"><input type="radio" name="py-q5" value="b"> <code>rescue</code></label>
-            <label class="quiz-option"><input type="radio" name="py-q5" value="c"> <code>except</code></label>
-            <label class="quiz-option"><input type="radio" name="py-q5" value="d"> <code>handle</code></label>
-          </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
-        </div>
+        <h3>Quiz</h3>
+        <p style="margin-bottom:0.75rem;">Test your understanding of Python Basics — 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=programming&topic=python-basics"
+           class="btn btn-primary btn-sm"
+           onclick="trackEvent('quiz_open',{topic:'python-basics'})">Take Quiz →</a>
+
         <div style="margin-top:1.5rem;display:flex;gap:1rem;">
           <a href="/cheatsheets.html" class="btn btn-outline btn-sm" data-track="cheatsheet" data-name="python-basics">📄 Python Basics Cheatsheet</a>
           <button class="btn btn-ghost btn-sm claim-certificate" onclick="window.MitraAuth?.recordCourseCompletion('programming','python-basics')">Mark Complete ✓</button>
@@ -225,58 +192,24 @@ plt.savefig(<span class="st">"cgpa.png"</span>, dpi=<span class="num">150</span>
           <h3>Interactive Notebook</h3>
           <div class="notebook-embed">
             <iframe
-              src="/lab/retro/notebooks/?path=prog-02-python-for-data.ipynb"
+              src="/lab/edit/index.html?path=prog-02-python-for-data.ipynb"
               title="Interactive Python notebook — prog-02-python-for-data.ipynb"
               loading="lazy"
               allow="autoplay; clipboard-read; clipboard-write">
             </iframe>
             <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
               ↑ Edit and run code in your browser. Work is saved automatically.
-              <a href="/lab/?path=prog-02-python-for-data.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+              <a href="/lab/index.html?path=prog-02-python-for-data.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
             </p>
           </div>
         </div>
-        <div class="quiz-block"><h3>Quiz — Python for Data</h3>
-          <div class="quiz-q" data-correct="b"><p>1. <code>df.groupby("branch")["cgpa"].mean()</code> returns:</p>
-            <label class="quiz-option"><input type="radio" name="pd-q1" value="a"> A single mean value</label>
-            <label class="quiz-option"><input type="radio" name="pd-q1" value="b"> Mean CGPA per branch</label>
-            <label class="quiz-option"><input type="radio" name="pd-q1" value="c"> All rows grouped by branch</label>
-            <label class="quiz-option"><input type="radio" name="pd-q1" value="d"> A boolean mask</label>
-          </div>
-          <div class="quiz-q" data-correct="a"><p>2. <code>np.array.mean(axis=0)</code> computes means along:</p>
-            <label class="quiz-option"><input type="radio" name="pd-q2" value="a"> Each column</label>
-            <label class="quiz-option"><input type="radio" name="pd-q2" value="b"> Each row</label>
-            <label class="quiz-option"><input type="radio" name="pd-q2" value="c"> The entire array</label>
-            <label class="quiz-option"><input type="radio" name="pd-q2" value="d"> The diagonal</label>
-          </div>
 
-          <div class="quiz-q" data-correct="a">
-            <p>3. How do you load a CSV file into a pandas DataFrame?</p>
-            <label class="quiz-option"><input type="radio" name="pd-q3" value="a"> <code>pd.read_csv('file.csv')</code></label>
-            <label class="quiz-option"><input type="radio" name="pd-q3" value="b"> <code>pd.load('file.csv')</code></label>
-            <label class="quiz-option"><input type="radio" name="pd-q3" value="c"> <code>pd.open_csv('file.csv')</code></label>
-            <label class="quiz-option"><input type="radio" name="pd-q3" value="d"> <code>DataFrame.read('file.csv')</code></label>
-          </div>
-          <div class="quiz-q" data-correct="c">
-            <p>4. <code>df.dropna()</code> removes rows where:</p>
-            <label class="quiz-option"><input type="radio" name="pd-q4" value="a"> All values are zero</label>
-            <label class="quiz-option"><input type="radio" name="pd-q4" value="b"> Column names are missing</label>
-            <label class="quiz-option"><input type="radio" name="pd-q4" value="c"> Any value is NaN (missing)</label>
-            <label class="quiz-option"><input type="radio" name="pd-q4" value="d"> Duplicate rows exist</label>
-          </div>
-          <div class="quiz-q" data-correct="b">
-            <p>5. In matplotlib, which function creates a bar chart?</p>
-            <label class="quiz-option"><input type="radio" name="pd-q5" value="a"> <code>plt.hist()</code></label>
-            <label class="quiz-option"><input type="radio" name="pd-q5" value="b"> <code>plt.bar()</code></label>
-            <label class="quiz-option"><input type="radio" name="pd-q5" value="c"> <code>plt.scatter()</code></label>
-            <label class="quiz-option"><input type="radio" name="pd-q5" value="d"> <code>plt.pie()</code></label>
-          </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
-        </div>
+        <h3>Quiz</h3>
+        <p style="margin-bottom:0.75rem;">Test your understanding of Python for Data — 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=programming&topic=python-for-data"
+           class="btn btn-primary btn-sm"
+           onclick="trackEvent('quiz_open',{topic:'python-for-data'})">Take Quiz →</a>
+
         <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="python-for-data">📄 Python for Data Cheatsheet</a>
         <button class="btn btn-ghost btn-sm claim-certificate" style="margin-top:0.75rem;" onclick="window.MitraAuth?.recordCourseCompletion('programming','python-for-data')">Mark Complete ✓</button>
       </div>
@@ -333,58 +266,24 @@ kill -9 <span class="num">12345</span>
           <h3>Interactive Notebook</h3>
           <div class="notebook-embed">
             <iframe
-              src="/lab/retro/notebooks/?path=prog-03-shell-bash.ipynb"
+              src="/lab/edit/index.html?path=prog-03-shell-bash.ipynb"
               title="Interactive Python notebook — prog-03-shell-bash.ipynb"
               loading="lazy"
               allow="autoplay; clipboard-read; clipboard-write">
             </iframe>
             <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
               ↑ Edit and run code in your browser. Work is saved automatically.
-              <a href="/lab/?path=prog-03-shell-bash.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+              <a href="/lab/index.html?path=prog-03-shell-bash.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
             </p>
           </div>
         </div>
-        <div class="quiz-block"><h3>Quiz — Shell / Bash</h3>
-          <div class="quiz-q" data-correct="c"><p>1. What does <code>grep -r "import" src/</code> do?</p>
-            <label class="quiz-option"><input type="radio" name="sh-q1" value="a"> Finds files named "import"</label>
-            <label class="quiz-option"><input type="radio" name="sh-q1" value="b"> Lists all src/ files</label>
-            <label class="quiz-option"><input type="radio" name="sh-q1" value="c"> Searches for "import" in all files under src/ recursively</label>
-            <label class="quiz-option"><input type="radio" name="sh-q1" value="d"> Removes the word "import" from files</label>
-          </div>
-          <div class="quiz-q" data-correct="b"><p>2. The pipe character <code>|</code> in Bash:</p>
-            <label class="quiz-option"><input type="radio" name="sh-q2" value="a"> Runs two commands in parallel</label>
-            <label class="quiz-option"><input type="radio" name="sh-q2" value="b"> Passes the output of one command as input to the next</label>
-            <label class="quiz-option"><input type="radio" name="sh-q2" value="c"> Appends output to a file</label>
-            <label class="quiz-option"><input type="radio" name="sh-q2" value="d"> Redirects stderr to stdout</label>
-          </div>
 
-          <div class="quiz-q" data-correct="a">
-            <p>3. <code>chmod +x script.sh</code> does what?</p>
-            <label class="quiz-option"><input type="radio" name="sh-q3" value="a"> Makes the file executable</label>
-            <label class="quiz-option"><input type="radio" name="sh-q3" value="b"> Compresses the file</label>
-            <label class="quiz-option"><input type="radio" name="sh-q3" value="c"> Changes the file owner</label>
-            <label class="quiz-option"><input type="radio" name="sh-q3" value="d"> Deletes execute permissions</label>
-          </div>
-          <div class="quiz-q" data-correct="d">
-            <p>4. To redirect both stdout and stderr to a file, you use:</p>
-            <label class="quiz-option"><input type="radio" name="sh-q4" value="a"> <code>command > file</code></label>
-            <label class="quiz-option"><input type="radio" name="sh-q4" value="b"> <code>command >> file</code></label>
-            <label class="quiz-option"><input type="radio" name="sh-q4" value="c"> <code>command 2> file</code></label>
-            <label class="quiz-option"><input type="radio" name="sh-q4" value="d"> <code>command &gt;&amp; file</code></label>
-          </div>
-          <div class="quiz-q" data-correct="b">
-            <p>5. In a bash script, <code>$1</code> refers to:</p>
-            <label class="quiz-option"><input type="radio" name="sh-q5" value="a"> The script's process ID</label>
-            <label class="quiz-option"><input type="radio" name="sh-q5" value="b"> The first command-line argument passed to the script</label>
-            <label class="quiz-option"><input type="radio" name="sh-q5" value="c"> The last exit code</label>
-            <label class="quiz-option"><input type="radio" name="sh-q5" value="d"> The script filename</label>
-          </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
-        </div>
+        <h3>Quiz</h3>
+        <p style="margin-bottom:0.75rem;">Test your understanding of Shell / Bash — 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=programming&topic=shell-bash"
+           class="btn btn-primary btn-sm"
+           onclick="trackEvent('quiz_open',{topic:'shell-bash'})">Take Quiz →</a>
+
         <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="shell-bash">📄 Shell/Bash Cheatsheet</a>
         <button class="btn btn-ghost btn-sm claim-certificate" style="margin-top:0.75rem;" onclick="window.MitraAuth?.recordCourseCompletion('programming','shell-bash')">Mark Complete ✓</button>
       </div>
@@ -443,57 +342,24 @@ kill -9 <span class="num">12345</span>
           <h3>Interactive Notebook</h3>
           <div class="notebook-embed">
             <iframe
-              src="/lab/retro/notebooks/?path=prog-04-sql.ipynb"
+              src="/lab/edit/index.html?path=prog-04-sql.ipynb"
               title="Interactive Python notebook — prog-04-sql.ipynb"
               loading="lazy"
               allow="autoplay; clipboard-read; clipboard-write">
             </iframe>
             <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
               ↑ Edit and run code in your browser. Work is saved automatically.
-              <a href="/lab/?path=prog-04-sql.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+              <a href="/lab/index.html?path=prog-04-sql.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
             </p>
           </div>
         </div>
-        <div class="quiz-block"><h3>Quiz — SQL</h3>
-          <div class="quiz-q" data-correct="c"><p>1. Which clause filters results AFTER grouping?</p>
-            <label class="quiz-option"><input type="radio" name="sq-q1" value="a"> WHERE</label>
-            <label class="quiz-option"><input type="radio" name="sq-q1" value="b"> ORDER BY</label>
-            <label class="quiz-option"><input type="radio" name="sq-q1" value="c"> HAVING</label>
-            <label class="quiz-option"><input type="radio" name="sq-q1" value="d"> FILTER</label>
-          </div>
-          <div class="quiz-q" data-correct="a"><p>2. LEFT JOIN returns:</p>
-            <label class="quiz-option"><input type="radio" name="sq-q2" value="a"> All rows from the left table, matching rows from right (nulls for non-matches)</label>
-            <label class="quiz-option"><input type="radio" name="sq-q2" value="b"> Only matching rows from both tables</label>
-            <label class="quiz-option"><input type="radio" name="sq-q2" value="c"> All rows from both tables</label>
-            <label class="quiz-option"><input type="radio" name="sq-q2" value="d"> All rows from the right table only</label>
-          </div>
-          <div class="quiz-q" data-correct="d"><p>3. RANK() vs ROW_NUMBER(): the key difference is:</p>
-            <label class="quiz-option"><input type="radio" name="sq-q3" value="a"> RANK is faster</label>
-            <label class="quiz-option"><input type="radio" name="sq-q3" value="b"> ROW_NUMBER assigns letters</label>
-            <label class="quiz-option"><input type="radio" name="sq-q3" value="c"> Both are identical</label>
-            <label class="quiz-option"><input type="radio" name="sq-q3" value="d"> RANK leaves gaps for ties; ROW_NUMBER doesn't</label>
-          </div>
 
-          <div class="quiz-q" data-correct="c">
-            <p>4. <code>COALESCE(col1, col2, 'default')</code> returns:</p>
-            <label class="quiz-option"><input type="radio" name="sq-q4" value="a"> The sum of all non-null columns</label>
-            <label class="quiz-option"><input type="radio" name="sq-q4" value="b"> Always col1</label>
-            <label class="quiz-option"><input type="radio" name="sq-q4" value="c"> The first non-null value from the list</label>
-            <label class="quiz-option"><input type="radio" name="sq-q4" value="d"> NULL if any column is null</label>
-          </div>
-          <div class="quiz-q" data-correct="a">
-            <p>5. A window function (e.g. SUM OVER) differs from GROUP BY because it:</p>
-            <label class="quiz-option"><input type="radio" name="sq-q5" value="a"> Computes aggregates without collapsing rows — each row keeps its detail</label>
-            <label class="quiz-option"><input type="radio" name="sq-q5" value="b"> Is faster than GROUP BY</label>
-            <label class="quiz-option"><input type="radio" name="sq-q5" value="c"> Only works with COUNT</label>
-            <label class="quiz-option"><input type="radio" name="sq-q5" value="d"> Requires a subquery</label>
-          </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
-        </div>
+        <h3>Quiz</h3>
+        <p style="margin-bottom:0.75rem;">Test your understanding of SQL — 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=programming&topic=sql"
+           class="btn btn-primary btn-sm"
+           onclick="trackEvent('quiz_open',{topic:'sql'})">Take Quiz →</a>
+
         <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="sql-quick-reference">📄 SQL Cheatsheet</a>
         <button class="btn btn-ghost btn-sm claim-certificate" style="margin-top:0.75rem;" onclick="window.MitraAuth?.recordCourseCompletion('programming','sql')">Mark Complete ✓</button>
       </div>
@@ -536,58 +402,24 @@ kill -9 <span class="num">12345</span>
           <h3>Interactive Notebook</h3>
           <div class="notebook-embed">
             <iframe
-              src="/lab/retro/notebooks/?path=prog-05-excel.ipynb"
+              src="/lab/edit/index.html?path=prog-05-excel.ipynb"
               title="Interactive Python notebook — prog-05-excel.ipynb"
               loading="lazy"
               allow="autoplay; clipboard-read; clipboard-write">
             </iframe>
             <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
               ↑ Edit and run code in your browser. Work is saved automatically.
-              <a href="/lab/?path=prog-05-excel.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+              <a href="/lab/index.html?path=prog-05-excel.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
             </p>
           </div>
         </div>
-        <div class="quiz-block"><h3>Quiz — Excel</h3>
-          <div class="quiz-q" data-correct="b"><p>1. VLOOKUP's third argument specifies:</p>
-            <label class="quiz-option"><input type="radio" name="xl-q1" value="a"> The lookup value</label>
-            <label class="quiz-option"><input type="radio" name="xl-q1" value="b"> Which column number to return from the range</label>
-            <label class="quiz-option"><input type="radio" name="xl-q1" value="c"> Whether the match is exact</label>
-            <label class="quiz-option"><input type="radio" name="xl-q1" value="d"> The range to search in</label>
-          </div>
-          <div class="quiz-q" data-correct="d"><p>2. SUMIFS differs from SUMIF by:</p>
-            <label class="quiz-option"><input type="radio" name="xl-q2" value="a"> Being faster</label>
-            <label class="quiz-option"><input type="radio" name="xl-q2" value="b"> Working with text only</label>
-            <label class="quiz-option"><input type="radio" name="xl-q2" value="c"> Using * wildcards</label>
-            <label class="quiz-option"><input type="radio" name="xl-q2" value="d"> Supporting multiple condition ranges</label>
-          </div>
 
-          <div class="quiz-q" data-correct="b">
-            <p>3. XLOOKUP improves over VLOOKUP by:</p>
-            <label class="quiz-option"><input type="radio" name="xl-q3" value="a"> Only working with numbers</label>
-            <label class="quiz-option"><input type="radio" name="xl-q3" value="b"> Searching both left and right, returning any column, and handling not-found gracefully</label>
-            <label class="quiz-option"><input type="radio" name="xl-q3" value="c"> Working only in Excel 365</label>
-            <label class="quiz-option"><input type="radio" name="xl-q3" value="d"> Being faster on large datasets</label>
-          </div>
-          <div class="quiz-q" data-correct="c">
-            <p>4. <code>COUNTIFS(range1, criteria1, range2, criteria2)</code> counts rows where:</p>
-            <label class="quiz-option"><input type="radio" name="xl-q4" value="a"> Either criteria matches</label>
-            <label class="quiz-option"><input type="radio" name="xl-q4" value="b"> range1 matches only</label>
-            <label class="quiz-option"><input type="radio" name="xl-q4" value="c"> Both criteria match simultaneously (AND logic)</label>
-            <label class="quiz-option"><input type="radio" name="xl-q4" value="d"> Criteria values are equal to each other</label>
-          </div>
-          <div class="quiz-q" data-correct="a">
-            <p>5. To freeze the first row in Excel so it stays visible while scrolling:</p>
-            <label class="quiz-option"><input type="radio" name="xl-q5" value="a"> View → Freeze Panes → Freeze Top Row</label>
-            <label class="quiz-option"><input type="radio" name="xl-q5" value="b"> Format → Lock Row</label>
-            <label class="quiz-option"><input type="radio" name="xl-q5" value="c"> Insert → Header → Freeze</label>
-            <label class="quiz-option"><input type="radio" name="xl-q5" value="d"> Right-click row → Pin Row</label>
-          </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
-        </div>
+        <h3>Quiz</h3>
+        <p style="margin-bottom:0.75rem;">Test your understanding of Excel Formulas — 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=programming&topic=excel"
+           class="btn btn-primary btn-sm"
+           onclick="trackEvent('quiz_open',{topic:'excel'})">Take Quiz →</a>
+
         <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="excel-formula-bible">📄 Excel Formula Cheatsheet</a>
         <button class="btn btn-ghost btn-sm claim-certificate" style="margin-top:0.75rem;" onclick="window.MitraAuth?.recordCourseCompletion('programming','excel')">Mark Complete ✓</button>
       </div>
@@ -640,58 +472,24 @@ arr[<span class="num">0</span>] = <span class="num">10</span>;
           <h3>Interactive Notebook</h3>
           <div class="notebook-embed">
             <iframe
-              src="/lab/retro/notebooks/?path=prog-06-c-cpp.ipynb"
+              src="/lab/edit/index.html?path=prog-06-c-cpp.ipynb"
               title="Interactive Python notebook — prog-06-c-cpp.ipynb"
               loading="lazy"
               allow="autoplay; clipboard-read; clipboard-write">
             </iframe>
             <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
               ↑ Edit and run code in your browser. Work is saved automatically.
-              <a href="/lab/?path=prog-06-c-cpp.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+              <a href="/lab/index.html?path=prog-06-c-cpp.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
             </p>
           </div>
         </div>
-        <div class="quiz-block"><h3>Quiz — C/C++</h3>
-          <div class="quiz-q" data-correct="c"><p>1. In C, what does <code>*ptr</code> do when ptr is a pointer to int?</p>
-            <label class="quiz-option"><input type="radio" name="cc-q1" value="a"> Returns the pointer address</label>
-            <label class="quiz-option"><input type="radio" name="cc-q1" value="b"> Allocates memory</label>
-            <label class="quiz-option"><input type="radio" name="cc-q1" value="c"> Dereferences the pointer to access the int value</label>
-            <label class="quiz-option"><input type="radio" name="cc-q1" value="d"> Frees the memory</label>
-          </div>
-          <div class="quiz-q" data-correct="b"><p>2. After calling malloc(), you must:</p>
-            <label class="quiz-option"><input type="radio" name="cc-q2" value="a"> Call realloc() immediately</label>
-            <label class="quiz-option"><input type="radio" name="cc-q2" value="b"> Check if the returned pointer is NULL, and free() when done</label>
-            <label class="quiz-option"><input type="radio" name="cc-q2" value="c"> Initialize all bytes to zero manually</label>
-            <label class="quiz-option"><input type="radio" name="cc-q2" value="d"> Use calloc() instead</label>
-          </div>
 
-          <div class="quiz-q" data-correct="d">
-            <p>3. A segmentation fault in C most commonly occurs when:</p>
-            <label class="quiz-option"><input type="radio" name="cc-q3" value="a"> A variable is declared but not initialized</label>
-            <label class="quiz-option"><input type="radio" name="cc-q3" value="b"> An integer overflows</label>
-            <label class="quiz-option"><input type="radio" name="cc-q3" value="c"> A loop runs too many times</label>
-            <label class="quiz-option"><input type="radio" name="cc-q3" value="d"> You dereference a NULL or invalid pointer</label>
-          </div>
-          <div class="quiz-q" data-correct="b">
-            <p>4. The difference between <code>malloc</code> and <code>calloc</code> is:</p>
-            <label class="quiz-option"><input type="radio" name="cc-q4" value="a"> malloc is for arrays, calloc is for single values</label>
-            <label class="quiz-option"><input type="radio" name="cc-q4" value="b"> calloc zero-initializes the allocated memory; malloc does not</label>
-            <label class="quiz-option"><input type="radio" name="cc-q4" value="c"> calloc is faster than malloc</label>
-            <label class="quiz-option"><input type="radio" name="cc-q4" value="d"> malloc allocates on the heap, calloc on the stack</label>
-          </div>
-          <div class="quiz-q" data-correct="a">
-            <p>5. In C++, a class member declared <code>private</code> is accessible:</p>
-            <label class="quiz-option"><input type="radio" name="cc-q5" value="a"> Only by methods within the same class</label>
-            <label class="quiz-option"><input type="radio" name="cc-q5" value="b"> By any function in the same file</label>
-            <label class="quiz-option"><input type="radio" name="cc-q5" value="c"> By derived (child) classes</label>
-            <label class="quiz-option"><input type="radio" name="cc-q5" value="d"> By any code that includes the header file</label>
-          </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
-        </div>
+        <h3>Quiz</h3>
+        <p style="margin-bottom:0.75rem;">Test your understanding of C / C++ — 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=programming&topic=c-cpp"
+           class="btn btn-primary btn-sm"
+           onclick="trackEvent('quiz_open',{topic:'c-cpp'})">Take Quiz →</a>
+
         <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="margin-top:1rem;" data-track="cheatsheet" data-name="c-cpp-memory">📄 C/C++ Memory Cheatsheet</a>
         <button class="btn btn-ghost btn-sm claim-certificate" style="margin-top:0.75rem;" onclick="window.MitraAuth?.recordCourseCompletion('programming','c-cpp')">Mark Complete ✓</button>
       </div>
@@ -741,59 +539,24 @@ arr[<span class="num">0</span>] = <span class="num">10</span>;
           <h3>Interactive Notebook</h3>
           <div class="notebook-embed">
             <iframe
-              src="/lab/retro/notebooks/?path=prog-07-perl.ipynb"
+              src="/lab/edit/index.html?path=prog-07-perl.ipynb"
               title="Interactive Python notebook — prog-07-perl.ipynb"
               loading="lazy"
               allow="autoplay; clipboard-read; clipboard-write">
             </iframe>
             <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
               ↑ Edit and run code in your browser. Work is saved automatically.
-              <a href="/lab/?path=prog-07-perl.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+              <a href="/lab/index.html?path=prog-07-perl.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
             </p>
           </div>
         </div>
-        <div class="quiz-block"><h3>Quiz — Perl</h3>
-          <div class="quiz-q" data-correct="b"><p>1. In Perl, =~ is used for:</p>
-            <label class="quiz-option"><input type="radio" name="pl-q1" value="a"> Assignment</label>
-            <label class="quiz-option"><input type="radio" name="pl-q1" value="b"> Binding a regex to a string</label>
-            <label class="quiz-option"><input type="radio" name="pl-q1" value="c"> Numeric comparison</label>
-            <label class="quiz-option"><input type="radio" name="pl-q1" value="d"> String equality</label>
-          </div>
 
-          <div class="quiz-q" data-correct="c">
-            <p>2. In Perl, the <code>$</code> sigil is used for:</p>
-            <label class="quiz-option"><input type="radio" name="pl-q2" value="a"> Arrays</label>
-            <label class="quiz-option"><input type="radio" name="pl-q2" value="b"> Hashes</label>
-            <label class="quiz-option"><input type="radio" name="pl-q2" value="c"> Scalar variables (single values, strings, numbers)</label>
-            <label class="quiz-option"><input type="radio" name="pl-q2" value="d"> File handles</label>
-          </div>
-          <div class="quiz-q" data-correct="a">
-            <p>3. To split a string by comma in Perl:</p>
-            <label class="quiz-option"><input type="radio" name="pl-q3" value="a"> <code>my @parts = split(/,/, $str);</code></label>
-            <label class="quiz-option"><input type="radio" name="pl-q3" value="b"> <code>my @parts = $str.split(',');</code></label>
-            <label class="quiz-option"><input type="radio" name="pl-q3" value="c"> <code>my @parts = explode(',', $str);</code></label>
-            <label class="quiz-option"><input type="radio" name="pl-q3" value="d"> <code>my @parts = $str->split(',');</code></label>
-          </div>
-          <div class="quiz-q" data-correct="b">
-            <p>4. <code>chomp($line)</code> in Perl:</p>
-            <label class="quiz-option"><input type="radio" name="pl-q4" value="a"> Removes all whitespace from $line</label>
-            <label class="quiz-option"><input type="radio" name="pl-q4" value="b"> Removes the trailing newline character from $line</label>
-            <label class="quiz-option"><input type="radio" name="pl-q4" value="c"> Converts $line to lowercase</label>
-            <label class="quiz-option"><input type="radio" name="pl-q4" value="d"> Splits $line into an array</label>
-          </div>
-          <div class="quiz-q" data-correct="d">
-            <p>5. In Perl, <code>$_</code> is:</p>
-            <label class="quiz-option"><input type="radio" name="pl-q5" value="a"> The script's process ID</label>
-            <label class="quiz-option"><input type="radio" name="pl-q5" value="b"> The last error message</label>
-            <label class="quiz-option"><input type="radio" name="pl-q5" value="c"> The current working directory</label>
-            <label class="quiz-option"><input type="radio" name="pl-q5" value="d"> The default variable used implicitly by many functions and loops</label>
-          </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
-        </div>
+        <h3>Quiz</h3>
+        <p style="margin-bottom:0.75rem;">Test your understanding of Perl — 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=programming&topic=perl"
+           class="btn btn-primary btn-sm"
+           onclick="trackEvent('quiz_open',{topic:'perl'})">Take Quiz →</a>
+
         <button class="btn btn-ghost btn-sm claim-certificate" style="margin-top:0.75rem;" onclick="window.MitraAuth?.recordCourseCompletion('programming','perl')">Mark Complete ✓</button>
       </div>
 
@@ -848,58 +611,24 @@ document.<span class="fn">querySelector</span>(<span class="st">'.btn'</span>)
           <h3>Interactive Notebook</h3>
           <div class="notebook-embed">
             <iframe
-              src="/lab/retro/notebooks/?path=prog-08-javascript.ipynb"
+              src="/lab/edit/index.html?path=prog-08-javascript.ipynb"
               title="Interactive Python notebook — prog-08-javascript.ipynb"
               loading="lazy"
               allow="autoplay; clipboard-read; clipboard-write">
             </iframe>
             <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">
               ↑ Edit and run code in your browser. Work is saved automatically.
-              <a href="/lab/?path=prog-08-javascript.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
+              <a href="/lab/index.html?path=prog-08-javascript.ipynb" target="_blank" style="color:var(--primary);">Open full screen →</a>
             </p>
           </div>
         </div>
-        <div class="quiz-block"><h3>Quiz — JavaScript</h3>
-          <div class="quiz-q" data-correct="c"><p>1. <code>await fetch(url)</code> requires the enclosing function to be:</p>
-            <label class="quiz-option"><input type="radio" name="js-q1" value="a"> A generator function</label>
-            <label class="quiz-option"><input type="radio" name="js-q1" value="b"> A regular function</label>
-            <label class="quiz-option"><input type="radio" name="js-q1" value="c"> An async function</label>
-            <label class="quiz-option"><input type="radio" name="js-q1" value="d"> A class method</label>
-          </div>
-          <div class="quiz-q" data-correct="b"><p>2. <code>const [a, ...rest] = [1,2,3,4]</code> — what is rest?</p>
-            <label class="quiz-option"><input type="radio" name="js-q2" value="a"> [1]</label>
-            <label class="quiz-option"><input type="radio" name="js-q2" value="b"> [2, 3, 4]</label>
-            <label class="quiz-option"><input type="radio" name="js-q2" value="c"> 4</label>
-            <label class="quiz-option"><input type="radio" name="js-q2" value="d"> [1, 2, 3]</label>
-          </div>
 
-          <div class="quiz-q" data-correct="b">
-            <p>3. The difference between <code>==</code> and <code>===</code> in JavaScript is:</p>
-            <label class="quiz-option"><input type="radio" name="js-q3" value="a"> No difference — both are equality operators</label>
-            <label class="quiz-option"><input type="radio" name="js-q3" value="b"> <code>===</code> checks both value AND type (strict); <code>==</code> does type coercion</label>
-            <label class="quiz-option"><input type="radio" name="js-q3" value="c"> <code>==</code> is for strings only, <code>===</code> for numbers</label>
-            <label class="quiz-option"><input type="radio" name="js-q3" value="d"> <code>===</code> is assignment, <code>==</code> is comparison</label>
-          </div>
-          <div class="quiz-q" data-correct="a">
-            <p>4. <code>const arr = [1,2,3]; arr.map(x => x * 2)</code> returns:</p>
-            <label class="quiz-option"><input type="radio" name="js-q4" value="a"> <code>[2, 4, 6]</code> — a new array with each element doubled</label>
-            <label class="quiz-option"><input type="radio" name="js-q4" value="b"> Modifies arr in place to [2, 4, 6]</label>
-            <label class="quiz-option"><input type="radio" name="js-q4" value="c"> <code>6</code> — the sum of doubled values</label>
-            <label class="quiz-option"><input type="radio" name="js-q4" value="d"> <code>undefined</code> — map doesn't return</label>
-          </div>
-          <div class="quiz-q" data-correct="c">
-            <p>5. In the browser, <code>document.querySelector('#myId')</code> selects:</p>
-            <label class="quiz-option"><input type="radio" name="js-q5" value="a"> All elements with class myId</label>
-            <label class="quiz-option"><input type="radio" name="js-q5" value="b"> All elements with tag myId</label>
-            <label class="quiz-option"><input type="radio" name="js-q5" value="c"> The first element with id="myId"</label>
-            <label class="quiz-option"><input type="radio" name="js-q5" value="d"> The parent element of myId</label>
-          </div>
-          <div class="quiz-actions">
-            <button class="btn btn-primary btn-sm quiz-submit">Check Answers</button>
-            <button class="btn btn-ghost btn-sm quiz-retry">Retry</button>
-            <span class="quiz-result"></span>
-          </div>
-        </div>
+        <h3>Quiz</h3>
+        <p style="margin-bottom:0.75rem;">Test your understanding of JavaScript — 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=programming&topic=javascript"
+           class="btn btn-primary btn-sm"
+           onclick="trackEvent('quiz_open',{topic:'javascript'})">Take Quiz →</a>
+
 
         <div class="completion-banner">
           <div class="completion-icon">🎓</div>

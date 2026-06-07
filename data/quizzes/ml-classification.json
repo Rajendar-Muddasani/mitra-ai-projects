@@ -1,0 +1,116 @@
+{
+  "course_label": "Machine Learning",
+  "title": "Classification",
+  "questions": [
+    {
+      "question": "Which metric is most useful when false negatives are very costly (e.g. disease detection)?",
+      "options": [
+        "Accuracy",
+        "Precision",
+        "Recall",
+        "F1 Score"
+      ],
+      "correct": "c",
+      "explanation": "Recall = TP/(TP+FN). Maximising recall minimises missed positives \u2014 critical in medical diagnosis."
+    },
+    {
+      "question": "Logistic regression outputs:",
+      "options": [
+        "A class label directly",
+        "A probability between 0 and 1",
+        "A continuous value",
+        "A ranking score"
+      ],
+      "correct": "b",
+      "explanation": "Logistic regression uses the sigmoid function to map any input to a probability between 0 and 1."
+    },
+    {
+      "question": "AUC-ROC close to 0.5 means:",
+      "options": [
+        "Perfect classifier",
+        "Good classifier",
+        "Model performs no better than random guessing",
+        "Perfect negative classifier"
+      ],
+      "correct": "c",
+      "explanation": "AUC=0.5 means the ROC curve follows the diagonal \u2014 equivalent to random guessing."
+    },
+    {
+      "question": "Which algorithm is most interpretable for classification?",
+      "options": [
+        "Random Forest",
+        "Decision Tree",
+        "SVM",
+        "Neural Network"
+      ],
+      "correct": "b",
+      "explanation": "A decision tree can be visualised and its decisions traced \u2014 making it the most interpretable option."
+    },
+    {
+      "question": "When classes are highly imbalanced, accuracy is misleading because:",
+      "options": [
+        "It ignores the feature values",
+        "A model predicting only the majority class can score very high",
+        "It doesn't account for training time",
+        "It requires scaled features"
+      ],
+      "correct": "b",
+      "explanation": "With 95% negative class: a model that always predicts negative gets 95% accuracy without learning anything useful."
+    },
+    {
+      "question": "Precision is defined as:",
+      "options": [
+        "TP / (TP + FN)",
+        "TP / (TP + FP)",
+        "TN / (TN + FP)",
+        "FP / (FP + TN)"
+      ],
+      "correct": "b",
+      "explanation": "Precision = TP/(TP+FP). It measures: of all positive predictions, how many were actually correct?"
+    },
+    {
+      "question": "One-vs-Rest (OvR) is a strategy for:",
+      "options": [
+        "Binary classification",
+        "Feature selection",
+        "Multi-class classification using binary classifiers",
+        "Ensemble methods"
+      ],
+      "correct": "c",
+      "explanation": "OvR trains one binary classifier per class (vs. all others), enabling multi-class classification."
+    },
+    {
+      "question": "K-Nearest Neighbours classification predicts based on:",
+      "options": [
+        "A learned linear boundary",
+        "The majority class among the K nearest training points",
+        "A probabilistic model",
+        "A tree of yes/no decisions"
+      ],
+      "correct": "b",
+      "explanation": "KNN is instance-based \u2014 it finds the K closest training examples and returns their majority class."
+    },
+    {
+      "question": "Cross-entropy loss is commonly used for:",
+      "options": [
+        "Regression",
+        "Clustering",
+        "Multi-class classification",
+        "Anomaly detection"
+      ],
+      "correct": "c",
+      "explanation": "Cross-entropy measures the divergence between predicted probabilities and true class labels."
+    },
+    {
+      "question": "The confusion matrix diagonal represents:",
+      "options": [
+        "False positives",
+        "False negatives",
+        "Correctly classified samples (TP and TN)",
+        "Total samples"
+      ],
+      "correct": "c",
+      "explanation": "The main diagonal of a confusion matrix holds correctly classified counts for each class."
+    }
+  ]
+}

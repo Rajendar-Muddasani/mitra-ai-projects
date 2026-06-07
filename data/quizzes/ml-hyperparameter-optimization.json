@@ -1,0 +1,116 @@
+{
+  "course_label": "Machine Learning",
+  "title": "Hyperparameter Optimization",
+  "questions": [
+    {
+      "question": "Which approach is most efficient for expensive-to-train models?",
+      "options": [
+        "Grid Search",
+        "Random Search",
+        "Bayesian Optimization (Optuna/Hyperopt)",
+        "Manual trial and error"
+      ],
+      "correct": "c",
+      "explanation": "Bayesian optimization builds a probabilistic model of the objective, focusing evaluations on promising regions."
+    },
+    {
+      "question": "Cross-validation during hyperparameter search helps:",
+      "options": [
+        "Reduce training time",
+        "Avoid overfitting to a single validation split",
+        "Increase model complexity",
+        "Remove outliers"
+      ],
+      "correct": "b",
+      "explanation": "Each configuration is evaluated on multiple folds, giving a more reliable estimate of generalisation performance."
+    },
+    {
+      "question": "In k-fold cross-validation:",
+      "options": [
+        "Data is shuffled k times",
+        "Each fold serves as test set exactly once while others train",
+        "Data is duplicated k times",
+        "Hyperparameters change each fold"
+      ],
+      "correct": "b",
+      "explanation": "K-fold creates k equal-sized folds. Each fold is the test set once; the model is trained on the remaining k-1 folds."
+    },
+    {
+      "question": "Using the same test set repeatedly during hyperparameter search causes:",
+      "options": [
+        "Underfitting",
+        "Faster convergence",
+        "High bias",
+        "Data leakage into the tuning process"
+      ],
+      "correct": "d",
+      "explanation": "The search algorithm can overfit to the test set, selecting hyperparameters that happen to work well on that specific set but not in general."
+    },
+    {
+      "question": "sklearn Pipeline ensures:",
+      "options": [
+        "Faster grid search",
+        "Scaler/preprocessor fits only on training folds \u2014 preventing leakage",
+        "Automatic feature selection",
+        "Model re-training on each trial"
+      ],
+      "correct": "b",
+      "explanation": "Without Pipeline, scaling on all data before CV leaks test statistics into training. Pipeline fixes this automatically."
+    },
+    {
+      "question": "Nested cross-validation is used to:",
+      "options": [
+        "Speed up hyperparameter search",
+        "Get an unbiased estimate of the model's generalisation performance after tuning",
+        "Select the best model",
+        "Reduce dataset size"
+      ],
+      "correct": "b",
+      "explanation": "Nested CV has an outer loop for evaluation and inner loop for tuning \u2014 keeping the outer test set truly unseen."
+    },
+    {
+      "question": "Optuna's suggest_float('lr', 1e-4, 1e-1, log=True) samples from:",
+      "options": [
+        "A uniform distribution",
+        "A log-uniform distribution \u2014 concentrating samples at smaller values",
+        "A normal distribution",
+        "A fixed set of values"
+      ],
+      "correct": "b",
+      "explanation": "log=True samples multiplicatively (like 1e-4, 3e-4, 1e-3 ...) rather than linearly, appropriate for learning rates spanning decades."
+    },
+    {
+      "question": "Random Search outperforms Grid Search when:",
+      "options": [
+        "All hyperparameters are important",
+        "Only a few hyperparameters matter \u2014 random search focuses budget on those",
+        "The search space is tiny",
+        "Training time is unlimited"
+      ],
+      "correct": "b",
+      "explanation": "If only 2 of 10 hyperparameters matter, grid search wastes evaluations on irrelevant combinations. Random search explores the important dimensions more effectively."
+    },
+    {
+      "question": "Halving strategies (Successive Halving) work by:",
+      "options": [
+        "Doubling the dataset each round",
+        "Eliminating the worst-performing configurations each round, allocating more budget to survivors",
+        "Using gradient descent on hyperparameters",
+        "Random elimination"
+      ],
+      "correct": "b",
+      "explanation": "Successive Halving quickly discards poor configurations, spending compute only on promising ones."
+    },
+    {
+      "question": "The 'warm start' parameter in sklearn estimators allows:",
+      "options": [
+        "Using previous training for initialization, speeding up retraining",
+        "Skipping cross-validation",
+        "Reducing regularisation",
+        "Changing the training objective"
+      ],
+      "correct": "a",
+      "explanation": "warm_start=True reuses the fitted model from the previous call as initialization, useful when incrementally adding estimators."
+    }
+  ]
+}

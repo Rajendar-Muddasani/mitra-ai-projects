@@ -1,0 +1,116 @@
+{
+  "course_label": "Programming",
+  "title": "SQL",
+  "questions": [
+    {
+      "question": "Which clause filters results AFTER grouping?",
+      "options": [
+        "WHERE",
+        "HAVING",
+        "FILTER",
+        "GROUP FILTER"
+      ],
+      "correct": "b",
+      "explanation": "WHERE filters rows before aggregation. HAVING filters groups after GROUP BY aggregation."
+    },
+    {
+      "question": "LEFT JOIN returns:",
+      "options": [
+        "Only matching rows from both tables",
+        "All rows from the left table, NULLs where no match in right",
+        "All rows from both tables",
+        "Only rows with no match"
+      ],
+      "correct": "b",
+      "explanation": "LEFT JOIN ensures all left-table rows appear in results, with NULLs for right-table columns when unmatched."
+    },
+    {
+      "question": "RANK() vs ROW_NUMBER(): the key difference is:",
+      "options": [
+        "RANK is faster",
+        "RANK assigns the same rank to ties and skips the next value(s); ROW_NUMBER always gives unique sequential numbers",
+        "ROW_NUMBER works only with ORDER BY",
+        "RANK requires a PARTITION BY"
+      ],
+      "correct": "c",
+      "explanation": "Ties: RANK gives 1,1,3 (skips 2); DENSE_RANK gives 1,1,2; ROW_NUMBER gives 1,2,3."
+    },
+    {
+      "question": "COALESCE(col1, col2, 'default') returns:",
+      "options": [
+        "Sum of non-null values",
+        "Always col1",
+        "The first non-null value in the list",
+        "NULL if any input is null"
+      ],
+      "correct": "c",
+      "explanation": "COALESCE evaluates arguments left to right and returns the first non-null value \u2014 useful for fallback values."
+    },
+    {
+      "question": "A window function (e.g. SUM OVER) differs from GROUP BY because:",
+      "options": [
+        "It computes aggregates without collapsing rows",
+        "It is faster",
+        "It only works with COUNT",
+        "It requires a subquery"
+      ],
+      "correct": "a",
+      "explanation": "Window functions compute values across a window of rows while preserving each row's detail \u2014 GROUP BY collapses rows."
+    },
+    {
+      "question": "What does DISTINCT do in SELECT?",
+      "options": [
+        "Sorts results",
+        "Removes duplicate rows from the result set",
+        "Selects a random sample",
+        "Speeds up the query"
+      ],
+      "correct": "b",
+      "explanation": "SELECT DISTINCT col returns unique values only \u2014 identical to SELECT col but with duplicates removed."
+    },
+    {
+      "question": "An index in a SQL table:",
+      "options": [
+        "Stores duplicate data",
+        "Speeds up data retrieval at the cost of insert/update performance",
+        "Enforces uniqueness always",
+        "Replaces the primary key"
+      ],
+      "correct": "b",
+      "explanation": "Indexes are data structures (usually B-trees) that allow fast lookups. Trade-off: faster reads, slower writes."
+    },
+    {
+      "question": "INNER JOIN returns:",
+      "options": [
+        "All rows from both tables",
+        "Only rows that have matching values in both tables",
+        "All rows from the left table",
+        "All rows from the right table"
+      ],
+      "correct": "b",
+      "explanation": "INNER JOIN is the most restrictive join \u2014 only rows with matches in both tables appear in results."
+    },
+    {
+      "question": "CTE (Common Table Expression) is defined using:",
+      "options": [
+        "CREATE TEMP TABLE",
+        "WITH name AS (SELECT ...)",
+        "DECLARE @name AS",
+        "SUBQUERY()"
+      ],
+      "correct": "b",
+      "explanation": "WITH cte AS (SELECT ...) SELECT * FROM cte. CTEs improve readability and allow recursive queries."
+    },
+    {
+      "question": "What does NULLIF(a, b) return?",
+      "options": [
+        "NULL if a is null",
+        "NULL if a equals b, otherwise a",
+        "b if a is null",
+        "Always NULL"
+      ],
+      "correct": "b",
+      "explanation": "NULLIF(a,b) returns NULL if a=b, otherwise returns a. Useful to avoid division by zero: col / NULLIF(denominator, 0)."
+    }
+  ]
+}

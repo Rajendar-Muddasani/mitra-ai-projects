@@ -1,0 +1,116 @@
+{
+  "course_label": "Programming",
+  "title": "Python for Data (Pandas / NumPy)",
+  "questions": [
+    {
+      "question": "df.groupby('branch')['cgpa'].mean() returns:",
+      "options": [
+        "A list of cgpa values",
+        "The mean cgpa per branch as a Series",
+        "A single number",
+        "A boolean mask"
+      ],
+      "correct": "b",
+      "explanation": "groupby splits the DataFrame by branch, then .mean() computes the mean cgpa within each group, returning a Series indexed by branch."
+    },
+    {
+      "question": "np.array.mean(axis=0) computes means along:",
+      "options": [
+        "Rows (column-wise means)",
+        "Columns (row-wise means)",
+        "All elements",
+        "The diagonal"
+      ],
+      "correct": "a",
+      "explanation": "axis=0 collapses rows, computing the mean of each column. axis=1 collapses columns (row-wise means)."
+    },
+    {
+      "question": "pd.read_csv('file.csv') loads:",
+      "options": [
+        "A numpy array",
+        "A Python list",
+        "A pandas DataFrame",
+        "A dictionary"
+      ],
+      "correct": "c",
+      "explanation": "read_csv returns a DataFrame \u2014 a 2D labelled data structure with rows and named columns."
+    },
+    {
+      "question": "df.dropna() removes rows where:",
+      "options": [
+        "All values are zero",
+        "Column names are missing",
+        "Any value is NaN",
+        "Duplicate rows exist"
+      ],
+      "correct": "c",
+      "explanation": "dropna() by default removes rows with at least one NaN. Use dropna(how='all') to only drop fully null rows."
+    },
+    {
+      "question": "Which matplotlib function creates a bar chart?",
+      "options": [
+        "plt.hist()",
+        "plt.bar()",
+        "plt.scatter()",
+        "plt.pie()"
+      ],
+      "correct": "b",
+      "explanation": "plt.bar(x, height) creates a vertical bar chart. plt.barh() creates horizontal bars."
+    },
+    {
+      "question": "df.merge(other, on='id') performs:",
+      "options": [
+        "Concatenation along rows",
+        "A SQL-style join on the 'id' column",
+        "An outer join only",
+        "Element-wise addition"
+      ],
+      "correct": "b",
+      "explanation": "DataFrame.merge() is pandas' SQL-JOIN equivalent. Default is inner join; use how='left/right/outer' for others."
+    },
+    {
+      "question": "np.where(condition, x, y) returns:",
+      "options": [
+        "Indices where condition is True",
+        "x where condition is True, y where False",
+        "A boolean array",
+        "The count of True values"
+      ],
+      "correct": "b",
+      "explanation": "np.where is a vectorised if/else: np.where(arr > 0, arr, 0) replaces negatives with 0."
+    },
+    {
+      "question": "df.pivot_table(values='sales', index='region', aggfunc='sum') creates:",
+      "options": [
+        "A grouped bar chart",
+        "A cross-tabulation with sum of sales per region",
+        "A new column",
+        "A sorted DataFrame"
+      ],
+      "correct": "b",
+      "explanation": "pivot_table reshapes data \u2014 here it sums 'sales' grouped by 'region', equivalent to a SQL GROUP BY."
+    },
+    {
+      "question": "Broadcasting in NumPy allows:",
+      "options": [
+        "Looping over arrays automatically",
+        "Operations between arrays of different shapes by expanding dimensions",
+        "Parallel computation",
+        "GPU acceleration"
+      ],
+      "correct": "b",
+      "explanation": "np.array([1,2,3]) + 10 adds 10 to each element because the scalar is broadcast to match the array's shape."
+    },
+    {
+      "question": "df['col'].value_counts() returns:",
+      "options": [
+        "Sorted unique values",
+        "Frequency of each unique value in the column, sorted descending",
+        "The cumulative sum",
+        "A boolean mask"
+      ],
+      "correct": "b",
+      "explanation": "value_counts() is a quick way to see the distribution of categorical data \u2014 count of each unique value."
+    }
+  ]
+}
