@@ -429,5 +429,5 @@ Additional coverage needed:
 | Kubernetes basics | Already in MLOps S2-T45 | 🔶 Stub |
 | Docker for ML | Already in MLOps S2-T46 | 🔶 Stub |
 
-**Decision:** Cover Spark and Airflow deeply in MLOps course with real notebooks. Kafka and dbt in v2.
+**Decision:** Cover Spark and Airflow deeply in MLOps course with real notebooks. Kafka and dbt.
 

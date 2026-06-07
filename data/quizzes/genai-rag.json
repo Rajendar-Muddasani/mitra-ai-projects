@@ -1,0 +1,116 @@
+{
+  "course_label": "Generative AI",
+  "title": "RAG -- Retrieval Augmented Generation",
+  "questions": [
+    {
+      "question": "RAG addresses which LLM limitation primarily?",
+      "options": [
+        "Slow inference",
+        "Knowledge cutoff and hallucination for domain-specific Q&A",
+        "Small context window",
+        "High training cost"
+      ],
+      "correct": "b",
+      "explanation": "RAG retrieves current, relevant documents at query time -- grounding the LLM in real information rather than training-time knowledge."
+    },
+    {
+      "question": "Chunking in RAG refers to:",
+      "options": [
+        "Quantising the model",
+        "Splitting documents into smaller pieces for indexing and retrieval",
+        "Caching responses",
+        "Compressing embeddings"
+      ],
+      "correct": "b",
+      "explanation": "Full documents are too long to embed meaningfully. Chunking (100-500 tokens, ~20% overlap) creates retrievable units."
+    },
+    {
+      "question": "Chunk overlap in text splitting helps because:",
+      "options": [
+        "It reduces index size",
+        "It preserves context at chunk boundaries -- sentences are not cut mid-thought",
+        "It speeds up retrieval",
+        "It improves embedding quality"
+      ],
+      "correct": "b",
+      "explanation": "Without overlap, a sentence split across chunk boundary might be retrieved incomplete. Overlap ensures boundary sentences appear in full in at least one chunk."
+    },
+    {
+      "question": "In RAG, the retrieval step uses:",
+      "options": [
+        "Exact string matching",
+        "Vector similarity search between query embedding and document embeddings",
+        "BM25 only",
+        "Random sampling"
+      ],
+      "correct": "b",
+      "explanation": "Both dense (vector) and sparse (BM25) retrieval are common. Hybrid = dense + sparse. The query is embedded and compared to all chunk embeddings."
+    },
+    {
+      "question": "Context precision measures:",
+      "options": [
+        "How fast retrieval is",
+        "What fraction of retrieved chunks are actually relevant to the query",
+        "How many chunks were retrieved",
+        "Embedding model size"
+      ],
+      "correct": "b",
+      "explanation": "High precision = retrieved chunks are relevant. Low precision = noisy context that confuses the LLM."
+    },
+    {
+      "question": "The main difference between RAG and fine-tuning is:",
+      "options": [
+        "RAG changes model weights, fine-tuning doesn't",
+        "RAG retrieves knowledge at inference time, fine-tuning bakes it into model weights",
+        "RAG is cheaper always",
+        "Fine-tuning works for all knowledge types"
+      ],
+      "correct": "b",
+      "explanation": "RAG = dynamic, updateable, traceable. Fine-tuning = static knowledge in weights, can't be updated without retraining."
+    },
+    {
+      "question": "Reranking in advanced RAG pipelines:",
+      "options": [
+        "Removes duplicate documents",
+        "Applies a cross-encoder to re-score top-k retrieved chunks for relevance",
+        "Adds more documents",
+        "Compresses the context"
+      ],
+      "correct": "b",
+      "explanation": "Bi-encoder (dense retrieval) is fast but approximate. Cross-encoder reranker scores query-doc pairs jointly -- slower but much more accurate."
+    },
+    {
+      "question": "Sentence-transformers produce:",
+      "options": [
+        "Token embeddings",
+        "Sentence/paragraph level embeddings optimised for semantic similarity",
+        "Word2Vec embeddings",
+        "Random embeddings"
+      ],
+      "correct": "b",
+      "explanation": "Sentence-transformers fine-tune transformers with contrastive objectives to produce embeddings where similar sentences are close in vector space."
+    },
+    {
+      "question": "Retrieval augmentation reduces hallucination because:",
+      "options": [
+        "The model becomes smaller",
+        "The LLM is instructed to answer only from provided context -- factual claims are grounded",
+        "The context is always correct",
+        "The model learns new facts"
+      ],
+      "correct": "b",
+      "explanation": "'Answer using only the provided context. If not there, say I don't know.' -- this instruction forces grounded responses."
+    },
+    {
+      "question": "RAGAS evaluates RAG systems on which dimensions?",
+      "options": [
+        "Speed and cost only",
+        "Context Precision, Context Recall, Answer Faithfulness, Answer Relevancy",
+        "BLEU and ROUGE only",
+        "Human preference only"
+      ],
+      "correct": "b",
+      "explanation": "RAGAS provides automated LLM-as-judge metrics for all four dimensions -- enabling dataset-level RAG quality measurement without human annotation."
+    }
+  ]
+}

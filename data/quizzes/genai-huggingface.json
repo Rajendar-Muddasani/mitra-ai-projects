@@ -1,0 +1,116 @@
+{
+  "course_label": "Generative AI",
+  "title": "HuggingFace Ecosystem",
+  "questions": [
+    {
+      "question": "The HuggingFace `pipeline` API wraps:",
+      "options": [
+        "Only BERT models",
+        "Any model into a simple task-specific interface -- tokenise, infer, decode all in one call",
+        "Only PyTorch models",
+        "Only classification models"
+      ],
+      "correct": "b",
+      "explanation": "pipeline('task', model='name') handles all preprocessing/postprocessing. Fastest way to use any HuggingFace model."
+    },
+    {
+      "question": "The `AutoModel` and `AutoTokenizer` classes provide:",
+      "options": [
+        "Automatic model training",
+        "Architecture-agnostic loading -- same code works for BERT, GPT-2, T5, etc.",
+        "Only tokenisation",
+        "Only inference"
+      ],
+      "correct": "b",
+      "explanation": "AutoModel.from_pretrained('any-model-name') detects architecture and loads correct class. Eliminates architecture-specific imports."
+    },
+    {
+      "question": "HuggingFace Spaces hosts:",
+      "options": [
+        "Model weights",
+        "Live ML demos and apps built with Gradio or Streamlit -- free, public, shareable",
+        "Datasets only",
+        "Training jobs"
+      ],
+      "correct": "b",
+      "explanation": "Spaces = free compute for demos. CPU (always free), GPU (limited free tier). Push a Gradio app and get a public URL instantly."
+    },
+    {
+      "question": "The `datasets` library `map` function is used for:",
+      "options": [
+        "Filtering datasets only",
+        "Applying a transformation function to each example -- tokenisation, feature extraction",
+        "Training models",
+        "Evaluating models"
+      ],
+      "correct": "b",
+      "explanation": "dataset.map(tokenize_fn, batched=True) applies tokenisation efficiently to entire dataset with multiprocessing."
+    },
+    {
+      "question": "Model cards on HuggingFace Hub document:",
+      "options": [
+        "Only model architecture",
+        "Intended use, limitations, training data, evaluation results, bias considerations",
+        "Only accuracy metrics",
+        "Only download count"
+      ],
+      "correct": "b",
+      "explanation": "Model cards (Mitchell et al. 2019) provide transparency: what it was trained for, what it should NOT be used for, performance across demographic groups."
+    },
+    {
+      "question": "GGUF format files are used for:",
+      "options": [
+        "Training models",
+        "Running quantised LLMs locally via llama.cpp without a GPU",
+        "Storing training data",
+        "HuggingFace Hub uploads only"
+      ],
+      "correct": "b",
+      "explanation": "GGUF: successor to GGML. Stores quantised weights (2-8 bit). llama.cpp can run 7B models on CPU-only MacBook at reasonable speed."
+    },
+    {
+      "question": "HuggingFace Inference Endpoints differ from Spaces by:",
+      "options": [
+        "Being free",
+        "Providing dedicated, scalable, production-grade API endpoints for your models",
+        "Only supporting BERT",
+        "Running on local hardware"
+      ],
+      "correct": "b",
+      "explanation": "Endpoints = managed deployment: auto-scaling, custom hardware, private URLs. Spaces = demos. Endpoints = production APIs."
+    },
+    {
+      "question": "The `push_to_hub` method lets you:",
+      "options": [
+        "Download models",
+        "Upload models, datasets, tokenisers, or adapters to your HuggingFace account",
+        "Only update model cards",
+        "Only share code"
+      ],
+      "correct": "b",
+      "explanation": "trainer.push_to_hub('username/model-name') uploads fine-tuned weights. Share with community or keep private. Version controlled."
+    },
+    {
+      "question": "Transformers library supports which frameworks?",
+      "options": [
+        "Only PyTorch",
+        "PyTorch, TensorFlow, and JAX -- same model, different backends",
+        "Only TensorFlow",
+        "Only JAX"
+      ],
+      "correct": "b",
+      "explanation": "AutoModel.from_pretrained() returns PyTorch by default. Pass from_tf=True for TF. Enables framework-agnostic model sharing."
+    },
+    {
+      "question": "The MTEB leaderboard ranks models on:",
+      "options": [
+        "Training speed",
+        "Embedding quality across 58 tasks (retrieval, classification, clustering, STS, etc.)",
+        "Parameter count",
+        "GPU memory usage"
+      ],
+      "correct": "b",
+      "explanation": "Massive Text Embedding Benchmark -- the standard reference for choosing sentence embedding models. Filter by task type for your use case."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "course_label": "Generative AI",
+  "title": "Embeddings & Vector Databases",
+  "questions": [
+    {
+      "question": "Cosine similarity between two vectors measures:",
+      "options": [
+        "Euclidean distance",
+        "The angle between vectors -- high similarity if they point in the same direction",
+        "Dot product magnitude only",
+        "Vector norm ratio"
+      ],
+      "correct": "b",
+      "explanation": "cos(theta) = A.B / (||A||*||B||). Normalised dot product. Range -1 to 1. 1 = identical direction, 0 = orthogonal, -1 = opposite."
+    },
+    {
+      "question": "Sentence embeddings differ from word2vec by:",
+      "options": [
+        "Being smaller",
+        "Encoding full sentence meaning as a single vector, not individual words",
+        "Using less memory",
+        "Being non-contextual"
+      ],
+      "correct": "b",
+      "explanation": "Word2Vec: one vector per word token. Sentence transformers: one vector per sentence/paragraph, capturing full semantic meaning."
+    },
+    {
+      "question": "The embedding dimension (e.g. 384, 1536) represents:",
+      "options": [
+        "Number of documents",
+        "The length of the dense vector representing each text",
+        "Number of tokens",
+        "Context window size"
+      ],
+      "correct": "b",
+      "explanation": "Higher dimensions = richer representation but more memory and slower search. all-MiniLM-L6: 384 dims. text-embedding-3-large: 3072 dims."
+    },
+    {
+      "question": "ChromaDB stores data:",
+      "options": [
+        "Only in cloud",
+        "By default in local files (SQLite + Parquet) -- portable, no server needed",
+        "In PostgreSQL only",
+        "In Redis"
+      ],
+      "correct": "b",
+      "explanation": "ChromaDB is an embedded vector DB -- default local mode needs no server. Persistent with chromadb.PersistentClient(path='./db')."
+    },
+    {
+      "question": "Approximate Nearest Neighbor (ANN) search is used in vector DBs because:",
+      "options": [
+        "Exact search is impossible",
+        "Exact nearest-neighbor over millions of vectors is too slow -- ANN trades tiny accuracy loss for massive speedup",
+        "ANN is always more accurate",
+        "Embeddings are not precise enough for exact search"
+      ],
+      "correct": "b",
+      "explanation": "HNSW, IVFFlat, LSH are ANN algorithms. 99%+ recall at 100x+ speedup over brute-force exact search."
+    },
+    {
+      "question": "Hybrid search combines:",
+      "options": [
+        "Two different embedding models",
+        "Dense vector search (semantic) + sparse keyword search (BM25) -- best of both",
+        "Two vector databases",
+        "Retrieval and generation"
+      ],
+      "correct": "b",
+      "explanation": "Keyword search finds exact terms. Vector search finds similar meaning. Hybrid catches both cases -- important for specific named entities."
+    },
+    {
+      "question": "Metadata filtering in vector search:",
+      "options": [
+        "Removes irrelevant embeddings",
+        "Restricts search to documents matching metadata conditions (e.g. source='textbook', date>'2024')",
+        "Changes embedding model",
+        "Improves embedding quality"
+      ],
+      "correct": "b",
+      "explanation": "Filter: retrieve from only 'course=ml' chunks. Combines semantic similarity with structured filters -- like SQL WHERE for vector search."
+    },
+    {
+      "question": "text-embedding-3-small vs text-embedding-3-large (OpenAI):",
+      "options": [
+        "Identical quality",
+        "small is faster/cheaper (1536d); large is more accurate but 2x more expensive (3072d)",
+        "large is always preferred",
+        "small has better multilingual support"
+      ],
+      "correct": "b",
+      "explanation": "Match model to task. For RAG over millions of chunks, small is often sufficient. For ranking tasks requiring precision, large wins."
+    },
+    {
+      "question": "Embedding models should be chosen based on:",
+      "options": [
+        "Only parameter count",
+        "Benchmark scores on your specific task type (MTEB leaderboard) + language support + cost",
+        "API provider preference",
+        "Model age"
+      ],
+      "correct": "b",
+      "explanation": "MTEB leaderboard ranks embeddings across retrieval, classification, clustering tasks. Match to your actual task type."
+    },
+    {
+      "question": "Supabase pgvector enables:",
+      "options": [
+        "Graph search",
+        "Storing embeddings in PostgreSQL with vector similarity search -- if already on Supabase, no extra DB needed",
+        "Only exact search",
+        "Only small-scale use"
+      ],
+      "correct": "b",
+      "explanation": "pgvector adds vector type and similarity search operators to Postgres. Perfect for apps already using Supabase -- unified DB."
+    }
+  ]
+}

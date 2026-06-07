@@ -31,18 +31,116 @@
   </div>
 </nav>
 
-<section class="hero hero-sm">
-  <div class="container hero-inner">
-    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/courses/">Courses</a><span class="breadcrumb-sep">›</span><span>Programming</span></div>
-    <div class="hero-eyebrow">programming foundation</div>
-    <h1 class="hero-title">Programming for <em>Engineers &amp; Data People</em></h1>
-    <p class="hero-sub">Eight practical programming tracks. Python, SQL, Shell, Excel, C/C++, Perl, JavaScript — with AI learning prompts, code examples, quizzes, and cheatsheets.</p>
-    <div class="hero-actions">
-      <a href="/cheatsheets.html" class="btn btn-primary">Get Cheatsheets</a>
-      <a href="/courses/" class="btn btn-outline">All Courses</a>
+<style>
+  body { overflow: hidden; }
+  @media (max-width: 768px) { body { overflow: auto; } }
+  .onenote-mobile-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border-dim);
+    padding: 0.75rem 1rem;
+    display: none;
+  }
+  @media (max-width: 768px) { .onenote-mobile-header { display: block; } }
+  select.onenote-mobile-select {
+    background: var(--surface-2);
+    border: 1px solid var(--border-dim);
+    color: var(--text);
+    border-radius: 8px;
+    padding: 0.55rem 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+  }
+</style>
+
+<!-- Mobile topic selector -->
+<div class="onenote-mobile-header">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+    <div>
+      <span class="badge badge-primary" style="margin-right:0.5rem;">PROG</span>
+      <strong style="font-size:0.95rem;">Programming Foundation</strong>
     </div>
+    <a href="/courses/" class="btn btn-ghost btn-sm">All Courses ↗</a>
   </div>
-</section>
+  <select class="onenote-mobile-select" style="width:100%;">
+        <option value="0">🐍 Python Basics</option>
+        <option value="1">📊 Python for Data</option>
+        <option value="2">🖥 Shell / Bash</option>
+        <option value="3">🗄 SQL</option>
+        <option value="4">📋 Excel Formulas</option>
+        <option value="5">⚡ C / C++</option>
+        <option value="6">🔤 Perl</option>
+        <option value="7">🌐 JavaScript</option>
+  </select>
+</div>
+
+<!-- OneNote layout -->
+<div class="onenote-wrap">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="onenote-sidebar">
+    <div class="onenote-sidebar-header">
+      <div style="color:var(--primary);font-weight:700;margin-bottom:0.25rem;">Programming Foundation</div>
+      8 Tracks · Beginner to Intermediate
+    </div>
+
+    <div class="onenote-tab" data-idx="0">
+      <span class="onenote-tab-icon">🐍</span>
+      <span class="onenote-tab-text">Python Basics</span>
+      <span class="onenote-tab-badge">001</span>
+    </div>
+    <div class="onenote-tab" data-idx="1">
+      <span class="onenote-tab-icon">📊</span>
+      <span class="onenote-tab-text">Python for Data</span>
+      <span class="onenote-tab-badge">002</span>
+    </div>
+    <div class="onenote-tab" data-idx="2">
+      <span class="onenote-tab-icon">🖥</span>
+      <span class="onenote-tab-text">Shell / Bash</span>
+      <span class="onenote-tab-badge">003</span>
+    </div>
+    <div class="onenote-tab" data-idx="3">
+      <span class="onenote-tab-icon">🗄</span>
+      <span class="onenote-tab-text">SQL</span>
+      <span class="onenote-tab-badge">004</span>
+    </div>
+    <div class="onenote-tab" data-idx="4">
+      <span class="onenote-tab-icon">📋</span>
+      <span class="onenote-tab-text">Excel Formulas</span>
+      <span class="onenote-tab-badge">005</span>
+    </div>
+    <div class="onenote-tab" data-idx="5">
+      <span class="onenote-tab-icon">⚡</span>
+      <span class="onenote-tab-text">C / C++</span>
+      <span class="onenote-tab-badge">006</span>
+    </div>
+    <div class="onenote-tab" data-idx="6">
+      <span class="onenote-tab-icon">🔤</span>
+      <span class="onenote-tab-text">Perl</span>
+      <span class="onenote-tab-badge">007</span>
+    </div>
+    <div class="onenote-tab" data-idx="7">
+      <span class="onenote-tab-icon">🌐</span>
+      <span class="onenote-tab-text">JavaScript</span>
+      <span class="onenote-tab-badge">008</span>
+    </div>
+
+    <div style="padding:1.25rem;margin-top:1rem;border-top:1px solid var(--border-dim);">
+      <a href="/courses/" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-bottom:0.5rem;">
+        ← All Courses
+      </a>
+      <a href="/cheatsheets.html" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;" data-track="cheatsheet" data-name="prog-cheatsheet">
+        📄 PROG Cheatsheet
+      </a>
+    </div>
+  </aside>
+
+  <!-- RIGHT CONTENT -->
+  <main class="onenote-content">
+
+
+
+  </main>
+</div>
 
 <style>
   body { overflow: hidden; }

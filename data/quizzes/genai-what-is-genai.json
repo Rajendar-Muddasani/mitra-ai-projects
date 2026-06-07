@@ -1,0 +1,116 @@
+{
+  "course_label": "Generative AI",
+  "title": "What is Generative AI",
+  "questions": [
+    {
+      "question": "LLMs are trained primarily using which objective?",
+      "options": [
+        "Supervised classification",
+        "Self-supervised next-token prediction on massive text",
+        "Reinforcement learning only",
+        "Contrastive learning only"
+      ],
+      "correct": "b",
+      "explanation": "Pre-training: predict the next token across billions of examples. No manual labels needed -- text itself provides supervision."
+    },
+    {
+      "question": "Tokens in LLMs are typically:",
+      "options": [
+        "Individual characters",
+        "Whole words",
+        "Subword units (BPE/WordPiece)",
+        "Sentences"
+      ],
+      "correct": "c",
+      "explanation": "Byte-Pair Encoding creates subwords -- frequent words get 1 token, rare words split into multiple. Balances vocabulary size and coverage."
+    },
+    {
+      "question": "Higher temperature in LLM sampling produces:",
+      "options": [
+        "More deterministic output",
+        "More creative and varied output",
+        "Faster inference",
+        "Smaller vocabulary"
+      ],
+      "correct": "b",
+      "explanation": "Temperature scales logits before softmax. High temp = flatter distribution = more random sampling. Low temp = peaked = top token dominates."
+    },
+    {
+      "question": "RLHF (Reinforcement Learning from Human Feedback) is used to:",
+      "options": [
+        "Pre-train the base model",
+        "Align model outputs with human preferences after pre-training",
+        "Speed up inference",
+        "Quantise the model"
+      ],
+      "correct": "b",
+      "explanation": "RLHF: SFT -> reward model -> PPO. Makes models helpful, harmless, honest -- transforms raw pre-trained models into assistants."
+    },
+    {
+      "question": "Open-source LLMs like LLaMA differ from GPT-4 in that they:",
+      "options": [
+        "Are always smaller",
+        "Can be downloaded, run locally, and fine-tuned on your hardware",
+        "Have worse performance always",
+        "Cannot be fine-tuned"
+      ],
+      "correct": "b",
+      "explanation": "Open weights = download and run on your GPU. Important for privacy, cost, customisation. LLaMA-3 70B rivals GPT-4 on many benchmarks."
+    },
+    {
+      "question": "Context window in an LLM refers to:",
+      "options": [
+        "The model's memory between conversations",
+        "The maximum number of tokens the model processes in one call",
+        "The number of training examples",
+        "The model's parameter count"
+      ],
+      "correct": "b",
+      "explanation": "The context window limits how much text the model can 'see' at once. GPT-4: 128K tokens. Claude 3.5: 200K. Longer = more expensive."
+    },
+    {
+      "question": "Hallucination in LLMs means:",
+      "options": [
+        "The model is slow to respond",
+        "The model generates confident but factually incorrect information",
+        "The model refuses to answer",
+        "The model copies training data"
+      ],
+      "correct": "b",
+      "explanation": "LLMs predict plausible-sounding tokens, not verified facts. Without retrieval/grounding, they can confidently invent citations, facts, code."
+    },
+    {
+      "question": "The main advantage of smaller quantised models (GGUF, AWQ) is:",
+      "options": [
+        "Better accuracy",
+        "Run on consumer hardware (CPU/small GPU) with modest accuracy loss",
+        "Faster training",
+        "No need for tokenisation"
+      ],
+      "correct": "b",
+      "explanation": "4-bit quantisation reduces 7B model from 14GB to ~4GB. Runs on a laptop CPU. Opens LLMs to edge deployment."
+    },
+    {
+      "question": "System prompts in chat models are used to:",
+      "options": [
+        "Pre-train the model",
+        "Set the model's persona, constraints, and behaviour for all turns in a conversation",
+        "Speed up inference",
+        "Fine-tune on the fly"
+      ],
+      "correct": "b",
+      "explanation": "The system prompt is injected before user messages. It sets role, tone, restrictions, and output format for the whole session."
+    },
+    {
+      "question": "Which is NOT a current limitation of LLMs?",
+      "options": [
+        "Knowledge cutoff",
+        "Hallucination",
+        "Cannot process any text at all",
+        "High inference cost at scale"
+      ],
+      "correct": "c",
+      "explanation": "LLMs process text very well -- that is their core capability. Limitations are: cutoff, hallucination, cost, context length, reasoning."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "course_label": "Generative AI",
+  "title": "LLM Evaluation",
+  "questions": [
+    {
+      "question": "BLEU score was originally designed for:",
+      "options": [
+        "Summarisation",
+        "Machine translation evaluation -- measuring n-gram overlap with reference",
+        "Question answering",
+        "Code generation"
+      ],
+      "correct": "b",
+      "explanation": "BLEU = Bilingual Evaluation Understudy (Papineni 2002). Measures modified precision of n-gram matches between hypothesis and reference."
+    },
+    {
+      "question": "ROUGE-1 recall measures:",
+      "options": [
+        "Precision of model output",
+        "What fraction of reference unigrams appear in the hypothesis",
+        "Speed of generation",
+        "Context relevance"
+      ],
+      "correct": "b",
+      "explanation": "ROUGE-1 Recall = |reference unigrams in hypothesis| / |reference unigrams|. High recall = hypothesis covers what the reference covers."
+    },
+    {
+      "question": "The main limitation of BLEU/ROUGE is:",
+      "options": [
+        "They are too complex",
+        "They measure surface-level n-gram overlap, not semantic equivalence or factuality",
+        "They require human annotation",
+        "They only work for English"
+      ],
+      "correct": "b",
+      "explanation": "'The cat sat' and 'A feline was seated' have 0 n-gram overlap but identical meaning. BLEU/ROUGE miss semantic equivalence."
+    },
+    {
+      "question": "LLM-as-judge evaluation is preferred when:",
+      "options": [
+        "Exact string matching works",
+        "Evaluating open-ended quality (coherence, helpfulness, factuality) at scale",
+        "Computing BLEU scores",
+        "Human judges are available"
+      ],
+      "correct": "b",
+      "explanation": "LLM-judge correlates highly with human judgment at 1/100th the cost. GPT-4o as judge enables large-scale evaluation of open-ended outputs."
+    },
+    {
+      "question": "Faithfulness in RAG evaluation measures:",
+      "options": [
+        "Retrieval speed",
+        "Whether the generated answer is grounded in the provided context (no hallucination)",
+        "Grammar quality",
+        "Answer length"
+      ],
+      "correct": "b",
+      "explanation": "Faithfulness = fraction of answer claims that are supported by context. Catches the model inventing facts not in retrieved documents."
+    },
+    {
+      "question": "G-Eval uses:",
+      "options": [
+        "Rule-based scoring",
+        "LLM to score outputs on user-defined criteria with chain-of-thought reasoning",
+        "BLEU computation",
+        "Human preference labels"
+      ],
+      "correct": "b",
+      "explanation": "G-Eval (Liu 2023): define criteria in natural language, LLM generates CoT reasoning then assigns a score. Flexible, explainable, high human correlation."
+    },
+    {
+      "question": "BERTScore improves over BLEU by:",
+      "options": [
+        "Being faster",
+        "Computing semantic similarity using contextual BERT embeddings instead of n-gram overlap",
+        "Requiring no reference",
+        "Using larger n-grams"
+      ],
+      "correct": "b",
+      "explanation": "BERTScore matches tokens between hypothesis and reference in BERT embedding space -- catching semantic equivalence even with different surface forms."
+    },
+    {
+      "question": "Evaluation data contamination means:",
+      "options": [
+        "Bad quality test set",
+        "The evaluation benchmark appeared in the model's training data -- inflating reported scores",
+        "The model was evaluated too early",
+        "The test set is too small"
+      ],
+      "correct": "b",
+      "explanation": "If 'What is the capital of France?' appears in training data, the model memorised it -- not generalising. Contaminated benchmarks overstate capabilities."
+    },
+    {
+      "question": "For production LLM apps, online evaluation tracks:",
+      "options": [
+        "Only offline benchmark scores",
+        "Real user feedback, thumbs up/down, follow-up rates, session abandonment -- live quality signals",
+        "Only cost metrics",
+        "Only latency"
+      ],
+      "correct": "b",
+      "explanation": "Offline benchmarks tell you pre-deployment quality. Online eval catches real distribution shift, edge cases, and user satisfaction in production."
+    },
+    {
+      "question": "MT-Bench and Arena-Hard evaluate:",
+      "options": [
+        "Only translation",
+        "Multi-turn conversation quality via LLM-judge, correlating with Chatbot Arena human preferences",
+        "Only single-turn responses",
+        "Only factuality"
+      ],
+      "correct": "b",
+      "explanation": "MT-Bench: 80 multi-turn questions, GPT-4 as judge. Arena-Hard: hard questions from Chatbot Arena. Both correlate well with human ELO rankings."
+    }
+  ]
+}

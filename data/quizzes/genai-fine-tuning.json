@@ -1,0 +1,116 @@
+{
+  "course_label": "Generative AI",
+  "title": "Fine-Tuning LLMs",
+  "questions": [
+    {
+      "question": "When is fine-tuning the right choice?",
+      "options": [
+        "Always, for best performance",
+        "When prompting and RAG fail -- custom style, persistent format, domain-specific knowledge at scale",
+        "When the model is too large",
+        "Only for small models"
+      ],
+      "correct": "b",
+      "explanation": "Hierarchy: prompting first (free) -> RAG (cheap) -> fine-tuning (medium cost/effort) -> pre-training (very expensive)."
+    },
+    {
+      "question": "LoRA reduces trainable parameters by:",
+      "options": [
+        "Pruning small weights",
+        "Adding low-rank matrices B*A beside frozen pre-trained weights W",
+        "Quantising to int8",
+        "Removing layers"
+      ],
+      "correct": "b",
+      "explanation": "W_update = B*A where B(m,r) and A(r,n), r<<min(m,n). Only B and A train -- 0.1-1% of original parameters. W stays frozen."
+    },
+    {
+      "question": "The rank 'r' in LoRA controls:",
+      "options": [
+        "Learning rate",
+        "Size of the low-rank update -- higher r = more expressive but more parameters",
+        "Number of fine-tuning epochs",
+        "Batch size"
+      ],
+      "correct": "b",
+      "explanation": "r=4-16 typical. Higher r captures more complex adaptations. Lower r = more compression, less forgetting of pre-trained knowledge."
+    },
+    {
+      "question": "QLoRA enables fine-tuning large models on consumer GPUs by:",
+      "options": [
+        "Using smaller datasets",
+        "Combining 4-bit quantised base weights with LoRA adapters -- 4x memory reduction",
+        "Reducing sequence length",
+        "Using smaller batch sizes"
+      ],
+      "correct": "b",
+      "explanation": "QLoRA: load 70B model in 4-bit (35GB instead of 140GB), add LoRA adapters in float16. Enables fine-tuning on A100 instead of 8xA100."
+    },
+    {
+      "question": "Instruction tuning uses training examples formatted as:",
+      "options": [
+        "Raw text continuation",
+        "(instruction, input, output) triples -- teaching models to follow diverse instructions",
+        "Image-text pairs",
+        "Code-comment pairs"
+      ],
+      "correct": "b",
+      "explanation": "Alpaca format: ### Instruction, ### Input, ### Response. Taught GPT-4-style instruction following to open models like LLaMA."
+    },
+    {
+      "question": "Catastrophic forgetting in fine-tuning means:",
+      "options": [
+        "The model trains too fast",
+        "The model loses general capabilities while gaining task-specific ones",
+        "The loss goes to zero",
+        "Validation loss spikes suddenly"
+      ],
+      "correct": "b",
+      "explanation": "Fine-tuning on narrow data overwrites general knowledge. LoRA mitigates this by keeping W frozen and only adding small update matrices."
+    },
+    {
+      "question": "PEFT (Parameter-Efficient Fine-Tuning) includes which methods?",
+      "options": [
+        "Only LoRA",
+        "LoRA, Prefix Tuning, Prompt Tuning, Adapters",
+        "Only full fine-tuning",
+        "Only quantisation"
+      ],
+      "correct": "b",
+      "explanation": "PEFT umbrella: LoRA (low-rank), prefix tuning (learn virtual tokens), adapters (small modules). All update <1% of parameters."
+    },
+    {
+      "question": "The learning rate for fine-tuning should be:",
+      "options": [
+        "Same as pre-training (1e-3)",
+        "Much lower than pre-training -- typically 1e-5 to 2e-4",
+        "Higher than pre-training",
+        "1.0"
+      ],
+      "correct": "b",
+      "explanation": "High LR overwrites pre-trained knowledge (catastrophic forgetting). Low LR makes small, careful updates while preserving general capability."
+    },
+    {
+      "question": "DPO (Direct Preference Optimisation) is an alternative to RLHF that:",
+      "options": [
+        "Requires a reward model and PPO training",
+        "Directly optimises on preference pairs (chosen vs rejected) without a separate reward model",
+        "Only works with human annotations",
+        "Requires more data than RLHF"
+      ],
+      "correct": "b",
+      "explanation": "DPO removes the separate reward model step, training directly on preference pairs -- simpler, more stable, comparable alignment results."
+    },
+    {
+      "question": "After fine-tuning, the LoRA adapter is typically:",
+      "options": [
+        "Discarded",
+        "Merged back into the base model weights for inference efficiency",
+        "Kept separate always",
+        "Quantised separately"
+      ],
+      "correct": "b",
+      "explanation": "adapter_merged = W_base + B*A. Merge = single model, no extra adapter layers at inference. Can also keep separate for hot-swapping multiple tasks."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "course_label": "Generative AI",
+  "title": "Prompt Engineering",
+  "questions": [
+    {
+      "question": "Zero-shot prompting means:",
+      "options": [
+        "Providing zero examples of the task",
+        "Asking the model directly with no examples of input-output pairs",
+        "Using temperature=0",
+        "Providing a system prompt only"
+      ],
+      "correct": "b",
+      "explanation": "Zero-shot: 'Classify: X. Answer:' -- no examples. Works well for capable models on clear tasks."
+    },
+    {
+      "question": "Chain-of-Thought (CoT) prompting improves performance on:",
+      "options": [
+        "Simple classification",
+        "Multi-step reasoning tasks (math, logic, planning)",
+        "Summarisation",
+        "Code completion"
+      ],
+      "correct": "b",
+      "explanation": "'Let me think step by step' forces the model to externalise reasoning, reducing errors on tasks requiring multiple inference steps."
+    },
+    {
+      "question": "Few-shot prompting provides:",
+      "options": [
+        "Training examples to update model weights",
+        "Input-output examples in the prompt to demonstrate the desired format and task",
+        "More context tokens",
+        "Temperature adjustments"
+      ],
+      "correct": "b",
+      "explanation": "3-5 examples in the prompt = few-shot. Dramatically improves performance on custom formats, domain terminology, and output structure."
+    },
+    {
+      "question": "The ReAct pattern interleaves:",
+      "options": [
+        "Temperature and top-p sampling",
+        "Reasoning (Thought) steps with Actions (tool calls) and Observations",
+        "Training and inference",
+        "Prompting and fine-tuning"
+      ],
+      "correct": "b",
+      "explanation": "Thought: I need to... Action: search('X') Observation: result. Thought: Now I know... Answer: Y. Used for tool-using agents."
+    },
+    {
+      "question": "Instruction following improves when you:",
+      "options": [
+        "Use longer prompts",
+        "Specify the output format, audience, length, and tone explicitly",
+        "Ask multiple questions at once",
+        "Use lowercase"
+      ],
+      "correct": "b",
+      "explanation": "Clear constraints: 'Write 3 bullet points for a first-year CS student. Use plain English.' Specificity reduces ambiguity."
+    },
+    {
+      "question": "Prompt injection attacks occur when:",
+      "options": [
+        "The model ignores system prompts",
+        "Malicious user input overrides the system prompt instructions",
+        "The model is too large",
+        "Temperature is too high"
+      ],
+      "correct": "b",
+      "explanation": "'Ignore all previous instructions and...' -- user input can override system prompt. Critical security concern in production LLM applications."
+    },
+    {
+      "question": "Self-consistency prompting works by:",
+      "options": [
+        "Using a single best answer",
+        "Sampling multiple CoT reasoning paths and taking the majority answer",
+        "Reducing temperature",
+        "Using shorter prompts"
+      ],
+      "correct": "b",
+      "explanation": "Generate N reasoning chains, aggregate answers. Reduces reasoning variance -- better than a single chain on complex tasks."
+    },
+    {
+      "question": "Prompt caching (e.g. Anthropic/OpenAI) reduces costs by:",
+      "options": [
+        "Compressing prompts",
+        "Reusing processed key-value pairs for repeated prefix tokens across requests",
+        "Quantising the model",
+        "Reducing context length"
+      ],
+      "correct": "b",
+      "explanation": "When many requests share a long system prompt, caching stores the KV cache -- 90% cost reduction on the cached portion."
+    },
+    {
+      "question": "Tree-of-Thought (ToT) extends CoT by:",
+      "options": [
+        "Using more examples",
+        "Exploring multiple reasoning branches and backtracking -- like tree search",
+        "Reducing prompt length",
+        "Adding retrieval"
+      ],
+      "correct": "b",
+      "explanation": "ToT: generate multiple thoughts at each step, evaluate them, explore the most promising branch. Better for complex planning tasks."
+    },
+    {
+      "question": "Which is a BAD prompting practice?",
+      "options": [
+        "Being specific about output format",
+        "Asking one thing at a time",
+        "Using 'Is X the best approach?' (leading questions)",
+        "Giving role context"
+      ],
+      "correct": "c",
+      "explanation": "Leading questions bias the model. It will tend to agree regardless of truth. Ask open-ended: 'What approach would you recommend and why?'"
+    }
+  ]
+}

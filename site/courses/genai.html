@@ -43,22 +43,82 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="tab-layout">
-      <div class="tab-nav">
-        <button class="tab-btn">✨ What is GenAI</button>
-        <button class="tab-btn">💡 Prompt Engineering</button>
-        <button class="tab-btn">🔍 RAG</button>
-        <button class="tab-btn">🎯 Fine-Tuning</button>
-        <button class="tab-btn">🗄 Embeddings &amp; Vector DBs</button>
-        <button class="tab-btn">📊 LLM Evaluation</button>
-        <button class="tab-btn">🤗 HuggingFace</button>
-        <button class="tab-btn">🏆 Kaggle with LLMs</button>
-      </div>
+<style>
+  body { overflow: hidden; }
+  @media (max-width: 768px) { body { overflow: auto; } }
+  .onenote-mobile-header { background:var(--surface);border-bottom:1px solid var(--border-dim);padding:0.75rem 1rem;display:none; }
+  @media (max-width: 768px) { .onenote-mobile-header { display:block; } }
+  select.onenote-mobile-select { background:var(--surface-2);border:1px solid var(--border-dim);color:var(--text);border-radius:8px;padding:0.55rem 0.85rem;font-family:'JetBrains Mono',monospace;font-size:0.85rem; }
+</style>
+<div class="onenote-mobile-header">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+    <div><span class="badge badge-primary" style="margin-right:0.5rem;">GENAI</span><strong>Generative AI</strong></div>
+    <a href="/courses/" class="btn btn-ghost btn-sm">All Courses</a>
+  </div>
+  <select class="onenote-mobile-select" style="width:100%;">        <option value="0">✨ What is GenAI</option>
+        <option value="1">🎯 Prompt Engineering</option>
+        <option value="2">📚 RAG</option>
+        <option value="3">🔧 Fine-Tuning</option>
+        <option value="4">🔢 Embeddings & Vector DB</option>
+        <option value="5">📊 LLM Evaluation</option>
+        <option value="6">🤗 HuggingFace</option>
+        <option value="7">📈 Kaggle with LLMs</option></select>
+</div>
+<div class="onenote-wrap">
+  <aside class="onenote-sidebar">
+    <div class="onenote-sidebar-header">
+      <div style="color:var(--primary);font-weight:700;margin-bottom:0.25rem;">Generative AI</div>
+      8 Topics · Developers & Builders
+    </div>
+    <div class="onenote-tab" data-idx="0">
+      <span class="onenote-tab-icon">✨</span>
+      <span class="onenote-tab-text">What is GenAI</span>
+      <span class="onenote-tab-badge">001</span>
+    </div>
+    <div class="onenote-tab" data-idx="1">
+      <span class="onenote-tab-icon">🎯</span>
+      <span class="onenote-tab-text">Prompt Engineering</span>
+      <span class="onenote-tab-badge">002</span>
+    </div>
+    <div class="onenote-tab" data-idx="2">
+      <span class="onenote-tab-icon">📚</span>
+      <span class="onenote-tab-text">RAG</span>
+      <span class="onenote-tab-badge">003</span>
+    </div>
+    <div class="onenote-tab" data-idx="3">
+      <span class="onenote-tab-icon">🔧</span>
+      <span class="onenote-tab-text">Fine-Tuning</span>
+      <span class="onenote-tab-badge">004</span>
+    </div>
+    <div class="onenote-tab" data-idx="4">
+      <span class="onenote-tab-icon">🔢</span>
+      <span class="onenote-tab-text">Embeddings & Vector DB</span>
+      <span class="onenote-tab-badge">005</span>
+    </div>
+    <div class="onenote-tab" data-idx="5">
+      <span class="onenote-tab-icon">📊</span>
+      <span class="onenote-tab-text">LLM Evaluation</span>
+      <span class="onenote-tab-badge">006</span>
+    </div>
+    <div class="onenote-tab" data-idx="6">
+      <span class="onenote-tab-icon">🤗</span>
+      <span class="onenote-tab-text">HuggingFace</span>
+      <span class="onenote-tab-badge">007</span>
+    </div>
+    <div class="onenote-tab" data-idx="7">
+      <span class="onenote-tab-icon">📈</span>
+      <span class="onenote-tab-text">Kaggle with LLMs</span>
+      <span class="onenote-tab-badge">008</span>
+    </div>
+    <div style="padding:1.25rem;margin-top:1rem;border-top:1px solid var(--border-dim);">
+      <a href="/courses/" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-bottom:0.5rem;">← All Courses</a>
+      <a href="/cheatsheets.html" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;" data-track="cheatsheet" data-name="genai-prompt-patterns">📄 GenAI Cheatsheet</a>
+    </div>
+  </aside>
+  <main class="onenote-content">
+    <!-- Panel 0: What is GenAI -->
+    <div class="onenote-panel active">
 
-      <!-- What is GenAI -->
-      <div class="tab-panel">
         <div class="topic-hero"><div class="topic-eyebrow">overview</div><h2>What is Generative AI?</h2><p>Generative AI creates new content — text, images, code, audio — by learning statistical patterns from large amounts of training data. LLMs like GPT-4, Claude, and Gemini are the most widely used form today.</p></div>
         <div class="topic-section"><h3>Key Concepts</h3>
         <table class="metric-table">
@@ -76,19 +136,32 @@
         <div class="tags" style="margin:0 0 1rem;">
           <span class="tag">Claude Sonnet 4.6</span><span class="tag">GPT-4o</span><span class="tag">Gemini 1.5 Pro</span><span class="tag">Llama 3.1</span><span class="tag">Mistral</span><span class="tag">Qwen</span>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — What is GenAI</h3>
-          <div class="quiz-q" data-correct="c"><p>1. What does temperature = 0 do?</p>
-            <label class="quiz-option"><input type="radio" name="ga-q1" value="a"> Makes the model faster</label>
-            <label class="quiz-option"><input type="radio" name="ga-q1" value="b"> Disables context</label>
-            <label class="quiz-option"><input type="radio" name="ga-q1" value="c"> Makes the model always choose the highest-probability token (deterministic)</label>
-            <label class="quiz-option"><input type="radio" name="ga-q1" value="d"> Removes the system prompt</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: What is GenAI</div>
+            <div class="notebook-card-desc">Tokenisation, LLM landscape, temperature, cost estimation</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab/index.html?path=genai-01-what-is-genai.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=genai&topic=what-is-genai" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- Prompt Engineering -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 1: Prompt Engineering -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">prompt patterns</div><h2>Prompt Engineering</h2><p>The art and science of writing prompts that reliably produce the output you want. No retraining required — the right prompt can transform model behavior instantly.</p></div>
         <div class="topic-section"><h3>Core Patterns</h3>
         <table class="metric-table">
@@ -119,19 +192,32 @@ response = client.chat.completions.<span class="fn">create</span>(
 )
 <span class="fn">print</span>(response.choices[<span class="num">0</span>].message.content)</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — Prompt Engineering</h3>
-          <div class="quiz-q" data-correct="b"><p>1. Chain-of-Thought prompting works best for:</p>
-            <label class="quiz-option"><input type="radio" name="pe-q1" value="a"> Simple text classification</label>
-            <label class="quiz-option"><input type="radio" name="pe-q1" value="b"> Multi-step reasoning tasks where intermediate steps matter</label>
-            <label class="quiz-option"><input type="radio" name="pe-q1" value="c"> Reducing API costs</label>
-            <label class="quiz-option"><input type="radio" name="pe-q1" value="d"> Image captioning</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Prompt Engineering</div>
+            <div class="notebook-card-desc">Zero-shot, few-shot, CoT, ReAct, role prompting</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab/index.html?path=genai-02-prompt-engineering.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=genai&topic=prompt-engineering" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- RAG -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 2: RAG -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">074 · postsilicon-validation-rag + chromadb-rag-tutorials</div><h2>RAG — Retrieval-Augmented Generation</h2><p>Ground LLM responses in your own documents. RAG retrieves relevant chunks from a vector database and injects them into the prompt — reducing hallucination and enabling domain-specific Q&A.</p></div>
         <div class="topic-section"><h3>RAG Architecture</h3>
         <div class="arch-diagram">
@@ -181,19 +267,32 @@ collection = chroma.get_or_create_collection(<span class="st">"docs"</span>)
         <div class="project-callout"><h4>💡 Document Q&amp;A Assistant</h4>
         <p>This is the core pattern behind project-01 on this platform. Build a full RAG system with document upload, ChromaDB, and FastAPI backend.</p>
         <a href="/projects/document-qa-assistant.html" class="btn btn-primary btn-sm">Build This Project →</a></div>
-        <div class="quiz-block"><h3>Quiz — RAG</h3>
-          <div class="quiz-q" data-correct="d"><p>1. RAG reduces hallucinations by:</p>
-            <label class="quiz-option"><input type="radio" name="rag-q1" value="a"> Fine-tuning the model on your data</label>
-            <label class="quiz-option"><input type="radio" name="rag-q1" value="b"> Using a smaller temperature</label>
-            <label class="quiz-option"><input type="radio" name="rag-q1" value="c"> Using a larger model</label>
-            <label class="quiz-option"><input type="radio" name="rag-q1" value="d"> Grounding the LLM's response in retrieved, factual context from your documents</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: RAG</div>
+            <div class="notebook-card-desc">Chunking, TF-IDF retrieval, ChromaDB, RAGAS</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab/index.html?path=genai-03-rag.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=genai&topic=rag" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- Fine-Tuning -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 3: Fine-Tuning -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">075 · domain-llm-finetuning</div><h2>Fine-Tuning LLMs</h2><p>Adapt a pre-trained LLM to your domain or style using a small labeled dataset. LoRA and PEFT make this feasible on consumer hardware.</p></div>
         <div class="topic-section"><h3>When Fine-Tuning is Worth It</h3>
         <div class="grid grid-2" style="gap:1rem;">
@@ -216,19 +315,32 @@ collection = chroma.get_or_create_collection(<span class="st">"docs"</span>)
         </div></div>
         <div class="topic-section"><h3>LoRA Key Idea</h3>
         <p>Instead of updating all model weights, LoRA decomposes the weight update matrix into two small low-rank matrices. This dramatically reduces trainable parameters (often by 10,000×) while achieving similar quality to full fine-tuning.</p></div>
-        <div class="quiz-block"><h3>Quiz — Fine-Tuning</h3>
-          <div class="quiz-q" data-correct="b"><p>1. LoRA's key advantage is:</p>
-            <label class="quiz-option"><input type="radio" name="ft-q1" value="a"> Faster inference speed</label>
-            <label class="quiz-option"><input type="radio" name="ft-q1" value="b"> Dramatically fewer trainable parameters than full fine-tuning</label>
-            <label class="quiz-option"><input type="radio" name="ft-q1" value="c"> No need for GPU</label>
-            <label class="quiz-option"><input type="radio" name="ft-q1" value="d"> Eliminating the need for a base model</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Fine-Tuning</div>
+            <div class="notebook-card-desc">DistilBERT, LoRA, instruction tuning</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab/index.html?path=genai-04-fine-tuning.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=genai&topic=fine-tuning" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- Embeddings & Vector DBs -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 4: Embeddings & Vector DB -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">chroma, pinecone, supabase pgvector</div><h2>Embeddings &amp; Vector Databases</h2><p>Convert text, images, and code into dense numerical vectors. Use vector similarity search to find semantically similar content — the foundation of RAG, recommendation systems, and semantic search.</p></div>
         <div class="topic-section"><h3>Vector DB Comparison</h3>
         <table class="metric-table">
@@ -241,19 +353,32 @@ collection = chroma.get_or_create_collection(<span class="st">"docs"</span>)
             <tr><td>Weaviate</td><td>Multi-modal search</td><td>GraphQL API, schemas</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>Quiz — Embeddings</h3>
-          <div class="quiz-q" data-correct="a"><p>1. Cosine similarity between two embeddings measures:</p>
-            <label class="quiz-option"><input type="radio" name="em-q1" value="a"> The angle between the two vectors — semantic similarity</label>
-            <label class="quiz-option"><input type="radio" name="em-q1" value="b"> The Euclidean distance between the vectors</label>
-            <label class="quiz-option"><input type="radio" name="em-q1" value="c"> The dot product of their magnitudes</label>
-            <label class="quiz-option"><input type="radio" name="em-q1" value="d"> The number of matching words</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Embeddings</div>
+            <div class="notebook-card-desc">Cosine similarity, semantic search, ChromaDB, Pinecone</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab/index.html?path=genai-05-embeddings.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=genai&topic=embeddings" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- LLM Evaluation -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 5: LLM Evaluation -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">evaluation patterns</div><h2>LLM Evaluation</h2><p>How do you know your LLM application is working? Evaluation is one of the hardest problems in GenAI engineering. Multiple strategies are needed — no single metric tells the full story.</p></div>
         <div class="topic-section"><h3>Evaluation Strategies</h3>
         <table class="metric-table">
@@ -266,19 +391,32 @@ collection = chroma.get_or_create_collection(<span class="st">"docs"</span>)
             <tr><td>Task-specific</td><td>F1, accuracy, exact match on benchmarks</td><td>Classification, extraction tasks</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>Quiz — LLM Evaluation</h3>
-          <div class="quiz-q" data-correct="c"><p>1. BLEU score measures:</p>
-            <label class="quiz-option"><input type="radio" name="ev-q1" value="a"> Model perplexity</label>
-            <label class="quiz-option"><input type="radio" name="ev-q1" value="b"> Semantic similarity</label>
-            <label class="quiz-option"><input type="radio" name="ev-q1" value="c"> N-gram overlap between generated text and reference translations</label>
-            <label class="quiz-option"><input type="radio" name="ev-q1" value="d"> Hallucination rate</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: LLM Evaluation</div>
+            <div class="notebook-card-desc">BLEU, ROUGE-1, LLM-as-judge, RAGAS framework</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab/index.html?path=genai-06-llm-evaluation.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=genai&topic=llm-evaluation" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- HuggingFace -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 6: HuggingFace -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">huggingface ecosystem</div><h2>HuggingFace Ecosystem</h2><p>The open-source hub for ML models, datasets, and deployment. The transformers library is the standard for accessing pre-trained models in Python.</p></div>
         <div class="topic-section"><h3>Key Libraries</h3>
         <table class="metric-table">
@@ -305,19 +443,32 @@ result = clf(<span class="st">"This project guide is excellent!"</span>)
 gen = <span class="fn">pipeline</span>(<span class="st">"text-generation"</span>, model=<span class="st">"gpt2"</span>)
 text = <span class="fn">gen</span>(<span class="st">"Machine learning is"</span>, max_new_tokens=<span class="num">50</span>)</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — HuggingFace</h3>
-          <div class="quiz-q" data-correct="d"><p>1. HuggingFace Spaces allows you to:</p>
-            <label class="quiz-option"><input type="radio" name="hf-q1" value="a"> Train models on HF GPUs for free indefinitely</label>
-            <label class="quiz-option"><input type="radio" name="hf-q1" value="b"> Access private models without authentication</label>
-            <label class="quiz-option"><input type="radio" name="hf-q1" value="c"> Fine-tune BERT without code</label>
-            <label class="quiz-option"><input type="radio" name="hf-q1" value="d"> Deploy ML demos using Gradio or Streamlit for free</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: HuggingFace</div>
+            <div class="notebook-card-desc">pipeline API, datasets, Gradio, free Inference API</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab/index.html?path=genai-07-huggingface.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=genai&topic=huggingface" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- Kaggle with LLMs -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 7: Kaggle with LLMs -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">competition strategy</div><h2>Kaggle with LLMs</h2><p>How to approach NLP and LLM-based Kaggle competitions — from EDA to submission, ensembling, and using free GPU quota effectively.</p></div>
         <div class="topic-section"><h3>Kaggle LLM Competition Workflow</h3>
         <div class="step-card" style="text-align:left;padding:1.25rem;"><ol style="padding-left:1.25rem;">
@@ -328,20 +479,25 @@ text = <span class="fn">gen</span>(<span class="st">"Machine learning is"</span>
           <li style="list-style:decimal;font-size:0.9rem;margin-bottom:0.5rem;color:var(--text);"><strong>Ensemble</strong> — Blend predictions from multiple models</li>
           <li style="list-style:decimal;font-size:0.9rem;color:var(--text);"><strong>Submit</strong> — Iterate on public LB, avoid public LB overfitting</li>
         </ol></div></div>
-        <div class="quiz-block"><h3>Quiz — Kaggle</h3>
-          <div class="quiz-q" data-correct="b"><p>1. Public LB overfitting means:</p>
-            <label class="quiz-option"><input type="radio" name="kg-q1" value="a"> Your model is overfitting the training data</label>
-            <label class="quiz-option"><input type="radio" name="kg-q1" value="b"> You over-optimize for the public leaderboard, losing performance on the private test set</label>
-            <label class="quiz-option"><input type="radio" name="kg-q1" value="c"> Using too many submissions per day</label>
-            <label class="quiz-option"><input type="radio" name="kg-q1" value="d"> Not using cross-validation</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Kaggle with LLMs</div>
+            <div class="notebook-card-desc">EDA, DeBERTa, K-fold CV, ensemble, competition tips</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab/index.html?path=genai-08-kaggle-llms.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
-        <div class="completion-banner">
-          <div class="completion-icon">🎓</div>
-          <div class="completion-body"><h3>GenAI Course Complete!</h3><p>Claim your Generative AI completion certificate.</p></div>
-          <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('genai','kaggle-llms')">Claim Certificate →</button>
-        </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=genai&topic=kaggle-llms" class="btn btn-primary">Take Quiz</a>
+      </div>
+        
       </div>
 
     </div>
@@ -356,6 +512,39 @@ text = <span class="fn">gen</span>(<span class="st">"Machine learning is"</span>
       <div class="footer-col"><h4>Platform</h4><ul><li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li><li><a href="/faq.html">FAQ</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
     </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students.</p></div>
+      <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/ml.html">Machine Learning</a></li><li><a href="/courses/dl.html">Deep Learning</a></li><li><a href="/courses/agentic.html">Agentic AI</a></li><li><a href="/courses/mlops.html">MLOps</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li><li><a href="/faq.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+
+      <div class="completion-banner" style="margin-top:2rem;">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body"><h3>Generative AI Complete!</h3><p>Pass all topic quizzes to earn your GenAI certificate.</p></div>
+        <a href="/courses/" class="btn btn-primary">Browse Next Course</a>
+      </div>
+      <div class="completion-banner" style="margin-top:2rem;">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body"><h3>Generative AI Complete!</h3><p>Pass all topic quizzes to earn your GenAI certificate.</p></div>
+        <a href="/courses/" class="btn btn-primary">Browse Next Course</a>
+      </div>    </div>
     <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
   </div>
 </footer>

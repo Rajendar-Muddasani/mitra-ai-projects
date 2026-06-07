@@ -1,0 +1,116 @@
+{
+  "course_label": "Generative AI",
+  "title": "Kaggle with LLMs",
+  "questions": [
+    {
+      "question": "Kaggle provides free GPU compute of approximately:",
+      "options": [
+        "1 hour/week",
+        "30 hours/week (T4 or P100)",
+        "Unlimited",
+        "5 hours/day"
+      ],
+      "correct": "b",
+      "explanation": "30 GPU hours/week resets weekly. Internet must be enabled (Settings). Best for training small models or inference with large ones."
+    },
+    {
+      "question": "Stratified K-fold cross-validation in NLP competitions ensures:",
+      "options": [
+        "Faster training",
+        "Label distribution is preserved in each fold -- critical for imbalanced datasets",
+        "More training data",
+        "Better embeddings"
+      ],
+      "correct": "b",
+      "explanation": "Random split risks all positives going to one fold. Stratified split: each fold has same class proportion as full dataset."
+    },
+    {
+      "question": "Out-of-fold (OOF) predictions are used to:",
+      "options": [
+        "Make final submissions",
+        "Evaluate model performance without overfitting to the test set, and for ensemble stacking",
+        "Speed up inference",
+        "Replace cross-validation"
+      ],
+      "correct": "b",
+      "explanation": "OOF: predictions on val fold from each CV fold. Together they cover all training data -- unbiased estimate of generalisation."
+    },
+    {
+      "question": "Public LB (leaderboard) represents approximately what fraction of test data?",
+      "options": [
+        "100%",
+        "30% -- private LB uses 70%",
+        "50%",
+        "10%"
+      ],
+      "correct": "b",
+      "explanation": "Public LB: 30% of test. Private LB: 70%, revealed at competition end. Overfitting to public LB often drops rank on private LB."
+    },
+    {
+      "question": "DeBERTa-v3 is popular in Kaggle NLP competitions because:",
+      "options": [
+        "It is the smallest model",
+        "It consistently outperforms BERT and RoBERTa on classification with similar compute",
+        "It requires no fine-tuning",
+        "It has the largest context window"
+      ],
+      "correct": "b",
+      "explanation": "DeBERTa uses disentangled attention + enhanced mask decoder. microsoft/deberta-v3-base is the go-to baseline for NLP classification."
+    },
+    {
+      "question": "Pseudo-labelling in competitions involves:",
+      "options": [
+        "Using noisy data",
+        "Predicting on test set, adding high-confidence predictions as labelled training data",
+        "Removing labels",
+        "Using external data only"
+      ],
+      "correct": "b",
+      "explanation": "Train on labelled data, predict test set, add examples where P(class) > 0.95 as pseudo-labels, retrain. Typically +0.1-0.3% AUC."
+    },
+    {
+      "question": "Ensemble diversity improves results because:",
+      "options": [
+        "Larger models are always better",
+        "Different models/seeds make different errors -- averaging cancels out individual mistakes",
+        "More parameters always help",
+        "Ensembles train faster"
+      ],
+      "correct": "b",
+      "explanation": "If model A makes correct predictions on cases model B gets wrong, averaging them outperforms either alone. Diversity is the key."
+    },
+    {
+      "question": "Data leakage in NLP competitions occurs when:",
+      "options": [
+        "Training data is too small",
+        "Future information accidentally appears in training features, inflating CV scores",
+        "Models are too large",
+        "The competition dataset is public"
+      ],
+      "correct": "b",
+      "explanation": "Leakage examples: using the submission file to get test labels, features derived from the full dataset before train/test split."
+    },
+    {
+      "question": "Why use max_seq_length = 95th percentile of token count, not 100th?",
+      "options": [
+        "To reduce accuracy",
+        "The top 5% of long documents add computation cost disproportionate to their information gain",
+        "To speed up tokenisation",
+        "Models can't handle long sequences"
+      ],
+      "correct": "b",
+      "explanation": "Truncating outliers at 95th percentile: 5% of examples slightly truncated, but 2-5x speedup from shorter average sequence. Accuracy impact minimal."
+    },
+    {
+      "question": "After a competition, the most valuable learning comes from:",
+      "options": [
+        "Your own solution only",
+        "Reading top-ranked solution write-ups in the discussion forum",
+        "Re-running your baseline",
+        "Downloading the dataset"
+      ],
+      "correct": "b",
+      "explanation": "Top solution discussions reveal: feature engineering insights, model choices, ensembling strategy, what didn't work. Essential for levelling up."
+    }
+  ]
+}
