@@ -32,6 +32,7 @@
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
       <li><a href="/projects/">Projects</a></li>
       <li><a href="/cheatsheets.html">Cheatsheets</a></li>
       <li><a href="/how-it-works.html">How It Works</a></li>
@@ -105,6 +106,135 @@
     </div>
   </div>
 </section>
+
+
+<!-- ── Skills Radar ── -->
+<section class="section-sm" style="background:var(--surface);padding:3rem 0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">your ai skill journey</div>
+        <h2 style="margin-bottom:0.75rem;">See Where You Stand Across AI</h2>
+        <p style="color:var(--muted);margin-bottom:1.25rem;line-height:1.75;">
+          Six skill areas form the complete AI engineer. Start anywhere, build progressively.
+          Each completed course fills your radar — see your gaps and your strengths at a glance.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;"><span style="width:10px;height:10px;border-radius:50%;background:#6b21a8;display:inline-block;"></span> <strong>Programming</strong> — Python, SQL, Shell, JS</div>
+          <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;"><span style="width:10px;height:10px;border-radius:50%;background:#059669;display:inline-block;"></span> <strong>Machine Learning</strong> — Classical algorithms, evaluation</div>
+          <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;"><span style="width:10px;height:10px;border-radius:50%;background:#2563eb;display:inline-block;"></span> <strong>Deep Learning</strong> — Neural nets, CNNs, Transformers</div>
+          <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;"><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block;"></span> <strong>Generative AI</strong> — RAG, fine-tuning, agents</div>
+          <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;"><span style="width:10px;height:10px;border-radius:50%;background:#e11d48;display:inline-block;"></span> <strong>Agentic AI</strong> — LangGraph, CrewAI, MCP</div>
+          <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;"><span style="width:10px;height:10px;border-radius:50%;background:#0ea5e9;display:inline-block;"></span> <strong>MLOps</strong> — Deployment, pipelines, monitoring</div>
+        </div>
+        <a href="/tracks.html" class="btn btn-primary">View Career Tracks →</a>
+        <a href="/profile.html" class="btn btn-outline" style="margin-left:0.75rem;">My Skills →</a>
+      </div>
+      <div style="display:flex;justify-content:center;align-items:center;">
+        <div style="position:relative;width:260px;height:260px;">
+          <canvas id="homeRadar" width="260" height="260"></canvas>
+          <div id="homeRadarLogin" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(250,245,255,0.85);border-radius:50%;padding:2rem;">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">🎯</div>
+            <div style="font-size:0.8rem;color:var(--muted);font-weight:600;">Sign in to see<br>your personal radar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function() {
+  // Draw radar chart on home page
+  function drawRadar(canvas, values, colors) {
+    const ctx = canvas.getContext('2d');
+    const cx = canvas.width / 2, cy = canvas.height / 2;
+    const r = Math.min(cx, cy) - 20;
+    const n = values.length;
+    const angle0 = -Math.PI / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Grid rings
+    for (let ring = 1; ring <= 4; ring++) {
+      ctx.beginPath();
+      for (let i = 0; i < n; i++) {
+        const a = angle0 + (2 * Math.PI * i) / n;
+        const x = cx + (r * ring / 4) * Math.cos(a);
+        const y = cy + (r * ring / 4) * Math.sin(a);
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = 'rgba(107,33,168,0.1)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    // Axes
+    for (let i = 0; i < n; i++) {
+      const a = angle0 + (2 * Math.PI * i) / n;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + r * Math.cos(a), cy + r * Math.sin(a));
+      ctx.strokeStyle = 'rgba(107,33,168,0.15)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    // Filled area
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) {
+      const a = angle0 + (2 * Math.PI * i) / n;
+      const rv = r * values[i];
+      const x = cx + rv * Math.cos(a);
+      const y = cy + rv * Math.sin(a);
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(107,33,168,0.18)';
+    ctx.fill();
+    ctx.strokeStyle = '#6b21a8';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Dots
+    for (let i = 0; i < n; i++) {
+      const a = angle0 + (2 * Math.PI * i) / n;
+      const rv = r * values[i];
+      ctx.beginPath();
+      ctx.arc(cx + rv * Math.cos(a), cy + rv * Math.sin(a), 4, 0, 2 * Math.PI);
+      ctx.fillStyle = colors[i] || '#6b21a8';
+      ctx.fill();
+    }
+  }
+
+  // Animate sample radar for non-logged-in users
+  const canvas = document.getElementById('homeRadar');
+  if (!canvas) return;
+  const sampleTarget = [0.9, 0.8, 0.7, 0.75, 0.6, 0.65];
+  const cols = ['#6b21a8','#059669','#2563eb','#f59e0b','#e11d48','#0ea5e9'];
+  let t = 0;
+  function animateSample() {
+    t += 0.015;
+    const vals = sampleTarget.map((v, i) => v * Math.min(1, t + i * 0.1));
+    drawRadar(canvas, vals, cols);
+    if (t < 1.2) requestAnimationFrame(animateSample);
+  }
+  animateSample();
+
+  window.addEventListener('mitra:signed-in', async () => {
+    if (!window.MitraAuth) return;
+    const { courses } = await window.MitraAuth.getUserCompletions();
+    const done = new Set(courses.map(c => c.course_id));
+    const AXES = ['programming','ml','dl','genai','agentic','mlops'];
+    const TOPIC_COUNTS = {programming:8, ml:10, dl:8, genai:8, agentic:7, mlops:7};
+    const topicDone = {};
+    courses.forEach(c => { topicDone[c.course_id] = (topicDone[c.course_id]||0)+1; });
+    const vals = AXES.map(a => Math.min(1, (topicDone[a]||0) / (TOPIC_COUNTS[a]||8)));
+    const login = document.getElementById('homeRadarLogin');
+    if (login) login.style.display = 'none';
+    drawRadar(canvas, vals, cols);
+  });
+})();
+</script>
 
 <!-- ── Browse by Project Type ── -->
 <section class="section" style="background:var(--surface);padding:4rem 0;">

@@ -51,6 +51,7 @@
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/courses/" class="active">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
       <li><a href="/projects/">Projects</a></li>
       <li><a href="/cheatsheets.html">Cheatsheets</a></li>
       <li><a href="/contact.html">Contact</a></li>
@@ -207,22 +208,32 @@ function submitQuiz(data) {
 
   const pct = Math.round((correct / blocks.length) * 100);
   const passed = pct >= 70;
+  const testedOut = pct >= 90;
 
   document.getElementById('submitBtn').style.display = 'none';
   document.getElementById('retryBtn').style.display  = 'inline-flex';
   document.getElementById('scoreBox').style.display  = 'block';
   document.getElementById('progressFill').style.width = '100%';
   document.getElementById('scoreNum').textContent = `${pct}%`;
-  document.getElementById('scoreNum').style.color = passed ? 'var(--success)' : 'var(--danger)';
-  document.getElementById('scoreLabel').textContent =
-    passed ? `✅ Passed! ${correct}/${blocks.length} correct.` :
-             `❌ ${correct}/${blocks.length} correct — review and retry.`;
+  document.getElementById('scoreNum').style.color = testedOut ? '#7c3aed' : passed ? 'var(--success)' : 'var(--danger)';
 
-  trackEvent('quiz_submit', { course, topic, score: pct, passed });
+  let scoreMsg = `❌ ${correct}/${blocks.length} correct — review and retry.`;
+  if (testedOut) scoreMsg = `⚡ Tested Out! ${correct}/${blocks.length} — Expert level demonstrated.`;
+  else if (passed) scoreMsg = `✅ Passed! ${correct}/${blocks.length} correct.`;
+  document.getElementById('scoreLabel').textContent = scoreMsg;
+
+  if (testedOut) {
+    const banner = document.createElement('div');
+    banner.style.cssText = 'background:linear-gradient(135deg,#6b21a8,#7c3aed);color:#fff;border-radius:8px;padding:0.75rem 1rem;margin-top:0.75rem;font-size:0.85rem;font-weight:700;';
+    banner.textContent = '⚡ Tested Out — your prior knowledge is recognised. This is recorded as an expert-level completion.';
+    document.getElementById('scoreBox').appendChild(banner);
+  }
+
+  trackEvent('quiz_submit', { course, topic, score: pct, passed, tested_out: testedOut });
 
   if (passed && window.MitraAuth) {
     window.MitraAuth.recordCourseCompletion(course, topic);
-    trackEvent('quiz_pass_completion_recorded', { course, topic });
+    trackEvent('quiz_pass_completion_recorded', { course, topic, tested_out: testedOut });
   }
 }
 

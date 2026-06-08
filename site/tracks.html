@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Tracks — Mitra AI Projects</title>
+  <meta name="description" content="Choose your AI career path. Personalised learning tracks for ML Engineer, Data Scientist, AI Engineer, Data Engineer, and GenAI Developer roles.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .track-card { background:var(--surface); border:2px solid var(--border-dim); border-radius:var(--radius-lg); padding:2rem; transition:all 0.2s; cursor:pointer; }
+    .track-card:hover, .track-card.open { border-color:var(--primary); box-shadow:0 8px 32px rgba(107,33,168,0.12); }
+    .track-card.open { background:#fff; }
+    .track-header { display:flex; align-items:center; gap:1rem; }
+    .track-icon { font-size:2.5rem; }
+    .track-title { font-family:'Baloo 2',sans-serif; font-size:1.3rem; font-weight:800; color:var(--text); margin-bottom:0.2rem; }
+    .track-tagline { font-size:0.85rem; color:var(--muted); }
+    .track-body { display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid var(--border-dim); }
+    .track-card.open .track-body { display:block; }
+    .track-section { margin-bottom:1.25rem; }
+    .track-section h4 { font-family:'JetBrains Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--primary); margin-bottom:0.6rem; }
+    .track-items { display:flex; flex-wrap:wrap; gap:0.4rem; }
+    .track-item { display:inline-flex; align-items:center; gap:0.3rem; padding:0.3rem 0.7rem; border-radius:999px; font-size:0.8rem; font-weight:700; border:1px solid; }
+    .track-item.course { background:rgba(107,33,168,0.07); border-color:rgba(107,33,168,0.18); color:var(--primary); }
+    .track-item.project { background:rgba(5,150,105,0.07); border-color:rgba(5,150,105,0.18); color:var(--accent); }
+    .track-item.external { background:rgba(245,158,11,0.07); border-color:rgba(245,158,11,0.2); color:#b45309; }
+    .track-item.job { background:var(--surface-2); border-color:var(--border-dim); color:var(--muted); }
+    .track-skills { display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:0.5rem; }
+    .skill-pill { font-family:'JetBrains Mono',monospace; font-size:0.7rem; padding:0.2rem 0.6rem; background:var(--surface-2); border-radius:4px; color:var(--muted); }
+    .track-cta { display:flex; gap:0.75rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .track-progress { margin-top:1rem; }
+    .track-progress-bar { height:6px; background:var(--border-dim); border-radius:999px; overflow:hidden; margin-top:0.35rem; }
+    .track-progress-fill { height:100%; background:var(--primary); border-radius:999px; transition:width 0.6s ease; }
+    .readiness-banner { background:linear-gradient(135deg,var(--primary),#7c3aed); color:#fff; border-radius:var(--radius-lg); padding:1.5rem; text-align:center; margin-bottom:2.5rem; }
+    .readiness-banner h2 { color:#fff; margin-bottom:0.4rem; }
+    .readiness-banner p { color:rgba(255,255,255,0.8); font-size:0.9rem; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html" class="active">Tracks</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="hero hero-sm" style="padding:2rem 0 1.5rem;">
+  <div class="container hero-inner">
+    <div class="hero-eyebrow">personalised learning paths</div>
+    <h1 class="hero-title" style="font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:0.4rem;">Choose Your AI Career Track</h1>
+    <p style="color:var(--muted);font-size:0.95rem;max-width:560px;">
+      Each track maps the exact courses, projects, and external resources needed for a specific role.
+      Pick the one that matches your goal — or explore multiple.
+    </p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:2rem;">
+  <div class="container">
+
+    <div id="readinessBanner" style="display:none;" class="readiness-banner">
+      <div style="font-size:2rem;margin-bottom:0.5rem;" id="readinessEmoji">🎉</div>
+      <h2 id="readinessTitle">You're making great progress!</h2>
+      <p id="readinessMsg">Keep going — each course unlocks new career paths.</p>
+    </div>
+
+    <div style="display:grid;gap:1.25rem;max-width:860px;margin:0 auto;">
+
+      <!-- ML Engineer -->
+      <div class="track-card" onclick="toggleTrack(this,'ml-engineer')">
+        <div class="track-header">
+          <div class="track-icon">🤖</div>
+          <div>
+            <div class="track-title">ML Engineer</div>
+            <div class="track-tagline">Build, train, evaluate, and deploy machine learning models in production</div>
+          </div>
+          <div style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--muted);" id="prog-ml-engineer">▶ Click to expand</div>
+        </div>
+        <div class="track-body">
+          <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.25rem;">
+            You will be able to select the right algorithm, train models, tune hyperparameters, deploy APIs, and monitor production systems.
+          </p>
+          <div class="track-section">
+            <h4>Courses to complete</h4>
+            <div class="track-items">
+              <a href="/courses/programming.html" class="track-item course">💻 Programming Foundation</a>
+              <a href="/courses/ml.html" class="track-item course">🤖 Machine Learning</a>
+              <a href="/courses/mlops.html" class="track-item course">⚙️ MLOps & Tools</a>
+              <a href="/courses/" class="track-item course">⚡ Key Concepts & Tools</a>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Projects to build</h4>
+            <div class="track-items">
+              <a href="/projects/?lane=major" class="track-item project">📊 Inventory Forecasting Dashboard</a>
+              <a href="/projects/?lane=portfolio" class="track-item project">📋 AI Resume Screener</a>
+              <a href="/projects/?lane=major" class="track-item project">⚙️ End-to-End MLOps Pipeline</a>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>External resources</h4>
+            <div class="track-items">
+              <span class="track-item external">📖 Andrew Ng ML Specialization (Coursera)</span>
+              <span class="track-item external">🏃 fast.ai Practical Deep Learning</span>
+              <span class="track-item external">🏆 Kaggle Competitions (practice)</span>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Tools you will know</h4>
+            <div class="track-skills">
+              <span class="skill-pill">Python</span><span class="skill-pill">scikit-learn</span>
+              <span class="skill-pill">XGBoost</span><span class="skill-pill">MLflow</span>
+              <span class="skill-pill">Docker</span><span class="skill-pill">FastAPI</span>
+              <span class="skill-pill">GitHub Actions</span><span class="skill-pill">AWS SageMaker</span>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Roles this opens</h4>
+            <div class="track-items">
+              <span class="track-item job">ML Engineer</span>
+              <span class="track-item job">Applied Scientist</span>
+              <span class="track-item job">Research Engineer</span>
+              <span class="track-item job">AI/ML Engineer</span>
+            </div>
+          </div>
+          <div class="track-progress" id="trackbar-ml-engineer">
+            <div style="font-size:0.8rem;color:var(--muted);">Your progress toward this track: <span id="pct-ml-engineer">Sign in to see</span></div>
+            <div class="track-progress-bar"><div class="track-progress-fill" id="fill-ml-engineer" style="width:0%"></div></div>
+          </div>
+          <div class="track-cta">
+            <a href="/courses/ml.html" class="btn btn-primary">Start ML Course →</a>
+            <a href="/projects/?lane=major" class="btn btn-outline">Browse Projects →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Scientist -->
+      <div class="track-card" onclick="toggleTrack(this,'data-scientist')">
+        <div class="track-header">
+          <div class="track-icon">📊</div>
+          <div>
+            <div class="track-title">Data Scientist</div>
+            <div class="track-tagline">Analyse data, uncover insights, build predictive models, and communicate findings</div>
+          </div>
+          <div style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--muted);" id="prog-data-scientist">▶ Click to expand</div>
+        </div>
+        <div class="track-body">
+          <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.25rem;">
+            You will be able to clean and explore data, build ML models, create dashboards, and tell stories with data that drive decisions.
+          </p>
+          <div class="track-section">
+            <h4>Courses to complete</h4>
+            <div class="track-items">
+              <a href="/courses/programming.html" class="track-item course">💻 Programming Foundation</a>
+              <a href="/courses/ml.html" class="track-item course">🤖 Machine Learning</a>
+              <a href="/courses/genai.html" class="track-item course">✨ Generative AI</a>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Projects to build</h4>
+            <div class="track-items">
+              <a href="/projects/?lane=major" class="track-item project">📊 Inventory Forecasting Dashboard</a>
+              <a href="/projects/?lane=major" class="track-item project">📅 AI Attendance & Analytics</a>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>External resources</h4>
+            <div class="track-items">
+              <span class="track-item external">🏆 Kaggle Learn (free, hands-on)</span>
+              <span class="track-item external">📹 StatQuest with Josh Starmer (YouTube)</span>
+              <span class="track-item external">📖 Python for Data Analysis (O'Reilly)</span>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Tools you will know</h4>
+            <div class="track-skills">
+              <span class="skill-pill">Python</span><span class="skill-pill">Pandas</span>
+              <span class="skill-pill">NumPy</span><span class="skill-pill">Matplotlib</span>
+              <span class="skill-pill">scikit-learn</span><span class="skill-pill">SQL</span>
+              <span class="skill-pill">Streamlit</span><span class="skill-pill">Jupyter</span>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Roles this opens</h4>
+            <div class="track-items">
+              <span class="track-item job">Data Scientist</span>
+              <span class="track-item job">Analytics Engineer</span>
+              <span class="track-item job">Business Analyst (AI)</span>
+              <span class="track-item job">Quantitative Analyst</span>
+            </div>
+          </div>
+          <div class="track-progress">
+            <div style="font-size:0.8rem;color:var(--muted);">Your progress: <span id="pct-data-scientist">Sign in to see</span></div>
+            <div class="track-progress-bar"><div class="track-progress-fill" id="fill-data-scientist" style="width:0%"></div></div>
+          </div>
+          <div class="track-cta">
+            <a href="/courses/ml.html" class="btn btn-primary">Start ML Course →</a>
+            <a href="/courses/programming.html" class="btn btn-outline">Python for Data →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Engineer -->
+      <div class="track-card" onclick="toggleTrack(this,'ai-engineer')">
+        <div class="track-header">
+          <div class="track-icon">🚀</div>
+          <div>
+            <div class="track-title">AI Engineer</div>
+            <div class="track-tagline">Build production AI applications using LLMs, RAG, agents, and APIs</div>
+          </div>
+          <div style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--muted);" id="prog-ai-engineer">▶ Click to expand</div>
+        </div>
+        <div class="track-body">
+          <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.25rem;">
+            The fastest-growing role in 2025. You will build systems that use LLMs, retrieval, and agents to power real applications — without training models from scratch.
+          </p>
+          <div class="track-section">
+            <h4>Courses to complete</h4>
+            <div class="track-items">
+              <a href="/courses/programming.html" class="track-item course">💻 Programming Foundation</a>
+              <a href="/courses/genai.html" class="track-item course">✨ Generative AI</a>
+              <a href="/courses/agentic.html" class="track-item course">🤝 Agentic AI & MCP</a>
+              <a href="/courses/mlops.html" class="track-item course">⚙️ MLOps & Tools</a>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Projects to build</h4>
+            <div class="track-items">
+              <a href="/projects/document-qa-assistant.html" class="track-item project">📄 Document Q&A Assistant (RAG)</a>
+              <a href="/projects/?lane=portfolio" class="track-item project">🌐 Multilingual Support Bot</a>
+              <a href="/projects/?lane=portfolio" class="track-item project">🔗 RAG API with Auth</a>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>External resources</h4>
+            <div class="track-items">
+              <span class="track-item external">🧠 DeepLearning.ai Short Courses (free)</span>
+              <span class="track-item external">🤗 HuggingFace NLP Course (free)</span>
+              <span class="track-item external">📖 LangChain / LlamaIndex Docs</span>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Tools you will know</h4>
+            <div class="track-skills">
+              <span class="skill-pill">Python</span><span class="skill-pill">OpenAI API</span>
+              <span class="skill-pill">LangChain</span><span class="skill-pill">ChromaDB</span>
+              <span class="skill-pill">FastAPI</span><span class="skill-pill">Docker</span>
+              <span class="skill-pill">LangGraph</span><span class="skill-pill">CrewAI</span>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Roles this opens</h4>
+            <div class="track-items">
+              <span class="track-item job">AI Engineer</span>
+              <span class="track-item job">LLM Engineer</span>
+              <span class="track-item job">GenAI Developer</span>
+              <span class="track-item job">AI Product Engineer</span>
+            </div>
+          </div>
+          <div class="track-progress">
+            <div style="font-size:0.8rem;color:var(--muted);">Your progress: <span id="pct-ai-engineer">Sign in to see</span></div>
+            <div class="track-progress-bar"><div class="track-progress-fill" id="fill-ai-engineer" style="width:0%"></div></div>
+          </div>
+          <div class="track-cta">
+            <a href="/courses/genai.html" class="btn btn-primary">Start GenAI Course →</a>
+            <a href="/projects/document-qa-assistant.html" class="btn btn-outline">Try RAG Project →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Engineer -->
+      <div class="track-card" onclick="toggleTrack(this,'data-engineer')">
+        <div class="track-header">
+          <div class="track-icon">🔧</div>
+          <div>
+            <div class="track-title">Data Engineer</div>
+            <div class="track-tagline">Build the pipelines, warehouses, and infrastructure that data teams run on</div>
+          </div>
+          <div style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--muted);" id="prog-data-engineer">▶ Click to expand</div>
+        </div>
+        <div class="track-body">
+          <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.25rem;">
+            You will build reliable data pipelines, orchestrate workflows with Airflow, process big data with Spark, and design schemas that scale.
+          </p>
+          <div class="track-section">
+            <h4>Courses to complete</h4>
+            <div class="track-items">
+              <a href="/courses/programming.html" class="track-item course">💻 Programming Foundation (SQL + Shell focus)</a>
+              <a href="/courses/mlops.html" class="track-item course">⚙️ MLOps & Tools (Airflow + Spark)</a>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Projects to build</h4>
+            <div class="track-items">
+              <a href="/projects/?lane=major" class="track-item project">📊 Inventory Forecasting (pipeline focus)</a>
+              <a href="/projects/?lane=portfolio" class="track-item project">⚙️ End-to-End MLOps Pipeline</a>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>External resources</h4>
+            <div class="track-items">
+              <span class="track-item external">📖 dbt Fundamentals Course (free)</span>
+              <span class="track-item external">📖 Apache Airflow Official Tutorial</span>
+              <span class="track-item external">🏆 Databricks Academy (Spark)</span>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Tools you will know</h4>
+            <div class="track-skills">
+              <span class="skill-pill">Python</span><span class="skill-pill">SQL</span>
+              <span class="skill-pill">Airflow</span><span class="skill-pill">Spark</span>
+              <span class="skill-pill">Docker</span><span class="skill-pill">dbt</span>
+              <span class="skill-pill">GitHub Actions</span><span class="skill-pill">Bash</span>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Roles this opens</h4>
+            <div class="track-items">
+              <span class="track-item job">Data Engineer</span>
+              <span class="track-item job">Platform Engineer</span>
+              <span class="track-item job">Analytics Engineer</span>
+              <span class="track-item job">MLOps Engineer</span>
+            </div>
+          </div>
+          <div class="track-progress">
+            <div style="font-size:0.8rem;color:var(--muted);">Your progress: <span id="pct-data-engineer">Sign in to see</span></div>
+            <div class="track-progress-bar"><div class="track-progress-fill" id="fill-data-engineer" style="width:0%"></div></div>
+          </div>
+          <div class="track-cta">
+            <a href="/courses/programming.html" class="btn btn-primary">Start with SQL →</a>
+            <a href="/courses/mlops.html" class="btn btn-outline">MLOps & Tools →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GenAI Developer -->
+      <div class="track-card" onclick="toggleTrack(this,'genai-dev')">
+        <div class="track-header">
+          <div class="track-icon">✨</div>
+          <div>
+            <div class="track-title">GenAI Developer</div>
+            <div class="track-tagline">Prompt, fine-tune, and ship products powered by large language models</div>
+          </div>
+          <div style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--muted);" id="prog-genai-dev">▶ Click to expand</div>
+        </div>
+        <div class="track-body">
+          <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.25rem;">
+            You will master prompt engineering, build RAG systems, fine-tune models with LoRA, evaluate LLM outputs, and ship GenAI features in real products.
+          </p>
+          <div class="track-section">
+            <h4>Courses to complete</h4>
+            <div class="track-items">
+              <a href="/courses/programming.html" class="track-item course">💻 Programming Foundation</a>
+              <a href="/courses/genai.html" class="track-item course">✨ Generative AI</a>
+              <a href="/courses/agentic.html" class="track-item course">🤝 Agentic AI & MCP</a>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Projects to build</h4>
+            <div class="track-items">
+              <a href="/projects/document-qa-assistant.html" class="track-item project">📄 Document Q&A Assistant</a>
+              <a href="/projects/?lane=portfolio" class="track-item project">🌐 Multilingual Support Bot</a>
+              <a href="/projects/?lane=portfolio" class="track-item project">🤝 CrewAI Business Agent</a>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>External resources</h4>
+            <div class="track-items">
+              <span class="track-item external">🧠 DeepLearning.ai Short Courses — ChatGPT Prompt Engineering, LangChain, RAG</span>
+              <span class="track-item external">🤗 HuggingFace NLP Course (free)</span>
+              <span class="track-item external">📖 OpenAI Cookbook (GitHub, free)</span>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Tools you will know</h4>
+            <div class="track-skills">
+              <span class="skill-pill">Python</span><span class="skill-pill">OpenAI API</span>
+              <span class="skill-pill">LangChain</span><span class="skill-pill">LangGraph</span>
+              <span class="skill-pill">ChromaDB</span><span class="skill-pill">HuggingFace</span>
+              <span class="skill-pill">CrewAI</span><span class="skill-pill">FastAPI</span>
+            </div>
+          </div>
+          <div class="track-section">
+            <h4>Roles this opens</h4>
+            <div class="track-items">
+              <span class="track-item job">GenAI Developer</span>
+              <span class="track-item job">Prompt Engineer</span>
+              <span class="track-item job">AI Product Builder</span>
+              <span class="track-item job">LLM Application Developer</span>
+            </div>
+          </div>
+          <div class="track-progress">
+            <div style="font-size:0.8rem;color:var(--muted);">Your progress: <span id="pct-genai-dev">Sign in to see</span></div>
+            <div class="track-progress-bar"><div class="track-progress-fill" id="fill-genai-dev" style="width:0%"></div></div>
+          </div>
+          <div class="track-cta">
+            <a href="/courses/genai.html" class="btn btn-primary">Start GenAI Course →</a>
+            <a href="/courses/agentic.html" class="btn btn-outline">Agentic AI →</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end grid -->
+
+    <!-- Readiness milestones -->
+    <div style="margin-top:3rem;">
+      <div class="section-tag" style="text-align:center;margin-bottom:1.5rem;">readiness milestones</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;max-width:860px;margin:0 auto;">
+        <div class="card" style="text-align:center;padding:1.25rem 1rem;">
+          <div style="font-size:1.75rem;margin-bottom:0.4rem;">💻</div>
+          <div style="font-weight:800;font-size:0.9rem;color:var(--text);">Programming Ready</div>
+          <div style="font-size:0.78rem;color:var(--muted);margin-top:0.25rem;">Python · SQL · Shell · JS</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem 1rem;">
+          <div style="font-size:1.75rem;margin-bottom:0.4rem;">🤖</div>
+          <div style="font-weight:800;font-size:0.9rem;color:var(--text);">ML Fundamentals Ready</div>
+          <div style="font-size:0.78rem;color:var(--muted);margin-top:0.25rem;">Train · Tune · Evaluate</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem 1rem;">
+          <div style="font-size:1.75rem;margin-bottom:0.4rem;">🧠</div>
+          <div style="font-weight:800;font-size:0.9rem;color:var(--text);">Deep Learning Ready</div>
+          <div style="font-size:0.78rem;color:var(--muted);margin-top:0.25rem;">Neural nets · CNNs · Transformers</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem 1rem;">
+          <div style="font-size:1.75rem;margin-bottom:0.4rem;">✨</div>
+          <div style="font-weight:800;font-size:0.9rem;color:var(--text);">GenAI Builder Ready</div>
+          <div style="font-size:0.78rem;color:var(--muted);margin-top:0.25rem;">RAG · Fine-tune · Agents</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem 1rem;">
+          <div style="font-size:1.75rem;margin-bottom:0.4rem;">⚙️</div>
+          <div style="font-weight:800;font-size:0.9rem;color:var(--text);">MLOps Ready</div>
+          <div style="font-size:0.78rem;color:var(--muted);margin-top:0.25rem;">Deploy · Monitor · Scale</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem 1rem;border-color:rgba(107,33,168,0.3);background:rgba(107,33,168,0.04);">
+          <div style="font-size:1.75rem;margin-bottom:0.4rem;">🏆</div>
+          <div style="font-weight:800;font-size:0.9rem;color:var(--primary);">Full AI Ready</div>
+          <div style="font-size:0.78rem;color:var(--muted);margin-top:0.25rem;">All courses + project portfolio</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/config.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+<script>
+// Track course-to-readiness mapping
+const READINESS = [
+  { key:'programming', courses:['programming'], msg:'💻 Programming Ready!', sub:'You can write Python, query SQL, and work the terminal. Great start — pick a track above.' },
+  { key:'ml', courses:['ml'], msg:'🤖 ML Fundamentals Ready!', sub:'You can train, tune, and interpret ML models. Complete an ML project to prove it.' },
+  { key:'dl', courses:['dl'], msg:'🧠 Deep Learning Ready!', sub:'Neural networks, CNNs, and Transformers — you own it. Build a DL project to show it.' },
+  { key:'genai', courses:['genai'], msg:'✨ GenAI Builder Ready!', sub:'RAG, fine-tuning, agents, embeddings — you can build with LLMs. Ship a project.' },
+  { key:'mlops', courses:['mlops'], msg:'⚙️ MLOps Ready!', sub:'You can deploy, monitor, and scale ML systems. Production engineering unlocked.' },
+];
+
+// Track completions needed per role
+const TRACK_COURSES = {
+  'ml-engineer':    ['programming','ml','mlops'],
+  'data-scientist': ['programming','ml','genai'],
+  'ai-engineer':    ['programming','genai','agentic'],
+  'data-engineer':  ['programming','mlops'],
+  'genai-dev':      ['programming','genai','agentic'],
+};
+
+function toggleTrack(el, id) {
+  const wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.track-card').forEach(c => {
+    c.classList.remove('open');
+    const pid = c.querySelector('[id^="prog-"]')?.id?.replace('prog-','');
+    if (pid) document.getElementById(`prog-${pid}`).textContent = '▶ Click to expand';
+  });
+  if (!wasOpen) {
+    el.classList.add('open');
+    const progEl = document.getElementById(`prog-${id}`);
+    if (progEl) progEl.textContent = '▲ Collapse';
+  }
+  trackEvent('track_expand', { track: id });
+}
+
+window.addEventListener('mitra:signed-in', async () => {
+  const { courses } = await window.MitraAuth?.getUserCompletions() || { courses: [] };
+  const completedCourses = new Set(courses.map(c => c.course_id));
+
+  // Show readiness banner for highest milestone reached
+  let topReadiness = null;
+  for (const r of READINESS) {
+    if (r.courses.every(c => completedCourses.has(c))) topReadiness = r;
+  }
+  if (topReadiness) {
+    document.getElementById('readinessBanner').style.display = 'block';
+    document.getElementById('readinessTitle').textContent = topReadiness.msg;
+    document.getElementById('readinessMsg').textContent = topReadiness.sub;
+  }
+
+  // Update track progress bars
+  for (const [trackId, needed] of Object.entries(TRACK_COURSES)) {
+    const done = needed.filter(c => completedCourses.has(c)).length;
+    const pct = Math.round((done / needed.length) * 100);
+    const fillEl = document.getElementById(`fill-${trackId}`);
+    const pctEl  = document.getElementById(`pct-${trackId}`);
+    if (fillEl) fillEl.style.width = `${pct}%`;
+    if (pctEl)  pctEl.textContent = `${pct}% (${done}/${needed.length} courses)`;
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const user = window.MitraAuth?.getUser();
+    if (user) window.dispatchEvent(new CustomEvent('mitra:signed-in', { detail: user }));
+  }, 600);
+});
+</script>
+</body>
+</html>

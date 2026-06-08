@@ -20,6 +20,7 @@
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
       <li><a href="/projects/">Projects</a></li>
       <li><a href="/cheatsheets.html">Cheatsheets</a></li>
       <li><a href="/contact.html">Contact</a></li>
@@ -63,8 +64,48 @@
         </div>
       </div>
 
+      <!-- AI Readiness Banner -->
+      <div id="readinessBanner" style="display:none;background:linear-gradient(135deg,var(--primary),#7c3aed);color:#fff;border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:2rem;text-align:center;">
+        <div style="font-size:2rem;margin-bottom:0.3rem;" id="readinessEmoji">🎉</div>
+        <div style="font-weight:800;font-size:1.1rem;" id="readinessTitle">Great Progress!</div>
+        <div style="opacity:0.85;font-size:0.88rem;margin-top:0.25rem;" id="readinessSub">Keep completing courses.</div>
+      </div>
+
+      <!-- Robot + XP Bar -->
+      <div class="card" style="margin-bottom:2rem;padding:1.75rem;">
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;">
+          <!-- Robot character -->
+          <div id="robotContainer" style="text-align:center;min-width:100px;">
+            <div style="font-size:3.5rem;line-height:1;filter:grayscale(1);transition:filter 0.5s;" id="robotBody">🤖</div>
+            <div style="display:flex;justify-content:center;gap:0.25rem;margin-top:0.4rem;flex-wrap:wrap;" id="robotParts">
+              <span style="font-size:1rem;opacity:0.3;transition:opacity 0.5s;" id="part-prog" title="Programming Ready">💻</span>
+              <span style="font-size:1rem;opacity:0.3;transition:opacity 0.5s;" id="part-ml"   title="ML Ready">🤖</span>
+              <span style="font-size:1rem;opacity:0.3;transition:opacity 0.5s;" id="part-dl"   title="DL Ready">🧠</span>
+              <span style="font-size:1rem;opacity:0.3;transition:opacity 0.5s;" id="part-genai" title="GenAI Ready">✨</span>
+              <span style="font-size:1rem;opacity:0.3;transition:opacity 0.5s;" id="part-agentic" title="Agentic Ready">🤝</span>
+              <span style="font-size:1rem;opacity:0.3;transition:opacity 0.5s;" id="part-mlops" title="MLOps Ready">⚙️</span>
+            </div>
+          </div>
+          <!-- XP + level -->
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.35rem;">
+              <span style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.1rem;" id="levelLabel">Learner</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--muted);" id="xpLabel">0 XP</span>
+            </div>
+            <div style="height:10px;background:var(--surface-2);border-radius:999px;overflow:hidden;margin-bottom:0.5rem;">
+              <div style="height:100%;background:linear-gradient(90deg,var(--primary),#7c3aed);border-radius:999px;transition:width 0.8s ease;width:0%;" id="xpFill"></div>
+            </div>
+            <div style="font-size:0.78rem;color:var(--muted);" id="xpNext">Complete your first quiz to earn XP</div>
+            <div style="margin-top:0.75rem;display:flex;gap:0.5rem;flex-wrap:wrap;">
+              <a href="/tracks.html" class="btn btn-outline btn-sm">View Career Tracks →</a>
+              <a href="/courses/" class="btn btn-ghost btn-sm">Continue Learning →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Stats row -->
-      <div class="grid grid-3" style="margin-bottom:3rem;" id="profileStats">
+      <div class="grid grid-3" style="margin-bottom:2rem;" id="profileStats">
         <div class="card" style="text-align:center;">
           <div style="font-size:2rem;font-weight:800;color:var(--primary);" id="statCourses">0</div>
           <div style="font-size:0.85rem;color:var(--muted);margin-top:0.25rem;">Topics Completed</div>
@@ -123,6 +164,29 @@
 <script src="/auth.js"></script>
 <script src="/mitra-chat.js"></script>
 <script>
+// XP system configuration
+const XP_CONFIG = {
+  quiz_pass: 50, quiz_tested_out: 100,
+  course_complete: 300, project_complete: 500
+};
+const LEVEL_MILESTONES = [
+  { xp:0,    label:'Learner',              next:300  },
+  { xp:300,  label:'💻 Programming Ready', next:1000 },
+  { xp:1000, label:'🤖 ML Fundamentals Ready', next:2000 },
+  { xp:2000, label:'🧠 Deep Learning Ready',   next:3500 },
+  { xp:3500, label:'✨ GenAI Builder Ready',    next:5500 },
+  { xp:5500, label:'⚙️ MLOps Ready',           next:8000 },
+  { xp:8000, label:'🏆 Full AI Ready!',         next:8000 },
+];
+const READINESS_MAP = {
+  programming: { label:'💻 Programming Ready!', msg:'You can write Python, query SQL, and work the terminal. Pick a career track above.', emoji:'💻' },
+  ml:          { label:'🤖 ML Fundamentals Ready!', msg:'You can train, tune, and interpret ML models. Complete an ML project to prove it.', emoji:'🤖' },
+  dl:          { label:'🧠 Deep Learning Ready!', msg:'Neural networks, CNNs, Transformers — you own it. Build a DL project.', emoji:'🧠' },
+  genai:       { label:'✨ GenAI Builder Ready!', msg:'RAG, fine-tuning, agents, embeddings — you can build with LLMs.', emoji:'✨' },
+  agentic:     { label:'🤝 Agentic AI Ready!', msg:'Tool-using, multi-step AI agents — you can build them.', emoji:'🤝' },
+  mlops:       { label:'⚙️ MLOps Ready!', msg:'You can deploy, monitor, and scale ML systems in production.', emoji:'⚙️' },
+};
+
 window.addEventListener('mitra:signed-in', async () => {
   const user = window.MitraAuth?.getUser();
   if (!user) return;
@@ -141,6 +205,55 @@ window.addEventListener('mitra:signed-in', async () => {
   document.getElementById('statCourses').textContent = courses.length;
   document.getElementById('statProjects').textContent = projects.length;
   document.getElementById('statCerts').textContent   = certificates.length;
+
+  // Calculate total XP
+  const totalXP = (courses.length * XP_CONFIG.quiz_pass) + (projects.length * XP_CONFIG.project_complete) + (certificates.length * 100);
+  document.getElementById('xpLabel').textContent = `${totalXP.toLocaleString()} XP`;
+
+  // Find current level
+  let level = LEVEL_MILESTONES[0];
+  for (const m of LEVEL_MILESTONES) {
+    if (totalXP >= m.xp) level = m;
+  }
+  const nextLevel = LEVEL_MILESTONES[Math.min(LEVEL_MILESTONES.indexOf(level)+1, LEVEL_MILESTONES.length-1)];
+  const pct = nextLevel.xp > level.xp ? Math.min(100, ((totalXP - level.xp) / (nextLevel.xp - level.xp)) * 100) : 100;
+
+  document.getElementById('levelLabel').textContent = level.label;
+  document.getElementById('xpFill').style.width = `${pct}%`;
+  document.getElementById('xpNext').textContent =
+    level.xp >= 8000 ? '🏆 Maximum level reached — Full AI Ready!' :
+    `${(nextLevel.xp - totalXP).toLocaleString()} XP to next level`;
+
+  // Update robot parts based on completed courses
+  const completedCourseIds = new Set(courses.map(c => c.course_id));
+  const partMap = { programming:'part-prog', ml:'part-ml', dl:'part-dl', genai:'part-genai', agentic:'part-agentic', mlops:'part-mlops' };
+  let partsActive = 0;
+  for (const [courseId, partId] of Object.entries(partMap)) {
+    if (completedCourseIds.has(courseId)) {
+      const el = document.getElementById(partId);
+      if (el) { el.style.opacity = '1'; el.style.filter = 'none'; }
+      partsActive++;
+    }
+  }
+  if (partsActive > 0) {
+    const robot = document.getElementById('robotBody');
+    if (robot) robot.style.filter = `grayscale(${Math.max(0, 1 - partsActive/6)})`;
+  }
+
+  // Show readiness banner for highest milestone
+  let topReadiness = null;
+  for (const [courseId, info] of Object.entries(READINESS_MAP)) {
+    if (completedCourseIds.has(courseId)) topReadiness = info;
+  }
+  if (topReadiness) {
+    const banner = document.getElementById('readinessBanner');
+    if (banner) {
+      banner.style.display = 'block';
+      document.getElementById('readinessEmoji').textContent = topReadiness.emoji;
+      document.getElementById('readinessTitle').textContent = topReadiness.label;
+      document.getElementById('readinessSub').textContent = topReadiness.msg;
+    }
+  }
 
   if (courses.length) {
     document.getElementById('completedCoursesList').innerHTML = courses.map(c =>

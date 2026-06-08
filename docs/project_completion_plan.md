@@ -431,3 +431,40 @@ Additional coverage needed:
 
 **Decision:** Cover Spark and Airflow deeply in MLOps course with real notebooks. Kafka and dbt.
 
+
+---
+
+## S14 — Skill Journey & Motivation System
+
+> **INSTRUCTION:** Every implemented feature must be tracked here. Update status to ✅ as soon as a task is completed and committed.
+
+### S14-T1: Role-Based Career Tracks Page — /tracks.html
+| ID | Task | Status |
+|---|---|---|
+| S14-T1 | /tracks.html — 5 role track cards (ML Engineer, Data Scientist, AI Engineer, Data Engineer, GenAI Developer) | ✅ |
+| S14-T2 | Each track: description, courses needed, projects needed, external resources (Coursera/DeepLearning.ai) | ✅ |
+| S14-T3 | Track progress bar (logged-in user sees % complete toward chosen role) | ✅ |
+| S14-T4 | Add Tracks link to nav on all pages | ✅ |
+
+### S14-T2: Skills Radar Chart on Home Page
+| ID | Task | Status |
+|---|---|---|
+| S14-T5 | SVG radar chart on home page — 6 axes: Programming, ML, DL, GenAI, Agentic, MLOps | ✅ |
+| S14-T6 | Logged-out: show sample target radar with animation | ✅ |
+| S14-T7 | Logged-in: show personal radar filled from Supabase completions | ✅ |
+
+### S14-T3: Robot Evolution + XP Bar on Profile Page
+| ID | Task | Status |
+|---|---|---|
+| S14-T8 | Robot character that gains parts as courses complete | ✅ |
+| S14-T9 | XP bar: quiz pass=50XP, tested-out=100XP, course=300XP, project=500XP | ✅ |
+| S14-T10 | Milestone labels: "ML Fundamentals Ready!", "Deep Learning Ready!", etc. (not job titles) | ✅ |
+| S14-T11 | AI Readiness message shown on quiz pass and profile | ✅ |
+
+### S14-T4: Advanced User "Tested Out" Badge
+| ID | Task | Status |
+|---|---|---|
+| S14-T12 | quiz.html: score ≥ 90% → "Tested Out ⚡" badge instead of "Complete ✓" | ✅ |
+| S14-T13 | Tested Out stored in Supabase with score metadata | ❌ |
+| S14-T14 | Profile page shows Tested Out differently from regular completion | ❌ |
+
