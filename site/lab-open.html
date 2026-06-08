@@ -112,10 +112,10 @@
     <div class="progress-label" id="statusMsg">Starting...</div>
   </div>
 
-  <a href="#" class="open-btn" id="openBtn" target="_blank">Open in JupyterLite →</a>
+  <a href="#" class="open-btn" id="openBtn" target="_blank">Open Notebook →</a>
   <p class="note">
-    <strong>First visit only:</strong> ~30–60 seconds. After that, opens in ~3 seconds (cached).<br>
-    If the page stays blank after 90 seconds, click <strong>Open in JupyterLite →</strong> directly.
+    <strong>First visit only:</strong> ~30–60 seconds (Python runtime downloads once, then cached).<br>
+    Click the button above — your browser will open the notebook in a new tab.
   </p>
   <a href="javascript:history.back()" class="back-link">← Back to course</a>
 </div>
@@ -126,31 +126,26 @@
   const labUrl = `/lab/lab/index.html?path=${nb}`;
 
   document.getElementById('nbName').textContent = nb.replace('.ipynb','').replace(/-/g,' ');
-  document.getElementById('openBtn').href = labUrl;
 
-  // Animate progress to simulate loading stages
+  const btn = document.getElementById('openBtn');
+  btn.href = labUrl;
+  btn.target = '_blank';
+  btn.rel = 'noopener';
+
+  // Show progress while user decides to click
   const fill = document.getElementById('progressFill');
   const msg  = document.getElementById('statusMsg');
-  const steps = [
-    { icon1: '✅', pct: 30,  delay: 1000, msg: 'JupyterLite loaded…' },
-    { icon2: '🔄', pct: 60,  delay: 3000, msg: 'Downloading Python runtime (first time only)…' },
-    { icon2: '✅', pct: 85,  delay: 12000, msg: 'Python ready, opening notebook…' },
-    { icon3: '✅', pct: 100, delay: 18000, msg: 'Ready! Notebook is opening in new tab.' },
-  ];
-
-  // Open the lab in a new tab immediately
-  const labWindow = window.open(labUrl, '_blank');
-
-  let t = 0;
   const icon1 = document.getElementById('step1icon');
   const icon2 = document.getElementById('step2icon');
   const icon3 = document.getElementById('step3icon');
 
-  setTimeout(() => { icon1.textContent = '✅'; fill.style.width='25%'; msg.textContent='JupyterLite loaded…'; }, 1500);
-  setTimeout(() => { icon2.textContent = '🔄'; fill.style.width='50%'; msg.textContent='Downloading Pyodide (~30MB)…'; }, 3000);
-  setTimeout(() => { fill.style.width='75%'; msg.textContent='Python runtime installing…'; }, 20000);
-  setTimeout(() => { icon2.textContent = '✅'; fill.style.width='90%'; msg.textContent='Opening notebook…'; }, 40000);
-  setTimeout(() => { icon3.textContent = '✅'; fill.style.width='100%'; msg.textContent='Done — notebook should be open!'; document.getElementById('spinner').style.display='none'; }, 60000);
+  // Animate the steps automatically to inform the user
+  fill.style.width = '100%';
+  icon1.textContent = '✅';
+  icon2.textContent = '✅';
+  icon3.textContent = '✅';
+  msg.textContent = 'Click the button to open your notebook →';
+  document.getElementById('spinner').style.display = 'none';
 </script>
 </body>
 </html>
