@@ -1,0 +1,116 @@
+{
+  "course_label": "Key Concepts & Tools",
+  "title": "PyTorch vs TensorFlow",
+  "questions": [
+    {
+      "question": "Which framework dominates ML research publications in 2025?",
+      "options": [
+        "TensorFlow",
+        "Both equally",
+        "PyTorch (~80% of papers)",
+        "JAX"
+      ],
+      "correct": "c",
+      "explanation": "PyTorch became the dominant research framework around 2020. Most new architectures, papers, and models are released in PyTorch first."
+    },
+    {
+      "question": "What is TensorFlow's primary advantage over PyTorch for mobile deployment?",
+      "options": [
+        "Better accuracy",
+        "TFLite (TensorFlow Lite) is a mature, widely-supported mobile inference framework",
+        "Faster training",
+        "Easier debugging"
+      ],
+      "correct": "b",
+      "explanation": "TFLite has been production-proven on Android/iOS for years with hardware acceleration support. PyTorch's ExecuTorch is newer and catching up."
+    },
+    {
+      "question": "PyTorch's eager execution (default) vs TensorFlow's graph execution:",
+      "options": [
+        "No difference",
+        "PyTorch runs code line by line (easy debugging). TF graph mode compiles first (faster production inference but harder to debug).",
+        "TF is always eager",
+        "PyTorch only works in graph mode"
+      ],
+      "correct": "b",
+      "explanation": "PyTorch default = eager: easy to debug with standard Python tools. TF default = eager now too, but tf.function() compiles to graph for speed."
+    },
+    {
+      "question": "For fine-tuning LLMs and transformer models, which framework is predominantly used?",
+      "options": [
+        "TensorFlow",
+        "Both equally",
+        "PyTorch (HuggingFace, most LLMs are PyTorch-first)",
+        "JAX only"
+      ],
+      "correct": "c",
+      "explanation": "HuggingFace's transformers library defaults to PyTorch. Most LLMs (LLaMA, Mistral, Stable Diffusion) release PyTorch weights first."
+    },
+    {
+      "question": "Which framework is preferred for industrial/enterprise production pipelines?",
+      "options": [
+        "Always PyTorch",
+        "Both are production-grade, but TF has TFServing/TFX for enterprise ML pipelines; PyTorch has TorchServe",
+        "TF always",
+        "Neither is production-ready"
+      ],
+      "correct": "b",
+      "explanation": "Google and many enterprise companies standardised on TF early. TFX provides a complete production ML pipeline. PyTorch is closing the gap."
+    },
+    {
+      "question": "Keras in 2024 is:",
+      "options": [
+        "A separate framework only",
+        "Keras 3 (multi-backend): works with TF, PyTorch, and JAX backends \u2014 write once, run anywhere",
+        "Only for TensorFlow",
+        "Deprecated"
+      ],
+      "correct": "b",
+      "explanation": "Keras 3 became framework-agnostic. You can write Keras code and run it on TF, PyTorch, or JAX without changes. Big change from Keras 2."
+    },
+    {
+      "question": "For distributed training across many GPUs/nodes, both frameworks offer:",
+      "options": [
+        "No distributed support",
+        "PyTorch DDP (DistributedDataParallel) and TF's tf.distribute.Strategy \u2014 both are production-grade",
+        "Only TF supports multi-GPU",
+        "Only PyTorch supports multi-GPU"
+      ],
+      "correct": "b",
+      "explanation": "PyTorch DDP is popular for research. TF distribute works well with TPUs. Both support data parallelism across multiple GPUs."
+    },
+    {
+      "question": "JAX (Google) differs from both PyTorch and TensorFlow by:",
+      "options": [
+        "Being slower",
+        "Using functional programming + JIT compilation + automatic vectorisation \u2014 popular for cutting-edge research",
+        "Having no GPU support",
+        "Being a TF extension"
+      ],
+      "correct": "b",
+      "explanation": "JAX = NumPy-like API + JIT + grad + vmap. Used for AlphaFold, PaLM, and other Google research. Steep learning curve but very powerful."
+    },
+    {
+      "question": "If you're starting to learn deep learning today, which should you choose?",
+      "options": [
+        "Always TF first",
+        "Always JAX first",
+        "PyTorch \u2014 it's easier to debug, dominant in research, and most tutorials/models are PyTorch-first",
+        "Doesn't matter, both are identical"
+      ],
+      "correct": "c",
+      "explanation": "PyTorch has simpler debugging, more tutorials, most new models. Learn PyTorch first. Learn Keras/TF if needed for a specific job/project."
+    },
+    {
+      "question": "Model deployment: PyTorch \u2192 ONNX \u2192 production is useful because:",
+      "options": [
+        "ONNX makes models larger",
+        "ONNX (Open Neural Network Exchange) converts PyTorch models to a format deployable by TFLite, OpenVINO, TensorRT etc.",
+        "ONNX only works with TF",
+        "It's slower than native PyTorch"
+      ],
+      "correct": "b",
+      "explanation": "ONNX = universal model format. Export from PyTorch, deploy with any inference runtime. Enables hardware-optimised inference across platforms."
+    }
+  ]
+}

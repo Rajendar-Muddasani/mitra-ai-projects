@@ -1,0 +1,116 @@
+{
+  "course_label": "Key Concepts & Tools",
+  "title": "Jupyter & VS Code for ML",
+  "questions": [
+    {
+      "question": "What is the main risk of running Jupyter notebook cells out of order?",
+      "options": [
+        "Cells run faster",
+        "Hidden state: variables from earlier cells may have unexpected values, causing bugs that are hard to reproduce",
+        "Cells become read-only",
+        "Output is cached incorrectly"
+      ],
+      "correct": "b",
+      "explanation": "Always Kernel -> Restart and Run All before sharing a notebook. This ensures the notebook runs top-to-bottom without hidden state bugs."
+    },
+    {
+      "question": "The %timeit magic command in Jupyter does what?",
+      "options": [
+        "Measures disk I/O",
+        "Runs the code multiple times and reports mean/std execution time",
+        "Adds a timestamp to the cell",
+        "Times only the first line"
+      ],
+      "correct": "b",
+      "explanation": "%timeit runs code 7 times by default and reports average. Useful for comparing vectorised vs loop implementations."
+    },
+    {
+      "question": "What does %%capture magic do in Jupyter?",
+      "options": [
+        "Captures keyboard input",
+        "Suppresses all cell output (stdout/stderr) and stores it \u2014 useful for hiding verbose library output",
+        "Takes a screenshot",
+        "Captures network traffic"
+      ],
+      "correct": "b",
+      "explanation": "%%capture out suppresses output. out.show() reveals it later. Useful for pip install cells or verbose library logs."
+    },
+    {
+      "question": "nbconvert is used to:",
+      "options": [
+        "Convert between Jupyter versions",
+        "Export notebooks to HTML, PDF, Python script, LaTeX, slides \u2014 for sharing/publishing",
+        "Convert CSV to notebook",
+        "Merge notebooks"
+      ],
+      "correct": "b",
+      "explanation": "jupyter nbconvert --to html notebook.ipynb creates a shareable HTML. --to script creates .py. --to slides creates a presentation."
+    },
+    {
+      "question": "VS Code's Remote-SSH extension enables:",
+      "options": [
+        "Connecting to GitHub only",
+        "Editing files on a remote server (GPU instance) directly in VS Code as if they were local",
+        "Running Python locally",
+        "SSH key generation"
+      ],
+      "correct": "b",
+      "explanation": "Remote-SSH = VS Code UI locally + code/terminal running on remote GPU server. Edit, run notebooks, and debug on a cloud GPU from your laptop."
+    },
+    {
+      "question": "The VS Code Python extension's most important debugging feature is:",
+      "options": [
+        "Syntax highlighting only",
+        "Setting breakpoints and inspecting variable values interactively \u2014 much better than print() debugging",
+        "Auto-formatting",
+        "Terminal integration"
+      ],
+      "correct": "b",
+      "explanation": "Click line number to set breakpoint, F5 to run, hover variables to inspect. Far more powerful than adding print() statements everywhere."
+    },
+    {
+      "question": "Jupyter notebook checkpoints (.ipynb_checkpoints/) should be:",
+      "options": [
+        "Committed to Git always",
+        "Excluded via .gitignore \u2014 they're auto-saves, not actual source code",
+        "Deleted manually every time",
+        "Used instead of the main .ipynb"
+      ],
+      "correct": "b",
+      "explanation": ".gitignore: .ipynb_checkpoints/. These files cause noisy git diffs without adding value. The main .ipynb is the source of truth."
+    },
+    {
+      "question": "What does the VS Code 'Jupyter: Run All Cells' command do?",
+      "options": [
+        "Saves the notebook",
+        "Runs all cells from top to bottom \u2014 equivalent to Restart and Run All",
+        "Runs only changed cells",
+        "Opens a new kernel"
+      ],
+      "correct": "b",
+      "explanation": "Cmd+Shift+P -> 'Jupyter: Run All Cells'. Ensures reproducibility \u2014 same as running sequentially from a fresh kernel."
+    },
+    {
+      "question": "nbstripout is a pre-commit hook tool that:",
+      "options": [
+        "Runs notebooks automatically",
+        "Strips output from notebooks before committing to Git \u2014 keeps diffs clean and avoids large binary blobs",
+        "Lints notebook code",
+        "Merges notebook conflicts"
+      ],
+      "correct": "b",
+      "explanation": "nbstripout clear: outputs, execution counts, metadata from .ipynb before commit. Makes code review diffs readable."
+    },
+    {
+      "question": "The Jupyter Lab interface differs from classic Jupyter Notebook by:",
+      "options": [
+        "Being slower",
+        "Providing a full IDE-like interface: multiple panels, file browser, terminal, extensions, drag-and-drop cells",
+        "Having fewer features",
+        "Only working with Python 3.9+"
+      ],
+      "correct": "b",
+      "explanation": "JupyterLab = modern replacement for classic notebook UI. Side-by-side notebooks, built-in terminal, and rich extension ecosystem."
+    }
+  ]
+}

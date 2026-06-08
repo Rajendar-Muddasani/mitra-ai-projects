@@ -1,0 +1,116 @@
+{
+  "course_label": "Key Concepts & Tools",
+  "title": "AWS EC2 with GPU",
+  "questions": [
+    {
+      "question": "Which EC2 instance family is designed for GPU-accelerated ML training?",
+      "options": [
+        "C5 (compute optimised)",
+        "P3/P4 instances (NVIDIA V100/A100 GPUs)",
+        "T3 (burstable)",
+        "R5 (memory optimised)"
+      ],
+      "correct": "b",
+      "explanation": "P-series instances have NVIDIA data-centre GPUs. P3=V100, P4d=A100. G-series are for graphics/inference."
+    },
+    {
+      "question": "What is a Spot Instance and why use it for ML training?",
+      "options": [
+        "A fixed-price instance",
+        "An interruptible instance up to 90% cheaper than On-Demand",
+        "A reserved instance",
+        "A dedicated host"
+      ],
+      "correct": "b",
+      "explanation": "Spot uses spare AWS capacity at deep discounts. For training: save checkpoints frequently so a 2-minute interruption notice doesn't lose all progress."
+    },
+    {
+      "question": "Which AWS service provides managed ML training without managing EC2 directly?",
+      "options": [
+        "EC2 directly",
+        "AWS Lambda",
+        "Amazon SageMaker",
+        "AWS Batch"
+      ],
+      "correct": "c",
+      "explanation": "SageMaker handles instance provisioning, training, and auto-termination. EC2 gives more control but requires manual setup."
+    },
+    {
+      "question": "What is the purpose of an IAM role for an EC2 GPU instance running ML?",
+      "options": [
+        "Sets the GPU driver version",
+        "Grants the instance permission to access S3, ECR, and other AWS services without hardcoding credentials",
+        "Sets the instance type",
+        "Manages billing"
+      ],
+      "correct": "b",
+      "explanation": "IAM roles = temporary credentials attached to the instance. Much safer than embedding AWS keys in code."
+    },
+    {
+      "question": "What does 'p3.8xlarge' mean in AWS instance naming?",
+      "options": [
+        "Processor: 3rd gen, 8 cores",
+        "Instance family (P=GPU), generation 3, 8xlarge size (4 V100 GPUs)",
+        "Petabyte storage, 8TB",
+        "Priority tier 3, 8GB RAM"
+      ],
+      "correct": "b",
+      "explanation": "P=GPU family. 3=generation. 8xlarge=size (4x V100 GPUs, 32 vCPUs, 244GB RAM). Larger suffix = more GPUs and RAM."
+    },
+    {
+      "question": "How do you transfer training data from S3 to an EC2 instance efficiently?",
+      "options": [
+        "Copy manually via the console",
+        "aws s3 sync s3://bucket/data/ /local/data/ or mount S3 with s3fs",
+        "Download via browser",
+        "Use SCP only"
+      ],
+      "correct": "b",
+      "explanation": "aws s3 sync is fast and resumable. For very large datasets, consider AWS DataSync or streaming directly from S3 in the training script."
+    },
+    {
+      "question": "What is NVIDIA CUDA and why is it needed for GPU training?",
+      "options": [
+        "A cloud storage service",
+        "A parallel computing platform that allows code to run on NVIDIA GPUs",
+        "A Python package manager",
+        "A hyperparameter tuning tool"
+      ],
+      "correct": "b",
+      "explanation": "CUDA = Compute Unified Device Architecture. PyTorch/TF use CUDA to offload tensor operations to the GPU. Without CUDA drivers, GPU acceleration is unavailable."
+    },
+    {
+      "question": "What is the recommended way to stop an EC2 instance after training to avoid charges?",
+      "options": [
+        "Close the SSH terminal",
+        "Stop (not Terminate) the instance \u2014 preserves EBS volume but stops compute billing",
+        "Leave it running for next time",
+        "Use Hibernate"
+      ],
+      "correct": "b",
+      "explanation": "Stop = pauses compute billing, preserves data on EBS. Terminate = deletes instance AND storage. Accidentally terminating loses all work."
+    },
+    {
+      "question": "EC2 instance store vs EBS for ML workloads:",
+      "options": [
+        "Identical",
+        "Instance store: faster, ephemeral (lost on stop/terminate). EBS: persistent, slower. Use EBS for checkpoints, instance store for temp scratch space.",
+        "EBS is always faster",
+        "Instance store is persistent"
+      ],
+      "correct": "b",
+      "explanation": "NVMe instance store SSDs are very fast for I/O but data is lost when instance stops. Always save model checkpoints to EBS or S3."
+    },
+    {
+      "question": "What is Deep Learning AMI (Amazon Machine Image)?",
+      "options": [
+        "A type of EC2 instance",
+        "A pre-configured OS image with CUDA, PyTorch, TF, and ML tools pre-installed",
+        "An AWS AI service",
+        "A GPU driver package"
+      ],
+      "correct": "b",
+      "explanation": "AWS provides Deep Learning AMIs so you don't spend hours installing CUDA, cuDNN, PyTorch, etc. Start training in minutes instead of hours."
+    }
+  ]
+}
