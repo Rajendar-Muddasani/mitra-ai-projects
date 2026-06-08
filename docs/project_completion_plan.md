@@ -148,14 +148,14 @@
 
 | ID | Task | Status |
 |---|---|---|
-| S3-T1 | Set up JupyterLite repo (use jupyterlite/demo GitHub template) | ❌ |
-| S3-T2 | Configure GitHub Action to deploy JupyterLite to /lab/ subpath | ❌ |
-| S3-T3 | Create starter .ipynb notebooks for ML track (10 notebooks, one per topic) | ❌ |
-| S3-T4 | Create starter .ipynb notebooks for Programming track (Python Basics first) | ❌ |
-| S3-T5 | Create starter .ipynb notebooks for Key Concepts track (PyTorch, TF) | ❌ |
-| S3-T6 | Create starter .ipynb notebooks for DL track (sourced from AIML-Lab 014,015,034,054,073) | ❌ |
-| S3-T7 | Embed JupyterLite iframe component in course tab HTML panels | ❌ |
-| S3-T8 | Test persistence: close browser, reopen, verify notebook state is retained | ❌ |
+| S3-T1 | Set up JupyterLite repo (use jupyterlite/demo GitHub template) | ✅ |
+| S3-T2 | Configure GitHub Action to deploy JupyterLite to /lab/ subpath | ✅ |
+| S3-T3 | Create starter .ipynb notebooks for ML track (10 notebooks, one per topic) | ✅ |
+| S3-T4 | Create starter .ipynb notebooks for Programming track (Python Basics first) | ✅ |
+| S3-T5 | Create starter .ipynb notebooks for Key Concepts track (PyTorch, TF) | ✅ |
+| S3-T6 | Create starter .ipynb notebooks for DL track (sourced from AIML-Lab 014,015,034,054,073) | ✅ |
+| S3-T7 | Embed JupyterLite iframe component in course tab HTML panels | ✅ |
+| S3-T8 | Test persistence: close browser, reopen, verify notebook state is retained | ✅ |
 
 ---
 
@@ -326,8 +326,8 @@
 | S9-T4 | Contact form (Supabase insert) | 🔶 Form exists, Supabase table not created |
 | S9-T5 | FAQ /faq.html | ✅ |
 | S9-T6 | How It Works /how-it-works.html | ✅ |
-| S9-T7 | Portfolio Guide /portfolio-guide.html | ❌ |
-| S9-T8 | Interview Prep /interview-prep.html | ❌ |
+| S9-T7 | Portfolio Guide /portfolio-guide.html | ✅ |
+| S9-T8 | Interview Prep /interview-prep.html | ✅ |
 
 ---
 
