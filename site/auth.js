@@ -68,13 +68,15 @@ async function signOut() {
   await supabase.auth.signOut();
 }
 
-async function recordCourseCompletion(courseId, topicSlug) {
+async function recordCourseCompletion(courseId, topicSlug, score, testedOut) {
   if (!supabase || !currentUser) return;
   await supabase.from('course_completions').upsert({
-    user_id:    currentUser.id,
-    course_id:  courseId,
-    topic_slug: topicSlug,
-    completed_at: new Date().toISOString()
+    user_id:      currentUser.id,
+    course_id:    courseId,
+    topic_slug:   topicSlug,
+    completed_at: new Date().toISOString(),
+    score:        score || null,
+    tested_out:   testedOut || false
   }, { onConflict: 'user_id,course_id,topic_slug' });
 }
 

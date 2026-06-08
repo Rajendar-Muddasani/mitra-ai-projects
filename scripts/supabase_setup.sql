@@ -75,3 +75,7 @@ CREATE POLICY "user_certificates"
 CREATE POLICY "public_verify_certificate"
   ON certificates FOR SELECT
   USING (true);
+
+-- Add tested_out column to course_completions (run if upgrading existing install)
+ALTER TABLE course_completions ADD COLUMN IF NOT EXISTS tested_out boolean DEFAULT false;
+ALTER TABLE course_completions ADD COLUMN IF NOT EXISTS score integer;

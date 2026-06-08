@@ -55,16 +55,16 @@
 ### Machine Learning Track — 10 tabs (OneNote layout)
 | ID | Tab | Content | Colab link | Quiz | Cheatsheet |
 |---|---|---|---|---|---|
-| S2-T9 | Linear Regression | ✅ | ❌ AIML-Lab 001 | ❌ | ❌ |
-| S2-T10 | Classification | ✅ | ❌ AIML-Lab 002 | ❌ | ❌ |
-| S2-T11 | Tree-Based Learning | ✅ | ❌ AIML-Lab 003 | ❌ | ❌ |
-| S2-T12 | Boosting | ✅ | ❌ AIML-Lab 004 | ❌ | ❌ |
-| S2-T13 | SVM | ✅ | ❌ AIML-Lab 005 | ❌ | ❌ |
-| S2-T14 | Clustering | ✅ | ❌ AIML-Lab 006 | ❌ | ❌ |
-| S2-T15 | Anomaly Detection | ✅ | ❌ AIML-Lab 007 | ❌ | ❌ |
-| S2-T16 | Naive Bayes / LDA | ✅ | ❌ AIML-Lab 008 | ❌ | ❌ |
-| S2-T17 | Time Series | ✅ | ❌ AIML-Lab 009 | ❌ | ❌ |
-| S2-T18 | Hyperparameter Opt | ✅ | ❌ AIML-Lab 010 | ❌ | ❌ |
+| S2-T9 | Linear Regression | ✅ | ✅ | ✅ | ✅ |
+| S2-T10 | Classification | ✅ | ✅ | ✅ | ✅ |
+| S2-T11 | Tree-Based Learning | ✅ | ✅ | ✅ | ✅ |
+| S2-T12 | Boosting | ✅ | ✅ | ✅ | ✅ |
+| S2-T13 | SVM | ✅ | ✅ | ✅ | ✅ |
+| S2-T14 | Clustering | ✅ | ✅ | ✅ | ✅ |
+| S2-T15 | Anomaly Detection | ✅ | ✅ | ✅ | ✅ |
+| S2-T16 | Naive Bayes / LDA | ✅ | ✅ | ✅ | ✅ |
+| S2-T17 | Time Series | ✅ | ✅ | ✅ | ✅ |
+| S2-T18 | Hyperparameter Opt | ✅ | ✅ | ✅ | ✅ |
 
 ### Deep Learning Track — 8 tabs
 | ID | Tab | Content | Source repo | Quiz | Cheatsheet |
@@ -337,21 +337,21 @@ Do NOT share or announce the site until all are ✅.
 
 | ID | Gate | Status |
 |---|---|---|
-| L1 | Domain purchased and DNS configured | ❌ |
-| L2 | HTTPS enforced | ❌ |
-| L3 | GitHub Pages enabled, first deploy green | ❌ |
-| L4 | Supabase anon key wired in all pages | ❌ |
-| L5 | Supabase tables created and tested | ❌ |
-| L6 | Contact form tested end-to-end | ❌ |
+| L1 | Domain purchased and DNS configured | ✅ |
+| L2 | HTTPS enforced | ✅ |
+| L3 | GitHub Pages enabled, first deploy green | ✅ |
+| L4 | Supabase anon key wired in all pages | ✅ |
+| L5 | Supabase tables created and tested | ✅ |
+| L6 | Contact form tested end-to-end | ✅ |
 | L7 | Home page content final | ✅ |
-| L8 | At least 1 course with full content (ML recommended) | ❌ |
-| L9 | At least 2 project kits with full content | ❌ |
-| L10 | At least 5 cheatsheets uploaded to S3 | ❌ |
+| L8 | At least 1 course with full content (ML recommended) | ✅ |
+| L9 | At least 2 project kits with full content | ✅ |
+| L10 | At least 5 cheatsheets uploaded to S3 | ✅ |
 | L11 | Mobile verified on real device | ❌ |
-| L12 | GA4 confirmed in Google Analytics dashboard | ❌ |
+| L12 | GA4 confirmed in Google Analytics dashboard | ✅ |
 | L13 | All nav links working, no 404 pages | 🔶 |
 | L14 | OG image set (social share preview) | ❌ |
-| L15 | Google Search Console verified | ❌ |
+| L15 | Google Search Console verified | ✅ |
 
 ---
 
