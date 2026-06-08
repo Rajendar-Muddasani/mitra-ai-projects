@@ -239,14 +239,14 @@
 
 | ID | Task | Status | Notes |
 |---|---|---|---|
-| S5-T1 | /portfolio-guide.html page | ❌ | What makes a portfolio-ready GitHub profile |
-| S5-T2 | GitHub Profile README template | ❌ | Markdown with project showcase layout |
-| S5-T3 | Project README template (architecture, setup, demo link) | ❌ | |
-| S5-T4 | "Deploy your project" guide: Render + Railway + HF Spaces | ❌ | Step-by-step |
-| S5-T5 | LinkedIn profile optimization tips | ❌ | For AI/ML job seekers |
-| S5-T6 | Portfolio checklist PDF (downloadable) | ❌ | What to have before applying |
-| S5-T7 | /interview-prep.html page | ❌ | ML/DL/GenAI interview questions + answers |
-| S5-T8 | "AI/ML Interview Questions" cheatsheet | ❌ | Add to cheatsheets page |
+| S5-T1 | /portfolio-guide.html page | ✅ | What makes a portfolio-ready GitHub profile |
+| S5-T2 | GitHub Profile README template | ✅ | Markdown with project showcase layout |
+| S5-T3 | Project README template (architecture, setup, demo link) | ✅ | |
+| S5-T4 | "Deploy your project" guide: Render + Railway + HF Spaces | ✅ | Step-by-step |
+| S5-T5 | LinkedIn profile optimization tips | ✅ | For AI/ML job seekers |
+| S5-T6 | Portfolio checklist PDF (downloadable) | ✅ | What to have before applying |
+| S5-T7 | /interview-prep.html page | ✅ | ML/DL/GenAI interview questions + answers |
+| S5-T8 | "AI/ML Interview Questions" cheatsheet | ✅ | Add to cheatsheets page |
 
 ---
 

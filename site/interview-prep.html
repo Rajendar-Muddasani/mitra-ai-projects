@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI/ML Interview Preparation — Mitra AI Projects</title>
+  <meta name="description" content="50+ AI/ML interview questions with detailed answers. ML fundamentals, deep learning, GenAI/LLM, system design, coding patterns, and behavioral questions.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .qa-item { border:1px solid var(--border-dim); border-radius:var(--radius-lg); margin-bottom:0.75rem; overflow:hidden; }
+    .qa-q { padding:1rem 1.25rem; cursor:pointer; display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; font-weight:700; font-size:0.93rem; color:var(--text); background:var(--surface); transition:background 0.15s; }
+    .qa-q:hover { background:rgba(107,33,168,0.05); }
+    .qa-q.open { background:rgba(107,33,168,0.07); color:var(--primary); border-bottom:1px solid var(--border-dim); }
+    .qa-toggle { font-family:'JetBrains Mono',monospace; font-size:0.8rem; flex-shrink:0; color:var(--primary); }
+    .qa-a { display:none; padding:1rem 1.25rem; font-size:0.875rem; color:var(--muted); line-height:1.7; background:var(--bg-dark); }
+    .qa-a.open { display:block; }
+    .qa-a code { background:var(--surface); padding:0.1rem 0.4rem; border-radius:4px; font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:var(--primary); }
+    .qa-a strong { color:var(--text); }
+    .level-badge { font-family:'JetBrains Mono',monospace; font-size:0.65rem; padding:0.15rem 0.5rem; border-radius:4px; flex-shrink:0; }
+    .level-easy { background:rgba(5,150,105,0.12); color:var(--success); }
+    .level-medium { background:rgba(245,158,11,0.12); color:#b45309; }
+    .level-hard { background:rgba(220,38,38,0.12); color:var(--danger); }
+    .section-filter { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+    .filter-btn { padding:0.35rem 0.85rem; border:1px solid var(--border-dim); border-radius:999px; font-size:0.8rem; font-weight:700; cursor:pointer; transition:all 0.15s; background:transparent; color:var(--muted); }
+    .filter-btn:hover, .filter-btn.active { border-color:var(--primary); color:var(--primary); background:rgba(107,33,168,0.07); }
+    .qa-section { margin-bottom:2.5rem; }
+    .qa-section h2 { margin-bottom:0.5rem; font-size:1.25rem; }
+    .qa-section .section-desc { color:var(--muted); font-size:0.875rem; margin-bottom:1.25rem; }
+    .search-bar { width:100%; padding:0.75rem 1rem; border:1px solid var(--border); border-radius:var(--radius-lg); background:var(--surface); color:var(--text); font-family:'Nunito',sans-serif; font-size:0.95rem; margin-bottom:1.5rem; }
+    .search-bar:focus { outline:none; border-color:var(--primary); }
+    .company-chip { display:inline-flex; align-items:center; gap:0.3rem; padding:0.25rem 0.65rem; background:rgba(107,33,168,0.07); border:1px solid rgba(107,33,168,0.18); border-radius:999px; font-size:0.72rem; font-family:'JetBrains Mono',monospace; color:var(--primary); }
+    .tips-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem; }
+    @media(max-width:600px) { .tips-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/portfolio-guide.html">Portfolio</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="hero hero-sm" style="padding:2rem 0 1.5rem;">
+  <div class="container hero-inner">
+    <div class="hero-eyebrow">placement preparation</div>
+    <h1 class="hero-title" style="font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:0.4rem;">AI/ML Interview Preparation</h1>
+    <p style="color:var(--muted);font-size:0.95rem;max-width:580px;">50+ questions across ML fundamentals, deep learning, GenAI/LLMs, system design, and coding — with detailed answers you can actually defend in an interview.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:2rem;">
+  <div class="container">
+
+    <input class="search-bar" type="text" placeholder="🔍  Search questions..." oninput="filterQuestions(this.value)" />
+
+    <div class="section-filter">
+      <button class="filter-btn active" onclick="filterSection('all',this)">All Topics</button>
+      <button class="filter-btn" onclick="filterSection('ml',this)">🤖 ML Fundamentals</button>
+      <button class="filter-btn" onclick="filterSection('dl',this)">🧠 Deep Learning</button>
+      <button class="filter-btn" onclick="filterSection('genai',this)">✨ GenAI & LLMs</button>
+      <button class="filter-btn" onclick="filterSection('system',this)">⚙️ System Design</button>
+      <button class="filter-btn" onclick="filterSection('coding',this)">💻 Coding</button>
+      <button class="filter-btn" onclick="filterSection('behavioral',this)">💬 Behavioral</button>
+    </div>
+
+    <!-- ML Fundamentals -->
+    <div class="qa-section" data-section="ml">
+      <h2>🤖 ML Fundamentals</h2>
+      <p class="section-desc">These appear in almost every ML interview. Know these cold.</p>
+
+      <div class="qa-item" data-section="ml">
+        <div class="qa-q" onclick="toggleQA(this)"><span>What is the bias-variance trade-off?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-easy">Easy</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><strong>Bias:</strong> error from wrong assumptions — underfitting (high bias = model too simple, misses patterns).<br><strong>Variance:</strong> error from sensitivity to training data — overfitting (high variance = model memorises, doesn't generalise).<br><br><strong>Trade-off:</strong> Increasing model complexity reduces bias but increases variance. Optimal point is between the two extremes.<br><br><strong>Fixes:</strong> High bias → more features, more complex model, less regularisation. High variance → more data, regularisation, simpler model, dropout.</div>
+      </div>
+
+      <div class="qa-item" data-section="ml">
+        <div class="qa-q" onclick="toggleQA(this)"><span>Explain L1 vs L2 regularisation.</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-easy">Easy</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><strong>L1 (Lasso):</strong> adds <code>|w|</code> to loss. Creates sparse models — drives some weights to exactly zero (feature selection). Use when many irrelevant features exist.<br><br><strong>L2 (Ridge):</strong> adds <code>w²</code> to loss. Shrinks all weights toward zero but rarely to exactly zero. Better when all features contribute somewhat. Default choice for most problems.<br><br><strong>ElasticNet:</strong> combines both. Use when you want sparsity but not L1's instability with correlated features.</div>
+      </div>
+
+      <div class="qa-item" data-section="ml">
+        <div class="qa-q" onclick="toggleQA(this)"><span>When would you use precision vs recall vs F1?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-easy">Easy</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><strong>Precision</strong> = TP/(TP+FP). Use when false positives are costly. Example: spam filter — wrongly marking real email as spam (FP) is bad.<br><br><strong>Recall</strong> = TP/(TP+FN). Use when false negatives are costly. Example: cancer detection — missing a cancer (FN) is far worse than a false alarm.<br><br><strong>F1</strong> = harmonic mean of precision and recall. Use when you need to balance both, or when classes are imbalanced and accuracy is misleading.</div>
+      </div>
+
+      <div class="qa-item" data-section="ml">
+        <div class="qa-q" onclick="toggleQA(this)"><span>How does gradient boosting work?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">Gradient boosting builds trees <strong>sequentially</strong>. Each tree corrects the errors of the previous ensemble:<br><br>1. Start with a simple prediction (mean of target)<br>2. Compute residuals (actual − predicted)<br>3. Fit a tree to the residuals<br>4. Add tree to ensemble with learning rate: <code>F(x) += lr × tree(x)</code><br>5. Repeat N times<br><br><strong>XGBoost improvements:</strong> L1/L2 regularisation on weights, column subsampling, row subsampling, 2nd-order gradients (Newton method), early stopping. These make XGBoost more accurate and robust than sklearn GBM.</div>
+      </div>
+
+      <div class="qa-item" data-section="ml">
+        <div class="qa-q" onclick="toggleQA(this)"><span>What is data leakage and how do you prevent it?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">Data leakage occurs when information from outside the training period is used during training — giving artificially high CV scores that don't hold in production.<br><br><strong>Types:</strong><br>• Train-test contamination: scaler fitted on full data before split<br>• Target leakage: features that encode the target (e.g. "loan_paid_off" in loan default prediction)<br>• Time leakage: future data used to predict past<br><br><strong>Prevention:</strong> Use sklearn <code>Pipeline</code> so all preprocessing fits only on training folds. Always split BEFORE any preprocessing. Review features for implicit target encoding.</div>
+      </div>
+
+      <div class="qa-item" data-section="ml">
+        <div class="qa-q" onclick="toggleQA(this)"><span>Explain cross-validation and when you'd use k-fold vs stratified k-fold.</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-easy">Easy</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">Cross-validation gives a more reliable performance estimate by using all data for both training and validation across k folds.<br><br><strong>K-Fold:</strong> split into k equal parts, train on k-1, test on 1, rotate. Good for balanced datasets and regression.<br><br><strong>Stratified K-Fold:</strong> each fold has the same class distribution as the full dataset. Essential for imbalanced classification problems. If 5% positives, each fold has 5% positives.<br><br><strong>Time-Series CV:</strong> expanding window — never use future data to train. Standard k-fold would cause time leakage.</div>
+      </div>
+
+      <div class="qa-item" data-section="ml">
+        <div class="qa-q" onclick="toggleQA(this)"><span>How would you handle class imbalance?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">Multiple strategies depending on severity:<br><br><strong>Algorithm level:</strong> <code>class_weight='balanced'</code> in sklearn — adjusts weights so minority class contributes more to loss. Simplest, often sufficient.<br><br><strong>Sampling:</strong> Oversample minority (SMOTE — generates synthetic examples), undersample majority (random drop). Use with caution — can create noisy examples.<br><br><strong>Threshold tuning:</strong> default threshold is 0.5 for predict(). Lower it to increase recall for minority class. Use precision-recall curve to find optimal threshold.<br><br><strong>Metric:</strong> Don't use accuracy. Use F1, AUC-ROC, or PR-AUC for imbalanced datasets.</div>
+      </div>
+
+      <div class="qa-item" data-section="ml">
+        <div class="qa-q" onclick="toggleQA(this)"><span>What is the curse of dimensionality?</span><div style="display:flex;align-items:center;gap:0.5terms;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">As feature count grows, the volume of the space increases exponentially. Data becomes sparse — distances lose meaning, making distance-based methods (KNN, SVM) unreliable.<br><br><strong>Effect:</strong> More dimensions require exponentially more data to maintain statistical power. With 10 features, need ~10^10 samples for the same density as 1 feature with 10 samples.<br><br><strong>Fixes:</strong> Feature selection (remove irrelevant), PCA/dimensionality reduction, regularisation (implicit feature selection), domain knowledge to select fewer meaningful features.</div>
+      </div>
+    </div>
+
+    <!-- Deep Learning -->
+    <div class="qa-section" data-section="dl">
+      <h2>🧠 Deep Learning</h2>
+      <p class="section-desc">Architecture design, training tricks, and why things work.</p>
+
+      <div class="qa-item" data-section="dl">
+        <div class="qa-q" onclick="toggleQA(this)"><span>Explain the vanishing gradient problem and solutions.</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">In deep networks, gradients shrink exponentially during backpropagation — early layers get near-zero updates and don't learn. Caused by repeatedly multiplying gradients &lt;1 (sigmoid/tanh saturate).<br><br><strong>Solutions:</strong><br>• <strong>ReLU activation:</strong> gradient is 1 for positive inputs, doesn't saturate. Default choice for hidden layers.<br>• <strong>Residual connections (ResNet):</strong> skip connections provide a gradient highway — gradient can flow directly through identity mapping.<br>• <strong>Batch Normalisation:</strong> normalises layer inputs, keeps activations in non-saturating range.<br>• <strong>LSTM/GRU gates:</strong> designed specifically to control gradient flow in sequential models.</div>
+      </div>
+
+      <div class="qa-item" data-section="dl">
+        <div class="qa-q" onclick="toggleQA(this)"><span>What is dropout and how does it prevent overfitting?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-easy">Easy</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">Dropout randomly deactivates neurons (with probability p, typically 0.2–0.5) during each training step. <br><br><strong>Why it works:</strong> Forces the network to learn redundant representations — no single neuron can rely on specific other neurons always being present. Acts as training an ensemble of 2^n subnetworks.<br><br><strong>Training vs inference:</strong> During inference, all neurons are active but outputs are scaled by (1−p) to maintain expected values.<br><br><strong>When to use:</strong> After dense layers in fully connected networks. Not typically after conv layers (use spatial dropout instead). Less useful with batch normalisation.</div>
+      </div>
+
+      <div class="qa-item" data-section="dl">
+        <div class="qa-q" onclick="toggleQA(this)"><span>What is Batch Normalisation and where do you place it?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">BN normalises layer inputs: <code>x̂ = (x − μ_batch) / σ_batch</code>, then scales with learnable γ and shifts with β.<br><br><strong>Benefits:</strong> Reduces internal covariate shift. Allows higher learning rates. Acts as regulariser. Makes training faster and more stable.<br><br><strong>Placement debate:</strong> Original paper: Conv → BN → Activation. Modern practice often: Conv → Activation → BN. In Transformers: Pre-LN (LayerNorm before sublayer) is more stable for training very deep models.<br><br><strong>Note:</strong> BN is batch-dependent — problematic for small batches. Use LayerNorm for NLP/Transformers, GroupNorm for small-batch image training.</div>
+      </div>
+
+      <div class="qa-item" data-section="dl">
+        <div class="qa-q" onclick="toggleQA(this)"><span>Explain the self-attention mechanism in Transformers.</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-hard">Hard</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">Self-attention allows every token to attend to every other token in the sequence:<br><br><code>Attention(Q,K,V) = softmax(QK^T / √d_k) × V</code><br><br>Each token creates Q (query), K (key), V (value) projections. Attention weights = how much each token should attend to every other token. Scaled by √d_k to prevent softmax saturation.<br><br><strong>Multi-head:</strong> Run h attention heads in parallel, each with different W_Q, W_K, W_V projections. Each head can focus on different relationship types (syntax, coreference, semantics). Concatenate and project outputs.<br><br><strong>Complexity:</strong> O(n²) in sequence length — quadratic memory and compute. Flash Attention reduces this via tiling.</div>
+      </div>
+
+      <div class="qa-item" data-section="dl">
+        <div class="qa-q" onclick="toggleQA(this)"><span>What is transfer learning and when does it work?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-easy">Easy</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">Transfer learning reuses a model trained on a large dataset as the starting point for a new task, requiring less data and compute.<br><br><strong>Works best when:</strong> Source and target domains are related (both are images, or both are English text). Pre-trained model has learned useful features (edges, textures for images; grammar, semantics for NLP).<br><br><strong>Strategies:</strong><br>• Feature extraction: freeze all layers, train only the new head. Use with very little data (&lt;1K examples).<br>• Fine-tuning: unfreeze later layers, train with low learning rate. Better accuracy, needs more data (5K+).<br>• Full fine-tuning: unfreeze all layers. Needs large dataset to avoid catastrophic forgetting.<br><br><strong>Why ImageNet features transfer:</strong> Low-level features (edges, textures) are universal across visual domains.</div>
+      </div>
+
+      <div class="qa-item" data-section="dl">
+        <div class="qa-q" onclick="toggleQA(this)"><span>What is the difference between LSTM and GRU?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><strong>LSTM:</strong> 3 gates (forget, input, output) + cell state + hidden state. More parameters, more expressive. Better for tasks requiring fine-grained memory control over long sequences.<br><br><strong>GRU:</strong> 2 gates (reset, update). Merges cell and hidden state. ~33% fewer parameters. Often comparable or better on shorter sequences. Faster to train.<br><br><strong>Rule of thumb:</strong> Try GRU first (faster). Switch to LSTM if sequence dependencies are very long (&gt;200 steps) or GRU doesn't converge.<br><br><strong>Both solved by Transformers:</strong> For most NLP tasks today, Transformers outperform both due to global attention — LSTMs and GRUs are still used for streaming/real-time applications where Transformers are too expensive.</div>
+      </div>
+    </div>
+
+    <!-- GenAI & LLMs -->
+    <div class="qa-section" data-section="genai">
+      <h2>✨ Generative AI & LLMs</h2>
+      <p class="section-desc">High demand in 2025. Every AI Engineer role will ask these.</p>
+
+      <div class="qa-item" data-section="genai">
+        <div class="qa-q" onclick="toggleQA(this)"><span>What is RAG and why is it better than fine-tuning for knowledge-intensive tasks?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><strong>RAG</strong> retrieves relevant documents at query time and injects them into the prompt, grounding the LLM in real information.<br><br><strong>RAG vs Fine-tuning for knowledge tasks:</strong><br>• RAG: dynamic, updateable (add new docs without retraining), transparent (can cite sources), no training cost<br>• Fine-tuning: static (knowledge baked in), no source attribution, expensive to update<br><br><strong>When to use RAG:</strong> Company knowledge bases, current events, legal/medical documents, any domain where information changes frequently.<br><br><strong>When to fine-tune:</strong> Custom writing style, format/tone, domain-specific reasoning patterns, reducing prompt length for cost.</div>
+      </div>
+
+      <div class="qa-item" data-section="genai">
+        <div class="qa-q" onclick="toggleQA(this)"><span>Explain the RAG pipeline end-to-end.</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><strong>Indexing phase (one-time):</strong><br>1. Load documents (PDF, web, database)<br>2. Chunk: split into ~500 token segments with 50-token overlap<br>3. Embed: run each chunk through embedding model (text-embedding-3-small)<br>4. Store: save vectors + metadata in vector DB (ChromaDB, Pinecone)<br><br><strong>Query phase (per user question):</strong><br>1. Embed the user's question<br>2. Similarity search: find top-k most similar chunks<br>3. Rerank (optional): cross-encoder reranks for precision<br>4. Inject: build prompt with retrieved chunks as context<br>5. Generate: LLM answers grounded in retrieved context<br><br><strong>Key metric:</strong> Context Precision + Context Recall + Answer Faithfulness (RAGAS framework)</div>
+      </div>
+
+      <div class="qa-item" data-section="genai">
+        <div class="qa-q" onclick="toggleQA(this)"><span>What is hallucination and how do you reduce it?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-easy">Easy</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">Hallucination: LLM generates confident but factually incorrect information. Caused by next-token prediction optimisation — plausible-sounding completions, not verified facts.<br><br><strong>Reduction strategies:</strong><br>• <strong>RAG:</strong> ground responses in retrieved real documents<br>• <strong>Prompt instruction:</strong> "Only answer based on the provided context. If not in the context, say 'I don't know.'"<br>• <strong>Temperature:</strong> lower temperature (0.0–0.3) makes responses more deterministic/conservative<br>• <strong>Citations:</strong> ask the model to cite sources — forces it to reference actual retrieved content<br>• <strong>Faithfulness check:</strong> RAGAS faithfulness metric, or a second LLM call to verify claims against retrieved context</div>
+      </div>
+
+      <div class="qa-item" data-section="genai">
+        <div class="qa-q" onclick="toggleQA(this)"><span>What is LoRA and how does it reduce fine-tuning cost?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-hard">Hard</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">LoRA (Low-Rank Adaptation) adds small trainable rank-decomposition matrices alongside frozen pre-trained weights:<br><br><code>W_new = W_frozen + B × A</code> where B is (m×r) and A is (r×n), r ≪ min(m,n)<br><br><strong>Why it works:</strong> Weight updates during fine-tuning have low intrinsic rank — a small number of dimensions capture most of the adaptation. r=8-16 typically captures 95%+ of fine-tuning quality.<br><br><strong>Cost savings:</strong> Only B and A train — typically 0.1–1% of original parameters. A 7B model normally needs 28GB to fine-tune — with QLoRA (4-bit quantisation + LoRA), fits in 6GB.<br><br><strong>Deployment:</strong> Merge B×A back into W at inference — no extra latency. Or hot-swap adapters for multi-task serving.</div>
+      </div>
+
+      <div class="qa-item" data-section="genai">
+        <div class="qa-q" onclick="toggleQA(this)"><span>Explain how RLHF works.</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-hard">Hard</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">RLHF (Reinforcement Learning from Human Feedback) aligns LLMs with human preferences in 3 steps:<br><br><strong>Step 1 — SFT:</strong> Supervised Fine-Tuning on high-quality demonstration data. Teaches the model the desired format and tone.<br><br><strong>Step 2 — Reward Model:</strong> Humans rate pairs of model outputs (which is better). Train a reward model on these preferences. RM(response) → scalar score.<br><br><strong>Step 3 — PPO Fine-Tuning:</strong> Use PPO (Proximal Policy Optimisation) to maximise the reward model's score. Add KL divergence penalty to prevent the policy from drifting too far from the SFT baseline.<br><br><strong>Alternative: DPO</strong> — Direct Preference Optimisation. Skips the reward model entirely, optimises directly on preference pairs. Simpler, more stable, comparable results.</div>
+      </div>
+
+      <div class="qa-item" data-section="genai">
+        <div class="qa-q" onclick="toggleQA(this)"><span>What are embeddings and what makes a good embedding model?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">Embeddings map text to dense vectors where semantically similar text is geometrically close. Enable: semantic search, clustering, RAG retrieval, classification.<br><br><strong>Good embedding model properties:</strong><br>• <strong>High MTEB score</strong> for your task type (check mteb.leaderboard.huggingface.co)<br>• <strong>Appropriate dimensionality</strong> — 384d (all-MiniLM-L6-v2, 80MB) vs 1536d (text-embedding-3-large) — higher dim ≠ always better<br>• <strong>Domain-specific fine-tuning</strong> if needed — generic models may miss domain terminology<br>• <strong>Speed/cost</strong> — local models free, API models have per-token cost<br><br><strong>Popular choices:</strong> all-MiniLM-L6-v2 (fast, free, local), BAAI/bge-m3 (multilingual), OpenAI text-embedding-3-small (strong, cheap API)</div>
+      </div>
+    </div>
+
+    <!-- System Design -->
+    <div class="qa-section" data-section="system">
+      <h2>⚙️ ML System Design</h2>
+      <p class="section-desc">Senior-level questions. Show you think about scale, reliability, and monitoring.</p>
+
+      <div class="qa-item" data-section="system">
+        <div class="qa-q" onclick="toggleQA(this)"><span>Design a recommendation system for an e-commerce platform.</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-hard">Hard</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><strong>Requirements clarification:</strong> Real-time vs batch? Cold start handling? CTR vs purchase optimisation?<br><br><strong>Architecture (two-stage):</strong><br>1. <strong>Retrieval (candidate generation):</strong> Collaborative filtering (ALS/neural CF) + item embeddings. Return top-500 candidates from millions. Fast, approximate.<br>2. <strong>Ranking:</strong> LightGBM or neural network with user features + item features + context. Scores 500 candidates, returns top-20. Slower, more accurate.<br><br><strong>Features:</strong> User history (purchases, views, dwell time), item attributes, context (device, time, location), collaborative signals (users like you bought X).<br><br><strong>Cold start:</strong> New user → popularity-based + content-based. New item → content embeddings until behavioral data collected.<br><br><strong>Monitoring:</strong> CTR, conversion rate, revenue per user, novelty/diversity. A/B test new models. Watch for filter bubbles.</div>
+      </div>
+
+      <div class="qa-item" data-section="system">
+        <div class="qa-q" onclick="toggleQA(this)"><span>How would you detect and handle model drift in production?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-hard">Hard</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><strong>Types of drift:</strong><br>• <strong>Data drift:</strong> input feature distribution changes (e.g., suddenly more mobile users)<br>• <strong>Concept drift:</strong> relationship between features and target changes (e.g., COVID changed what drives hotel bookings)<br>• <strong>Prediction drift:</strong> model output distribution shifts<br><br><strong>Detection:</strong><br>• Statistical tests: KS test, PSI (Population Stability Index), Jensen-Shannon divergence on feature distributions<br>• Performance monitoring: track model metrics on labelled subset with delayed labels<br>• Tools: Evidently AI, Fiddler, WhyLabs<br><br><strong>Response:</strong><br>• Alert when PSI &gt; 0.2 or performance drops &gt; 5%<br>• Trigger retraining pipeline with recent data<br>• Shadow test new model before replacing production</div>
+      </div>
+
+      <div class="qa-item" data-section="system">
+        <div class="qa-q" onclick="toggleQA(this)"><span>How would you serve a real-time ML model at 10,000 requests/second?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-hard">Hard</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><strong>Model optimisation:</strong> Quantise to INT8 (4x smaller, 2-4x faster). Use ONNX Runtime or TensorRT for GPU inference. Batch incoming requests (dynamic batching).<br><br><strong>Serving infrastructure:</strong> FastAPI + Uvicorn workers (async, multiple workers). Or TorchServe/Triton Inference Server for model-specific optimisations. Container with Docker, orchestrated with Kubernetes HPA.<br><br><strong>Scaling:</strong> HPA scales pods based on CPU or custom metrics (request queue depth). Multiple regions with CDN for global latency reduction.<br><br><strong>Latency targets:</strong> P50 &lt;10ms, P99 &lt;100ms. Monitor with Prometheus + Grafana. Alert on P99 spikes.<br><br><strong>Caching:</strong> Cache frequent/repeated predictions in Redis. Feature store (Feast) for pre-computed features. Avoid recomputing expensive features per request.</div>
+      </div>
+    </div>
+
+    <!-- Coding -->
+    <div class="qa-section" data-section="coding">
+      <h2>💻 Coding for ML Interviews</h2>
+      <p class="section-desc">Implement from scratch — shows you understand the math, not just the API.</p>
+
+      <div class="qa-item" data-section="coding">
+        <div class="qa-q" onclick="toggleQA(this)"><span>Implement linear regression from scratch using gradient descent.</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><pre style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;line-height:1.6;background:var(--surface);padding:1rem;border-radius:var(--radius);overflow-x:auto;">
+import numpy as np
+
+class LinearRegression:
+    def __init__(self, lr=0.01, n_iter=1000):
+        self.lr, self.n_iter = lr, n_iter
+
+    def fit(self, X, y):
+        m, n = X.shape
+        self.w = np.zeros(n)  # weights
+        self.b = 0             # bias
+
+        for _ in range(self.n_iter):
+            y_pred = X @ self.w + self.b       # forward pass
+            error  = y_pred - y
+            dw = (2/m) * X.T @ error           # gradient w.r.t. w
+            db = (2/m) * error.sum()           # gradient w.r.t. b
+            self.w -= self.lr * dw             # gradient descent step
+            self.b -= self.lr * db
+
+    def predict(self, X):
+        return X @ self.w + self.b</pre>
+<strong>Key concepts to explain:</strong> MSE loss = mean((y_pred - y)²). Gradient of MSE w.r.t. w = (2/m) * X.T @ (y_pred - y). Gradient descent updates: move in direction of negative gradient.</div>
+      </div>
+
+      <div class="qa-item" data-section="coding">
+        <div class="qa-q" onclick="toggleQA(this)"><span>Implement k-means clustering from scratch.</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><pre style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;line-height:1.6;background:var(--surface);padding:1rem;border-radius:var(--radius);overflow-x:auto;">
+import numpy as np
+
+def kmeans(X, k, max_iter=100):
+    # Random initialisation
+    centroids = X[np.random.choice(len(X), k, replace=False)]
+
+    for _ in range(max_iter):
+        # Assign: each point to nearest centroid
+        dists = np.linalg.norm(X[:,None] - centroids[None,:], axis=2)
+        labels = np.argmin(dists, axis=1)
+
+        # Update: move centroids to cluster means
+        new_centroids = np.array([X[labels == i].mean(axis=0)
+                                  for i in range(k)])
+        if np.allclose(centroids, new_centroids):
+            break
+        centroids = new_centroids
+
+    return labels, centroids</pre>
+<strong>Explain:</strong> Euclidean distance, convergence when centroids don't move. Limitations: requires k upfront, sensitive to initialisation (k-means++ fixes this), assumes spherical clusters.</div>
+      </div>
+
+      <div class="qa-item" data-section="coding">
+        <div class="qa-q" onclick="toggleQA(this)"><span>Implement softmax and cross-entropy loss.</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-medium">Medium</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><pre style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;line-height:1.6;background:var(--surface);padding:1rem;border-radius:var(--radius);overflow-x:auto;">
+import numpy as np
+
+def softmax(logits):
+    # Subtract max for numerical stability (prevents exp overflow)
+    e = np.exp(logits - logits.max(axis=-1, keepdims=True))
+    return e / e.sum(axis=-1, keepdims=True)
+
+def cross_entropy(y_true, y_pred_logits):
+    # y_true: integer class labels
+    # y_pred_logits: raw scores (before softmax)
+    probs = softmax(y_pred_logits)
+    n = len(y_true)
+    # Clip to avoid log(0)
+    probs = np.clip(probs[np.arange(n), y_true], 1e-12, 1.0)
+    return -np.log(probs).mean()</pre>
+<strong>Key:</strong> Always subtract max before exp (numerical stability). Cross-entropy = -log(correct class probability). Gradient of softmax + cross-entropy combined simplifies to: (p - one_hot) / n.</div>
+      </div>
+    </div>
+
+    <!-- Behavioral -->
+    <div class="qa-section" data-section="behavioral">
+      <h2>💬 Behavioral & Project Questions</h2>
+      <p class="section-desc">Use the STAR format: Situation, Task, Action, Result.</p>
+
+      <div class="qa-item" data-section="behavioral">
+        <div class="qa-q" onclick="toggleQA(this)"><span>Tell me about your most challenging ML project.</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-easy">Easy</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a"><strong>Structure your answer:</strong><br><br><strong>Situation:</strong> "For my final year project, I built a Document Q&A system. The challenge was..."<br><br><strong>Task:</strong> Explain the specific technical problem — not just what you built, but what was hard. "The challenge was that the LLM kept hallucinating facts not in the document."<br><br><strong>Action:</strong> What you specifically did. "I implemented a faithfulness check using a second LLM call to verify each answer against retrieved chunks. I also added citation markup so users could see exactly which chunk each answer came from."<br><br><strong>Result:</strong> Quantify if possible. "This reduced hallucination from 23% on our test set to under 5%. The app now serves accurate, cited responses."<br><br><strong>Key:</strong> Show depth of thinking, not just feature list. Interviewers want to see how you think about problems.</div>
+      </div>
+
+      <div class="qa-item" data-section="behavioral">
+        <div class="qa-q" onclick="toggleQA(this)"><span>Why did you choose [tech stack] for your project?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-easy">Easy</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">This question tests whether you made <strong>deliberate engineering decisions</strong> vs just following a tutorial.<br><br><strong>Good answer structure:</strong><br>1. State the alternatives you considered (1–2 others)<br>2. The specific reason you chose what you did (trade-off)<br>3. What you'd change with more time/resources<br><br><strong>Example:</strong> "I chose ChromaDB over Pinecone because it runs locally with no API costs — important for a student project with limited budget. For production, I'd migrate to Pinecone or Weaviate for better scalability and managed infrastructure. I chose FastAPI over Flask because of automatic OpenAPI documentation and async support for concurrent document processing."</div>
+      </div>
+
+      <div class="qa-item" data-section="behavioral">
+        <div class="qa-q" onclick="toggleQA(this)"><span>What would you improve in your project given more time?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-easy">Easy</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">This question is a gift — it shows you think critically about your own work.<br><br><strong>Good areas to mention (pick 2-3):</strong><br>• <strong>Evaluation:</strong> "I'd build a proper evaluation dataset with ground-truth Q&A pairs to measure retrieval precision and answer faithfulness systematically."<br>• <strong>Performance:</strong> "I'd add caching for repeated queries using Redis to reduce API costs and latency."<br>• <strong>Observability:</strong> "I'd add logging of every query, retrieved chunks, and response to identify failure patterns."<br>• <strong>Scale:</strong> "I'd containerise with Docker and add a task queue (Celery) for background document processing instead of blocking the UI."<br><br><strong>Don't say:</strong> "I'd add more features." Saying specific technical improvements shows maturity.</div>
+      </div>
+
+      <div class="qa-item" data-section="behavioral">
+        <div class="qa-q" onclick="toggleQA(this)"><span>How do you stay updated with the fast-moving AI field?</span><div style="display:flex;align-items:center;gap:0.5rem;"><span class="level-badge level-easy">Easy</span><span class="qa-toggle">▼</span></div></div>
+        <div class="qa-a">Be specific — vague answers like "I read articles" don't stand out.<br><br><strong>Strong answer:</strong><br>"I follow a few key sources: ArXiv Sanity (Andrej Karpathy's paper aggregator), Hugging Face blog for practical implementation insights, and Twitter/X accounts of ML researchers like Andrej Karpathy and Yann LeCun.<br><br>For staying practical: I do at least one Kaggle competition per month to apply what I learn. I also build small experiments — when LoRA came out, I fine-tuned a DistilBERT on a custom dataset to understand it hands-on, not just read about it.<br><br>I find that building something yourself, even a toy version, makes concepts stick much better than reading alone."</div>
+      </div>
+    </div>
+
+    <!-- Company-specific tips -->
+    <div style="margin-top:2.5rem;padding:2rem;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);">
+      <div class="section-tag" style="margin-bottom:0.75rem;">interview formats</div>
+      <h2 style="margin-bottom:1rem;">What to Expect by Company Type</h2>
+      <div class="tips-grid">
+        <div>
+          <h3 style="font-size:0.95rem;margin-bottom:0.5rem;">🇮🇳 Indian IT (TCS, Infosys, Wipro, Cognizant)</h3>
+          <ul style="padding-left:1.2rem;">
+            <li style="font-size:0.85rem;margin-bottom:0.3rem;list-style:disc;">MCQ + programming round (HackerRank)</li>
+            <li style="font-size:0.85rem;margin-bottom:0.3rem;list-style:disc;">ML fundamentals (bias-variance, metrics, algorithms)</li>
+            <li style="font-size:0.85rem;margin-bottom:0.3rem;list-style:disc;">Python basics + SQL</li>
+            <li style="font-size:0.85rem;list-style:disc;">Project explanation (know your project deeply)</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:0.95rem;margin-bottom:0.5rem;">🚀 Product Startups (Swiggy, Zomato, Meesho)</h3>
+          <ul style="padding-left:1.2rem;">
+            <li style="font-size:0.85rem;margin-bottom:0.3rem;list-style:disc;">ML system design (recommendation, ranking)</li>
+            <li style="font-size:0.85rem;margin-bottom:0.3rem;list-style:disc;">Applied ML case studies</li>
+            <li style="font-size:0.85rem;margin-bottom:0.3rem;list-style:disc;">LeetCode medium problems (DSA)</li>
+            <li style="font-size:0.85rem;list-style:disc;">Business metric optimisation</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:0.95rem;margin-bottom:0.5rem;">🌍 MNCs (Google, Microsoft, Amazon)</h3>
+          <ul style="padding-left:1.2rem;">
+            <li style="font-size:0.85rem;margin-bottom:0.3rem;list-style:disc;">LeetCode Hard (for SDE roles)</li>
+            <li style="font-size:0.85rem;margin-bottom:0.3rem;list-style:disc;">Deep ML fundamentals + research awareness</li>
+            <li style="font-size:0.85rem;margin-bottom:0.3rem;list-style:disc;">System design at scale</li>
+            <li style="font-size:0.85rem;list-style:disc;">Leadership principles / behavioral (Amazon)</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:0.95rem;margin-bottom:0.5rem;">🤖 AI-First Companies (Sarvam, Krutrim, Dhruva)</h3>
+          <ul style="padding-left:1.2rem;">
+            <li style="font-size:0.85rem;margin-bottom:0.3rem;list-style:disc;">Deep LLM/GenAI knowledge</li>
+            <li style="font-size:0.85rem;margin-bottom:0.3rem;list-style:disc;">Fine-tuning, RAG, evaluation experience</li>
+            <li style="font-size:0.85rem;margin-bottom:0.3rem;list-style:disc;">Hands-on: live coding with HuggingFace/LangChain</li>
+            <li style="font-size:0.85rem;list-style:disc;">Research awareness (recent papers)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;text-align:center;">
+      <a href="/portfolio-guide.html" class="btn btn-primary btn-lg">Build Your Portfolio →</a>
+      <a href="/cheatsheets.html" class="btn btn-outline btn-lg" style="margin-left:1rem;">Download Cheatsheets →</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+<script>
+function toggleQA(qEl) {
+  const aEl = qEl.nextElementSibling;
+  const isOpen = qEl.classList.contains('open');
+  qEl.classList.toggle('open', !isOpen);
+  aEl.classList.toggle('open', !isOpen);
+  qEl.querySelector('.qa-toggle').textContent = isOpen ? '▼' : '▲';
+}
+
+function filterSection(section, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.qa-section').forEach(s => {
+    s.style.display = (section === 'all' || s.dataset.section === section) ? 'block' : 'none';
+  });
+  document.querySelectorAll('.qa-item').forEach(item => {
+    item.style.display = (section === 'all' || item.dataset.section === section) ? 'block' : 'none';
+  });
+  trackEvent('interview_filter', { section });
+}
+
+function filterQuestions(query) {
+  const q = query.toLowerCase();
+  document.querySelectorAll('.qa-item').forEach(item => {
+    const text = item.querySelector('.qa-q').textContent.toLowerCase();
+    item.style.display = text.includes(q) ? 'block' : 'none';
+  });
+  document.querySelectorAll('.qa-section').forEach(section => {
+    const visible = [...section.querySelectorAll('.qa-item')].some(i => i.style.display !== 'none');
+    section.style.display = visible ? 'block' : 'none';
+  });
+}
+</script>
+</body>
+</html>

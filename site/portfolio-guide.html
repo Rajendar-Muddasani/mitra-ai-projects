@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI/ML Portfolio Building Guide — Mitra AI Projects</title>
+  <meta name="description" content="Build a portfolio-ready GitHub profile that gets you shortlisted. Templates, deploy guides, checklist, and LinkedIn tips for AI/ML students and freshers.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .checklist-item { display:flex; align-items:flex-start; gap:0.75rem; padding:0.75rem 1rem; border-radius:var(--radius); margin-bottom:0.5rem; background:var(--surface); border:1px solid var(--border-dim); cursor:pointer; transition:all 0.15s; }
+    .checklist-item:hover { border-color:var(--primary); }
+    .checklist-item.done { border-color:var(--success); background:rgba(5,150,105,0.05); }
+    .checklist-item input[type=checkbox] { margin-top:2px; accent-color:var(--primary); flex-shrink:0; width:16px; height:16px; }
+    .checklist-item label { font-size:0.88rem; cursor:pointer; line-height:1.5; }
+    .checklist-item.done label { text-decoration:line-through; color:var(--muted); }
+    .checklist-section { margin-bottom:2rem; }
+    .checklist-section h3 { font-size:0.95rem; color:var(--primary); font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.75rem; }
+    .progress-ring { display:flex; align-items:center; gap:1rem; margin-bottom:2rem; }
+    .progress-num { font-size:2.5rem; font-weight:800; font-family:'Baloo 2',sans-serif; color:var(--primary); }
+    .template-box { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; margin-bottom:1.5rem; }
+    .template-header { background:rgba(107,33,168,0.08); padding:0.75rem 1rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-dim); }
+    .template-header span { font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--primary); font-weight:600; }
+    .template-body { padding:1.25rem; }
+    .template-body pre { font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text); white-space:pre-wrap; line-height:1.6; }
+    .copy-btn { font-size:0.75rem; padding:0.25rem 0.7rem; background:transparent; border:1px solid var(--border); border-radius:4px; color:var(--muted); cursor:pointer; font-family:'JetBrains Mono',monospace; }
+    .copy-btn:hover { border-color:var(--primary); color:var(--primary); }
+    .deploy-card { background:var(--surface); border:1px solid var(--border-dim); border-radius:var(--radius-lg); padding:1.5rem; margin-bottom:1.25rem; }
+    .deploy-card h3 { margin-bottom:0.35rem; font-size:1.05rem; }
+    .deploy-free-tag { font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--success); background:rgba(5,150,105,0.1); padding:0.15rem 0.5rem; border-radius:4px; margin-left:0.5rem; }
+    .deploy-steps ol { padding-left:1.25rem; margin-top:0.5rem; }
+    .deploy-steps li { font-size:0.875rem; color:var(--muted); margin-bottom:0.35rem; }
+    .portfolio-score { text-align:center; padding:2rem; background:linear-gradient(135deg,var(--surface),var(--surface-2)); border-radius:var(--radius-lg); border:1px solid var(--border); }
+    .score-circle { width:100px; height:100px; border-radius:50%; background:conic-gradient(var(--primary) calc(var(--pct) * 1%), var(--border-dim) 0); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:1.5rem; font-weight:800; font-family:'Baloo 2',sans-serif; color:var(--primary); }
+    .tab-section { display:none; }
+    .tab-section.active { display:block; }
+    .tab-pills { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:2rem; }
+    .tab-pill { padding:0.45rem 1rem; border-radius:999px; border:1px solid var(--border-dim); color:var(--muted); font-size:0.85rem; font-weight:700; cursor:pointer; transition:all 0.15s; background:transparent; }
+    .tab-pill:hover { border-color:var(--primary); color:var(--primary); }
+    .tab-pill.active { background:var(--primary); color:#fff; border-color:var(--primary); }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/portfolio-guide.html">Portfolio</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="hero hero-sm" style="padding:2rem 0 1.5rem;">
+  <div class="container hero-inner">
+    <div class="hero-eyebrow">placement & career readiness</div>
+    <h1 class="hero-title" style="font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:0.4rem;">Build Your AI/ML Portfolio</h1>
+    <p style="color:var(--muted);font-size:0.95rem;max-width:580px;">A portfolio-ready GitHub profile with 3–5 deployed projects, a clean README, and LinkedIn presence gets you shortlisted. This guide shows exactly how.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:2.5rem;">
+  <div class="container">
+
+    <!-- Tab Navigation -->
+    <div class="tab-pills">
+      <button class="tab-pill active" onclick="showTab('checklist',this)">✅ Portfolio Checklist</button>
+      <button class="tab-pill" onclick="showTab('github',this)">📂 GitHub Profile</button>
+      <button class="tab-pill" onclick="showTab('readme',this)">📝 README Templates</button>
+      <button class="tab-pill" onclick="showTab('deploy',this)">🚀 Deploy Your Project</button>
+      <button class="tab-pill" onclick="showTab('linkedin',this)">💼 LinkedIn Tips</button>
+    </div>
+
+    <!-- CHECKLIST TAB -->
+    <div id="tab-checklist" class="tab-section active">
+
+      <div style="display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;margin-bottom:2.5rem;">
+        <div>
+          <h2 style="margin-bottom:0.5rem;">Portfolio Readiness Checklist</h2>
+          <p style="color:var(--muted);font-size:0.9rem;">Tick off each item. Recruiters look for these specifically when screening AI/ML profiles.</p>
+        </div>
+        <div class="portfolio-score" style="min-width:160px;">
+          <div class="score-circle" id="scoreCircle" style="--pct:0;">0%</div>
+          <div style="font-size:0.8rem;color:var(--muted);">Portfolio score</div>
+          <div style="font-size:0.75rem;color:var(--muted);margin-top:0.25rem;" id="scoreLabel">Start ticking items →</div>
+        </div>
+      </div>
+
+      <div class="checklist-section">
+        <h3>🐙 GitHub Profile Basics</h3>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Profile photo + real name</strong> — not a default avatar. Recruiters skip anonymous profiles.</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Bio with role + skills</strong> — e.g. "B.Tech CSE | ML Engineer | Python · PyTorch · LangChain"</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>LinkedIn URL in profile</strong> — connects your GitHub to your professional identity</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Email in profile</strong> — makes you reachable directly from GitHub</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Profile README.md</strong> — the pinned introduction that appears on your profile page</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Green contribution graph</strong> — commit regularly (even docs/notebooks count)</label></div>
+      </div>
+
+      <div class="checklist-section">
+        <h3>🗂 Pinned Repositories (6 slots)</h3>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>1 Major AI project</strong> — RAG system, ML pipeline, or GenAI app with live demo URL</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>1 Deep Learning project</strong> — CNN, Transformer, or computer vision app deployed on HuggingFace Spaces</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>1 Data analysis/EDA notebook</strong> — Kaggle-style analysis with visualisations and insights</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>1 API/backend project</strong> — FastAPI or Flask ML serving endpoint</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>1 Mini project</strong> — smaller but complete and deployed (sentiment analyser, news classifier, etc.)</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>1 Learning/experiments repo</strong> — named "ml-experiments" or "learning-notes" showing ongoing activity</label></div>
+      </div>
+
+      <div class="checklist-section">
+        <h3>📄 Every Project Repository Must Have</h3>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>README.md with screenshots</strong> — what the project does, how to run it, tech stack</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Live demo URL in README</strong> — either Render, Railway, Streamlit Cloud, or HuggingFace Spaces</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Architecture diagram or flowchart</strong> — draw.io / Mermaid / Excalidraw embedded in README</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>.gitignore that excludes .env and model files</strong> — no secrets in repo</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>requirements.txt or pyproject.toml</strong> — others must be able to run your code</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Clear commit messages</strong> — "feat: add PDF upload support" not "update files"</label></div>
+      </div>
+
+      <div class="checklist-section">
+        <h3>💼 LinkedIn Presence</h3>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Professional headshot</strong> — clear, professional, recent photo</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Headline with skills</strong> — not just "Student at X College" — add AI/ML Engineer | Python | LLMs</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>3+ Featured projects</strong> — link each project to its GitHub + demo URL</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Skills section with top 10 skills endorsed</strong> — Python, Machine Learning, Deep Learning etc.</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Education section complete</strong> — GPA, relevant coursework, thesis title</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Mitra AI Projects certificates added</strong> — add completed course certificates to Licenses section</label></div>
+      </div>
+
+      <div class="checklist-section">
+        <h3>🎯 Placement-Ready Extras</h3>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Kaggle profile with 2+ notebooks</strong> — shows you work with real datasets competitively</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>HuggingFace profile with at least 1 Space</strong> — ML community presence, easy to share demos</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>LeetCode/HackerRank profile with 50+ problems</strong> — placement interviews test DSA</label></div>
+        <div class="checklist-item" onclick="toggleCheck(this)"><input type="checkbox"><label><strong>Personal domain or portfolio site</strong> — your projects, about, contact in one place</label></div>
+      </div>
+
+      <div style="margin-top:2rem;padding:1.25rem;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);">
+        <h3 style="margin-bottom:0.5rem;">Score Interpretation</h3>
+        <div class="grid grid-3" style="gap:1rem;margin-top:0.75rem;">
+          <div style="text-align:center;padding:0.75rem;background:rgba(220,38,38,0.06);border-radius:var(--radius);border:1px solid rgba(220,38,38,0.15);">
+            <div style="font-weight:800;color:var(--danger);">0–40%</div>
+            <div style="font-size:0.8rem;color:var(--muted);margin-top:0.25rem;">Needs work — recruiters will likely skip</div>
+          </div>
+          <div style="text-align:center;padding:0.75rem;background:rgba(245,158,11,0.06);border-radius:var(--radius);border:1px solid rgba(245,158,11,0.15);">
+            <div style="font-weight:800;color:#b45309;">41–75%</div>
+            <div style="font-size:0.8rem;color:var(--muted);margin-top:0.25rem;">Getting there — will get noticed in some searches</div>
+          </div>
+          <div style="text-align:center;padding:0.75rem;background:rgba(5,150,105,0.06);border-radius:var(--radius);border:1px solid rgba(5,150,105,0.15);">
+            <div style="font-weight:800;color:var(--success);">76–100%</div>
+            <div style="font-size:0.8rem;color:var(--muted);margin-top:0.25rem;">Portfolio-ready — strong shortlisting profile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GITHUB PROFILE TAB -->
+    <div id="tab-github" class="tab-section">
+      <h2 style="margin-bottom:0.75rem;">GitHub Profile README Template</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">Create a file at <code>github.com/YOUR-USERNAME/YOUR-USERNAME/blob/main/README.md</code> (special repo with same name as your username).</p>
+
+      <div class="template-box">
+        <div class="template-header">
+          <span>README.md — Copy and customise</span>
+          <button class="copy-btn" onclick="copyTemplate('profileReadme')">Copy</button>
+        </div>
+        <div class="template-body">
+          <pre id="profileReadme">
+# Hi, I'm [Your Name] 👋
+
+🎓 B.Tech CSE | Final Year | [College Name]
+🤖 Building AI/ML systems — LLMs, RAG, Computer Vision
+💼 Actively seeking ML Engineer / AI Engineer roles (2025)
+📍 [City, India]
+
+---
+
+## 🛠 Tech Stack
+
+**Languages:** Python · SQL · JavaScript
+**ML/DL:** scikit-learn · PyTorch · TensorFlow · HuggingFace
+**LLM/GenAI:** LangChain · OpenAI API · ChromaDB · LlamaIndex
+**MLOps:** Docker · GitHub Actions · MLflow · FastAPI
+**Data:** pandas · NumPy · matplotlib · plotly · Streamlit
+
+---
+
+## 🚀 Featured Projects
+
+| Project | Description | Tech | Demo |
+|---|---|---|---|
+| [Document Q&A Assistant](link) | RAG chatbot for PDF documents | FastAPI · ChromaDB · OpenAI | [Live Demo](link) |
+| [Inventory Forecasting Dashboard](link) | ARIMA + Prophet time series forecast | Streamlit · Prophet | [Live Demo](link) |
+| [AI Resume Screener](link) | LLM-based resume scoring system | OpenAI · PyMuPDF | [Live Demo](link) |
+
+---
+
+## 📊 GitHub Stats
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=YOUR-USERNAME&show_icons=true&theme=radical)
+
+---
+
+## 📫 Let's Connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://linkedin.com/in/YOUR-PROFILE)
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-yellow?logo=huggingface)](https://huggingface.co/YOUR-USERNAME)
+[![Kaggle](https://img.shields.io/badge/Kaggle-blue?logo=kaggle)](https://kaggle.com/YOUR-USERNAME)
+
+💬 Open to internships, full-time roles, and research collaborations in AI/ML.</pre>
+        </div>
+      </div>
+
+      <h2 style="margin:2rem 0 0.75rem;">What Makes a Strong Profile?</h2>
+      <div class="grid grid-2" style="gap:1.25rem;">
+        <div class="card" style="border-color:rgba(5,150,105,0.2);">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">✅</div>
+          <div class="card-title" style="font-size:0.95rem;color:var(--success);">DO</div>
+          <ul style="padding-left:1.2rem;margin-top:0.5rem;">
+            <li style="list-style:disc;font-size:0.85rem;margin-bottom:0.3rem;">Pin 6 projects — mix of complexity levels</li>
+            <li style="list-style:disc;font-size:0.85rem;margin-bottom:0.3rem;">Every repo has a demo URL and screenshot</li>
+            <li style="list-style:disc;font-size:0.85rem;margin-bottom:0.3rem;">Commit at least 3x/week (even minor updates)</li>
+            <li style="list-style:disc;font-size:0.85rem;margin-bottom:0.3rem;">Use descriptive commit messages</li>
+            <li style="list-style:disc;font-size:0.85rem;">Contribute to 1–2 open source projects</li>
+          </ul>
+        </div>
+        <div class="card" style="border-color:rgba(220,38,38,0.2);">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">❌</div>
+          <div class="card-title" style="font-size:0.95rem;color:var(--danger);">DON'T</div>
+          <ul style="padding-left:1.2rem;margin-top:0.5rem;">
+            <li style="list-style:disc;font-size:0.85rem;margin-bottom:0.3rem;">Push private API keys or .env files</li>
+            <li style="list-style:disc;font-size:0.85rem;margin-bottom:0.3rem;">Have repos with no README</li>
+            <li style="list-style:disc;font-size:0.85rem;margin-bottom:0.3rem;">Fork without contributing (empty forks count against you)</li>
+            <li style="list-style:disc;font-size:0.85rem;margin-bottom:0.3rem;">Commit 200 files in one batch ("final_v3")</li>
+            <li style="list-style:disc;font-size:0.85rem;">Use generic repo names (project1, test, untitled)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- README TEMPLATES TAB -->
+    <div id="tab-readme" class="tab-section">
+      <h2 style="margin-bottom:0.75rem;">Project README Template</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">Every project repo needs a README that answers: what it does, how to run it, what it uses, and where to see it live.</p>
+
+      <div class="template-box">
+        <div class="template-header">
+          <span>PROJECT-README.md</span>
+          <button class="copy-btn" onclick="copyTemplate('projectReadme')">Copy</button>
+        </div>
+        <div class="template-body">
+          <pre id="projectReadme">
+# Project Name
+
+> One-line description: what it does and who it's for.
+
+[![Demo](https://img.shields.io/badge/Live-Demo-green)](https://YOUR-DEMO-URL)
+[![Python](https://img.shields.io/badge/Python-3.11-blue)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+
+---
+
+## 🎯 What This Project Does
+
+2–3 sentences explaining the problem it solves and the approach used.
+
+**Example:** This RAG-based chatbot lets users upload PDF documents and ask questions in natural language. It uses ChromaDB for vector storage and gpt-4o-mini for generating grounded answers.
+
+---
+
+## 🏗 Architecture
+
+```
+User Input → Text Extraction → Embedding → Vector DB → LLM → Answer
+```
+
+*(Replace with your actual architecture diagram or Mermaid chart)*
+
+---
+
+## ✨ Features
+
+- Feature 1 — what it does
+- Feature 2 — what it does
+- Feature 3 — what it does
+
+---
+
+## 🛠 Tech Stack
+
+| Component | Technology |
+|---|---|
+| Backend | FastAPI / Streamlit |
+| LLM | OpenAI gpt-4o-mini |
+| Vector DB | ChromaDB |
+| Deployment | Render.com |
+
+---
+
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/YOUR-USERNAME/PROJECT-NAME
+cd PROJECT-NAME
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env   # fill in your API keys
+python app.py          # or: streamlit run app.py
+```
+
+---
+
+## 📸 Screenshots
+
+| Home Page | Results |
+|---|---|
+| ![Home](screenshots/home.png) | ![Results](screenshots/results.png) |
+
+---
+
+## 📁 Project Structure
+
+```
+project/
+├── app.py              # Main application
+├── core/               # Business logic
+├── requirements.txt
+├── .env.example
+└── README.md
+```
+
+---
+
+## 🎓 Viva-Ready
+
+Built as part of final-year project. Architecture decisions explained in [architecture.md](docs/architecture.md).
+
+---
+
+## 📜 License
+
+MIT — free to use and modify for learning purposes.</pre>
+        </div>
+      </div>
+
+      <h2 style="margin:2rem 0 0.75rem;">Architecture Diagram with Mermaid</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1rem;">GitHub renders Mermaid diagrams automatically in README.md files — no image upload needed.</p>
+      <div class="template-box">
+        <div class="template-header">
+          <span>architecture.mmd — paste in README</span>
+          <button class="copy-btn" onclick="copyTemplate('mermaidDiagram')">Copy</button>
+        </div>
+        <div class="template-body">
+          <pre id="mermaidDiagram">
+```mermaid
+flowchart LR
+    A[📄 PDF Upload] --> B[Text Extraction\nPyMuPDF]
+    B --> C[Chunking\n500 tokens, 50 overlap]
+    C --> D[Embeddings\ntext-embedding-3-small]
+    D --> E[(Vector DB\nChromaDB)]
+    F[❓ User Question] --> G[Query Embedding]
+    G --> E
+    E -->|Top 5 chunks| H[LLM Prompt\ngpt-4o-mini]
+    H --> I[✅ Grounded Answer]
+```</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEPLOY TAB -->
+    <div id="tab-deploy" class="tab-section">
+      <h2 style="margin-bottom:0.5rem;">Deploy Your Project Free</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">A live URL is non-negotiable for a strong portfolio. These three platforms are free and take under 10 minutes to set up.</p>
+
+      <div class="deploy-card">
+        <h3>Render.com <span class="deploy-free-tag">Free</span></h3>
+        <p style="color:var(--muted);font-size:0.875rem;margin-bottom:1rem;">Best for: FastAPI, Flask, Streamlit, any Python web app. Sleeps after 15 min inactivity on free tier (wakes in ~30s).</p>
+        <div class="deploy-steps">
+          <ol>
+            <li>Add <code>requirements.txt</code> with all dependencies to your repo</li>
+            <li>Add a <code>Procfile</code>: <code>web: uvicorn app:app --host 0.0.0.0 --port $PORT</code></li>
+            <li>Push to GitHub: <code>git push origin main</code></li>
+            <li>Go to <strong>render.com</strong> → New → Web Service → Connect GitHub</li>
+            <li>Select repo, set environment variables (OPENAI_API_KEY etc.)</li>
+            <li>Click Deploy — get a free <code>your-app.onrender.com</code> URL in ~3 minutes</li>
+          </ol>
+        </div>
+        <div style="margin-top:0.75rem;display:flex;gap:0.5rem;">
+          <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span><span class="tag">Flask</span><span class="tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="deploy-card">
+        <h3>Streamlit Community Cloud <span class="deploy-free-tag">Free</span></h3>
+        <p style="color:var(--muted);font-size:0.875rem;margin-bottom:1rem;">Best for: Streamlit apps only. One-click deploy directly from GitHub. No sleep on free tier for public apps.</p>
+        <div class="deploy-steps">
+          <ol>
+            <li>Push your Streamlit app to a public GitHub repo</li>
+            <li>Go to <strong>share.streamlit.io</strong> → New app → Connect GitHub</li>
+            <li>Select repo, branch, and main file (e.g. <code>app.py</code>)</li>
+            <li>Add secrets in Settings → Secrets (API keys as TOML format)</li>
+            <li>Deploy — get <code>your-app.streamlit.app</code> in ~2 minutes</li>
+          </ol>
+        </div>
+        <div style="margin-top:0.75rem;display:flex;gap:0.5rem;">
+          <span class="tag">Streamlit only</span><span class="tag">No sleep</span><span class="tag">Instant deploy</span>
+        </div>
+      </div>
+
+      <div class="deploy-card">
+        <h3>HuggingFace Spaces <span class="deploy-free-tag">Free GPU</span></h3>
+        <p style="color:var(--muted);font-size:0.875rem;margin-bottom:1rem;">Best for: ML demos with GPU (image models, LLMs, audio). Free T4 GPU available. Gradio or Streamlit SDK.</p>
+        <div class="deploy-steps">
+          <ol>
+            <li>Create account at <strong>huggingface.co</strong></li>
+            <li>New Space → choose Gradio or Streamlit SDK → choose free hardware (CPU or GPU T4)</li>
+            <li>Clone the Space repo: <code>git clone https://huggingface.co/spaces/USERNAME/SPACE-NAME</code></li>
+            <li>Add your app files (<code>app.py</code>, <code>requirements.txt</code>)</li>
+            <li>Push: <code>git add . && git commit -m "deploy" && git push</code></li>
+            <li>Space auto-builds and deploys — share <code>huggingface.co/spaces/USERNAME/SPACE-NAME</code></li>
+          </ol>
+        </div>
+        <div style="margin-top:0.75rem;display:flex;gap:0.5rem;">
+          <span class="tag">Gradio</span><span class="tag">Streamlit</span><span class="tag">Free T4 GPU</span><span class="tag">ML models</span>
+        </div>
+      </div>
+
+      <div class="deploy-card">
+        <h3>Railway.app <span class="deploy-free-tag">$5 free credit</span></h3>
+        <p style="color:var(--muted);font-size:0.875rem;margin-bottom:1rem;">Best for: databases + backend APIs. $5 free credit per month. Supports PostgreSQL, Redis, any Dockerfile.</p>
+        <div class="deploy-steps">
+          <ol>
+            <li>Sign up at <strong>railway.app</strong> with GitHub</li>
+            <li>New Project → Deploy from GitHub repo</li>
+            <li>Add environment variables in Variables tab</li>
+            <li>Railway auto-detects Python and builds from requirements.txt</li>
+            <li>Go to Settings → Domain → Generate Domain for your URL</li>
+          </ol>
+        </div>
+        <div style="margin-top:0.75rem;display:flex;gap:0.5rem;">
+          <span class="tag">Any framework</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LINKEDIN TAB -->
+    <div id="tab-linkedin" class="tab-section">
+      <h2 style="margin-bottom:0.75rem;">LinkedIn Optimisation for AI/ML Roles</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">Recruiters spend an average of 7 seconds on a profile. These changes maximise what they see in that time.</p>
+
+      <div class="grid grid-2" style="gap:1.5rem;margin-bottom:2rem;">
+        <div class="card">
+          <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">headline formula</div>
+          <h3 style="margin-bottom:0.75rem;">Headline Template</h3>
+          <div style="padding:0.75rem 1rem;background:var(--surface-2);border-radius:var(--radius);font-family:'JetBrains Mono',monospace;font-size:0.82rem;margin-bottom:0.75rem;">
+            [Role] | [2-3 Key Skills] | [Seeking/Open to] [Year]
+          </div>
+          <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;"><strong>Example (Final year):</strong></p>
+          <div style="padding:0.75rem 1rem;background:rgba(107,33,168,0.06);border-radius:var(--radius);font-size:0.82rem;border:1px solid var(--border);">
+            Final Year B.Tech CSE | ML Engineer | Python · LLMs · RAG | Open to 2025 Placements
+          </div>
+          <p style="font-size:0.85rem;color:var(--muted);margin:0.75rem 0 0.5rem;"><strong>Example (Fresher):</strong></p>
+          <div style="padding:0.75rem 1rem;background:rgba(107,33,168,0.06);border-radius:var(--radius);font-size:0.82rem;border:1px solid var(--border);">
+            AI Engineer | FastAPI · LangChain · PyTorch | 3 Deployed Projects | Open to Work
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">about section</div>
+          <h3 style="margin-bottom:0.75rem;">About Section Template</h3>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;background:var(--surface-2);padding:1rem;border-radius:var(--radius);line-height:1.65;">
+            I build production-ready AI systems that solve real problems.<br><br>
+            Currently finishing my B.Tech in [Branch] at [College].<br>
+            My focus: LLMs, RAG systems, and ML pipelines that actually deploy.<br><br>
+            🚀 Recent builds:<br>
+            → [Project 1] — [one line description + demo link]<br>
+            → [Project 2] — [one line description + demo link]<br>
+            → [Project 3] — [one line description + demo link]<br><br>
+            🛠 Tech: Python · PyTorch · LangChain · FastAPI · Docker<br><br>
+            Open to: ML Engineer, AI Engineer, Data Scientist roles (June 2025)<br>
+            📧 [your email]
+          </div>
+        </div>
+      </div>
+
+      <h2 style="margin-bottom:1rem;">Featured Section: Showcase Projects</h2>
+      <div class="card" style="margin-bottom:1.5rem;">
+        <p style="font-size:0.875rem;color:var(--muted);margin-bottom:1rem;">The LinkedIn Featured section shows below your headline. Use it to directly link your 3 best projects.</p>
+        <ol style="padding-left:1.25rem;">
+          <li style="font-size:0.875rem;margin-bottom:0.5rem;">Go to your LinkedIn profile → Add section → Featured</li>
+          <li style="font-size:0.875rem;margin-bottom:0.5rem;">Add → Link → Paste your project's live demo URL</li>
+          <li style="font-size:0.875rem;margin-bottom:0.5rem;">Add a compelling title: "Document Q&A Assistant — Live Demo" and description: "RAG chatbot built with FastAPI + ChromaDB + OpenAI. Upload any PDF and ask questions."</li>
+          <li style="font-size:0.875rem;">Repeat for 2–3 more projects. Reorder to show strongest project first.</li>
+        </ol>
+      </div>
+
+      <h2 style="margin-bottom:1rem;">Skills to Add (AI/ML Priority)</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.5rem;">
+        <span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">Deep Learning</span>
+        <span class="tag">Natural Language Processing</span><span class="tag">PyTorch</span><span class="tag">TensorFlow</span>
+        <span class="tag">OpenAI API</span><span class="tag">LangChain</span><span class="tag">FastAPI</span>
+        <span class="tag">Docker</span><span class="tag">SQL</span><span class="tag">Data Analysis</span>
+        <span class="tag">scikit-learn</span><span class="tag">pandas</span><span class="tag">Computer Vision</span>
+        <span class="tag">Retrieval-Augmented Generation</span><span class="tag">MLOps</span><span class="tag">Streamlit</span>
+      </div>
+
+      <div class="card" style="background:rgba(107,33,168,0.04);">
+        <h3 style="margin-bottom:0.5rem;">🎯 One Final Tip</h3>
+        <p style="font-size:0.875rem;color:var(--muted);">Follow 20–30 AI/ML companies and leaders. Like and comment on their posts about AI trends. LinkedIn's algorithm will surface your profile to more recruiters in those companies. Takes 10 minutes per week.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+<script>
+const TOTAL_ITEMS = document.querySelectorAll('.checklist-item').length;
+
+function toggleCheck(el) {
+  const cb = el.querySelector('input[type=checkbox]');
+  cb.checked = !cb.checked;
+  el.classList.toggle('done', cb.checked);
+  updateScore();
+  localStorage.setItem('portfolio-checklist-' + Array.from(document.querySelectorAll('.checklist-item')).indexOf(el), cb.checked);
+}
+
+function updateScore() {
+  const done = document.querySelectorAll('.checklist-item.done').length;
+  const pct = Math.round((done / TOTAL_ITEMS) * 100);
+  const circle = document.getElementById('scoreCircle');
+  circle.style.setProperty('--pct', pct);
+  circle.textContent = pct + '%';
+  const label = document.getElementById('scoreLabel');
+  if (pct < 40) label.textContent = 'Keep going — you can do this!';
+  else if (pct < 75) label.textContent = 'Good progress — getting noticed!';
+  else label.textContent = '🎉 Portfolio-ready!';
+}
+
+function showTab(name, btn) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-pill').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+  trackEvent('portfolio_tab_change', { tab: name });
+}
+
+function copyTemplate(id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text.trim()).then(() => {
+    event.target.textContent = 'Copied!';
+    setTimeout(() => { event.target.textContent = 'Copy'; }, 2000);
+  });
+}
+
+// Restore checklist state from localStorage
+document.querySelectorAll('.checklist-item').forEach((el, i) => {
+  const saved = localStorage.getItem('portfolio-checklist-' + i);
+  if (saved === 'true') { el.querySelector('input').checked = true; el.classList.add('done'); }
+});
+updateScore();
+</script>
+</body>
+</html>
