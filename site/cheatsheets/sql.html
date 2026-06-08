@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SQL Quick Reference Cheatsheet — Mitra AI Projects</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+:root { --p:#6b21a8; --p2:#7c3aed; --g:#059669; --b:#2563eb; --a:#d97706; --r:#dc2626;
+  --bg:#fff; --s:#faf5ff; --s2:#f3e8ff; --t:#1a0533; --m:#6b4f88; --bd:rgba(107,33,168,0.15); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:0.82rem;background:var(--bg);color:var(--t);line-height:1.45}
+.page{max-width:1000px;margin:0 auto;padding:1rem 1.5rem 2rem}
+.cs-header{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:1rem 1.5rem;border-radius:10px;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.cs-header h1{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em}
+.cs-header .meta{font-size:0.75rem;opacity:0.8}
+.cs-subtitle{font-size:0.85rem;opacity:0.85;margin-top:0.2rem}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cols-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.cols-1-2{display:grid;grid-template-columns:1fr 2fr;gap:1rem}
+.box{background:var(--s);border:1px solid var(--bd);border-radius:8px;padding:0.85rem;margin-bottom:1rem}
+.box.teal{background:#f0faf9;border-color:rgba(5,150,105,0.2)}
+.box.blue{background:#eff6ff;border-color:rgba(37,99,235,0.2)}
+.box.amber{background:#fffbeb;border-color:rgba(217,119,6,0.2)}
+.box.red{background:#fef2f2;border-color:rgba(220,38,38,0.2)}
+.box h3{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--p);margin-bottom:0.6rem;padding-bottom:0.35rem;border-bottom:1px solid var(--bd)}
+.box.teal h3{color:var(--g);border-color:rgba(5,150,105,0.2)}
+.box.blue h3{color:var(--b);border-color:rgba(37,99,235,0.2)}
+.box.amber h3{color:var(--a);border-color:rgba(217,119,6,0.2)}
+.box.red h3{color:var(--r);border-color:rgba(220,38,38,0.2)}
+code,pre{font-family:'JetBrains Mono','Fira Code',monospace;font-size:0.78rem;background:rgba(107,33,168,0.06);border-radius:3px;padding:0.1rem 0.3rem}
+pre{padding:0.6rem 0.8rem;display:block;overflow-x:auto;line-height:1.5;white-space:pre-wrap;margin:0.4rem 0}
+pre.g{background:rgba(5,150,105,0.06)}
+pre.b{background:#eff6ff}
+pre.a{background:#fffbeb}
+table{width:100%;border-collapse:collapse;font-size:0.78rem;margin:0.35rem 0}
+th{background:rgba(107,33,168,0.1);color:var(--p);font-weight:700;padding:0.35rem 0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase}
+td{padding:0.3rem 0.5rem;border-bottom:1px solid rgba(107,33,168,0.07)}
+tr:hover td{background:rgba(107,33,168,0.03)}
+.tag{display:inline-block;padding:0.1rem 0.4rem;border-radius:3px;font-size:0.68rem;font-weight:700;margin:0.1rem;background:rgba(107,33,168,0.1);color:var(--p)}
+.tag.g{background:rgba(5,150,105,0.1);color:var(--g)}
+.tag.b{background:rgba(37,99,235,0.1);color:var(--b)}
+.tag.a{background:rgba(217,119,6,0.1);color:var(--a)}
+.tag.r{background:rgba(220,38,38,0.1);color:var(--r)}
+ul{padding-left:1.1rem}
+li{margin-bottom:0.2rem}
+li code{font-size:0.75rem}
+strong{font-weight:700;color:var(--t)}
+.kv{display:flex;justify-content:space-between;align-items:baseline;padding:0.2rem 0;border-bottom:1px solid rgba(107,33,168,0.06)}
+.kv:last-child{border-bottom:none}
+.kv .k{font-weight:600;font-size:0.8rem}
+.kv .v{color:var(--m);font-size:0.78rem;text-align:right;max-width:60%}
+.print-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--p);color:#fff;border:none;padding:0.65rem 1.25rem;border-radius:999px;font-weight:700;font-size:0.85rem;cursor:pointer;box-shadow:0 4px 16px rgba(107,33,168,0.3);z-index:100}
+.print-btn:hover{background:var(--p2)}
+.back-btn{display:inline-flex;align-items:center;gap:0.35rem;color:var(--m);font-size:0.78rem;text-decoration:none;margin-bottom:0.75rem}
+.back-btn:hover{color:var(--p)}
+.section-break{height:1px;background:linear-gradient(90deg,var(--p2),transparent);margin:1rem 0;opacity:0.3}
+@media print{
+  .print-btn,.back-btn{display:none!important}
+  body{font-size:0.72rem}
+  .cs-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .box{break-inside:avoid}
+  .cols-2,.cols-3,.cols-1-2{break-inside:avoid}
+  @page{size:A4;margin:1cm}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="/cheatsheets.html" class="back-btn">← All Cheatsheets</a>
+<div class="cs-header">
+  <div><h1>SQL Quick Reference</h1><div class="cs-subtitle">SELECT · JOINs · Aggregation · Window Functions · CTEs</div></div>
+  <div class="meta">mitraaiprojects.com</div>
+</div>
+<div class="cols-3">
+<div>
+<div class="box">
+<h3>SELECT Basics</h3>
+<pre>SELECT col1, col2, col1*2 AS doubled
+FROM   table
+WHERE  col > 5
+  AND  name LIKE 'A%'
+  AND  status IN ('active','pending')
+  AND  date BETWEEN '2024-01-01' AND '2024-12-31'
+ORDER BY col DESC, col2 ASC
+LIMIT  10 OFFSET 20;
+
+-- Distinct
+SELECT DISTINCT city FROM customers;
+
+-- Case expression
+SELECT
+  CASE WHEN score >= 90 THEN 'A'
+       WHEN score >= 70 THEN 'B'
+       ELSE 'C' END AS grade
+FROM students;</pre>
+</div>
+<div class="box">
+<h3>JOINs</h3>
+<pre>-- INNER: only matching rows
+SELECT * FROM A
+INNER JOIN B ON A.id = B.a_id;
+
+-- LEFT: all A, NULLs for unmatched B
+SELECT * FROM A
+LEFT JOIN B ON A.id = B.a_id;
+
+-- RIGHT: all B (use LEFT in practice)
+-- FULL OUTER: all rows from both
+
+-- Multiple joins
+SELECT s.name, c.name AS company, m.name AS mgr
+FROM   students s
+JOIN   companies c ON s.company_id = c.id
+LEFT JOIN managers m ON s.manager_id = m.id;
+
+-- Self join (org hierarchy)
+SELECT e.name, m.name AS manager
+FROM employees e
+LEFT JOIN employees m ON e.manager_id = m.id;</pre>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Aggregation & GROUP BY</h3>
+<pre>SELECT
+  department,
+  COUNT(*)              AS headcount,
+  COUNT(DISTINCT id)    AS unique_ids,
+  SUM(salary)           AS total_pay,
+  AVG(salary)           AS avg_pay,
+  MAX(salary)           AS top_pay,
+  MIN(salary)           AS floor_pay,
+  ROUND(AVG(salary),2)  AS avg_rounded
+FROM employees
+WHERE active = 1
+GROUP BY department
+HAVING AVG(salary) > 50000
+ORDER BY total_pay DESC;
+
+-- ROLLUP (subtotals)
+GROUP BY ROLLUP(region, city)
+
+-- Useful aggregate
+STRING_AGG(name, ', ')  -- concat
+ARRAY_AGG(name)         -- array (PG)</pre>
+</div>
+<div class="box">
+<h3>Subqueries</h3>
+<pre>-- Scalar subquery
+SELECT name,
+  (SELECT AVG(salary) FROM emp) AS avg_sal
+FROM employees;
+
+-- IN subquery
+SELECT * FROM orders
+WHERE customer_id IN (
+  SELECT id FROM customers WHERE city='Mumbai'
+);
+
+-- EXISTS (more efficient)
+SELECT * FROM customers c
+WHERE EXISTS (
+  SELECT 1 FROM orders o WHERE o.cust_id = c.id
+);
+
+-- FROM subquery (derived table)
+SELECT dept, avg_sal
+FROM (
+  SELECT dept, AVG(salary) as avg_sal
+  FROM employees GROUP BY dept
+) t
+WHERE avg_sal > 60000;</pre>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Window Functions</h3>
+<pre>SELECT
+  name, dept, salary,
+  -- Ranking
+  ROW_NUMBER() OVER (PARTITION BY dept ORDER BY salary DESC),
+  RANK()       OVER (ORDER BY salary DESC),
+  DENSE_RANK() OVER (ORDER BY salary DESC),
+  NTILE(4)     OVER (ORDER BY salary) AS quartile,
+  PERCENT_RANK() OVER (ORDER BY salary),
+
+  -- Aggregates over window
+  SUM(salary)  OVER (PARTITION BY dept),
+  AVG(salary)  OVER (PARTITION BY dept),
+  COUNT(*)     OVER (PARTITION BY dept),
+
+  -- Lead/Lag (previous/next row)
+  LAG(salary, 1)  OVER (ORDER BY hire_date),
+  LEAD(salary, 1) OVER (ORDER BY hire_date),
+
+  -- Running totals
+  SUM(salary) OVER (ORDER BY hire_date
+                    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
+FROM employees;</pre>
+</div>
+<div class="box">
+<h3>CTEs & Advanced</h3>
+<pre>-- CTE (Common Table Expression)
+WITH high_earners AS (
+  SELECT * FROM employees WHERE salary > 100000
+),
+dept_counts AS (
+  SELECT dept, COUNT(*) as n FROM high_earners GROUP BY dept
+)
+SELECT * FROM dept_counts ORDER BY n DESC;
+
+-- Recursive CTE (org hierarchy)
+WITH RECURSIVE org AS (
+  SELECT id, name, manager_id, 1 AS level
+  FROM employees WHERE manager_id IS NULL
+  UNION ALL
+  SELECT e.id, e.name, e.manager_id, o.level+1
+  FROM employees e JOIN org o ON e.manager_id = o.id
+)
+SELECT * FROM org;
+
+-- COALESCE / NULLIF
+COALESCE(col, 0)        -- first non-null
+NULLIF(col, 0)          -- null if equal
+COALESCE(a,b,'default') -- fallback chain</pre>
+</div>
+</div>
+</div>
+<div class="cols-2">
+<div class="box blue">
+<h3>Data Modification</h3>
+<pre class="b">-- INSERT
+INSERT INTO table (col1, col2) VALUES (v1, v2);
+INSERT INTO table SELECT * FROM other_table;
+
+-- UPDATE
+UPDATE employees SET salary = salary * 1.1
+WHERE dept = 'Engineering' AND hired_year < 2022;
+
+-- DELETE (careful!)
+DELETE FROM table WHERE condition;
+TRUNCATE TABLE table;  -- faster, no rollback
+
+-- UPSERT (PostgreSQL)
+INSERT INTO t (id, val) VALUES (1, 'x')
+ON CONFLICT (id) DO UPDATE SET val = EXCLUDED.val;</pre>
+</div>
+<div class="box amber">
+<h3>Useful Functions Reference</h3>
+<table><tr><th>Category</th><th>Function</th><th>Use</th></tr>
+<tr><td>String</td><td><code>UPPER/LOWER</code></td><td>Case change</td></tr>
+<tr><td>String</td><td><code>TRIM/LTRIM/RTRIM</code></td><td>Remove spaces</td></tr>
+<tr><td>String</td><td><code>SUBSTRING(s,1,5)</code></td><td>Extract chars</td></tr>
+<tr><td>String</td><td><code>CONCAT(a,' ',b)</code></td><td>Combine strings</td></tr>
+<tr><td>String</td><td><code>LENGTH/LEN(s)</code></td><td>String length</td></tr>
+<tr><td>Date</td><td><code>NOW()/GETDATE()</code></td><td>Current datetime</td></tr>
+<tr><td>Date</td><td><code>DATE_TRUNC('month',d)</code></td><td>Truncate date</td></tr>
+<tr><td>Date</td><td><code>DATEDIFF(d2,d1)</code></td><td>Days between</td></tr>
+<tr><td>Numeric</td><td><code>ROUND(x,2)</code></td><td>Round decimals</td></tr>
+<tr><td>Numeric</td><td><code>ABS/FLOOR/CEIL</code></td><td>Math ops</td></tr>
+<tr><td>Null</td><td><code>IS NULL / IS NOT NULL</code></td><td>Null check</td></tr>
+</table>
+</div>
+</div>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+</body></html>

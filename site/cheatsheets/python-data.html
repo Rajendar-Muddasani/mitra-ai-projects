@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python for Data Cheatsheet — Mitra AI Projects</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+:root { --p:#6b21a8; --p2:#7c3aed; --g:#059669; --b:#2563eb; --a:#d97706; --r:#dc2626;
+  --bg:#fff; --s:#faf5ff; --s2:#f3e8ff; --t:#1a0533; --m:#6b4f88; --bd:rgba(107,33,168,0.15); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:0.82rem;background:var(--bg);color:var(--t);line-height:1.45}
+.page{max-width:1000px;margin:0 auto;padding:1rem 1.5rem 2rem}
+.cs-header{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:1rem 1.5rem;border-radius:10px;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.cs-header h1{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em}
+.cs-header .meta{font-size:0.75rem;opacity:0.8}
+.cs-subtitle{font-size:0.85rem;opacity:0.85;margin-top:0.2rem}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cols-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.cols-1-2{display:grid;grid-template-columns:1fr 2fr;gap:1rem}
+.box{background:var(--s);border:1px solid var(--bd);border-radius:8px;padding:0.85rem;margin-bottom:1rem}
+.box.teal{background:#f0faf9;border-color:rgba(5,150,105,0.2)}
+.box.blue{background:#eff6ff;border-color:rgba(37,99,235,0.2)}
+.box.amber{background:#fffbeb;border-color:rgba(217,119,6,0.2)}
+.box.red{background:#fef2f2;border-color:rgba(220,38,38,0.2)}
+.box h3{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--p);margin-bottom:0.6rem;padding-bottom:0.35rem;border-bottom:1px solid var(--bd)}
+.box.teal h3{color:var(--g);border-color:rgba(5,150,105,0.2)}
+.box.blue h3{color:var(--b);border-color:rgba(37,99,235,0.2)}
+.box.amber h3{color:var(--a);border-color:rgba(217,119,6,0.2)}
+.box.red h3{color:var(--r);border-color:rgba(220,38,38,0.2)}
+code,pre{font-family:'JetBrains Mono','Fira Code',monospace;font-size:0.78rem;background:rgba(107,33,168,0.06);border-radius:3px;padding:0.1rem 0.3rem}
+pre{padding:0.6rem 0.8rem;display:block;overflow-x:auto;line-height:1.5;white-space:pre-wrap;margin:0.4rem 0}
+pre.g{background:rgba(5,150,105,0.06)}
+pre.b{background:#eff6ff}
+pre.a{background:#fffbeb}
+table{width:100%;border-collapse:collapse;font-size:0.78rem;margin:0.35rem 0}
+th{background:rgba(107,33,168,0.1);color:var(--p);font-weight:700;padding:0.35rem 0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase}
+td{padding:0.3rem 0.5rem;border-bottom:1px solid rgba(107,33,168,0.07)}
+tr:hover td{background:rgba(107,33,168,0.03)}
+.tag{display:inline-block;padding:0.1rem 0.4rem;border-radius:3px;font-size:0.68rem;font-weight:700;margin:0.1rem;background:rgba(107,33,168,0.1);color:var(--p)}
+.tag.g{background:rgba(5,150,105,0.1);color:var(--g)}
+.tag.b{background:rgba(37,99,235,0.1);color:var(--b)}
+.tag.a{background:rgba(217,119,6,0.1);color:var(--a)}
+.tag.r{background:rgba(220,38,38,0.1);color:var(--r)}
+ul{padding-left:1.1rem}
+li{margin-bottom:0.2rem}
+li code{font-size:0.75rem}
+strong{font-weight:700;color:var(--t)}
+.kv{display:flex;justify-content:space-between;align-items:baseline;padding:0.2rem 0;border-bottom:1px solid rgba(107,33,168,0.06)}
+.kv:last-child{border-bottom:none}
+.kv .k{font-weight:600;font-size:0.8rem}
+.kv .v{color:var(--m);font-size:0.78rem;text-align:right;max-width:60%}
+.print-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--p);color:#fff;border:none;padding:0.65rem 1.25rem;border-radius:999px;font-weight:700;font-size:0.85rem;cursor:pointer;box-shadow:0 4px 16px rgba(107,33,168,0.3);z-index:100}
+.print-btn:hover{background:var(--p2)}
+.back-btn{display:inline-flex;align-items:center;gap:0.35rem;color:var(--m);font-size:0.78rem;text-decoration:none;margin-bottom:0.75rem}
+.back-btn:hover{color:var(--p)}
+.section-break{height:1px;background:linear-gradient(90deg,var(--p2),transparent);margin:1rem 0;opacity:0.3}
+@media print{
+  .print-btn,.back-btn{display:none!important}
+  body{font-size:0.72rem}
+  .cs-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .box{break-inside:avoid}
+  .cols-2,.cols-3,.cols-1-2{break-inside:avoid}
+  @page{size:A4;margin:1cm}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="/cheatsheets.html" class="back-btn">← All Cheatsheets</a>
+<div class="cs-header">
+  <div><h1>Python for Data</h1><div class="cs-subtitle">NumPy · Pandas · Matplotlib · SciPy · Data Patterns</div></div>
+  <div class="meta">mitraaiprojects.com</div>
+</div>
+<div class="cols-3">
+<div>
+<div class="box">
+<h3>NumPy — Arrays</h3>
+<pre>import numpy as np
+
+# Create
+np.array([1,2,3])         # 1D
+np.zeros((3,4))           # 3×4 zeros
+np.ones((2,3))            # 2×3 ones
+np.eye(4)                 # 4×4 identity
+np.random.randn(3,3)      # std normal
+np.arange(0,10,2)         # [0,2,4,6,8]
+np.linspace(0,1,5)        # 5 evenly spaced
+
+# Shape & Reshape
+arr.shape    # (3,4)
+arr.ndim     # 2
+arr.dtype    # float64
+arr.reshape(2,6)
+arr.flatten()
+arr.T        # transpose</pre>
+</div>
+<div class="box">
+<h3>NumPy — Operations</h3>
+<pre># Indexing & Slicing
+arr[0,1]         # element
+arr[0:2, 1:3]    # slice
+arr[arr>0]       # boolean mask
+arr[[0,2]]       # fancy indexing
+
+# Math
+arr + 10         # broadcast
+arr * arr        # element-wise
+np.dot(A, B)     # matrix multiply
+A @ B            # same
+
+# Statistics
+arr.mean()       arr.mean(axis=0)
+arr.std()        arr.var()
+arr.min()        arr.max()
+arr.sum()        arr.cumsum()
+np.percentile(arr, 75)
+np.corrcoef(x, y)   # correlation</pre>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Pandas — DataFrame</h3>
+<pre>import pandas as pd
+
+df = pd.read_csv("data.csv")
+df.head(5)         df.tail(3)
+df.shape           df.dtypes
+df.describe()      df.info()
+df.columns         df.index
+
+# Select
+df["col"]          df[["a","b"]]
+df.loc[0:5, "col"] # label
+df.iloc[0:5, 0:3]  # position
+df[df["col"] > 5]  # filter
+
+# Modify
+df["new"] = df["a"] + df["b"]
+df.rename(columns={"old":"new"})
+df.drop("col", axis=1)
+df.drop_duplicates()
+df.reset_index(drop=True)</pre>
+</div>
+<div class="box">
+<h3>Pandas — Data Cleaning</h3>
+<pre># Missing values
+df.isnull().sum()       # count NaN
+df.dropna()             # drop rows
+df.dropna(how="all")    # all NaN
+df.fillna(0)            # fill value
+df.fillna(df.mean())    # fill mean
+df.interpolate()        # interpolate
+
+# Type conversion
+df["col"].astype(int)
+pd.to_datetime(df["date"])
+pd.to_numeric(df["val"], errors="coerce")
+
+# String ops (Series.str)
+df["text"].str.lower()
+df["text"].str.strip()
+df["text"].str.contains("pattern")
+df["text"].str.extract(r"(\d+)")
+df["text"].str.split(",", expand=True)</pre>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Pandas — Aggregation</h3>
+<pre># GroupBy
+df.groupby("col")["val"].mean()
+df.groupby("col").agg(
+    mean=("val","mean"),
+    count=("val","count"),
+    std=("val","std")
+)
+
+# Pivot tables
+df.pivot_table(
+    values="sales",
+    index="region",
+    columns="month",
+    aggfunc="sum"
+)
+
+# Apply
+df["col"].apply(lambda x: x**2)
+df.apply(lambda row: f(row), axis=1)
+
+# Merge / Join
+pd.merge(df1, df2, on="key")
+pd.merge(df1, df2, on="k", how="left")
+pd.concat([df1, df2], axis=0)  # stack rows
+pd.concat([df1, df2], axis=1)  # stack cols</pre>
+</div>
+<div class="box">
+<h3>Matplotlib / Plotting</h3>
+<pre>import matplotlib.pyplot as plt
+
+fig, axes = plt.subplots(1,2,figsize=(12,4))
+
+# Line plot
+axes[0].plot(x, y, color="purple", lw=2)
+axes[0].set_title("Title")
+axes[0].set_xlabel("X"); axes[0].set_ylabel("Y")
+axes[0].legend(["label"])
+axes[0].grid(alpha=0.3)
+
+# Bar chart
+axes[1].bar(categories, values, color="#6b21a8")
+
+# Scatter plot
+plt.scatter(x, y, c=labels, cmap="viridis", s=50)
+
+# Histogram
+plt.hist(data, bins=30, alpha=0.7)
+
+# Heatmap (seaborn)
+import seaborn as sns
+sns.heatmap(corr_matrix, annot=True, cmap="purple")
+
+plt.tight_layout()
+plt.savefig("plot.png", dpi=150)
+plt.show()</pre>
+</div>
+</div>
+</div>
+<div class="cols-2">
+<div class="box amber">
+<h3>Common Data Patterns</h3>
+<table><tr><th>Task</th><th>Code</th></tr>
+<tr><td>Normalise (0–1)</td><td><code>(df-df.min())/(df.max()-df.min())</code></td></tr>
+<tr><td>Standardise</td><td><code>(df-df.mean())/df.std()</code></td></tr>
+<tr><td>One-hot encode</td><td><code>pd.get_dummies(df["col"])</code></td></tr>
+<tr><td>Label encode</td><td><code>df["col"].map({"a":0,"b":1})</code></td></tr>
+<tr><td>Cut to bins</td><td><code>pd.cut(df["age"], bins=[0,18,65,99])</code></td></tr>
+<tr><td>Rolling window</td><td><code>df["col"].rolling(7).mean()</code></td></tr>
+<tr><td>Shift (lag)</td><td><code>df["col"].shift(1)</code></td></tr>
+<tr><td>Rank</td><td><code>df["col"].rank(ascending=False)</code></td></tr>
+<tr><td>Nunique</td><td><code>df["col"].nunique()</code></td></tr>
+<tr><td>Value counts</td><td><code>df["col"].value_counts(normalize=True)</code></td></tr>
+</table>
+</div>
+<div class="box teal">
+<h3>Performance Tips</h3>
+<pre class="g"># Vectorise — avoid Python loops
+df["result"] = df["a"] * df["b"]   # fast
+# NOT: for i in range(len(df)): ...  # slow
+
+# Categorical reduces memory
+df["col"] = df["col"].astype("category")
+
+# Read large CSVs efficiently
+df = pd.read_csv("big.csv",
+    usecols=["col1","col2"],  # only needed cols
+    dtype={"id":"int32"},      # smaller dtypes
+    chunksize=10000)            # chunks
+
+# Query string (readable + fast)
+df.query("age > 25 and city == 'Mumbai'")
+
+# Parquet for fast read/write
+df.to_parquet("data.parquet")
+df = pd.read_parquet("data.parquet")</pre>
+</div>
+</div>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+</body></html>

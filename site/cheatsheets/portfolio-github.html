@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio & GitHub Cheatsheet — Mitra AI Projects</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+:root { --p:#6b21a8; --p2:#7c3aed; --g:#059669; --b:#2563eb; --a:#d97706; --r:#dc2626;
+  --bg:#fff; --s:#faf5ff; --s2:#f3e8ff; --t:#1a0533; --m:#6b4f88; --bd:rgba(107,33,168,0.15); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:0.82rem;background:var(--bg);color:var(--t);line-height:1.45}
+.page{max-width:1000px;margin:0 auto;padding:1rem 1.5rem 2rem}
+.cs-header{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:1rem 1.5rem;border-radius:10px;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.cs-header h1{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em}
+.cs-header .meta{font-size:0.75rem;opacity:0.8}
+.cs-subtitle{font-size:0.85rem;opacity:0.85;margin-top:0.2rem}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cols-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.cols-1-2{display:grid;grid-template-columns:1fr 2fr;gap:1rem}
+.box{background:var(--s);border:1px solid var(--bd);border-radius:8px;padding:0.85rem;margin-bottom:1rem}
+.box.teal{background:#f0faf9;border-color:rgba(5,150,105,0.2)}
+.box.blue{background:#eff6ff;border-color:rgba(37,99,235,0.2)}
+.box.amber{background:#fffbeb;border-color:rgba(217,119,6,0.2)}
+.box.red{background:#fef2f2;border-color:rgba(220,38,38,0.2)}
+.box h3{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--p);margin-bottom:0.6rem;padding-bottom:0.35rem;border-bottom:1px solid var(--bd)}
+.box.teal h3{color:var(--g);border-color:rgba(5,150,105,0.2)}
+.box.blue h3{color:var(--b);border-color:rgba(37,99,235,0.2)}
+.box.amber h3{color:var(--a);border-color:rgba(217,119,6,0.2)}
+.box.red h3{color:var(--r);border-color:rgba(220,38,38,0.2)}
+code,pre{font-family:'JetBrains Mono','Fira Code',monospace;font-size:0.78rem;background:rgba(107,33,168,0.06);border-radius:3px;padding:0.1rem 0.3rem}
+pre{padding:0.6rem 0.8rem;display:block;overflow-x:auto;line-height:1.5;white-space:pre-wrap;margin:0.4rem 0}
+pre.g{background:rgba(5,150,105,0.06)}
+pre.b{background:#eff6ff}
+pre.a{background:#fffbeb}
+table{width:100%;border-collapse:collapse;font-size:0.78rem;margin:0.35rem 0}
+th{background:rgba(107,33,168,0.1);color:var(--p);font-weight:700;padding:0.35rem 0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase}
+td{padding:0.3rem 0.5rem;border-bottom:1px solid rgba(107,33,168,0.07)}
+tr:hover td{background:rgba(107,33,168,0.03)}
+.tag{display:inline-block;padding:0.1rem 0.4rem;border-radius:3px;font-size:0.68rem;font-weight:700;margin:0.1rem;background:rgba(107,33,168,0.1);color:var(--p)}
+.tag.g{background:rgba(5,150,105,0.1);color:var(--g)}
+.tag.b{background:rgba(37,99,235,0.1);color:var(--b)}
+.tag.a{background:rgba(217,119,6,0.1);color:var(--a)}
+.tag.r{background:rgba(220,38,38,0.1);color:var(--r)}
+ul{padding-left:1.1rem}
+li{margin-bottom:0.2rem}
+li code{font-size:0.75rem}
+strong{font-weight:700;color:var(--t)}
+.kv{display:flex;justify-content:space-between;align-items:baseline;padding:0.2rem 0;border-bottom:1px solid rgba(107,33,168,0.06)}
+.kv:last-child{border-bottom:none}
+.kv .k{font-weight:600;font-size:0.8rem}
+.kv .v{color:var(--m);font-size:0.78rem;text-align:right;max-width:60%}
+.print-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--p);color:#fff;border:none;padding:0.65rem 1.25rem;border-radius:999px;font-weight:700;font-size:0.85rem;cursor:pointer;box-shadow:0 4px 16px rgba(107,33,168,0.3);z-index:100}
+.print-btn:hover{background:var(--p2)}
+.back-btn{display:inline-flex;align-items:center;gap:0.35rem;color:var(--m);font-size:0.78rem;text-decoration:none;margin-bottom:0.75rem}
+.back-btn:hover{color:var(--p)}
+.section-break{height:1px;background:linear-gradient(90deg,var(--p2),transparent);margin:1rem 0;opacity:0.3}
+@media print{
+  .print-btn,.back-btn{display:none!important}
+  body{font-size:0.72rem}
+  .cs-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .box{break-inside:avoid}
+  .cols-2,.cols-3,.cols-1-2{break-inside:avoid}
+  @page{size:A4;margin:1cm}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="/cheatsheets.html" class="back-btn">← All Cheatsheets</a>
+<div class="cs-header">
+  <div><h1>Portfolio &amp; GitHub Profile</h1><div class="cs-subtitle">GitHub · README · Deploy · LinkedIn · Checklist</div></div>
+  <div class="meta">mitraaiprojects.com</div>
+</div>
+<div class="cols-3">
+<div>
+<div class="box">
+<h3>GitHub Profile README</h3>
+<pre style="font-size:0.7rem"># Hi, I'm [Your Name] 👋
+🎓 B.Tech CSE | [College] | 2025
+🤖 Building: LLMs, RAG, Computer Vision
+📍 [City, India]
+
+## 🛠 Stack
+Python · PyTorch · LangChain · FastAPI
+scikit-learn · Docker · GitHub Actions
+
+## 🚀 Pinned Projects
+| Project | Tech | Demo |
+|---|---|---|
+| [Doc Q&A](link) | RAG+FastAPI | [Live](url) |
+| [Forecasting](link) | ARIMA+Streamlit | [Live](url) |
+
+## 📫 Connect
+[![LinkedIn](badge)](linkedin-url)
+[![HuggingFace](badge)](hf-url)</pre>
+</div>
+<div class="box">
+<h3>Project README Must-Haves</h3>
+<ul>
+  <li>🎯 <strong>One-line description</strong> — what it does</li>
+  <li>🖼 <strong>Screenshot / GIF</strong> — show don't tell</li>
+  <li>🔗 <strong>Live demo URL badge</strong></li>
+  <li>🏗 <strong>Architecture diagram</strong> (Mermaid or draw.io)</li>
+  <li>✨ <strong>Features list</strong> — 4–6 bullet points</li>
+  <li>🚀 <strong>Quick start</strong> — copy-paste commands</li>
+  <li>📁 <strong>Project structure</strong> — key files explained</li>
+  <li>🛠 <strong>Tech stack table</strong></li>
+  <li>📜 <strong>License</strong> (MIT for student projects)</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Deploy for Free</h3>
+<table><tr><th>Platform</th><th>Best for</th><th>Free tier</th></tr>
+<tr><td><strong>Render.com</strong></td><td>FastAPI, Streamlit</td><td>Sleeps after 15min idle</td></tr>
+<tr><td><strong>Streamlit Cloud</strong></td><td>Streamlit only</td><td>Public apps don't sleep</td></tr>
+<tr><td><strong>HuggingFace Spaces</strong></td><td>ML demos with GPU</td><td>Free T4 GPU for demos</td></tr>
+<tr><td><strong>Railway.app</strong></td><td>Any framework</td><td>$5 free credit/month</td></tr>
+<tr><td><strong>Vercel</strong></td><td>Next.js, static</td><td>Generous free tier</td></tr>
+<tr><td><strong>GitHub Pages</strong></td><td>Static HTML/docs</td><td>Free unlimited public</td></tr>
+</table>
+</div>
+<div class="box">
+<h3>LinkedIn Optimisation</h3>
+<table><tr><th>Section</th><th>What to add</th></tr>
+<tr><td>Photo</td><td>Clear, professional headshot</td></tr>
+<tr><td>Headline</td><td>"ML Engineer | Python · LLMs | Open to 2025 Roles"</td></tr>
+<tr><td>About</td><td>3 projects + skills + availability</td></tr>
+<tr><td>Featured</td><td>Top 3 project demo URLs</td></tr>
+<tr><td>Skills</td><td>Python, ML, DL, GenAI, LangChain, Docker (get endorsements)</td></tr>
+<tr><td>Certificates</td><td>Add Mitra AI Projects completion certificates</td></tr>
+</table>
+</div>
+</div>
+<div>
+<div class="box teal">
+<h3>Portfolio Checklist</h3>
+<ul>
+  <li>✅ Profile photo + real name on GitHub</li>
+  <li>✅ Bio: role + 3 skills + location</li>
+  <li>✅ 6 pinned repos (not forks!)</li>
+  <li>✅ Every repo has README + demo URL</li>
+  <li>✅ Green contribution graph (commit regularly)</li>
+  <li>✅ At least 1 major deployed project</li>
+  <li>✅ At least 1 DL/CV project on HF Spaces</li>
+  <li>✅ .gitignore excludes .env and model files</li>
+  <li>✅ Descriptive commit messages (feat/fix/docs)</li>
+  <li>✅ LinkedIn featured section with project links</li>
+  <li>✅ Kaggle profile with 2+ notebooks</li>
+</ul>
+</div>
+<div class="box blue">
+<h3>Commit Message Convention</h3>
+<pre class="b">feat: add PDF upload support
+fix:  resolve CORS error in production
+docs: update README with deploy steps
+test: add unit tests for scoring module
+refactor: extract scoring to service layer
+perf: cache embeddings to reduce API calls
+chore: update dependencies to latest
+
+# Format: type(scope): description
+feat(auth): add Google OAuth login
+fix(api): handle empty document gracefully
+
+# Breaking changes
+feat!: redesign scoring API
+BREAKING CHANGE: response format changed</pre>
+</div>
+<div class="box amber">
+<h3>Shortlist-Ready Profile Score</h3>
+<table><tr><th>Score</th><th>Status</th></tr>
+<tr><td>0–40%</td><td>Recruiters likely skip your profile</td></tr>
+<tr><td>41–75%</td><td>Getting noticed in some searches</td></tr>
+<tr><td>76–100%</td><td>Portfolio-ready — strong shortlisting</td></tr>
+</table>
+<div style="margin-top:0.5rem;font-size:0.78rem;color:var(--m);">
+Check your score at: <strong>mitraaiprojects.com/portfolio-guide.html</strong>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+</body></html>

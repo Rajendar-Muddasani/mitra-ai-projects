@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deep Learning Layers Cheatsheet — Mitra AI Projects</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+:root { --p:#6b21a8; --p2:#7c3aed; --g:#059669; --b:#2563eb; --a:#d97706; --r:#dc2626;
+  --bg:#fff; --s:#faf5ff; --s2:#f3e8ff; --t:#1a0533; --m:#6b4f88; --bd:rgba(107,33,168,0.15); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:0.82rem;background:var(--bg);color:var(--t);line-height:1.45}
+.page{max-width:1000px;margin:0 auto;padding:1rem 1.5rem 2rem}
+.cs-header{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:1rem 1.5rem;border-radius:10px;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.cs-header h1{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em}
+.cs-header .meta{font-size:0.75rem;opacity:0.8}
+.cs-subtitle{font-size:0.85rem;opacity:0.85;margin-top:0.2rem}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cols-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.cols-1-2{display:grid;grid-template-columns:1fr 2fr;gap:1rem}
+.box{background:var(--s);border:1px solid var(--bd);border-radius:8px;padding:0.85rem;margin-bottom:1rem}
+.box.teal{background:#f0faf9;border-color:rgba(5,150,105,0.2)}
+.box.blue{background:#eff6ff;border-color:rgba(37,99,235,0.2)}
+.box.amber{background:#fffbeb;border-color:rgba(217,119,6,0.2)}
+.box.red{background:#fef2f2;border-color:rgba(220,38,38,0.2)}
+.box h3{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--p);margin-bottom:0.6rem;padding-bottom:0.35rem;border-bottom:1px solid var(--bd)}
+.box.teal h3{color:var(--g);border-color:rgba(5,150,105,0.2)}
+.box.blue h3{color:var(--b);border-color:rgba(37,99,235,0.2)}
+.box.amber h3{color:var(--a);border-color:rgba(217,119,6,0.2)}
+.box.red h3{color:var(--r);border-color:rgba(220,38,38,0.2)}
+code,pre{font-family:'JetBrains Mono','Fira Code',monospace;font-size:0.78rem;background:rgba(107,33,168,0.06);border-radius:3px;padding:0.1rem 0.3rem}
+pre{padding:0.6rem 0.8rem;display:block;overflow-x:auto;line-height:1.5;white-space:pre-wrap;margin:0.4rem 0}
+pre.g{background:rgba(5,150,105,0.06)}
+pre.b{background:#eff6ff}
+pre.a{background:#fffbeb}
+table{width:100%;border-collapse:collapse;font-size:0.78rem;margin:0.35rem 0}
+th{background:rgba(107,33,168,0.1);color:var(--p);font-weight:700;padding:0.35rem 0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase}
+td{padding:0.3rem 0.5rem;border-bottom:1px solid rgba(107,33,168,0.07)}
+tr:hover td{background:rgba(107,33,168,0.03)}
+.tag{display:inline-block;padding:0.1rem 0.4rem;border-radius:3px;font-size:0.68rem;font-weight:700;margin:0.1rem;background:rgba(107,33,168,0.1);color:var(--p)}
+.tag.g{background:rgba(5,150,105,0.1);color:var(--g)}
+.tag.b{background:rgba(37,99,235,0.1);color:var(--b)}
+.tag.a{background:rgba(217,119,6,0.1);color:var(--a)}
+.tag.r{background:rgba(220,38,38,0.1);color:var(--r)}
+ul{padding-left:1.1rem}
+li{margin-bottom:0.2rem}
+li code{font-size:0.75rem}
+strong{font-weight:700;color:var(--t)}
+.kv{display:flex;justify-content:space-between;align-items:baseline;padding:0.2rem 0;border-bottom:1px solid rgba(107,33,168,0.06)}
+.kv:last-child{border-bottom:none}
+.kv .k{font-weight:600;font-size:0.8rem}
+.kv .v{color:var(--m);font-size:0.78rem;text-align:right;max-width:60%}
+.print-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--p);color:#fff;border:none;padding:0.65rem 1.25rem;border-radius:999px;font-weight:700;font-size:0.85rem;cursor:pointer;box-shadow:0 4px 16px rgba(107,33,168,0.3);z-index:100}
+.print-btn:hover{background:var(--p2)}
+.back-btn{display:inline-flex;align-items:center;gap:0.35rem;color:var(--m);font-size:0.78rem;text-decoration:none;margin-bottom:0.75rem}
+.back-btn:hover{color:var(--p)}
+.section-break{height:1px;background:linear-gradient(90deg,var(--p2),transparent);margin:1rem 0;opacity:0.3}
+@media print{
+  .print-btn,.back-btn{display:none!important}
+  body{font-size:0.72rem}
+  .cs-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .box{break-inside:avoid}
+  .cols-2,.cols-3,.cols-1-2{break-inside:avoid}
+  @page{size:A4;margin:1cm}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="/cheatsheets.html" class="back-btn">← All Cheatsheets</a>
+<div class="cs-header">
+  <div><h1>Deep Learning Layers & Architectures</h1><div class="cs-subtitle">Layers · Activations · Optimisers · Architectures · PyTorch code</div></div>
+  <div class="meta">mitraaiprojects.com</div>
+</div>
+<div class="cols-3">
+<div>
+<div class="box">
+<h3>Core Layers (PyTorch)</h3>
+<table><tr><th>Layer</th><th>Use</th><th>Key Params</th></tr>
+<tr><td><code>nn.Linear(in,out)</code></td><td>Fully connected</td><td>in_features, out_features</td></tr>
+<tr><td><code>nn.Conv2d(in,out,k)</code></td><td>2D convolution</td><td>in_ch, out_ch, kernel_size, stride, padding</td></tr>
+<tr><td><code>nn.MaxPool2d(k)</code></td><td>Spatial downsampling</td><td>kernel_size, stride</td></tr>
+<tr><td><code>nn.AvgPool2d(k)</code></td><td>Average pooling</td><td>kernel_size</td></tr>
+<tr><td><code>nn.BatchNorm2d(ch)</code></td><td>Normalise per channel</td><td>num_features</td></tr>
+<tr><td><code>nn.LayerNorm(d)</code></td><td>Normalise per sample</td><td>normalized_shape</td></tr>
+<tr><td><code>nn.Dropout(p)</code></td><td>Regularisation</td><td>p (default 0.5)</td></tr>
+<tr><td><code>nn.Embedding(n,d)</code></td><td>Learned token embeddings</td><td>num_embeddings, emb_dim</td></tr>
+<tr><td><code>nn.LSTM(in,h,L)</code></td><td>Sequence modelling</td><td>input_size, hidden_size, num_layers</td></tr>
+<tr><td><code>nn.GRU(in,h,L)</code></td><td>Efficient sequence</td><td>same as LSTM, 33% fewer params</td></tr>
+<tr><td><code>nn.MultiheadAttention</code></td><td>Self-attention</td><td>embed_dim, num_heads</td></tr>
+<tr><td><code>nn.TransformerEncoder</code></td><td>Stack of encoder layers</td><td>encoder_layer, num_layers</td></tr>
+</table>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Activation Functions</h3>
+<table><tr><th>Activation</th><th>Formula</th><th>Use</th></tr>
+<tr><td><strong>ReLU</strong></td><td>max(0,x)</td><td>Default hidden layers — fast, no vanishing</td></tr>
+<tr><td><strong>LeakyReLU</strong></td><td>x if x>0 else 0.01x</td><td>Dying ReLU problem</td></tr>
+<tr><td><strong>GELU</strong></td><td>x·Φ(x)</td><td>Transformers — smoother than ReLU</td></tr>
+<tr><td><strong>Sigmoid</strong></td><td>1/(1+e^−x)</td><td>Binary output only (saturates)</td></tr>
+<tr><td><strong>Tanh</strong></td><td>(e^x−e^−x)/(e^x+e^−x)</td><td>Zero-centred, RNNs</td></tr>
+<tr><td><strong>Softmax</strong></td><td>e^xi / Σe^xj</td><td>Multi-class output (probabilities)</td></tr>
+<tr><td><strong>Swish</strong></td><td>x·sigmoid(x)</td><td>EfficientNet — non-monotonic</td></tr>
+</table>
+</div>
+<div class="box">
+<h3>Loss Functions</h3>
+<table><tr><th>Loss</th><th>Task</th><th>PyTorch</th></tr>
+<tr><td>MSE</td><td>Regression</td><td><code>nn.MSELoss()</code></td></tr>
+<tr><td>MAE / L1</td><td>Regression (robust)</td><td><code>nn.L1Loss()</code></td></tr>
+<tr><td>BCE</td><td>Binary classification</td><td><code>nn.BCEWithLogitsLoss()</code></td></tr>
+<tr><td>Cross-Entropy</td><td>Multi-class</td><td><code>nn.CrossEntropyLoss()</code></td></tr>
+<tr><td>KL Divergence</td><td>Distributions</td><td><code>nn.KLDivLoss()</code></td></tr>
+<tr><td>Contrastive</td><td>Similarity learning</td><td>custom</td></tr>
+</table>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Optimisers</h3>
+<table><tr><th>Optimiser</th><th>Best for</th><th>Key Params</th></tr>
+<tr><td><strong>Adam</strong></td><td>Default — most problems</td><td>lr=3e-4, betas=(0.9,0.999)</td></tr>
+<tr><td><strong>AdamW</strong></td><td>Transformers — decoupled WD</td><td>lr=3e-4, weight_decay=0.01</td></tr>
+<tr><td><strong>SGD+momentum</strong></td><td>CNNs — often better final acc</td><td>lr=0.01, momentum=0.9</td></tr>
+<tr><td><strong>RMSProp</strong></td><td>RNNs, non-stationary</td><td>lr=1e-3</td></tr>
+<tr><td><strong>Lion</strong></td><td>Large models — memory efficient</td><td>lr=3e-5</td></tr>
+</table>
+<div style="margin-top:0.5rem;font-size:0.78rem;color:var(--m);">LR scheduling: CosineAnnealing, ReduceLROnPlateau, OneCycleLR</div>
+</div>
+<div class="box">
+<h3>Regularisation Techniques</h3>
+<table><tr><th>Technique</th><th>Effect</th><th>Where</th></tr>
+<tr><td>Dropout</td><td>Random deactivation</td><td>Dense/FC layers</td></tr>
+<tr><td>L2 / Weight Decay</td><td>Penalise large weights</td><td>optimizer(weight_decay=0.01)</td></tr>
+<tr><td>BatchNorm</td><td>Normalise + noise</td><td>After conv/linear</td></tr>
+<tr><td>Data Augmentation</td><td>More effective training data</td><td>Image transforms</td></tr>
+<tr><td>Early Stopping</td><td>Stop before overfit</td><td>Monitor val_loss</td></tr>
+<tr><td>Gradient Clipping</td><td>Prevent explosion</td><td>clip_grad_norm_(1.0)</td></tr>
+<tr><td>Label Smoothing</td><td>Soften targets</td><td>CrossEntropyLoss(label_smoothing=0.1)</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="cols-2">
+<div class="box teal">
+<h3>PyTorch Training Loop Template</h3>
+<pre class="g">model = MyModel().to(device)
+optimizer = torch.optim.AdamW(model.parameters(), lr=3e-4, weight_decay=0.01)
+scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=50)
+criterion = nn.CrossEntropyLoss()
+
+for epoch in range(num_epochs):
+    model.train()
+    for X, y in train_loader:
+        X, y = X.to(device), y.to(device)
+        optimizer.zero_grad()
+        out = model(X)
+        loss = criterion(out, y)
+        loss.backward()
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+        optimizer.step()
+    scheduler.step()
+
+    model.eval()
+    with torch.no_grad():
+        for X, y in val_loader:
+            out = model(X.to(device))
+            val_loss += criterion(out, y.to(device)).item()</pre>
+</div>
+<div class="box blue">
+<h3>Famous Architectures</h3>
+<table><tr><th>Architecture</th><th>Year</th><th>Innovation</th><th>Use today</th></tr>
+<tr><td>ResNet-50</td><td>2015</td><td>Skip connections (residual blocks)</td><td>Transfer learning backbone</td></tr>
+<tr><td>VGG-16</td><td>2014</td><td>Very deep 3×3 convolutions</td><td>Feature extraction</td></tr>
+<tr><td>EfficientNet</td><td>2019</td><td>Compound scaling (width/depth/res)</td><td>Edge deployment</td></tr>
+<tr><td>BERT</td><td>2018</td><td>Bidirectional masked LM pre-training</td><td>Text classification, NER</td></tr>
+<tr><td>GPT-2/3/4</td><td>2019+</td><td>Causal LM pre-training at scale</td><td>Text generation</td></tr>
+<tr><td>ViT</td><td>2020</td><td>Image patches as tokens</td><td>Image classification</td></tr>
+<tr><td>Stable Diffusion</td><td>2022</td><td>Latent diffusion model</td><td>Image generation</td></tr>
+<tr><td>LLaMA</td><td>2023</td><td>Open weights GPT-class model</td><td>Local LLM, fine-tuning</td></tr>
+</table>
+</div>
+</div>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+</body></html>

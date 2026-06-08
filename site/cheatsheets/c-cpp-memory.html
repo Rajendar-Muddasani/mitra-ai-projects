@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C/C++ Memory Cheatsheet — Mitra AI Projects</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+:root { --p:#6b21a8; --p2:#7c3aed; --g:#059669; --b:#2563eb; --a:#d97706; --r:#dc2626;
+  --bg:#fff; --s:#faf5ff; --s2:#f3e8ff; --t:#1a0533; --m:#6b4f88; --bd:rgba(107,33,168,0.15); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:0.82rem;background:var(--bg);color:var(--t);line-height:1.45}
+.page{max-width:1000px;margin:0 auto;padding:1rem 1.5rem 2rem}
+.cs-header{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:1rem 1.5rem;border-radius:10px;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.cs-header h1{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em}
+.cs-header .meta{font-size:0.75rem;opacity:0.8}
+.cs-subtitle{font-size:0.85rem;opacity:0.85;margin-top:0.2rem}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cols-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.cols-1-2{display:grid;grid-template-columns:1fr 2fr;gap:1rem}
+.box{background:var(--s);border:1px solid var(--bd);border-radius:8px;padding:0.85rem;margin-bottom:1rem}
+.box.teal{background:#f0faf9;border-color:rgba(5,150,105,0.2)}
+.box.blue{background:#eff6ff;border-color:rgba(37,99,235,0.2)}
+.box.amber{background:#fffbeb;border-color:rgba(217,119,6,0.2)}
+.box.red{background:#fef2f2;border-color:rgba(220,38,38,0.2)}
+.box h3{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--p);margin-bottom:0.6rem;padding-bottom:0.35rem;border-bottom:1px solid var(--bd)}
+.box.teal h3{color:var(--g);border-color:rgba(5,150,105,0.2)}
+.box.blue h3{color:var(--b);border-color:rgba(37,99,235,0.2)}
+.box.amber h3{color:var(--a);border-color:rgba(217,119,6,0.2)}
+.box.red h3{color:var(--r);border-color:rgba(220,38,38,0.2)}
+code,pre{font-family:'JetBrains Mono','Fira Code',monospace;font-size:0.78rem;background:rgba(107,33,168,0.06);border-radius:3px;padding:0.1rem 0.3rem}
+pre{padding:0.6rem 0.8rem;display:block;overflow-x:auto;line-height:1.5;white-space:pre-wrap;margin:0.4rem 0}
+pre.g{background:rgba(5,150,105,0.06)}
+pre.b{background:#eff6ff}
+pre.a{background:#fffbeb}
+table{width:100%;border-collapse:collapse;font-size:0.78rem;margin:0.35rem 0}
+th{background:rgba(107,33,168,0.1);color:var(--p);font-weight:700;padding:0.35rem 0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase}
+td{padding:0.3rem 0.5rem;border-bottom:1px solid rgba(107,33,168,0.07)}
+tr:hover td{background:rgba(107,33,168,0.03)}
+.tag{display:inline-block;padding:0.1rem 0.4rem;border-radius:3px;font-size:0.68rem;font-weight:700;margin:0.1rem;background:rgba(107,33,168,0.1);color:var(--p)}
+.tag.g{background:rgba(5,150,105,0.1);color:var(--g)}
+.tag.b{background:rgba(37,99,235,0.1);color:var(--b)}
+.tag.a{background:rgba(217,119,6,0.1);color:var(--a)}
+.tag.r{background:rgba(220,38,38,0.1);color:var(--r)}
+ul{padding-left:1.1rem}
+li{margin-bottom:0.2rem}
+li code{font-size:0.75rem}
+strong{font-weight:700;color:var(--t)}
+.kv{display:flex;justify-content:space-between;align-items:baseline;padding:0.2rem 0;border-bottom:1px solid rgba(107,33,168,0.06)}
+.kv:last-child{border-bottom:none}
+.kv .k{font-weight:600;font-size:0.8rem}
+.kv .v{color:var(--m);font-size:0.78rem;text-align:right;max-width:60%}
+.print-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--p);color:#fff;border:none;padding:0.65rem 1.25rem;border-radius:999px;font-weight:700;font-size:0.85rem;cursor:pointer;box-shadow:0 4px 16px rgba(107,33,168,0.3);z-index:100}
+.print-btn:hover{background:var(--p2)}
+.back-btn{display:inline-flex;align-items:center;gap:0.35rem;color:var(--m);font-size:0.78rem;text-decoration:none;margin-bottom:0.75rem}
+.back-btn:hover{color:var(--p)}
+.section-break{height:1px;background:linear-gradient(90deg,var(--p2),transparent);margin:1rem 0;opacity:0.3}
+@media print{
+  .print-btn,.back-btn{display:none!important}
+  body{font-size:0.72rem}
+  .cs-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .box{break-inside:avoid}
+  .cols-2,.cols-3,.cols-1-2{break-inside:avoid}
+  @page{size:A4;margin:1cm}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="/cheatsheets.html" class="back-btn">← All Cheatsheets</a>
+<div class="cs-header">
+  <div><h1>C / C++ Memory Cheatsheet</h1><div class="cs-subtitle">Pointers · Allocation · Structs · Classes · Common Pitfalls</div></div>
+  <div class="meta">mitraaiprojects.com</div>
+</div>
+<div class="cols-3">
+<div>
+<div class="box">
+<h3>Pointers</h3>
+<pre>int x = 42;
+int *ptr = &x;  // ptr holds address of x
+*ptr = 100;     // dereference: change x to 100
+int **pp = &ptr; // pointer to pointer
+
+// NULL pointer
+int *p = NULL;  // or nullptr (C++11)
+if (p != NULL) { *p = 5; }  // always check!
+
+// Pointer arithmetic
+int arr[] = {1,2,3,4,5};
+int *p = arr;       // points to arr[0]
+p++;                // now points to arr[1]
+*(p + 2)            // arr[3]
+p[2]                // same as *(p+2)
+
+// const with pointers
+const int *p   // can't modify *p
+int *const p   // can't modify p itself
+const int *const p  // neither</pre>
+</div>
+<div class="box">
+<h3>Memory Allocation (C)</h3>
+<pre>#include &lt;stdlib.h&gt;
+
+// malloc — uninitialized memory
+int *arr = (int*)malloc(5 * sizeof(int));
+if (arr == NULL) { /* handle error */ }
+
+// calloc — zero-initialized
+int *arr = (int*)calloc(5, sizeof(int));
+
+// realloc — resize
+arr = (int*)realloc(arr, 10 * sizeof(int));
+
+// free — ALWAYS free heap memory!
+free(arr);
+arr = NULL; // prevent dangling pointer
+
+// Typical pattern: allocate, use, free
+int *buf = (int*)malloc(n * sizeof(int));
+if (!buf) return ENOMEM;
+// ... use buf ...
+free(buf);</pre>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Structs</h3>
+<pre>// Define struct
+struct Student {
+    char name[50];
+    int  roll_no;
+    float cgpa;
+};
+
+// Usage
+struct Student s1;
+s1.roll_no = 101;
+strcpy(s1.name, "Alice");
+
+// Struct pointer
+struct Student *sp = &s1;
+sp->roll_no = 102;   // -> for pointer
+(*sp).cgpa = 9.1;    // equivalent
+
+// typedef
+typedef struct {
+    float x, y;
+} Point;
+
+Point p = {3.0, 4.0};
+
+// Dynamically allocated struct
+Student *sp = (Student*)malloc(sizeof(Student));
+free(sp);</pre>
+</div>
+<div class="box">
+<h3>C++ Classes</h3>
+<pre>class BankAccount {
+private:
+    double balance;  // private by default in class
+
+public:
+    // Constructor
+    BankAccount(double initial) : balance(initial) {}
+
+    // Destructor (cleanup)
+    ~BankAccount() { /* cleanup */ }
+
+    // Methods
+    void deposit(double amount) {
+        if (amount > 0) balance += amount;
+    }
+    double getBalance() const { return balance; }
+
+    // Operator overloading
+    BankAccount operator+(const BankAccount& b) {
+        return BankAccount(balance + b.balance);
+    }
+};
+
+// Usage
+BankAccount acc(1000.0);
+acc.deposit(500);
+BankAccount *acp = new BankAccount(0);
+delete acp;  // ALWAYS delete!</pre>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Stack vs Heap</h3>
+<table><tr><th></th><th>Stack</th><th>Heap</th></tr>
+<tr><td>Allocation</td><td>Automatic (declaration)</td><td>Manual (malloc/new)</td></tr>
+<tr><td>Deallocation</td><td>Automatic (scope end)</td><td>Manual (free/delete)</td></tr>
+<tr><td>Size</td><td>Limited (~1-8MB)</td><td>Large (GBs)</td></tr>
+<tr><td>Speed</td><td>Fast</td><td>Slower</td></tr>
+<tr><td>Lifetime</td><td>Until end of scope</td><td>Until explicitly freed</td></tr>
+<tr><td>Use for</td><td>Local variables, small arrays</td><td>Dynamic, large, long-lived data</td></tr>
+</table>
+</div>
+<div class="box red">
+<h3>Common Memory Errors</h3>
+<table><tr><th>Error</th><th>Cause</th><th>Detection</th></tr>
+<tr><td><strong>Memory leak</strong></td><td>malloc without free</td><td>Valgrind, address sanitizer</td></tr>
+<tr><td><strong>Dangling pointer</strong></td><td>Using freed memory</td><td>Set to NULL after free</td></tr>
+<tr><td><strong>Buffer overflow</strong></td><td>Write beyond array bounds</td><td>AddressSanitizer</td></tr>
+<tr><td><strong>Double free</strong></td><td>free() called twice</td><td>Crash / undefined behavior</td></tr>
+<tr><td><strong>Null deref</strong></td><td>*NULL pointer</td><td>Segfault</td></tr>
+<tr><td><strong>Stack overflow</strong></td><td>Deep recursion / large local vars</td><td>Crash with SIGSEGV</td></tr>
+</table>
+</div>
+<div class="box">
+<h3>C++ Smart Pointers</h3>
+<pre>#include &lt;memory&gt;
+
+// unique_ptr — single owner, auto-deleted
+auto p = std::make_unique&lt;int&gt;(42);
+// Automatically deleted when p goes out of scope
+
+// shared_ptr — reference counted
+auto sp1 = std::make_shared&lt;Student&gt;("Alice");
+auto sp2 = sp1;  // refcount = 2
+// Deleted when refcount drops to 0
+
+// weak_ptr — no ownership (break cycles)
+std::weak_ptr&lt;Node&gt; wp = sp;
+if (auto locked = wp.lock()) {
+    // use locked if still alive
+}
+
+// RAII pattern (Resource Acquisition Is Init)
+// Constructor acquires, destructor releases
+// smart pointers implement this automatically</pre>
+</div>
+</div>
+</div>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+</body></html>

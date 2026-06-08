@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Excel Formula Bible Cheatsheet — Mitra AI Projects</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+:root { --p:#6b21a8; --p2:#7c3aed; --g:#059669; --b:#2563eb; --a:#d97706; --r:#dc2626;
+  --bg:#fff; --s:#faf5ff; --s2:#f3e8ff; --t:#1a0533; --m:#6b4f88; --bd:rgba(107,33,168,0.15); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:0.82rem;background:var(--bg);color:var(--t);line-height:1.45}
+.page{max-width:1000px;margin:0 auto;padding:1rem 1.5rem 2rem}
+.cs-header{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:1rem 1.5rem;border-radius:10px;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.cs-header h1{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em}
+.cs-header .meta{font-size:0.75rem;opacity:0.8}
+.cs-subtitle{font-size:0.85rem;opacity:0.85;margin-top:0.2rem}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cols-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.cols-1-2{display:grid;grid-template-columns:1fr 2fr;gap:1rem}
+.box{background:var(--s);border:1px solid var(--bd);border-radius:8px;padding:0.85rem;margin-bottom:1rem}
+.box.teal{background:#f0faf9;border-color:rgba(5,150,105,0.2)}
+.box.blue{background:#eff6ff;border-color:rgba(37,99,235,0.2)}
+.box.amber{background:#fffbeb;border-color:rgba(217,119,6,0.2)}
+.box.red{background:#fef2f2;border-color:rgba(220,38,38,0.2)}
+.box h3{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--p);margin-bottom:0.6rem;padding-bottom:0.35rem;border-bottom:1px solid var(--bd)}
+.box.teal h3{color:var(--g);border-color:rgba(5,150,105,0.2)}
+.box.blue h3{color:var(--b);border-color:rgba(37,99,235,0.2)}
+.box.amber h3{color:var(--a);border-color:rgba(217,119,6,0.2)}
+.box.red h3{color:var(--r);border-color:rgba(220,38,38,0.2)}
+code,pre{font-family:'JetBrains Mono','Fira Code',monospace;font-size:0.78rem;background:rgba(107,33,168,0.06);border-radius:3px;padding:0.1rem 0.3rem}
+pre{padding:0.6rem 0.8rem;display:block;overflow-x:auto;line-height:1.5;white-space:pre-wrap;margin:0.4rem 0}
+pre.g{background:rgba(5,150,105,0.06)}
+pre.b{background:#eff6ff}
+pre.a{background:#fffbeb}
+table{width:100%;border-collapse:collapse;font-size:0.78rem;margin:0.35rem 0}
+th{background:rgba(107,33,168,0.1);color:var(--p);font-weight:700;padding:0.35rem 0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase}
+td{padding:0.3rem 0.5rem;border-bottom:1px solid rgba(107,33,168,0.07)}
+tr:hover td{background:rgba(107,33,168,0.03)}
+.tag{display:inline-block;padding:0.1rem 0.4rem;border-radius:3px;font-size:0.68rem;font-weight:700;margin:0.1rem;background:rgba(107,33,168,0.1);color:var(--p)}
+.tag.g{background:rgba(5,150,105,0.1);color:var(--g)}
+.tag.b{background:rgba(37,99,235,0.1);color:var(--b)}
+.tag.a{background:rgba(217,119,6,0.1);color:var(--a)}
+.tag.r{background:rgba(220,38,38,0.1);color:var(--r)}
+ul{padding-left:1.1rem}
+li{margin-bottom:0.2rem}
+li code{font-size:0.75rem}
+strong{font-weight:700;color:var(--t)}
+.kv{display:flex;justify-content:space-between;align-items:baseline;padding:0.2rem 0;border-bottom:1px solid rgba(107,33,168,0.06)}
+.kv:last-child{border-bottom:none}
+.kv .k{font-weight:600;font-size:0.8rem}
+.kv .v{color:var(--m);font-size:0.78rem;text-align:right;max-width:60%}
+.print-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--p);color:#fff;border:none;padding:0.65rem 1.25rem;border-radius:999px;font-weight:700;font-size:0.85rem;cursor:pointer;box-shadow:0 4px 16px rgba(107,33,168,0.3);z-index:100}
+.print-btn:hover{background:var(--p2)}
+.back-btn{display:inline-flex;align-items:center;gap:0.35rem;color:var(--m);font-size:0.78rem;text-decoration:none;margin-bottom:0.75rem}
+.back-btn:hover{color:var(--p)}
+.section-break{height:1px;background:linear-gradient(90deg,var(--p2),transparent);margin:1rem 0;opacity:0.3}
+@media print{
+  .print-btn,.back-btn{display:none!important}
+  body{font-size:0.72rem}
+  .cs-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .box{break-inside:avoid}
+  .cols-2,.cols-3,.cols-1-2{break-inside:avoid}
+  @page{size:A4;margin:1cm}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="/cheatsheets.html" class="back-btn">← All Cheatsheets</a>
+<div class="cs-header">
+  <div><h1>Excel Formula Bible</h1><div class="cs-subtitle">Lookup · Aggregation · Logic · Text · Date · Pivot · Array</div></div>
+  <div class="meta">mitraaiprojects.com</div>
+</div>
+<div class="cols-3">
+<div>
+<div class="box">
+<h3>Lookup Formulas</h3>
+<table><tr><th>Formula</th><th>Use</th></tr>
+<tr><td><code>=VLOOKUP(val,range,col,0)</code></td><td>Look rightward, exact match (0)</td></tr>
+<tr><td><code>=HLOOKUP(val,range,row,0)</code></td><td>Look downward in horizontal table</td></tr>
+<tr><td><code>=INDEX(range,row,col)</code></td><td>Return value at row,col of range</td></tr>
+<tr><td><code>=MATCH(val,range,0)</code></td><td>Return position of val in range</td></tr>
+<tr><td><code>=INDEX(D,MATCH(val,A,0))</code></td><td>Look left — more powerful than VLOOKUP</td></tr>
+<tr><td><code>=XLOOKUP(val,lookup,return)</code></td><td>Any direction, handles not-found gracefully</td></tr>
+<tr><td><code>=CHOOSE(n,v1,v2,v3)</code></td><td>Return nth value from list</td></tr>
+<tr><td><code>=INDIRECT("A"&ROW())</code></td><td>Dynamic cell reference from string</td></tr>
+</table>
+</div>
+<div class="box">
+<h3>Logical Functions</h3>
+<table><tr><th>Formula</th><th>Use</th></tr>
+<tr><td><code>=IF(cond,yes,no)</code></td><td>Basic conditional</td></tr>
+<tr><td><code>=IFS(c1,v1,c2,v2,...)</code></td><td>Multiple conditions (no nesting)</td></tr>
+<tr><td><code>=AND(c1,c2)</code></td><td>All conditions true</td></tr>
+<tr><td><code>=OR(c1,c2)</code></td><td>Any condition true</td></tr>
+<tr><td><code>=NOT(condition)</code></td><td>Reverse true/false</td></tr>
+<tr><td><code>=IFERROR(formula,val)</code></td><td>Return val if formula errors</td></tr>
+<tr><td><code>=IFNA(formula,val)</code></td><td>Return val only for #N/A errors</td></tr>
+<tr><td><code>=SWITCH(val,c1,r1,c2,r2,def)</code></td><td>Match value, return result</td></tr>
+</table>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Aggregation Formulas</h3>
+<table><tr><th>Formula</th><th>What it does</th></tr>
+<tr><td><code>=SUM(range)</code></td><td>Sum all values</td></tr>
+<tr><td><code>=SUMIF(range,"crit",sum_range)</code></td><td>Sum if single condition met</td></tr>
+<tr><td><code>=SUMIFS(sum,r1,c1,r2,c2)</code></td><td>Sum with multiple AND conditions</td></tr>
+<tr><td><code>=COUNTIF(range,"criteria")</code></td><td>Count matching cells</td></tr>
+<tr><td><code>=COUNTIFS(r1,c1,r2,c2)</code></td><td>Count with multiple conditions</td></tr>
+<tr><td><code>=AVERAGEIF(r,"crit",avg_r)</code></td><td>Average if condition met</td></tr>
+<tr><td><code>=MAXIFS(max_r,r1,c1)</code></td><td>Max with conditions</td></tr>
+<tr><td><code>=MINIFS(min_r,r1,c1)</code></td><td>Min with conditions</td></tr>
+<tr><td><code>=SUBTOTAL(9,range)</code></td><td>Sum excluding hidden rows (9=SUM)</td></tr>
+<tr><td><code>=AGGREGATE(func,opt,range)</code></td><td>Aggregation ignoring errors</td></tr>
+</table>
+</div>
+<div class="box">
+<h3>Text Functions</h3>
+<table><tr><th>Formula</th><th>Use</th></tr>
+<tr><td><code>=CONCATENATE(a,b)</code> / <code>=A&" "&B</code></td><td>Join strings</td></tr>
+<tr><td><code>=TEXTJOIN(",",1,range)</code></td><td>Join range with delimiter</td></tr>
+<tr><td><code>=LEFT(text,n)</code></td><td>First n characters</td></tr>
+<tr><td><code>=RIGHT(text,n)</code></td><td>Last n characters</td></tr>
+<tr><td><code>=MID(text,start,len)</code></td><td>Extract n chars from position</td></tr>
+<tr><td><code>=LEN(text)</code></td><td>String length</td></tr>
+<tr><td><code>=TRIM(text)</code></td><td>Remove extra spaces</td></tr>
+<tr><td><code>=CLEAN(text)</code></td><td>Remove non-printable chars</td></tr>
+<tr><td><code>=SUBSTITUTE(t,old,new)</code></td><td>Replace all occurrences</td></tr>
+<tr><td><code>=FIND("x",text)</code></td><td>Position of char (case-sensitive)</td></tr>
+<tr><td><code>=TEXT(val,"format")</code></td><td>Format number as text "₹#,##0.00"</td></tr>
+<tr><td><code>=VALUE(text)</code></td><td>Convert text to number</td></tr>
+</table>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Date & Time</h3>
+<table><tr><th>Formula</th><th>Returns</th></tr>
+<tr><td><code>=TODAY()</code></td><td>Today's date</td></tr>
+<tr><td><code>=NOW()</code></td><td>Current date+time</td></tr>
+<tr><td><code>=DATE(y,m,d)</code></td><td>Build date from parts</td></tr>
+<tr><td><code>=YEAR/MONTH/DAY(date)</code></td><td>Extract year/month/day</td></tr>
+<tr><td><code>=DATEDIF(start,end,"D")</code></td><td>Days between dates (D/M/Y)</td></tr>
+<tr><td><code>=NETWORKDAYS(s,e,holidays)</code></td><td>Working days between dates</td></tr>
+<tr><td><code>=EDATE(date,months)</code></td><td>Date n months forward/back</td></tr>
+<tr><td><code>=WEEKDAY(date,2)</code></td><td>Day of week (2=Mon=1)</td></tr>
+<tr><td><code>=EOMONTH(date,0)</code></td><td>Last day of current month</td></tr>
+</table>
+</div>
+<div class="box">
+<h3>Modern Array Functions (Excel 365)</h3>
+<table><tr><th>Formula</th><th>Use</th></tr>
+<tr><td><code>=UNIQUE(range)</code></td><td>Return unique values</td></tr>
+<tr><td><code>=SORT(range,col,1)</code></td><td>Sort range (1=ASC, -1=DESC)</td></tr>
+<tr><td><code>=SORTBY(range,by_range,-1)</code></td><td>Sort by another range</td></tr>
+<tr><td><code>=FILTER(range,cond,"not found")</code></td><td>Filter rows matching condition</td></tr>
+<tr><td><code>=SEQUENCE(rows,cols,start,step)</code></td><td>Generate number sequence</td></tr>
+<tr><td><code>=RANDARRAY(rows,cols)</code></td><td>Random numbers in array</td></tr>
+<tr><td><code>=XLOOKUP(val,l,r,,-1)</code></td><td>Approximate match (sorted)</td></tr>
+</table>
+</div>
+<div class="box">
+<h3>Pivot Table Quick Ref</h3>
+<ul>
+<li><strong>Insert</strong>: Insert → PivotTable → New Sheet</li>
+<li><strong>Rows</strong>: Drag categorical field → Row area</li>
+<li><strong>Columns</strong>: Drag field → Column area</li>
+<li><strong>Values</strong>: Drag numeric → Values (Sum/Count/Avg)</li>
+<li><strong>Filters</strong>: Drag to Filters for global filter</li>
+<li><strong>Slicers</strong>: PivotTable → Insert Slicer (visual filter)</li>
+<li><strong>Refresh</strong>: Right-click → Refresh (after data changes)</li>
+<li><strong>Calculated field</strong>: Analyse → Fields, Items, Sets</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+</body></html>

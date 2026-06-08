@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ML Models at a Glance Cheatsheet — Mitra AI Projects</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+:root { --p:#6b21a8; --p2:#7c3aed; --g:#059669; --b:#2563eb; --a:#d97706; --r:#dc2626;
+  --bg:#fff; --s:#faf5ff; --s2:#f3e8ff; --t:#1a0533; --m:#6b4f88; --bd:rgba(107,33,168,0.15); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:0.82rem;background:var(--bg);color:var(--t);line-height:1.45}
+.page{max-width:1000px;margin:0 auto;padding:1rem 1.5rem 2rem}
+.cs-header{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:1rem 1.5rem;border-radius:10px;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.cs-header h1{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em}
+.cs-header .meta{font-size:0.75rem;opacity:0.8}
+.cs-subtitle{font-size:0.85rem;opacity:0.85;margin-top:0.2rem}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cols-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.cols-1-2{display:grid;grid-template-columns:1fr 2fr;gap:1rem}
+.box{background:var(--s);border:1px solid var(--bd);border-radius:8px;padding:0.85rem;margin-bottom:1rem}
+.box.teal{background:#f0faf9;border-color:rgba(5,150,105,0.2)}
+.box.blue{background:#eff6ff;border-color:rgba(37,99,235,0.2)}
+.box.amber{background:#fffbeb;border-color:rgba(217,119,6,0.2)}
+.box.red{background:#fef2f2;border-color:rgba(220,38,38,0.2)}
+.box h3{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--p);margin-bottom:0.6rem;padding-bottom:0.35rem;border-bottom:1px solid var(--bd)}
+.box.teal h3{color:var(--g);border-color:rgba(5,150,105,0.2)}
+.box.blue h3{color:var(--b);border-color:rgba(37,99,235,0.2)}
+.box.amber h3{color:var(--a);border-color:rgba(217,119,6,0.2)}
+.box.red h3{color:var(--r);border-color:rgba(220,38,38,0.2)}
+code,pre{font-family:'JetBrains Mono','Fira Code',monospace;font-size:0.78rem;background:rgba(107,33,168,0.06);border-radius:3px;padding:0.1rem 0.3rem}
+pre{padding:0.6rem 0.8rem;display:block;overflow-x:auto;line-height:1.5;white-space:pre-wrap;margin:0.4rem 0}
+pre.g{background:rgba(5,150,105,0.06)}
+pre.b{background:#eff6ff}
+pre.a{background:#fffbeb}
+table{width:100%;border-collapse:collapse;font-size:0.78rem;margin:0.35rem 0}
+th{background:rgba(107,33,168,0.1);color:var(--p);font-weight:700;padding:0.35rem 0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase}
+td{padding:0.3rem 0.5rem;border-bottom:1px solid rgba(107,33,168,0.07)}
+tr:hover td{background:rgba(107,33,168,0.03)}
+.tag{display:inline-block;padding:0.1rem 0.4rem;border-radius:3px;font-size:0.68rem;font-weight:700;margin:0.1rem;background:rgba(107,33,168,0.1);color:var(--p)}
+.tag.g{background:rgba(5,150,105,0.1);color:var(--g)}
+.tag.b{background:rgba(37,99,235,0.1);color:var(--b)}
+.tag.a{background:rgba(217,119,6,0.1);color:var(--a)}
+.tag.r{background:rgba(220,38,38,0.1);color:var(--r)}
+ul{padding-left:1.1rem}
+li{margin-bottom:0.2rem}
+li code{font-size:0.75rem}
+strong{font-weight:700;color:var(--t)}
+.kv{display:flex;justify-content:space-between;align-items:baseline;padding:0.2rem 0;border-bottom:1px solid rgba(107,33,168,0.06)}
+.kv:last-child{border-bottom:none}
+.kv .k{font-weight:600;font-size:0.8rem}
+.kv .v{color:var(--m);font-size:0.78rem;text-align:right;max-width:60%}
+.print-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--p);color:#fff;border:none;padding:0.65rem 1.25rem;border-radius:999px;font-weight:700;font-size:0.85rem;cursor:pointer;box-shadow:0 4px 16px rgba(107,33,168,0.3);z-index:100}
+.print-btn:hover{background:var(--p2)}
+.back-btn{display:inline-flex;align-items:center;gap:0.35rem;color:var(--m);font-size:0.78rem;text-decoration:none;margin-bottom:0.75rem}
+.back-btn:hover{color:var(--p)}
+.section-break{height:1px;background:linear-gradient(90deg,var(--p2),transparent);margin:1rem 0;opacity:0.3}
+@media print{
+  .print-btn,.back-btn{display:none!important}
+  body{font-size:0.72rem}
+  .cs-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .box{break-inside:avoid}
+  .cols-2,.cols-3,.cols-1-2{break-inside:avoid}
+  @page{size:A4;margin:1cm}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="/cheatsheets.html" class="back-btn">← All Cheatsheets</a>
+<div class="cs-header">
+  <div><h1>ML Models at a Glance</h1><div class="cs-subtitle">When to use · Key params · Metrics · sklearn code</div></div>
+  <div class="meta">mitraaiprojects.com</div>
+</div>
+<div class="cols-1-2">
+<div>
+<div class="box">
+<h3>Regression Models</h3>
+<table><tr><th>Model</th><th>When to Use</th><th>Key Param</th></tr>
+<tr><td><strong>Linear Reg</strong></td><td>Linear relationships, interpretability</td><td>—</td></tr>
+<tr><td><strong>Ridge (L2)</strong></td><td>Multicollinearity, many features</td><td>alpha</td></tr>
+<tr><td><strong>Lasso (L1)</strong></td><td>Feature selection, sparse data</td><td>alpha</td></tr>
+<tr><td><strong>ElasticNet</strong></td><td>Correlated + irrelevant features</td><td>alpha, l1_ratio</td></tr>
+<tr><td><strong>Polynomial</strong></td><td>Curved relationships (add features)</td><td>degree</td></tr>
+<tr><td><strong>SVR</strong></td><td>Small-medium, non-linear</td><td>C, kernel, eps</td></tr>
+<tr><td><strong>Random Forest</strong></td><td>Non-linear, robust to outliers</td><td>n_estimators</td></tr>
+<tr><td><strong>XGBoost</strong></td><td>Tabular, best accuracy</td><td>lr, n_est, depth</td></tr>
+</table>
+</div>
+<div class="box">
+<h3>Regression Metrics</h3>
+<table><tr><th>Metric</th><th>Formula</th><th>Best for</th></tr>
+<tr><td>MAE</td><td>mean(|y-ŷ|)</td><td>Outlier-robust</td></tr>
+<tr><td>MSE</td><td>mean((y-ŷ)²)</td><td>Penalises large errors</td></tr>
+<tr><td>RMSE</td><td>√MSE</td><td>Same units as target</td></tr>
+<tr><td>R²</td><td>1−SS_res/SS_tot</td><td>Explained variance</td></tr>
+<tr><td>MAPE</td><td>mean(|y-ŷ|/|y|)</td><td>Scale-free %</td></tr>
+</table>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Classification Models</h3>
+<table><tr><th>Model</th><th>Strengths</th><th>Weaknesses</th><th>Key Params</th></tr>
+<tr><td><strong>Logistic Reg</strong></td><td>Fast, interpretable, calibrated</td><td>Linear boundary only</td><td>C, max_iter</td></tr>
+<tr><td><strong>Decision Tree</strong></td><td>Interpretable, no scaling</td><td>Overfits easily</td><td>max_depth, min_samples</td></tr>
+<tr><td><strong>Random Forest</strong></td><td>Robust, handles missing, feature imp</td><td>Slow, black box</td><td>n_estimators, max_depth</td></tr>
+<tr><td><strong>XGBoost</strong></td><td>Best tabular accuracy, regularised</td><td>Many params</td><td>learning_rate, n_estimators, max_depth</td></tr>
+<tr><td><strong>LightGBM</strong></td><td>Fastest boosting, big data</td><td>Overfits small data</td><td>num_leaves, min_data</td></tr>
+<tr><td><strong>SVM</strong></td><td>Great for small data, non-linear via kernel</td><td>Slow on large data</td><td>C, kernel, gamma</td></tr>
+<tr><td><strong>KNN</strong></td><td>Simple, no training, non-linear</td><td>Slow prediction, scaling needed</td><td>n_neighbors, metric</td></tr>
+<tr><td><strong>Naive Bayes</strong></td><td>Fast, text, small data</td><td>Feature independence assumption</td><td>var_smoothing</td></tr>
+<tr><td><strong>MLP</strong></td><td>Complex patterns, flexible</td><td>Black box, slow</td><td>hidden_layers, lr</td></tr>
+</table>
+</div>
+<div class="cols-2">
+<div class="box">
+<h3>Classification Metrics</h3>
+<table><tr><th>Metric</th><th>Formula</th><th>Use when</th></tr>
+<tr><td>Accuracy</td><td>correct/total</td><td>Balanced classes</td></tr>
+<tr><td>Precision</td><td>TP/(TP+FP)</td><td>FP costly (spam)</td></tr>
+<tr><td>Recall</td><td>TP/(TP+FN)</td><td>FN costly (cancer)</td></tr>
+<tr><td>F1</td><td>2*P*R/(P+R)</td><td>Imbalanced</td></tr>
+<tr><td>AUC-ROC</td><td>Area under ROC</td><td>Ranking quality</td></tr>
+<tr><td>PR-AUC</td><td>Area under P-R</td><td>Highly imbalanced</td></tr>
+<tr><td>MCC</td><td>Balanced metric</td><td>Very imbalanced</td></tr>
+</table>
+</div>
+<div class="box">
+<h3>Unsupervised Models</h3>
+<table><tr><th>Model</th><th>Use</th><th>Key Params</th></tr>
+<tr><td><strong>K-Means</strong></td><td>Spherical clusters</td><td>n_clusters</td></tr>
+<tr><td><strong>DBSCAN</strong></td><td>Arbitrary shape, outliers</td><td>eps, min_samples</td></tr>
+<tr><td><strong>Hierarchical</strong></td><td>Dendrogram, variable K</td><td>n_clusters, linkage</td></tr>
+<tr><td><strong>PCA</strong></td><td>Dimensionality reduction</td><td>n_components</td></tr>
+<tr><td><strong>t-SNE</strong></td><td>Visualisation only</td><td>perplexity</td></tr>
+<tr><td><strong>Iso. Forest</strong></td><td>Anomaly detection</td><td>contamination</td></tr>
+<tr><td><strong>LOF</strong></td><td>Local density anomaly</td><td>n_neighbors</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="cols-3">
+<div class="box teal">
+<h3>sklearn Cheat Sheet</h3>
+<pre class="g">from sklearn.XX import Model
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, classification_report
+
+# Pipeline (prevents leakage!)
+from sklearn.pipeline import Pipeline
+pipe = Pipeline([
+    ('scaler', StandardScaler()),
+    ('model', Model(**params))
+])
+pipe.fit(X_train, y_train)
+y_pred = pipe.predict(X_test)
+
+# Cross-validation
+cv_scores = cross_val_score(pipe, X, y, cv=5, scoring='roc_auc')
+print(f"AUC: {cv_scores.mean():.3f} ± {cv_scores.std():.3f}")</pre>
+</div>
+<div class="box blue">
+<h3>Hyperparameter Tuning</h3>
+<pre class="b">from sklearn.model_selection import GridSearchCV
+import optuna
+
+# Grid Search
+grid = GridSearchCV(model, {'C':[0.1,1,10]}, cv=5)
+grid.fit(X_train, y_train)
+print(grid.best_params_, grid.best_score_)
+
+# Optuna (Bayesian)
+def objective(trial):
+    C = trial.suggest_float('C',0.01,10,log=True)
+    model = SVC(C=C)
+    return cross_val_score(model,X,y,cv=3).mean()
+
+study = optuna.create_study(direction='maximize')
+study.optimize(objective, n_trials=50)
+print(study.best_params)</pre>
+</div>
+<div class="box amber">
+<h3>Feature Engineering Quick Ref</h3>
+<table><tr><th>Transform</th><th>Code</th></tr>
+<tr><td>Log</td><td><code>np.log1p(df["col"])</code></td></tr>
+<tr><td>Sqrt</td><td><code>np.sqrt(df["col"])</code></td></tr>
+<tr><td>Box-Cox</td><td><code>stats.boxcox(df["col"])</code></td></tr>
+<tr><td>Bin</td><td><code>pd.cut(df["col"],5)</code></td></tr>
+<tr><td>Interaction</td><td><code>df["a"]*df["b"]</code></td></tr>
+<tr><td>Polynomial</td><td><code>PolynomialFeatures(2)</code></td></tr>
+<tr><td>TF-IDF</td><td><code>TfidfVectorizer()</code></td></tr>
+<tr><td>Label enc</td><td><code>LabelEncoder()</code></td></tr>
+<tr><td>One-hot</td><td><code>pd.get_dummies()</code></td></tr>
+</table>
+</div>
+</div>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+</body></html>

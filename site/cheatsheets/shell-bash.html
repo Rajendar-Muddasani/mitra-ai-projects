@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shell/Bash Cheatsheet — Mitra AI Projects</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+:root { --p:#6b21a8; --p2:#7c3aed; --g:#059669; --b:#2563eb; --a:#d97706; --r:#dc2626;
+  --bg:#fff; --s:#faf5ff; --s2:#f3e8ff; --t:#1a0533; --m:#6b4f88; --bd:rgba(107,33,168,0.15); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:0.82rem;background:var(--bg);color:var(--t);line-height:1.45}
+.page{max-width:1000px;margin:0 auto;padding:1rem 1.5rem 2rem}
+.cs-header{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:1rem 1.5rem;border-radius:10px;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.cs-header h1{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em}
+.cs-header .meta{font-size:0.75rem;opacity:0.8}
+.cs-subtitle{font-size:0.85rem;opacity:0.85;margin-top:0.2rem}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cols-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.cols-1-2{display:grid;grid-template-columns:1fr 2fr;gap:1rem}
+.box{background:var(--s);border:1px solid var(--bd);border-radius:8px;padding:0.85rem;margin-bottom:1rem}
+.box.teal{background:#f0faf9;border-color:rgba(5,150,105,0.2)}
+.box.blue{background:#eff6ff;border-color:rgba(37,99,235,0.2)}
+.box.amber{background:#fffbeb;border-color:rgba(217,119,6,0.2)}
+.box.red{background:#fef2f2;border-color:rgba(220,38,38,0.2)}
+.box h3{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--p);margin-bottom:0.6rem;padding-bottom:0.35rem;border-bottom:1px solid var(--bd)}
+.box.teal h3{color:var(--g);border-color:rgba(5,150,105,0.2)}
+.box.blue h3{color:var(--b);border-color:rgba(37,99,235,0.2)}
+.box.amber h3{color:var(--a);border-color:rgba(217,119,6,0.2)}
+.box.red h3{color:var(--r);border-color:rgba(220,38,38,0.2)}
+code,pre{font-family:'JetBrains Mono','Fira Code',monospace;font-size:0.78rem;background:rgba(107,33,168,0.06);border-radius:3px;padding:0.1rem 0.3rem}
+pre{padding:0.6rem 0.8rem;display:block;overflow-x:auto;line-height:1.5;white-space:pre-wrap;margin:0.4rem 0}
+pre.g{background:rgba(5,150,105,0.06)}
+pre.b{background:#eff6ff}
+pre.a{background:#fffbeb}
+table{width:100%;border-collapse:collapse;font-size:0.78rem;margin:0.35rem 0}
+th{background:rgba(107,33,168,0.1);color:var(--p);font-weight:700;padding:0.35rem 0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase}
+td{padding:0.3rem 0.5rem;border-bottom:1px solid rgba(107,33,168,0.07)}
+tr:hover td{background:rgba(107,33,168,0.03)}
+.tag{display:inline-block;padding:0.1rem 0.4rem;border-radius:3px;font-size:0.68rem;font-weight:700;margin:0.1rem;background:rgba(107,33,168,0.1);color:var(--p)}
+.tag.g{background:rgba(5,150,105,0.1);color:var(--g)}
+.tag.b{background:rgba(37,99,235,0.1);color:var(--b)}
+.tag.a{background:rgba(217,119,6,0.1);color:var(--a)}
+.tag.r{background:rgba(220,38,38,0.1);color:var(--r)}
+ul{padding-left:1.1rem}
+li{margin-bottom:0.2rem}
+li code{font-size:0.75rem}
+strong{font-weight:700;color:var(--t)}
+.kv{display:flex;justify-content:space-between;align-items:baseline;padding:0.2rem 0;border-bottom:1px solid rgba(107,33,168,0.06)}
+.kv:last-child{border-bottom:none}
+.kv .k{font-weight:600;font-size:0.8rem}
+.kv .v{color:var(--m);font-size:0.78rem;text-align:right;max-width:60%}
+.print-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--p);color:#fff;border:none;padding:0.65rem 1.25rem;border-radius:999px;font-weight:700;font-size:0.85rem;cursor:pointer;box-shadow:0 4px 16px rgba(107,33,168,0.3);z-index:100}
+.print-btn:hover{background:var(--p2)}
+.back-btn{display:inline-flex;align-items:center;gap:0.35rem;color:var(--m);font-size:0.78rem;text-decoration:none;margin-bottom:0.75rem}
+.back-btn:hover{color:var(--p)}
+.section-break{height:1px;background:linear-gradient(90deg,var(--p2),transparent);margin:1rem 0;opacity:0.3}
+@media print{
+  .print-btn,.back-btn{display:none!important}
+  body{font-size:0.72rem}
+  .cs-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .box{break-inside:avoid}
+  .cols-2,.cols-3,.cols-1-2{break-inside:avoid}
+  @page{size:A4;margin:1cm}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="/cheatsheets.html" class="back-btn">← All Cheatsheets</a>
+<div class="cs-header">
+  <div><h1>Shell / Bash</h1><div class="cs-subtitle">Navigation · Files · Text · Variables · Scripts · SSH · Cron</div></div>
+  <div class="meta">mitraaiprojects.com</div>
+</div>
+<div class="cols-3">
+<div>
+<div class="box">
+<h3>Navigation & Files</h3>
+<pre>pwd              # print working dir
+ls -la           # list all with details
+ls -lh           # human readable sizes
+cd ~/projects    # go to home/projects
+cd ..            # go up one level
+cd -             # go to previous dir
+
+mkdir -p a/b/c   # create nested dirs
+cp src dst       # copy file
+cp -r dir1 dir2  # copy directory
+mv old new       # move/rename
+rm file          # remove file
+rm -rf dir       # remove dir (careful!)
+touch file.txt   # create empty file
+ln -s target link # symbolic link</pre>
+</div>
+<div class="box">
+<h3>File Viewing & Searching</h3>
+<pre>cat file.txt        # print file
+less file.txt       # page through (q=quit)
+head -20 file.txt   # first 20 lines
+tail -20 file.txt   # last 20 lines
+tail -f log.txt     # follow (live log)
+wc -l file.txt      # count lines
+wc -w file.txt      # count words
+
+# Find files
+find . -name "*.py"          # by name
+find . -name "*.py" -newer x # newer than x
+find . -type f -size +10M    # large files
+find . -mtime -7             # modified <7 days
+
+# Search content
+grep "pattern" file.txt       # basic
+grep -r "pattern" dir/        # recursive
+grep -i "case" file           # ignore case
+grep -n "pattern" file        # show line num
+grep -v "exclude" file        # invert match</pre>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Text Processing</h3>
+<pre># sed — stream editor
+sed 's/old/new/' file       # replace first
+sed 's/old/new/g' file      # replace all
+sed -i 's/old/new/g' file   # in-place
+sed '/pattern/d' file       # delete lines
+sed -n '5,10p' file         # print lines 5-10
+
+# awk — text processing
+awk '{print $1}' file       # first column
+awk '{print $NF}' file      # last column
+awk -F: '{print $1}' /etc/passwd
+awk '{sum+=$2} END{print sum}' # sum col2
+awk '$3>100 {print $0}'     # filter rows
+
+# cut, sort, uniq
+cut -d',' -f1,3 csv.txt     # columns 1,3
+sort file.txt               # sort lines
+sort -n nums.txt            # numeric sort
+sort -k2 -r data.txt        # by col2, reverse
+uniq file.txt               # remove adj dupes
+sort | uniq -c | sort -rn   # freq count</pre>
+</div>
+<div class="box">
+<h3>Pipes & Redirects</h3>
+<pre># Pipe: stdout of left → stdin of right
+cat file | grep "pattern" | wc -l
+
+# Redirect
+cmd > output.txt    # stdout to file (overwrite)
+cmd >> output.txt   # stdout to file (append)
+cmd 2> err.txt      # stderr to file
+cmd &> all.txt      # both to file
+cmd 2>&1 | tee log  # stdout+err to pipe+file
+
+# Here document
+cat > file.txt << EOF
+line 1
+line 2
+EOF
+
+# Process substitution
+diff <(sort file1) <(sort file2)
+
+# tee — write to file and stdout
+ls -la | tee output.txt</pre>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Variables & Scripts</h3>
+<pre>#!/bin/bash
+NAME="Alice"           # assign (no spaces)
+echo $NAME             # use variable
+echo "${NAME}_suffix"  # safe expansion
+
+# Command substitution
+DATE=$(date +%Y-%m-%d)
+FILES=$(find . -name "*.py")
+
+# Arithmetic
+COUNT=$((COUNT + 1))
+$((5 * 3))    # 15
+
+# Special variables
+$0    # script name
+$1    # first argument
+$@    # all arguments
+$#    # argument count
+$?    # exit code of last command
+$$    # current process ID
+$!    # PID of last background job
+
+# Conditional
+if [ $# -eq 0 ]; then
+  echo "No args"; exit 1
+fi
+[ -f file ] && echo "exists"  # file exists
+[ -d dir ]  || mkdir dir      # dir doesn't exist</pre>
+</div>
+<div class="box">
+<h3>Loops & Control</h3>
+<pre># For loop
+for f in *.py; do
+  echo "Processing $f"
+  python "$f"
+done
+
+for i in {1..10}; do echo $i; done
+
+# While loop
+while IFS= read -r line; do
+  echo "$line"
+done < file.txt
+
+# Until
+until ping -c1 host &>/dev/null; do
+  sleep 5
+done
+
+# Functions
+deploy() {
+  local env=$1         # local variable
+  echo "Deploying to $env"
+  git push "$env" main
+}
+deploy production
+
+# Exit codes
+exit 0   # success
+exit 1   # general error
+command && echo "ok" || echo "failed"</pre>
+</div>
+<div class="box">
+<h3>Permissions & SSH</h3>
+<pre># chmod
+chmod +x script.sh       # add execute
+chmod 644 file.txt       # rw-r--r--
+chmod 755 dir/           # rwxr-xr-x
+chmod -R 755 dir/        # recursive
+
+# chown
+chown user:group file    # change owner
+sudo chown -R www-data /var/www
+
+# SSH
+ssh user@host            # connect
+ssh -i key.pem user@host # with key
+scp local user@host:path # copy to remote
+rsync -av src/ user@host:dst/
+
+# SSH config (~/.ssh/config)
+Host myserver
+  HostName 1.2.3.4
+  User ubuntu
+  IdentityFile ~/.ssh/my-key.pem
+
+# Cron (crontab -e)
+# MIN HOUR DOM MON DOW CMD
+0 2 * * * /path/to/script.sh   # daily 2am
+*/5 * * * * /path/run.sh        # every 5 min
+0 9 * * 1 /weekly.sh            # Monday 9am</pre>
+</div>
+</div>
+</div>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+</body></html>

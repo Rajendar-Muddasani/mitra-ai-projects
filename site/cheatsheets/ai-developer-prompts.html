@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI for Developers Cheatsheet — Mitra AI Projects</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+:root { --p:#6b21a8; --p2:#7c3aed; --g:#059669; --b:#2563eb; --a:#d97706; --r:#dc2626;
+  --bg:#fff; --s:#faf5ff; --s2:#f3e8ff; --t:#1a0533; --m:#6b4f88; --bd:rgba(107,33,168,0.15); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:0.82rem;background:var(--bg);color:var(--t);line-height:1.45}
+.page{max-width:1000px;margin:0 auto;padding:1rem 1.5rem 2rem}
+.cs-header{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:1rem 1.5rem;border-radius:10px;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.cs-header h1{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em}
+.cs-header .meta{font-size:0.75rem;opacity:0.8}
+.cs-subtitle{font-size:0.85rem;opacity:0.85;margin-top:0.2rem}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cols-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.cols-1-2{display:grid;grid-template-columns:1fr 2fr;gap:1rem}
+.box{background:var(--s);border:1px solid var(--bd);border-radius:8px;padding:0.85rem;margin-bottom:1rem}
+.box.teal{background:#f0faf9;border-color:rgba(5,150,105,0.2)}
+.box.blue{background:#eff6ff;border-color:rgba(37,99,235,0.2)}
+.box.amber{background:#fffbeb;border-color:rgba(217,119,6,0.2)}
+.box.red{background:#fef2f2;border-color:rgba(220,38,38,0.2)}
+.box h3{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--p);margin-bottom:0.6rem;padding-bottom:0.35rem;border-bottom:1px solid var(--bd)}
+.box.teal h3{color:var(--g);border-color:rgba(5,150,105,0.2)}
+.box.blue h3{color:var(--b);border-color:rgba(37,99,235,0.2)}
+.box.amber h3{color:var(--a);border-color:rgba(217,119,6,0.2)}
+.box.red h3{color:var(--r);border-color:rgba(220,38,38,0.2)}
+code,pre{font-family:'JetBrains Mono','Fira Code',monospace;font-size:0.78rem;background:rgba(107,33,168,0.06);border-radius:3px;padding:0.1rem 0.3rem}
+pre{padding:0.6rem 0.8rem;display:block;overflow-x:auto;line-height:1.5;white-space:pre-wrap;margin:0.4rem 0}
+pre.g{background:rgba(5,150,105,0.06)}
+pre.b{background:#eff6ff}
+pre.a{background:#fffbeb}
+table{width:100%;border-collapse:collapse;font-size:0.78rem;margin:0.35rem 0}
+th{background:rgba(107,33,168,0.1);color:var(--p);font-weight:700;padding:0.35rem 0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase}
+td{padding:0.3rem 0.5rem;border-bottom:1px solid rgba(107,33,168,0.07)}
+tr:hover td{background:rgba(107,33,168,0.03)}
+.tag{display:inline-block;padding:0.1rem 0.4rem;border-radius:3px;font-size:0.68rem;font-weight:700;margin:0.1rem;background:rgba(107,33,168,0.1);color:var(--p)}
+.tag.g{background:rgba(5,150,105,0.1);color:var(--g)}
+.tag.b{background:rgba(37,99,235,0.1);color:var(--b)}
+.tag.a{background:rgba(217,119,6,0.1);color:var(--a)}
+.tag.r{background:rgba(220,38,38,0.1);color:var(--r)}
+ul{padding-left:1.1rem}
+li{margin-bottom:0.2rem}
+li code{font-size:0.75rem}
+strong{font-weight:700;color:var(--t)}
+.kv{display:flex;justify-content:space-between;align-items:baseline;padding:0.2rem 0;border-bottom:1px solid rgba(107,33,168,0.06)}
+.kv:last-child{border-bottom:none}
+.kv .k{font-weight:600;font-size:0.8rem}
+.kv .v{color:var(--m);font-size:0.78rem;text-align:right;max-width:60%}
+.print-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--p);color:#fff;border:none;padding:0.65rem 1.25rem;border-radius:999px;font-weight:700;font-size:0.85rem;cursor:pointer;box-shadow:0 4px 16px rgba(107,33,168,0.3);z-index:100}
+.print-btn:hover{background:var(--p2)}
+.back-btn{display:inline-flex;align-items:center;gap:0.35rem;color:var(--m);font-size:0.78rem;text-decoration:none;margin-bottom:0.75rem}
+.back-btn:hover{color:var(--p)}
+.section-break{height:1px;background:linear-gradient(90deg,var(--p2),transparent);margin:1rem 0;opacity:0.3}
+@media print{
+  .print-btn,.back-btn{display:none!important}
+  body{font-size:0.72rem}
+  .cs-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .box{break-inside:avoid}
+  .cols-2,.cols-3,.cols-1-2{break-inside:avoid}
+  @page{size:A4;margin:1cm}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="/cheatsheets.html" class="back-btn">← All Cheatsheets</a>
+<div class="cs-header">
+  <div><h1>AI for Developers — Prompt Toolkit</h1><div class="cs-subtitle">Code Review · Documentation · Testing · Debugging · Refactoring · Architecture</div></div>
+  <div class="meta">mitraaiprojects.com</div>
+</div>
+<div class="cols-3">
+<div>
+<div class="box">
+<h3>Code Review</h3>
+<pre>You are a senior Python developer.
+Review this code for:
+1. Security vulnerabilities
+2. Performance bottlenecks
+3. Readability issues
+4. Missing error handling
+5. Potential bugs
+
+Rate each 1-5 (5=no issues).
+Provide specific line references.
+
+```python
+{paste_code_here}
+```</pre>
+</div>
+<div class="box">
+<h3>Generate Tests</h3>
+<pre>Write pytest unit tests for this function.
+Cover:
+- Happy path (normal inputs)
+- Edge cases (empty, None, boundaries)
+- Error cases (invalid inputs, exceptions)
+- At least 8 test functions
+
+```python
+{function_code}
+```
+
+Use descriptive test names:
+def test_should_return_X_when_Y():</pre>
+</div>
+<div class="box">
+<h3>Write Documentation</h3>
+<pre>Write a Google-style docstring for this
+function. Include:
+- Brief one-line summary
+- Args: each parameter with type + description
+- Returns: type + description
+- Raises: exceptions with conditions
+- Example: working usage example
+
+```python
+{function_code}
+```</pre>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Debug This Error</h3>
+<pre>I'm getting this error in Python:
+
+ERROR:
+{paste_error_traceback}
+
+CODE (relevant section):
+```python
+{paste_code}
+```
+
+CONTEXT:
+- Input: {what_data_you_passed}
+- Expected: {what_should_happen}
+- Actual: {what_happened}
+
+Please:
+1. Explain what caused the error
+2. Provide the fixed code
+3. Explain how to prevent it</pre>
+</div>
+<div class="box">
+<h3>Refactor Code</h3>
+<pre>Refactor this code to:
+- Follow PEP 8 style guidelines
+- Use appropriate design patterns
+- Improve readability
+- Add type hints
+- Remove code duplication
+- Improve performance where possible
+
+Explain each significant change.
+Keep the same public API.
+
+```python
+{paste_code}
+```</pre>
+</div>
+<div class="box">
+<h3>Explain Code</h3>
+<pre>Explain this code to a junior developer
+who knows Python basics but has never
+seen this pattern.
+
+For each section:
+1. What it does (plain English)
+2. Why it's written this way
+3. What would break if removed
+
+```python
+{paste_code}
+```</pre>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>System Design</h3>
+<pre>Design a system for: {description}
+
+Requirements:
+- Scale: {users} users, {requests} req/s
+- Latency: {target} p99
+- Availability: {uptime}%
+
+Please cover:
+1. Architecture diagram (ASCII)
+2. Component choices + reasons
+3. Database schema (if applicable)
+4. API design (key endpoints)
+5. Scaling strategy
+6. Failure modes + mitigations</pre>
+</div>
+<div class="box">
+<h3>SQL / Data Queries</h3>
+<pre><strong>Natural language → SQL</strong>
+I have these tables:
+{paste_schema_or_describe_tables}
+
+Write a SQL query that:
+{describe_what_you_want}
+
+Optimise for performance.
+Explain the query logic.
+
+<strong>Debug slow query</strong>
+This query is slow (~5s on 1M rows).
+Suggest indexes and query optimisations.
+```sql
+{paste_slow_query}
+```</pre>
+</div>
+<div class="box">
+<h3>ML Code Helpers</h3>
+<pre><strong>Implement from scratch:</strong>
+Implement {algorithm} in Python
+without using sklearn.
+Include: forward pass, loss, gradients.
+
+<strong>Optimise training loop:</strong>
+This training loop is slow.
+Add: mixed precision, gradient
+checkpointing, pin_memory.
+```python
+{paste_training_code}
+```
+
+<strong>Debug model not converging:</strong>
+My model loss is {behaviour}.
+Architecture: {describe_model}
+Hyperparameters: {list_params}
+What could cause this? How to fix?</pre>
+</div>
+</div>
+</div>
+<div class="cols-2">
+<div class="box blue">
+<h3>Git & DevOps Prompts</h3>
+<pre class="b"><strong>Write commit message:</strong>
+Write a conventional commit message for:
+Changed: {describe_changes}
+Reason: {why_changed}
+Format: type(scope): description
+
+<strong>Write PR description:</strong>
+Write a PR description for these changes:
+{git_diff_or_description}
+Include: what changed, why, how tested.
+
+<strong>Write Dockerfile:</strong>
+Write an optimised Dockerfile for a
+Python {framework} app with:
+- Non-root user for security
+- Efficient layer caching
+- Health check endpoint
+- requirements.txt already present</pre>
+</div>
+<div class="box amber">
+<h3>Power Tips</h3>
+<table><tr><th>Tip</th><th>How</th></tr>
+<tr><td>Get shorter answers</td><td>"Reply in under 100 words"</td></tr>
+<tr><td>Get code only</td><td>"Return ONLY the code, no explanation"</td></tr>
+<tr><td>Continue generation</td><td>"Continue from where you left off"</td></tr>
+<tr><td>Force specific format</td><td>Show an example of the format you want</td></tr>
+<tr><td>Reduce hallucination</td><td>"If you're not sure, say so explicitly"</td></tr>
+<tr><td>Iterative refinement</td><td>"Now make it more efficient" / "Now add error handling"</td></tr>
+<tr><td>Different angle</td><td>"Approach this differently, focusing on X"</td></tr>
+<tr><td>Role assignment</td><td>"Act as a {expert} reviewing this {artifact}"</td></tr>
+</table>
+</div>
+</div>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+</body></html>

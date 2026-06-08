@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIML Interview Prep Cheatsheet — Mitra AI Projects</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+:root { --p:#6b21a8; --p2:#7c3aed; --g:#059669; --b:#2563eb; --a:#d97706; --r:#dc2626;
+  --bg:#fff; --s:#faf5ff; --s2:#f3e8ff; --t:#1a0533; --m:#6b4f88; --bd:rgba(107,33,168,0.15); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:0.82rem;background:var(--bg);color:var(--t);line-height:1.45}
+.page{max-width:1000px;margin:0 auto;padding:1rem 1.5rem 2rem}
+.cs-header{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:1rem 1.5rem;border-radius:10px;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.cs-header h1{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em}
+.cs-header .meta{font-size:0.75rem;opacity:0.8}
+.cs-subtitle{font-size:0.85rem;opacity:0.85;margin-top:0.2rem}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cols-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.cols-1-2{display:grid;grid-template-columns:1fr 2fr;gap:1rem}
+.box{background:var(--s);border:1px solid var(--bd);border-radius:8px;padding:0.85rem;margin-bottom:1rem}
+.box.teal{background:#f0faf9;border-color:rgba(5,150,105,0.2)}
+.box.blue{background:#eff6ff;border-color:rgba(37,99,235,0.2)}
+.box.amber{background:#fffbeb;border-color:rgba(217,119,6,0.2)}
+.box.red{background:#fef2f2;border-color:rgba(220,38,38,0.2)}
+.box h3{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--p);margin-bottom:0.6rem;padding-bottom:0.35rem;border-bottom:1px solid var(--bd)}
+.box.teal h3{color:var(--g);border-color:rgba(5,150,105,0.2)}
+.box.blue h3{color:var(--b);border-color:rgba(37,99,235,0.2)}
+.box.amber h3{color:var(--a);border-color:rgba(217,119,6,0.2)}
+.box.red h3{color:var(--r);border-color:rgba(220,38,38,0.2)}
+code,pre{font-family:'JetBrains Mono','Fira Code',monospace;font-size:0.78rem;background:rgba(107,33,168,0.06);border-radius:3px;padding:0.1rem 0.3rem}
+pre{padding:0.6rem 0.8rem;display:block;overflow-x:auto;line-height:1.5;white-space:pre-wrap;margin:0.4rem 0}
+pre.g{background:rgba(5,150,105,0.06)}
+pre.b{background:#eff6ff}
+pre.a{background:#fffbeb}
+table{width:100%;border-collapse:collapse;font-size:0.78rem;margin:0.35rem 0}
+th{background:rgba(107,33,168,0.1);color:var(--p);font-weight:700;padding:0.35rem 0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase}
+td{padding:0.3rem 0.5rem;border-bottom:1px solid rgba(107,33,168,0.07)}
+tr:hover td{background:rgba(107,33,168,0.03)}
+.tag{display:inline-block;padding:0.1rem 0.4rem;border-radius:3px;font-size:0.68rem;font-weight:700;margin:0.1rem;background:rgba(107,33,168,0.1);color:var(--p)}
+.tag.g{background:rgba(5,150,105,0.1);color:var(--g)}
+.tag.b{background:rgba(37,99,235,0.1);color:var(--b)}
+.tag.a{background:rgba(217,119,6,0.1);color:var(--a)}
+.tag.r{background:rgba(220,38,38,0.1);color:var(--r)}
+ul{padding-left:1.1rem}
+li{margin-bottom:0.2rem}
+li code{font-size:0.75rem}
+strong{font-weight:700;color:var(--t)}
+.kv{display:flex;justify-content:space-between;align-items:baseline;padding:0.2rem 0;border-bottom:1px solid rgba(107,33,168,0.06)}
+.kv:last-child{border-bottom:none}
+.kv .k{font-weight:600;font-size:0.8rem}
+.kv .v{color:var(--m);font-size:0.78rem;text-align:right;max-width:60%}
+.print-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--p);color:#fff;border:none;padding:0.65rem 1.25rem;border-radius:999px;font-weight:700;font-size:0.85rem;cursor:pointer;box-shadow:0 4px 16px rgba(107,33,168,0.3);z-index:100}
+.print-btn:hover{background:var(--p2)}
+.back-btn{display:inline-flex;align-items:center;gap:0.35rem;color:var(--m);font-size:0.78rem;text-decoration:none;margin-bottom:0.75rem}
+.back-btn:hover{color:var(--p)}
+.section-break{height:1px;background:linear-gradient(90deg,var(--p2),transparent);margin:1rem 0;opacity:0.3}
+@media print{
+  .print-btn,.back-btn{display:none!important}
+  body{font-size:0.72rem}
+  .cs-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .box{break-inside:avoid}
+  .cols-2,.cols-3,.cols-1-2{break-inside:avoid}
+  @page{size:A4;margin:1cm}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="/cheatsheets.html" class="back-btn">← All Cheatsheets</a>
+<div class="cs-header">
+  <div><h1>AI/ML Interview Prep — Quick Reference</h1><div class="cs-subtitle">Concepts · Formulas · Trade-offs · One-liners to memorise</div></div>
+  <div class="meta">mitraaiprojects.com</div>
+</div>
+<div class="cols-3">
+<div>
+<div class="box">
+<h3>Must-Know Definitions (1 line each)</h3>
+<table><tr><th>Term</th><th>One-liner</th></tr>
+<tr><td>Overfitting</td><td>Model memorises training data, fails on new data</td></tr>
+<tr><td>Underfitting</td><td>Model too simple, misses patterns in training data</td></tr>
+<tr><td>Bias</td><td>Error from wrong assumptions — systematic misfit</td></tr>
+<tr><td>Variance</td><td>Error from sensitivity to training noise</td></tr>
+<tr><td>Cross-entropy</td><td>−Σ y·log(p) — measures distribution divergence</td></tr>
+<tr><td>Gradient descent</td><td>Iteratively move weights in negative gradient direction</td></tr>
+<tr><td>Backpropagation</td><td>Chain rule applied to compute gradients in neural nets</td></tr>
+<tr><td>Attention</td><td>softmax(QK^T/√d)·V — weighted sum over values</td></tr>
+<tr><td>Embedding</td><td>Dense vector representing token/item semantically</td></tr>
+<tr><td>Transfer learning</td><td>Reuse pretrained features for new related task</td></tr>
+<tr><td>RAG</td><td>Retrieve relevant docs → inject as context → generate answer</td></tr>
+<tr><td>Fine-tuning</td><td>Continue training pretrained model on task-specific data</td></tr>
+<tr><td>LoRA</td><td>Add trainable low-rank matrices to frozen pretrained weights</td></tr>
+<tr><td>RLHF</td><td>SFT → reward model on human prefs → PPO to optimise</td></tr>
+<tr><td>Hallucination</td><td>LLM generates confident but factually wrong information</td></tr>
+</table>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Key Formulas</h3>
+<table><tr><th>Formula</th><th>Name</th></tr>
+<tr><td><code>TP/(TP+FP)</code></td><td>Precision</td></tr>
+<tr><td><code>TP/(TP+FN)</code></td><td>Recall</td></tr>
+<tr><td><code>2PR/(P+R)</code></td><td>F1 Score</td></tr>
+<tr><td><code>1−SS_res/SS_tot</code></td><td>R² Score</td></tr>
+<tr><td><code>mean((y−ŷ)²)</code></td><td>MSE</td></tr>
+<tr><td><code>softmax(QK^T/√d)·V</code></td><td>Attention</td></tr>
+<tr><td><code>−Σ y·log(p)</code></td><td>Cross-entropy</td></tr>
+<tr><td><code>w += α·∇w</code></td><td>Gradient descent</td></tr>
+<tr><td><code>W+B·A</code></td><td>LoRA update</td></tr>
+<tr><td><code>W·|x|+(1−W)·x²</code></td><td>ElasticNet</td></tr>
+</table>
+</div>
+<div class="box">
+<h3>Algorithm Complexity</h3>
+<table><tr><th>Algorithm</th><th>Train</th><th>Predict</th></tr>
+<tr><td>Linear Regression</td><td>O(nd²)</td><td>O(d)</td></tr>
+<tr><td>KNN</td><td>O(1)</td><td>O(nd)</td></tr>
+<tr><td>Decision Tree</td><td>O(n·d·log n)</td><td>O(depth)</td></tr>
+<tr><td>Random Forest</td><td>O(T·n·d·log n)</td><td>O(T·depth)</td></tr>
+<tr><td>SVM</td><td>O(n²–n³)</td><td>O(sv·d)</td></tr>
+<tr><td>Self-attention</td><td>O(n²·d)</td><td>O(n²·d)</td></tr>
+</table>
+</div>
+</div>
+<div>
+<div class="box">
+<h3>Common Trade-offs to Know</h3>
+<table><tr><th>Choice A</th><th>vs</th><th>Choice B</th><th>When to choose B</th></tr>
+<tr><td>Accuracy</td><td>vs</td><td>Interpretability</td><td>Regulated domains (medical, legal)</td></tr>
+<tr><td>Precision</td><td>vs</td><td>Recall</td><td>FN costly (cancer screening)</td></tr>
+<tr><td>Bias (simple)</td><td>vs</td><td>Variance (complex)</td><td>More data → can increase complexity</td></tr>
+<tr><td>Fine-tuning</td><td>vs</td><td>RAG</td><td>Knowledge changes frequently</td></tr>
+<tr><td>LSTM</td><td>vs</td><td>Transformer</td><td>Always Transformer (if compute allows)</td></tr>
+<tr><td>Ridge</td><td>vs</td><td>Lasso</td><td>Need feature selection</td></tr>
+<tr><td>GPU training</td><td>vs</td><td>CPU inference</td><td>Small model → CPU saves cost</td></tr>
+<tr><td>Deep model</td><td>vs</td><td>Ensemble</td><td>Structured/tabular → tree ensemble</td></tr>
+</table>
+</div>
+<div class="box">
+<h3>Evaluation Metrics Quick Ref</h3>
+<table><tr><th>Metric</th><th>Task</th><th>Key insight</th></tr>
+<tr><td>Accuracy</td><td>Classification</td><td>Misleading for imbalanced classes</td></tr>
+<tr><td>AUC-ROC</td><td>Binary clf</td><td>Threshold-independent ranking quality</td></tr>
+<tr><td>PR-AUC</td><td>Imbalanced</td><td>Better than ROC when positives are rare</td></tr>
+<tr><td>BLEU</td><td>Translation</td><td>n-gram precision, brevity penalised</td></tr>
+<tr><td>ROUGE-L</td><td>Summarisation</td><td>Longest common subsequence recall</td></tr>
+<tr><td>MAPE</td><td>Forecasting</td><td>Scale-free %, bad when actuals ≈ 0</td></tr>
+<tr><td>Silhouette</td><td>Clustering</td><td>1=perfect, 0=overlapping, −1=wrong</td></tr>
+<tr><td>Perplexity</td><td>LLM</td><td>Lower = model is more confident</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="cols-2">
+<div class="box amber">
+<h3>Viva-Killer Questions with Answers</h3>
+<table><tr><th>Q</th><th>Answer keyword</th></tr>
+<tr><td>Why scale before SVM?</td><td>SVM uses Euclidean distance — large features dominate the margin</td></tr>
+<tr><td>Random Forest vs XGBoost?</td><td>RF: parallel bagging, variance reduction. XGB: sequential boosting, bias reduction</td></tr>
+<tr><td>Why use log loss not MSE for classification?</td><td>MSE doesn't penalise confident wrong predictions enough; log loss heavily penalises them</td></tr>
+<tr><td>Why ADAM not SGD always?</td><td>SGD often better final accuracy for CNNs; Adam converges faster, better for NLP</td></tr>
+<tr><td>Vanishing gradient fix?</td><td>ReLU (no saturation), ResNet skip connections, LSTM gates, BatchNorm</td></tr>
+<tr><td>What is k in k-fold?</td><td>Number of equal-sized folds. k=5 or 10 is standard. Each fold serves as test set once.</td></tr>
+<tr><td>Why use attention instead of RNN?</td><td>Parallel (not sequential), captures long-range dependencies equally, no vanishing gradient</td></tr>
+<tr><td>What is data leakage?</td><td>Future/test information leaks into training — e.g. scaling on full data before split</td></tr>
+</table>
+</div>
+<div class="box red">
+<h3>Coding Interview Patterns (ML)</h3>
+<pre style="font-size:0.72rem"><strong>Linear Regression:</strong>
+w -= lr * (2/m) * X.T @ (X@w - y)
+
+<strong>Softmax:</strong>
+e = np.exp(x - x.max())
+return e / e.sum()
+
+<strong>K-Means:</strong>
+labels = np.argmin(dist(X,centroids),axis=1)
+centroids = [X[labels==k].mean(0) for k in range(K)]
+
+<strong>Cosine similarity:</strong>
+np.dot(a,b) / (np.linalg.norm(a)*np.linalg.norm(b))
+
+<strong>Precision/Recall:</strong>
+precision = TP / (TP + FP)
+recall    = TP / (TP + FN)
+f1 = 2*precision*recall / (precision+recall)
+
+<strong>RMSE:</strong>
+np.sqrt(np.mean((y_true - y_pred)**2))</pre>
+</div>
+</div>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+</body></html>

@@ -254,18 +254,18 @@
 
 | ID | Title | Markdown source | PDF generated | S3 uploaded |
 |---|---|---|---|---|
-| C1 | Python Basics | ✅ | ❌ | ❌ |
-| C2 | Python for Data (Pandas / NumPy) | ❌ | ❌ | ❌ |
-| C3 | SQL Quick Reference | ✅ | ❌ | ❌ |
-| C4 | Shell / Bash | ❌ | ❌ | ❌ |
-| C5 | Excel Formula Bible | ❌ | ❌ | ❌ |
-| C6 | C/C++ Memory Cheatsheet | ❌ | ❌ | ❌ |
-| C7 | ML Models at a Glance | ❌ | ❌ | ❌ |
-| C8 | Deep Learning Layers | ❌ | ❌ | ❌ |
-| C9 | GenAI Prompt Patterns | ❌ | ❌ | ❌ |
-| C10 | AI for Developers Prompts | ❌ | ❌ | ❌ |
-| C11 | AIML Interview Prep | ❌ | ❌ | ❌ |
-| C12 | Portfolio & GitHub Profile Guide | ❌ | ❌ | ❌ |
+| C1 | Python Basics | ✅ | ✅ | ✅ |
+| C2 | Python for Data (Pandas / NumPy) | ✅ | ✅ | ✅ |
+| C3 | SQL Quick Reference | ✅ | ✅ | ✅ |
+| C4 | Shell / Bash | ✅ | ✅ | ✅ |
+| C5 | Excel Formula Bible | ✅ | ✅ | ✅ |
+| C6 | C/C++ Memory Cheatsheet | ✅ | ✅ | ✅ |
+| C7 | ML Models at a Glance | ✅ | ✅ | ✅ |
+| C8 | Deep Learning Layers | ✅ | ✅ | ✅ |
+| C9 | GenAI Prompt Patterns | ✅ | ✅ | ✅ |
+| C10 | AI for Developers Prompts | ✅ | ✅ | ✅ |
+| C11 | AIML Interview Prep | ✅ | ✅ | ✅ |
+| C12 | Portfolio & GitHub Profile Guide | ✅ | ✅ | ✅ |
 
 > Generate: `python scripts/generate_cheatsheets.py --all`
 > Upload: `python scripts/deploy_s3.py --type cheatsheets`
