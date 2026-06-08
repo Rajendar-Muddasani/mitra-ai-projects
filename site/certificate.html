@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate — Mitra AI Projects</title>
+  <meta name="description" content="Course completion certificate from Mitra AI Projects.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    :root { --gold:#b8860b; --gold-light:#d4a017; --gold-bg:rgba(184,134,11,0.06); }
+    body { background: #f8f5f0; }
+
+    /* Loading / Error states */
+    .cert-loading { text-align:center; padding:4rem 2rem; color:var(--muted); }
+    .cert-error { text-align:center; padding:4rem 2rem; }
+    .cert-error h2 { color:var(--danger); margin-bottom:0.5rem; }
+
+    /* Verified banner */
+    .verified-banner {
+      display:flex; align-items:center; justify-content:center; gap:0.6rem;
+      background:rgba(5,150,105,0.08); border:1px solid rgba(5,150,105,0.25);
+      border-radius:999px; padding:0.45rem 1.25rem; font-size:0.82rem;
+      font-weight:700; color:var(--success); margin-bottom:1.5rem;
+      font-family:'JetBrains Mono',monospace;
+    }
+
+    /* The certificate itself */
+    .certificate-wrap {
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .certificate {
+      background: #fffdf7;
+      border: 3px solid var(--gold);
+      border-radius: 4px;
+      padding: 0;
+      position: relative;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.12), 0 0 0 8px rgba(184,134,11,0.08);
+      overflow: hidden;
+    }
+
+    /* Decorative corner ornaments */
+    .cert-corner {
+      position: absolute;
+      width: 60px; height: 60px;
+      border-color: var(--gold-light);
+      border-style: solid;
+      opacity: 0.5;
+    }
+    .cert-corner.tl { top:12px; left:12px; border-width:2px 0 0 2px; }
+    .cert-corner.tr { top:12px; right:12px; border-width:2px 2px 0 0; }
+    .cert-corner.bl { bottom:12px; left:12px; border-width:0 0 2px 2px; }
+    .cert-corner.br { bottom:12px; right:12px; border-width:0 2px 2px 0; }
+
+    /* Background pattern */
+    .cert-bg-pattern {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(184,134,11,0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Inner content */
+    .cert-inner {
+      position: relative; z-index: 1;
+      padding: 3rem 4rem;
+      text-align: center;
+    }
+
+    .cert-logo {
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .cert-logo-mark {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #6b21a8, #7c3aed);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.1rem; color: #fff;
+      font-family: 'Nunito', sans-serif;
+    }
+    .cert-logo-name {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800; font-size: 1.15rem; color: #1a0533;
+    }
+    .cert-logo-name span { color: #6b21a8; }
+
+    .cert-divider {
+      width: 80px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 1rem auto;
+    }
+    .cert-divider.wide { width: 180px; }
+
+    .cert-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.25em;
+      color: var(--gold); margin-bottom: 0.5rem;
+    }
+
+    .cert-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem; font-style: italic;
+      color: #3d2b00; margin-bottom: 1.5rem;
+    }
+
+    .cert-certify-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; color: #5a4020; margin-bottom: 0.5rem;
+    }
+
+    .cert-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 800; color: #1a0533;
+      margin: 0.25rem 0 0.75rem;
+      line-height: 1.1;
+    }
+
+    .cert-completed-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; color: #5a4020; margin-bottom: 0.5rem;
+    }
+
+    .cert-course {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      font-weight: 700; color: #6b21a8;
+      margin: 0.25rem 0 0.5rem;
+    }
+
+    .cert-platform {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem; color: #5a4020; font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    /* Footer row */
+    .cert-footer {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      border-top: 1px solid rgba(184,134,11,0.25);
+      padding-top: 1.25rem; margin-top: 1.5rem;
+      gap: 1rem;
+    }
+    .cert-footer-item { text-align: center; flex: 1; }
+    .cert-footer-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: #8a7060; margin-bottom: 0.25rem;
+    }
+    .cert-footer-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.88rem; color: #3d2b00; font-weight: 600;
+    }
+    .cert-footer-line {
+      width: 80%; height: 1px; background: rgba(184,134,11,0.3);
+      margin: 0.35rem auto 0;
+    }
+
+    .cert-seal {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6b21a8, #7c3aed);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column;
+      color: #fff; font-size: 0.55rem; font-family: 'JetBrains Mono', monospace;
+      text-align: center; text-transform: uppercase; letter-spacing: 0.05em;
+      font-weight: 600; line-height: 1.3;
+      box-shadow: 0 2px 8px rgba(107,33,168,0.3);
+    }
+
+    .cert-id {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; color: #8a7060;
+      background: rgba(184,134,11,0.06);
+      padding: 0.3rem 0.75rem; border-radius: 4px;
+      margin-top: 0.5rem; display: inline-block;
+    }
+
+    /* Action buttons */
+    .cert-actions {
+      display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .cert-legal {
+      font-size: 0.72rem; color: var(--muted);
+      max-width: 600px; margin: 1.25rem auto 0;
+      text-align: center; line-height: 1.6;
+    }
+
+    @media print {
+      nav, .cert-actions, .verified-banner, footer, .chat-widget, .cert-legal { display: none !important; }
+      body { background: #fff; }
+      .certificate-wrap { margin: 0; padding: 0; max-width: 100%; }
+      .certificate { box-shadow: none; border: 2px solid var(--gold); }
+      .cert-inner { padding: 2rem 3rem; }
+      @page { size: A4 landscape; margin: 1cm; }
+    }
+
+    @media (max-width: 600px) {
+      .cert-inner { padding: 1.75rem 1.5rem; }
+      .cert-footer { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/profile.html">My Profile</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<div class="container" style="padding-top:1.5rem;padding-bottom:3rem;">
+
+  <div id="loadingState" class="cert-loading">
+    <div style="font-size:2rem;margin-bottom:0.75rem;">🎓</div>
+    <p>Loading certificate...</p>
+  </div>
+
+  <div id="errorState" class="cert-error" style="display:none;">
+    <div style="font-size:2.5rem;margin-bottom:0.75rem;">🔍</div>
+    <h2>Certificate Not Found</h2>
+    <p style="color:var(--muted);margin-bottom:1.5rem;">This certificate ID does not exist or may have been revoked.</p>
+    <a href="/profile.html" class="btn btn-outline">Go to My Profile →</a>
+  </div>
+
+  <div id="certContent" style="display:none;">
+    <div class="verified-banner">
+      ✅ Verified Certificate &nbsp;·&nbsp; mitraaiprojects.com
+    </div>
+
+    <div class="certificate-wrap">
+      <div class="certificate">
+        <div class="cert-bg-pattern"></div>
+        <div class="cert-corner tl"></div>
+        <div class="cert-corner tr"></div>
+        <div class="cert-corner bl"></div>
+        <div class="cert-corner br"></div>
+
+        <div class="cert-inner">
+          <!-- Logo -->
+          <div class="cert-logo">
+            <div class="cert-logo-mark">M</div>
+            <div class="cert-logo-name">Mitra<span>AI</span> Projects</div>
+          </div>
+
+          <div class="cert-divider wide"></div>
+
+          <div class="cert-title">Certificate of Completion</div>
+
+          <div class="cert-subtitle">This is to certify that</div>
+
+          <div class="cert-name" id="certName">—</div>
+
+          <div class="cert-divider"></div>
+
+          <div class="cert-completed-text">has successfully completed the</div>
+
+          <div class="cert-course" id="certCourse">—</div>
+
+          <div class="cert-platform">
+            on Mitra AI Projects &nbsp;·&nbsp; <span id="certDate">—</span>
+          </div>
+
+          <!-- Footer row -->
+          <div class="cert-footer">
+            <div class="cert-footer-item">
+              <div class="cert-footer-label">Certificate ID</div>
+              <div class="cert-footer-value cert-id" id="certId" style="font-size:0.7rem;margin-top:0;"></div>
+              <div class="cert-footer-line"></div>
+            </div>
+            <div>
+              <div class="cert-seal">
+                Mitra<br>AI<br>Projects
+              </div>
+            </div>
+            <div class="cert-footer-item">
+              <div class="cert-footer-label">Verify at</div>
+              <div class="cert-footer-value" style="font-size:0.72rem;">mitraaiprojects.com/verify</div>
+              <div class="cert-footer-line"></div>
+            </div>
+          </div>
+        </div>
+      </div><!-- .certificate -->
+
+      <!-- Action buttons -->
+      <div class="cert-actions">
+        <button class="btn btn-primary" onclick="window.print()">🖨 Print / Save as PDF</button>
+        <button class="btn btn-outline" onclick="copyLink()">🔗 Copy Verify Link</button>
+        <a href="/profile.html" class="btn btn-ghost">← My Profile</a>
+      </div>
+
+      <p class="cert-legal">
+        This certificate confirms that the named individual completed the course on Mitra AI Projects.
+        This is a course completion record issued by Mitra AI Life, an independent education platform.
+        It does not constitute a degree, diploma, or accredited certification.
+        Verify authenticity at: <strong>mitraaiprojects.com/verify?id=<span id="certIdLegal"></span></strong>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div>
+    </div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/config.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+<script>
+const COURSE_LABELS = {
+  programming: 'Programming Foundation',
+  ml:          'Machine Learning',
+  dl:          'Deep Learning',
+  genai:       'Generative AI',
+  agentic:     'Agentic AI & MCP',
+  mlops:       'MLOps & Tools',
+  keyconcepts: 'Key Concepts & Tools',
+  rl:          'Reinforcement Learning',
+  // project certs
+  'document-qa-assistant':    'Document Q&A Assistant',
+  'ai-resume-screener':       'AI Resume Screener',
+  'inventory-forecasting':    'Inventory Forecasting Dashboard',
+};
+
+async function loadCertificate() {
+  const params = new URLSearchParams(window.location.search);
+  const certId = params.get('id');
+
+  if (!certId) {
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('errorState').style.display = 'block';
+    return;
+  }
+
+  // Wait for Supabase to initialize
+  let attempts = 0;
+  while (!window._supabaseClient && attempts < 20) {
+    await new Promise(r => setTimeout(r, 200));
+    attempts++;
+  }
+
+  if (!window._supabaseClient) {
+    showError('Cannot connect to verification service.');
+    return;
+  }
+
+  const { data, error } = await window._supabaseClient
+    .from('certificates')
+    .select('*')
+    .eq('id', certId)
+    .single();
+
+  if (error || !data) {
+    showError();
+    return;
+  }
+
+  // Populate certificate
+  const courseName = COURSE_LABELS[data.ref_id] || data.ref_id?.replace(/-/g,' ')?.replace(/\b\w/g,c=>c.toUpperCase()) || 'Course';
+  const name = data.user_name || 'Student';
+  const date = new Date(data.issued_at).toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric' });
+  const shortId = certId.substring(0, 8).toUpperCase();
+
+  document.getElementById('certName').textContent = name;
+  document.getElementById('certCourse').textContent = courseName;
+  document.getElementById('certDate').textContent = date;
+  document.getElementById('certId').textContent = 'MITRA-' + shortId;
+  document.getElementById('certIdLegal').textContent = certId;
+  document.title = `${name} — ${courseName} Certificate | Mitra AI Projects`;
+
+  document.getElementById('loadingState').style.display = 'none';
+  document.getElementById('certContent').style.display = 'block';
+
+  trackEvent('certificate_view', { cert_id: certId, course: data.ref_id });
+}
+
+function showError(msg) {
+  document.getElementById('loadingState').style.display = 'none';
+  document.getElementById('errorState').style.display = 'block';
+  if (msg) document.querySelector('#errorState p').textContent = msg;
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    event.target.textContent = '✓ Copied!';
+    setTimeout(() => { event.target.textContent = '🔗 Copy Verify Link'; }, 2000);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', loadCertificate);
+</script>
+</body>
+</html>

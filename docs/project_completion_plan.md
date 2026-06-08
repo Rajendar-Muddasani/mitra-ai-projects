@@ -308,11 +308,11 @@
 
 | ID | Task | Status |
 |---|---|---|
-| S8-T1 | Certificate HTML template | ❌ |
-| S8-T2 | Unique certificate ID (UUID in Supabase on quiz pass) | ❌ |
-| S8-T3 | Certificate verify page /verify.html?id=xxx | ❌ |
-| S8-T4 | PDF download of certificate | ❌ |
-| S8-T5 | Legal wording reviewed (no degree/accreditation claims) | ❌ |
+| S8-T1 | Certificate HTML template | ✅ |
+| S8-T2 | Unique certificate ID (UUID in Supabase on quiz pass) | ✅ |
+| S8-T3 | Certificate verify page /verify.html?id=xxx | ✅ |
+| S8-T4 | PDF download of certificate | ✅ |
+| S8-T5 | Legal wording reviewed (no degree/accreditation claims) | ✅ |
 
 ---
 

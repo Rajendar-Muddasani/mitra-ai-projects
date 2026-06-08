@@ -500,6 +500,23 @@ model.fc = nn.<span class="cl">Linear</span>(<span class="num">2048</span>, num_
 <script src="/config.js"></script>
 <script src="/auth.js"></script>
 <script src="/mitra-chat.js"></script>
+
+<script>
+async function claimCourseCert(courseId) {
+  if (!window.MitraAuth?.getUser()) {
+    window.openSignInModal?.();
+    return;
+  }
+  const user = window.MitraAuth.getUser();
+  const name = user.user_metadata?.full_name || user.email?.split('@')[0] || 'Student';
+  const result = await window.MitraAuth.recordCertificate('course', courseId, name);
+  if (result?.id) {
+    window.location.href = `/certificate.html?id=${result.id}`;
+  } else {
+    alert('Certificate already issued. Check your profile to view it.');
+  }
+}
+</script>
 </body>
 </html>
     </div>
@@ -531,5 +548,22 @@ model.fc = nn.<span class="cl">Linear</span>(<span class="num">2048</span>, num_
 <script src="/config.js"></script>
 <script src="/auth.js"></script>
 <script src="/mitra-chat.js"></script>
+
+<script>
+async function claimCourseCert(courseId) {
+  if (!window.MitraAuth?.getUser()) {
+    window.openSignInModal?.();
+    return;
+  }
+  const user = window.MitraAuth.getUser();
+  const name = user.user_metadata?.full_name || user.email?.split('@')[0] || 'Student';
+  const result = await window.MitraAuth.recordCertificate('course', courseId, name);
+  if (result?.id) {
+    window.location.href = `/certificate.html?id=${result.id}`;
+  } else {
+    alert('Certificate already issued. Check your profile to view it.');
+  }
+}
+</script>
 </body>
 </html>

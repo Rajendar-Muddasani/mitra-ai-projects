@@ -139,9 +139,13 @@
 
       <!-- Certificates -->
       <div>
-        <div class="section-tag" style="margin-bottom:1rem;">certificates</div>
+        <div class="section-tag" style="margin-bottom:1rem;">certificates earned</div>
         <div id="certificatesList">
-          <p style="color:var(--muted);font-size:0.9rem;">No certificates yet. Complete a full course or project kit to earn one.</p>
+          <p style="color:var(--muted);font-size:0.9rem;">No certificates yet. Complete all quizzes in a course to earn your certificate.</p>
+        </div>
+        <div id="claimSection" style="display:none;margin-top:1.25rem;">
+          <div class="section-tag" style="margin-bottom:0.75rem;color:var(--accent);">available to claim</div>
+          <div id="claimList"></div>
         </div>
       </div>
 
@@ -274,16 +278,30 @@ window.addEventListener('mitra:signed-in', async () => {
     ).join('');
   }
 
+  const CERT_LABELS = {
+    programming:'Programming Foundation',ml:'Machine Learning',dl:'Deep Learning',
+    genai:'Generative AI',agentic:'Agentic AI & MCP',mlops:'MLOps & Tools',
+    keyconcepts:'Key Concepts & Tools',rl:'Reinforcement Learning',
+  };
   if (certificates.length) {
-    document.getElementById('certificatesList').innerHTML = certificates.map(c =>
-      `<div class="card" style="margin-bottom:0.75rem;">
-        <div style="display:flex;justify-content:space-between;align-items:center;">
-          <span style="font-weight:700;">${c.cert_type === 'course' ? '📚' : '🛠️'} ${c.ref_id}</span>
-          <a href="/verify.html?id=${c.id}" class="badge badge-primary" target="_blank">Verify →</a>
+    document.getElementById('certificatesList').innerHTML = certificates.map(c => {
+      const label = CERT_LABELS[c.ref_id] || c.ref_id?.replace(/-/g,' ')?.replace(/\b\w/g,ch=>ch.toUpperCase()) || c.ref_id;
+      const icon = c.cert_type === 'course' ? '📚' : '🛠️';
+      const dt = new Date(c.issued_at).toLocaleDateString('en-IN', {year:'numeric',month:'short',day:'numeric'});
+      const sid = c.id.substring(0,8).toUpperCase();
+      return `<div class="card" style="margin-bottom:0.75rem;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;">
+          <div>
+            <div style="font-weight:700;font-size:0.95rem;">${icon} ${label}</div>
+            <div style="font-size:0.75rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-top:0.2rem;">MITRA-${sid} · ${dt}</div>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a href="/certificate.html?id=${c.id}" class="btn btn-primary btn-sm" target="_blank">🎓 View</a>
+            <a href="/verify.html?id=${c.id}" class="btn btn-ghost btn-sm" target="_blank">🔍 Verify</a>
+          </div>
         </div>
-        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;">Issued ${new Date(c.issued_at).toLocaleDateString()}</div>
-      </div>`
-    ).join('');
+      </div>`;
+    }).join('');
   }
 });
 

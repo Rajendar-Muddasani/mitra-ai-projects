@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Certificate — Mitra AI Projects</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .verify-card { max-width:520px; margin:3rem auto; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:2.5rem 2rem; text-align:center; box-shadow:0 8px 32px rgba(107,33,168,0.08); }
+    .verify-icon { font-size:3rem; margin-bottom:1rem; }
+    .verify-input { width:100%; padding:0.75rem 1rem; border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-dark); color:var(--text); font-family:'JetBrains Mono',monospace; font-size:0.9rem; margin:1rem 0 0.75rem; }
+    .verify-input:focus { outline:none; border-color:var(--primary); }
+    .result-valid { background:rgba(5,150,105,0.08); border:1px solid rgba(5,150,105,0.25); border-radius:var(--radius-lg); padding:1.25rem; margin-top:1rem; }
+    .result-invalid { background:rgba(220,38,38,0.06); border:1px solid rgba(220,38,38,0.2); border-radius:var(--radius-lg); padding:1.25rem; margin-top:1rem; }
+    .result-name { font-family:'Baloo 2',sans-serif; font-weight:800; font-size:1.25rem; color:var(--text); margin:0.35rem 0 0.2rem; }
+    .result-course { font-weight:700; color:var(--primary); margin-bottom:0.25rem; }
+    .result-meta { font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--muted); }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <ul class="nav-links" style="margin-left:auto;">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/profile.html">My Profile</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="section" style="padding-top:2rem;">
+  <div class="container">
+    <div class="verify-card">
+      <div class="verify-icon">🔍</div>
+      <h1 style="font-size:1.5rem;margin-bottom:0.35rem;">Verify a Certificate</h1>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0.25rem;">Enter a certificate ID to verify its authenticity.</p>
+
+      <div id="autoVerify" style="display:none;margin-top:0.5rem;">
+        <div style="font-size:0.8rem;color:var(--muted);">Verifying certificate <span id="autoId" style="font-family:'JetBrains Mono',monospace;color:var(--primary)"></span>…</div>
+      </div>
+
+      <input type="text" class="verify-input" id="certInput"
+             placeholder="Enter Certificate ID (e.g. MITRA-A1B2C3D4)"
+             oninput="clearResult()"
+             onkeydown="if(event.key==='Enter') verifyCert()" />
+      <button class="btn btn-primary" style="width:100%;" onclick="verifyCert()">Verify Certificate</button>
+
+      <div id="resultArea" style="margin-top:0.5rem;"></div>
+
+      <div style="margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border-dim);">
+        <p style="font-size:0.8rem;color:var(--muted);">Certificate IDs are issued automatically when a course is completed on Mitra AI Projects. They begin with <code>MITRA-</code>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div>
+    </div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/config.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+
+<script>
+const COURSE_LABELS = {
+  programming:'Programming Foundation', ml:'Machine Learning', dl:'Deep Learning',
+  genai:'Generative AI', agentic:'Agentic AI & MCP', mlops:'MLOps & Tools',
+  keyconcepts:'Key Concepts & Tools', rl:'Reinforcement Learning',
+};
+
+async function verifyCert() {
+  const input = document.getElementById('certInput').value.trim();
+  if (!input) return;
+
+  // Extract UUID from MITRA-XXXXXXXX format or raw UUID
+  let certId = input.replace('MITRA-','');
+  // If it looks like a short ID, we need to search differently
+  // If it's a full UUID (36 chars), use directly
+  const resultArea = document.getElementById('resultArea');
+  resultArea.innerHTML = '<div style="color:var(--muted);font-size:0.85rem;padding:0.75rem;">Checking…</div>';
+
+  if (!window._supabaseClient) {
+    await new Promise(r => setTimeout(r, 1500));
+  }
+  if (!window._supabaseClient) {
+    resultArea.innerHTML = '<div class="result-invalid"><strong style="color:var(--danger);">⚠ Cannot connect to verification service.</strong><br><small style="color:var(--muted);">Please try again shortly.</small></div>';
+    return;
+  }
+
+  let data, error;
+  // Try full UUID first
+  if (input.length === 36 || certId.length === 36) {
+    ({ data, error } = await window._supabaseClient.from('certificates').select('*').eq('id', input.length === 36 ? input : certId).single());
+  }
+  // Try searching by short ID (first 8 chars of UUID in various formats)
+  if (!data) {
+    // Check if we should redirect to the certificate page
+    const params = new URLSearchParams(window.location.search);
+    const paramId = params.get('id');
+    if (paramId) {
+      ({ data, error } = await window._supabaseClient.from('certificates').select('*').eq('id', paramId).single());
+    }
+  }
+
+  if (error || !data) {
+    resultArea.innerHTML = `<div class="result-invalid">
+      <div style="font-size:1.5rem;margin-bottom:0.35rem;">❌</div>
+      <strong style="color:var(--danger);">Certificate Not Found</strong>
+      <div style="font-size:0.82rem;color:var(--muted);margin-top:0.35rem;">No certificate matches this ID. Please check the ID and try again.</div>
+    </div>`;
+    return;
+  }
+
+  const courseName = COURSE_LABELS[data.ref_id] || data.ref_id?.replace(/-/g,' ')?.replace(/\b\w/g,c=>c.toUpperCase()) || 'Course';
+  const name = data.user_name || 'Student';
+  const date = new Date(data.issued_at).toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric' });
+  const shortId = data.id.substring(0,8).toUpperCase();
+
+  resultArea.innerHTML = `<div class="result-valid">
+    <div style="font-size:1.5rem;margin-bottom:0.35rem;">✅</div>
+    <div style="font-size:0.75rem;font-weight:700;color:var(--success);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.25rem;">Verified — Certificate is Authentic</div>
+    <div class="result-name">${escapeHtml(name)}</div>
+    <div class="result-course">${escapeHtml(courseName)}</div>
+    <div class="result-meta">Issued: ${date} &nbsp;·&nbsp; ID: MITRA-${shortId}</div>
+    <a href="/certificate.html?id=${data.id}" class="btn btn-primary btn-sm" style="margin-top:0.75rem;display:inline-flex;">View Certificate →</a>
+  </div>`;
+  trackEvent('certificate_verify', { cert_id: data.id });
+}
+
+function clearResult() { document.getElementById('resultArea').innerHTML = ''; }
+function escapeHtml(t) { return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// Auto-verify if ?id= param present
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  if (id) {
+    document.getElementById('certInput').value = id;
+    document.getElementById('autoVerify').style.display = 'block';
+    document.getElementById('autoId').textContent = 'MITRA-' + id.substring(0,8).toUpperCase();
+    setTimeout(verifyCert, 800);
+  }
+});
+</script>
+</body>
+</html>

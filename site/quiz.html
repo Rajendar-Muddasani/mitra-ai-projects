@@ -235,10 +235,52 @@ function submitQuiz(data) {
   if (passed && window.MitraAuth) {
     window.MitraAuth.recordCourseCompletion(course, topic);
     trackEvent('quiz_pass_completion_recorded', { course, topic, tested_out: testedOut });
+
+    // Check if ALL topics in this course are now done
+    const COURSE_TOPIC_COUNTS = {
+      programming:8, ml:10, dl:8, genai:8, agentic:7, mlops:7, keyconcepts:8, rl:6
+    };
+    const totalTopics = COURSE_TOPIC_COUNTS[course];
+    if (totalTopics && window.MitraAuth.getUser) {
+      const user = window.MitraAuth.getUser();
+      if (user && window._supabaseClient) {
+        const { data: completions } = await window._supabaseClient
+          .from('course_completions')
+          .select('topic_slug')
+          .eq('user_id', user.id)
+          .eq('course_id', course);
+        const uniqueTopics = new Set((completions||[]).map(c=>c.topic_slug));
+        uniqueTopics.add(topic); // count current one
+        if (uniqueTopics.size >= totalTopics) {
+          // Course complete! Show claim certificate button
+          const certBtn = document.createElement('div');
+          certBtn.style.cssText = 'background:linear-gradient(135deg,#6b21a8,#7c3aed);color:#fff;border-radius:var(--radius-lg);padding:1.25rem;text-align:center;margin-top:1rem;';
+          const COURSE_LABELS = {programming:'Programming Foundation',ml:'Machine Learning',dl:'Deep Learning',genai:'Generative AI',agentic:'Agentic AI & MCP',mlops:'MLOps & Tools',keyconcepts:'Key Concepts & Tools',rl:'Reinforcement Learning'};
+          certBtn.innerHTML = `<div style="font-size:1.5rem;margin-bottom:0.35rem;">🎓</div>
+            <div style="font-weight:800;font-size:1.05rem;margin-bottom:0.25rem;">${COURSE_LABELS[course]||course} Complete!</div>
+            <div style="font-size:0.85rem;opacity:0.85;margin-bottom:0.75rem;">You've passed all topics. Claim your certificate now.</div>
+            <button class="btn" style="background:#fff;color:#6b21a8;font-weight:800;" onclick="claimCourseCert('${course}')">🎓 Claim Certificate →</button>`;
+          document.getElementById('scoreBox').appendChild(certBtn);
+        }
+      }
+    }
   }
 }
 
 document.addEventListener('DOMContentLoaded', loadQuiz);
+
+async function claimCourseCert(courseId) {
+  if (!window.MitraAuth?.getUser()) { window.openSignInModal?.(); return; }
+  const user = window.MitraAuth.getUser();
+  const name = user.user_metadata?.full_name || user.email?.split('@')[0] || 'Student';
+  const result = await window.MitraAuth.recordCertificate('course', courseId, name);
+  if (result?.id) {
+    window.location.href = `/certificate.html?id=${result.id}`;
+  } else {
+    alert('Certificate already claimed or error. Check your profile.');
+  }
+  trackEvent('certificate_claim', { course: courseId });
+}
 </script>
 </body>
 </html>
