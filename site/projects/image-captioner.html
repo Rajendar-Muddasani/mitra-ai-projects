@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Image Caption Generator — Mini Project Kit | Mitra AI Projects</title>
+  <meta name="description" content="Build a Streamlit app that generates natural language captions for uploaded images using HuggingFace BLIP model — no GPU needed.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/" class="active">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/projects/">Projects</a><span class="breadcrumb-sep">›</span><span>Image Caption Generator</span></div>
+    <div class="project-meta-strip">
+      <span class="badge badge-accent">Mini Project</span>
+      <span class="badge badge-muted">~2–3 Weeks</span>
+      <span class="badge badge-muted">Beginner Friendly</span>
+    </div>
+    <h1 style="margin-bottom:0.75rem;">Image Caption Generator</h1>
+    <p style="color:var(--muted);font-size:1.05rem;max-width:640px;margin-bottom:1.25rem;">Build a Streamlit app that generates natural language captions for uploaded images using HuggingFace BLIP model — no GPU needed.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">HuggingFace</span><span class="tag">BLIP</span><span class="tag">PIL</span><span class="tag">transformers</span></div>
+    <div class="project-deliverables" style="margin-top:1.5rem;">
+      <span class="deliverable-pill">Source code + README</span>
+      <span class="deliverable-pill">Milestone breakdown</span>
+      <span class="deliverable-pill">Deployment guide</span>
+      <span class="deliverable-pill">10 viva Q&amp;A</span>
+    </div>
+    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#milestones" class="btn btn-primary btn-lg">Start Building →</a>
+      <a href="#viva" class="btn btn-outline btn-lg">Viva Q&amp;A</a>
+      <a href="/courses/dl.html" class="btn btn-ghost btn-lg">Learn DL: Multimodal First</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:2.5rem;">
+  <div class="container">
+
+    <div class="grid grid-2" style="gap:3rem;align-items:start;margin-bottom:3rem;">
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">what you build</div>
+        <h2 style="margin-bottom:0.75rem;">An image captioning tool that takes any photo and generates a descriptive caption using the BLIP (Bootstrapping Language-Image Pre-training) model from Salesforce.</h2>
+        <ul style="padding-left:1.25rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Upload any image (JPG, PNG, WebP) and get an automatic caption</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Conditional captioning: provide a hint like "a photo of a" to guide the caption</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Batch mode: upload multiple images, get a CSV of captions</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Download captions as a text file</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Display image alongside generated caption in a clean UI</li></ul>
+      </div>
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">prerequisites</div>
+        <h2 style="margin-bottom:0.75rem;">Before You Start</h2>
+        <ul style="padding-left:1.25rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Python basics and file handling</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Basic understanding of neural networks</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">DL course: Multimodal Models topic recommended</li></ul>
+      </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">architecture</div>
+      <h2 style="margin-bottom:1rem;">How It Works</h2>
+      <div class="arch-boxes"><div class="arch-box">🖼 Image Upload<br>(Streamlit)</div><div class="arch-box">→</div><div class="arch-box">🔄 PIL Image<br>Processing</div><div class="arch-box">→</div><div class="arch-box">🤗 BLIP Model<br>(HuggingFace)</div><div class="arch-box">→</div><div class="arch-box">📝 Generated Caption<br>+ Display</div></div>
+    </div>
+
+    <div id="milestones" style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">3-week plan</div>
+      <h2 style="margin-bottom:1rem;">Milestone Breakdown</h2>
+      <div class="milestone-list">
+        <div class="milestone-card">
+          <div class="milestone-num">1</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 1</div>
+            <div class="milestone-title">Core Captioning</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Load BLIP model from HuggingFace (Salesforce/blip-image-captioning-base)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Process image with BlipProcessor</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Generate unconditional and conditional captions</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Test with 20 diverse images</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">2</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 2</div>
+            <div class="milestone-title">Streamlit UI + Batch Mode</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Build image upload UI with st.image() display</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Add conditional caption text input</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Implement batch upload with progress bar</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">3</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 3</div>
+            <div class="milestone-title">Polish + Deploy</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Add caption download button</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Optimise: cache model with @st.cache_resource</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Deploy to Hugging Face Spaces (free GPU)</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">key code</div>
+      <h2 style="margin-bottom:1rem;">Core Implementation</h2>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>caption.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> transformers <span class="kw">import</span> BlipProcessor, BlipForConditionalGeneration
+<span class="kw">from</span> PIL <span class="kw">import</span> Image
+<span class="kw">import</span> streamlit <span class="kw">as</span> st
+
+@st.cache_resource
+<span class="kw">def</span> <span class="fn">load_model</span>():
+    processor = BlipProcessor.<span class="fn">from_pretrained</span>(<span class="st">"Salesforce/blip-image-captioning-base"</span>)
+    model = BlipForConditionalGeneration.<span class="fn">from_pretrained</span>(<span class="st">"Salesforce/blip-image-captioning-base"</span>)
+    <span class="kw">return</span> processor, model
+
+processor, model = <span class="fn">load_model</span>()
+image = Image.<span class="fn">open</span>(uploaded_file).<span class="fn">convert</span>(<span class="st">"RGB"</span>)
+inputs = processor(image, return_tensors=<span class="st">"pt"</span>)
+out = model.<span class="fn">generate</span>(**inputs, max_new_tokens=<span class="num">50</span>)
+caption = processor.<span class="fn">decode</span>(out[<span class="num">0</span>], skip_special_tokens=<span class="kw">True</span>)</code></pre>
+        </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">deployment</div>
+      <h2 style="margin-bottom:1rem;">Deploy to Streamlit Cloud (Free)</h2>
+      <div class="code-panel" style="margin-bottom:1rem;">
+        <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>deploy.sh</span></div>
+        <pre><code><span class="cm"># requirements.txt: transformers torch streamlit Pillow</span>
+<span class="cm"># Option 1: Streamlit Cloud (CPU, slow first load)</span>
+<span class="cm"># Option 2: HuggingFace Spaces (free GPU T4)</span>
+<span class="cm">#   huggingface.co/new-space → Gradio/Streamlit SDK</span></code></pre>
+      </div>
+      <p style="color:var(--muted);font-size:0.875rem;">Create a free account at <strong>share.streamlit.io</strong>, connect your GitHub repo, and deploy in one click. Your app gets a public URL instantly.</p>
+    </div>
+
+    <div id="viva" style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">viva prep</div>
+      <h2 style="margin-bottom:1rem;">10 Viva Questions with Answers</h2>
+      <div class="viva-list">
+        <div class="viva-item">
+          <div class="viva-q">Q1. What is the BLIP model and what was it trained on?</div>
+          <div class="viva-a">BLIP (Bootstrapping Language-Image Pre-training) from Salesforce. Trained on 129M image-caption pairs from the web. Uses a vision encoder (ViT) + text decoder for caption generation.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q2. What is the difference between unconditional and conditional captioning?</div>
+          <div class="viva-a">Unconditional: model generates caption from scratch. Conditional: you provide a text prefix ("a photo of a dog...") that the model completes. Conditional captions are more specific.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q3. Why use @st.cache_resource for the model?</div>
+          <div class="viva-a">Model loading takes 5-10 seconds. Without caching, it reloads on every user interaction. cache_resource caches the model object globally — loaded once, shared across all sessions.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q4. What is PIL and why convert to RGB?</div>
+          <div class="viva-a">PIL (Pillow) is Python's image library. Some images are RGBA (with alpha channel) or grayscale. BLIP expects 3-channel RGB. Converting to RGB ensures compatibility regardless of input format.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q5. How does the BLIP model work at a high level?</div>
+          <div class="viva-a">Vision encoder (ViT) converts the image to patch embeddings. Text decoder (transformer) generates caption tokens autoregressively, attending to both the image embeddings and previous caption tokens.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q6. What is ViT (Vision Transformer) and how does it differ from CNNs?</div>
+          <div class="viva-a">ViT splits the image into fixed-size patches, embeds each patch, and processes them with a standard Transformer. CNNs use convolutional filters with local receptive fields. ViT has global attention from the first layer.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q7. How would you improve caption quality for domain-specific images?</div>
+          <div class="viva-a">Fine-tune BLIP on domain-specific image-caption pairs. Collect 1000+ domain images with manually written captions. Fine-tune using HuggingFace Trainer on a GPU. 1-2 hours of training is usually sufficient.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q8. What are the limitations of BLIP-base?</div>
+          <div class="viva-a">May miss small details, counting is inaccurate (says "a few birds" not "three birds"), struggles with text in images, fails on images very different from training distribution, no spatial reasoning.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q9. How would you evaluate caption quality automatically?</div>
+          <div class="viva-a">BLEU score (n-gram overlap with reference caption), ROUGE (recall-based), CIDEr (consensus-based), METEOR (synonym-aware). Compare against human-written reference captions on a test set.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q10. What is HuggingFace Spaces and why is it better for this project than Streamlit Cloud?</div>
+          <div class="viva-a">HuggingFace Spaces provides free GPU (T4) for eligible apps. BLIP inference on CPU is slow (~5s/image). On GPU it runs in <1s. Spaces integrates natively with HuggingFace model hub. Better for vision models.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="completion-banner">
+      <div class="completion-icon">🏆</div>
+      <div class="completion-body">
+        <h3>Mark Project Complete</h3>
+        <p>Record your completion and earn your project certificate.</p>
+      </div>
+      <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordProjectCompletion('image-captioner')">Mark Complete →</button>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>CLI Chatbot with Memory — Mini Project Kit | Mitra AI Projects</title>
+  <meta name="description" content="Build a command-line chatbot that maintains conversation history, supports system personas, and saves/loads sessions from JSON files.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/" class="active">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/projects/">Projects</a><span class="breadcrumb-sep">›</span><span>CLI Chatbot with Memory</span></div>
+    <div class="project-meta-strip">
+      <span class="badge badge-accent">Mini Project</span>
+      <span class="badge badge-muted">~2–3 Weeks</span>
+      <span class="badge badge-muted">Beginner Friendly</span>
+    </div>
+    <h1 style="margin-bottom:0.75rem;">CLI Chatbot with Memory</h1>
+    <p style="color:var(--muted);font-size:1.05rem;max-width:640px;margin-bottom:1.25rem;">Build a command-line chatbot that maintains conversation history, supports system personas, and saves/loads sessions from JSON files.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">OpenAI API</span><span class="tag">argparse</span><span class="tag">JSON</span><span class="tag">rich</span></div>
+    <div class="project-deliverables" style="margin-top:1.5rem;">
+      <span class="deliverable-pill">Source code + README</span>
+      <span class="deliverable-pill">Milestone breakdown</span>
+      <span class="deliverable-pill">Deployment guide</span>
+      <span class="deliverable-pill">10 viva Q&amp;A</span>
+    </div>
+    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#milestones" class="btn btn-primary btn-lg">Start Building →</a>
+      <a href="#viva" class="btn btn-outline btn-lg">Viva Q&amp;A</a>
+      <a href="/courses/genai.html" class="btn btn-ghost btn-lg">Learn GenAI First</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:2.5rem;">
+  <div class="container">
+
+    <div class="grid grid-2" style="gap:3rem;align-items:start;margin-bottom:3rem;">
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">what you build</div>
+        <h2 style="margin-bottom:0.75rem;">A terminal-based AI chatbot with persistent memory, multiple personas, and session management — demonstrates LLM API usage without a web framework.</h2>
+        <ul style="padding-left:1.25rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Multi-turn conversation with full history sent to the API</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Custom system personas: teacher, code reviewer, study buddy</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Save and load conversation sessions to/from JSON files</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Commands: /save, /load, /clear, /history, /persona, /quit</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Rich terminal UI with colored output (rich library)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Token usage tracking and cost estimation per session</li></ul>
+      </div>
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">prerequisites</div>
+        <h2 style="margin-bottom:0.75rem;">Before You Start</h2>
+        <ul style="padding-left:1.25rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Python basics (functions, JSON, argparse)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Basic understanding of LLM APIs (OpenAI)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Command line comfort</li></ul>
+      </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">architecture</div>
+      <h2 style="margin-bottom:1rem;">How It Works</h2>
+      <div class="arch-boxes"><div class="arch-box">⌨ User Input<br>(terminal)</div><div class="arch-box">→</div><div class="arch-box">📝 Message History<br>(list of dicts)</div><div class="arch-box">→</div><div class="arch-box">🤖 OpenAI API<br>(chat.completions)</div><div class="arch-box">→</div><div class="arch-box">💬 Response Display<br>(rich library)</div><div class="arch-box">→</div><div class="arch-box">💾 JSON Session<br>Save/Load</div></div>
+    </div>
+
+    <div id="milestones" style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">3-week plan</div>
+      <h2 style="margin-bottom:1rem;">Milestone Breakdown</h2>
+      <div class="milestone-list">
+        <div class="milestone-card">
+          <div class="milestone-num">1</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 1</div>
+            <div class="milestone-title">Core Chat Loop</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Build basic REPL loop: input → OpenAI API → print response</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Implement conversation history with role: user/assistant</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Add system prompt and persona support</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">2</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 2</div>
+            <div class="milestone-title">Commands + Session Management</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Implement /save, /load, /clear, /history commands</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">JSON serialisation of conversation history</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Token counting and cost tracking</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">3</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 3</div>
+            <div class="milestone-title">Polish + Documentation</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Add rich library for colored terminal output</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">argparse for --persona and --session CLI flags</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">README with usage examples</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">key code</div>
+      <h2 style="margin-bottom:1rem;">Core Implementation</h2>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>chatbot.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> openai <span class="kw">import</span> OpenAI
+<span class="kw">import</span> json
+
+client = <span class="cl">OpenAI</span>()
+
+<span class="kw">def</span> <span class="fn">chat</span>(history: list, user_message: str) -> str:
+    history.<span class="fn">append</span>({<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: user_message})
+    response = client.chat.completions.<span class="fn">create</span>(
+        model=<span class="st">"gpt-4o-mini"</span>,
+        messages=history
+    )
+    reply = response.choices[<span class="num">0</span>].message.content
+    history.<span class="fn">append</span>({<span class="st">"role"</span>: <span class="st">"assistant"</span>, <span class="st">"content"</span>: reply})
+    <span class="kw">return</span> reply
+
+history = [{<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: <span class="st">"You are a helpful ML tutor."</span>}]
+<span class="kw">while</span> (<span class="fn">msg</span> := <span class="fn">input</span>(<span class="st">"You: "</span>)) != <span class="st">"/quit"</span>:
+    <span class="fn">print</span>(f<span class="st">"Bot: {chat(history, msg)}"</span>)</code></pre>
+        </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">deployment</div>
+      <h2 style="margin-bottom:1rem;">Deploy to Streamlit Cloud (Free)</h2>
+      <div class="code-panel" style="margin-bottom:1rem;">
+        <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>deploy.sh</span></div>
+        <pre><code><span class="cm"># requirements.txt: openai rich</span>
+<span class="cm"># Run: python chatbot.py --persona teacher</span>
+<span class="cm"># Package as PyPI: python -m build && pip install dist/*.whl</span></code></pre>
+      </div>
+      <p style="color:var(--muted);font-size:0.875rem;">Create a free account at <strong>share.streamlit.io</strong>, connect your GitHub repo, and deploy in one click. Your app gets a public URL instantly.</p>
+    </div>
+
+    <div id="viva" style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">viva prep</div>
+      <h2 style="margin-bottom:1rem;">10 Viva Questions with Answers</h2>
+      <div class="viva-list">
+        <div class="viva-item">
+          <div class="viva-q">Q1. How does conversation memory work in the OpenAI API?</div>
+          <div class="viva-a">The API is stateless — it has no memory. You implement memory by sending the full conversation history (list of role/content dicts) with every request. The model "remembers" by reading the history.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q2. What is the difference between system, user, and assistant roles?</div>
+          <div class="viva-a">system: sets the AI's persona and behaviour (not shown to user). user: the human's input. assistant: the AI's previous responses. All are sent in the messages array.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q3. How does increasing conversation length affect cost?</div>
+          <div class="viva-a">You pay for every token sent, including the full history. A 100-message conversation sends all 100 messages with every new request. Cost grows O(n) where n is conversation length.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q4. How would you handle very long conversations to control cost?</div>
+          <div class="viva-a">Sliding window: keep only the last N messages. Summarisation: periodically summarise old messages into a compact summary (using the LLM). Truncation: drop oldest messages when approaching context limit.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q5. What is the context window and why does it matter?</div>
+          <div class="viva-a">The maximum tokens a model can process in one request. GPT-4o-mini: 128K tokens. If your history exceeds this, you get an error. Track token count with tiktoken library.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q6. How would you add streaming to show responses word by word?</div>
+          <div class="viva-a">stream=True in the API call returns a generator. Iterate over chunks: for chunk in stream: print(chunk.choices[0].delta.content, end=""). Users see immediate feedback.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q7. How do you save and load conversation sessions?</div>
+          <div class="viva-a">json.dump(history, file) to save. json.load(file) to restore. Include metadata: session_id, created_at, total_tokens. Store in ~/.chatbot/sessions/ for per-user isolation.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q8. What persona examples would make this useful for students?</div>
+          <div class="viva-a">ML Tutor (explains concepts with examples), Code Reviewer (reviews Python code, suggests improvements), Study Buddy (quizzes on ML topics, gives hints without answers), Viva Coach (asks hard project questions).</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q9. How would you add a GUI version of this chatbot?</div>
+          <div class="viva-a">Use Gradio (gr.ChatInterface — 5 lines of code for a web chat UI) or Streamlit with st.chat_message. Both provide browser-based interfaces using the same backend logic.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q10. What error handling would you add for production?</div>
+          <div class="viva-a">RateLimitError (exponential backoff retry), APIConnectionError (retry with timeout), AuthenticationError (clear error message). Track and display remaining budget. Gracefully handle empty responses.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="completion-banner">
+      <div class="completion-icon">🏆</div>
+      <div class="completion-body">
+        <h3>Mark Project Complete</h3>
+        <p>Record your completion and earn your project certificate.</p>
+      </div>
+      <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordProjectCompletion('cli-chatbot')">Mark Complete →</button>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

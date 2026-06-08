@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>News Category Classifier — Mini Project Kit | Mitra AI Projects</title>
+  <meta name="description" content="Train a multi-class text classifier to categorise news articles into topics (Sports, Tech, Business, Politics, Entertainment) using TF-IDF and scikit-learn.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/" class="active">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/projects/">Projects</a><span class="breadcrumb-sep">›</span><span>News Category Classifier</span></div>
+    <div class="project-meta-strip">
+      <span class="badge badge-accent">Mini Project</span>
+      <span class="badge badge-muted">~2–3 Weeks</span>
+      <span class="badge badge-muted">Beginner Friendly</span>
+    </div>
+    <h1 style="margin-bottom:0.75rem;">News Category Classifier</h1>
+    <p style="color:var(--muted);font-size:1.05rem;max-width:640px;margin-bottom:1.25rem;">Train a multi-class text classifier to categorise news articles into topics (Sports, Tech, Business, Politics, Entertainment) using TF-IDF and scikit-learn.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">TF-IDF</span><span class="tag">Streamlit</span><span class="tag">pandas</span><span class="tag">NLTK</span></div>
+    <div class="project-deliverables" style="margin-top:1.5rem;">
+      <span class="deliverable-pill">Source code + README</span>
+      <span class="deliverable-pill">Milestone breakdown</span>
+      <span class="deliverable-pill">Deployment guide</span>
+      <span class="deliverable-pill">10 viva Q&amp;A</span>
+    </div>
+    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#milestones" class="btn btn-primary btn-lg">Start Building →</a>
+      <a href="#viva" class="btn btn-outline btn-lg">Viva Q&amp;A</a>
+      <a href="/courses/ml.html" class="btn btn-ghost btn-lg">Learn ML First</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:2.5rem;">
+  <div class="container">
+
+    <div class="grid grid-2" style="gap:3rem;align-items:start;margin-bottom:3rem;">
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">what you build</div>
+        <h2 style="margin-bottom:0.75rem;">A text classification system that automatically categorises news articles with a trained ML model — shows the full ML pipeline from data to deployment.</h2>
+        <ul style="padding-left:1.25rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Train on BBC News or AG News dataset (free, public)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">TF-IDF feature extraction with sklearn Pipeline</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Logistic Regression + Naive Bayes + Random Forest comparison</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Confusion matrix and classification report visualisation</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Live prediction: paste any news article, get category + confidence</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Deployed Streamlit app with model loaded from pickle</li></ul>
+      </div>
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">prerequisites</div>
+        <h2 style="margin-bottom:0.75rem;">Before You Start</h2>
+        <ul style="padding-left:1.25rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Python basics and pandas</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">ML course: Classification topic</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Basic understanding of text vectorisation</li></ul>
+      </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">architecture</div>
+      <h2 style="margin-bottom:1rem;">How It Works</h2>
+      <div class="arch-boxes"><div class="arch-box">📰 News Article<br>(raw text)</div><div class="arch-box">→</div><div class="arch-box">🧹 Text Cleaning<br>(NLTK preprocessing)</div><div class="arch-box">→</div><div class="arch-box">📊 TF-IDF<br>Vectorisation</div><div class="arch-box">→</div><div class="arch-box">🤖 Classifier<br>(LogReg/NB/RF)</div><div class="arch-box">→</div><div class="arch-box">📂 Category<br>Prediction</div></div>
+    </div>
+
+    <div id="milestones" style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">3-week plan</div>
+      <h2 style="margin-bottom:1rem;">Milestone Breakdown</h2>
+      <div class="milestone-list">
+        <div class="milestone-card">
+          <div class="milestone-num">1</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 1</div>
+            <div class="milestone-title">Data + Feature Engineering</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Load BBC News dataset from sklearn datasets or kaggle</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Text preprocessing: lowercase, remove stopwords, stemming (NLTK)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">TF-IDF vectorisation with max_features=5000</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Train-test split and baseline accuracy check</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">2</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 2</div>
+            <div class="milestone-title">Model Training + Evaluation</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Train Logistic Regression, Naive Bayes, and Random Forest</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Compare accuracy, F1-score, and training time</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Plot confusion matrix with seaborn heatmap</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Save best model with pickle or joblib</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">3</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 3</div>
+            <div class="milestone-title">Streamlit App + Deploy</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Load pickled model in Streamlit app</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Build text input + prediction UI with confidence scores</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Deploy to Streamlit Cloud</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">key code</div>
+      <h2 style="margin-bottom:1rem;">Core Implementation</h2>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>classifier.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> Pipeline
+<span class="kw">from</span> sklearn.feature_extraction.text <span class="kw">import</span> TfidfVectorizer
+<span class="kw">from</span> sklearn.linear_model <span class="kw">import</span> LogisticRegression
+<span class="kw">from</span> sklearn.metrics <span class="kw">import</span> classification_report
+
+pipeline = <span class="cl">Pipeline</span>([
+    (<span class="st">'tfidf'</span>,     <span class="cl">TfidfVectorizer</span>(ngram_range=(<span class="num">1</span>,<span class="num">2</span>), max_features=<span class="num">10000</span>, stop_words=<span class="st">'english'</span>)),
+    (<span class="st">'clf'</span>,       <span class="cl">LogisticRegression</span>(max_iter=<span class="num">1000</span>, C=<span class="num">1.0</span>)),
+])
+pipeline.<span class="fn">fit</span>(X_train, y_train)
+y_pred = pipeline.<span class="fn">predict</span>(X_test)
+<span class="fn">print</span>(<span class="fn">classification_report</span>(y_test, y_pred))</code></pre>
+        </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">deployment</div>
+      <h2 style="margin-bottom:1rem;">Deploy to Streamlit Cloud (Free)</h2>
+      <div class="code-panel" style="margin-bottom:1rem;">
+        <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>deploy.sh</span></div>
+        <pre><code><span class="cm"># Save trained model</span>
+<span class="kw">import</span> joblib
+joblib.<span class="fn">dump</span>(pipeline, <span class="st">'model.pkl'</span>)
+
+<span class="cm"># In Streamlit app</span>
+model = joblib.<span class="fn">load</span>(<span class="st">'model.pkl'</span>)
+prediction = model.<span class="fn">predict</span>([article_text])[<span class="num">0</span>]</code></pre>
+      </div>
+      <p style="color:var(--muted);font-size:0.875rem;">Create a free account at <strong>share.streamlit.io</strong>, connect your GitHub repo, and deploy in one click. Your app gets a public URL instantly.</p>
+    </div>
+
+    <div id="viva" style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">viva prep</div>
+      <h2 style="margin-bottom:1rem;">10 Viva Questions with Answers</h2>
+      <div class="viva-list">
+        <div class="viva-item">
+          <div class="viva-q">Q1. What is TF-IDF and why is it used for text classification?</div>
+          <div class="viva-a">TF-IDF = Term Frequency × Inverse Document Frequency. Words that appear often in a document but rarely in others get high scores. This identifies discriminative words for classification.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q2. Why do you use ngram_range=(1,2) in TF-IDF?</div>
+          <div class="viva-a">Unigrams (single words) + bigrams (word pairs) capture more context. "machine learning" as a bigram is more informative than "machine" and "learning" separately.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q3. What is the difference between Naive Bayes and Logistic Regression for text classification?</div>
+          <div class="viva-a">Naive Bayes: probabilistic, assumes feature independence, fast, works well with small data. Logistic Regression: discriminative, learns decision boundaries, usually more accurate with enough data.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q4. Why use a sklearn Pipeline?</div>
+          <div class="viva-a">Pipeline chains transformers and classifiers, preventing data leakage (TF-IDF fit only on training data), enabling grid search over all parameters, and simplifying deployment (one object does everything).</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q5. What preprocessing steps improve classification accuracy?</div>
+          <div class="viva-a">Lowercasing, removing stopwords, stemming/lemmatisation, removing HTML tags, handling negations (not_good as one token), removing rare words.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q6. How would you handle class imbalance if Sports has 1000 articles but Politics has 100?</div>
+          <div class="viva-a">class_weight=balanced in LogisticRegression adjusts weights. Or: upsample minority classes (SMOTE for text uses different approach), downsample majority, or use ensemble methods robust to imbalance.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q7. What is the difference between macro and weighted F1-score?</div>
+          <div class="viva-a">Macro F1: average over classes equally (treats all classes same). Weighted F1: weighted by class frequency. Use weighted F1 for imbalanced datasets.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q8. How would you improve accuracy beyond TF-IDF + LogReg?</div>
+          <div class="viva-a">Use sentence embeddings (HuggingFace sentence-transformers) instead of TF-IDF. Fine-tune a BERT model on the dataset. TF-IDF ignores word order and meaning; transformers capture both.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q9. What are the limitations of your approach?</div>
+          <div class="viva-a">TF-IDF is bag-of-words — ignores word order and context. Does not handle new vocabulary (OOV words). Needs labelled training data. Cannot classify articles in categories not seen during training.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q10. How would you add a new category to the classifier?</div>
+          <div class="viva-a">Collect 200+ labelled examples of the new category. Retrain the model with the new class. Re-evaluate all classes — new class may affect existing accuracy.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="completion-banner">
+      <div class="completion-icon">🏆</div>
+      <div class="completion-body">
+        <h3>Mark Project Complete</h3>
+        <p>Record your completion and earn your project certificate.</p>
+      </div>
+      <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordProjectCompletion('news-classifier')">Mark Complete →</button>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

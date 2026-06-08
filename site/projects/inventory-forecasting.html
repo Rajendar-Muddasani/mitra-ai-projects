@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Inventory Forecasting Dashboard | Mitra AI Projects</title>
+  <meta name="description" content="Build a time series forecasting system with ARIMA and Prophet that predicts inventory needs and visualises them in a Streamlit dashboard.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/" class="active">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/projects/">Projects</a><span class="breadcrumb-sep">›</span><span>Inventory Forecasting Dashboard</span></div>
+    <div class="project-meta-strip">
+      <span class="badge badge-primary">Major Project Kit</span>
+      <span class="badge badge-muted">~5 Weeks</span>
+      <span class="badge badge-muted">Intermediate</span>
+    </div>
+    <h1 style="margin-bottom:0.75rem;">Inventory Forecasting Dashboard</h1>
+    <p style="color:var(--muted);font-size:1.05rem;max-width:660px;margin-bottom:1.25rem;">Build a production-quality forecasting dashboard that takes historical sales/inventory CSV data, builds ARIMA and Facebook Prophet models, compares their accuracy, and displays interactive forecasts with confidence intervals.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">ARIMA</span><span class="tag">Prophet</span><span class="tag">Streamlit</span><span class="tag">pandas</span><span class="tag">plotly</span><span class="tag">scikit-learn</span></div>
+    <div class="project-deliverables" style="margin-top:1.5rem;"><span class="deliverable-pill">Source code + README</span><span class="deliverable-pill">Architecture diagram</span><span class="deliverable-pill">5-milestone breakdown</span><span class="deliverable-pill">Deployment guide (Render)</span><span class="deliverable-pill">Report template (A4)</span><span class="deliverable-pill">PPT deck (10 slides)</span><span class="deliverable-pill">20 viva Q&A</span><span class="deliverable-pill">Testing checklist</span></div>
+    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#milestones" class="btn btn-primary btn-lg">Start Building →</a>
+      <a href="#viva" class="btn btn-outline btn-lg">See Viva Q&amp;A</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:3rem;">
+  <div class="container">
+    <div class="grid grid-2" style="gap:3rem;align-items:start;">
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.75rem;">what you build</div>
+        <h2>A real-world inventory management tool that businesses use daily — combining statistical forecasting, data visualisation, and interactive UI.</h2>
+        <div class="topic-section"><h3>Core Features</h3>
+          <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">CSV upload with automatic column detection (date, quantity)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Exploratory data analysis: trend, seasonality, and outlier detection</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">ARIMA model with ADF stationarity test and auto-order selection</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Facebook Prophet model with holiday effects support</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Model comparison: MAPE, RMSE, MAE metrics side-by-side</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Interactive plotly charts with confidence intervals</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Forecast download as CSV for supply chain planning</li></ul></div>
+      </div>
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.75rem;">prerequisites</div>
+        <h2>Before You Start</h2>
+        <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Python for Data (pandas, matplotlib) — use Programming course</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Basic understanding of time series concepts (trend, seasonality)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">ML course Time Series topic — highly recommended</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Familiarity with Streamlit for UI</li></ul>
+        <div style="margin-top:1.25rem;display:flex;gap:0.5rem;flex-wrap:wrap;"><a href="/courses/ml.html" class="btn btn-outline btn-sm">ML: Time Series →</a><a href="/courses/programming.html" class="btn btn-outline btn-sm">Programming: Python for Data →</a></div>
+      </div>
+    </div>
+
+    <div id="architecture" style="margin-top:3rem;">
+      <div class="section-tag" style="margin-bottom:0.75rem;">system design</div>
+      <h2>Architecture</h2>
+      <p style="color:var(--muted);margin-bottom:1.5rem;">CSV data → EDA and stationarity tests → ARIMA + Prophet training → Model evaluation (MAPE/RMSE) → Plotly interactive dashboard → CSV export of forecasts.</p>
+      <div class="arch-boxes"><div class="arch-box">📊 CSV Upload<br>(Sales/Inventory)</div><div class="arch-box">→</div><div class="arch-box">🔍 EDA + Stationarity<br>(ADF test)</div><div class="arch-box">→</div><div class="arch-box">📈 ARIMA Model<br>(auto p,d,q)</div><div class="arch-box">→</div><div class="arch-box">🔮 Prophet Model<br>(with seasonality)</div><div class="arch-box">→</div><div class="arch-box">📉 Interactive Dashboard<br>(plotly + Streamlit)</div></div>
+    </div>
+
+    <div id="milestones" style="margin-top:3rem;">
+      <div class="section-tag" style="margin-bottom:0.75rem;">5-week plan</div>
+      <h2 id="milestones">Milestone Breakdown</h2>
+      <div class="milestone-list" style="margin-top:1.5rem;">
+        <div class="milestone-card">
+          <div class="milestone-num">1</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 1</div>
+            <div class="milestone-title">Data Loading + EDA</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Build CSV upload and automatic date/quantity column detection</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Implement EDA: plot raw series, moving averages, seasonal decomposition</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Add outlier detection with Z-score and IQR methods</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">ADF (Augmented Dickey-Fuller) stationarity test with interpretation</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">2</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 2</div>
+            <div class="milestone-title">ARIMA Modelling</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Implement differencing to achieve stationarity</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Plot ACF and PACF to determine p and q parameters</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Train ARIMA(p,d,q) model with auto_arima or manual selection</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Generate forecast with 95% confidence intervals</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">3</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 3</div>
+            <div class="milestone-title">Prophet Modelling + Comparison</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Install and configure Facebook Prophet</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Train Prophet model with yearly/weekly seasonality</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Add holiday effects for Indian festivals (optional)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Compare ARIMA vs Prophet: MAPE, RMSE, MAE on test set</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">4</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 4</div>
+            <div class="milestone-title">Interactive Dashboard</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Build Streamlit multi-page dashboard</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Add interactive plotly charts for both models</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Parameter sliders: forecast horizon, confidence level</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Download button for forecast CSV</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">5</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 5</div>
+            <div class="milestone-title">Deploy + Documentation</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Containerise with Docker</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Deploy to Render.com with environment variables</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Write README with architecture diagram description</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Complete report and PPT with methodology and results</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem;">
+      <div class="section-tag" style="margin-bottom:0.75rem;">code patterns</div>
+      <h2>Key Code Patterns</h2>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>stationarity_test.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> statsmodels.tsa.stattools <span class="kw">import</span> adfuller
+
+<span class="kw">def</span> <span class="fn">test_stationarity</span>(series) -> dict:
+    result = <span class="fn">adfuller</span>(series.dropna())
+    <span class="kw">return</span> {
+        <span class="st">'adf_stat'</span>:  result[<span class="num">0</span>],
+        <span class="st">'p_value'</span>:   result[<span class="num">1</span>],
+        <span class="st">'is_stationary'</span>: result[<span class="num">1</span>] < <span class="num">0.05</span>,  <span class="cm"># p < 0.05 = stationary</span>
+        <span class="st">'critical_values'</span>: result[<span class="num">4</span>]
+    }</code></pre>
+        </div>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>arima_forecast.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> statsmodels.tsa.arima.model <span class="kw">import</span> ARIMA
+<span class="kw">import</span> pmdarima <span class="kw">as</span> pm  <span class="cm"># auto_arima</span>
+
+<span class="cm"># Auto-select best (p, d, q)</span>
+auto = pm.auto_arima(train, seasonal=<span class="kw">False</span>, stepwise=<span class="kw">True</span>, error_action=<span class="st">'ignore'</span>)
+model = ARIMA(train, order=auto.order).<span class="fn">fit</span>()
+
+<span class="cm"># Forecast next 30 periods with confidence intervals</span>
+forecast = model.<span class="fn">get_forecast</span>(steps=<span class="num">30</span>)
+fc_mean  = forecast.predicted_mean
+fc_ci    = forecast.conf_int(alpha=<span class="num">0.05</span>)</code></pre>
+        </div>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>prophet_model.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> prophet <span class="kw">import</span> Prophet
+
+model = <span class="cl">Prophet</span>(yearly_seasonality=<span class="kw">True</span>, weekly_seasonality=<span class="kw">True</span>,
+                 changepoint_prior_scale=<span class="num">0.05</span>)
+model.<span class="fn">fit</span>(df_prophet)  <span class="cm"># requires columns: ds (date), y (value)</span>
+
+future = model.<span class="fn">make_future_dataframe</span>(periods=<span class="num">90</span>)
+forecast = model.<span class="fn">predict</span>(future)  <span class="cm"># yhat, yhat_lower, yhat_upper</span></code></pre>
+        </div>
+    </div>
+
+    <div style="margin-top:3rem;">
+      <div class="section-tag" style="margin-bottom:0.75rem;">deployment</div>
+      <h2>Deploy to Render.com (Free)</h2>
+      <ol style="padding-left:1.5rem;margin-top:1rem;"><li style="list-style:decimal;margin-bottom:0.5rem;font-size:0.9rem;">Run <code>pip freeze > requirements.txt</code> to capture dependencies</li><li style="list-style:decimal;margin-bottom:0.5rem;font-size:0.9rem;">Add <code>Procfile</code>: <code>web: streamlit run dashboard.py --server.port $PORT --server.address 0.0.0.0</code></li><li style="list-style:decimal;margin-bottom:0.5rem;font-size:0.9rem;">Push to GitHub: <code>git add . &amp;&amp; git commit -m "deploy" &amp;&amp; git push</code></li><li style="list-style:decimal;margin-bottom:0.5rem;font-size:0.9rem;">Create free account at <a href="https://render.com" target="_blank">render.com</a> → New Web Service → connect repo</li><li style="list-style:decimal;margin-bottom:0.5rem;font-size:0.9rem;">Set runtime: Python 3.11. Deploy. Your dashboard is live at <code>your-app.onrender.com</code></li></ol>
+    </div>
+
+    <div id="viva" style="margin-top:3rem;">
+      <div class="section-tag" style="margin-bottom:0.75rem;">viva prep</div>
+      <h2>20 Viva Questions with Answers</h2>
+      <div class="viva-list" style="margin-top:1.5rem;">
+        <div class="viva-item">
+          <div class="viva-q">Q1. What is time series forecasting and why is it important for inventory management?</div>
+          <div class="viva-a">Time series forecasting predicts future values based on historical sequential data. For inventory, it prevents stockouts (running out of goods) and overstock (tying up capital in unsold goods).</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q2. What is stationarity and why does ARIMA require it?</div>
+          <div class="viva-a">A stationary series has constant mean, variance, and autocorrelation over time — no trend or changing seasonality. ARIMA assumes stationarity to make valid statistical predictions.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q3. What is the Augmented Dickey-Fuller test and how do you interpret it?</div>
+          <div class="viva-a">The ADF test checks for a unit root (non-stationarity). p-value < 0.05: reject null hypothesis, series is stationary. p-value ≥ 0.05: series is non-stationary, apply differencing.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q4. Explain the (p, d, q) parameters in ARIMA.</div>
+          <div class="viva-a">p = AR order (how many past values to use), d = degree of differencing (how many times to difference to achieve stationarity), q = MA order (how many past forecast errors to use).</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q5. What is differencing and when do you apply it?</div>
+          <div class="viva-a">Differencing: y'(t) = y(t) - y(t-1). Removes trend. Second differencing removes quadratic trend. Apply when ADF test shows non-stationarity (p ≥ 0.05).</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q6. How does Facebook Prophet handle seasonality differently from ARIMA?</div>
+          <div class="viva-a">Prophet uses Fourier series to model seasonality and allows multiple seasonalities (yearly, weekly, daily) simultaneously. ARIMA uses ACF/PACF-based lag terms. Prophet is more flexible for irregular/multiple seasonalities.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q7. What is MAPE and when is it preferred over RMSE?</div>
+          <div class="viva-a">MAPE = Mean Absolute Percentage Error. Scale-free (percentage), so you can compare models across series with different magnitudes. RMSE is better when large errors are disproportionately costly.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q8. How do confidence intervals work in your forecast?</div>
+          <div class="viva-a">The 95% CI means the model predicts the true value will fall within the band 95% of the time. Wider bands = more uncertainty (further into the future or high variance data).</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q9. What is seasonal decomposition and what does it show?</div>
+          <div class="viva-a">STL or classical decomposition separates a series into Trend + Seasonality + Residual components. It reveals the underlying structure and helps choose the right model.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q10. How would you handle missing values in the time series?</div>
+          <div class="viva-a">Options: forward fill (use last known value), backward fill, linear interpolation, or seasonal interpolation. The choice depends on what caused the gap (weekend, holiday, data error).</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q11. What would cause ARIMA to perform poorly on your data?</div>
+          <div class="viva-a">Structural breaks (sudden policy change, COVID effect), multiple seasonalities, non-linear relationships, very short history, or extreme outliers. Prophet handles these better.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q12. How do you evaluate forecasting models fairly?</div>
+          <div class="viva-a">Time series cross-validation (expanding window): train on t1..t_n, test on t_{n+1}..t_{n+h}, roll forward. Never use future data for training — this causes data leakage.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q13. What is the changepoint_prior_scale parameter in Prophet?</div>
+          <div class="viva-a">Controls how flexible the trend is. Higher value = more changepoints detected (risk of overfitting). Lower = smoother, more regularised trend. Default 0.05 is a good starting point.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q14. How would you add holiday effects to your forecast?</div>
+          <div class="viva-a">Prophet: create a DataFrame with holiday name, date, and lower/upper window (days before/after). Pass to Prophet(holidays=holidays_df). This adds indicator variables for holiday periods.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q15. What is auto_arima and how does it work?</div>
+          <div class="viva-a">pmdarima.auto_arima() uses stepwise search (AIC minimisation) to find the best (p,d,q) automatically. It tests combinations of orders, fits ARIMA, and returns the model with the lowest AIC.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q16. How would you deploy this to handle 100 users simultaneously?</div>
+          <div class="viva-a">Streamlit runs single-threaded by default. Use Streamlit Cloud or Docker + Kubernetes for multi-user. Add caching (@st.cache_data) on data loading. Store user sessions in Redis.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q17. What is the difference between in-sample and out-of-sample forecasting?</div>
+          <div class="viva-a">In-sample: forecast within the training period (checks model fit but not generalisation). Out-of-sample: forecast beyond the training period (true test of forecasting ability).</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q18. How would you handle a product with no historical data?</div>
+          <div class="viva-a">Cold start problem. Options: use similar products (cross-sectional forecast), use global model trained on all products, or apply a simple baseline (category average).</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q19. Why did you choose Streamlit over a custom web frontend?</div>
+          <div class="viva-a">Streamlit allows rapid prototyping in pure Python — no HTML/CSS/JS required. It handles state, file uploads, and reactive updates automatically. Ideal for data science demos and dashboards.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q20. What extension ideas could make this a more complete product?</div>
+          <div class="viva-a">Multi-product forecasting (one model per SKU), reorder point calculation (when to order based on forecast + safety stock), supplier lead time integration, and email alerts when stock falls below threshold.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem;padding:1.5rem;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border-dim);">
+      <h3 style="margin-bottom:0.5rem;">Report &amp; PPT Templates</h3>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1rem;">Download the pre-structured A4 report template and 10-slide PPT deck. Fill in your own results and screenshots.</p>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        <a href="/contact.html" class="btn btn-outline btn-sm">📄 Request Report Template</a>
+        <a href="/contact.html" class="btn btn-ghost btn-sm">📊 Request PPT Deck</a>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;">
+      <div class="completion-banner">
+        <div class="completion-icon">🏆</div>
+        <div class="completion-body">
+          <h3>Mark Project Complete</h3>
+          <p>Record your completion, earn your project certificate, and add it to your profile.</p>
+        </div>
+        <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordProjectCompletion('inventory-forecasting')">Mark Complete →</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div>
+      <p class="footer-tagline">Real-world AI project kits for B.E., B.Tech, BCA, MCA, and IT students.</p></div>
+      <div class="footer-col"><h4>Projects</h4><ul>
+        <li><a href="/projects/">All Projects</a></li>
+        <li><a href="/projects/document-qa-assistant.html">Document Q&A</a></li>
+        <li><a href="/projects/ai-resume-screener.html">Resume Screener</a></li>
+        <li><a href="/projects/inventory-forecasting.html">Inventory Forecast</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Courses</h4><ul>
+        <li><a href="/courses/ml.html">Machine Learning</a></li>
+        <li><a href="/courses/genai.html">Generative AI</a></li>
+        <li><a href="/courses/programming.html">Programming</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul>
+        <li><a href="/tracks.html">Career Tracks</a></li>
+        <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life. All rights reserved.</span>
+    <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>AI Resume Screener &amp; Interview Copilot | Mitra AI Projects</title>
+  <meta name="description" content="Build an AI-powered resume screener that scores resumes against a job description and generates interview questions. Portfolio build for placement-focused students.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/" class="active">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/projects/">Projects</a><span class="breadcrumb-sep">›</span><span>AI Resume Screener &amp;amp; Interview Copilot</span></div>
+    <div class="project-meta-strip">
+      <span class="badge badge-primary">Portfolio Build</span>
+      <span class="badge badge-muted">~4 Weeks</span>
+      <span class="badge badge-muted">Beginner Friendly</span>
+    </div>
+    <h1 style="margin-bottom:0.75rem;">AI Resume Screener &amp; Interview Copilot</h1>
+    <p style="color:var(--muted);font-size:1.05rem;max-width:660px;margin-bottom:1.25rem;">Build a tool that takes a job description and a batch of resumes, extracts key information, scores each resume against the job requirements using an LLM, and generates tailored interview questions.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">OpenAI API</span><span class="tag">PyMuPDF</span><span class="tag">spaCy</span><span class="tag">pandas</span></div>
+    <div class="project-deliverables" style="margin-top:1.5rem;"><span class="deliverable-pill">Source code + README</span><span class="deliverable-pill">Architecture diagram</span><span class="deliverable-pill">4-milestone breakdown</span><span class="deliverable-pill">Deployment guide</span><span class="deliverable-pill">Report template</span><span class="deliverable-pill">PPT deck (10 slides)</span><span class="deliverable-pill">20 viva Q&A</span></div>
+    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#milestones" class="btn btn-primary btn-lg">Start Building →</a>
+      <a href="#viva" class="btn btn-outline btn-lg">See Viva Q&amp;A</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:3rem;">
+  <div class="container">
+    <div class="grid grid-2" style="gap:3rem;align-items:start;">
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.75rem;">what you build</div>
+        <h2>An HR tech tool that ranks resumes and generates personalised interview questions — demonstrating NLP, LLM APIs, and Streamlit.</h2>
+        <div class="topic-section"><h3>Core Features</h3>
+          <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Upload multiple resumes (PDF/DOCX) and a job description</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Extract text using PyMuPDF and parse key sections (skills, experience, education)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Score each resume 0–100 using LLM with structured prompt</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Ranked leaderboard showing top candidates with scores and summaries</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Generate 5 personalised interview questions per candidate</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Export results to CSV for HR team</li></ul></div>
+      </div>
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.75rem;">prerequisites</div>
+        <h2>Before You Start</h2>
+        <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Python basics — functions, file I/O, dictionaries</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Basic understanding of LLM APIs (OpenAI)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Familiarity with Streamlit for UI (or willingness to learn)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Understanding of what a resume and job description contain</li></ul>
+        <div style="margin-top:1.25rem;display:flex;gap:0.5rem;flex-wrap:wrap;"><a href="/courses/genai.html" class="btn btn-outline btn-sm">Generative AI →</a><a href="/courses/programming.html" class="btn btn-outline btn-sm">Programming →</a></div>
+      </div>
+    </div>
+
+    <div id="architecture" style="margin-top:3rem;">
+      <div class="section-tag" style="margin-bottom:0.75rem;">system design</div>
+      <h2>Architecture</h2>
+      <p style="color:var(--muted);margin-bottom:1.5rem;">PDF/DOCX files → text extraction → LLM scoring prompt → structured JSON response → ranked leaderboard → interview question generation → CSV export.</p>
+      <div class="arch-boxes"><div class="arch-box">📄 Resume Upload<br>(PDF/DOCX)</div><div class="arch-box">→</div><div class="arch-box">🔍 Text Extraction<br>(PyMuPDF/docx2txt)</div><div class="arch-box">→</div><div class="arch-box">🤖 LLM Scoring<br>(GPT-4o-mini)</div><div class="arch-box">→</div><div class="arch-box">📊 Ranked Results<br>(Streamlit UI)</div><div class="arch-box">→</div><div class="arch-box">❓ Interview Qs<br>(Generated)</div></div>
+    </div>
+
+    <div id="milestones" style="margin-top:3rem;">
+      <div class="section-tag" style="margin-bottom:0.75rem;">4-week plan</div>
+      <h2 id="milestones">Milestone Breakdown</h2>
+      <div class="milestone-list" style="margin-top:1.5rem;">
+        <div class="milestone-card">
+          <div class="milestone-num">1</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 1</div>
+            <div class="milestone-title">Setup + Text Extraction</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Set up project structure and virtual environment</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Implement PDF text extraction with PyMuPDF</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Implement DOCX extraction with python-docx</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Test with 5 sample resumes — verify clean text output</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">2</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 2</div>
+            <div class="milestone-title">LLM Scoring Engine</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Design the scoring prompt with structured JSON output</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Implement OpenAI API call with retry and error handling</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Parse and validate the JSON response (score, summary, matched skills)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Test with 10 resumes — verify score consistency</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">3</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 3</div>
+            <div class="milestone-title">Streamlit UI + Interview Questions</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Build the Streamlit upload interface (job description + resume batch)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Display ranked results with score bars and skill match highlights</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Implement interview question generation per candidate</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Add CSV export functionality</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">4</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 4</div>
+            <div class="milestone-title">Deploy + Report</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Containerise with Docker</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Deploy to Render.com (free tier)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Write README with setup instructions</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Prepare report and PPT with screenshots</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem;">
+      <div class="section-tag" style="margin-bottom:0.75rem;">code patterns</div>
+      <h2>Key Code Patterns</h2>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>text_extraction.py</span>
+          </div>
+          <pre><code><span class="kw">import</span> fitz  <span class="cm"># PyMuPDF</span>
+
+<span class="kw">def</span> <span class="fn">extract_resume_text</span>(pdf_path: str) -> str:
+    doc = fitz.<span class="fn">open</span>(pdf_path)
+    text = <span class="st">""</span>
+    <span class="kw">for</span> page <span class="kw">in</span> doc:
+        text += page.<span class="fn">get_text</span>()
+    <span class="kw">return</span> text.<span class="fn">strip</span>()</code></pre>
+        </div>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>scoring_prompt.py</span>
+          </div>
+          <pre><code><span class="kw">def</span> <span class="fn">score_resume</span>(resume_text, job_desc, client):
+    prompt = f"Score this resume 0-100.\nJOB: {job_desc}\nRESUME: {resume_text}"
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[{"role":"user","content":prompt}],
+        response_format={"type":"json_object"}
+    )
+    return json.loads(response.choices[0].message.content)</code></pre>
+        </div>
+    </div>
+
+    <div style="margin-top:3rem;">
+      <div class="section-tag" style="margin-bottom:0.75rem;">deployment</div>
+      <h2>Deploy to Render.com (Free)</h2>
+      <ol style="padding-left:1.5rem;margin-top:1rem;"><li style="list-style:decimal;margin-bottom:0.5rem;font-size:0.9rem;">Create a <code>requirements.txt</code> with all dependencies</li><li style="list-style:decimal;margin-bottom:0.5rem;font-size:0.9rem;">Add a <code>Procfile</code>: <code>web: streamlit run app.py --server.port $PORT</code></li><li style="list-style:decimal;margin-bottom:0.5rem;font-size:0.9rem;">Create a free account at <a href="https://render.com" target="_blank">render.com</a></li><li style="list-style:decimal;margin-bottom:0.5rem;font-size:0.9rem;">New Web Service → Connect GitHub repo → Set <code>OPENAI_API_KEY</code> as environment variable</li><li style="list-style:decimal;margin-bottom:0.5rem;font-size:0.9rem;">Deploy — your app is live at <code>your-app.onrender.com</code> in ~3 minutes</li></ol>
+    </div>
+
+    <div id="viva" style="margin-top:3rem;">
+      <div class="section-tag" style="margin-bottom:0.75rem;">viva prep</div>
+      <h2>20 Viva Questions with Answers</h2>
+      <div class="viva-list" style="margin-top:1.5rem;">
+        <div class="viva-item">
+          <div class="viva-q">Q1. What is the difference between keyword matching and LLM-based resume scoring?</div>
+          <div class="viva-a">Keyword matching checks for exact word presence — it misses synonyms and context. LLM scoring understands meaning: "managed a team" matches "leadership experience" even without the exact words.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q2. How does your scoring system avoid bias?</div>
+          <div class="viva-a">The prompt instructs the LLM to focus only on skills and experience relevant to the job description, explicitly excluding age, gender, and personal details. The structured output enforces objective criteria.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q3. Why did you use PyMuPDF for PDF extraction instead of PyPDF2?</div>
+          <div class="viva-a">PyMuPDF (fitz) provides better layout preservation and handles complex PDFs with tables, images, and multi-column layouts more reliably than PyPDF2.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q4. What is the response_format: json_object parameter in OpenAI API?</div>
+          <div class="viva-a">It forces the model to return valid JSON, preventing parsing errors from extra text or markdown code blocks around the JSON output.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q5. How would you handle rate limiting from the OpenAI API?</div>
+          <div class="viva-a">Implement exponential backoff: catch RateLimitError, wait 2^n seconds, retry up to 3 times. For batch processing, add time.sleep(1) between requests.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q6. What are the limitations of your resume screener?</div>
+          <div class="viva-a">1) Only works with text-based PDFs, not scanned images. 2) LLM costs scale with volume. 3) AI screening can have biases from training data. 4) No support for non-English resumes.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q7. How would you scale this to process 10,000 resumes per day?</div>
+          <div class="viva-a">Use async/await with asyncio for parallel API calls. Use a task queue (Celery + Redis). Consider OpenAI Batch API (50% cheaper for non-real-time). Cache embeddings for repeated job descriptions.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q8. What is Streamlit and why did you choose it over Flask/FastAPI?</div>
+          <div class="viva-a">Streamlit converts Python scripts into interactive web apps with minimal code. It handles state, file uploads, and UI components automatically. Flask/FastAPI require HTML/CSS/JS knowledge. For rapid prototyping, Streamlit is faster.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q9. How do you validate the LLM output JSON structure?</div>
+          <div class="viva-a">Use Pydantic models to validate: define a ResumeScore model with required fields and types. Catch ValidationError and retry with a clarified prompt if the structure is wrong.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q10. What metrics would you use to evaluate the screener quality?</div>
+          <div class="viva-a">Compare AI scores against HR expert rankings on a test set. Measure precision@k (are the top-k AI-selected candidates actually good?). Track consistency: same resume scored twice should get similar scores.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q11. Explain how interview question generation works in your system.</div>
+          <div class="viva-a">After scoring, a second prompt receives the resume text, job description, and identified skill gaps. It generates 5 specific questions targeting the candidate's gaps or clarifying their strongest experiences.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q12. Why is it important to show the matched skills and gaps, not just the score?</div>
+          <div class="viva-a">A score alone is a black box — HR teams cannot justify why a candidate was ranked low. Showing matched skills and gaps makes the system explainable and helps recruiters make informed decisions.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q13. How would you add support for scanned PDF resumes?</div>
+          <div class="viva-a">Use AWS Textract or Google Cloud Vision OCR to extract text from scanned images before passing to the LLM pipeline. This adds latency and cost but handles image-based PDFs.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q14. What is the difference between extracting text and understanding a resume?</div>
+          <div class="viva-a">Extraction gives raw text. Understanding means identifying sections (skills, experience, education), parsing dates, normalising job titles, and mapping to standardised skills taxonomies.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q15. How do you handle resumes in different formats (2-page vs 1-page, functional vs chronological)?</div>
+          <div class="viva-a">The LLM handles format variation naturally since it understands language context. For structure, the extraction focuses on full text rather than trying to parse sections programmatically.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q16. What is the approximate cost per resume screening with gpt-4o-mini?</div>
+          <div class="viva-a">A resume is ~500 tokens. Job description ~200 tokens. Response ~300 tokens. Total ~1000 tokens. At $0.15/1M input + $0.60/1M output: approximately $0.0003 per resume — very cheap for automated screening.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q17. How would you build a feedback loop to improve the system over time?</div>
+          <div class="viva-a">Collect HR feedback on AI rankings (thumbs up/down per candidate). Store feedback in a database. Periodically fine-tune the scoring prompt or a fine-tuned model on the collected feedback data.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q18. What data protection considerations apply to resume screening?</div>
+          <div class="viva-a">Resumes contain personal data (PII). Under GDPR/PDPA: inform candidates that AI is used, don't store resumes longer than necessary, implement data deletion, avoid sending PII to third-party APIs if possible (use local models).</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q19. How would you explain this project in a placement interview?</div>
+          <div class="viva-a">I built an automated recruitment tool that uses OpenAI's API to score resumes against job descriptions, rank candidates, and generate interview questions. It handles PDF extraction, structured LLM outputs, and Streamlit UI.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q20. What would you add next if you had 2 more weeks?</div>
+          <div class="viva-a">ATS integration via email parsing, multi-language support using translation before scoring, a candidate notification system, and a similarity search to find historical candidates matching new jobs.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem;padding:1.5rem;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border-dim);">
+      <h3 style="margin-bottom:0.5rem;">Report &amp; PPT Templates</h3>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1rem;">Download the pre-structured A4 report template and 10-slide PPT deck. Fill in your own results and screenshots.</p>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        <a href="/contact.html" class="btn btn-outline btn-sm">📄 Request Report Template</a>
+        <a href="/contact.html" class="btn btn-ghost btn-sm">📊 Request PPT Deck</a>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;">
+      <div class="completion-banner">
+        <div class="completion-icon">🏆</div>
+        <div class="completion-body">
+          <h3>Mark Project Complete</h3>
+          <p>Record your completion, earn your project certificate, and add it to your profile.</p>
+        </div>
+        <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordProjectCompletion('ai-resume-screener')">Mark Complete →</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div>
+      <p class="footer-tagline">Real-world AI project kits for B.E., B.Tech, BCA, MCA, and IT students.</p></div>
+      <div class="footer-col"><h4>Projects</h4><ul>
+        <li><a href="/projects/">All Projects</a></li>
+        <li><a href="/projects/document-qa-assistant.html">Document Q&A</a></li>
+        <li><a href="/projects/ai-resume-screener.html">Resume Screener</a></li>
+        <li><a href="/projects/inventory-forecasting.html">Inventory Forecast</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Courses</h4><ul>
+        <li><a href="/courses/ml.html">Machine Learning</a></li>
+        <li><a href="/courses/genai.html">Generative AI</a></li>
+        <li><a href="/courses/programming.html">Programming</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul>
+        <li><a href="/tracks.html">Career Tracks</a></li>
+        <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life. All rights reserved.</span>
+    <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

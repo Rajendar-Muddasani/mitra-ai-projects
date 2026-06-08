@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Resume Parser & Scorer — Mini Project Kit | Mitra AI Projects</title>
+  <meta name="description" content="Extract structured data from PDF resumes using PyMuPDF and regex. Score resumes for specific skills and visualise candidate profiles.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/" class="active">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/projects/">Projects</a><span class="breadcrumb-sep">›</span><span>Resume Parser & Scorer</span></div>
+    <div class="project-meta-strip">
+      <span class="badge badge-accent">Mini Project</span>
+      <span class="badge badge-muted">~2–3 Weeks</span>
+      <span class="badge badge-muted">Beginner Friendly</span>
+    </div>
+    <h1 style="margin-bottom:0.75rem;">Resume Parser & Scorer</h1>
+    <p style="color:var(--muted);font-size:1.05rem;max-width:640px;margin-bottom:1.25rem;">Extract structured data from PDF resumes using PyMuPDF and regex. Score resumes for specific skills and visualise candidate profiles.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">PyMuPDF</span><span class="tag">spaCy</span><span class="tag">Streamlit</span><span class="tag">pandas</span><span class="tag">re</span></div>
+    <div class="project-deliverables" style="margin-top:1.5rem;">
+      <span class="deliverable-pill">Source code + README</span>
+      <span class="deliverable-pill">Milestone breakdown</span>
+      <span class="deliverable-pill">Deployment guide</span>
+      <span class="deliverable-pill">10 viva Q&amp;A</span>
+    </div>
+    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#milestones" class="btn btn-primary btn-lg">Start Building →</a>
+      <a href="#viva" class="btn btn-outline btn-lg">Viva Q&amp;A</a>
+      <a href="/courses/genai.html" class="btn btn-ghost btn-lg">Learn GenAI First</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:2.5rem;">
+  <div class="container">
+
+    <div class="grid grid-2" style="gap:3rem;align-items:start;margin-bottom:3rem;">
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">what you build</div>
+        <h2 style="margin-bottom:0.75rem;">A tool that automatically extracts contact info, skills, experience, and education from PDF resumes and scores them for a given role.</h2>
+        <ul style="padding-left:1.25rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Extract text from PDF resumes using PyMuPDF</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Parse sections: contact info, skills, work experience, education</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Score against a customisable skills list (0-100)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Visual profile card per candidate with skill match percentage</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Batch processing: upload multiple resumes, get ranked leaderboard</li></ul>
+      </div>
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">prerequisites</div>
+        <h2 style="margin-bottom:0.75rem;">Before You Start</h2>
+        <ul style="padding-left:1.25rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Python basics (regex, file handling)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Basic NLP understanding (tokenisation, entity extraction)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Streamlit familiarity helpful</li></ul>
+      </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">architecture</div>
+      <h2 style="margin-bottom:1rem;">How It Works</h2>
+      <div class="arch-boxes"><div class="arch-box">📄 PDF Upload</div><div class="arch-box">→</div><div class="arch-box">🔍 Text Extraction<br>(PyMuPDF)</div><div class="arch-box">→</div><div class="arch-box">🧠 NLP Parsing<br>(regex + spaCy NER)</div><div class="arch-box">→</div><div class="arch-box">⭐ Skill Scoring</div><div class="arch-box">→</div><div class="arch-box">📊 Profile Cards</div></div>
+    </div>
+
+    <div id="milestones" style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">3-week plan</div>
+      <h2 style="margin-bottom:1rem;">Milestone Breakdown</h2>
+      <div class="milestone-list">
+        <div class="milestone-card">
+          <div class="milestone-num">1</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 1</div>
+            <div class="milestone-title">PDF Extraction + Section Parsing</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Extract text from PDF using fitz.open()</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Use regex to find email, phone number, LinkedIn URL</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Identify section headers (SKILLS, EXPERIENCE, EDUCATION)</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">2</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 2</div>
+            <div class="milestone-title">Skill Matching + Scoring</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Build a skills vocabulary list (Python, SQL, etc.)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Match skills using keyword search + fuzzy matching</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Calculate score: matched_skills / required_skills * 100</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">3</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 3</div>
+            <div class="milestone-title">Streamlit UI + Deploy</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Build profile card UI for each parsed resume</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Add batch upload with ranked leaderboard</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Deploy to Streamlit Cloud</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">key code</div>
+      <h2 style="margin-bottom:1rem;">Core Implementation</h2>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>parser.py</span>
+          </div>
+          <pre><code><span class="kw">import</span> fitz, re
+
+SKILLS_LIST = [<span class="st">"python"</span>, <span class="st">"sql"</span>, <span class="st">"machine learning"</span>, <span class="st">"tensorflow"</span>,
+               <span class="st">"pandas"</span>, <span class="st">"git"</span>, <span class="st">"docker"</span>, <span class="st">"javascript"</span>]
+
+<span class="kw">def</span> <span class="fn">parse_resume</span>(pdf_path: str) -> dict:
+    text = <span class="st">""</span>.<span class="fn">join</span>(page.<span class="fn">get_text</span>() <span class="kw">for</span> page <span class="kw">in</span> fitz.<span class="fn">open</span>(pdf_path))
+    email  = re.<span class="fn">findall</span>(<span class="st">r'[\w.-]+@[\w.-]+\.\w+'</span>, text)
+    skills = [s <span class="kw">for</span> s <span class="kw">in</span> SKILLS_LIST <span class="kw">if</span> s <span class="kw">in</span> text.lower()]
+    score  = <span class="fn">round</span>(<span class="fn">len</span>(skills) / <span class="fn">len</span>(SKILLS_LIST) * <span class="num">100</span>)
+    <span class="kw">return</span> {<span class="st">"email"</span>: email[<span class="num">0</span>] <span class="kw">if</span> email <span class="kw">else</span> <span class="st">""</span>,
+            <span class="st">"skills"</span>: skills, <span class="st">"score"</span>: score}</code></pre>
+        </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">deployment</div>
+      <h2 style="margin-bottom:1rem;">Deploy to Streamlit Cloud (Free)</h2>
+      <div class="code-panel" style="margin-bottom:1rem;">
+        <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>deploy.sh</span></div>
+        <pre><code><span class="cm"># requirements.txt: pymupdf streamlit pandas</span>
+<span class="cm"># share.streamlit.io → New app → your repo → Deploy</span></code></pre>
+      </div>
+      <p style="color:var(--muted);font-size:0.875rem;">Create a free account at <strong>share.streamlit.io</strong>, connect your GitHub repo, and deploy in one click. Your app gets a public URL instantly.</p>
+    </div>
+
+    <div id="viva" style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">viva prep</div>
+      <h2 style="margin-bottom:1rem;">10 Viva Questions with Answers</h2>
+      <div class="viva-list">
+        <div class="viva-item">
+          <div class="viva-q">Q1. What is information extraction in NLP?</div>
+          <div class="viva-a">Automatically identifying and structuring specific information from unstructured text — names, dates, skills, organisations from resume text.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q2. Why use regex for parsing rather than an LLM?</div>
+          <div class="viva-a">Regex is deterministic, fast, and free. Email and phone patterns are highly predictable. Use LLMs for complex/ambiguous extraction where rules are insufficient.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q3. What is Named Entity Recognition (NER)?</div>
+          <div class="viva-a">NLP task that identifies named entities: PERSON (names), ORG (companies), DATE (years), LOCATION. spaCy provides pre-trained NER models. Useful for extracting employer names and job durations.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q4. How would you handle resumes in different formats (tables, columns)?</div>
+          <div class="viva-a">Use pdfplumber instead of PyMuPDF for better layout handling. For complex layouts, OCR with Tesseract. For consistent corporate formats, template matching.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q5. What is fuzzy matching and when would you use it?</div>
+          <div class="viva-a">Fuzzy matching (fuzzywuzzy/rapidfuzz) finds similar strings: "ML" matches "Machine Learning", "JS" matches "JavaScript". Reduces missed skills from abbreviations.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q6. How do you handle false positive skill matches?</div>
+          <div class="viva-a">Maintain a stop-list (words that contain skill names but aren't skills: "python-like syntax"). Use word boundary matching (\bpython\b) to avoid partial matches.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q7. What privacy considerations apply to resume parsing?</div>
+          <div class="viva-a">Resumes contain PII (names, addresses, dates of birth). Under GDPR/PDPA: inform candidates, don't store longer than necessary, implement deletion rights, encrypt stored data.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q8. How would you improve the scoring algorithm?</div>
+          <div class="viva-a">Weight skills by importance (senior skills score more), consider years of experience, factor in education relevance, use TF-IDF to weight skill frequency.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q9. How would you handle multi-page resumes?</div>
+          <div class="viva-a">PyMuPDF iterates all pages with for page in doc: text += page.get_text(). Multi-page resumes are handled automatically — no special case needed.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q10. What extension would you add next?</div>
+          <div class="viva-a">Integrate with job board API (LinkedIn, Naukri) to automatically match parsed resumes against live job postings. Add LLM-based scoring for semantic matching beyond keyword matching.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="completion-banner">
+      <div class="completion-icon">🏆</div>
+      <div class="completion-body">
+        <h3>Mark Project Complete</h3>
+        <p>Record your completion and earn your project certificate.</p>
+      </div>
+      <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordProjectCompletion('resume-parser')">Mark Complete →</button>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

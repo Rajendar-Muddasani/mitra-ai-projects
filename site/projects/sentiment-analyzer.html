@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Sentiment Analyzer Web App — Mini Project Kit | Mitra AI Projects</title>
+  <meta name="description" content="Build a Streamlit app that classifies text sentiment (positive/negative/neutral) using HuggingFace transformers. Upload CSV for batch analysis.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/" class="active">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/projects/">Projects</a><span class="breadcrumb-sep">›</span><span>Sentiment Analyzer Web App</span></div>
+    <div class="project-meta-strip">
+      <span class="badge badge-accent">Mini Project</span>
+      <span class="badge badge-muted">~2–3 Weeks</span>
+      <span class="badge badge-muted">Beginner Friendly</span>
+    </div>
+    <h1 style="margin-bottom:0.75rem;">Sentiment Analyzer Web App</h1>
+    <p style="color:var(--muted);font-size:1.05rem;max-width:640px;margin-bottom:1.25rem;">Build a Streamlit app that classifies text sentiment (positive/negative/neutral) using HuggingFace transformers. Upload CSV for batch analysis.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">HuggingFace</span><span class="tag">transformers</span><span class="tag">pandas</span><span class="tag">plotly</span></div>
+    <div class="project-deliverables" style="margin-top:1.5rem;">
+      <span class="deliverable-pill">Source code + README</span>
+      <span class="deliverable-pill">Milestone breakdown</span>
+      <span class="deliverable-pill">Deployment guide</span>
+      <span class="deliverable-pill">10 viva Q&amp;A</span>
+    </div>
+    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#milestones" class="btn btn-primary btn-lg">Start Building →</a>
+      <a href="#viva" class="btn btn-outline btn-lg">Viva Q&amp;A</a>
+      <a href="/courses/genai.html" class="btn btn-ghost btn-lg">Learn GenAI First</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:2.5rem;">
+  <div class="container">
+
+    <div class="grid grid-2" style="gap:3rem;align-items:start;margin-bottom:3rem;">
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">what you build</div>
+        <h2 style="margin-bottom:0.75rem;">A text sentiment classification tool that works on single texts or uploaded CSV files.</h2>
+        <ul style="padding-left:1.25rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Single text input: type text, get instant sentiment + confidence score</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Batch CSV upload: process thousands of reviews, tweets, or feedback at once</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Interactive charts: sentiment distribution pie chart, score histogram</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Download results as CSV with sentiment labels and confidence scores</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Supports multiple pre-trained models from HuggingFace hub</li></ul>
+      </div>
+      <div>
+        <div class="section-tag" style="text-align:left;margin-bottom:0.5rem;">prerequisites</div>
+        <h2 style="margin-bottom:0.75rem;">Before You Start</h2>
+        <ul style="padding-left:1.25rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Python basics (functions, file I/O)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Basic pandas for data manipulation</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Understanding of what a classification model does</li></ul>
+      </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">architecture</div>
+      <h2 style="margin-bottom:1rem;">How It Works</h2>
+      <div class="arch-boxes"><div class="arch-box">📝 Text Input<br>or CSV Upload</div><div class="arch-box">→</div><div class="arch-box">🤗 HuggingFace<br>Transformer Model</div><div class="arch-box">→</div><div class="arch-box">📊 Sentiment Score<br>(Positive/Negative)</div><div class="arch-box">→</div><div class="arch-box">📈 Streamlit Dashboard<br>+ CSV Export</div></div>
+    </div>
+
+    <div id="milestones" style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">3-week plan</div>
+      <h2 style="margin-bottom:1rem;">Milestone Breakdown</h2>
+      <div class="milestone-list">
+        <div class="milestone-card">
+          <div class="milestone-num">1</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 1</div>
+            <div class="milestone-title">Core Classifier</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Install transformers and load distilbert-sst2 sentiment model</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Build single text classification function with confidence score</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Test with 20 example sentences to verify accuracy</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">2</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 2</div>
+            <div class="milestone-title">Batch Processing + Streamlit UI</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Implement CSV upload with pandas (handle text column detection)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Process batch with progress bar (@st.cache_data for speed)</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Build Streamlit UI: text input tab + CSV upload tab</li></ul>
+          </div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-num">3</div>
+          <div class="milestone-body">
+            <div class="milestone-week">Week 3</div>
+            <div class="milestone-title">Charts + Deploy</div>
+            <ul style="padding-left:1.25rem;margin-top:0.5rem;"><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Add plotly pie chart for sentiment distribution</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Add confidence score histogram</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Download button for results CSV</li><li style="list-style:disc;font-size:0.875rem;margin-bottom:0.25rem;">Deploy to Streamlit Cloud</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">key code</div>
+      <h2 style="margin-bottom:1rem;">Core Implementation</h2>
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div>
+            <span>sentiment.py</span>
+          </div>
+          <pre><code><span class="kw">from</span> transformers <span class="kw">import</span> pipeline
+<span class="kw">import</span> streamlit <span class="kw">as</span> st
+
+<span class="cm"># Load model once at startup</span>
+@st.cache_resource
+<span class="kw">def</span> <span class="fn">load_model</span>():
+    <span class="kw">return</span> <span class="fn">pipeline</span>(<span class="st">"sentiment-analysis"</span>,
+                     model=<span class="st">"distilbert-base-uncased-finetuned-sst-2-english"</span>)
+
+classifier = <span class="fn">load_model</span>()
+
+<span class="cm"># Classify text</span>
+result = classifier(<span class="st">"This product is absolutely amazing!"</span>)[<span class="num">0</span>]
+<span class="cm"># {'label': 'POSITIVE', 'score': 0.9998}</span></code></pre>
+        </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">deployment</div>
+      <h2 style="margin-bottom:1rem;">Deploy to Streamlit Cloud (Free)</h2>
+      <div class="code-panel" style="margin-bottom:1rem;">
+        <div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>deploy.sh</span></div>
+        <pre><code><span class="cm"># requirements.txt</span>
+transformers streamlit pandas plotly torch
+
+<span class="cm"># share.streamlit.io → New app → connect GitHub repo</span>
+<span class="cm"># Main file path: app.py → Deploy</span></code></pre>
+      </div>
+      <p style="color:var(--muted);font-size:0.875rem;">Create a free account at <strong>share.streamlit.io</strong>, connect your GitHub repo, and deploy in one click. Your app gets a public URL instantly.</p>
+    </div>
+
+    <div id="viva" style="margin-bottom:3rem;">
+      <div class="section-tag" style="margin-bottom:0.5rem;">viva prep</div>
+      <h2 style="margin-bottom:1rem;">10 Viva Questions with Answers</h2>
+      <div class="viva-list">
+        <div class="viva-item">
+          <div class="viva-q">Q1. What is sentiment analysis?</div>
+          <div class="viva-a">NLP task that classifies text as positive, negative, or neutral. Used for: customer feedback analysis, brand monitoring, product review processing.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q2. What model are you using and why?</div>
+          <div class="viva-a">DistilBERT fine-tuned on SST-2 (Stanford Sentiment Treebank). DistilBERT is 40% smaller than BERT, 60% faster, retains 97% accuracy. Good balance of speed and quality.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q3. What is @st.cache_resource in Streamlit?</div>
+          <div class="viva-a">Caches a resource (like a loaded ML model) so it is not reloaded on every user interaction. Models are expensive to load — caching means they load once per session.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q4. How would you handle non-English text?</div>
+          <div class="viva-a">Use a multilingual model like nlptown/bert-base-multilingual-uncased-sentiment, or add a translation step using googletrans before passing to the English sentiment model.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q5. What are the limitations of this sentiment analyzer?</div>
+          <div class="viva-a">Pre-trained on movie reviews (SST-2), may not generalise well to technical, medical, or domain-specific text. Cannot handle sarcasm. Does not understand context across multiple sentences.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q6. How would you evaluate if the model is accurate for your use case?</div>
+          <div class="viva-a">Collect 200-500 domain-specific examples, manually label them, run the model, compute precision/recall/F1. If accuracy < 80%, fine-tune on domain data.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q7. What is the difference between rule-based and ML-based sentiment analysis?</div>
+          <div class="viva-a">Rule-based: predefined word lists (VADER, TextBlob). Fast, interpretable, but misses context. ML-based: learns patterns from data, handles context, sarcasm better, but needs training data.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q8. How do you handle very long texts?</div>
+          <div class="viva-a">Transformers have a 512 token limit. For longer texts: chunk into sentences, classify each, aggregate (majority vote or average confidence). Or use longformer which handles longer inputs.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q9. What would you add to make this production-ready?</div>
+          <div class="viva-a">Authentication, rate limiting, API endpoint (FastAPI), database for storing results, monitoring for model drift, batch processing queue (Celery), cost management.</div>
+        </div>
+        <div class="viva-item">
+          <div class="viva-q">Q10. How would you add neutral sentiment?</div>
+          <div class="viva-a">Switch to a 3-class model like cardiffnlp/twitter-roberta-base-sentiment-latest which predicts positive/neutral/negative. Or threshold: scores 0.4-0.6 = neutral.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="completion-banner">
+      <div class="completion-icon">🏆</div>
+      <div class="completion-body">
+        <h3>Mark Project Complete</h3>
+        <p>Record your completion and earn your project certificate.</p>
+      </div>
+      <button class="btn btn-primary claim-certificate" onclick="window.MitraAuth?.recordProjectCompletion('sentiment-analyzer')">Mark Complete →</button>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

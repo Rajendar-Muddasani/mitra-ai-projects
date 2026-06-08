@@ -194,19 +194,19 @@
 ### Mini Projects (2–4 weeks, 2nd/3rd year)
 | ID | Project | Tech Stack | Page | Kit complete |
 |---|---|---|---|---|
-| P-M1 | Sentiment Analyzer Web App | Streamlit, HuggingFace | ❌ | ❌ |
-| P-M2 | Resume Parser & Scorer | Python, spaCy, PDF | ❌ | ❌ |
-| P-M3 | News Category Classifier | scikit-learn, TF-IDF | ❌ | ❌ |
-| P-M4 | Personal Expense Tracker with AI | Python, pandas, OpenAI | ❌ | ❌ |
-| P-M5 | CLI Chatbot with Memory | Python, OpenAI, JSON | ❌ | ❌ |
-| P-M6 | Image Caption Generator | HuggingFace BLIP, Streamlit | ❌ | ❌ |
+| P-M1 | Sentiment Analyzer Web App | Streamlit, HuggingFace | ✅ | ❌ |
+| P-M2 | Resume Parser & Scorer | Python, spaCy, PDF | ✅ | ❌ |
+| P-M3 | News Category Classifier | scikit-learn, TF-IDF | ✅ | ❌ |
+| P-M4 | Personal Expense Tracker with AI | Python, pandas, OpenAI | ✅ | ❌ |
+| P-M5 | CLI Chatbot with Memory | Python, OpenAI, JSON | ✅ | ❌ |
+| P-M6 | Image Caption Generator | HuggingFace BLIP, Streamlit | ✅ | ❌ |
 
 ### Major Project Kits (8–16 weeks, final-year)
 | ID | Project | Tech Stack | Page | Kit complete |
 |---|---|---|---|---|
 | P-J1 | Document Q&A Assistant | FastAPI, RAG, OpenAI, ChromaDB | 🔶 Live | 🔶 Partial |
-| P-J2 | AI Resume Screener & Interview Copilot | LLM, Streamlit, PDF parsing | 🔶 Stub | ❌ |
-| P-J3 | Inventory Forecasting Dashboard | ARIMA, Prophet, Streamlit | 🔶 Stub | ❌ |
+| P-J2 | AI Resume Screener & Interview Copilot | LLM, Streamlit, PDF parsing | ✅ | ✅ |
+| P-J3 | Inventory Forecasting Dashboard | ARIMA, Prophet, Streamlit | ✅ | ✅ |
 | P-J4 | Multilingual Customer Support Bot | FastAPI, OpenAI | ❌ | ❌ |
 | P-J5 | AI Attendance & Analytics Dashboard | OpenCV, face_recognition | ❌ | ❌ |
 | P-J6 | Vision-Based Quality Inspection | YOLO, PyTorch, FastAPI | ❌ | ❌ |
