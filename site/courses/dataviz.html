@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Data Visualisation Course -- Mitra AI Projects</title>
+  <meta name="description" content="Data Visualisation course: EDA with Pandas, Matplotlib, Seaborn, Plotly, Storytelling with Data, Tableau/Power BI. Hands-on Python notebooks.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    body { overflow: hidden; }
+    @media (max-width: 768px) { body { overflow: auto; } }
+    .onenote-mobile-header { background:var(--surface);border-bottom:1px solid var(--border-dim);padding:0.75rem 1rem;display:none; }
+    @media (max-width: 768px) { .onenote-mobile-header { display:block; } }
+    select.onenote-mobile-select { background:var(--surface-2);border:1px solid var(--border-dim);color:var(--text);border-radius:8px;padding:0.55rem 0.85rem;font-family:'JetBrains Mono',monospace;font-size:0.85rem; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/" class="active">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/portfolio-guide.html">Portfolio</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<div class="onenote-mobile-header">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+    <div><span class="badge badge-primary" style="margin-right:0.5rem;">DATAVIZ</span><strong style="font-size:0.95rem;">Data Visualisation</strong></div>
+    <a href="/courses/" class="btn btn-ghost btn-sm">All Courses</a>
+  </div>
+  <select class="onenote-mobile-select" style="width:100%;">        <option value="0">📊 EDA with Pandas</option>
+        <option value="1">📈 Matplotlib Deep Dive</option>
+        <option value="2">🎨 Seaborn Statistical</option>
+        <option value="3">⚡ Plotly Interactive</option>
+        <option value="4">🔍 Real-World EDA Project</option>
+        <option value="5">📖 Storytelling with Data</option>
+        <option value="6">🖥 Tableau / Power BI</option></select>
+</div>
+
+<div class="onenote-wrap">
+  <aside class="onenote-sidebar">
+    <div class="onenote-sidebar-header">
+      <div style="color:var(--primary);font-weight:700;margin-bottom:0.25rem;">Data Visualisation</div>
+      7 Topics · Pandas, Matplotlib, Seaborn, Plotly
+    </div>
+    <div class="onenote-tab" data-idx="0">
+      <span class="onenote-tab-icon">📊</span>
+      <span class="onenote-tab-text">EDA with Pandas</span>
+      <span class="onenote-tab-badge">001</span>
+    </div>
+    <div class="onenote-tab" data-idx="1">
+      <span class="onenote-tab-icon">📈</span>
+      <span class="onenote-tab-text">Matplotlib Deep Dive</span>
+      <span class="onenote-tab-badge">002</span>
+    </div>
+    <div class="onenote-tab" data-idx="2">
+      <span class="onenote-tab-icon">🎨</span>
+      <span class="onenote-tab-text">Seaborn Statistical</span>
+      <span class="onenote-tab-badge">003</span>
+    </div>
+    <div class="onenote-tab" data-idx="3">
+      <span class="onenote-tab-icon">⚡</span>
+      <span class="onenote-tab-text">Plotly Interactive</span>
+      <span class="onenote-tab-badge">004</span>
+    </div>
+    <div class="onenote-tab" data-idx="4">
+      <span class="onenote-tab-icon">🔍</span>
+      <span class="onenote-tab-text">Real-World EDA Project</span>
+      <span class="onenote-tab-badge">005</span>
+    </div>
+    <div class="onenote-tab" data-idx="5">
+      <span class="onenote-tab-icon">📖</span>
+      <span class="onenote-tab-text">Storytelling with Data</span>
+      <span class="onenote-tab-badge">006</span>
+    </div>
+    <div class="onenote-tab" data-idx="6">
+      <span class="onenote-tab-icon">🖥</span>
+      <span class="onenote-tab-text">Tableau / Power BI</span>
+      <span class="onenote-tab-badge">007</span>
+    </div>
+    <div style="padding:1.25rem;margin-top:1rem;border-top:1px solid var(--border-dim);">
+      <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-bottom:0.5rem;">📄 DataViz Cheatsheet</a>
+      <a href="/courses/" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;">📚 Browse All Courses →</a>
+    </div>
+  </aside>
+  <main class="onenote-content">
+
+    <!-- Panel 0: EDA with Pandas -->
+    <div class="onenote-panel active">
+      <div class="topic-hero"><div class="topic-eyebrow">track 01</div><h2>EDA with Pandas</h2><p>Systematic exploration before modelling. Understand shape, types, missing values, distributions, correlations, and outliers.</p></div>
+      <div class="topic-section"><h3>The EDA Checklist</h3>
+        <table class="metric-table"><thead><tr><th>Step</th><th>Code</th><th>What you learn</th></tr></thead><tbody>
+        <tr><td>Shape</td><td><code>df.shape</code></td><td>Rows, columns</td></tr>
+        <tr><td>Dtypes</td><td><code>df.dtypes</code></td><td>Numeric, categorical, datetime</td></tr>
+        <tr><td>Missing</td><td><code>df.isnull().sum()</code></td><td>Count + pattern of nulls</td></tr>
+        <tr><td>Stats</td><td><code>df.describe()</code></td><td>Min, max, mean, std, quartiles</td></tr>
+        <tr><td>Unique vals</td><td><code>df['col'].value_counts()</code></td><td>Category frequencies</td></tr>
+        <tr><td>Correlations</td><td><code>df.corr()</code></td><td>Linear relationships</td></tr>
+        <tr><td>Outliers</td><td>IQR / Z-score</td><td>Extreme values</td></tr>
+        </tbody></table></div>
+      <div class="topic-section"><h3>Outlier Detection</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>outliers.py</span></div>
+        <pre><code><span class="cm"># IQR method</span>
+Q1, Q3 = df['col'].quantile([<span class="num">0.25</span>, <span class="num">0.75</span>])
+IQR = Q3 - Q1
+lower, upper = Q1 - <span class="num">1.5</span>*IQR, Q3 + <span class="num">1.5</span>*IQR
+outliers = df[(df['col'] < lower) | (df['col'] > upper)]
+
+<span class="cm"># Z-score method</span>
+z = (df['col'] - df['col'].mean()) / df['col'].std()
+outliers = df[z.abs() > <span class="num">3</span>]</code></pre></div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: EDA with Pandas</div>
+            <div class="notebook-card-desc">shape, dtypes, missing values, distributions, correlations, outlier detection</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=dataviz-01-eda-pandas.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of EDA with Pandas -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dataviz&topic=eda-pandas" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 1: Matplotlib Deep Dive -->
+    <div class="onenote-panel">
+      <div class="topic-hero"><div class="topic-eyebrow">track 02</div><h2>Matplotlib Deep Dive</h2><p>Full control over every visual element. Publication-quality charts with the object-oriented API.</p></div>
+      <div class="topic-section"><h3>Object-Oriented API</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>matplotlib_oo.py</span></div>
+        <pre><code>fig, ax = plt.subplots(figsize=(<span class="num">9</span>, <span class="num">5</span>))
+ax.plot(x, y, color=<span class="st">'#6b21a8'</span>, lw=<span class="num">2</span>, label=<span class="st">'data'</span>)
+ax.set_title(<span class="st">'Title'</span>, fontweight=<span class="st">'bold'</span>)
+ax.set_xlabel(<span class="st">'X Label'</span>)
+ax.legend(); ax.grid(alpha=<span class="num">0.3</span>)
+ax.spines[<span class="st">'top'</span>].set_visible(<span class="kw">False</span>)
+ax.spines[<span class="st">'right'</span>].set_visible(<span class="kw">False</span>)
+plt.tight_layout(); plt.show()</code></pre></div></div>
+      <div class="topic-section"><h3>Subplots with Gridspec</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>gridspec.py</span></div>
+        <pre><code><span class="kw">import</span> matplotlib.gridspec <span class="kw">as</span> gridspec
+fig = plt.figure(figsize=(<span class="num">12</span>, <span class="num">6</span>))
+gs = gridspec.GridSpec(<span class="num">2</span>, <span class="num">3</span>)
+ax1 = fig.add_subplot(gs[:, <span class="num">0</span>:<span class="num">2</span>])  <span class="cm"># spans both rows</span>
+ax2 = fig.add_subplot(gs[<span class="num">0</span>, <span class="num">2</span>])    <span class="cm"># top-right</span>
+ax3 = fig.add_subplot(gs[<span class="num">1</span>, <span class="num">2</span>])    <span class="cm"># bottom-right</span></code></pre></div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Matplotlib Deep Dive</div>
+            <div class="notebook-card-desc">line charts, subplots, gridspec, annotations, custom formatters</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=dataviz-02-matplotlib.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Matplotlib Deep Dive -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dataviz&topic=matplotlib" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 2: Seaborn Statistical -->
+    <div class="onenote-panel">
+      <div class="topic-hero"><div class="topic-eyebrow">track 03</div><h2>Seaborn Statistical Charts</h2><p>Built-in statistical summaries, beautiful defaults, and FacetGrid for multi-panel plots.</p></div>
+      <div class="topic-section"><h3>Key Seaborn Plots</h3>
+        <table class="metric-table"><thead><tr><th>Function</th><th>Use</th><th>Key params</th></tr></thead><tbody>
+        <tr><td><code>histplot()</code></td><td>Distribution + optional KDE</td><td>kde=True, hue=</td></tr>
+        <tr><td><code>boxplot()</code></td><td>Quartiles + outliers by group</td><td>x=, y=, hue=</td></tr>
+        <tr><td><code>violinplot()</code></td><td>Full distribution shape</td><td>inner='quartile'</td></tr>
+        <tr><td><code>regplot()</code></td><td>Scatter + regression line + CI</td><td>line_kws=, ci=</td></tr>
+        <tr><td><code>heatmap()</code></td><td>Matrix of values</td><td>annot=True, fmt='.2f'</td></tr>
+        <tr><td><code>FacetGrid()</code></td><td>Multi-panel by category</td><td>col=, row=, hue=</td></tr>
+        </tbody></table></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Seaborn Statistical</div>
+            <div class="notebook-card-desc">histplot, boxplot, violin, regplot, heatmap, FacetGrid</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=dataviz-03-seaborn.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Seaborn Statistical -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dataviz&topic=seaborn" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 3: Plotly Interactive -->
+    <div class="onenote-panel">
+      <div class="topic-hero"><div class="topic-eyebrow">track 04</div><h2>Plotly Interactive Charts</h2><p>Hover, zoom, filter, animate. Charts that respond to the user in the browser.</p></div>
+      <div class="topic-section"><h3>Plotly Express Quick Reference</h3>
+        <table class="metric-table"><thead><tr><th>Function</th><th>Chart type</th></tr></thead><tbody>
+        <tr><td><code>px.scatter()</code></td><td>Scatter with optional colour, size, animation</td></tr>
+        <tr><td><code>px.bar()</code></td><td>Bar chart, supports animation_frame</td></tr>
+        <tr><td><code>px.line()</code></td><td>Line chart</td></tr>
+        <tr><td><code>px.histogram()</code></td><td>Histogram</td></tr>
+        <tr><td><code>px.box()</code></td><td>Box plot</td></tr>
+        <tr><td><code>px.choropleth()</code></td><td>World map coloured by value</td></tr>
+        <tr><td><code>px.treemap()</code></td><td>Hierarchical treemap</td></tr>
+        </tbody></table></div>
+      <div class="topic-section"><h3>Save Interactive Chart</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>save.py</span></div>
+        <pre><code>fig.write_html(<span class="st">'chart.html'</span>)     <span class="cm"># share as file</span>
+fig.write_image(<span class="st">'chart.png'</span>)    <span class="cm"># static PNG</span>
+fig.write_image(<span class="st">'chart.pdf'</span>)    <span class="cm"># PDF for reports</span></code></pre></div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Plotly Interactive</div>
+            <div class="notebook-card-desc">scatter, animated bar, multi-panel subplots, hover, choropleth</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=dataviz-04-plotly.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Plotly Interactive -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dataviz&topic=plotly" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 4: Real-World EDA Project -->
+    <div class="onenote-panel">
+      <div class="topic-hero"><div class="topic-eyebrow">track 05</div><h2>Real-World EDA Project</h2><p>End-to-end analysis from raw data to actionable business recommendations.</p></div>
+      <div class="topic-section"><h3>EDA Project Structure</h3>
+        <table class="metric-table"><thead><tr><th>Phase</th><th>Output</th></tr></thead><tbody>
+        <tr><td>1. Business question</td><td>What decision will this analysis inform?</td></tr>
+        <tr><td>2. Data understanding</td><td>Shape, dtypes, missing, quality issues</td></tr>
+        <tr><td>3. Univariate analysis</td><td>Distribution of each variable</td></tr>
+        <tr><td>4. Bivariate analysis</td><td>Relationships between pairs of variables</td></tr>
+        <tr><td>5. Multivariate</td><td>Group comparisons, correlations heatmap</td></tr>
+        <tr><td>6. Insights</td><td>Patterns in plain English with numbers</td></tr>
+        <tr><td>7. Recommendations</td><td>Specific, prioritised, actionable next steps</td></tr>
+        </tbody></table></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Real-World EDA Project</div>
+            <div class="notebook-card-desc">full EDA pipeline from raw data to actionable insights and recommendations</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=dataviz-05-eda-project.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Real-World EDA Project -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dataviz&topic=eda-project" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 5: Storytelling with Data -->
+    <div class="onenote-panel">
+      <div class="topic-hero"><div class="topic-eyebrow">track 06</div><h2>Storytelling with Data</h2><p>Charts exist to communicate insights, not display data. Every design choice should serve the message.</p></div>
+      <div class="topic-section"><h3>The 5 Principles</h3>
+        <table class="metric-table"><thead><tr><th>Principle</th><th>In practice</th></tr></thead><tbody>
+        <tr><td>Right chart type</td><td>Bar for comparison, line for trend, scatter for correlation</td></tr>
+        <tr><td>Remove chart junk</td><td>No 3D, no heavy borders, minimal gridlines</td></tr>
+        <tr><td>Pre-attentive attrs</td><td>Use colour to highlight ONE thing only</td></tr>
+        <tr><td>Direct labelling</td><td>Label lines directly instead of using a legend</td></tr>
+        <tr><td>One story per chart</td><td>Split complex charts into focused panels</td></tr>
+        </tbody></table></div>
+      <div class="topic-section"><h3>Title Examples</h3>
+        <table class="metric-table"><thead><tr><th>Bad</th><th>Good</th></tr></thead><tbody>
+        <tr><td>Monthly Revenue</td><td>Revenue peaked in June -- H1 target exceeded by 9%</td></tr>
+        <tr><td>Student Scores</td><td>Students studying less than 3 hrs/week fail 42% more often</td></tr>
+        <tr><td>Sales by Region</td><td>South drives 38% of revenue but only 22% of headcount</td></tr>
+        </tbody></table></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Storytelling with Data</div>
+            <div class="notebook-card-desc">bad vs good charts, chart selection guide, IBCS colour rules</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=dataviz-06-storytelling.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Storytelling with Data -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dataviz&topic=storytelling" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 6: Tableau / Power BI -->
+    <div class="onenote-panel">
+      <div class="topic-hero"><div class="topic-eyebrow">track 07</div><h2>Tableau / Power BI Basics</h2><p>BI tools for non-technical stakeholders. When to use Python vs when to use a BI tool.</p></div>
+      <div class="topic-section"><h3>Python vs BI Tools</h3>
+        <table class="metric-table"><thead><tr><th>Use Python when</th><th>Use BI when</th></tr></thead><tbody>
+        <tr><td>Custom statistical analysis</td><td>Executives need self-service</td></tr>
+        <tr><td>Data cleaning and wrangling</td><td>Connecting live databases</td></tr>
+        <tr><td>ML model building</td><td>Scheduled refresh dashboards</td></tr>
+        <tr><td>Complex custom charts</td><td>Simple interactive filters</td></tr>
+        <tr><td>Reproducible pipelines</td><td>Non-technical users</td></tr>
+        </tbody></table></div>
+      <div class="topic-section"><h3>Tableau vs Power BI</h3>
+        <table class="metric-table"><thead><tr><th>Feature</th><th>Tableau</th><th>Power BI</th></tr></thead><tbody>
+        <tr><td>Formula language</td><td>Tableau calc fields</td><td>DAX (Excel-like)</td></tr>
+        <tr><td>Best ecosystem</td><td>Any data source</td><td>Microsoft / Azure</td></tr>
+        <tr><td>Visualisation</td><td>Richer, more flexible</td><td>Good, improving fast</td></tr>
+        <tr><td>Price</td><td>Higher ($70/user/mo)</td><td>Lower ($10/user/mo)</td></tr>
+        <tr><td>Free tier</td><td>Tableau Public</td><td>Power BI Desktop</td></tr>
+        </tbody></table></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Tableau / Power BI</div>
+            <div class="notebook-card-desc">Concepts and when to use BI tools (notebook focuses on Python EDA principles)</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=dataviz-01-eda-pandas.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Tableau / Power BI -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dataviz&topic=tableau-bi" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+      <div class="completion-banner" style="margin-top:2rem;">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body"><h3>Data Visualisation Complete!</h3><p>Pass all topic quizzes to earn your certificate.</p></div>
+        <button class="btn btn-primary" onclick="claimCourseCert('dataviz')">🎓 Claim Certificate</button>
+      </div>
+    </div>
+
+
+
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/config.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+<script>
+async function claimCourseCert(courseId) {
+  if (!window.MitraAuth?.getUser()) { window.openSignInModal?.(); return; }
+  const user = window.MitraAuth.getUser();
+  const name = user.user_metadata?.full_name || user.email?.split('@')[0] || 'Student';
+  const result = await window.MitraAuth.recordCertificate('course', courseId, name);
+  if (result?.id) { window.location.href = `/certificate.html?id=${result.id}`; }
+  else { alert('Certificate already issued or sign in first.'); }
+}
+</script>
+</body>
+</html>

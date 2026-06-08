@@ -1,0 +1,114 @@
+{
+  "course_label": "Data Visualisation",
+  "title": "Real-World EDA Project",
+  "questions": [
+    {
+      "question": "The first step in any real-world EDA should be:",
+      "options": [
+        "Running a model immediately",
+        "Understanding the business question -- what decision will this analysis inform?",
+        "Visualising all columns",
+        "Removing all outliers"
+      ],
+      "correct": "b",
+      "explanation": "EDA without a question produces busywork. The question determines which patterns matter."
+    },
+    {
+      "question": "A pass rate of 45% in your dataset is concerning because:",
+      "options": [
+        "It is exactly average",
+        "It indicates class imbalance -- a model predicting 'always fail' gets 55% accuracy, which seems good but is useless",
+        "Pass rates should always be 50%",
+        "The model needs more features"
+      ],
+      "correct": "b",
+      "explanation": "Imbalanced targets mislead accuracy. Use F1, PR-AUC, or confusion matrix to evaluate properly."
+    },
+    {
+      "question": "When you find that study_hours has 0.65 correlation with final_score, you should say:",
+      "options": [
+        "Study hours causes higher scores",
+        "Study hours is associated with higher scores -- correlation is not causation",
+        "Study hours is the only factor",
+        "This is a very weak relationship"
+      ],
+      "correct": "b",
+      "explanation": "Correlation shows association strength and direction. It does not prove A causes B."
+    },
+    {
+      "question": "Presenting findings as 'Students studying <3hrs have 42% lower pass rate' is better than 'r=0.65' because:",
+      "options": [
+        "It uses more data",
+        "A specific, quantified business impact is more actionable for decision makers than a statistical coefficient",
+        "It is simpler math",
+        "r=0.65 is inaccurate"
+      ],
+      "correct": "b",
+      "explanation": "Translate statistics into business language. Decision makers act on '42% lower pass rate', not correlation coefficients."
+    },
+    {
+      "question": "Box plots per group are useful in EDA for:",
+      "options": [
+        "Correlation analysis",
+        "Comparing median, spread, and outliers of a numeric variable across multiple categories simultaneously",
+        "Time series analysis",
+        "Missing value detection"
+      ],
+      "correct": "b",
+      "explanation": "A row of box plots lets you see median differences, IQR differences, and outlier patterns across groups at a glance."
+    },
+    {
+      "question": "You find students with internet access have 12% higher pass rate. Before recommending 'give all students internet', you should check:",
+      "options": [
+        "Nothing -- 12% is significant",
+        "Whether internet access is a proxy for socioeconomic status -- the real cause might be parental education or resources, not internet itself"
+      ],
+      "correct": "b",
+      "explanation": "Confounding variables. Internet access may correlate with parental education, stable home environment, or study resources."
+    },
+    {
+      "question": "An EDA report should end with:",
+      "options": [
+        "Raw statistics tables",
+        "3-5 specific, prioritised, actionable recommendations supported by the visualisation evidence",
+        "A disclaimer that correlation is not causation",
+        "All possible plots"
+      ],
+      "correct": "b",
+      "explanation": "Findings without recommendations are incomplete. Tell the reader what to DO based on what you found."
+    },
+    {
+      "question": "When your scatter plot shows most points clustered near the origin with a few extreme outliers:",
+      "options": [
+        "Remove all outliers",
+        "Consider log scale for the axis -- log(1+x) compresses extreme values while preserving the pattern",
+        "Use a different chart type",
+        "Add more data"
+      ],
+      "correct": "b",
+      "explanation": "Log scale is standard for highly skewed data (income, revenue, website traffic). It reveals patterns hidden by outliers."
+    },
+    {
+      "question": "A heatmap of correlations shows all values near 0.0 to 0.15. This means:",
+      "options": [
+        "The data is wrong",
+        "Features are weakly linearly correlated -- doesn't mean they're useless, just that linear models may struggle",
+        "Feature engineering is impossible",
+        "There is no relationship at all"
+      ],
+      "correct": "b",
+      "explanation": "Low linear correlation doesn't mean no relationship -- non-linear patterns exist. Try plotting scatter plots of key pairs."
+    },
+    {
+      "question": "Which question is 'EDA-ready' (specific, answerable from data)?",
+      "options": [
+        "Is our product good?",
+        "Which customer segment has the highest 90-day retention rate and what distinguishes them from churned users?",
+        "Why are sales declining?",
+        "Is our model accurate?"
+      ],
+      "correct": "b",
+      "explanation": "A good EDA question is specific, has a measurable answer, and points to which variables to analyse."
+    }
+  ]
+}

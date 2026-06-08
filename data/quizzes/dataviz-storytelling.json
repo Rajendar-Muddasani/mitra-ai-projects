@@ -1,0 +1,116 @@
+{
+  "course_label": "Data Visualisation",
+  "title": "Storytelling with Data",
+  "questions": [
+    {
+      "question": "Chart junk refers to:",
+      "options": [
+        "Low-quality data",
+        "Visual elements that add ink without adding information -- gridlines, 3D effects, decorations",
+        "Missing data",
+        "Incorrect chart types"
+      ],
+      "correct": "b",
+      "explanation": "Edward Tufte coined 'chart junk'. Every pixel should carry information. Remove: 3D effects, heavy borders, unnecessary gridlines, decorative icons."
+    },
+    {
+      "question": "Pre-attentive attributes are visual properties that:",
+      "options": [
+        "Require careful study to notice",
+        "The human eye detects automatically before conscious attention -- colour, size, shape, position",
+        "Appear after clicking",
+        "Only work in digital charts"
+      ],
+      "correct": "b",
+      "explanation": "Pre-attentive: colour, position, size, orientation. Using colour to highlight the key bar means viewers see it instantly without reading everything."
+    },
+    {
+      "question": "'Put the insight in the title, not just the variable name' means:",
+      "options": [
+        "Titles should be long",
+        "Instead of 'Monthly Revenue' write 'Revenue grew 64% in H1 -- fastest growth since 2020'",
+        "Titles are optional",
+        "Variable names are bad"
+      ],
+      "correct": "b",
+      "explanation": "'Monthly Revenue' is a label. 'Revenue peaked in June -- H1 target exceeded' is an insight. The reader knows what to take away."
+    },
+    {
+      "question": "When should you use a pie chart?",
+      "options": [
+        "Always for part-of-whole data",
+        "Only when: parts sum to 100%, there are fewer than 5 slices, and differences are visually obvious",
+        "For time series data",
+        "For correlation analysis"
+      ],
+      "correct": "b",
+      "explanation": "Humans are poor at comparing angles/areas. Bar charts almost always communicate part-of-whole better than pies."
+    },
+    {
+      "question": "The main problem with 3D bar charts is:",
+      "options": [
+        "They look outdated",
+        "They distort proportions -- depth creates visual illusions that misrepresent the actual values",
+        "They are hard to colour",
+        "Plotly doesn't support them"
+      ],
+      "correct": "b",
+      "explanation": "3D perspective makes bars in the back appear shorter than bars in front even when equal. Always use 2D."
+    },
+    {
+      "question": "Direct labelling vs legend in a line chart:",
+      "options": [
+        "Legends are always better",
+        "Direct labels on each line (right-hand side) are faster to read -- readers don't scan back and forth to a legend",
+        "Depends only on space",
+        "Legends convey more information"
+      ],
+      "correct": "b",
+      "explanation": "For multiple lines, label each line directly at the end. Legends force eye movement: read legend, find colour, find line, repeat."
+    },
+    {
+      "question": "A diverging colour scale (red-white-green) is appropriate for:",
+      "options": [
+        "Sequential data (low to high)",
+        "Data with a meaningful midpoint -- e.g. profit/loss where 0 is neutral, positive=green, negative=red",
+        "Categorical data",
+        "Time series data"
+      ],
+      "correct": "b",
+      "explanation": "Diverging scales: red=bad, green=good, white=neutral. Don't use for sequential data (temperatures, counts) where there's no neutral midpoint."
+    },
+    {
+      "question": "When a chart needs three or more colours to distinguish categories, you should consider:",
+      "options": [
+        "Using more colours",
+        "Splitting into multiple focused charts or using a single metric that captures what matters",
+        "A 3D chart",
+        "A bigger legend"
+      ],
+      "correct": "b",
+      "explanation": "More than 3-4 colours are hard to distinguish. Simplify or split. Use colour for ONE thing -- the most important distinction."
+    },
+    {
+      "question": "The data-ink ratio principle (Tufte) says:",
+      "options": [
+        "Use as much colour as possible",
+        "Maximise the proportion of ink dedicated to actual data -- minimise decorative, non-data ink",
+        "Always use the full chart area",
+        "Add a white background always"
+      ],
+      "correct": "b",
+      "explanation": "Every element should earn its place. Heavy borders, background fill, shadow effects, 3D perspectives all violate this principle."
+    },
+    {
+      "question": "'Tell one story per chart' means:",
+      "options": [
+        "Charts should be very simple",
+        "Each chart should have one clear message -- multiple insights should be split into multiple charts",
+        "Only one variable per chart",
+        "Charts should be brief"
+      ],
+      "correct": "b",
+      "explanation": "Trying to show everything in one chart creates confusion. A series of focused charts tells a clearer story than one cluttered chart."
+    }
+  ]
+}

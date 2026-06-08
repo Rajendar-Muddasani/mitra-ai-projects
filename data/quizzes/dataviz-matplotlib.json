@@ -1,0 +1,116 @@
+{
+  "course_label": "Data Visualisation",
+  "title": "Matplotlib Deep Dive",
+  "questions": [
+    {
+      "question": "The recommended way to create plots in matplotlib for complex figures is:",
+      "options": [
+        "Using plt.plot() only",
+        "Object-oriented style: fig, ax = plt.subplots() then ax.plot()",
+        "Using pandas .plot()",
+        "Using seaborn only"
+      ],
+      "correct": "b",
+      "explanation": "OO style gives explicit control over each axis. plt.plot() is implicit and confusing with multiple subplots."
+    },
+    {
+      "question": "What does ax.spines['top'].set_visible(False) do?",
+      "options": [
+        "Removes the top x-axis labels",
+        "Hides the top border line of the plot -- cleaner look",
+        "Removes the title",
+        "Hides gridlines"
+      ],
+      "correct": "b",
+      "explanation": "Removing top and right spines (borders) is a common styling choice to reduce chart junk."
+    },
+    {
+      "question": "plt.tight_layout() is used to:",
+      "options": [
+        "Create tight/compact subplots",
+        "Automatically adjust subplot spacing to prevent overlapping labels/titles",
+        "Make fonts smaller",
+        "Remove whitespace from the saved image"
+      ],
+      "correct": "b",
+      "explanation": "Essential when you have multiple subplots -- prevents titles from overlapping adjacent plots."
+    },
+    {
+      "question": "gridspec.GridSpec(2, 3) creates:",
+      "options": [
+        "A 6-element list",
+        "A 2x3 grid layout -- 2 rows, 3 columns for unequal-sized subplots",
+        "A 2x3 table",
+        "A 3x2 plot"
+      ],
+      "correct": "b",
+      "explanation": "GridSpec lets you span subplots across multiple rows/columns: fig.add_subplot(gs[:, 0:2]) spans both rows."
+    },
+    {
+      "question": "ax.annotate() with arrowprops is used for:",
+      "options": [
+        "Footnotes only",
+        "Adding text annotations with arrows pointing to specific data points",
+        "Drawing shapes",
+        "Adding titles"
+      ],
+      "correct": "b",
+      "explanation": "Annotations draw attention to specific insights: peak values, anomalies, key data points."
+    },
+    {
+      "question": "ax.yaxis.set_major_formatter(FuncFormatter(lambda x,_: f'${}K')) formats:",
+      "options": [
+        "x-axis labels",
+        "Y-axis tick labels with a custom function -- e.g. display 1000 as $1K",
+        "Plot title",
+        "Legend labels"
+      ],
+      "correct": "b",
+      "explanation": "Custom formatters let you display values in any format: currency, percentage, scientific notation."
+    },
+    {
+      "question": "np.linspace(0, 2*np.pi, 300) creates:",
+      "options": [
+        "A random array",
+        "300 evenly spaced points from 0 to 2pi",
+        "A sequence 0 to 300",
+        "Values from normal distribution"
+      ],
+      "correct": "b",
+      "explanation": "linspace = linear space. Good for smooth curves. np.arange() uses step size instead of count."
+    },
+    {
+      "question": "fill_between(x, y, alpha=0.1) adds:",
+      "options": [
+        "A solid filled rectangle",
+        "Shaded area under the curve with 10% opacity",
+        "Error bars",
+        "A background colour"
+      ],
+      "correct": "b",
+      "explanation": "fill_between shades the area between a curve and a baseline (default y=0). alpha controls transparency."
+    },
+    {
+      "question": "To save a figure at high resolution for printing:",
+      "options": [
+        "plt.show() then screenshot",
+        "plt.savefig('fig.png', dpi=300) -- 300 DPI is standard for print quality",
+        "plt.export('fig.pdf')",
+        "Set figsize to large values"
+      ],
+      "correct": "b",
+      "explanation": "Screen resolution is 72-96 DPI. Print quality needs 300+ DPI. Always use savefig not screenshot."
+    },
+    {
+      "question": "ax.set_xticks([0, np.pi, 2*np.pi]) combined with ax.set_xticklabels(['0','pi','2pi']):",
+      "options": [
+        "Changes axis scale",
+        "Replaces automatic tick positions and labels with custom values",
+        "Removes the x-axis",
+        "Rotates labels"
+      ],
+      "correct": "b",
+      "explanation": "Two-step process: set positions, then set labels. Useful for meaningful labels instead of raw numbers."
+    }
+  ]
+}

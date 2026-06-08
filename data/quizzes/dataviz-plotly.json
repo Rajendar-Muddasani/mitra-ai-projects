@@ -1,0 +1,116 @@
+{
+  "course_label": "Data Visualisation",
+  "title": "Plotly Interactive Charts",
+  "questions": [
+    {
+      "question": "Plotly Express (px) vs Plotly Graph Objects (go):",
+      "options": [
+        "Identical",
+        "px: high-level, concise code (like seaborn). go: full control, more verbose (like matplotlib axes)",
+        "go is deprecated",
+        "px only works with DataFrames"
+      ],
+      "correct": "b",
+      "explanation": "Use px for quick charts, go when you need precise control or custom traces."
+    },
+    {
+      "question": "The animation_frame parameter in Plotly Express creates:",
+      "options": [
+        "A static subplot",
+        "An animated chart with a Play button -- each unique value of the column becomes one animation frame",
+        "Multiple pages",
+        "A time-lapse video file"
+      ],
+      "correct": "b",
+      "explanation": "px.bar(df, animation_frame='year') creates a Play button that steps through each year."
+    },
+    {
+      "question": "make_subplots() in Plotly is used for:",
+      "options": [
+        "Making the plot smaller",
+        "Creating a figure with multiple panels (subplots) arranged in a grid",
+        "Combining two datasets",
+        "Creating animated charts"
+      ],
+      "correct": "b",
+      "explanation": "from plotly.subplots import make_subplots then add traces with row=1, col=1 etc."
+    },
+    {
+      "question": "fig.show() in a Jupyter notebook does what?",
+      "options": [
+        "Saves the figure",
+        "Renders an interactive HTML chart inline -- users can hover, zoom, and click",
+        "Opens a browser window always",
+        "Prints figure dimensions"
+      ],
+      "correct": "b",
+      "explanation": "Plotly renders interactive charts directly in Jupyter. fig.write_html('chart.html') saves for sharing."
+    },
+    {
+      "question": "hover_data=['country','growth'] in px.scatter adds:",
+      "options": [
+        "Tooltips showing country and growth when hovering over each point",
+        "New columns to the DataFrame",
+        "Colour based on country",
+        "Filter buttons"
+      ],
+      "correct": "b",
+      "explanation": "hover_data controls what appears in the tooltip popup when you hover over data points."
+    },
+    {
+      "question": "fig.update_layout(template='plotly_white') does what?",
+      "options": [
+        "Encrypts the figure",
+        "Applies a clean white theme -- removes the default grey background",
+        "Changes figure size",
+        "Hides the legend"
+      ],
+      "correct": "b",
+      "explanation": "Common templates: plotly_white, plotly_dark, seaborn, ggplot2. Overrides the default grey."
+    },
+    {
+      "question": "px.choropleth() creates:",
+      "options": [
+        "A bar chart",
+        "A geographic map with countries coloured by a numeric variable",
+        "A pie chart",
+        "A heatmap"
+      ],
+      "correct": "b",
+      "explanation": "Choropleth = countries/regions filled with colour representing data values. Use locationmode='country names' for country names."
+    },
+    {
+      "question": "The size parameter in px.scatter creates:",
+      "options": [
+        "A 3D effect",
+        "Proportional bubble sizes -- data point markers sized by a numeric column",
+        "Fixed large markers",
+        "Square markers"
+      ],
+      "correct": "b",
+      "explanation": "size='revenue' makes each bubble's area proportional to revenue. A third visual dimension beyond x and y."
+    },
+    {
+      "question": "fig.write_html('dashboard.html') is useful because:",
+      "options": [
+        "Only for saving images",
+        "Creates a standalone interactive HTML file anyone can open in a browser -- no Python needed to view",
+        "Compresses the figure",
+        "Requires Plotly account"
+      ],
+      "correct": "b",
+      "explanation": "The HTML file includes all Plotly.js inline. Share it like a document -- fully interactive without any server."
+    },
+    {
+      "question": "Plotly Dash is for:",
+      "options": [
+        "Creating static charts faster",
+        "Building full interactive web dashboards with Python only -- dropdowns, sliders, callbacks, no JavaScript needed",
+        "Exporting charts to PowerPoint",
+        "Creating animated GIFs"
+      ],
+      "correct": "b",
+      "explanation": "Dash = Flask + React + Plotly. Full web app framework. pip install dash."
+    }
+  ]
+}

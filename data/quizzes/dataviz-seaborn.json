@@ -1,0 +1,116 @@
+{
+  "course_label": "Data Visualisation",
+  "title": "Seaborn Statistical Visualisation",
+  "questions": [
+    {
+      "question": "What does sns.set_theme(style='whitegrid') do?",
+      "options": [
+        "Changes the data",
+        "Applies a visual theme globally -- whitegrid adds horizontal grid lines on white background",
+        "Sets colour palette only",
+        "Imports the dataset"
+      ],
+      "correct": "b",
+      "explanation": "sns.set_theme() sets defaults for all subsequent seaborn plots. Common styles: white, whitegrid, dark, darkgrid, ticks."
+    },
+    {
+      "question": "sns.histplot vs sns.distplot:",
+      "options": [
+        "Identical",
+        "histplot is the current API (seaborn v0.11+); distplot is deprecated -- use histplot for new code",
+        "distplot is newer",
+        "histplot doesn't support KDE"
+      ],
+      "correct": "b",
+      "explanation": "distplot was deprecated in v0.11. histplot with kde=True gives the same result plus better control."
+    },
+    {
+      "question": "The hue parameter in seaborn plots:",
+      "options": [
+        "Changes the colour palette",
+        "Creates separate layers/colours for each category in the specified column",
+        "Adjusts plot size",
+        "Filters data"
+      ],
+      "correct": "b",
+      "explanation": "hue='group' automatically creates separate coloured elements (bars, lines, violin) per group value."
+    },
+    {
+      "question": "FacetGrid is used for:",
+      "options": [
+        "Creating a single large plot",
+        "Creating a grid of plots -- one panel per category level",
+        "Adding facets/panels to a single axis",
+        "Tiling images"
+      ],
+      "correct": "b",
+      "explanation": "g = sns.FacetGrid(df, col='subject') creates separate subplot per subject. map() applies a plot function to each."
+    },
+    {
+      "question": "sns.regplot adds to a scatter plot:",
+      "options": [
+        "A regression equation label",
+        "A fitted regression line with confidence interval shading",
+        "A decision boundary",
+        "Multiple regression lines"
+      ],
+      "correct": "b",
+      "explanation": "regplot = scatter + linear regression line + 95% CI band. Quick way to visualise linear relationship."
+    },
+    {
+      "question": "sns.heatmap with annot=True does what?",
+      "options": [
+        "Adds a title",
+        "Writes the cell values as text inside each heatmap cell",
+        "Adds arrows",
+        "Shows the legend"
+      ],
+      "correct": "b",
+      "explanation": "annot=True + fmt='.2f' writes formatted numbers inside cells. Essential for correlation matrices."
+    },
+    {
+      "question": "The violin plot shows:",
+      "options": [
+        "Only the median",
+        "The full distribution shape (like a rotated KDE) + inner quartile stats",
+        "Only outliers",
+        "A 3D distribution"
+      ],
+      "correct": "b",
+      "explanation": "Violin = KDE rotated + mirrored on both sides. inner='quartile' shows the IQR box inside."
+    },
+    {
+      "question": "sns.boxplot with multiple hue levels:",
+      "options": [
+        "Doesn't work",
+        "Creates grouped box plots side by side per category -- hue adds a second grouping variable",
+        "Creates a table",
+        "Merges groups"
+      ],
+      "correct": "b",
+      "explanation": "e.g. x='subject', hue='group' creates two boxes per subject (Control and Treatment) side by side."
+    },
+    {
+      "question": "The confidence interval shown by default in sns.lineplot is:",
+      "options": [
+        "95% CI calculated by bootstrapping",
+        "95% CI of the mean (not the data range) -- shows how confident we are in the mean estimate",
+        "Standard deviation",
+        "Standard error only"
+      ],
+      "correct": "b",
+      "explanation": "seaborn's default CI is 95% via bootstrapping. ci=None removes it. ci='sd' shows standard deviation instead."
+    },
+    {
+      "question": "When should you use sns.violinplot instead of sns.boxplot?",
+      "options": [
+        "Never -- boxplot is always better",
+        "When you want to see the full distribution shape, not just quartiles -- especially for bimodal distributions",
+        "When data is categorical only",
+        "When you have very few data points"
+      ],
+      "correct": "b",
+      "explanation": "Boxplot shows 5 numbers. Violin shows the full distribution shape -- bimodal distributions are invisible in boxplots."
+    }
+  ]
+}

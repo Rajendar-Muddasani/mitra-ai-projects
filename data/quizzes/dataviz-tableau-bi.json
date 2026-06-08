@@ -1,0 +1,116 @@
+{
+  "course_label": "Data Visualisation",
+  "title": "Tableau / Power BI Basics",
+  "questions": [
+    {
+      "question": "When should you use Tableau/Power BI instead of Python?",
+      "options": [
+        "Never -- Python is always better",
+        "When non-technical stakeholders need to explore data interactively, or for creating dashboards without coding",
+        "Only for big data",
+        "When the data has less than 1000 rows"
+      ],
+      "correct": "b",
+      "explanation": "BI tools empower business users to self-serve. Python is better for analysis and custom charts; BI tools for shared live dashboards."
+    },
+    {
+      "question": "A Tableau calculated field is:",
+      "options": [
+        "A database table",
+        "A new column created by a formula applied to existing fields -- similar to a pandas computed column",
+        "A dashboard widget",
+        "A data source connection"
+      ],
+      "correct": "b",
+      "explanation": "e.g. [Profit Ratio] = SUM([Profit]) / SUM([Sales]). Calculated fields create new measures or dimensions for your viz."
+    },
+    {
+      "question": "In Tableau, the Marks card controls:",
+      "options": [
+        "Data sources",
+        "The visual encoding of data -- colour, size, shape, label, detail for the selected chart type",
+        "Dashboard layout",
+        "Filters"
+      ],
+      "correct": "b",
+      "explanation": "Drag fields to Marks: Colour, Size, Label, Detail, Tooltip. This is the core of Tableau's visual encoding."
+    },
+    {
+      "question": "Power BI's DAX (Data Analysis Expressions) is used for:",
+      "options": [
+        "Connecting to databases",
+        "Creating calculated columns and measures -- similar to Excel formulas but for the data model",
+        "Dashboard design",
+        "PDF export"
+      ],
+      "correct": "b",
+      "explanation": "DAX = formula language for Power BI measures. CALCULATE(), SUMX(), FILTER() are core DAX functions."
+    },
+    {
+      "question": "Tableau's LOD (Level of Detail) expressions allow:",
+      "options": [
+        "Changing chart types",
+        "Computing aggregations at a different granularity than the current view -- e.g. customer-level avg inside a regional view",
+        "Filtering data",
+        "Connecting to live databases"
+      ],
+      "correct": "b",
+      "explanation": "FIXED [Customer]: SUM([Sales]) computes total sales per customer regardless of what level the viz shows."
+    },
+    {
+      "question": "When choosing between Power BI and Tableau for enterprise:",
+      "options": [
+        "Always choose Tableau",
+        "Power BI: better if already using Microsoft/Azure ecosystem, cheaper. Tableau: stronger visualisation, steeper learning curve",
+        "They are identical",
+        "Tableau is free"
+      ],
+      "correct": "b",
+      "explanation": "Power BI integrates natively with Azure, Teams, SharePoint. Tableau has richer chart types and more visual flexibility."
+    },
+    {
+      "question": "A Tableau dashboard action (filter action) is used for:",
+      "options": [
+        "Exporting dashboards",
+        "Making one chart filter another when you click -- interactive cross-filtering between related charts",
+        "Scheduling refreshes",
+        "Adding calculations"
+      ],
+      "correct": "b",
+      "explanation": "Click a bar in chart A -> automatically filter chart B to show only that segment. Core interactive dashboard pattern."
+    },
+    {
+      "question": "Extract vs Live connection in Tableau:",
+      "options": [
+        "No difference",
+        "Extract: cached snapshot (fast, works offline). Live: real-time database query (always fresh, slower, requires connection)",
+        "Live is always better",
+        "Extracts use more memory"
+      ],
+      "correct": "b",
+      "explanation": "For dashboards with slow databases, extract weekly. For critical real-time KPIs, use live connection."
+    },
+    {
+      "question": "The purpose of a KPI tile (card visual) in Power BI is:",
+      "options": [
+        "Complex analysis",
+        "Showing a single important metric prominently with target comparison -- e.g. Revenue: $1.2M (Target: $1.1M +9%)",
+        "Showing all data",
+        "Creating pivot tables"
+      ],
+      "correct": "b",
+      "explanation": "KPI tiles give immediate status at a glance. They anchor dashboards by showing the most important number first."
+    },
+    {
+      "question": "Granularity in BI means:",
+      "options": [
+        "Chart resolution",
+        "The level of detail in your data -- daily vs monthly vs yearly aggregation -- affects all calculations",
+        "File size",
+        "Dashboard speed"
+      ],
+      "correct": "b",
+      "explanation": "Data at daily granularity lets you aggregate to monthly. Monthly data cannot be disaggregated to daily. Always keep the most granular data available."
+    }
+  ]
+}

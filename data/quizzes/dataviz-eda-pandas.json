@@ -1,0 +1,116 @@
+{
+  "course_label": "Data Visualisation",
+  "title": "EDA with Pandas",
+  "questions": [
+    {
+      "question": "What does df.describe() return?",
+      "options": [
+        "Only mean and std",
+        "Count, mean, std, min, 25th/50th/75th percentile, max for numeric columns",
+        "Only null counts",
+        "Column data types"
+      ],
+      "correct": "b",
+      "explanation": "Summary statistics for all numeric columns. Equivalent to five-number summary + mean and std."
+    },
+    {
+      "question": "df.isnull().sum() returns:",
+      "options": [
+        "True/False per cell",
+        "Count of null values per column",
+        "Rows with any null",
+        "Total null count only"
+      ],
+      "correct": "b",
+      "explanation": "Per-column null counts. Use .mean() after to get percentages."
+    },
+    {
+      "question": "The IQR method for outlier detection uses:",
+      "options": [
+        "Standard deviations",
+        "Q3 - Q1 to define the acceptable range: [Q1-1.5*IQR, Q3+1.5*IQR]",
+        "Z-scores",
+        "Mean and median"
+      ],
+      "correct": "b",
+      "explanation": "Outliers are below Q1-1.5*IQR or above Q3+1.5*IQR. Robust -- not affected by outliers themselves."
+    },
+    {
+      "question": "A correlation of -0.85 between absences and score means:",
+      "options": [
+        "No relationship",
+        "Strong negative relationship -- more absences strongly associated with lower scores",
+        "Positive relationship",
+        "Causation is confirmed"
+      ],
+      "correct": "b",
+      "explanation": "Correlation measures linear association, not causation. -0.85 = strong negative linear relationship."
+    },
+    {
+      "question": "df.select_dtypes(include='number') does what?",
+      "options": [
+        "Converts all columns to numbers",
+        "Returns only numeric columns",
+        "Rounds all values",
+        "Removes string columns permanently"
+      ],
+      "correct": "b",
+      "explanation": "Selects columns with numeric dtypes. Useful before computing correlations or summary stats."
+    },
+    {
+      "question": "Value counts normalised (normalize=True) returns:",
+      "options": [
+        "Raw frequencies",
+        "Proportions summing to 1.0 -- each category's share of the total",
+        "Cumulative counts",
+        "Sorted alphabetically"
+      ],
+      "correct": "b",
+      "explanation": "df['col'].value_counts(normalize=True) shows percentage share of each category."
+    },
+    {
+      "question": "A right-skewed salary distribution means:",
+      "options": [
+        "Most salaries are high",
+        "Most salaries are low with a long tail of high values (mean > median)",
+        "The distribution is symmetric",
+        "All salaries are equal"
+      ],
+      "correct": "b",
+      "explanation": "Right skew = positive skew. Long right tail. Mean pulled higher than median by outliers."
+    },
+    {
+      "question": "The purpose of scatter plot colour (c=df['promoted']) is:",
+      "options": [
+        "Makes the plot prettier",
+        "Uses a third variable to show group membership or continuous gradient on the scatter",
+        "Hides the data points",
+        "Changes marker size"
+      ],
+      "correct": "b",
+      "explanation": "Colour encodes a third dimension -- shows whether each point belongs to category 0 or 1."
+    },
+    {
+      "question": "pd.cut(df['salary'], bins=4) creates:",
+      "options": [
+        "4 DataFrames",
+        "4 equal-width buckets from min to max salary",
+        "4 equal-frequency buckets",
+        "Sorted salary bins"
+      ],
+      "correct": "b",
+      "explanation": "Equal-width bins. Use pd.qcut() for equal-frequency (quantile) bins."
+    },
+    {
+      "question": "Why check the target variable distribution first in EDA?",
+      "options": [
+        "It is the easiest column to visualise",
+        "Class imbalance (e.g. 95% vs 5%) affects model evaluation -- accuracy becomes misleading",
+        "It tells you data types",
+        "It shows missing values"
+      ],
+      "correct": "b",
+      "explanation": "Severely imbalanced targets require special handling: class_weight, SMOTE, PR-AUC instead of accuracy."
+    }
+  ]
+}
