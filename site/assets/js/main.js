@@ -69,6 +69,9 @@ function initOneNoteTabs() {
     tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
     panels.forEach((p, i) => p.classList.toggle('active', i === idx));
     if (mobileSelect) mobileSelect.selectedIndex = idx;
+    // Always scroll content area back to top when switching panels
+    const content = document.querySelector('.onenote-content');
+    if (content) content.scrollTop = 0;
     trackEvent('tab_change', { tab_label: tabs[idx]?.querySelector('.onenote-tab-text')?.textContent });
   }
 

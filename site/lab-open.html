@@ -123,7 +123,7 @@
 <script>
   const params = new URLSearchParams(window.location.search);
   const nb = params.get('nb') || 'ml-01-linear-regression.ipynb';
-  const labUrl = `/lab/index.html?path=${nb}`;
+  const labUrl = `/lab/lab/index.html?path=${nb}`;
 
   document.getElementById('nbName').textContent = nb.replace('.ipynb','').replace(/-/g,' ');
   document.getElementById('openBtn').href = labUrl;
