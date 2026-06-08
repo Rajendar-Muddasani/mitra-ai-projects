@@ -1,9 +1,11 @@
 /* ═══════════════════════════════════════════════════
    Mitra AI Projects — Chat Widget
-   Worker: https://mitra-chat-worker.rajendar-mi46.workers.dev
+   Worker: https://mitra-projects-worker.rajendar-mi46.workers.dev
+   Model: gpt-4o-mini (cheapest, fast)
+   Reference: content/chatbot/*.md (knowledge base)
    ═══════════════════════════════════════════════════ */
 
-const WORKER_URL = 'https://mitra-chat-worker.rajendar-mi46.workers.dev';
+const WORKER_URL = 'https://mitra-projects-worker.rajendar-mi46.workers.dev';
 
 const chatHTML = `
 <div id="mitra-chat-panel" class="mitra-chat-panel" style="display:none" aria-label="Mitra AI chat">
@@ -25,17 +27,17 @@ const chatHTML = `
 .mitra-chat-panel {
   position: fixed; bottom: 5rem; right: 1.5rem; z-index: 201;
   width: min(380px, calc(100vw - 2rem));
-  background: #161b22; border: 1px solid rgba(0,212,170,0.18);
-  border-radius: 14px; box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+  background: #fff; border: 1px solid rgba(107,33,168,0.2);
+  border-radius: 14px; box-shadow: 0 8px 48px rgba(107,33,168,0.15);
   display: flex; flex-direction: column; overflow: hidden;
 }
 .mitra-chat-header {
-  background: #0d2818; padding: 0.75rem 1rem;
+  background: #6b21a8; padding: 0.75rem 1rem;
   display: flex; justify-content: space-between; align-items: center;
-  font-weight: 700; color: #00d4aa; font-size: 0.9rem;
+  font-weight: 700; color: #fff; font-size: 0.9rem;
 }
 .mitra-chat-header button {
-  background: none; border: none; color: #7d8590; cursor: pointer; font-size: 1rem;
+  background: none; border: none; color: rgba(255,255,255,0.7); cursor: pointer; font-size: 1rem;
 }
 .mitra-chat-messages {
   flex: 1; overflow-y: auto; padding: 1rem; max-height: 320px;
@@ -46,27 +48,27 @@ const chatHTML = `
   font-size: 0.875rem; line-height: 1.5; max-width: 88%;
 }
 .mitra-chat-msg.bot {
-  background: #1c2333; color: #e6edf3; align-self: flex-start;
+  background: #faf5ff; color: #1a0533; align-self: flex-start;
 }
 .mitra-chat-msg.user {
-  background: rgba(0,212,170,0.12); color: #e6edf3;
-  align-self: flex-end; border: 1px solid rgba(0,212,170,0.2);
+  background: #6b21a8; color: #fff;
+  align-self: flex-end; border: none;
 }
 .mitra-chat-input-row {
-  display: flex; gap: 0.5rem; padding: 0.75rem; border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex; gap: 0.5rem; padding: 0.75rem; border-top: 1px solid rgba(107,33,168,0.1);
 }
 .mitra-chat-input-row input {
-  flex: 1; background: #0d1117; border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 8px; padding: 0.55rem 0.75rem; color: #e6edf3;
+  flex: 1; background: #faf5ff; border: 1px solid rgba(107,33,168,0.15);
+  border-radius: 8px; padding: 0.55rem 0.75rem; color: #1a0533;
   font-size: 0.875rem; outline: none;
 }
-.mitra-chat-input-row input:focus { border-color: #00d4aa; }
+.mitra-chat-input-row input:focus { border-color: #fff; }
 .mitra-chat-input-row button {
-  background: #00d4aa; color: #0d1117; border: none;
+  background: #6b21a8; color: #fff; border: none;
   border-radius: 8px; padding: 0.5rem 0.85rem; cursor: pointer;
   font-weight: 700; font-size: 1rem; transition: background 0.15s;
 }
-.mitra-chat-input-row button:hover { background: #00a888; }
+.mitra-chat-input-row button:hover { background: #7c3aed; }
 </style>
 `;
 

@@ -30,58 +30,46 @@
   </div>
 </nav>
 
+<section class="hero hero-sm">
+  <div class="container hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/courses/">Courses</a><span class="breadcrumb-sep">›</span><span>Deep Learning</span></div>
+    <div class="hero-eyebrow">deep learning · ml practitioners</div>
+    <h1 class="hero-title">Deep Learning</h1>
+    <p class="hero-sub">Neural networks, CNNs, RNNs, LSTMs, autoencoders, GANs, transformers, multimodal models, transfer learning, and model compression — with source notebooks from AIML-Engineering-Lab.</p>
+    <div class="hero-actions">
+      <a href="/cheatsheets.html" class="btn btn-primary">Deep Learning Cheatsheet</a>
+      <a href="/courses/ml.html" class="btn btn-outline">← ML Course First</a>
+    </div>
+  </div>
+</section>
+
 <style>
   body { overflow: hidden; }
   @media (max-width: 768px) { body { overflow: auto; } }
-  .onenote-mobile-header {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border-dim);
-    padding: 0.75rem 1rem;
-    display: none;
-  }
-  @media (max-width: 768px) { .onenote-mobile-header { display: block; } }
-  select.onenote-mobile-select {
-    background: var(--surface-2);
-    border: 1px solid var(--border-dim);
-    color: var(--text);
-    border-radius: 8px;
-    padding: 0.55rem 0.85rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-  }
+  .onenote-mobile-header { background:var(--surface);border-bottom:1px solid var(--border-dim);padding:0.75rem 1rem;display:none; }
+  @media (max-width: 768px) { .onenote-mobile-header { display:block; } }
+  select.onenote-mobile-select { background:var(--surface-2);border:1px solid var(--border-dim);color:var(--text);border-radius:8px;padding:0.55rem 0.85rem;font-family:'JetBrains Mono',monospace;font-size:0.85rem; }
 </style>
-
-<!-- Mobile topic selector -->
 <div class="onenote-mobile-header">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
-    <div>
-      <span class="badge badge-primary" style="margin-right:0.5rem;">DL</span>
-      <strong style="font-size:0.95rem;">Deep Learning</strong>
-    </div>
-    <a href="/courses/" class="btn btn-ghost btn-sm">All Courses ↗</a>
+    <div><span class="badge badge-primary" style="margin-right:0.5rem;">DL</span><strong style="font-size:0.95rem;">Deep Learning</strong></div>
+    <a href="/courses/" class="btn btn-ghost btn-sm">All Courses</a>
   </div>
-  <select class="onenote-mobile-select" style="width:100%;">
-        <option value="0">🧠 Neural Networks</option>
+  <select class="onenote-mobile-select" style="width:100%;">        <option value="0">🧠 Neural Networks</option>
         <option value="1">🖼 CNNs</option>
         <option value="2">🔄 RNNs / LSTMs</option>
         <option value="3">🎨 Autoencoders & GANs</option>
         <option value="4">⚡ Transformers</option>
         <option value="5">👁 Multimodal</option>
         <option value="6">🔀 Transfer Learning</option>
-        <option value="7">📦 Model Compression</option>
-  </select>
+        <option value="7">📦 Model Compression</option></select>
 </div>
-
-<!-- OneNote layout -->
 <div class="onenote-wrap">
-
-  <!-- LEFT SIDEBAR -->
   <aside class="onenote-sidebar">
     <div class="onenote-sidebar-header">
       <div style="color:var(--primary);font-weight:700;margin-bottom:0.25rem;">Deep Learning</div>
       8 Topics · AIML-Engineering-Lab
     </div>
-
     <div class="onenote-tab" data-idx="0">
       <span class="onenote-tab-icon">🧠</span>
       <span class="onenote-tab-text">Neural Networks</span>
@@ -122,129 +110,11 @@
       <span class="onenote-tab-text">Model Compression</span>
       <span class="onenote-tab-badge">008</span>
     </div>
-
     <div style="padding:1.25rem;margin-top:1rem;border-top:1px solid var(--border-dim);">
-      <a href="/courses/" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-bottom:0.5rem;">
-        ← All Courses
-      </a>
-      <a href="/cheatsheets.html" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;" data-track="cheatsheet" data-name="dl-cheatsheet">
-        📄 DL Cheatsheet
-      </a>
+      <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-bottom:0.5rem;" data-track="cheatsheet" data-name="dl-cheatsheet">📄 DL Cheatsheet</a>
+      <a href="/courses/" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;">📚 Browse All Courses →</a>
     </div>
   </aside>
-
-  <!-- RIGHT CONTENT -->
-  <main class="onenote-content">
-
-
-
-  </main>
-</div>
-
-<style>
-  body { overflow: hidden; }
-  @media (max-width: 768px) { body { overflow: auto; } }
-  .onenote-mobile-header {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border-dim);
-    padding: 0.75rem 1rem;
-    display: none;
-  }
-  @media (max-width: 768px) { .onenote-mobile-header { display: block; } }
-  select.onenote-mobile-select {
-    background: var(--surface-2);
-    border: 1px solid var(--border-dim);
-    color: var(--text);
-    border-radius: 8px;
-    padding: 0.55rem 0.85rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-  }
-</style>
-
-<!-- Mobile topic selector -->
-<div class="onenote-mobile-header">
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
-    <div>
-      <span class="badge badge-primary" style="margin-right:0.5rem;">DL</span>
-      <strong style="font-size:0.95rem;">Deep Learning</strong>
-    </div>
-    <a href="/courses/" class="btn btn-ghost btn-sm">All Courses ↗</a>
-  </div>
-  <select class="onenote-mobile-select" style="width:100%;">
-        <option value="0">🧠 Neural Networks</option>
-        <option value="1">🖼 CNNs</option>
-        <option value="2">🔄 RNNs / LSTMs</option>
-        <option value="3">🎨 Autoencoders & GANs</option>
-        <option value="4">⚡ Transformers</option>
-        <option value="5">👁 Multimodal</option>
-        <option value="6">🔀 Transfer Learning</option>
-        <option value="7">📦 Model Compression</option>
-  </select>
-</div>
-
-<!-- OneNote layout -->
-<div class="onenote-wrap">
-
-  <!-- LEFT SIDEBAR -->
-  <aside class="onenote-sidebar">
-    <div class="onenote-sidebar-header">
-      <div style="color:var(--primary);font-weight:700;margin-bottom:0.25rem;">Deep Learning</div>
-      8 Topics · AIML-Engineering-Lab
-    </div>
-
-    <div class="onenote-tab" data-idx="0">
-      <span class="onenote-tab-icon">🧠</span>
-      <span class="onenote-tab-text">Neural Networks</span>
-      <span class="onenote-tab-badge">001</span>
-    </div>
-    <div class="onenote-tab" data-idx="1">
-      <span class="onenote-tab-icon">🖼</span>
-      <span class="onenote-tab-text">CNNs</span>
-      <span class="onenote-tab-badge">002</span>
-    </div>
-    <div class="onenote-tab" data-idx="2">
-      <span class="onenote-tab-icon">🔄</span>
-      <span class="onenote-tab-text">RNNs / LSTMs</span>
-      <span class="onenote-tab-badge">003</span>
-    </div>
-    <div class="onenote-tab" data-idx="3">
-      <span class="onenote-tab-icon">🎨</span>
-      <span class="onenote-tab-text">Autoencoders & GANs</span>
-      <span class="onenote-tab-badge">004</span>
-    </div>
-    <div class="onenote-tab" data-idx="4">
-      <span class="onenote-tab-icon">⚡</span>
-      <span class="onenote-tab-text">Transformers</span>
-      <span class="onenote-tab-badge">005</span>
-    </div>
-    <div class="onenote-tab" data-idx="5">
-      <span class="onenote-tab-icon">👁</span>
-      <span class="onenote-tab-text">Multimodal</span>
-      <span class="onenote-tab-badge">006</span>
-    </div>
-    <div class="onenote-tab" data-idx="6">
-      <span class="onenote-tab-icon">🔀</span>
-      <span class="onenote-tab-text">Transfer Learning</span>
-      <span class="onenote-tab-badge">007</span>
-    </div>
-    <div class="onenote-tab" data-idx="7">
-      <span class="onenote-tab-icon">📦</span>
-      <span class="onenote-tab-text">Model Compression</span>
-      <span class="onenote-tab-badge">008</span>
-    </div>
-
-    <div style="padding:1.25rem;margin-top:1rem;border-top:1px solid var(--border-dim);">
-      <a href="/courses/" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-bottom:0.5rem;">
-        ← All Courses
-      </a>
-      <a href="/cheatsheets.html" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;" data-track="cheatsheet" data-name="dl-cheatsheet">
-        📄 DL Cheatsheet
-      </a>
-    </div>
-  </aside>
-
-  <!-- RIGHT CONTENT -->
   <main class="onenote-content">
 
     <!-- Panel 0: Neural Networks -->
@@ -303,19 +173,16 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
           <div class="notebook-card-body">
             <div class="notebook-card-title">Notebook: Neural Networks</div>
             <div class="notebook-card-desc">Neural network concepts, activation functions, backpropagation, MLP classification</div>
-            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
           <a href="/lab-open.html?nb=dl-01-neural-networks.ipynb" target="_blank" rel="noopener"
-             class="btn btn-primary notebook-open-btn"
-             onclick="trackEvent('notebook_open',{notebook:'dl-01-neural-networks'})">Open Notebook →</a>
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
       </div>
       <div class="topic-section">
         <h3>Quiz</h3>
-        <p>Test your understanding of Neural Networks with 10 questions. Pass 70% to mark complete.</p>
-        <a href="/quiz.html?course=dl&topic=neural-networks"
-           class="btn btn-primary"
-           onclick="trackEvent('quiz_open',{course:'dl',topic:'neural-networks'})">Take Quiz →</a>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dl&topic=neural-networks" class="btn btn-primary">Take Quiz</a>
       </div>
       </div>
 
@@ -350,19 +217,16 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
           <div class="notebook-card-body">
             <div class="notebook-card-title">Notebook: CNNs</div>
             <div class="notebook-card-desc">CIFAR-10 image classification, famous models, datasets, HuggingFace</div>
-            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
           <a href="/lab-open.html?nb=dl-02-cnns-cifar10.ipynb" target="_blank" rel="noopener"
-             class="btn btn-primary notebook-open-btn"
-             onclick="trackEvent('notebook_open',{notebook:'dl-02-cnns-cifar10'})">Open Notebook →</a>
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
       </div>
       <div class="topic-section">
         <h3>Quiz</h3>
-        <p>Test your understanding of CNNs with 10 questions. Pass 70% to mark complete.</p>
-        <a href="/quiz.html?course=dl&topic=cnns"
-           class="btn btn-primary"
-           onclick="trackEvent('quiz_open',{course:'dl',topic:'cnns'})">Take Quiz →</a>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dl&topic=cnns" class="btn btn-primary">Take Quiz</a>
       </div>
       </div>
 
@@ -403,19 +267,16 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
           <div class="notebook-card-body">
             <div class="notebook-card-title">Notebook: RNNs / LSTMs</div>
             <div class="notebook-card-desc">Stock price trend prediction, sliding window, LSTM vs GRU</div>
-            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
           <a href="/lab-open.html?nb=dl-03-rnn-lstm-stock.ipynb" target="_blank" rel="noopener"
-             class="btn btn-primary notebook-open-btn"
-             onclick="trackEvent('notebook_open',{notebook:'dl-03-rnn-lstm-stock'})">Open Notebook →</a>
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
       </div>
       <div class="topic-section">
         <h3>Quiz</h3>
-        <p>Test your understanding of RNNs / LSTMs with 10 questions. Pass 70% to mark complete.</p>
-        <a href="/quiz.html?course=dl&topic=rnn-lstm"
-           class="btn btn-primary"
-           onclick="trackEvent('quiz_open',{course:'dl',topic:'rnn-lstm'})">Take Quiz →</a>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dl&topic=rnn-lstm" class="btn btn-primary">Take Quiz</a>
       </div>
       </div>
 
@@ -446,19 +307,16 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
           <div class="notebook-card-body">
             <div class="notebook-card-title">Notebook: Autoencoders & GANs</div>
             <div class="notebook-card-desc">MNIST compression, denoising, face generation with DCGAN</div>
-            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
           <a href="/lab-open.html?nb=dl-04-autoencoders-gans.ipynb" target="_blank" rel="noopener"
-             class="btn btn-primary notebook-open-btn"
-             onclick="trackEvent('notebook_open',{notebook:'dl-04-autoencoders-gans'})">Open Notebook →</a>
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
       </div>
       <div class="topic-section">
         <h3>Quiz</h3>
-        <p>Test your understanding of Autoencoders & GANs with 10 questions. Pass 70% to mark complete.</p>
-        <a href="/quiz.html?course=dl&topic=autoencoders-gans"
-           class="btn btn-primary"
-           onclick="trackEvent('quiz_open',{course:'dl',topic:'autoencoders-gans'})">Take Quiz →</a>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dl&topic=autoencoders-gans" class="btn btn-primary">Take Quiz</a>
       </div>
       </div>
 
@@ -489,19 +347,16 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
           <div class="notebook-card-body">
             <div class="notebook-card-title">Notebook: Transformers</div>
             <div class="notebook-card-desc">Sentiment analysis, extractive summarisation, BERT vs GPT</div>
-            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
           <a href="/lab-open.html?nb=dl-05-transformers-nlp.ipynb" target="_blank" rel="noopener"
-             class="btn btn-primary notebook-open-btn"
-             onclick="trackEvent('notebook_open',{notebook:'dl-05-transformers-nlp'})">Open Notebook →</a>
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
       </div>
       <div class="topic-section">
         <h3>Quiz</h3>
-        <p>Test your understanding of Transformers with 10 questions. Pass 70% to mark complete.</p>
-        <a href="/quiz.html?course=dl&topic=transformers"
-           class="btn btn-primary"
-           onclick="trackEvent('quiz_open',{course:'dl',topic:'transformers'})">Take Quiz →</a>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dl&topic=transformers" class="btn btn-primary">Take Quiz</a>
       </div>
       </div>
 
@@ -529,19 +384,16 @@ loss_fn = nn.<span class="cl">CrossEntropyLoss</span>()</code></pre>
           <div class="notebook-card-body">
             <div class="notebook-card-title">Notebook: Multimodal Models</div>
             <div class="notebook-card-desc">BLIP image captioning, Visual Q&A, CLIP zero-shot</div>
-            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
           <a href="/lab-open.html?nb=dl-06-multimodal.ipynb" target="_blank" rel="noopener"
-             class="btn btn-primary notebook-open-btn"
-             onclick="trackEvent('notebook_open',{notebook:'dl-06-multimodal'})">Open Notebook →</a>
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
       </div>
       <div class="topic-section">
         <h3>Quiz</h3>
-        <p>Test your understanding of Multimodal Models with 10 questions. Pass 70% to mark complete.</p>
-        <a href="/quiz.html?course=dl&topic=multimodal"
-           class="btn btn-primary"
-           onclick="trackEvent('quiz_open',{course:'dl',topic:'multimodal'})">Take Quiz →</a>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dl&topic=multimodal" class="btn btn-primary">Take Quiz</a>
       </div>
       </div>
 
@@ -585,19 +437,16 @@ model.fc = nn.<span class="cl">Linear</span>(<span class="num">2048</span>, num_
           <div class="notebook-card-body">
             <div class="notebook-card-title">Notebook: Transfer Learning</div>
             <div class="notebook-card-desc">ResNet50 dog breed classifier, fine-tuning strategy, 120 breeds</div>
-            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
           <a href="/lab-open.html?nb=dl-07-transfer-learning.ipynb" target="_blank" rel="noopener"
-             class="btn btn-primary notebook-open-btn"
-             onclick="trackEvent('notebook_open',{notebook:'dl-07-transfer-learning'})">Open Notebook →</a>
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
       </div>
       <div class="topic-section">
         <h3>Quiz</h3>
-        <p>Test your understanding of Transfer Learning with 10 questions. Pass 70% to mark complete.</p>
-        <a href="/quiz.html?course=dl&topic=transfer-learning"
-           class="btn btn-primary"
-           onclick="trackEvent('quiz_open',{course:'dl',topic:'transfer-learning'})">Take Quiz →</a>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dl&topic=transfer-learning" class="btn btn-primary">Take Quiz</a>
       </div>
       </div>
 
@@ -625,19 +474,16 @@ model.fc = nn.<span class="cl">Linear</span>(<span class="num">2048</span>, num_
           <div class="notebook-card-body">
             <div class="notebook-card-title">Notebook: Model Compression</div>
             <div class="notebook-card-desc">Pruning, quantisation, knowledge distillation demo</div>
-            <div class="notebook-card-note">First load: ~30–60 seconds · Work saves automatically</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
           <a href="/lab-open.html?nb=dl-08-model-compression.ipynb" target="_blank" rel="noopener"
-             class="btn btn-primary notebook-open-btn"
-             onclick="trackEvent('notebook_open',{notebook:'dl-08-model-compression'})">Open Notebook →</a>
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
       </div>
       <div class="topic-section">
         <h3>Quiz</h3>
-        <p>Test your understanding of Model Compression with 10 questions. Pass 70% to mark complete.</p>
-        <a href="/quiz.html?course=dl&topic=model-compression"
-           class="btn btn-primary"
-           onclick="trackEvent('quiz_open',{course:'dl',topic:'model-compression'})">Take Quiz →</a>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=dl&topic=model-compression" class="btn btn-primary">Take Quiz</a>
       </div>
         
       </div>
@@ -680,13 +526,9 @@ model.fc = nn.<span class="cl">Linear</span>(<span class="num">2048</span>, num_
 
       <div class="completion-banner" style="margin-top:2rem;">
         <div class="completion-icon">🎓</div>
-        <div class="completion-body">
-          <h3>Deep Learning Complete!</h3>
-          <p>Pass all 8 topic quizzes to earn your Deep Learning certificate.</p>
-        </div>
-        <a href="/courses/" class="btn btn-primary">Browse Next Course →</a>
-      </div>
-    </div>
+        <div class="completion-body"><h3>Deep Learning Complete!</h3><p>Pass all topic quizzes to earn your DL certificate.</p></div>
+        <a href="/courses/" class="btn btn-primary">Browse Next Course</a>
+      </div>    </div>
     <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
   </div>
 </footer>
