@@ -31,14 +31,17 @@ jobs:
 
       - name: Build JupyterLite
         run: |
-          pip install jupyterlite-core==0.4.1 jupyterlite-pyodide-kernel==0.4.1
+          pip install \
+            jupyterlite-core==0.4.1 \
+            jupyterlite-pyodide-kernel==0.4.1 \
+            jupyter_server \
+            libarchive-c
           mkdir -p site/lab
           jupyter lite build \
             --contents notebooks/ \
-            --output-dir site/lab/ \
-            --no-sourcemaps
+            --output-dir site/lab/
         env:
-          JUPYTERLITE_NO_SOURCEMAPS: "1"
+          PYTHONWARNINGS: "ignore"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

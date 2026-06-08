@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opening Notebook — Mitra AI Projects</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #faf5ff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid rgba(107,33,168,0.15);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(107,33,168,0.08);
+    }
+    .spinner-wrap { margin: 0 auto 1.5rem; width: 60px; height: 60px; }
+    .spinner {
+      width: 60px; height: 60px;
+      border: 4px solid rgba(107,33,168,0.15);
+      border-top-color: #6b21a8;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    h1 { font-size: 1.35rem; color: #1a0533; margin-bottom: 0.5rem; font-weight: 800; }
+    .nb-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: #6b21a8;
+      background: rgba(107,33,168,0.07);
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+    }
+    .steps { text-align: left; margin: 1.25rem 0; }
+    .step {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.6rem 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+      font-size: 0.88rem; color: #4a4060;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .step-text strong { display: block; color: #1a0533; font-weight: 700; }
+    .progress-wrap { margin: 1.25rem 0; }
+    .progress-bar { height: 6px; background: rgba(107,33,168,0.1); border-radius: 999px; overflow: hidden; }
+    .progress-fill { height: 100%; background: #6b21a8; border-radius: 999px; width: 0%; transition: width 0.5s ease; }
+    .progress-label { font-size: 0.78rem; color: #6b21a8; font-family: 'JetBrains Mono', monospace; margin-top: 0.4rem; }
+    .open-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #6b21a8; color: #fff;
+      padding: 0.75rem 1.75rem; border-radius: 8px;
+      font-weight: 800; font-size: 0.95rem; font-family: 'Nunito', sans-serif;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: all 0.2s; margin-top: 1rem;
+    }
+    .open-btn:hover { background: #7c3aed; transform: translateY(-1px); }
+    .open-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .note { font-size: 0.78rem; color: #8a7a9a; margin-top: 0.75rem; line-height: 1.6; }
+    .back-link { font-size: 0.8rem; color: #8a7a9a; text-decoration: none; display: block; margin-top: 1.25rem; }
+    .back-link:hover { color: #6b21a8; }
+    #statusMsg { font-size: 0.85rem; color: #6b21a8; font-weight: 700; margin-top: 0.5rem; min-height: 1.2rem; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="spinner-wrap"><div class="spinner" id="spinner"></div></div>
+  <h1>Opening Interactive Notebook</h1>
+  <div class="nb-name" id="nbName">Loading...</div>
+
+  <div class="steps">
+    <div class="step">
+      <span class="step-icon" id="step1icon">⏳</span>
+      <div class="step-text">
+        <strong>Loading JupyterLite</strong>
+        HTML, JavaScript and service worker initialise
+      </div>
+    </div>
+    <div class="step">
+      <span class="step-icon" id="step2icon">⏳</span>
+      <div class="step-text">
+        <strong>Downloading Python runtime (Pyodide)</strong>
+        ~30MB WebAssembly — cached after first download
+      </div>
+    </div>
+    <div class="step">
+      <span class="step-icon" id="step3icon">⏳</span>
+      <div class="step-text">
+        <strong>Opening your notebook</strong>
+        Your work is saved in the browser automatically
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-label" id="statusMsg">Starting...</div>
+  </div>
+
+  <a href="#" class="open-btn" id="openBtn" target="_blank">Open in JupyterLite →</a>
+  <p class="note">
+    <strong>First visit only:</strong> ~30–60 seconds. After that, opens in ~3 seconds (cached).<br>
+    If the page stays blank after 90 seconds, click <strong>Open in JupyterLite →</strong> directly.
+  </p>
+  <a href="javascript:history.back()" class="back-link">← Back to course</a>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const nb = params.get('nb') || 'ml-01-linear-regression.ipynb';
+  const labUrl = `/lab/index.html?path=${nb}`;
+
+  document.getElementById('nbName').textContent = nb.replace('.ipynb','').replace(/-/g,' ');
+  document.getElementById('openBtn').href = labUrl;
+
+  // Animate progress to simulate loading stages
+  const fill = document.getElementById('progressFill');
+  const msg  = document.getElementById('statusMsg');
+  const steps = [
+    { icon1: '✅', pct: 30,  delay: 1000, msg: 'JupyterLite loaded…' },
+    { icon2: '🔄', pct: 60,  delay: 3000, msg: 'Downloading Python runtime (first time only)…' },
+    { icon2: '✅', pct: 85,  delay: 12000, msg: 'Python ready, opening notebook…' },
+    { icon3: '✅', pct: 100, delay: 18000, msg: 'Ready! Notebook is opening in new tab.' },
+  ];
+
+  // Open the lab in a new tab immediately
+  const labWindow = window.open(labUrl, '_blank');
+
+  let t = 0;
+  const icon1 = document.getElementById('step1icon');
+  const icon2 = document.getElementById('step2icon');
+  const icon3 = document.getElementById('step3icon');
+
+  setTimeout(() => { icon1.textContent = '✅'; fill.style.width='25%'; msg.textContent='JupyterLite loaded…'; }, 1500);
+  setTimeout(() => { icon2.textContent = '🔄'; fill.style.width='50%'; msg.textContent='Downloading Pyodide (~30MB)…'; }, 3000);
+  setTimeout(() => { fill.style.width='75%'; msg.textContent='Python runtime installing…'; }, 20000);
+  setTimeout(() => { icon2.textContent = '✅'; fill.style.width='90%'; msg.textContent='Opening notebook…'; }, 40000);
+  setTimeout(() => { icon3.textContent = '✅'; fill.style.width='100%'; msg.textContent='Done — notebook should be open!'; document.getElementById('spinner').style.display='none'; }, 60000);
+</script>
+</body>
+</html>
