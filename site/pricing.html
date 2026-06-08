@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses, Mentoring & Coaching — Mitra AI Projects</title>
+  <meta name="description" content="Crash courses, full courses, 1:1 mentoring, project guidance, and group sessions for AI/ML students and professionals.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .pricing-hero { background:linear-gradient(160deg,#faf5ff 0%,#f3e8ff 40%,#fff 80%); padding:3rem 0 2rem; }
+    .plan-card { background:#fff; border:2px solid var(--border-dim); border-radius:var(--radius-lg); padding:2rem; transition:all 0.2s; display:flex; flex-direction:column; }
+    .plan-card:hover { border-color:var(--primary); box-shadow:0 8px 32px rgba(107,33,168,0.12); }
+    .plan-card.featured { border-color:var(--primary); background:rgba(107,33,168,0.03); position:relative; }
+    .plan-card.featured::before { content:'Most Popular'; position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--primary); color:#fff; font-size:0.72rem; font-weight:800; font-family:'JetBrains Mono',monospace; padding:0.25rem 0.85rem; border-radius:999px; white-space:nowrap; }
+    .plan-name { font-family:'Baloo 2',sans-serif; font-weight:800; font-size:1.15rem; margin-bottom:0.25rem; }
+    .plan-price { font-family:'Baloo 2',sans-serif; font-weight:800; font-size:2rem; color:var(--primary); margin:0.5rem 0 0.25rem; }
+    .plan-price span { font-size:0.9rem; font-weight:600; color:var(--muted); }
+    .plan-desc { font-size:0.875rem; color:var(--muted); margin-bottom:1.25rem; line-height:1.6; }
+    .plan-features { list-style:none; margin-bottom:1.5rem; flex:1; }
+    .plan-features li { font-size:0.875rem; padding:0.3rem 0; border-bottom:1px solid rgba(107,33,168,0.06); display:flex; align-items:flex-start; gap:0.5rem; }
+    .plan-features li:last-child { border-bottom:none; }
+    .plan-features li::before { content:'✓'; color:var(--success); font-weight:800; flex-shrink:0; margin-top:1px; }
+    .plan-features li.x::before { content:'—'; color:var(--muted); }
+    .section-intro { text-align:center; margin-bottom:2.5rem; }
+    .section-intro p { color:var(--muted); max-width:560px; margin:0.5rem auto 0; font-size:0.95rem; }
+    .faq-item { border:1px solid var(--border-dim); border-radius:var(--radius-lg); margin-bottom:0.75rem; overflow:hidden; }
+    .faq-q { padding:1rem 1.25rem; cursor:pointer; font-weight:700; font-size:0.9rem; display:flex; justify-content:space-between; background:var(--surface); transition:background 0.15s; }
+    .faq-q:hover { background:rgba(107,33,168,0.05); }
+    .faq-a { display:none; padding:1rem 1.25rem; font-size:0.875rem; color:var(--muted); line-height:1.7; background:#fff; }
+    .faq-item.open .faq-a { display:block; }
+    .free-badge { font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:var(--success); background:rgba(5,150,105,0.1); padding:0.15rem 0.5rem; border-radius:4px; margin-left:0.4rem; }
+    .contact-highlight { background:linear-gradient(135deg,var(--primary),#7c3aed); color:#fff; border-radius:var(--radius-lg); padding:2.5rem 2rem; text-align:center; }
+    .contact-highlight h2 { color:#fff; margin-bottom:0.5rem; }
+    .contact-highlight p { color:rgba(255,255,255,0.82); margin-bottom:1.5rem; }
+    .price-note { font-size:0.72rem; color:var(--muted); font-family:'JetBrains Mono',monospace; margin-top:0.25rem; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/portfolio-guide.html">Portfolio</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pricing-hero">
+  <div class="container" style="text-align:center;">
+    <div class="hero-eyebrow" style="justify-content:center;">guided learning · mentoring · coaching</div>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:0.5rem;">Learn at Your Pace,<br>Get Unstuck Fast</h1>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 1.5rem;font-size:1rem;line-height:1.7;">
+      All course content and project kits are free. Pay only when you want structured live guidance, project review, or intensive coaching.
+    </p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+      <a href="/courses/" class="btn btn-outline btn-lg">Free Self-Study →</a>
+      <a href="/contact.html" class="btn btn-primary btn-lg">Talk to Us →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:3rem;">
+  <div class="container">
+
+    <!-- Self-study (free) -->
+    <div class="section-intro">
+      <div class="section-tag">self-study — always free</div>
+      <h2>Everything You Need to Learn on Your Own <span class="free-badge">FREE</span></h2>
+      <p>No account required for most content. Start learning today.</p>
+    </div>
+
+    <div class="grid grid-4" style="margin-bottom:3.5rem;">
+      <div class="card" style="text-align:center;">
+        <div style="font-size:1.75rem;margin-bottom:0.5rem;">📚</div>
+        <div class="card-title" style="font-size:0.95rem;">9 Full Courses</div>
+        <div class="card-desc">ML, DL, GenAI, Agentic, MLOps, Programming, Key Concepts, RL, Data Viz — all free forever</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:1.75rem;margin-bottom:0.5rem;">⚡</div>
+        <div class="card-title" style="font-size:0.95rem;">JupyterLite Notebooks</div>
+        <div class="card-desc">57 hands-on notebooks that run in your browser. No setup needed.</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:1.75rem;margin-bottom:0.5rem;">🛠</div>
+        <div class="card-title" style="font-size:0.95rem;">9 Project Kits</div>
+        <div class="card-desc">Milestones, skeleton code, architecture, viva Q&A, report + PPT templates</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:1.75rem;margin-bottom:0.5rem;">📄</div>
+        <div class="card-title" style="font-size:0.95rem;">12 Cheatsheets</div>
+        <div class="card-desc">Print-ready reference sheets for every course topic</div>
+      </div>
+    </div>
+
+    <!-- Crash Courses -->
+    <div class="section-intro">
+      <div class="section-tag">intensive crash courses</div>
+      <h2>Get Up to Speed in One Day</h2>
+      <p>Live online sessions. Theory + code + hands-on labs. Certificate included.</p>
+    </div>
+
+    <div class="grid grid-3" style="margin-bottom:3.5rem;">
+      <div class="plan-card">
+        <div class="plan-name">🤖 ML Crash Course</div>
+        <div class="plan-price">₹999 <span>per person</span></div>
+        <div class="price-note">4 hours · Live online · Weekends</div>
+        <div class="plan-desc">Core ML algorithms, evaluation metrics, sklearn pipeline, hands-on XGBoost project.</div>
+        <ul class="plan-features">
+          <li>All 10 ML topics in 4 focused hours</li>
+          <li>Live code walkthrough in JupyterLab</li>
+          <li>Mini project: Fraud detection with XGBoost</li>
+          <li>Recording shared post-session</li>
+          <li>ML course certificate</li>
+          <li>Q&A session (30 min)</li>
+        </ul>
+        <a href="/contact.html?interest=ml-crash-course" class="btn btn-outline" onclick="trackEvent('pricing_click',{plan:'ml-crash'})">Register Interest →</a>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="plan-name">✨ GenAI Crash Course</div>
+        <div class="plan-price">₹999 <span>per person</span></div>
+        <div class="price-note">4 hours · Live online · Weekends</div>
+        <div class="plan-desc">Prompt engineering, RAG, fine-tuning with LoRA, evaluation — build a real GenAI app.</div>
+        <ul class="plan-features">
+          <li>Prompt engineering patterns (CoT, ReAct)</li>
+          <li>Build a RAG system from scratch</li>
+          <li>LoRA fine-tuning on Kaggle GPU</li>
+          <li>LLM evaluation with RAGAS</li>
+          <li>Live Q&A + recording</li>
+          <li>GenAI course certificate</li>
+        </ul>
+        <a href="/contact.html?interest=genai-crash-course" class="btn btn-primary" onclick="trackEvent('pricing_click',{plan:'genai-crash'})">Register Interest →</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-name">🧠 DL Crash Course</div>
+        <div class="plan-price">₹999 <span>per person</span></div>
+        <div class="price-note">4 hours · Live online · Weekends</div>
+        <div class="plan-desc">Neural networks to transformers. PyTorch training loops, transfer learning, deployment.</div>
+        <ul class="plan-features">
+          <li>Neural nets, CNNs, Transformers in 4 hours</li>
+          <li>PyTorch training loop from scratch</li>
+          <li>Transfer learning with ResNet50</li>
+          <li>Deploy model as FastAPI endpoint</li>
+          <li>Recording + DL certificate</li>
+          <li>Q&A session (30 min)</li>
+        </ul>
+        <a href="/contact.html?interest=dl-crash-course" class="btn btn-outline" onclick="trackEvent('pricing_click',{plan:'dl-crash'})">Register Interest →</a>
+      </div>
+    </div>
+
+    <!-- Full Courses (1 week) -->
+    <div class="section-intro">
+      <div class="section-tag">full intensive courses — 1 week</div>
+      <h2>Deep Dive with Daily Sessions</h2>
+      <p>5 days, 2 hours/day. Theory + code + project + viva prep. Small cohorts (max 15).</p>
+    </div>
+
+    <div class="grid grid-3" style="margin-bottom:3.5rem;">
+      <div class="plan-card">
+        <div class="plan-name">Machine Learning — 1 Week</div>
+        <div class="plan-price">₹2,499 <span>per person</span></div>
+        <div class="price-note">5 days × 2hrs · Online cohort · Max 15</div>
+        <div class="plan-desc">Complete ML course with daily assignments, code reviews, and a final project.</div>
+        <ul class="plan-features">
+          <li>All 10 ML topics over 5 days</li>
+          <li>Daily code assignments with feedback</li>
+          <li>Final project: full ML pipeline</li>
+          <li>Viva preparation session (Day 5)</li>
+          <li>Certificate + LinkedIn recommendation</li>
+          <li>30-day access to session recordings</li>
+        </ul>
+        <a href="/contact.html?interest=ml-full-course" class="btn btn-outline" onclick="trackEvent('pricing_click',{plan:'ml-full'})">Register Interest →</a>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="plan-name">AI Engineer Track — 1 Week</div>
+        <div class="plan-price">₹3,499 <span>per person</span></div>
+        <div class="price-note">5 days × 2hrs · Online cohort · Max 10</div>
+        <div class="plan-desc">GenAI + Agentic AI in one intensive week. Build a production RAG + agent system.</div>
+        <ul class="plan-features">
+          <li>RAG, fine-tuning, embeddings (Days 1-3)</li>
+          <li>LangGraph + CrewAI agents (Days 4-5)</li>
+          <li>Final project: deployed AI application</li>
+          <li>Code review from instructor each day</li>
+          <li>Certificate + portfolio review</li>
+          <li>Placement guidance session</li>
+        </ul>
+        <a href="/contact.html?interest=ai-engineer-week" class="btn btn-primary" onclick="trackEvent('pricing_click',{plan:'ai-engineer-week'})">Register Interest →</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-name">Deep Learning — 1 Week</div>
+        <div class="plan-price">₹2,999 <span>per person</span></div>
+        <div class="price-note">5 days × 2hrs · Online cohort · Max 15</div>
+        <div class="plan-desc">PyTorch from scratch to transformers. GPU training on Kaggle, deployment included.</div>
+        <ul class="plan-features">
+          <li>PyTorch fundamentals (Day 1)</li>
+          <li>CNNs + transfer learning (Day 2)</li>
+          <li>LSTMs + time series (Day 3)</li>
+          <li>Transformers + HuggingFace (Day 4)</li>
+          <li>Model compression + deployment (Day 5)</li>
+          <li>Certificate + session recordings</li>
+        </ul>
+        <a href="/contact.html?interest=dl-full-course" class="btn btn-outline" onclick="trackEvent('pricing_click',{plan:'dl-full'})">Register Interest →</a>
+      </div>
+    </div>
+
+    <!-- 1:1 and Group Mentoring -->
+    <div class="section-intro">
+      <div class="section-tag">personal guidance</div>
+      <h2>Get Unstuck with Direct Mentoring</h2>
+      <p>For students who need personal attention on their project, viva prep, or placement readiness.</p>
+    </div>
+
+    <div class="grid grid-3" style="margin-bottom:3.5rem;">
+      <div class="plan-card">
+        <div class="plan-name">🎯 1:1 Project Guidance</div>
+        <div class="plan-price">₹499 <span>/ session (1hr)</span></div>
+        <div class="price-note">Booked in advance · Online video call</div>
+        <div class="plan-desc">Dedicated session on your specific project. Architecture review, debugging, viva prep, or report structure.</div>
+        <ul class="plan-features">
+          <li>1 hour dedicated to your project</li>
+          <li>Screen sharing + code review</li>
+          <li>Architecture and design feedback</li>
+          <li>Viva Q&A practice</li>
+          <li>Follow-up notes shared after session</li>
+        </ul>
+        <a href="/contact.html?interest=1on1-session" class="btn btn-outline" onclick="trackEvent('pricing_click',{plan:'1on1'})">Book a Session →</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-name">👥 Group Study Session</div>
+        <div class="plan-price">₹199 <span>/ person (1hr)</span></div>
+        <div class="price-note">5–10 students · Online group call</div>
+        <div class="plan-desc">Share a topic or project with 5-10 students at the same stage. Learn from each other's questions.</div>
+        <ul class="plan-features">
+          <li>Themed sessions (e.g. RAG, XGBoost)</li>
+          <li>Q&A with instructor</li>
+          <li>Peer learning + networking</li>
+          <li>Monthly cohort sessions</li>
+          <li>Recording shared after</li>
+        </ul>
+        <a href="/contact.html?interest=group-session" class="btn btn-outline" onclick="trackEvent('pricing_click',{plan:'group'})">Join Next Session →</a>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="plan-name">🚀 Placement Pack</div>
+        <div class="plan-price">₹1,499 <span>one-time</span></div>
+        <div class="price-note">For final-year students · 3 sessions</div>
+        <div class="plan-desc">3 sessions to get placement-ready: portfolio review, mock interview, and salary negotiation prep.</div>
+        <ul class="plan-features">
+          <li>Session 1: GitHub + LinkedIn portfolio review</li>
+          <li>Session 2: ML/AI mock interview (45 min)</li>
+          <li>Session 3: Resume review + job strategy</li>
+          <li>Written feedback after each session</li>
+          <li>Interview question bank (tailored)</li>
+          <li>Valid for 60 days from purchase</li>
+        </ul>
+        <a href="/contact.html?interest=placement-pack" class="btn btn-primary" onclick="trackEvent('pricing_click',{plan:'placement-pack'})">Get Placement-Ready →</a>
+      </div>
+    </div>
+
+    <!-- Special Project Guidance -->
+    <div class="section-intro">
+      <div class="section-tag">project guidance packs</div>
+      <h2>Guided Builds for Specific Projects</h2>
+      <p>Dedicated support for completing a specific project kit from start to deployment.</p>
+    </div>
+
+    <div class="grid grid-2" style="margin-bottom:3.5rem;max-width:760px;margin-left:auto;margin-right:auto;">
+      <div class="plan-card">
+        <div class="plan-name">📄 Document Q&A System</div>
+        <div class="plan-price">₹799 <span>guided pack</span></div>
+        <div class="plan-desc">2 live sessions + async support to build and deploy a RAG-based document Q&A system.</div>
+        <ul class="plan-features">
+          <li>Session 1: Architecture + environment setup</li>
+          <li>Session 2: Integration + debugging + deploy</li>
+          <li>Async WhatsApp support (3 days)</li>
+          <li>Code review on your implementation</li>
+          <li>Deployment guidance (Render.com)</li>
+        </ul>
+        <a href="/contact.html?interest=docqa-guidance" class="btn btn-outline">Get Guidance →</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">📊 Forecasting Dashboard</div>
+        <div class="plan-price">₹799 <span>guided pack</span></div>
+        <div class="plan-desc">2 live sessions to build an ARIMA + Prophet forecasting dashboard from your CSV data.</div>
+        <ul class="plan-features">
+          <li>Session 1: EDA + model selection</li>
+          <li>Session 2: Dashboard + deployment</li>
+          <li>Async support (3 days)</li>
+          <li>Custom dataset guidance</li>
+          <li>Report template filled to your results</li>
+        </ul>
+        <a href="/contact.html?interest=forecast-guidance" class="btn btn-outline">Get Guidance →</a>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="max-width:680px;margin:0 auto 3rem;">
+      <div class="section-intro">
+        <div class="section-tag">questions</div>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">Is the free content really free? <span>▼</span></div>
+        <div class="faq-a">Yes, completely. All 9 courses, 57 notebooks, 9 project kits, 12 cheatsheets, and the interview prep guide are free with no sign-up required for most content. Signing in (free) just lets us track your progress and issue certificates.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">When do sessions happen? <span>▼</span></div>
+        <div class="faq-a">Crash courses run on weekends (Saturday/Sunday). Full courses run Monday-Friday evenings (6-8 PM IST) or weekends. 1:1 sessions are booked at a mutually convenient time. All sessions are online (Google Meet or Zoom).</div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">What if I miss a session? <span>▼</span></div>
+        <div class="faq-a">All sessions are recorded and shared with participants within 24 hours. For crash courses and full courses, you can attend the recording-only cohort at the same price if you cannot attend live.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">Can my college group register together? <span>▼</span></div>
+        <div class="faq-a">Yes. Groups of 10+ from the same college get a 20% discount on crash courses and full courses. Contact us with your group size and we will send a group booking link.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">Do you offer EMI or scholarships? <span>▼</span></div>
+        <div class="faq-a">We offer need-based discounts for students who cannot afford the fee. Contact us with your situation and we will do our best to accommodate. No one should be priced out of learning.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-q">How is payment handled? <span>▼</span></div>
+        <div class="faq-a">Payment via UPI, bank transfer, or Razorpay after your registration interest is confirmed. We contact you to confirm the session date before any payment is requested.</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="contact-highlight">
+      <div style="font-size:2rem;margin-bottom:0.5rem;">📩</div>
+      <h2>Not Sure Which Option Fits?</h2>
+      <p>Tell us your goal, timeline, and current level. We will recommend the best path — and there is never any pressure.</p>
+      <a href="/contact.html" class="btn btn-xl" style="background:#fff;color:var(--primary);font-weight:800;" onclick="trackEvent('pricing_contact_cta')">Talk to Us →</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Mitra AI Life. All rights reserved.</span>
+      <div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+<script>
+function toggleFAQ(el) {
+  const wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) el.classList.add('open');
+  trackEvent('faq_expand', { question: el.querySelector('.faq-q').textContent.trim().substring(0,50) });
+}
+</script>
+</body>
+</html>
