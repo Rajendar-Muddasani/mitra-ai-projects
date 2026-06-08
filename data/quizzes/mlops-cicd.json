@@ -1,0 +1,108 @@
+{
+  "course_label": "MLOps & Tools",
+  "title": "CI/CD for Models",
+  "questions": [
+    {
+      "question": "CI/CD for ML differs from software CI/CD because:",
+      "options": [
+        "No difference",
+        "It must also validate data quality and model performance -- not just code correctness",
+        "ML code is untestable",
+        "Models deploy differently"
+      ],
+      "correct": "b",
+      "explanation": "Software passes if unit tests pass. ML must also pass: data schema, performance threshold, no regression."
+    },
+    {
+      "question": "A model quality gate blocks deployment when:",
+      "options": [
+        "Code has comments",
+        "Validation AUC falls below a threshold, exceeds inference latency, or regresses vs. production",
+        "Lint warnings exist",
+        "Any warning occurs"
+      ],
+      "correct": "b",
+      "explanation": "Objective thresholds prevent deploying degraded models automatically."
+    },
+    {
+      "question": "Data validation in ML CI/CD checks for:",
+      "options": [
+        "Code style",
+        "Schema changes, distribution drift, missing values, and range violations",
+        "Spelling errors",
+        "License compliance"
+      ],
+      "correct": "b",
+      "explanation": "Great Expectations, Pandera validate data before training begins."
+    },
+    {
+      "question": "Blue-green deployment for ML:",
+      "options": [
+        "A color scheme",
+        "Runs old model (blue) and new model (green) simultaneously, routes fraction of traffic to green to test",
+        "A/B testing forever",
+        "Sequential deployment"
+      ],
+      "correct": "b",
+      "explanation": "Allows instant rollback by switching traffic back to blue if green underperforms."
+    },
+    {
+      "question": "A canary release routes:",
+      "options": [
+        "All traffic to new model",
+        "A small percentage (5%) of traffic to the new model before full rollout",
+        "No traffic to new model",
+        "Traffic randomly"
+      ],
+      "correct": "b",
+      "explanation": "Monitor metrics on 5% traffic. If good, gradually increase to 100%."
+    },
+    {
+      "question": "model.pkl in a Git repo is problematic because:",
+      "options": [
+        "Git cannot read it",
+        "Binary files cause large repos, can't diff, and expose model weights -- use S3/HuggingFace Hub instead",
+        "It is insecure",
+        "Python cannot load it"
+      ],
+      "correct": "b",
+      "explanation": "Model files can be hundreds of MB. Store in model registries (MLflow, HuggingFace Hub, S3)."
+    },
+    {
+      "question": "Shadow mode testing for ML models:",
+      "options": [
+        "Never used",
+        "Runs new model in parallel with production, logging predictions without serving them -- validate before cutover"
+      ],
+      "correct": "b",
+      "explanation": "Compare new model's outputs to production on real traffic with zero user impact."
+    },
+    {
+      "question": "Feature drift detection monitors:",
+      "options": [
+        "Model code changes",
+        "Changes in the statistical distribution of input features between training time and serving time"
+      ],
+      "correct": "b",
+      "explanation": "If customers start sending different data than the model was trained on, performance degrades."
+    },
+    {
+      "question": "The recommended trigger for automated model retraining:",
+      "options": [
+        "Never retrain",
+        "When performance metrics drop below threshold OR on a scheduled cadence"
+      ],
+      "correct": "b",
+      "explanation": "Performance-triggered retraining responds to actual degradation. Schedule ensures freshness."
+    },
+    {
+      "question": "The difference between model retraining and model deployment CI/CD:",
+      "options": [
+        "They are the same",
+        "Retraining CI/CD: triggered by data drift or schedule. Deployment CI/CD: triggered by code/config changes."
+      ],
+      "correct": "b",
+      "explanation": "Both pipelines exist in mature MLOps. Data-triggered retraining is separate from code-triggered deployment."
+    }
+  ]
+}

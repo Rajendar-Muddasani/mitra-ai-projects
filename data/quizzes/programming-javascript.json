@@ -1,0 +1,116 @@
+{
+  "course_label": "Programming",
+  "title": "JavaScript",
+  "questions": [
+    {
+      "question": "await fetch(url) requires the enclosing function to be:",
+      "options": [
+        "synchronous",
+        "async -- await can only be used inside async functions",
+        "a constructor",
+        "a generator"
+      ],
+      "correct": "b",
+      "explanation": "async function fetchData() { const res = await fetch(url); }"
+    },
+    {
+      "question": "The difference between == and === in JavaScript:",
+      "options": [
+        "No difference",
+        "=== checks both value AND type (strict); == does type coercion",
+        "== is assignment",
+        "=== is slower"
+      ],
+      "correct": "b",
+      "explanation": "'5' == 5 is true (coercion); '5' === 5 is false. Always prefer ===."
+    },
+    {
+      "question": "Array map() returns:",
+      "options": [
+        "Modifies the original array",
+        "A new array with each element transformed by the callback",
+        "The array length",
+        "undefined"
+      ],
+      "correct": "b",
+      "explanation": "[1,2,3].map(x => x*2) returns [2,4,6]. Original unchanged."
+    },
+    {
+      "question": "document.querySelector('#myId') selects:",
+      "options": [
+        "All elements with class myId",
+        "The first element with id='myId'",
+        "All elements matching",
+        "Parent of myId"
+      ],
+      "correct": "b",
+      "explanation": "# = id selector. . = class selector."
+    },
+    {
+      "question": "A JavaScript Promise represents:",
+      "options": [
+        "A variable type",
+        "The eventual result of an async operation",
+        "A strict guarantee",
+        "A callback"
+      ],
+      "correct": "b",
+      "explanation": "States: pending, fulfilled, rejected. .then() handles success."
+    },
+    {
+      "question": "const vs let vs var:",
+      "options": [
+        "All identical",
+        "const: block-scoped non-reassignable; let: block-scoped reassignable; var: function-scoped hoisted",
+        "const is faster",
+        "var is preferred"
+      ],
+      "correct": "b",
+      "explanation": "Use const by default. let when reassigning. Avoid var."
+    },
+    {
+      "question": "Object destructuring { name, age } = person:",
+      "options": [
+        "Creates a new object",
+        "Extracts name and age into separate variables",
+        "Merges objects",
+        "Deletes properties"
+      ],
+      "correct": "b",
+      "explanation": "Shorthand for const name = person.name; const age = person.age;"
+    },
+    {
+      "question": "Array filter() returns:",
+      "options": [
+        "The first match",
+        "A new array with only elements where callback returns true",
+        "A count",
+        "The index"
+      ],
+      "correct": "b",
+      "explanation": "[1,2,3,4].filter(x=>x%2===0) returns [2,4]. Original unchanged."
+    },
+    {
+      "question": "The spread operator ... does what?",
+      "options": [
+        "Creates a range",
+        "Spreads array/object elements for copying, merging, or passing as arguments",
+        "Multiplies",
+        "Accesses last element"
+      ],
+      "correct": "b",
+      "explanation": "[...arr1,...arr2] merges. {...obj1,...obj2} merges. f(...args) spreads."
+    },
+    {
+      "question": "localStorage in the browser:",
+      "options": [
+        "Clears when tab closes",
+        "Persists data across browser sessions with no expiry",
+        "Only stores numbers",
+        "Accessible from servers"
+      ],
+      "correct": "b",
+      "explanation": "localStorage.setItem/getItem persists until explicitly cleared."
+    }
+  ]
+}

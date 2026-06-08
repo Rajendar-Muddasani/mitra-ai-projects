@@ -1,0 +1,106 @@
+{
+  "course_label": "Key Concepts & Tools",
+  "title": "GPU Training on Kaggle",
+  "questions": [
+    {
+      "question": "Kaggle provides free GPU compute of:",
+      "options": [
+        "1 hour/week",
+        "30 hours/week (T4 or P100), resets Sunday UTC midnight",
+        "Unlimited",
+        "5 hours/day"
+      ],
+      "correct": "b",
+      "explanation": "30 GPU hours/week is enough for most student training runs."
+    },
+    {
+      "question": "T4 GPU on Kaggle has approximately:",
+      "options": [
+        "4GB VRAM",
+        "16GB VRAM",
+        "32GB VRAM",
+        "8GB VRAM"
+      ],
+      "correct": "b",
+      "explanation": "T4 = 16GB. T4 x2 = 32GB. P100 = 16GB HBM2."
+    },
+    {
+      "question": "To avoid wasting GPU quota:",
+      "options": [
+        "Always run on GPU",
+        "Develop and debug on CPU first, switch to GPU only for training runs",
+        "Ignore quota",
+        "Run all code twice"
+      ],
+      "correct": "b",
+      "explanation": "CPU development catches most bugs. GPU time is precious."
+    },
+    {
+      "question": "Kaggle notebook outputs persist when:",
+      "options": [
+        "Always",
+        "Saved to /kaggle/working/ or explicitly to a dataset -- session /tmp is cleared on disconnect"
+      ],
+      "correct": "b",
+      "explanation": "Only /kaggle/working/ survives. Save checkpoints and models there."
+    },
+    {
+      "question": "Mixed precision (fp16) training:",
+      "options": [
+        "Reduces accuracy always",
+        "Approximately doubles training speed and halves VRAM usage with minimal accuracy impact"
+      ],
+      "correct": "b",
+      "explanation": "torch.autocast enables fp16. Hugely beneficial for large models."
+    },
+    {
+      "question": "Internet must be enabled on Kaggle notebooks to:",
+      "options": [
+        "Always on",
+        "Download packages (pip install), load HuggingFace models, call external APIs"
+      ],
+      "correct": "b",
+      "explanation": "Settings -> Internet -> On. Competitions disable internet during submission."
+    },
+    {
+      "question": "pin_memory=True in DataLoader:",
+      "options": [
+        "Pins models to memory",
+        "Speeds up CPU-to-GPU data transfer by using page-locked host memory",
+        "Prevents leaks",
+        "Saves checkpoints"
+      ],
+      "correct": "b",
+      "explanation": "Small speedup for GPU training. Use with num_workers > 0."
+    },
+    {
+      "question": "A Kaggle dataset is useful for:",
+      "options": [
+        "Storing code only",
+        "Persisting data and model outputs across notebook sessions as read-only mounts"
+      ],
+      "correct": "b",
+      "explanation": "Create a dataset from notebook output to reuse files without re-running."
+    },
+    {
+      "question": "gradient_checkpointing=True saves GPU memory by:",
+      "options": [
+        "Random allocation",
+        "Recomputing intermediate activations during backward pass instead of storing them"
+      ],
+      "correct": "b",
+      "explanation": "Roughly halves VRAM usage at ~30% training speed cost. Enables training larger models."
+    },
+    {
+      "question": "The Kaggle Accelerator setting for LLM fine-tuning should be:",
+      "options": [
+        "CPU -- LLMs are small",
+        "GPU T4 x2 or P100 for VRAM; use QLoRA to fit within budget",
+        "No accelerator",
+        "TPU always"
+      ],
+      "correct": "b",
+      "explanation": "LLM fine-tuning needs maximum VRAM. T4 x2 gives 32GB."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "course_label": "Key Concepts & Tools",
+  "title": "Google Colab",
+  "questions": [
+    {
+      "question": "Colab Pro upgrades provide:",
+      "options": [
+        "Unlimited GPU",
+        "Access to A100/V100 GPUs and 24-hour session limits vs. T4 and 12 hours free",
+        "Free always",
+        "Only more storage"
+      ],
+      "correct": "b",
+      "explanation": "Colab Pro = better GPUs + longer sessions + more RAM."
+    },
+    {
+      "question": "Google Drive mounting in Colab is needed for:",
+      "options": [
+        "Internet access",
+        "Persisting files across sessions -- Colab's /content/ is reset on disconnect",
+        "Faster GPU",
+        "Better models"
+      ],
+      "correct": "b",
+      "explanation": "drive.mount('/content/drive') is the first cell in most Colab notebooks."
+    },
+    {
+      "question": "Colab runtime disconnect prevention:",
+      "options": [
+        "Automatic",
+        "Running Keep Alive script in browser console or using Colab Pro for longer sessions"
+      ],
+      "correct": "b",
+      "explanation": "Free tier disconnects after ~90 min of inactivity. Save checkpoints frequently."
+    },
+    {
+      "question": "!nvidia-smi in Colab shows:",
+      "options": [
+        "Python version",
+        "GPU name, VRAM total/used, temperature, and running CUDA processes",
+        "CPU info",
+        "Network speed"
+      ],
+      "correct": "b",
+      "explanation": "Run this first to confirm you have GPU access."
+    },
+    {
+      "question": "Colab vs Kaggle for internet access:",
+      "options": [
+        "Kaggle is always faster",
+        "Both work, but Colab has always-on internet while Kaggle requires toggling the internet setting"
+      ],
+      "correct": "b",
+      "explanation": "Either works. Kaggle: Settings->Internet->On. Colab: internet always enabled."
+    },
+    {
+      "question": "The recommended way to install packages in Colab:",
+      "options": [
+        "conda install",
+        "!pip install -q package_name (-q suppresses verbose output)",
+        "Manual download",
+        "apt-get only"
+      ],
+      "correct": "b",
+      "explanation": "pip is standard. -q keeps notebook clean. Packages persist for the session only."
+    },
+    {
+      "question": "To share a Colab notebook:",
+      "options": [
+        "Only via email",
+        "Share via Google Drive link or File -> Save to GitHub"
+      ],
+      "correct": "b",
+      "explanation": "Colab notebooks are Google Docs -- share link controls access."
+    },
+    {
+      "question": "Colab T4 vs Kaggle P100:",
+      "options": [
+        "T4 is always better",
+        "Similar performance. P100 has faster HBM2 memory but T4 has tensor cores for fp16"
+      ],
+      "correct": "b",
+      "explanation": "P100 = higher bandwidth. T4 = better for fp16/int8 workloads."
+    },
+    {
+      "question": "After Colab disconnects, you lose:",
+      "options": [
+        "Nothing -- everything persists",
+        "All files in /content/ not in Drive, installed packages, and running processes"
+      ],
+      "correct": "b",
+      "explanation": "Save model checkpoints to Drive and log metrics to W&B/MLflow to protect against disconnects."
+    },
+    {
+      "question": "TPU runtime in Colab is best for:",
+      "options": [
+        "General ML",
+        "Large matrix multiplications -- especially training big NLP/vision models with TensorFlow/JAX",
+        "Gaming",
+        "Inference only"
+      ],
+      "correct": "b",
+      "explanation": "TPUs excel at large batch training of models that fit the TPU topology."
+    }
+  ]
+}

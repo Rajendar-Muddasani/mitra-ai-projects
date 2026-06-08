@@ -40,21 +40,77 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="tab-layout">
-      <div class="tab-nav">
-        <button class="tab-btn">🤖 What is an Agent</button>
-        <button class="tab-btn">📊 LangGraph</button>
-        <button class="tab-btn">👥 CrewAI</button>
-        <button class="tab-btn">🔌 MCP</button>
-        <button class="tab-btn">🛠 OpenAI Assistants</button>
-        <button class="tab-btn">🌐 Multi-Agent Systems</button>
-        <button class="tab-btn">🛡 Evaluation &amp; Safety</button>
-      </div>
+<style>
+  body { overflow: hidden; }
+  @media (max-width: 768px) { body { overflow: auto; } }
+  .onenote-mobile-header { background:var(--surface);border-bottom:1px solid var(--border-dim);padding:0.75rem 1rem;display:none; }
+  @media (max-width: 768px) { .onenote-mobile-header { display:block; } }
+  select.onenote-mobile-select { background:var(--surface-2);border:1px solid var(--border-dim);color:var(--text);border-radius:8px;padding:0.55rem 0.85rem;font-family:'JetBrains Mono',monospace;font-size:0.85rem; }
+</style>
+<div class="onenote-mobile-header">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+    <div><span class="badge badge-primary" style="margin-right:0.5rem;">AGENTIC</span><strong style="font-size:0.95rem;">Agentic AI & MCP</strong></div>
+    <a href="/courses/" class="btn btn-ghost btn-sm">All Courses</a>
+  </div>
+  <select class="onenote-mobile-select" style="width:100%;">        <option value="0">🤖 What is an Agent</option>
+        <option value="1">🔗 LangGraph</option>
+        <option value="2">🚢 CrewAI</option>
+        <option value="3">🔌 MCP Protocol</option>
+        <option value="4">🛠 OpenAI Assistants</option>
+        <option value="5">🌐 Multi-Agent Systems</option>
+        <option value="6">🛡 Evaluation & Safety</option></select>
+</div>
+<div class="onenote-wrap">
+  <aside class="onenote-sidebar">
+    <div class="onenote-sidebar-header">
+      <div style="color:var(--primary);font-weight:700;margin-bottom:0.25rem;">Agentic AI & MCP</div>
+      7 Topics · LangGraph, CrewAI, MCP
+    </div>
+    <div class="onenote-tab" data-idx="0">
+      <span class="onenote-tab-icon">🤖</span>
+      <span class="onenote-tab-text">What is an Agent</span>
+      <span class="onenote-tab-badge">001</span>
+    </div>
+    <div class="onenote-tab" data-idx="1">
+      <span class="onenote-tab-icon">🔗</span>
+      <span class="onenote-tab-text">LangGraph</span>
+      <span class="onenote-tab-badge">002</span>
+    </div>
+    <div class="onenote-tab" data-idx="2">
+      <span class="onenote-tab-icon">🚢</span>
+      <span class="onenote-tab-text">CrewAI</span>
+      <span class="onenote-tab-badge">003</span>
+    </div>
+    <div class="onenote-tab" data-idx="3">
+      <span class="onenote-tab-icon">🔌</span>
+      <span class="onenote-tab-text">MCP Protocol</span>
+      <span class="onenote-tab-badge">004</span>
+    </div>
+    <div class="onenote-tab" data-idx="4">
+      <span class="onenote-tab-icon">🛠</span>
+      <span class="onenote-tab-text">OpenAI Assistants</span>
+      <span class="onenote-tab-badge">005</span>
+    </div>
+    <div class="onenote-tab" data-idx="5">
+      <span class="onenote-tab-icon">🌐</span>
+      <span class="onenote-tab-text">Multi-Agent Systems</span>
+      <span class="onenote-tab-badge">006</span>
+    </div>
+    <div class="onenote-tab" data-idx="6">
+      <span class="onenote-tab-icon">🛡</span>
+      <span class="onenote-tab-text">Evaluation & Safety</span>
+      <span class="onenote-tab-badge">007</span>
+    </div>
+    <div style="padding:1.25rem;margin-top:1rem;border-top:1px solid var(--border-dim);">
+      <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-bottom:0.5rem;" data-track="cheatsheet" data-name="genai-prompt-patterns">📄 AGENTIC Cheatsheet</a>
+      <a href="/courses/" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;">📚 Browse All Courses →</a>
+    </div>
+  </aside>
+  <main class="onenote-content">
 
-      <!-- What is an Agent -->
-      <div class="tab-panel">
+    <!-- Panel 0: What is an Agent -->
+    <div class="onenote-panel active">
+
         <div class="topic-hero"><div class="topic-eyebrow">fundamentals</div><h2>What is an AI Agent?</h2><p>An agent is an LLM with the ability to plan actions, use tools, and remember context across steps. It solves complex tasks by breaking them into sub-tasks and choosing the right tool at each step.</p></div>
         <div class="topic-section"><h3>Agent Core Loop</h3>
         <div class="arch-diagram">
@@ -79,19 +135,32 @@
             <tr><td>Scratchpad</td><td>Stores intermediate reasoning and tool outputs</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>Quiz — What is an Agent</h3>
-          <div class="quiz-q" data-correct="c"><p>1. What distinguishes an agent from a standard LLM call?</p>
-            <label class="quiz-option"><input type="radio" name="ag-q1" value="a"> Agents use a different model architecture</label>
-            <label class="quiz-option"><input type="radio" name="ag-q1" value="b"> Agents have a larger context window</label>
-            <label class="quiz-option"><input type="radio" name="ag-q1" value="c"> Agents can take actions with tools across multiple steps to reach a goal</label>
-            <label class="quiz-option"><input type="radio" name="ag-q1" value="d"> Agents don't use language models</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: What is an Agent</div>
+            <div class="notebook-card-desc">Simple agent loop, ReAct pattern, tool calling concepts</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=agentic-01-agents.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of What is an Agent -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=agentic&topic=agents" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- LangGraph -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 1: LangGraph -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">langchain-learning-guide</div><h2>LangGraph</h2><p>Build stateful, multi-step agent workflows as directed graphs. LangGraph gives you control flow, branching, state management, and checkpointing — solving the reliability problems of simple chain-based agents.</p></div>
         <div class="topic-section"><h3>Core Concepts</h3>
         <table class="metric-table">
@@ -129,19 +198,32 @@ graph.<span class="fn">add_conditional_edges</span>(<span class="st">"llm"</span
 })
 app = graph.<span class="fn">compile</span>()</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — LangGraph</h3>
-          <div class="quiz-q" data-correct="b"><p>1. Conditional edges in LangGraph allow:</p>
-            <label class="quiz-option"><input type="radio" name="lg-q1" value="a"> Running multiple nodes simultaneously</label>
-            <label class="quiz-option"><input type="radio" name="lg-q1" value="b"> Routing the graph to different next nodes based on the current state</label>
-            <label class="quiz-option"><input type="radio" name="lg-q1" value="c"> Sharing state between separate graphs</label>
-            <label class="quiz-option"><input type="radio" name="lg-q1" value="d"> Auto-generating nodes from prompts</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: LangGraph</div>
+            <div class="notebook-card-desc">State graph, nodes, conditional edges, checkpointing</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=agentic-02-langgraph.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of LangGraph -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=agentic&topic=langgraph" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- CrewAI -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 2: CrewAI -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">crewai-course-materials</div><h2>CrewAI</h2><p>Build multi-agent systems where specialized agents collaborate on a shared mission. Each agent has a role, goal, backstory, and set of tools — like a team of people with different expertise.</p></div>
         <div class="topic-section"><h3>CrewAI Components</h3>
         <table class="metric-table">
@@ -174,19 +256,32 @@ writer = <span class="cl">Agent</span>(
 crew = <span class="cl">Crew</span>(agents=[researcher, writer], process=<span class="st">"sequential"</span>)
 result = crew.<span class="fn">kickoff</span>()</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — CrewAI</h3>
-          <div class="quiz-q" data-correct="d"><p>1. In CrewAI, a "sequential" process means:</p>
-            <label class="quiz-option"><input type="radio" name="cr-q1" value="a"> All agents work on all tasks simultaneously</label>
-            <label class="quiz-option"><input type="radio" name="cr-q1" value="b"> Tasks are randomly assigned to agents</label>
-            <label class="quiz-option"><input type="radio" name="cr-q1" value="c"> Each agent runs independently without sharing output</label>
-            <label class="quiz-option"><input type="radio" name="cr-q1" value="d"> Tasks are executed in order, with each agent's output feeding the next</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: CrewAI</div>
+            <div class="notebook-card-desc">Multi-agent roles, tasks, sequential and hierarchical processes</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=agentic-03-crewai.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of CrewAI -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=agentic&topic=crewai" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- MCP -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 3: MCP Protocol -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">mcp-learning-guide</div><h2>Model Context Protocol (MCP)</h2><p>MCP is an open standard for connecting AI models to external tools and data sources. It defines a standard way for LLM applications to call tools, access resources, and receive prompts from MCP servers.</p></div>
         <div class="topic-section"><h3>MCP Architecture</h3>
         <table class="metric-table">
@@ -220,19 +315,32 @@ mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span
 <span class="kw">if</span> __name__ == <span class="st">"__main__"</span>:
     mcp.<span class="fn">run</span>()</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — MCP</h3>
-          <div class="quiz-q" data-correct="b"><p>1. An MCP Server exposes:</p>
-            <label class="quiz-option"><input type="radio" name="mcp-q1" value="a"> The LLM model weights to external systems</label>
-            <label class="quiz-option"><input type="radio" name="mcp-q1" value="b"> Tools, resources, and prompts that AI hosts can use</label>
-            <label class="quiz-option"><input type="radio" name="mcp-q1" value="c"> A web interface for chatting with the model</label>
-            <label class="quiz-option"><input type="radio" name="mcp-q1" value="d"> Authentication tokens for API access</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: MCP</div>
+            <div class="notebook-card-desc">Model Context Protocol, tool registration, client-server</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=agentic-04-mcp.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=agentic&topic=mcp" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- OpenAI Assistants -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 4: OpenAI Assistants -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">openai assistants api</div><h2>OpenAI Assistants API</h2><p>Build persistent AI assistants with managed threads, file search, code interpreter, and function calling — without managing conversation state yourself.</p></div>
         <div class="topic-section"><h3>Key Objects</h3>
         <table class="metric-table">
@@ -246,19 +354,32 @@ mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span
             <tr><td>Code Interpreter</td><td>Executes Python code in a sandboxed environment</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>Quiz — Assistants API</h3>
-          <div class="quiz-q" data-correct="c"><p>1. OpenAI Threads automatically:</p>
-            <label class="quiz-option"><input type="radio" name="oa-q1" value="a"> Delete after each conversation</label>
-            <label class="quiz-option"><input type="radio" name="oa-q1" value="b"> Generate embeddings for all messages</label>
-            <label class="quiz-option"><input type="radio" name="oa-q1" value="c"> Store and manage conversation history so you don't have to</label>
-            <label class="quiz-option"><input type="radio" name="oa-q1" value="d"> Split long messages into chunks</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Assistants API</div>
+            <div class="notebook-card-desc">Persistent threads, tool calling, Code Interpreter</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=agentic-05-assistants.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=agentic&topic=assistants" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- Multi-Agent -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 5: Multi-Agent Systems -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">multi-agent patterns</div><h2>Multi-Agent Systems</h2><p>When a single agent isn't enough, multiple specialized agents collaborate — passing tasks between each other through defined handoff patterns.</p></div>
         <div class="topic-section"><h3>Common Patterns</h3>
         <table class="metric-table">
@@ -270,19 +391,32 @@ mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span
             <tr><td>Hierarchical</td><td>Supervisor agents manage sub-supervisor agents</td><td>Very large, deeply nested workflows</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>Quiz — Multi-Agent</h3>
-          <div class="quiz-q" data-correct="b"><p>1. A Supervisor agent pattern is best when:</p>
-            <label class="quiz-option"><input type="radio" name="ma-q1" value="a"> All tasks are identical and can be parallelized</label>
-            <label class="quiz-option"><input type="radio" name="ma-q1" value="b"> You need intelligent routing of diverse tasks to specialized agents</label>
-            <label class="quiz-option"><input type="radio" name="ma-q1" value="c"> You want the simplest possible implementation</label>
-            <label class="quiz-option"><input type="radio" name="ma-q1" value="d"> Tasks must run strictly in sequence</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Multi-Agent</div>
+            <div class="notebook-card-desc">Supervisor pattern, parallel execution, handoff</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=agentic-06-multi-agent.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=agentic&topic=multi-agent" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- Safety -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 6: Evaluation & Safety -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">evaluation &amp; safety</div><h2>Agent Evaluation &amp; Safety</h2><p>Agentic systems can fail in subtle ways — infinite loops, unexpected tool use, prompt injection. These patterns help you build reliable, safe agents.</p></div>
         <div class="topic-section"><h3>Safety Patterns</h3>
         <table class="metric-table">
@@ -295,20 +429,25 @@ mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span
             <tr><td>Cost runaway</td><td>Budget caps on tokens and tool executions per run</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>Quiz — Safety</h3>
-          <div class="quiz-q" data-correct="c"><p>1. Prompt injection in agentic systems occurs when:</p>
-            <label class="quiz-option"><input type="radio" name="sf-q1" value="a"> The agent runs too many iterations</label>
-            <label class="quiz-option"><input type="radio" name="sf-q1" value="b"> The LLM generates incorrect JSON</label>
-            <label class="quiz-option"><input type="radio" name="sf-q1" value="c"> Malicious content in tool outputs manipulates the agent's instructions</label>
-            <label class="quiz-option"><input type="radio" name="sf-q1" value="d"> The model refuses to call tools</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Safety</div>
+            <div class="notebook-card-desc">Loop detection, budget limits, HITL, logging</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=agentic-07-safety.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
-        <div class="completion-banner">
-          <div class="completion-icon">🎓</div>
-          <div class="completion-body"><h3>Agentic AI Course Complete!</h3><p>Claim your Agentic AI &amp; MCP completion certificate.</p></div>
-          <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('agentic','safety')">Claim Certificate →</button>
-        </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=agentic&topic=safety" class="btn btn-primary">Take Quiz</a>
+      </div>
+        
       </div>
 
     </div>
@@ -324,6 +463,36 @@ mcp = <span class="cl">FastMCP</span>(<span class="st">"My Project Server"</span
       <li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
     </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>
+    </div>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students.</p></div>
+      <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/ml.html">Machine Learning</a></li><li><a href="/courses/genai.html">Generative AI</a></li><li><a href="/courses/mlops.html">MLOps</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+
+      <div class="completion-banner" style="margin-top:2rem;">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body"><h3>AGENTIC Complete!</h3><p>Pass all topic quizzes to earn your certificate.</p></div>
+        <a href="/courses/" class="btn btn-primary">Browse Next Course</a>
+      </div>    </div>
     <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
   </div>
 </footer>

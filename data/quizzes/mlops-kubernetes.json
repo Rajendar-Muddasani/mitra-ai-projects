@@ -1,0 +1,110 @@
+{
+  "course_label": "MLOps & Tools",
+  "title": "Kubernetes for ML",
+  "questions": [
+    {
+      "question": "A Kubernetes Pod is:",
+      "options": [
+        "A cluster",
+        "The smallest deployable unit -- one or more containers sharing network and storage",
+        "A Kubernetes node",
+        "A service mesh"
+      ],
+      "correct": "b",
+      "explanation": "Usually one container per pod for ML services."
+    },
+    {
+      "question": "A Kubernetes Deployment manages:",
+      "options": [
+        "Raw containers",
+        "Desired state for pods -- ensures N replicas are always running, handles rolling updates",
+        "Networking only",
+        "Storage only"
+      ],
+      "correct": "b",
+      "explanation": "Deployments self-heal (replace crashed pods) and enable rolling updates."
+    },
+    {
+      "question": "A Kubernetes Service provides:",
+      "options": [
+        "Compute resources",
+        "A stable DNS name and IP address for accessing pods (load balancing, service discovery)",
+        "Storage",
+        "Monitoring"
+      ],
+      "correct": "b",
+      "explanation": "Pods have ephemeral IPs. Services give stable endpoints."
+    },
+    {
+      "question": "Horizontal Pod Autoscaler (HPA) scales based on:",
+      "options": [
+        "Only time",
+        "CPU/memory utilisation or custom metrics (like prediction request queue depth)",
+        "Random schedule",
+        "Human input only"
+      ],
+      "correct": "b",
+      "explanation": "HPA automatically adds/removes pods to maintain target resource utilisation."
+    },
+    {
+      "question": "Resource requests vs limits in Kubernetes:",
+      "options": [
+        "Both are the same",
+        "Requests: minimum guaranteed; Limits: maximum allowed. Scheduling uses requests."
+      ],
+      "correct": "b",
+      "explanation": "Scheduler places pods on nodes with sufficient requested resources."
+    },
+    {
+      "question": "kubectl apply -f deployment.yaml:",
+      "options": [
+        "Deletes the deployment",
+        "Creates or updates the resource to match the YAML definition (declarative)",
+        "Logs the deployment",
+        "Scales the deployment"
+      ],
+      "correct": "b",
+      "explanation": "Declarative: specify desired state. kubectl figures out the delta and applies changes."
+    },
+    {
+      "question": "A ConfigMap stores:",
+      "options": [
+        "Secrets",
+        "Non-sensitive configuration data (environment variables, config files) separated from container images",
+        "Model weights",
+        "Training data"
+      ],
+      "correct": "b",
+      "explanation": "Separate config from code. Different ConfigMaps for dev/staging/prod."
+    },
+    {
+      "question": "Rolling updates in Kubernetes:",
+      "options": [
+        "Replace all pods at once",
+        "Gradually replace old pods with new ones to achieve zero-downtime deployment",
+        "Require manual intervention",
+        "Are disabled by default"
+      ],
+      "correct": "b",
+      "explanation": "Default update strategy. maxUnavailable and maxSurge control the rollout pace."
+    },
+    {
+      "question": "GPU scheduling in Kubernetes uses:",
+      "options": [
+        "Standard CPU quotas",
+        "nvidia.com/gpu resource requests -- requires NVIDIA device plugin and GPU nodes"
+      ],
+      "correct": "b",
+      "explanation": "resources.requests.nvidia.com/gpu: 1 schedules the pod on a GPU node."
+    },
+    {
+      "question": "Kubernetes namespaces provide:",
+      "options": [
+        "Cluster isolation",
+        "Logical partitioning of resources within a cluster for dev/staging/prod separation"
+      ],
+      "correct": "b",
+      "explanation": "Separate teams or environments in the same cluster. RBAC can be applied per namespace."
+    }
+  ]
+}

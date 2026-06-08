@@ -1,0 +1,104 @@
+{
+  "course_label": "MLOps & Tools",
+  "title": "Docker for ML",
+  "questions": [
+    {
+      "question": "A Docker image is:",
+      "options": [
+        "A running container",
+        "An immutable snapshot of an application and all its dependencies",
+        "A virtual machine",
+        "A deployment script"
+      ],
+      "correct": "b",
+      "explanation": "Images are built once and shared. Each run creates an isolated container from the image."
+    },
+    {
+      "question": "Dockerfile COPY instruction ordering should be:",
+      "options": [
+        "Random",
+        "Most stable layers first (system deps), then requirements.txt, then application code"
+      ],
+      "correct": "b",
+      "explanation": "Docker caches layers. Stable layers first means only changed layers and above are rebuilt."
+    },
+    {
+      "question": "docker-compose is used for:",
+      "options": [
+        "Single container apps only",
+        "Running multi-container applications (model API + Redis + database) together",
+        "Building images",
+        "Pushing to registries"
+      ],
+      "correct": "b",
+      "explanation": "docker-compose.yml defines all services, networks, and volumes."
+    },
+    {
+      "question": "FROM in a Dockerfile:",
+      "options": [
+        "Runs a command",
+        "Specifies the base image to build from",
+        "Copies files",
+        "Sets environment variables"
+      ],
+      "correct": "b",
+      "explanation": "FROM python:3.11-slim starts from a minimal Python image."
+    },
+    {
+      "question": "Using a non-root user in Docker is:",
+      "options": [
+        "Optional",
+        "Required for security -- running as root in containers is a security risk"
+      ],
+      "correct": "b",
+      "explanation": "RUN useradd -m appuser && USER appuser prevents privilege escalation attacks."
+    },
+    {
+      "question": "Docker layer caching improves build speed by:",
+      "options": [
+        "Compressing layers",
+        "Reusing unchanged intermediate layers from previous builds",
+        "Skipping tests",
+        "Parallelising builds"
+      ],
+      "correct": "b",
+      "explanation": "If requirements.txt hasn't changed, pip install layer is reused."
+    },
+    {
+      "question": "The difference between CMD and ENTRYPOINT:",
+      "options": [
+        "Identical",
+        "ENTRYPOINT: fixed command that always runs. CMD: default arguments that can be overridden at runtime."
+      ],
+      "correct": "b",
+      "explanation": "ENTRYPOINT ['python'] + CMD ['app.py']: docker run img other.py overrides app.py."
+    },
+    {
+      "question": "Docker volumes are used for:",
+      "options": [
+        "Building images",
+        "Persisting data outside the container lifecycle -- model weights, databases, logs"
+      ],
+      "correct": "b",
+      "explanation": "Containers are ephemeral. Volumes persist when containers are stopped/removed/replaced."
+    },
+    {
+      "question": ".dockerignore file:",
+      "options": [
+        "Skip Docker pull",
+        "Excludes files from build context (like .git, .env, __pycache__) to reduce image size and prevent secret leakage"
+      ],
+      "correct": "b",
+      "explanation": "Large or sensitive files should be excluded. Similar to .gitignore."
+    },
+    {
+      "question": "Docker multi-stage builds allow:",
+      "options": [
+        "Only one build step",
+        "Building in one stage (with build tools) and copying only the final artifact to a smaller production stage"
+      ],
+      "correct": "b",
+      "explanation": "FROM python:3.11 AS build -> FROM python:3.11-slim (copy only final app). 10x smaller images."
+    }
+  ]
+}

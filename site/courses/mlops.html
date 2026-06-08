@@ -40,21 +40,77 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="tab-layout">
-      <div class="tab-nav">
-        <button class="tab-btn">⚡ Airflow</button>
-        <button class="tab-btn">🔥 Spark</button>
-        <button class="tab-btn">📊 MLflow</button>
-        <button class="tab-btn">☸ Kubernetes</button>
-        <button class="tab-btn">☁ SageMaker</button>
-        <button class="tab-btn">🐳 Docker</button>
-        <button class="tab-btn">🔁 CI/CD for Models</button>
-      </div>
+<style>
+  body { overflow: hidden; }
+  @media (max-width: 768px) { body { overflow: auto; } }
+  .onenote-mobile-header { background:var(--surface);border-bottom:1px solid var(--border-dim);padding:0.75rem 1rem;display:none; }
+  @media (max-width: 768px) { .onenote-mobile-header { display:block; } }
+  select.onenote-mobile-select { background:var(--surface-2);border:1px solid var(--border-dim);color:var(--text);border-radius:8px;padding:0.55rem 0.85rem;font-family:'JetBrains Mono',monospace;font-size:0.85rem; }
+</style>
+<div class="onenote-mobile-header">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+    <div><span class="badge badge-primary" style="margin-right:0.5rem;">MLOPS</span><strong style="font-size:0.95rem;">MLOps & Tools</strong></div>
+    <a href="/courses/" class="btn btn-ghost btn-sm">All Courses</a>
+  </div>
+  <select class="onenote-mobile-select" style="width:100%;">        <option value="0">🌊 Airflow Orchestration</option>
+        <option value="1">⚡ Spark & Big Data</option>
+        <option value="2">📊 Experiment Tracking</option>
+        <option value="3">☸ Kubernetes for ML</option>
+        <option value="4">🐳 Docker for ML</option>
+        <option value="5">☁ AWS SageMaker</option>
+        <option value="6">🔄 CI/CD for Models</option></select>
+</div>
+<div class="onenote-wrap">
+  <aside class="onenote-sidebar">
+    <div class="onenote-sidebar-header">
+      <div style="color:var(--primary);font-weight:700;margin-bottom:0.25rem;">MLOps & Tools</div>
+      7 Topics · Airflow, Spark, MLflow, Docker
+    </div>
+    <div class="onenote-tab" data-idx="0">
+      <span class="onenote-tab-icon">🌊</span>
+      <span class="onenote-tab-text">Airflow Orchestration</span>
+      <span class="onenote-tab-badge">001</span>
+    </div>
+    <div class="onenote-tab" data-idx="1">
+      <span class="onenote-tab-icon">⚡</span>
+      <span class="onenote-tab-text">Spark & Big Data</span>
+      <span class="onenote-tab-badge">002</span>
+    </div>
+    <div class="onenote-tab" data-idx="2">
+      <span class="onenote-tab-icon">📊</span>
+      <span class="onenote-tab-text">Experiment Tracking</span>
+      <span class="onenote-tab-badge">003</span>
+    </div>
+    <div class="onenote-tab" data-idx="3">
+      <span class="onenote-tab-icon">☸</span>
+      <span class="onenote-tab-text">Kubernetes for ML</span>
+      <span class="onenote-tab-badge">004</span>
+    </div>
+    <div class="onenote-tab" data-idx="4">
+      <span class="onenote-tab-icon">🐳</span>
+      <span class="onenote-tab-text">Docker for ML</span>
+      <span class="onenote-tab-badge">005</span>
+    </div>
+    <div class="onenote-tab" data-idx="5">
+      <span class="onenote-tab-icon">☁</span>
+      <span class="onenote-tab-text">AWS SageMaker</span>
+      <span class="onenote-tab-badge">006</span>
+    </div>
+    <div class="onenote-tab" data-idx="6">
+      <span class="onenote-tab-icon">🔄</span>
+      <span class="onenote-tab-text">CI/CD for Models</span>
+      <span class="onenote-tab-badge">007</span>
+    </div>
+    <div style="padding:1.25rem;margin-top:1rem;border-top:1px solid var(--border-dim);">
+      <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-bottom:0.5rem;" data-track="cheatsheet" data-name="genai-prompt-patterns">📄 MLOPS Cheatsheet</a>
+      <a href="/courses/" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;">📚 Browse All Courses →</a>
+    </div>
+  </aside>
+  <main class="onenote-content">
 
-      <!-- Airflow -->
-      <div class="tab-panel">
+    <!-- Panel 0: Airflow Orchestration -->
+    <div class="onenote-panel active">
+
         <div class="topic-hero"><div class="topic-eyebrow">053 · airflow patterns</div><h2>Apache Airflow</h2><p>Workflow orchestration for data pipelines and ML jobs. Define pipelines as Directed Acyclic Graphs (DAGs) in Python. Schedule, monitor, and retry jobs from a web UI.</p></div>
         <div class="topic-section"><h3>Core Concepts</h3>
         <table class="metric-table">
@@ -90,19 +146,32 @@
     eval_  = <span class="cl">PythonOperator</span>(task_id=<span class="st">"eval"</span>,  python_callable=evaluate_model)
     train >> eval_   <span class="cm"># train runs first</span></code></pre>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — Airflow</h3>
-          <div class="quiz-q" data-correct="b"><p>1. In Airflow, XCom is used to:</p>
-            <label class="quiz-option"><input type="radio" name="af-q1" value="a"> Schedule DAG runs</label>
-            <label class="quiz-option"><input type="radio" name="af-q1" value="b"> Pass small values between tasks within a DAG run</label>
-            <label class="quiz-option"><input type="radio" name="af-q1" value="c"> Connect to external databases</label>
-            <label class="quiz-option"><input type="radio" name="af-q1" value="d"> Monitor task execution logs</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Airflow</div>
+            <div class="notebook-card-desc">DAG simulation, operators, dependencies</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=mlops-01-airflow.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=mlops&topic=airflow" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- Spark -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 1: Spark & Big Data -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">spark-learning-guide</div><h2>Apache Spark &amp; Big Data</h2><p>Distributed data processing for datasets too large for a single machine. Spark processes data in-memory across a cluster, making it 10–100× faster than Hadoop MapReduce for iterative algorithms.</p></div>
         <div class="topic-section"><h3>Core Abstractions</h3>
         <table class="metric-table">
@@ -133,19 +202,32 @@ result = (df
 
 result.<span class="fn">show</span>(<span class="num">10</span>)</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — Spark</h3>
-          <div class="quiz-q" data-correct="c"><p>1. Spark DataFrames are preferred over RDDs because:</p>
-            <label class="quiz-option"><input type="radio" name="sp-q1" value="a"> DataFrames don't need a SparkSession</label>
-            <label class="quiz-option"><input type="radio" name="sp-q1" value="b"> RDDs are only available in Scala</label>
-            <label class="quiz-option"><input type="radio" name="sp-q1" value="c"> DataFrames have a schema, enabling Catalyst optimizer to auto-optimize queries</label>
-            <label class="quiz-option"><input type="radio" name="sp-q1" value="d"> DataFrames work without a cluster</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Spark</div>
+            <div class="notebook-card-desc">PySpark concepts, distributed processing</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=mlops-02-spark.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=mlops&topic=spark" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- MLflow -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 2: Experiment Tracking -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">experiment tracking</div><h2>MLflow — Experiment Tracking</h2><p>Track, compare, and reproduce ML experiments. MLflow records parameters, metrics, artifacts, and code versions — so you always know which run produced the best model.</p></div>
         <div class="topic-section"><h3>MLflow Components</h3>
         <table class="metric-table">
@@ -176,19 +258,32 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
     mlflow.sklearn.<span class="fn">log_model</span>(model, <span class="st">"model"</span>)
     <span class="fn">print</span>(<span class="st">f"Run ID: {mlflow.active_run().info.run_id}"</span>)</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — MLflow</h3>
-          <div class="quiz-q" data-correct="b"><p>1. MLflow's Model Registry is used for:</p>
-            <label class="quiz-option"><input type="radio" name="mf-q1" value="a"> Training models on distributed clusters</label>
-            <label class="quiz-option"><input type="radio" name="mf-q1" value="b"> Versioning, staging, and managing models for production deployment</label>
-            <label class="quiz-option"><input type="radio" name="mf-q1" value="c"> Real-time model serving</label>
-            <label class="quiz-option"><input type="radio" name="mf-q1" value="d"> Hyperparameter search</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: MLflow</div>
+            <div class="notebook-card-desc">Experiment tracking simulation</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=mlops-03-mlflow.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=mlops&topic=mlflow" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- Kubernetes -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 3: Kubernetes for ML -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">kubernetes for ml</div><h2>Kubernetes for ML</h2><p>Container orchestration at scale. Kubernetes manages your ML workloads across clusters — scheduling training jobs, scaling inference services, and ensuring reliability.</p></div>
         <div class="topic-section"><h3>Key Objects</h3>
         <table class="metric-table">
@@ -202,19 +297,32 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
             <tr><td>PersistentVolume</td><td>Durable storage for datasets and model artifacts</td></tr>
           </tbody>
         </table></div>
-        <div class="quiz-block"><h3>Quiz — Kubernetes</h3>
-          <div class="quiz-q" data-correct="a"><p>1. A Kubernetes Deployment manages:</p>
-            <label class="quiz-option"><input type="radio" name="k8-q1" value="a"> Desired replica count for Pods and rolling updates</label>
-            <label class="quiz-option"><input type="radio" name="k8-q1" value="b"> Network routing between pods</label>
-            <label class="quiz-option"><input type="radio" name="k8-q1" value="c"> Secret storage</label>
-            <label class="quiz-option"><input type="radio" name="k8-q1" value="d"> Node scheduling priorities</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Kubernetes</div>
+            <div class="notebook-card-desc">Deployment, scaling, rolling updates</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=mlops-04-kubernetes.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=mlops&topic=kubernetes" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- SageMaker -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 4: Docker for ML -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">aws sagemaker</div><h2>AWS SageMaker</h2><p>Fully managed ML platform — from training to deployment. SageMaker handles infrastructure provisioning, model hosting, batch transform, and A/B testing in production.</p></div>
         <div class="topic-section"><h3>Core Workflow</h3>
         <div class="arch-diagram">
@@ -232,19 +340,32 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
           <li>SageMaker endpoints have an idle cost — always delete endpoints when not in use during development</li>
           <li>Use Spot Instances for training to cut costs by 70–90%</li>
         </ul></div>
-        <div class="quiz-block"><h3>Quiz — SageMaker</h3>
-          <div class="quiz-q" data-correct="c"><p>1. SageMaker Spot Training reduces costs by:</p>
-            <label class="quiz-option"><input type="radio" name="sm-q1" value="a"> Using smaller model architectures automatically</label>
-            <label class="quiz-option"><input type="radio" name="sm-q1" value="b"> Running training on CPU instead of GPU</label>
-            <label class="quiz-option"><input type="radio" name="sm-q1" value="c"> Using spare AWS compute capacity at 70–90% discount (with interruption risk)</label>
-            <label class="quiz-option"><input type="radio" name="sm-q1" value="d"> Caching model weights across training runs</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: SageMaker</div>
+            <div class="notebook-card-desc">Training jobs, endpoints, cost</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=mlops-06-sagemaker.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=mlops&topic=sagemaker" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- Docker -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 5: AWS SageMaker -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">docker for ml</div><h2>Docker for ML</h2><p>Package your ML models and their dependencies into containers. Docker eliminates "works on my machine" problems and enables consistent deployment across dev, staging, and production.</p></div>
         <div class="topic-section"><h3>ML Dockerfile Pattern</h3>
         <div class="code-panel">
@@ -267,19 +388,32 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
 <span class="kw">EXPOSE</span> <span class="num">8000</span>
 <span class="kw">CMD</span> [<span class="st">"uvicorn"</span>, <span class="st">"app.main:app"</span>, <span class="st">"--host"</span>, <span class="st">"0.0.0.0"</span>, <span class="st">"--port"</span>, <span class="st">"8000"</span>]</code></pre>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — Docker</h3>
-          <div class="quiz-q" data-correct="b"><p>1. Copying requirements.txt and installing dependencies before copying the application code helps:</p>
-            <label class="quiz-option"><input type="radio" name="dk-q1" value="a"> Reduce the final image size</label>
-            <label class="quiz-option"><input type="radio" name="dk-q1" value="b"> Cache the pip install layer so rebuilds are faster when only code changes</label>
-            <label class="quiz-option"><input type="radio" name="dk-q1" value="c"> Allow parallel installation of packages</label>
-            <label class="quiz-option"><input type="radio" name="dk-q1" value="d"> Enable GPU access inside the container</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Docker</div>
+            <div class="notebook-card-desc">Dockerfile, layer caching, best practices</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=mlops-05-docker.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=mlops&topic=docker" class="btn btn-primary">Take Quiz</a>
+      </div>
       </div>
 
       <!-- CI/CD -->
-      <div class="tab-panel">
+    </div>
+
+    <!-- Panel 6: CI/CD for Models -->
+    <div class="onenote-panel">
+
         <div class="topic-hero"><div class="topic-eyebrow">ci/cd for models</div><h2>CI/CD for ML Models</h2><p>Automate the path from code commit to deployed model. ML-specific CI/CD adds model performance gates, data validation, and rollback triggers on top of standard software CI/CD.</p></div>
         <div class="topic-section"><h3>ML CI/CD Pipeline</h3>
         <div class="arch-diagram">
@@ -309,20 +443,25 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
       - run: python evaluate.py  <span class="cm"># exits 1 if model below threshold</span>
       - run: python deploy.py     <span class="cm"># pushes to SageMaker or Docker</span></code></pre>
         </div></div>
-        <div class="quiz-block"><h3>Quiz — CI/CD for Models</h3>
-          <div class="quiz-q" data-correct="c"><p>1. An "eval gate" in ML CI/CD blocks deployment when:</p>
-            <label class="quiz-option"><input type="radio" name="cd-q1" value="a"> The training job takes too long</label>
-            <label class="quiz-option"><input type="radio" name="cd-q1" value="b"> Code linting fails</label>
-            <label class="quiz-option"><input type="radio" name="cd-q1" value="c"> The new model's performance is worse than the current production model</label>
-            <label class="quiz-option"><input type="radio" name="cd-q1" value="d"> The Docker image is too large</label>
+              <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: CI/CD for Models</div>
+            <div class="notebook-card-desc">Model validation gates, quality thresholds, deployment pipeline</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=mlops-07-cicd.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
-        <div class="completion-banner">
-          <div class="completion-icon">🎓</div>
-          <div class="completion-body"><h3>MLOps Course Complete!</h3><p>Claim your MLOps &amp; Tools completion certificate.</p></div>
-          <button class="btn btn-primary claim-certificate" onclick="MitraAuth && MitraAuth.recordCourseCompletion('mlops','cicd')">Claim Certificate →</button>
-        </div>
+      </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of CI/CD for Models -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=mlops&topic=cicd" class="btn btn-primary">Take Quiz</a>
+      </div>
+        
       </div>
 
     </div>
@@ -338,6 +477,36 @@ mlflow.<span class="fn">set_experiment</span>(<span class="st">"house-price-pred
       <li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
     </div>
+    <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
+<script src="/assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/config.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>
+    </div>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students.</p></div>
+      <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/ml.html">Machine Learning</a></li><li><a href="/courses/genai.html">Generative AI</a></li><li><a href="/courses/agentic.html">Agentic AI</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+
+      <div class="completion-banner" style="margin-top:2rem;">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body"><h3>MLOPS Complete!</h3><p>Pass all topic quizzes to earn your certificate.</p></div>
+        <a href="/courses/" class="btn btn-primary">Browse Next Course</a>
+      </div>    </div>
     <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
   </div>
 </footer>

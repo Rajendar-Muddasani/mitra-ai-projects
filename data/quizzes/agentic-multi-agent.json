@@ -1,0 +1,114 @@
+{
+  "course_label": "Agentic AI",
+  "title": "Multi-Agent Systems",
+  "questions": [
+    {
+      "question": "The main benefit of multi-agent systems:",
+      "options": [
+        "Faster responses",
+        "Parallelism + specialisation -- complex tasks decomposed to specialist agents",
+        "Less cost",
+        "Simpler code"
+      ],
+      "correct": "b",
+      "explanation": "Decomposition reduces context length and allows specialised agents to excel."
+    },
+    {
+      "question": "The supervisor pattern uses:",
+      "options": [
+        "No coordination",
+        "One orchestrator LLM that routes tasks to specialist sub-agents and synthesises results",
+        "Random assignment",
+        "Human supervision only"
+      ],
+      "correct": "b",
+      "explanation": "Supervisor decides which agent handles each subtask based on current state."
+    },
+    {
+      "question": "Parallel execution in multi-agent systems is useful when:",
+      "options": [
+        "All tasks depend on each other",
+        "Subtasks are independent -- e.g. searching different databases simultaneously",
+        "Speed doesn't matter",
+        "Agents share tools"
+      ],
+      "correct": "b",
+      "explanation": "Independent subtasks benefit from parallel execution."
+    },
+    {
+      "question": "Handoff between agents occurs when:",
+      "options": [
+        "An agent fails",
+        "One agent passes the task to another specialist better suited for the current need",
+        "Always at fixed intervals",
+        "Only at completion"
+      ],
+      "correct": "b",
+      "explanation": "'I need legal advice' routes from customer service to legal specialist agent."
+    },
+    {
+      "question": "The debate pattern in multi-agent systems:",
+      "options": [
+        "Slows responses",
+        "Uses multiple agents generating answers and critiquing each other to converge on higher quality",
+        "Random selection",
+        "Sequential processing only"
+      ],
+      "correct": "b",
+      "explanation": "Agent A proposes, Agent B critiques, iteration improves accuracy."
+    },
+    {
+      "question": "Agent coordination communication happens via:",
+      "options": [
+        "Only email",
+        "Shared state (LangGraph), message queues, or direct handoff in conversation thread",
+        "Only synchronously",
+        "Only file system"
+      ],
+      "correct": "b",
+      "explanation": "LangGraph: shared TypedDict state. CrewAI: task context. OpenAI: thread messages."
+    },
+    {
+      "question": "The key challenge in multi-agent systems is:",
+      "options": [
+        "Picking agent names",
+        "Coordination overhead, error propagation, debugging across agents, and cost management",
+        "Memory allocation",
+        "Network speed"
+      ],
+      "correct": "b",
+      "explanation": "Each agent adds latency and cost. Errors cascade. Observability is harder."
+    },
+    {
+      "question": "Token efficiency in multi-agent systems is improved by:",
+      "options": [
+        "Giving all agents the full conversation",
+        "Routing only relevant context to each agent -- each sees only what it needs"
+      ],
+      "correct": "b",
+      "explanation": "Specialist agents with focused context are faster and cheaper."
+    },
+    {
+      "question": "A memory bank shared across agents typically uses:",
+      "options": [
+        "RAM only",
+        "A vector database (ChromaDB, Pinecone) for semantic retrieval across agents",
+        "SQL only",
+        "No storage"
+      ],
+      "correct": "b",
+      "explanation": "Shared long-term memory enables agents to build on each other's findings."
+    },
+    {
+      "question": "Evaluation of multi-agent systems requires:",
+      "options": [
+        "Standard unit tests only",
+        "End-to-end task success metrics + per-agent quality + overall latency/cost",
+        "Only latency",
+        "Only cost"
+      ],
+      "correct": "b",
+      "explanation": "Multi-agent evals test both individual agent quality and overall completion."
+    }
+  ]
+}

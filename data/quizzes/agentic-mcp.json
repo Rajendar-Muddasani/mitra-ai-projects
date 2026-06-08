@@ -1,0 +1,116 @@
+{
+  "course_label": "Agentic AI",
+  "title": "MCP Protocol",
+  "questions": [
+    {
+      "question": "MCP stands for:",
+      "options": [
+        "Model Computation Protocol",
+        "Model Context Protocol -- a standard for connecting AI to tools and data",
+        "Machine Control Program",
+        "Multi-Chain Processing"
+      ],
+      "correct": "b",
+      "explanation": "Anthropic's open protocol (2024) for standardising AI-to-tool connections."
+    },
+    {
+      "question": "The main problem MCP solves:",
+      "options": [
+        "Model accuracy",
+        "Every AI integration required custom code; MCP provides one reusable standard",
+        "Hallucination",
+        "Training costs"
+      ],
+      "correct": "b",
+      "explanation": "Before MCP: N models x M tools = N*M custom integrations. With MCP: N + M."
+    },
+    {
+      "question": "An MCP server exposes:",
+      "options": [
+        "Model weights",
+        "Tools, resources, and prompts that AI clients can discover and use",
+        "Database schemas only",
+        "API credentials"
+      ],
+      "correct": "b",
+      "explanation": "MCP servers register tools (functions), resources (data), and prompt templates."
+    },
+    {
+      "question": "An MCP client is typically:",
+      "options": [
+        "A human user",
+        "An AI application (Claude Desktop, IDE plugin) that connects to MCP servers",
+        "A database",
+        "A training job"
+      ],
+      "correct": "b",
+      "explanation": "Claude Desktop, Cursor, VS Code Copilot are MCP clients."
+    },
+    {
+      "question": "MCP transport protocols include:",
+      "options": [
+        "HTTP only",
+        "stdio (local) and HTTP with SSE (remote)",
+        "WebSocket only",
+        "gRPC only"
+      ],
+      "correct": "b",
+      "explanation": "stdio = subprocess (same machine). HTTP/SSE = network server."
+    },
+    {
+      "question": "What differentiates MCP from a plain REST API?",
+      "options": [
+        "MCP is faster",
+        "MCP is designed for AI tool calling with standardised discovery, schemas, and error handling",
+        "MCP is newer",
+        "MCP requires less code"
+      ],
+      "correct": "b",
+      "explanation": "MCP adds tool discovery, structured schemas, and AI-optimised error formats."
+    },
+    {
+      "question": "Resources in MCP expose:",
+      "options": [
+        "Executable functions",
+        "Read-only data like files, database rows, or API responses as context",
+        "Model parameters",
+        "Training data"
+      ],
+      "correct": "b",
+      "explanation": "Resources = data sources. Tools = executable functions. Both are distinct."
+    },
+    {
+      "question": "Prompts in MCP are:",
+      "options": [
+        "System prompts for training",
+        "Reusable prompt templates with parameters that clients can invoke",
+        "Debugging messages",
+        "Error messages"
+      ],
+      "correct": "b",
+      "explanation": "Prompt templates let users trigger pre-built workflows from MCP clients."
+    },
+    {
+      "question": "The MCP Python SDK is installed with:",
+      "options": [
+        "pip install mcp-sdk",
+        "pip install mcp",
+        "pip install anthropic-mcp",
+        "pip install langchain-mcp"
+      ],
+      "correct": "b",
+      "explanation": "pip install mcp provides both server and client SDKs."
+    },
+    {
+      "question": "Sampling in MCP allows:",
+      "options": [
+        "Faster inference",
+        "MCP servers to request LLM completions through the client -- enabling recursive AI workflows",
+        "Model training",
+        "Batch processing"
+      ],
+      "correct": "b",
+      "explanation": "Advanced feature: server asks the AI to reason about tool results."
+    }
+  ]
+}

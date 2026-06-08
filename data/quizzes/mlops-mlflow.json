@@ -1,0 +1,110 @@
+{
+  "course_label": "MLOps & Tools",
+  "title": "Experiment Tracking (MLflow)",
+  "questions": [
+    {
+      "question": "MLflow tracking records:",
+      "options": [
+        "Only final accuracy",
+        "Parameters, metrics, artifacts, and code version for each training run",
+        "Only errors",
+        "Only hyperparameters"
+      ],
+      "correct": "b",
+      "explanation": "Full experiment provenance: what you tried, how it performed, what files were produced."
+    },
+    {
+      "question": "An MLflow Experiment organises:",
+      "options": [
+        "A single model",
+        "A collection of related runs (e.g. all attempts at tuning a fraud detector)",
+        "One parameter",
+        "One dataset"
+      ],
+      "correct": "b",
+      "explanation": "Group related runs under one experiment for easy comparison."
+    },
+    {
+      "question": "mlflow.log_metric() records:",
+      "options": [
+        "Text descriptions",
+        "Numeric values that can change over time (loss, accuracy, AUC) per step",
+        "File paths",
+        "Parameters"
+      ],
+      "correct": "b",
+      "explanation": "Metrics are numeric and time-series. Params are string key-value pairs logged once."
+    },
+    {
+      "question": "MLflow Model Registry provides:",
+      "options": [
+        "File storage",
+        "Versioning, staging, and lifecycle management for production models",
+        "Training compute",
+        "Data storage"
+      ],
+      "correct": "b",
+      "explanation": "Registry tracks which model version is in production, allows staged rollouts."
+    },
+    {
+      "question": "mlflow.autolog() automatically:",
+      "options": [
+        "Does nothing",
+        "Logs framework-specific params/metrics/models without any manual code",
+        "Only logs errors",
+        "Only logs file paths"
+      ],
+      "correct": "b",
+      "explanation": "mlflow.sklearn.autolog() captures all sklearn run parameters and metrics automatically."
+    },
+    {
+      "question": "The MLflow UI is accessed via:",
+      "options": [
+        "A mobile app",
+        "mlflow ui (local) or hosted platforms like Databricks, SageMaker",
+        "API only",
+        "Database client"
+      ],
+      "correct": "b",
+      "explanation": "Browser-based dashboard showing experiment trees, metric plots, and artifact browsers."
+    },
+    {
+      "question": "An MLflow artifact is:",
+      "options": [
+        "A broken run",
+        "Any file saved during a run: model files, plots, data samples, reports"
+      ],
+      "correct": "b",
+      "explanation": "log_artifact('confusion_matrix.png') saves files alongside metrics for later reference."
+    },
+    {
+      "question": "MLflow Projects package:",
+      "options": [
+        "ML models for serving",
+        "Code + environment + entry points into a reproducible, shareable format",
+        "Training data",
+        "API endpoints"
+      ],
+      "correct": "b",
+      "explanation": "MLproject file + conda.yaml = anyone can reproduce your experiment with mlflow run ."
+    },
+    {
+      "question": "Logging git commit hash in MLflow helps with:",
+      "options": [
+        "No benefit",
+        "Linking any run to the exact code that produced it -- for perfect reproducibility"
+      ],
+      "correct": "b",
+      "explanation": "mlflow.set_tag('git_commit', subprocess.getoutput('git rev-parse HEAD'))"
+    },
+    {
+      "question": "Comparing runs in MLflow helps with:",
+      "options": [
+        "Debugging only",
+        "Identifying which hyperparameters, data versions, or architectures produced the best results"
+      ],
+      "correct": "b",
+      "explanation": "Select multiple runs in UI, compare metric plots and param tables side by side."
+    }
+  ]
+}

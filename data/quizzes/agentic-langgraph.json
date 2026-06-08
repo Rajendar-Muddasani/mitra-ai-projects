@@ -1,0 +1,116 @@
+{
+  "course_label": "Agentic AI",
+  "title": "LangGraph",
+  "questions": [
+    {
+      "question": "LangGraph models agent workflows as:",
+      "options": [
+        "Linear prompts",
+        "Directed graphs (nodes=steps, edges=transitions, state=shared data)",
+        "Decision trees",
+        "Simple if-else chains"
+      ],
+      "correct": "b",
+      "explanation": "The graph structure enables loops, branching, and human-in-the-loop."
+    },
+    {
+      "question": "In LangGraph, the State object:",
+      "options": [
+        "Stores model weights",
+        "Holds shared data that flows through all nodes in the graph",
+        "Manages API keys",
+        "Stores prompts"
+      ],
+      "correct": "b",
+      "explanation": "TypedDict state is passed to each node. Nodes return updated state."
+    },
+    {
+      "question": "Conditional edges in LangGraph allow:",
+      "options": [
+        "Faster execution",
+        "Routing to different nodes based on state values (branching + loops)",
+        "Only linear workflows",
+        "Parallel execution only"
+      ],
+      "correct": "b",
+      "explanation": "graph.add_conditional_edges() enables dynamic routing between nodes."
+    },
+    {
+      "question": "LangGraph's human-in-the-loop feature uses:",
+      "options": [
+        "Email notifications",
+        "interrupt() to pause execution and await human input",
+        "Random pauses",
+        "A separate model"
+      ],
+      "correct": "b",
+      "explanation": "graph.compile(interrupt_before=['action_node']) pauses for approval."
+    },
+    {
+      "question": "A cycle in a LangGraph graph enables:",
+      "options": [
+        "Infinite loops only",
+        "Iterative refinement -- agent retries or gathers more info until done",
+        "Memory issues",
+        "Slower execution"
+      ],
+      "correct": "b",
+      "explanation": "Agents can loop back to gather more information or retry failed steps."
+    },
+    {
+      "question": "LangGraph is preferred over simple LangChain agents when:",
+      "options": [
+        "The task is very simple",
+        "You need complex control flow, persistent state, or multi-agent coordination",
+        "The model is small",
+        "You need faster responses"
+      ],
+      "correct": "b",
+      "explanation": "Simple tasks: LangChain. Complex multi-step workflows: LangGraph."
+    },
+    {
+      "question": "Checkpointing in LangGraph:",
+      "options": [
+        "Faster compilation",
+        "Saves and resumes agent state -- enables long-running or interruptible workflows",
+        "Model versioning",
+        "Prompt caching"
+      ],
+      "correct": "b",
+      "explanation": "MemorySaver, SqliteSaver persist state between runs."
+    },
+    {
+      "question": "The entry_point in a LangGraph graph specifies:",
+      "options": [
+        "The final output node",
+        "The first node to execute when the graph is invoked",
+        "The error handler",
+        "The state schema"
+      ],
+      "correct": "b",
+      "explanation": "graph.set_entry_point('node_name') determines where execution begins."
+    },
+    {
+      "question": "END in LangGraph is:",
+      "options": [
+        "An error state",
+        "A special terminal node -- routing to END stops graph execution",
+        "A checkpoint",
+        "A tool call"
+      ],
+      "correct": "b",
+      "explanation": "from langgraph.graph import END. Conditional edge to END completes the workflow."
+    },
+    {
+      "question": "Multi-agent coordination in LangGraph typically uses:",
+      "options": [
+        "A single shared model",
+        "A supervisor node that routes tasks to specialist sub-graphs",
+        "Random assignment",
+        "Queue-based messaging only"
+      ],
+      "correct": "b",
+      "explanation": "Supervisor pattern: one orchestrator decides which specialist handles each subtask."
+    }
+  ]
+}

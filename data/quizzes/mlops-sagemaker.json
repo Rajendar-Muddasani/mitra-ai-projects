@@ -1,0 +1,112 @@
+{
+  "course_label": "MLOps & Tools",
+  "title": "AWS SageMaker",
+  "questions": [
+    {
+      "question": "SageMaker Training Jobs provide:",
+      "options": [
+        "Free compute",
+        "Managed, auto-terminating compute for ML training with any framework",
+        "Storage only",
+        "Deployment only"
+      ],
+      "correct": "b",
+      "explanation": "Spin up powerful instances for training, auto-terminate when done."
+    },
+    {
+      "question": "SageMaker Endpoints are:",
+      "options": [
+        "Training jobs",
+        "Managed REST APIs for real-time model inference -- auto-scaling, monitoring included",
+        "Storage services",
+        "Data pipelines"
+      ],
+      "correct": "b",
+      "explanation": "predictor = estimator.deploy() creates a production inference endpoint."
+    },
+    {
+      "question": "SageMaker Pipelines orchestrate:",
+      "options": [
+        "One training job",
+        "Multi-step ML workflows (preprocessing -> training -> evaluation -> deployment) as reproducible DAGs",
+        "Data storage",
+        "Model serving only"
+      ],
+      "correct": "b",
+      "explanation": "Define steps declaratively. SageMaker runs them with tracking and conditional logic."
+    },
+    {
+      "question": "SageMaker Feature Store provides:",
+      "options": [
+        "Model storage",
+        "A centralised managed store for ML features with online and offline access",
+        "Training data only",
+        "Hyperparameter storage"
+      ],
+      "correct": "b",
+      "explanation": "Avoids feature duplication across teams. Ensures training and serving use the same logic."
+    },
+    {
+      "question": "SageMaker Model Monitor detects:",
+      "options": [
+        "Code bugs",
+        "Data drift, data quality issues, and model quality degradation in production",
+        "Training errors",
+        "Deployment failures"
+      ],
+      "correct": "b",
+      "explanation": "Schedule monitoring jobs. Get alerts when input distributions or model outputs change."
+    },
+    {
+      "question": "The SageMaker execution role provides:",
+      "options": [
+        "Human authentication",
+        "Permissions for SageMaker to access S3, ECR, CloudWatch on your behalf",
+        "Billing information",
+        "Model selection"
+      ],
+      "correct": "b",
+      "explanation": "IAM role attached to SageMaker sessions."
+    },
+    {
+      "question": "ml.p3.2xlarge vs ml.t3.medium:",
+      "options": [
+        "Identical performance",
+        "p3.2xlarge: V100 GPU for training. t3.medium: cheap CPU for low-traffic inference"
+      ],
+      "correct": "b",
+      "explanation": "Match instance to workload. GPU for training/heavy inference. CPU for light inference."
+    },
+    {
+      "question": "SageMaker JumpStart is:",
+      "options": [
+        "A deployment tool only",
+        "A hub of pre-trained models and solution templates deployable or fine-tunable with one click"
+      ],
+      "correct": "b",
+      "explanation": "Hundreds of models (Llama, Stable Diffusion, etc.) ready to deploy without custom code."
+    },
+    {
+      "question": "SageMaker Experiments tracks:",
+      "options": [
+        "Only hyperparameters",
+        "The full experiment lineage -- datasets, parameters, metrics, models -- across training runs",
+        "File uploads only",
+        "Costs only"
+      ],
+      "correct": "b",
+      "explanation": "Similar to MLflow. Integrated with SageMaker Pipelines for end-to-end reproducibility."
+    },
+    {
+      "question": "SageMaker pricing model is:",
+      "options": [
+        "Fixed monthly",
+        "Pay per second for training jobs and per hour for endpoints",
+        "Free forever",
+        "Annual subscription only"
+      ],
+      "correct": "b",
+      "explanation": "Training: billed for exact duration. Endpoints: billed hourly while running."
+    }
+  ]
+}

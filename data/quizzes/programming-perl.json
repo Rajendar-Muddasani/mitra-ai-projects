@@ -1,0 +1,116 @@
+{
+  "course_label": "Programming",
+  "title": "Perl",
+  "questions": [
+    {
+      "question": "In Perl, =~ is used for:",
+      "options": [
+        "Assignment",
+        "Pattern matching -- applying a regex to a string",
+        "String comparison",
+        "Equality check"
+      ],
+      "correct": "b",
+      "explanation": "$str =~ /pattern/ returns true if pattern matches."
+    },
+    {
+      "question": "What sigil is used for scalar variables?",
+      "options": [
+        "@",
+        "$",
+        "*",
+        "%"
+      ],
+      "correct": "b",
+      "explanation": "$scalar, @array, %hash. Each data type has its own sigil."
+    },
+    {
+      "question": "chomp() in Perl removes:",
+      "options": [
+        "All whitespace",
+        "Only the trailing newline",
+        "Leading whitespace",
+        "All non-alphanumeric chars"
+      ],
+      "correct": "b",
+      "explanation": "chomp removes trailing newline only."
+    },
+    {
+      "question": "$_ in Perl is:",
+      "options": [
+        "The process ID",
+        "The default variable -- many functions operate on it implicitly",
+        "The last error",
+        "The current filename"
+      ],
+      "correct": "b",
+      "explanation": "Many builtins use $_ implicitly when no argument is given."
+    },
+    {
+      "question": "split(/,/, $str) does what?",
+      "options": [
+        "Joins with comma",
+        "Splits $str into a list at each comma",
+        "Counts commas",
+        "Removes commas"
+      ],
+      "correct": "b",
+      "explanation": "my @parts = split(/,/, 'a,b,c') gives ('a','b','c')."
+    },
+    {
+      "question": "use strict in Perl:",
+      "options": [
+        "Disables warnings",
+        "Requires variable declaration and prevents barewords -- catches common errors",
+        "Imports strict module",
+        "Makes script faster"
+      ],
+      "correct": "b",
+      "explanation": "Prevents common mistakes by forcing explicit variable declarations."
+    },
+    {
+      "question": "Regular expression m// performs:",
+      "options": [
+        "Math operation",
+        "A match -- returns true if pattern found in string",
+        "Multiplication",
+        "Module import"
+      ],
+      "correct": "b",
+      "explanation": "m/pattern/ or /pattern/ performs matching. Captures go into $1, $2."
+    },
+    {
+      "question": "while (<FH>) reads:",
+      "options": [
+        "Writes to filehandle",
+        "Lines from a filehandle one at a time into $_",
+        "Closes the file",
+        "Opens a file"
+      ],
+      "correct": "b",
+      "explanation": "Standard Perl file-reading loop. Each line goes to $_."
+    },
+    {
+      "question": "Perl map() function:",
+      "options": [
+        "Creates a hash map",
+        "Transforms each element of a list by applying a block",
+        "Maps keys to values",
+        "Counts occurrences"
+      ],
+      "correct": "b",
+      "explanation": "@doubled = map { $_ * 2 } @nums -- applies block to each element."
+    },
+    {
+      "question": "A Perl hash is:",
+      "options": [
+        "One-way encryption",
+        "A key-value data structure accessed with %hash and $hash{key}",
+        "An array sorted by value",
+        "A reference"
+      ],
+      "correct": "b",
+      "explanation": "my %h = (name=>'Alice', age=>25); Like Python dict."
+    }
+  ]
+}

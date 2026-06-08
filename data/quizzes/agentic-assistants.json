@@ -1,0 +1,116 @@
+{
+  "course_label": "Agentic AI",
+  "title": "OpenAI Assistants API",
+  "questions": [
+    {
+      "question": "An OpenAI Assistant differs from a chat completion by:",
+      "options": [
+        "Using a larger model",
+        "Having persistent threads, automatic tool calling, file handling, and state",
+        "Being cheaper",
+        "Not supporting system prompts"
+      ],
+      "correct": "b",
+      "explanation": "Assistants maintain conversation state in Threads."
+    },
+    {
+      "question": "A Thread in the Assistants API represents:",
+      "options": [
+        "A CPU thread",
+        "A persistent conversation -- stores all messages between user and assistant",
+        "A model version",
+        "A tool call"
+      ],
+      "correct": "b",
+      "explanation": "Create one thread per user. Add messages, run, get replies. State persists."
+    },
+    {
+      "question": "The Code Interpreter tool in Assistants can:",
+      "options": [
+        "Only read files",
+        "Execute Python code in a sandboxed environment and return outputs/files",
+        "Train models",
+        "Access the internet"
+      ],
+      "correct": "b",
+      "explanation": "Useful for data analysis, chart generation, formula calculation."
+    },
+    {
+      "question": "File Search in Assistants allows:",
+      "options": [
+        "Searching internet files",
+        "Uploading documents that the assistant retrieves relevant chunks from",
+        "Searching logs",
+        "Searching code"
+      ],
+      "correct": "b",
+      "explanation": "Built-in RAG: upload PDFs/docs, the API handles chunking, embedding, and retrieval."
+    },
+    {
+      "question": "A Run in the Assistants API represents:",
+      "options": [
+        "A model deployment",
+        "One execution cycle where the assistant processes messages and takes actions",
+        "A training job",
+        "A file upload"
+      ],
+      "correct": "b",
+      "explanation": "Create a Run to make the assistant process the current thread."
+    },
+    {
+      "question": "Tool calling in Assistants is different from chat completions because:",
+      "options": [
+        "Tools are not available",
+        "The API handles the tool call loop automatically (call tool, get result, continue)",
+        "Tools must be hardcoded",
+        "Only one tool can be used"
+      ],
+      "correct": "b",
+      "explanation": "Assistants automatically calls tools and continues without you managing the loop."
+    },
+    {
+      "question": "The vector store in Assistants is used for:",
+      "options": [
+        "Model storage",
+        "File Search -- stores and indexes uploaded documents for semantic retrieval",
+        "Caching responses",
+        "Storing conversation history"
+      ],
+      "correct": "b",
+      "explanation": "Create a vector store, attach files, attach to assistant."
+    },
+    {
+      "question": "Streaming in the Assistants API allows:",
+      "options": [
+        "Faster fine-tuning",
+        "Receiving tokens as they are generated rather than waiting for the full response",
+        "Real-time training",
+        "Parallel tool calls"
+      ],
+      "correct": "b",
+      "explanation": "stream=True returns an event stream. Display tokens progressively."
+    },
+    {
+      "question": "The recommended production pattern for Assistants:",
+      "options": [
+        "Create a new assistant per request",
+        "Create one assistant, one thread per user, add messages, run and poll",
+        "Use a single thread for all users",
+        "Recreate threads daily"
+      ],
+      "correct": "b",
+      "explanation": "Assistants are expensive to create. Reuse them. Threads are cheap."
+    },
+    {
+      "question": "Compared to building your own agent loop, Assistants API:",
+      "options": [
+        "Requires more code",
+        "Handles tool call orchestration, state, file handling automatically -- less code but less control",
+        "Is always cheaper",
+        "Cannot use custom tools"
+      ],
+      "correct": "b",
+      "explanation": "Trade-off: less control, simpler code. For complex custom logic, use LangGraph instead."
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "course_label": "Reinforcement Learning",
+  "title": "PPO - Proximal Policy Optimisation",
+  "questions": [
+    {
+      "question": "PPO's key innovation is:",
+      "options": [
+        "Faster computation",
+        "A clipped surrogate objective that limits how much the policy can change per update"
+      ],
+      "correct": "b",
+      "explanation": "Clipping ratio to [1-eps, 1+eps] prevents catastrophically large policy updates."
+    },
+    {
+      "question": "PPO is widely used because:",
+      "options": [
+        "It is the most accurate",
+        "It is stable, relatively simple to implement, and works well across diverse tasks"
+      ],
+      "correct": "b",
+      "explanation": "Used in: ChatGPT/InstructGPT RLHF, OpenAI Five (Dota 2), robotic manipulation."
+    },
+    {
+      "question": "The clipping ratio in PPO clips:",
+      "options": [
+        "Rewards",
+        "The probability ratio pi_new/pi_old -- the ratio of new to old action probabilities"
+      ],
+      "correct": "b",
+      "explanation": "If ratio > 1+eps or < 1-eps, the objective is clipped to prevent large policy shifts."
+    },
+    {
+      "question": "GAE (Generalised Advantage Estimation) in PPO computes:",
+      "options": [
+        "Q-values",
+        "A low-variance, low-bias advantage estimate using a weighted combination of TD errors"
+      ],
+      "correct": "b",
+      "explanation": "GAE(lambda) trades off bias vs variance. lambda=0.95-0.99 works well in practice."
+    },
+    {
+      "question": "PPO uses multiple epochs over the same data to:",
+      "options": [
+        "Reduce memory",
+        "Improve sample efficiency -- extract maximum learning from each batch of experience"
+      ],
+      "correct": "b",
+      "explanation": "Typically 3-4 epochs per rollout batch. More epochs risk policy drift."
+    },
+    {
+      "question": "The value function in PPO is:",
+      "options": [
+        "Not needed",
+        "Trained simultaneously with the policy -- used for advantage estimation and as a baseline"
+      ],
+      "correct": "b",
+      "explanation": "Shared architecture with actor reduces computation. critic_loss = MSE(V(s), returns)."
+    },
+    {
+      "question": "PPO vs TRPO (Trust Region Policy Optimisation):",
+      "options": [
+        "Identical",
+        "PPO approximates TRPO's constraint with a simpler clipped objective -- easier to implement"
+      ],
+      "correct": "b",
+      "explanation": "TRPO uses second-order optimisation (expensive). PPO achieves similar results with first-order methods."
+    },
+    {
+      "question": "Reward normalisation in PPO:",
+      "options": [
+        "Reduces reward size only",
+        "Normalises reward statistics (running mean/std) to stabilise training across different environments"
+      ],
+      "correct": "b",
+      "explanation": "Raw rewards vary wildly across environments. Normalisation makes PPO hyperparameters transferable."
+    },
+    {
+      "question": "stable-baselines3 PPO is best used for:",
+      "options": [
+        "Only games",
+        "Getting strong baselines quickly on new RL problems -- well-tuned, tested implementation"
+      ],
+      "correct": "b",
+      "explanation": "from stable_baselines3 import PPO; model = PPO('MlpPolicy', env); model.learn(1M) works immediately."
+    },
+    {
+      "question": "RLHF (Reinforcement Learning from Human Feedback) uses PPO to:",
+      "options": [
+        "Train language models from scratch",
+        "Fine-tune LLMs to be more helpful and harmless by optimising a reward model trained on human preferences"
+      ],
+      "correct": "b",
+      "explanation": "ChatGPT, Claude, Gemini all use RLHF/PPO or similar techniques for alignment."
+    }
+  ]
+}

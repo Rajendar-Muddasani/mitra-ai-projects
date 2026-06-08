@@ -1,0 +1,106 @@
+{
+  "course_label": "MLOps & Tools",
+  "title": "Spark & Big Data",
+  "questions": [
+    {
+      "question": "Apache Spark processes data by:",
+      "options": [
+        "Running on one machine",
+        "Distributing data and computation across a cluster in parallel",
+        "Sequencing all operations",
+        "Using GPU only"
+      ],
+      "correct": "b",
+      "explanation": "Spark partitions data across nodes. Each node processes its partition simultaneously."
+    },
+    {
+      "question": "Spark's lazy evaluation means:",
+      "options": [
+        "Spark is slow",
+        "Transformations are not executed until an action (collect, show, count) is called",
+        "Spark delays start",
+        "Memory is freed lazily"
+      ],
+      "correct": "b",
+      "explanation": "Spark builds an execution plan then optimises and executes only when an action triggers it."
+    },
+    {
+      "question": "Spark DataFrames are preferred over RDDs because:",
+      "options": [
+        "DataFrames are always faster",
+        "DataFrames have Catalyst optimiser support, SQL syntax, and strongly typed schemas"
+      ],
+      "correct": "b",
+      "explanation": "Catalyst optimiser automatically rewrites queries for better performance."
+    },
+    {
+      "question": "PySpark groupBy().agg() is equivalent to:",
+      "options": [
+        "Python dict grouping",
+        "SQL GROUP BY with aggregate functions -- runs distributed across the cluster"
+      ],
+      "correct": "b",
+      "explanation": "Same semantics as SQL/pandas groupby but runs on terabytes across many nodes."
+    },
+    {
+      "question": "Spark partitions data for:",
+      "options": [
+        "Random distribution",
+        "Parallel processing -- each partition is processed by one executor core"
+      ],
+      "correct": "b",
+      "explanation": "repartition(n) controls parallelism. More partitions = more parallelism."
+    },
+    {
+      "question": "Spark broadcast variables are used for:",
+      "options": [
+        "Broadcasting messages",
+        "Distributing small datasets (like lookup tables) efficiently to all worker nodes",
+        "Streaming data",
+        "Caching results"
+      ],
+      "correct": "b",
+      "explanation": "broadcast(small_df) avoids shipping the same small data to each node per task."
+    },
+    {
+      "question": "Spark Streaming vs batch Spark:",
+      "options": [
+        "Identical",
+        "Batch: processes fixed datasets. Streaming: processes continuous data streams in micro-batches"
+      ],
+      "correct": "b",
+      "explanation": "Structured Streaming provides the same DataFrame API for streaming as for batch."
+    },
+    {
+      "question": "The driver program in Spark:",
+      "options": [
+        "Runs all computation",
+        "Coordinates the cluster, creates SparkContext, and sends tasks to executors",
+        "Is the database",
+        "Is one of many workers"
+      ],
+      "correct": "b",
+      "explanation": "One driver + many executors. Driver is the brain; executors do the work."
+    },
+    {
+      "question": "When should you use Spark over Pandas?",
+      "options": [
+        "Always",
+        "When data exceeds single-machine RAM (~10-50GB+) or you need distributed processing"
+      ],
+      "correct": "b",
+      "explanation": "Pandas is simpler and faster for small data. Spark overhead is only worth it for large datasets."
+    },
+    {
+      "question": "A Spark DataFrame's schema is:",
+      "options": [
+        "Flexible like Python",
+        "Strictly typed with named columns -- enables optimiser to plan efficient execution",
+        "Optional",
+        "Only for SQL tables"
+      ],
+      "correct": "b",
+      "explanation": "Strong typing enables Catalyst optimiser and avoids runtime type errors."
+    }
+  ]
+}

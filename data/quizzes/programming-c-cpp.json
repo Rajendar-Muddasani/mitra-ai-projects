@@ -1,0 +1,116 @@
+{
+  "course_label": "Programming",
+  "title": "C / C++",
+  "questions": [
+    {
+      "question": "In C, what does *ptr do when ptr is a pointer to int?",
+      "options": [
+        "Declares a pointer",
+        "Dereferences ptr -- accesses the value at the memory address",
+        "Multiplies",
+        "Deletes ptr"
+      ],
+      "correct": "b",
+      "explanation": "* is the dereference operator. ptr holds address; *ptr gets the value there."
+    },
+    {
+      "question": "After calling malloc(), you must:",
+      "options": [
+        "Free the memory when done to avoid leaks",
+        "Call new() first",
+        "Initialize to NULL",
+        "Call realloc()"
+      ],
+      "correct": "b",
+      "explanation": "malloc allocates heap memory. Not freeing causes memory leaks."
+    },
+    {
+      "question": "A segmentation fault most commonly occurs when:",
+      "options": [
+        "A variable is uninitialized",
+        "You dereference a NULL or invalid pointer",
+        "An integer overflows",
+        "A loop runs too many times"
+      ],
+      "correct": "b",
+      "explanation": "Dereferencing NULL (int *p=NULL; *p=5) or freed memory causes segfault."
+    },
+    {
+      "question": "The difference between malloc and calloc is:",
+      "options": [
+        "calloc is for arrays only",
+        "calloc zero-initializes the memory; malloc does not",
+        "calloc is faster",
+        "malloc takes two arguments"
+      ],
+      "correct": "b",
+      "explanation": "calloc(n,size) allocates and zeros all bytes. malloc(n*size) doesn't initialize."
+    },
+    {
+      "question": "In C++, a private member is accessible:",
+      "options": [
+        "By any function in the file",
+        "Only by methods within the same class",
+        "By derived classes",
+        "By any code including the header"
+      ],
+      "correct": "b",
+      "explanation": "private=class only. protected=class+derived. public=everywhere."
+    },
+    {
+      "question": "A pointer in C stores:",
+      "options": [
+        "A double value",
+        "The memory address of another variable",
+        "A character array",
+        "A function parameter"
+      ],
+      "correct": "b",
+      "explanation": "int *p = &x; p holds the address of x."
+    },
+    {
+      "question": "sizeof() returns:",
+      "options": [
+        "Number of elements",
+        "Size in bytes of a type or variable",
+        "Memory address",
+        "String length"
+      ],
+      "correct": "b",
+      "explanation": "sizeof(int) typically 4 bytes. Essential for portable malloc calls."
+    },
+    {
+      "question": "The -> operator does what?",
+      "options": [
+        "Logical implication",
+        "Accesses a struct member through a pointer: ptr->m = (*ptr).m",
+        "Subtracts and assigns",
+        "Shifts bits"
+      ],
+      "correct": "b",
+      "explanation": "Shorthand for (*ptr).member. Used with linked lists and trees."
+    },
+    {
+      "question": "In C++, a constructor is:",
+      "options": [
+        "A function that deletes objects",
+        "A special method automatically called when an object is created",
+        "A global function",
+        "A copy function"
+      ],
+      "correct": "b",
+      "explanation": "Same name as class, no return type. Called automatically on creation."
+    },
+    {
+      "question": "Stack vs heap memory in C:",
+      "options": [
+        "Both are the same",
+        "Stack: auto freed on function exit; Heap: manual malloc/free",
+        "Heap is faster",
+        "Stack holds globals"
+      ],
+      "correct": "b",
+      "explanation": "Local variables on stack (auto-freed). Dynamic memory on heap (must free manually)."
+    }
+  ]
+}

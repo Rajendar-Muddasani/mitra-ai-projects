@@ -1,0 +1,100 @@
+{
+  "course_label": "Key Concepts & Tools",
+  "title": "Git & GitHub for ML",
+  "questions": [
+    {
+      "question": "What should NOT be committed to Git in an ML project:",
+      "options": [
+        "Python source code",
+        "Large binary files: model weights (.pkl, .pt, .h5), datasets (.csv, .parquet), generated outputs",
+        "Config files",
+        "README files"
+      ],
+      "correct": "b",
+      "explanation": "Large/binary files bloat repos and can't be diffed. Use S3/HuggingFace Hub/DVC instead."
+    },
+    {
+      "question": "DVC (Data Version Control) is used for:",
+      "options": [
+        "Code versioning only",
+        "Versioning large data files and model artifacts alongside code without storing them in Git",
+        "Dependency management",
+        "CI/CD pipelines"
+      ],
+      "correct": "b",
+      "explanation": "dvc add data/train.csv creates a small .dvc pointer file committed to Git. Data goes to S3."
+    },
+    {
+      "question": "A Git branch for an experiment should be:",
+      "options": [
+        "Named main",
+        "Named descriptively: experiment/xgboost-v2 or feature/add-validation-pipeline"
+      ],
+      "correct": "b",
+      "explanation": "Descriptive branch names make it clear what each branch is testing without reading the code."
+    },
+    {
+      "question": "git stash is used to:",
+      "options": [
+        "Delete uncommitted changes",
+        "Temporarily save uncommitted changes so you can switch branches or pull without losing work"
+      ],
+      "correct": "b",
+      "explanation": "git stash; git checkout other-branch; git stash pop -- safely handles context switches."
+    },
+    {
+      "question": "A .gitignore for ML should exclude:",
+      "options": [
+        "Only the .git folder",
+        "__pycache__/, .venv/, data/raw/, *.pkl, *.h5, .env, mlruns/, logs/"
+      ],
+      "correct": "b",
+      "explanation": "Exclude Python cache, virtual envs, data, model artifacts, secrets, and ML tool outputs."
+    },
+    {
+      "question": "git blame is used to:",
+      "options": [
+        "Remove blame from others",
+        "Show which commit and author last modified each line of a file"
+      ],
+      "correct": "b",
+      "explanation": "Useful for understanding when and why code changed. Not an accusation tool."
+    },
+    {
+      "question": "Semantic versioning (semver) for ML models uses:",
+      "options": [
+        "Only dates",
+        "MAJOR.MINOR.PATCH: MAJOR=breaking changes, MINOR=new features, PATCH=bug fixes"
+      ],
+      "correct": "b",
+      "explanation": "model-v2.1.3: v2=breaking API change, v2.1=new feature, v2.1.3=bug fix."
+    },
+    {
+      "question": "Git tags are used in ML to:",
+      "options": [
+        "Delete releases",
+        "Mark specific commits as release points (e.g. model-v1.0, paper-submission)"
+      ],
+      "correct": "b",
+      "explanation": "git tag -a v1.0 -m 'First production model' marks important milestones permanently."
+    },
+    {
+      "question": "Pull Requests (PRs) in ML workflows:",
+      "options": [
+        "Are not used in ML",
+        "Enforce code review before merging experiment code to main -- critical for team ML projects"
+      ],
+      "correct": "b",
+      "explanation": "PRs with automated CI checks (data validation, model tests) prevent bad code/models reaching production."
+    },
+    {
+      "question": "GitHub Actions for ML CI/CD automates:",
+      "options": [
+        "Only code linting",
+        "Data validation, model training, performance testing, and deployment on every push"
+      ],
+      "correct": "b",
+      "explanation": "on: push triggers the pipeline. if: success() gates deployment on all checks passing."
+    }
+  ]
+}

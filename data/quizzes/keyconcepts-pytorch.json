@@ -1,0 +1,116 @@
+{
+  "course_label": "Key Concepts & Tools",
+  "title": "PyTorch Foundations",
+  "questions": [
+    {
+      "question": "A PyTorch tensor differs from a NumPy array because:",
+      "options": [
+        "It is always faster",
+        "It can run on GPU and tracks gradients automatically via autograd",
+        "It has more data types",
+        "It requires more memory"
+      ],
+      "correct": "b",
+      "explanation": "Tensors are the foundation: GPU-capable + differentiable."
+    },
+    {
+      "question": "requires_grad=True in PyTorch:",
+      "options": [
+        "Requires user input",
+        "Tells autograd to track operations on the tensor so gradients can be computed",
+        "Increases memory",
+        "Makes training faster"
+      ],
+      "correct": "b",
+      "explanation": "model.parameters() automatically have requires_grad=True."
+    },
+    {
+      "question": "The five steps in a PyTorch training iteration:",
+      "options": [
+        "Just one step",
+        "zero_grad -> forward -> loss -> backward -> step (optimizer)",
+        "forward -> backward only",
+        "Only one step: loss.backward()"
+      ],
+      "correct": "b",
+      "explanation": "Forgetting zero_grad() accumulates gradients across batches -- a common bug."
+    },
+    {
+      "question": "nn.Module is the base class for:",
+      "options": [
+        "Only linear layers",
+        "All neural network components -- layers, models, loss functions",
+        "Only activation functions",
+        "Only optimizers"
+      ],
+      "correct": "b",
+      "explanation": "Subclass nn.Module to define custom models with trainable parameters."
+    },
+    {
+      "question": "model.eval() vs model.train():",
+      "options": [
+        "No difference",
+        "eval() disables dropout and uses running stats for batchnorm; train() enables them",
+        "eval() is faster always",
+        "train() uses less memory"
+      ],
+      "correct": "b",
+      "explanation": "Always call model.eval() before inference and model.train() before training epochs."
+    },
+    {
+      "question": "torch.no_grad() is used during:",
+      "options": [
+        "Training",
+        "Inference and evaluation -- disables gradient computation to save memory and speed up computation",
+        "Model saving",
+        "Data loading"
+      ],
+      "correct": "b",
+      "explanation": "with torch.no_grad(): reduces memory usage by not storing intermediate gradients."
+    },
+    {
+      "question": "A DataLoader provides:",
+      "options": [
+        "Just the data",
+        "Batched, shuffled, parallel data loading with pin_memory and num_workers options",
+        "Only shuffling",
+        "Only batching"
+      ],
+      "correct": "b",
+      "explanation": "DataLoader handles the full data pipeline from dataset to batches."
+    },
+    {
+      "question": "The Adam optimizer combines:",
+      "options": [
+        "SGD and momentum only",
+        "Momentum (exponential moving average of gradients) and RMSProp (adaptive learning rates)",
+        "Batch normalization and dropout",
+        "L1 and L2 regularization"
+      ],
+      "correct": "b",
+      "explanation": "Adam adapts learning rates per parameter and uses momentum. Usually the best default choice."
+    },
+    {
+      "question": "torch.save() and torch.load() are used for:",
+      "options": [
+        "Printing tensors",
+        "Saving and loading model weights (state_dict) or entire checkpoint dictionaries",
+        "Compiling models",
+        "Optimizing inference"
+      ],
+      "correct": "b",
+      "explanation": "torch.save(model.state_dict(), 'model.pt') is the standard checkpoint pattern."
+    },
+    {
+      "question": "model.to(device) moves:",
+      "options": [
+        "The optimizer",
+        "All model parameters and buffers to the specified device (CPU or CUDA GPU)",
+        "Only the first layer",
+        "The data"
+      ],
+      "correct": "b",
+      "explanation": "Must also move input tensors to device: X = X.to(device) before forward pass."
+    }
+  ]
+}

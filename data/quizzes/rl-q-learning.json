@@ -1,0 +1,96 @@
+{
+  "course_label": "Reinforcement Learning",
+  "title": "Q-Learning",
+  "questions": [
+    {
+      "question": "Q(s,a) in Q-learning represents:",
+      "options": [
+        "The state value",
+        "The expected cumulative reward for taking action a in state s, then following the optimal policy"
+      ],
+      "correct": "b",
+      "explanation": "Q-values guide action selection: always take the action with the highest Q-value."
+    },
+    {
+      "question": "The Bellman equation updates Q by:",
+      "options": [
+        "Random assignment",
+        "Bootstrap: Q(s,a) += alpha*(r + gamma*max Q(s',a') - Q(s,a))"
+      ],
+      "correct": "b",
+      "explanation": "Use the next state's best Q-value to update the current state's Q-value."
+    },
+    {
+      "question": "The learning rate alpha in Q-learning:",
+      "options": [
+        "Should always be 1",
+        "Controls how much new information overwrites old -- small alpha = conservative updates"
+      ],
+      "correct": "b",
+      "explanation": "alpha=0.1 means each update moves 10% toward the new estimate."
+    },
+    {
+      "question": "Epsilon-greedy exploration:",
+      "options": [
+        "Always exploits the best known action",
+        "Takes random action with probability epsilon, best known action with probability 1-epsilon"
+      ],
+      "correct": "b",
+      "explanation": "Decaying epsilon schedule: explore a lot early, exploit more as learning progresses."
+    },
+    {
+      "question": "Q-learning converges to the optimal policy when:",
+      "options": [
+        "Always",
+        "When states are visited infinitely often and the learning rate decays appropriately"
+      ],
+      "correct": "b",
+      "explanation": "Tabular Q-learning has theoretical convergence guarantees under these conditions."
+    },
+    {
+      "question": "Tabular Q-learning fails for large state spaces because:",
+      "options": [
+        "It is too accurate",
+        "The Q-table requires one entry per (state,action) pair -- infeasible for continuous/large spaces"
+      ],
+      "correct": "b",
+      "explanation": "CartPole has ~continuous states. DQN (neural network) approximates Q for such spaces."
+    },
+    {
+      "question": "The eligibility trace in Q-learning (TD(lambda)):",
+      "options": [
+        "Has no benefit",
+        "Propagates reward credit back through multiple recent states -- faster credit assignment"
+      ],
+      "correct": "b",
+      "explanation": "TD(lambda) bridges TD(0) (single step) and Monte Carlo (full episode) learning."
+    },
+    {
+      "question": "Off-policy nature of Q-learning means:",
+      "options": [
+        "It cannot learn",
+        "It can learn optimal Q-values while using any exploration policy (e.g. epsilon-greedy)"
+      ],
+      "correct": "b",
+      "explanation": "Unlike SARSA (on-policy), Q-learning learns the greedy policy regardless of exploration used."
+    },
+    {
+      "question": "SARSA differs from Q-learning by:",
+      "options": [
+        "Using a different reward",
+        "Updating Q(s,a) using the actual next action taken (on-policy) instead of the best next action"
+      ],
+      "correct": "b",
+      "explanation": "SARSA: Q(s,a) += alpha*(r + gamma*Q(s',a') - Q(s,a)) where a' is what the agent actually did."
+    },
+    {
+      "question": "When is tabular Q-learning appropriate?",
+      "options": [
+        "Always",
+        "When the state and action spaces are small and discrete (< millions of states)"
+      ],
+      "correct": "b",
+      "explanation": "Gridworlds, small games. Use DQN for continuous/large spaces."
+    }
+  ]
+}

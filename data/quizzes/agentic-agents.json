@@ -1,0 +1,116 @@
+{
+  "course_label": "Agentic AI",
+  "title": "What is an AI Agent",
+  "questions": [
+    {
+      "question": "An AI agent differs from a simple LLM call because:",
+      "options": [
+        "It is faster",
+        "It maintains state, uses tools, and takes multi-step actions",
+        "It uses a larger model",
+        "It requires no prompting"
+      ],
+      "correct": "b",
+      "explanation": "Agents plan, execute tools, observe results, and adapt."
+    },
+    {
+      "question": "The ReAct pattern interleaves:",
+      "options": [
+        "Model size and speed",
+        "Reasoning (Thought) and Actions (tool calls) and Observations",
+        "Temperature and top-p",
+        "Training and inference"
+      ],
+      "correct": "b",
+      "explanation": "Thought->Action->Observation loops allow adaptive, tool-using agents."
+    },
+    {
+      "question": "Agent memory types include:",
+      "options": [
+        "Only RAM",
+        "Short-term (context window) + Long-term (vector DB, files)",
+        "Only databases",
+        "Only the system prompt"
+      ],
+      "correct": "b",
+      "explanation": "Short-term = in-context. Long-term = external storage like ChromaDB."
+    },
+    {
+      "question": "Tool calling in agents refers to:",
+      "options": [
+        "Using hardware tools",
+        "The agent invoking external functions (search, calculator, API calls)",
+        "Debugging",
+        "Model fine-tuning"
+      ],
+      "correct": "b",
+      "explanation": "Agents call functions to get real-world information."
+    },
+    {
+      "question": "The agent loop typically involves:",
+      "options": [
+        "One forward pass",
+        "Perceive -> Plan -> Act -> Observe -> Repeat until goal reached",
+        "Training then evaluation",
+        "Prompting then response"
+      ],
+      "correct": "b",
+      "explanation": "This sense-plan-act cycle continues until the task is complete."
+    },
+    {
+      "question": "Hallucination risk in agents is higher than in single LLM calls because:",
+      "options": [
+        "Agents are smaller",
+        "Errors compound across multiple steps and tool calls",
+        "Agents use different models",
+        "Agents have no context"
+      ],
+      "correct": "b",
+      "explanation": "Each step can introduce errors that cascade into subsequent steps."
+    },
+    {
+      "question": "A safety mechanism for preventing infinite agent loops is:",
+      "options": [
+        "Using a larger model",
+        "Setting a maximum step count and detecting repeated actions",
+        "Disabling tools",
+        "Increasing temperature"
+      ],
+      "correct": "b",
+      "explanation": "Budget limits and loop detection are essential safety guards."
+    },
+    {
+      "question": "Agent planning means:",
+      "options": [
+        "Random action selection",
+        "Decomposing a goal into ordered sub-tasks before executing",
+        "Training the model",
+        "Selecting tools randomly"
+      ],
+      "correct": "b",
+      "explanation": "Planning = breaking the goal into steps. Can be explicit or implicit."
+    },
+    {
+      "question": "Human-in-the-loop (HITL) in agents means:",
+      "options": [
+        "Removing all automation",
+        "Pausing before irreversible actions to get human approval",
+        "Using human-written code",
+        "Manual training"
+      ],
+      "correct": "b",
+      "explanation": "Critical for safety: emails, deletes, purchases should require confirmation."
+    },
+    {
+      "question": "The difference between tool calling and function calling:",
+      "options": [
+        "Tool calling is a concept; function calling is the API implementation",
+        "They are completely different",
+        "Tool calling is only for search",
+        "Function calling is deprecated"
+      ],
+      "correct": "a",
+      "explanation": "Most LLM APIs implement tool use via 'function calling' -- same concept."
+    }
+  ]
+}

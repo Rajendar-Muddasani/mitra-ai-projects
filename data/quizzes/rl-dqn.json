@@ -1,0 +1,96 @@
+{
+  "course_label": "Reinforcement Learning",
+  "title": "Deep Q Networks",
+  "questions": [
+    {
+      "question": "DQN replaces the Q-table with:",
+      "options": [
+        "A lookup dictionary",
+        "A neural network that takes state as input and outputs Q-values for all actions"
+      ],
+      "correct": "b",
+      "explanation": "NN(state) -> [Q(s,a1), Q(s,a2), ...]. Enables Q-learning for continuous state spaces."
+    },
+    {
+      "question": "Experience Replay in DQN:",
+      "options": [
+        "Is optional",
+        "Stores (s,a,r,s') transitions in a replay buffer and samples mini-batches for training"
+      ],
+      "correct": "b",
+      "explanation": "Breaks correlation between consecutive samples. Stabilises training significantly."
+    },
+    {
+      "question": "The Target Network in DQN:",
+      "options": [
+        "Is the same as the main network",
+        "A periodically updated copy of the main network used for computing target Q-values -- stabilises training"
+      ],
+      "correct": "b",
+      "explanation": "Without target network, the Q-value targets shift every step causing oscillation."
+    },
+    {
+      "question": "DQN is most suitable for:",
+      "options": [
+        "All RL problems",
+        "Discrete action spaces with high-dimensional state observations (e.g. image-based Atari games)"
+      ],
+      "correct": "b",
+      "explanation": "DQN mastered 49 Atari games from raw pixels -- a landmark result (DeepMind, 2015)."
+    },
+    {
+      "question": "Double DQN addresses:",
+      "options": [
+        "Exploration",
+        "Overestimation of Q-values -- uses main network to select action, target network to evaluate it"
+      ],
+      "correct": "b",
+      "explanation": "Standard DQN consistently overestimates Q-values due to max operator bias."
+    },
+    {
+      "question": "Dueling DQN separates:",
+      "options": [
+        "Policy and value",
+        "The state value V(s) and the advantage A(s,a) -- better generalisation across actions"
+      ],
+      "correct": "b",
+      "explanation": "Q(s,a) = V(s) + A(s,a). The value stream learns which states are good regardless of action."
+    },
+    {
+      "question": "Prioritised Experience Replay samples:",
+      "options": [
+        "Random transitions equally",
+        "Transitions with higher TD error more frequently -- focuses on harder-to-learn transitions"
+      ],
+      "correct": "b",
+      "explanation": "Important experiences are replayed more often, improving sample efficiency."
+    },
+    {
+      "question": "The main limitation of DQN:",
+      "options": [
+        "Too slow",
+        "Only handles discrete action spaces -- cannot directly apply to continuous action domains like robotics"
+      ],
+      "correct": "b",
+      "explanation": "For continuous actions, use DDPG, TD3, or SAC instead of DQN."
+    },
+    {
+      "question": "Batch size in DQN training affects:",
+      "options": [
+        "Only memory",
+        "Learning stability -- larger batches reduce gradient variance but require more memory"
+      ],
+      "correct": "b",
+      "explanation": "Typical DQN batch size: 32-64 samples from the replay buffer."
+    },
+    {
+      "question": "Rainbow DQN combines:",
+      "options": [
+        "Only DQN and DDPG",
+        "Six improvements: Double DQN + Dueling + Prioritised Replay + Multi-step + Noisy + Distributional"
+      ],
+      "correct": "b",
+      "explanation": "The combination significantly outperforms each individual improvement on Atari benchmarks."
+    }
+  ]
+}

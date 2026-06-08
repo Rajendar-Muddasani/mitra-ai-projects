@@ -1,0 +1,116 @@
+{
+  "course_label": "Agentic AI",
+  "title": "CrewAI",
+  "questions": [
+    {
+      "question": "In CrewAI, a Crew consists of:",
+      "options": [
+        "One agent only",
+        "Multiple agents with assigned roles, goals, and tasks working together",
+        "Just prompts",
+        "A single task"
+      ],
+      "correct": "b",
+      "explanation": "Crew = collection of agents + tasks."
+    },
+    {
+      "question": "A CrewAI Agent must have:",
+      "options": [
+        "Only a name",
+        "A role, goal, and backstory -- these shape how the LLM behaves",
+        "Training data",
+        "A specific model type"
+      ],
+      "correct": "b",
+      "explanation": "Role/goal/backstory are injected as system prompt context."
+    },
+    {
+      "question": "CrewAI's sequential process means:",
+      "options": [
+        "All agents run simultaneously",
+        "Tasks execute in order -- each agent's output feeds into the next",
+        "Agents vote on outputs",
+        "Random order"
+      ],
+      "correct": "b",
+      "explanation": "Task 1 output -> Task 2 input -> Task 3 input."
+    },
+    {
+      "question": "The hierarchical process in CrewAI uses:",
+      "options": [
+        "All agents as equals",
+        "A manager LLM that automatically assigns tasks and reviews outputs",
+        "Random routing",
+        "Human supervision only"
+      ],
+      "correct": "b",
+      "explanation": "Manager decomposes the goal, delegates to workers, synthesises results."
+    },
+    {
+      "question": "CrewAI tools extend agent capabilities by:",
+      "options": [
+        "Making agents faster",
+        "Allowing agents to search, read files, query databases, or run code",
+        "Changing model size",
+        "Adding memory"
+      ],
+      "correct": "b",
+      "explanation": "@tool decorated functions or pre-built tools are passed to agents."
+    },
+    {
+      "question": "The expected_output field in a CrewAI Task specifies:",
+      "options": [
+        "How long the task takes",
+        "What format and content the agent's output should have",
+        "The model to use",
+        "The priority"
+      ],
+      "correct": "b",
+      "explanation": "'A markdown report with 3 sections' guides the agent's output structure."
+    },
+    {
+      "question": "Context sharing between CrewAI tasks works via:",
+      "options": [
+        "Separate databases",
+        "Setting context=[previous_task] to pass prior outputs to the next task",
+        "API calls",
+        "Manual copy-paste"
+      ],
+      "correct": "b",
+      "explanation": "context parameter injects prior task outputs as context."
+    },
+    {
+      "question": "CrewAI is best suited for:",
+      "options": [
+        "Simple single-question answers",
+        "Multi-step workflows where different expertise is needed at different stages",
+        "Training new models",
+        "Data preprocessing only"
+      ],
+      "correct": "b",
+      "explanation": "Content creation, research, code review -- any multi-role workflow."
+    },
+    {
+      "question": "verbose=True in CrewAI:",
+      "options": [
+        "Makes output shorter",
+        "Shows each agent's thinking process and tool calls in real-time",
+        "Increases cost",
+        "Disables tools"
+      ],
+      "correct": "b",
+      "explanation": "Useful for debugging. Shows thought process step by step."
+    },
+    {
+      "question": "How does CrewAI differ from LangGraph?",
+      "options": [
+        "They are identical",
+        "CrewAI is higher-level (role-based, easy setup); LangGraph is lower-level (fine-grained state control)",
+        "LangGraph is newer",
+        "CrewAI requires more code"
+      ],
+      "correct": "b",
+      "explanation": "CrewAI: define roles and tasks. LangGraph: define exact graph structure."
+    }
+  ]
+}

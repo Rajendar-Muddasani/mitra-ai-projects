@@ -1,0 +1,104 @@
+{
+  "course_label": "Key Concepts & Tools",
+  "title": "TensorFlow / Keras",
+  "questions": [
+    {
+      "question": "Keras Sequential API is used for:",
+      "options": [
+        "Only linear regression",
+        "Stacking layers linearly -- one input, one output, no branching",
+        "Only CNNs",
+        "Only RNNs"
+      ],
+      "correct": "b",
+      "explanation": "Sequential is the simplest Keras model. For branching/shared layers, use Functional API."
+    },
+    {
+      "question": "model.compile() in Keras sets:",
+      "options": [
+        "The model architecture",
+        "The optimizer, loss function, and metrics used during training",
+        "The training data",
+        "The batch size"
+      ],
+      "correct": "b",
+      "explanation": "Must compile before fit(). model.compile(optimizer='adam', loss='binary_crossentropy')"
+    },
+    {
+      "question": "The Keras Functional API is used for:",
+      "options": [
+        "Simple linear stacks",
+        "Complex architectures with multiple inputs, outputs, or shared layers",
+        "Faster training",
+        "Automatic hyperparameter tuning"
+      ],
+      "correct": "b",
+      "explanation": "inputs = Input(shape=(30,)); x = Dense(64)(inputs); outputs = Dense(1)(x); model = Model(inputs, outputs)"
+    },
+    {
+      "question": "EarlyStopping callback stops training when:",
+      "options": [
+        "Training starts",
+        "A monitored metric (val_loss, val_accuracy) stops improving for patience epochs",
+        "Always after 100 epochs",
+        "Memory is full"
+      ],
+      "correct": "b",
+      "explanation": "Prevents overfitting by stopping before the model starts memorising training data."
+    },
+    {
+      "question": "model.save_weights() vs model.save():",
+      "options": [
+        "Identical",
+        "save_weights: saves only weights (small file). save: saves architecture + weights + optimizer state (larger file)"
+      ],
+      "correct": "b",
+      "explanation": "save_weights is lighter. save is complete and can be loaded without redefining architecture."
+    },
+    {
+      "question": "Keras callbacks are used for:",
+      "options": [
+        "Only error handling",
+        "Custom actions during training: model saving, learning rate scheduling, early stopping, custom logging"
+      ],
+      "correct": "b",
+      "explanation": "ModelCheckpoint, ReduceLROnPlateau, TensorBoard are the most common callbacks."
+    },
+    {
+      "question": "TensorBoard provides:",
+      "options": [
+        "Only loss curves",
+        "Interactive visualisation: loss/metric curves, weight histograms, computation graph, embeddings"
+      ],
+      "correct": "b",
+      "explanation": "tensorboard --logdir logs starts the web UI. Integrate with tf.summary or Keras."
+    },
+    {
+      "question": "The difference between PyTorch and Keras for research:",
+      "options": [
+        "No difference",
+        "PyTorch: more control, preferred for research. Keras: higher level, easier but less flexible."
+      ],
+      "correct": "b",
+      "explanation": "Most ML research papers use PyTorch. Keras (TF) is popular in industry and education."
+    },
+    {
+      "question": "tf.data.Dataset is used for:",
+      "options": [
+        "Just storing data",
+        "Efficient, parallelisable data pipelines with .map(), .batch(), .shuffle(), .prefetch()"
+      ],
+      "correct": "b",
+      "explanation": ".prefetch(tf.data.AUTOTUNE) overlaps data loading with training for maximum GPU utilisation."
+    },
+    {
+      "question": "model.summary() shows:",
+      "options": [
+        "Only layer names",
+        "Architecture: layer types, output shapes, parameter counts, and total trainable/non-trainable params"
+      ],
+      "correct": "b",
+      "explanation": "Essential for debugging model size and verifying architecture before training."
+    }
+  ]
+}

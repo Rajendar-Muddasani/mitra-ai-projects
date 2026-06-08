@@ -1,0 +1,96 @@
+{
+  "course_label": "Reinforcement Learning",
+  "title": "Policy Gradients",
+  "questions": [
+    {
+      "question": "Policy gradient methods directly optimise:",
+      "options": [
+        "The Q-values",
+        "The policy pi(a|s) -- the mapping from states to action probabilities"
+      ],
+      "correct": "b",
+      "explanation": "Unlike value-based methods (Q-learning), policy gradient methods directly learn the policy."
+    },
+    {
+      "question": "The REINFORCE algorithm updates the policy using:",
+      "options": [
+        "A value function",
+        "The return G_t (cumulative discounted reward) as the gradient signal"
+      ],
+      "correct": "b",
+      "explanation": "gradient = sum_t [G_t * grad log pi(a_t|s_t)]. Actions that led to high returns are reinforced."
+    },
+    {
+      "question": "High variance in REINFORCE is caused by:",
+      "options": [
+        "Too many actions",
+        "Using complete episode returns as gradient signal -- noisy estimates of true gradient"
+      ],
+      "correct": "b",
+      "explanation": "Baselines (e.g. value function) and advantage estimation reduce variance."
+    },
+    {
+      "question": "The advantage function A(s,a) is:",
+      "options": [
+        "Always positive",
+        "How much better action a is compared to the average action in state s: A(s,a) = Q(s,a) - V(s)"
+      ],
+      "correct": "b",
+      "explanation": "Positive advantage = action was better than expected. Negative = worse."
+    },
+    {
+      "question": "Actor-Critic methods combine:",
+      "options": [
+        "Two policies",
+        "A policy (actor) that acts and a value function (critic) that evaluates -- reducing REINFORCE variance"
+      ],
+      "correct": "b",
+      "explanation": "Critic provides low-variance baseline for the actor's gradient estimates."
+    },
+    {
+      "question": "Policy gradient methods handle continuous action spaces by:",
+      "options": [
+        "Discretising them",
+        "Outputting parameters of a probability distribution (e.g. Gaussian mean and std) over continuous actions"
+      ],
+      "correct": "b",
+      "explanation": "actor outputs (mu, sigma) for a Gaussian. Sample action from N(mu, sigma)."
+    },
+    {
+      "question": "The log probability in the policy gradient theorem:",
+      "options": [
+        "Is a logarithm of probability only",
+        "Enables gradient computation through the sampled actions -- the log-derivative trick"
+      ],
+      "correct": "b",
+      "explanation": "grad E[R] = E[R * grad log pi(a|s)]. The log-derivative makes this tractable."
+    },
+    {
+      "question": "Entropy bonus in policy gradient training:",
+      "options": [
+        "Reduces performance",
+        "Encourages exploration by penalising low-entropy (over-confident) policies"
+      ],
+      "correct": "b",
+      "explanation": "Add H[pi] to the objective. Prevents premature convergence to deterministic policies."
+    },
+    {
+      "question": "Trust region methods like TRPO and PPO address:",
+      "options": [
+        "Speed",
+        "Catastrophic policy updates -- constraining how much the policy can change per gradient step"
+      ],
+      "correct": "b",
+      "explanation": "Large policy updates can destroy performance. Trust regions ensure safe, incremental improvements."
+    },
+    {
+      "question": "Policy gradients are preferred over value-based methods for:",
+      "options": [
+        "Discrete actions",
+        "Stochastic policies, continuous action spaces, and cases where you need calibrated probabilities"
+      ],
+      "correct": "b",
+      "explanation": "Robotics, autonomous driving, LLM alignment (RLHF) all use policy gradient methods."
+    }
+  ]
+}

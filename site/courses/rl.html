@@ -4,14 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <title>Reinforcement Learning Course — Mitra AI Projects</title>
-  <meta name="description" content="Reinforcement Learning course covering agent-environment interaction, Q-learning, Deep Q-Networks, policy gradients, PPO, and real-world RL applications.">
+  <title>Reinforcement Learning — Mitra AI Projects</title>
+  <meta name="description" content="Agent-environment interaction, Q-learning, DQN, policy gradients, PPO, and real-world RL applications including RLHF.">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    body { overflow: hidden; }
+    @media (max-width: 768px) { body { overflow: auto; } }
+    .onenote-mobile-header { background:var(--surface);border-bottom:1px solid var(--border-dim);padding:0.75rem 1rem;display:none; }
+    @media (max-width: 768px) { .onenote-mobile-header { display:block; } }
+    select.onenote-mobile-select { background:var(--surface-2);border:1px solid var(--border-dim);color:var(--text);border-radius:8px;padding:0.55rem 0.85rem;font-family:'JetBrains Mono',monospace;font-size:0.85rem; }
+  </style>
 </head>
 <body>
 <nav class="nav">
@@ -24,240 +31,340 @@
       <li><a href="/tracks.html">Tracks</a></li>
       <li><a href="/projects/">Projects</a></li>
       <li><a href="/cheatsheets.html">Cheatsheets</a></li>
-      <li><a href="/how-it-works.html">How It Works</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
     <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
   </div>
 </nav>
 
-<section class="hero hero-sm">
-  <div class="container hero-inner">
-    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/courses/">Courses</a><span class="breadcrumb-sep">›</span><span>Reinforcement Learning</span></div>
-    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
-      <div class="hero-eyebrow" style="margin:0;">reinforcement learning · advanced track</div>
-      <span class="badge badge-muted">Planned — content coming soon</span>
-    </div>
-    <h1 class="hero-title">Reinforcement Learning</h1>
-    <p class="hero-sub">Agent-environment interaction, reward-driven learning, Q-learning, Deep Q-Networks, policy gradients, PPO, and real-world applications. This track is planned for a future release. The overview below is available now.</p>
+<div class="onenote-mobile-header">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+    <div><span class="badge badge-primary" style="margin-right:0.5rem;">RL</span><strong style="font-size:0.95rem;">Reinforcement Learning</strong></div>
+    <a href="/courses/" class="btn btn-ghost btn-sm">All Courses</a>
   </div>
-</section>
+  <select class="onenote-mobile-select" style="width:100%;">        <option value="0">⚡ What is RL</option>
+        <option value="1">🚢 Q-Learning</option>
+        <option value="2">🔌 Deep Q Networks</option>
+        <option value="3">🛠 Policy Gradients</option>
+        <option value="4">🌐 PPO</option>
+        <option value="5">🛡 Real-World RL</option>
+</select>
+</div>
 
-<section class="section">
-  <div class="container">
-
-    <div class="page-banner" style="border-radius:var(--radius);margin-bottom:2rem;padding:1rem;">
-      📌 This course is in the <strong>planned</strong> stage. Full notebook content, quizzes, and projects are being developed. Subscribe to updates via <a href="/contact.html">Contact</a>.
+<div class="onenote-wrap">
+  <aside class="onenote-sidebar">
+    <div class="onenote-sidebar-header">
+      <div style="color:var(--primary);font-weight:700;margin-bottom:0.25rem;">Reinforcement Learning</div>
+      6 Topics · From Bandits to RLHF
+    </div>
+    <div class="onenote-tab" data-idx="0">
+      <span class="onenote-tab-icon">⚡</span>
+      <span class="onenote-tab-text">What is RL</span>
+      <span class="onenote-tab-badge">001</span>
+    </div>
+    <div class="onenote-tab" data-idx="1">
+      <span class="onenote-tab-icon">🚢</span>
+      <span class="onenote-tab-text">Q-Learning</span>
+      <span class="onenote-tab-badge">002</span>
+    </div>
+    <div class="onenote-tab" data-idx="2">
+      <span class="onenote-tab-icon">🔌</span>
+      <span class="onenote-tab-text">Deep Q Networks</span>
+      <span class="onenote-tab-badge">003</span>
+    </div>
+    <div class="onenote-tab" data-idx="3">
+      <span class="onenote-tab-icon">🛠</span>
+      <span class="onenote-tab-text">Policy Gradients</span>
+      <span class="onenote-tab-badge">004</span>
+    </div>
+    <div class="onenote-tab" data-idx="4">
+      <span class="onenote-tab-icon">🌐</span>
+      <span class="onenote-tab-text">PPO</span>
+      <span class="onenote-tab-badge">005</span>
+    </div>
+    <div class="onenote-tab" data-idx="5">
+      <span class="onenote-tab-icon">🛡</span>
+      <span class="onenote-tab-text">Real-World RL</span>
+      <span class="onenote-tab-badge">006</span>
     </div>
 
-    <div class="tab-layout">
-      <div class="tab-nav">
-        <button class="tab-btn">🎮 What is RL</button>
-        <button class="tab-btn">📋 Q-Learning</button>
-        <button class="tab-btn">🧠 Deep Q-Networks</button>
-        <button class="tab-btn">🎯 Policy Gradients</button>
-        <button class="tab-btn">⚡ PPO</button>
-        <button class="tab-btn">🌍 Real-World RL</button>
+    <div style="padding:1.25rem;margin-top:1rem;border-top:1px solid var(--border-dim);">
+      <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-bottom:0.5rem;">📄 RL Cheatsheet</a>
+      <a href="/courses/" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;">📚 Browse All Courses →</a>
+    </div>
+  </aside>
+  <main class="onenote-content">
+    <!-- Panel 0: What is RL -->
+    <div class="onenote-panel active">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">foundations</div>
+        <h2>What is RL</h2>
+        <p>Agent, environment, reward, policy — the RL framework</p>
       </div>
-
-      <!-- What is RL -->
-      <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">fundamentals</div><h2>What is Reinforcement Learning?</h2><p>An agent learns to take actions in an environment by receiving reward signals. Unlike supervised learning, there are no labeled examples — the agent discovers the best strategy by trial and error.</p></div>
-        <div class="topic-section"><h3>Core Components</h3>
-        <table class="metric-table">
-          <thead><tr><th>Component</th><th>Description</th></tr></thead>
-          <tbody>
-            <tr><td>Agent</td><td>The learner/decision maker</td></tr>
-            <tr><td>Environment</td><td>Everything the agent interacts with</td></tr>
-            <tr><td>State (s)</td><td>The current situation of the agent</td></tr>
-            <tr><td>Action (a)</td><td>What the agent does in a state</td></tr>
-            <tr><td>Reward (r)</td><td>Feedback signal — positive for good actions, negative for bad</td></tr>
-            <tr><td>Policy (π)</td><td>The agent's strategy: state → action mapping</td></tr>
-            <tr><td>Value Function</td><td>Expected future rewards from a state following a policy</td></tr>
-            <tr><td>Markov Decision Process</td><td>The mathematical framework for RL problems</td></tr>
-          </tbody>
-        </table></div>
-        <div class="topic-section"><h3>RL vs. Supervised vs. Unsupervised</h3>
-        <div class="grid grid-3" style="gap:1rem;">
-          <div class="highlight-box">
-            <strong>Supervised</strong>
-            <p style="font-size:0.875rem;margin-top:0.5rem;">Labeled (x, y) pairs. Learn to predict y from x. Teacher provides correct answers.</p>
+      <div class="topic-section"><h3>RL vs Supervised Learning</h3>
+        <table class="metric-table"><thead><tr><th></th><th>Supervised</th><th>Reinforcement</th></tr></thead><tbody>
+        <tr><td>Feedback</td><td>Immediate label</td><td>Delayed reward</td></tr>
+        <tr><td>Data</td><td>Fixed labelled dataset</td><td>Collected by agent</td></tr>
+        <tr><td>Goal</td><td>Minimise prediction error</td><td>Maximise cumulative reward</td></tr>
+        <tr><td>Examples</td><td>Classification, regression</td><td>Games, robotics, LLM alignment</td></tr>
+        </tbody></table></div>
+      <div class="topic-section"><h3>Core Components</h3>
+        <div class="highlight-box"><strong>Agent:</strong> The decision maker.<br>
+        <strong>Environment:</strong> What the agent interacts with.<br>
+        <strong>State (s):</strong> Current situation.<br>
+        <strong>Action (a):</strong> What the agent does.<br>
+        <strong>Reward (r):</strong> Feedback signal.<br>
+        <strong>Policy (π):</strong> Maps states to actions.<br>
+        <strong>Value function:</strong> Expected future reward from a state.</div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: What is RL</div>
+            <div class="notebook-card-desc">Agent, environment, reward, policy — the RL framework</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
           </div>
-          <div class="highlight-box">
-            <strong>Unsupervised</strong>
-            <p style="font-size:0.875rem;margin-top:0.5rem;">No labels. Find structure in data. Clustering, dimensionality reduction.</p>
-          </div>
-          <div class="highlight-box" style="border-color:var(--border);">
-            <strong>Reinforcement</strong>
-            <p style="font-size:0.875rem;margin-top:0.5rem;">No labels — just reward signals. Learn by interacting with an environment. Sequential decisions.</p>
-          </div>
-        </div></div>
-        <div class="quiz-block"><h3>Quiz — What is RL</h3>
-          <div class="quiz-q" data-correct="c"><p>1. In reinforcement learning, the reward signal is:</p>
-            <label class="quiz-option"><input type="radio" name="rl-q1" value="a"> Provided by labeled training data</label>
-            <label class="quiz-option"><input type="radio" name="rl-q1" value="b"> The same as the loss function in supervised learning</label>
-            <label class="quiz-option"><input type="radio" name="rl-q1" value="c"> Feedback from the environment indicating how good the agent's action was</label>
-            <label class="quiz-option"><input type="radio" name="rl-q1" value="d"> A fixed function of the agent's state</label>
-          </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
+          <a href="/lab-open.html?nb=rl-01-what-is-rl.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
         </div>
       </div>
 
-      <!-- Q-Learning -->
-      <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">tabular rl</div><h2>Q-Learning</h2><p>Model-free RL for discrete state spaces. Learn a Q-table that maps (state, action) pairs to expected future rewards. The agent picks the action with the highest Q-value.</p></div>
-        <div class="topic-section"><h3>Bellman Equation</h3>
-        <div class="highlight-box"><p style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:var(--primary);">Q(s, a) ← Q(s, a) + α [r + γ · max Q(s', a') − Q(s, a)]</p>
-        <p style="font-size:0.875rem;color:var(--muted);margin-top:0.5rem;">α = learning rate · γ = discount factor (importance of future rewards)</p></div></div>
-        <div class="topic-section"><h3>Key Concepts</h3>
-        <table class="metric-table">
-          <thead><tr><th>Concept</th><th>Meaning</th></tr></thead>
-          <tbody>
-            <tr><td>Exploration vs. Exploitation</td><td>Try new actions (explore) vs. use best known action (exploit)</td></tr>
-            <tr><td>ε-greedy</td><td>With probability ε, take a random action; else take the best action</td></tr>
-            <tr><td>Discount factor γ</td><td>0 = myopic (care only about immediate reward); 1 = far-sighted</td></tr>
-          </tbody>
-        </table></div>
-        <div class="quiz-block"><h3>Quiz — Q-Learning</h3>
-          <div class="quiz-q" data-correct="b"><p>1. ε-greedy exploration means the agent:</p>
-            <label class="quiz-option"><input type="radio" name="ql-q1" value="a"> Always takes the best known action</label>
-            <label class="quiz-option"><input type="radio" name="ql-q1" value="b"> Randomly explores with probability ε, exploits best action otherwise</label>
-            <label class="quiz-option"><input type="radio" name="ql-q1" value="c"> Explores only at the start of training</label>
-            <label class="quiz-option"><input type="radio" name="ql-q1" value="d"> Sets the learning rate to ε</label>
-          </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
-        </div>
-      </div>
-
-      <!-- DQN -->
-      <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">deep q-networks</div><h2>Deep Q-Networks (DQN)</h2><p>Replace the Q-table with a neural network when the state space is too large for a table (e.g., pixel images in Atari games). Two key innovations: experience replay and target networks.</p></div>
-        <div class="topic-section"><h3>DQN Innovations</h3>
-        <table class="metric-table">
-          <thead><tr><th>Innovation</th><th>Why it helps</th></tr></thead>
-          <tbody>
-            <tr><td>Experience Replay</td><td>Store (s, a, r, s') transitions in a buffer; sample mini-batches randomly — breaks correlation</td></tr>
-            <tr><td>Target Network</td><td>A separate slowly-updated copy of the Q-network — stabilizes training by providing a fixed target</td></tr>
-            <tr><td>CNN for pixels</td><td>ConvNet extracts features from raw pixel observations</td></tr>
-          </tbody>
-        </table></div>
-        <div class="quiz-block"><h3>Quiz — DQN</h3>
-          <div class="quiz-q" data-correct="a"><p>1. Experience replay in DQN helps by:</p>
-            <label class="quiz-option"><input type="radio" name="dq-q1" value="a"> Breaking the correlation between consecutive training samples</label>
-            <label class="quiz-option"><input type="radio" name="dq-q1" value="b"> Reducing the neural network's parameter count</label>
-            <label class="quiz-option"><input type="radio" name="dq-q1" value="c"> Providing immediate reward signals</label>
-            <label class="quiz-option"><input type="radio" name="dq-q1" value="d"> Training faster than tabular Q-learning</label>
-          </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
-        </div>
-      </div>
-
-      <!-- Policy Gradients -->
-      <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">policy gradient methods</div><h2>Policy Gradients</h2><p>Directly optimize the policy (the action-selection function) instead of learning a value function. REINFORCE is the baseline algorithm; Actor-Critic combines both approaches.</p></div>
-        <div class="topic-section"><h3>Value-Based vs. Policy-Based</h3>
-        <div class="grid grid-2" style="gap:1rem;">
-          <div class="highlight-box">
-            <strong>Value-Based (Q-learning, DQN)</strong>
-            <ul style="margin-top:0.5rem;padding-left:1.25rem;">
-              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Learn Q(s,a), then derive policy</li>
-              <li style="list-style:disc;font-size:0.875rem;">Works well for discrete actions</li>
-            </ul>
-          </div>
-          <div class="highlight-box">
-            <strong>Policy-Based (PG, PPO)</strong>
-            <ul style="margin-top:0.5rem;padding-left:1.25rem;">
-              <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.3rem;">Directly parameterize π(a|s)</li>
-              <li style="list-style:disc;font-size:0.875rem;">Works for continuous action spaces</li>
-            </ul>
-          </div>
-        </div></div>
-        <div class="quiz-block"><h3>Quiz — Policy Gradients</h3>
-          <div class="quiz-q" data-correct="c"><p>1. Policy gradient methods are preferred for continuous action spaces because:</p>
-            <label class="quiz-option"><input type="radio" name="pg-q1" value="a"> They're faster to train</label>
-            <label class="quiz-option"><input type="radio" name="pg-q1" value="b"> They don't need a reward signal</label>
-            <label class="quiz-option"><input type="radio" name="pg-q1" value="c"> They directly parameterize the action distribution, avoiding the need to maximize over all actions</label>
-            <label class="quiz-option"><input type="radio" name="pg-q1" value="d"> They use less memory than Q-networks</label>
-          </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
-        </div>
-      </div>
-
-      <!-- PPO -->
-      <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">proximal policy optimization</div><h2>PPO — Proximal Policy Optimization</h2><p>The most widely used modern RL algorithm. PPO is stable, scalable, and easy to tune. It's used by OpenAI for RLHF (training ChatGPT) and by DeepMind for game-playing agents.</p></div>
-        <div class="topic-section"><h3>PPO Key Ideas</h3>
-        <table class="metric-table">
-          <thead><tr><th>Idea</th><th>What it does</th></tr></thead>
-          <tbody>
-            <tr><td>Clipping objective</td><td>Limits how much the policy can change in a single update — prevents instability</td></tr>
-            <tr><td>Multiple update epochs</td><td>Reuse each batch of experience for K epochs — more sample efficient</td></tr>
-            <tr><td>Advantage estimation (GAE)</td><td>Better estimate of "how much better than average was this action?"</td></tr>
-            <tr><td>Entropy bonus</td><td>Encourages exploration by rewarding uncertainty in the policy</td></tr>
-          </tbody>
-        </table></div>
-        <div class="quiz-block"><h3>Quiz — PPO</h3>
-          <div class="quiz-q" data-correct="b"><p>1. PPO's clipping objective ensures:</p>
-            <label class="quiz-option"><input type="radio" name="pp-q1" value="a"> The agent always takes the action with maximum Q-value</label>
-            <label class="quiz-option"><input type="radio" name="pp-q1" value="b"> Policy updates don't change the policy too drastically in a single step</label>
-            <label class="quiz-option"><input type="radio" name="pp-q1" value="c"> The discount factor stays below 1.0</label>
-            <label class="quiz-option"><input type="radio" name="pp-q1" value="d"> Training always converges in a fixed number of steps</label>
-          </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
-        </div>
-      </div>
-
-      <!-- Real-World RL -->
-      <div class="tab-panel">
-        <div class="topic-hero"><div class="topic-eyebrow">applications</div><h2>Real-World Reinforcement Learning</h2><p>RL beyond games. Real-world applications have sparse rewards, safety constraints, and costly exploration — requiring different approaches than simulated environments.</p></div>
-        <div class="topic-section"><h3>Application Areas</h3>
-        <table class="metric-table">
-          <thead><tr><th>Domain</th><th>RL Application</th><th>Key challenges</th></tr></thead>
-          <tbody>
-            <tr><td>Recommendation Systems</td><td>Choose which item to show next to maximize engagement</td><td>Exploration costly, delayed reward</td></tr>
-            <tr><td>Supply Chain</td><td>Optimize inventory levels and order quantities</td><td>Noisy demand, lead time uncertainty</td></tr>
-            <tr><td>Traffic Control</td><td>Optimize signal timing to reduce congestion</td><td>Multi-agent, non-stationary environment</td></tr>
-            <tr><td>RLHF (LLMs)</td><td>Fine-tune language models to human preferences</td><td>Reward hacking, alignment</td></tr>
-            <tr><td>Robotics</td><td>Teach robots to walk, grasp, and navigate</td><td>Sim-to-real gap, safety</td></tr>
-          </tbody>
-        </table></div>
-        <div class="quiz-block"><h3>Quiz — Real-World RL</h3>
-          <div class="quiz-q" data-correct="d"><p>1. RLHF (Reinforcement Learning from Human Feedback) is used to:</p>
-            <label class="quiz-option"><input type="radio" name="rw-q1" value="a"> Train agents to play video games</label>
-            <label class="quiz-option"><input type="radio" name="rw-q1" value="b"> Replace supervised pre-training of LLMs</label>
-            <label class="quiz-option"><input type="radio" name="rw-q1" value="c"> Evaluate robot locomotion policies</label>
-            <label class="quiz-option"><input type="radio" name="rw-q1" value="d"> Align LLMs with human preferences using human evaluator feedback as the reward signal</label>
-          </div>
-          <div class="quiz-actions"><button class="btn btn-primary btn-sm quiz-submit">Check Answers</button><button class="btn btn-ghost btn-sm quiz-retry">Retry</button><span class="quiz-result"></span></div>
-        </div>
-
-        <div class="completion-banner">
-          <div class="completion-icon">🎮</div>
-          <div class="completion-body"><h3>RL Overview Complete</h3><p>Full notebook content and projects are coming. Sign up to get notified when this track launches.</p></div>
-          <a href="/contact.html" class="btn btn-outline">Get Notified →</a>
-        </div>
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of What is RL -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=rl&topic=what-is-rl" class="btn btn-primary">Take Quiz</a>
       </div>
 
     </div>
-  </div>
-</section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div><div class="footer-brand"><div class="nav-logo">M</div><span class="footer-brand-name">Mitra<span class="teal">AI</span> Projects</span></div><p class="footer-tagline">Guided AI and ML project kits for engineering students.</p></div>
-      <div class="footer-col"><h4>Courses</h4><ul><li><a href="/courses/ml.html">Machine Learning</a></li><li><a href="/courses/dl.html">Deep Learning</a></li><li><a href="/courses/genai.html">Generative AI</a></li></ul></div>
-      <div class="footer-col"><h4>Platform</h4><ul><li><a href="/tracks.html">Tracks</a></li>
-      <li><a href="/projects/">Projects</a></li><li><a href="/cheatsheets.html">Cheatsheets</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div>
+    <!-- Panel 1: Q-Learning -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">tabular rl</div>
+        <h2>Q-Learning</h2>
+        <p>Learn Q(s,a) values through trial and error in discrete spaces</p>
+      </div>
+      <div class="topic-section"><h3>Bellman Equation</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>q_update.py</span></div>
+        <pre><code><span class="cm"># Q-Learning update rule</span>
+Q[state, action] += alpha * (
+    reward + gamma * np.max(Q[next_state]) - Q[state, action]
+)
+<span class="cm"># alpha = learning rate (0.1)</span>
+<span class="cm"># gamma = discount factor (0.99)</span>
+<span class="cm"># Choose action: epsilon-greedy</span>
+<span class="kw">if</span> np.random.rand() < epsilon:
+    action = np.random.randint(n_actions)  <span class="cm"># explore</span>
+<span class="kw">else</span>:
+    action = np.argmax(Q[state])           <span class="cm"># exploit</span></code></pre></div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Q-Learning</div>
+            <div class="notebook-card-desc">Learn Q(s,a) values through trial and error in discrete spaces</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=rl-02-q-learning.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Q-Learning -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=rl&topic=q-learning" class="btn btn-primary">Take Quiz</a>
+      </div>
+
     </div>
-    <div class="footer-bottom"><span>© 2026 Mitra AI Life.</span><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
-  </div>
-</footer>
-<div class="chat-widget"><button class="chat-btn" aria-label="Open AI chat">💬</button></div>
-<script src="/assets/js/main.js"></script>
+
+    <!-- Panel 2: Deep Q Networks -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">neural q-learning</div>
+        <h2>Deep Q Networks</h2>
+        <p>Neural network approximates Q-values for large state spaces</p>
+      </div>
+      <div class="topic-section"><h3>DQN Key Innovations</h3>
+        <table class="metric-table"><thead><tr><th>Innovation</th><th>Purpose</th></tr></thead><tbody>
+        <tr><td>Experience Replay</td><td>Break correlation between consecutive samples</td></tr>
+        <tr><td>Target Network</td><td>Stable Q-value targets — updated every N steps</td></tr>
+        <tr><td>Epsilon-greedy</td><td>Balance exploration vs exploitation</td></tr>
+        </tbody></table></div>
+      <div class="topic-section"><h3>DQN Architecture</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>dqn.py</span></div>
+        <pre><code><span class="cm"># Run on Kaggle GPU with stable-baselines3</span>
+<span class="kw">from</span> stable_baselines3 <span class="kw">import</span> DQN
+model = DQN(<span class="st">'MlpPolicy'</span>, <span class="st">'CartPole-v1'</span>, verbose=<span class="num">1</span>)
+model.learn(total_timesteps=<span class="num">100_000</span>)
+obs, _ = env.reset()
+action, _ = model.predict(obs, deterministic=<span class="kw">True</span>)</code></pre></div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Deep Q Networks</div>
+            <div class="notebook-card-desc">Neural network approximates Q-values for large state spaces</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=rl-03-dqn.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Deep Q Networks -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=rl&topic=dqn" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 3: Policy Gradients -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">direct policy optimisation</div>
+        <h2>Policy Gradients</h2>
+        <p>Directly optimise π(a|s) — handles continuous actions</p>
+      </div>
+      <div class="topic-section"><h3>REINFORCE Algorithm</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>reinforce.py</span></div>
+        <pre><code><span class="cm"># Policy gradient update</span>
+<span class="kw">for</span> episode <span class="kw">in</span> range(num_episodes):
+    states, actions, rewards = collect_episode(policy)
+    returns = compute_returns(rewards, gamma=<span class="num">0.99</span>)
+    
+    <span class="cm"># Update: reinforce actions that led to high returns</span>
+    loss = -torch.mean(returns * log_probs)</code></pre></div></div>
+      <div class="topic-section"><h3>Actor-Critic</h3>
+        <div class="highlight-box">Actor: learns π(a|s) — what action to take.<br>
+        Critic: learns V(s) — how good the current state is.<br>
+        Advantage A(s,a) = Q(s,a) - V(s) — how much better was this action?</div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Policy Gradients</div>
+            <div class="notebook-card-desc">Directly optimise π(a|s) — handles continuous actions</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=rl-04-policy-gradients.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Policy Gradients -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=rl&topic=policy-gradients" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 4: PPO -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">proximal policy optimisation</div>
+        <h2>PPO</h2>
+        <p>Most popular practical RL algorithm — stable and versatile</p>
+      </div>
+      <div class="topic-section"><h3>Why PPO?</h3>
+        <div class="highlight-box">
+        <strong>Stability:</strong> Clips policy ratio to prevent catastrophic updates.<br>
+        <strong>Simplicity:</strong> First-order optimisation (no second-order TRPO math).<br>
+        <strong>Versatility:</strong> Works for discrete and continuous actions.<br>
+        <strong>Used in:</strong> ChatGPT/InstructGPT RLHF, OpenAI Five, robotic manipulation.</div></div>
+      <div class="topic-section"><h3>PPO with stable-baselines3</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>ppo_train.py</span></div>
+        <pre><code><span class="cm"># pip install stable-baselines3[extra] gymnasium</span>
+<span class="kw">from</span> stable_baselines3 <span class="kw">import</span> PPO
+<span class="kw">import</span> gymnasium <span class="kw">as</span> gym
+
+env = gym.make(<span class="st">'CartPole-v1'</span>)
+model = PPO(<span class="st">'MlpPolicy'</span>, env, verbose=<span class="num">1</span>, learning_rate=<span class="num">3e-4</span>)
+model.learn(total_timesteps=<span class="num">500_000</span>)
+model.save(<span class="st">'ppo_cartpole'</span>)</code></pre></div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: PPO</div>
+            <div class="notebook-card-desc">Most popular practical RL algorithm — stable and versatile</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=rl-05-ppo.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of PPO -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=rl&topic=ppo" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 5: Real-World RL -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">applications</div>
+        <h2>Real-World RL</h2>
+        <p>Recommendations, RLHF, robotics, resource management</p>
+      </div>
+      <div class="topic-section"><h3>Real-World Applications</h3>
+        <table class="metric-table"><thead><tr><th>Domain</th><th>RL Application</th></tr></thead><tbody>
+        <tr><td>LLM Alignment</td><td>RLHF — reward human preference in ChatGPT, Claude</td></tr>
+        <tr><td>Recommendations</td><td>Optimise long-term engagement (YouTube, TikTok)</td></tr>
+        <tr><td>Robotics</td><td>Walking, manipulation (Boston Dynamics, DeepMind)</td></tr>
+        <tr><td>Ad bidding</td><td>Optimise bids across millions of auctions</td></tr>
+        <tr><td>HVAC control</td><td>30%+ energy reduction in Google data centres</td></tr>
+        <tr><td>Chip design</td><td>Google AlphaChip designs better chips than humans</td></tr>
+        </tbody></table></div>
+      <div class="topic-section"><h3>RLHF Pipeline</h3>
+        <div class="highlight-box"><strong>Step 1:</strong> Supervised fine-tuning (SFT) on human demonstrations.<br>
+        <strong>Step 2:</strong> Human raters compare model outputs. Train a reward model.<br>
+        <strong>Step 3:</strong> PPO fine-tunes the LLM to maximise the reward model's score.<br>
+        <strong>Result:</strong> Helpful, harmless, honest AI assistants.</div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Real-World RL</div>
+            <div class="notebook-card-desc">Recommendations, RLHF, robotics, resource management</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=rl-06-real-world-rl.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Real-World RL -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=rl&topic=real-world-rl" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+      <div class="completion-banner" style="margin-top:2rem;">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body"><h3>Reinforcement Learning Complete!</h3><p>Pass all topic quizzes to earn your certificate.</p></div>
+        <a href="/courses/" class="btn btn-primary">Browse Next Course</a>
+      </div>
+    </div>
+
+
+  </main>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="/config.js"></script>
+<script src="/assets/js/main.js"></script>
 <script src="/auth.js"></script>
 <script src="/mitra-chat.js"></script>
 </body>

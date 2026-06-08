@@ -1,0 +1,96 @@
+{
+  "course_label": "Reinforcement Learning",
+  "title": "What is Reinforcement Learning",
+  "questions": [
+    {
+      "question": "In RL, an agent learns by:",
+      "options": [
+        "Memorising training labels",
+        "Interacting with an environment and receiving reward signals"
+      ],
+      "correct": "b",
+      "explanation": "No labelled data. The agent discovers what works by trial and error."
+    },
+    {
+      "question": "The reward signal in RL is:",
+      "options": [
+        "Always immediate",
+        "Feedback (positive or negative) that tells the agent how good its action was -- can be delayed"
+      ],
+      "correct": "b",
+      "explanation": "Delayed rewards (e.g. winning the game) make credit assignment hard."
+    },
+    {
+      "question": "The exploration-exploitation trade-off means:",
+      "options": [
+        "Finding the best exploration rate",
+        "Balancing trying new actions (exploration) vs. using known good actions (exploitation)"
+      ],
+      "correct": "b",
+      "explanation": "Too much exploitation: gets stuck in local optima. Too much exploration: slow learning."
+    },
+    {
+      "question": "A Markov Decision Process (MDP) formalises RL as:",
+      "options": [
+        "A supervised problem",
+        "States, Actions, Transitions, Rewards, and Discount factor (gamma)"
+      ],
+      "correct": "b",
+      "explanation": "RL problems are usually modelled as MDPs: current state fully determines transition probabilities."
+    },
+    {
+      "question": "The discount factor gamma in RL:",
+      "options": [
+        "Is always 1",
+        "Controls how much future rewards are worth relative to immediate rewards (0=greedy, 1=patient)"
+      ],
+      "correct": "b",
+      "explanation": "gamma=0.99: agent values future rewards almost as much as immediate ones."
+    },
+    {
+      "question": "Model-free RL learns:",
+      "options": [
+        "From a model of the environment",
+        "Directly from interactions, without building an explicit model of the environment"
+      ],
+      "correct": "b",
+      "explanation": "Q-learning, PPO are model-free. Model-based RL builds an explicit world model."
+    },
+    {
+      "question": "The policy in RL maps:",
+      "options": [
+        "States to values",
+        "States to actions (or action probability distributions)"
+      ],
+      "correct": "b",
+      "explanation": "pi(a|s): given state s, what action a should I take?"
+    },
+    {
+      "question": "RL has been successfully applied to:",
+      "options": [
+        "Only simple games",
+        "Game playing, recommendation systems, robotics, LLM alignment (RLHF), resource management"
+      ],
+      "correct": "b",
+      "explanation": "AlphaGo, ChatGPT (RLHF), recommendation systems all use RL."
+    },
+    {
+      "question": "Off-policy learning in RL:",
+      "options": [
+        "Only updates on current policy actions",
+        "Can learn from data collected by a different (older) policy -- more sample efficient"
+      ],
+      "correct": "b",
+      "explanation": "Q-learning is off-policy: learns optimal Q regardless of the exploration policy used."
+    },
+    {
+      "question": "The biggest challenge in real-world RL compared to games:",
+      "options": [
+        "More compute",
+        "Sparse rewards, sample inefficiency, safety constraints, and partial observability in real environments"
+      ],
+      "correct": "b",
+      "explanation": "Games have dense rewards and perfect state information. Real world is much harder."
+    }
+  ]
+}

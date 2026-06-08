@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Key Concepts & Tools — Mitra AI Projects</title>
+  <meta name="description" content="GPU training on Kaggle and Colab, PyTorch, TensorFlow, Git, DVC, and essential tools for AI/ML development.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGY0LH6W93"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QGY0LH6W93');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    body { overflow: hidden; }
+    @media (max-width: 768px) { body { overflow: auto; } }
+    .onenote-mobile-header { background:var(--surface);border-bottom:1px solid var(--border-dim);padding:0.75rem 1rem;display:none; }
+    @media (max-width: 768px) { .onenote-mobile-header { display:block; } }
+    select.onenote-mobile-select { background:var(--surface-2);border:1px solid var(--border-dim);color:var(--text);border-radius:8px;padding:0.55rem 0.85rem;font-family:'JetBrains Mono',monospace;font-size:0.85rem; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand"><div class="nav-logo">M</div><span>Mitra<span class="teal">AI</span> Projects</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/courses/" class="active">Courses</a></li>
+      <li><a href="/tracks.html">Tracks</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-auth"><button class="btn btn-ghost btn-sm" id="loginBtn">Sign In</button></div>
+  </div>
+</nav>
+
+<div class="onenote-mobile-header">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+    <div><span class="badge badge-primary" style="margin-right:0.5rem;">KEY</span><strong style="font-size:0.95rem;">Key Concepts & Tools</strong></div>
+    <a href="/courses/" class="btn btn-ghost btn-sm">All Courses</a>
+  </div>
+  <select class="onenote-mobile-select" style="width:100%;">        <option value="0">⚡ GPU Training on Kaggle</option>
+        <option value="1">🚢 Google Colab</option>
+        <option value="2">🔌 PyTorch Foundations</option>
+        <option value="3">🛠 TensorFlow / Keras</option>
+        <option value="4">🌐 Git & GitHub for ML</option>
+        <option value="5">🛡 AWS EC2 with GPU</option>
+        <option value="6">🌊 PyTorch vs TensorFlow</option>
+        <option value="7">📊 Jupyter & VS Code for ML</option>
+</select>
+</div>
+
+<div class="onenote-wrap">
+  <aside class="onenote-sidebar">
+    <div class="onenote-sidebar-header">
+      <div style="color:var(--primary);font-weight:700;margin-bottom:0.25rem;">Key Concepts & Tools</div>
+      8 Topics · Tools for AI Practitioners
+    </div>
+    <div class="onenote-tab" data-idx="0">
+      <span class="onenote-tab-icon">⚡</span>
+      <span class="onenote-tab-text">GPU Training on Kaggle</span>
+      <span class="onenote-tab-badge">001</span>
+    </div>
+    <div class="onenote-tab" data-idx="1">
+      <span class="onenote-tab-icon">🚢</span>
+      <span class="onenote-tab-text">Google Colab</span>
+      <span class="onenote-tab-badge">002</span>
+    </div>
+    <div class="onenote-tab" data-idx="2">
+      <span class="onenote-tab-icon">🔌</span>
+      <span class="onenote-tab-text">PyTorch Foundations</span>
+      <span class="onenote-tab-badge">003</span>
+    </div>
+    <div class="onenote-tab" data-idx="3">
+      <span class="onenote-tab-icon">🛠</span>
+      <span class="onenote-tab-text">TensorFlow / Keras</span>
+      <span class="onenote-tab-badge">004</span>
+    </div>
+    <div class="onenote-tab" data-idx="4">
+      <span class="onenote-tab-icon">🌐</span>
+      <span class="onenote-tab-text">Git & GitHub for ML</span>
+      <span class="onenote-tab-badge">005</span>
+    </div>
+    <div class="onenote-tab" data-idx="5">
+      <span class="onenote-tab-icon">🛡</span>
+      <span class="onenote-tab-text">AWS EC2 with GPU</span>
+      <span class="onenote-tab-badge">006</span>
+    </div>
+    <div class="onenote-tab" data-idx="6">
+      <span class="onenote-tab-icon">🌊</span>
+      <span class="onenote-tab-text">PyTorch vs TensorFlow</span>
+      <span class="onenote-tab-badge">007</span>
+    </div>
+    <div class="onenote-tab" data-idx="7">
+      <span class="onenote-tab-icon">📊</span>
+      <span class="onenote-tab-text">Jupyter & VS Code for ML</span>
+      <span class="onenote-tab-badge">008</span>
+    </div>
+
+    <div style="padding:1.25rem;margin-top:1rem;border-top:1px solid var(--border-dim);">
+      <a href="/cheatsheets.html" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-bottom:0.5rem;">📄 KEY Cheatsheet</a>
+      <a href="/courses/" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;">📚 Browse All Courses →</a>
+    </div>
+  </aside>
+  <main class="onenote-content">
+    <!-- Panel 0: GPU Training on Kaggle -->
+    <div class="onenote-panel active">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">free compute</div>
+        <h2>GPU Training on Kaggle</h2>
+        <p>30 hrs/week T4 GPU — free for all users</p>
+      </div>
+      <div class="topic-section"><h3>Free GPU Resources</h3>
+        <table class="metric-table"><thead><tr><th>Resource</th><th>Specs</th><th>Limit</th></tr></thead><tbody>
+        <tr><td>T4 GPU (x1)</td><td>16GB VRAM</td><td>30 hrs/week</td></tr>
+        <tr><td>T4 GPU (x2)</td><td>32GB VRAM</td><td>30 hrs/week</td></tr>
+        <tr><td>P100 GPU</td><td>16GB HBM2</td><td>30 hrs/week</td></tr>
+        <tr><td>CPU</td><td>4 cores, 29GB RAM</td><td>Unlimited</td></tr>
+        </tbody></table></div>
+      <div class="topic-section"><h3>Best Practices</h3><ul style="padding-left:1.25rem;">
+        <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Debug on CPU first, switch to GPU only for training runs</li>
+        <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Enable internet: Settings → Internet → On</li>
+        <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Save to /kaggle/working/ (persists across sessions)</li>
+        <li style="list-style:disc;font-size:0.875rem;">Mixed precision (fp16): 2x speedup, 50% less VRAM</li></ul></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: GPU Training on Kaggle</div>
+            <div class="notebook-card-desc">30 hrs/week T4 GPU — free for all users</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=keyconcepts-01-kaggle-gpu.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of GPU Training on Kaggle -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=keyconcepts&topic=kaggle-gpu" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 1: Google Colab -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">free cloud notebooks</div>
+        <h2>Google Colab</h2>
+        <p>Free GPU/TPU with Google Drive integration</p>
+      </div>
+      <div class="topic-section"><h3>Colab vs Kaggle</h3>
+        <table class="metric-table"><thead><tr><th></th><th>Colab Free</th><th>Kaggle Free</th><th>Colab Pro</th></tr></thead><tbody>
+        <tr><td>GPU</td><td>T4 (limited)</td><td>T4 30hr/wk</td><td>A100/V100</td></tr>
+        <tr><td>RAM</td><td>12GB</td><td>29GB</td><td>52GB</td></tr>
+        <tr><td>Session</td><td>12 hours</td><td>9 hours</td><td>24 hours</td></tr>
+        </tbody></table></div>
+      <div class="topic-section"><h3>Key Commands</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>colab_basics.py</span></div>
+        <pre><code><span class="cm"># Mount Google Drive</span>
+<span class="kw">from</span> google.colab <span class="kw">import</span> drive
+drive.mount(<span class="st">'/content/drive'</span>)
+
+<span class="cm"># Check GPU</span>
+<span class="fn">!nvidia-smi</span>
+
+<span class="cm"># Install packages</span>
+<span class="fn">!pip install</span> -q transformers datasets
+
+<span class="cm"># Save to Drive</span>
+<span class="kw">import</span> shutil
+shutil.copy(<span class="st">'model.pkl'</span>, <span class="st">'/content/drive/MyDrive/'</span>)</code></pre></div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Google Colab</div>
+            <div class="notebook-card-desc">Free GPU/TPU with Google Drive integration</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=keyconcepts-02-colab.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Google Colab -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=keyconcepts&topic=colab" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 2: PyTorch Foundations -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">leading framework</div>
+        <h2>PyTorch Foundations</h2>
+        <p>Tensors, autograd, training loop, GPU</p>
+      </div>
+      <div class="topic-section"><h3>PyTorch Core Concepts</h3>
+        <table class="metric-table"><thead><tr><th>Concept</th><th>Description</th></tr></thead><tbody>
+        <tr><td>Tensor</td><td>Multi-dim array + GPU support + autograd</td></tr>
+        <tr><td>Autograd</td><td>Automatic gradient computation via computational graph</td></tr>
+        <tr><td>nn.Module</td><td>Base class for all neural network components</td></tr>
+        <tr><td>Optimizer</td><td>Updates weights (Adam, SGD, AdamW)</td></tr>
+        <tr><td>DataLoader</td><td>Batched, shuffled, parallel data iteration</td></tr>
+        </tbody></table></div>
+      <div class="topic-section"><h3>Training Loop</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>training_loop.py</span></div>
+        <pre><code><span class="kw">for</span> epoch <span class="kw">in</span> <span class="fn">range</span>(epochs):
+    optimizer.zero_grad()       <span class="cm"># 1. clear gradients</span>
+    output = model(X_train)     <span class="cm"># 2. forward pass</span>
+    loss = criterion(output, y) <span class="cm"># 3. compute loss</span>
+    loss.backward()             <span class="cm"># 4. backpropagation</span>
+    optimizer.step()            <span class="cm"># 5. update weights</span></code></pre></div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: PyTorch Foundations</div>
+            <div class="notebook-card-desc">Tensors, autograd, training loop, GPU</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=keyconcepts-03-pytorch.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of PyTorch Foundations -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=keyconcepts&topic=pytorch" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 3: TensorFlow / Keras -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">google framework</div>
+        <h2>TensorFlow / Keras</h2>
+        <p>High-level Keras API for quick model building</p>
+      </div>
+      <div class="topic-section"><h3>Keras Sequential Model</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>keras_model.py</span></div>
+        <pre><code><span class="kw">import</span> tensorflow <span class="kw">as</span> tf
+
+model = tf.keras.<span class="cl">Sequential</span>([
+    tf.keras.layers.<span class="cl">Dense</span>(<span class="num">64</span>, activation=<span class="st">'relu'</span>, input_shape=(<span class="num">30</span>,)),
+    tf.keras.layers.<span class="cl">Dropout</span>(<span class="num">0.3</span>),
+    tf.keras.layers.<span class="cl">Dense</span>(<span class="num">1</span>, activation=<span class="st">'sigmoid'</span>)
+])
+model.compile(optimizer=<span class="st">'adam'</span>, loss=<span class="st">'binary_crossentropy'</span>,
+              metrics=[<span class="st">'accuracy'</span>])
+model.fit(X_train, y_train, epochs=<span class="num">50</span>, validation_split=<span class="num">0.2</span>,
+          callbacks=[tf.keras.callbacks.<span class="cl">EarlyStopping</span>(patience=<span class="num">5</span>)])</code></pre></div></div>
+      <div class="topic-section"><h3>PyTorch vs Keras</h3>
+        <table class="metric-table"><thead><tr><th></th><th>PyTorch</th><th>Keras</th></tr></thead><tbody>
+        <tr><td>Style</td><td>Explicit, Pythonic</td><td>High-level, concise</td></tr>
+        <tr><td>Research use</td><td>Dominant</td><td>Less common</td></tr>
+        <tr><td>Learning curve</td><td>Steeper</td><td>Easier</td></tr>
+        <tr><td>Production</td><td>TorchServe</td><td>TFServing/TFLite</td></tr>
+        </tbody></table></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: TensorFlow / Keras</div>
+            <div class="notebook-card-desc">High-level Keras API for quick model building</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=keyconcepts-04-tensorflow.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of TensorFlow / Keras -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=keyconcepts&topic=tensorflow" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 4: Git & GitHub for ML -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">version control</div>
+        <h2>Git & GitHub for ML</h2>
+        <p>Git workflows, .gitignore, DVC for data versioning</p>
+      </div>
+      <div class="topic-section"><h3>ML Project .gitignore</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>.gitignore</span></div>
+        <pre><code><span class="cm"># Python</span>
+.venv/
+__pycache__/
+*.py[cod]
+
+<span class="cm"># Data (use DVC/S3)</span>
+data/raw/
+*.csv
+*.parquet
+
+<span class="cm"># Models (use HuggingFace Hub/S3)</span>
+*.pkl
+*.pt
+*.h5
+
+<span class="cm"># Secrets</span>
+.env
+*.pem
+
+<span class="cm"># ML outputs</span>
+mlruns/
+logs/</code></pre></div></div>
+      <div class="topic-section"><h3>DVC for Data Versioning</h3>
+        <div class="code-panel"><div class="code-panel-header"><div class="code-dots"><span class="code-dot-red"></span><span class="code-dot-amber"></span><span class="code-dot-green"></span></div><span>dvc_setup.sh</span></div>
+        <pre><code>pip install dvc[s3]
+dvc init
+dvc add data/train.csv    <span class="cm"># creates train.csv.dvc</span>
+git add data/train.csv.dvc .gitignore
+git commit -m <span class="st">"track data with DVC"</span>
+dvc push                  <span class="cm"># push to S3</span></code></pre></div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Git & GitHub for ML</div>
+            <div class="notebook-card-desc">Git workflows, .gitignore, DVC for data versioning</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=keyconcepts-05-git-ml.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Git & GitHub for ML -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=keyconcepts&topic=git-ml" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 5: AWS EC2 with GPU -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">cloud gpu</div>
+        <h2>AWS EC2 with GPU</h2>
+        <p>p2/p3 instances for production ML training</p>
+      </div>
+      <div class="topic-section"><h3>GPU Instance Types</h3>
+        <table class="metric-table"><thead><tr><th>Instance</th><th>GPU</th><th>VRAM</th><th>Use case</th></tr></thead><tbody>
+        <tr><td>p3.2xlarge</td><td>V100</td><td>16GB</td><td>Research training</td></tr>
+        <tr><td>p4d.24xlarge</td><td>8x A100</td><td>320GB</td><td>Large model training</td></tr>
+        <tr><td>g4dn.xlarge</td><td>T4</td><td>16GB</td><td>Inference, fine-tuning</td></tr>
+        <tr><td>inf2.xlarge</td><td>Inferentia2</td><td>32GB</td><td>Inference (cheap)</td></tr>
+        </tbody></table></div>
+      <div class="topic-section"><h3>Cost Management</h3><ul style="padding-left:1.25rem;">
+        <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Use Spot instances for training (70-90% cheaper)</li>
+        <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Save checkpoints to S3 every N epochs</li>
+        <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Stop instances immediately after training</li>
+        <li style="list-style:disc;font-size:0.875rem;">Use SageMaker for auto-termination on completion</li></ul></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: AWS EC2 with GPU</div>
+            <div class="notebook-card-desc">p2/p3 instances for production ML training</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=keyconcepts-01-kaggle-gpu.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of AWS EC2 with GPU -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=keyconcepts&topic=aws-gpu" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 6: PyTorch vs TensorFlow -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">framework comparison</div>
+        <h2>PyTorch vs TensorFlow</h2>
+        <p>When to use which, ecosystem, career relevance</p>
+      </div>
+      <div class="topic-section"><h3>Detailed Comparison</h3>
+        <table class="metric-table"><thead><tr><th>Aspect</th><th>PyTorch</th><th>TensorFlow/Keras</th></tr></thead><tbody>
+        <tr><td>Research papers</td><td>~80% of ML papers</td><td>~20% of ML papers</td></tr>
+        <tr><td>Industry startups</td><td>Dominant</td><td>Common in Google products</td></tr>
+        <tr><td>Mobile deployment</td><td>ExecuTorch (newer)</td><td>TFLite (mature)</td></tr>
+        <tr><td>Distributed training</td><td>PyTorch DDP</td><td>tf.distribute</td></tr>
+        <tr><td>Debugging</td><td>Easy (Python errors)</td><td>Harder (graph mode)</td></tr>
+        <tr><td>Job market</td><td>Strong (research+industry)</td><td>Strong (enterprise)</td></tr>
+        </tbody></table></div>
+      <div class="topic-section"><h3>Recommendation</h3>
+        <div class="highlight-box"><strong>For learning DL:</strong> Start with Keras (simpler).<br>
+        <strong>For research/fine-tuning LLMs:</strong> Use PyTorch.<br>
+        <strong>For production at scale:</strong> Both are fine. Teams choose based on existing codebase.</div></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: PyTorch vs TensorFlow</div>
+            <div class="notebook-card-desc">When to use which, ecosystem, career relevance</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=keyconcepts-03-pytorch.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of PyTorch vs TensorFlow -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=keyconcepts&topic=pytorch-vs-tf" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+    </div>
+
+    <!-- Panel 7: Jupyter & VS Code for ML -->
+    <div class="onenote-panel">
+      <div class="topic-hero">
+        <div class="topic-eyebrow">development tools</div>
+        <h2>Jupyter & VS Code for ML</h2>
+        <p>Notebook best practices, VS Code setup, debugging</p>
+      </div>
+      <div class="topic-section"><h3>Jupyter Best Practices</h3><ul style="padding-left:1.25rem;">
+        <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Keep cells small and focused on one thing</li>
+        <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Run cells top-to-bottom — avoid hidden state bugs</li>
+        <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Restart and Run All before sharing</li>
+        <li style="list-style:disc;font-size:0.875rem;margin-bottom:0.4rem;">Use nbconvert to export to HTML/PDF for reports</li>
+        <li style="list-style:disc;font-size:0.875rem;">Use %timeit and %memit for profiling</li></ul></div>
+      <div class="topic-section"><h3>VS Code ML Extensions</h3>
+        <table class="metric-table"><thead><tr><th>Extension</th><th>Purpose</th></tr></thead><tbody>
+        <tr><td>Python (Microsoft)</td><td>IntelliSense, debugging, testing</td></tr>
+        <tr><td>Jupyter</td><td>Run notebooks directly in VS Code</td></tr>
+        <tr><td>GitLens</td><td>Enhanced git history and blame</td></tr>
+        <tr><td>Error Lens</td><td>Inline error highlighting</td></tr>
+        <tr><td>Remote - SSH</td><td>Develop on remote GPU servers</td></tr>
+        </tbody></table></div>
+      <div class="topic-section">
+        <h3>Interactive Notebook</h3>
+        <div class="notebook-card">
+          <div class="notebook-card-icon">⚡</div>
+          <div class="notebook-card-body">
+            <div class="notebook-card-title">Notebook: Jupyter & VS Code for ML</div>
+            <div class="notebook-card-desc">Notebook best practices, VS Code setup, debugging</div>
+            <div class="notebook-card-note">First load ~30-60s · Saves automatically</div>
+          </div>
+          <a href="/lab-open.html?nb=keyconcepts-05-git-ml.ipynb" target="_blank" rel="noopener"
+             class="btn btn-primary notebook-open-btn">Open Notebook</a>
+        </div>
+      </div>
+
+      <div class="topic-section">
+        <h3>Quiz</h3>
+        <p>Test your understanding of Jupyter & VS Code for ML -- 10 questions, 70% to pass.</p>
+        <a href="/quiz.html?course=keyconcepts&topic=jupyter-vscode" class="btn btn-primary">Take Quiz</a>
+      </div>
+
+      <div class="completion-banner" style="margin-top:2rem;">
+        <div class="completion-icon">🎓</div>
+        <div class="completion-body"><h3>Key Concepts & Tools Complete!</h3><p>Pass all topic quizzes to earn your certificate.</p></div>
+        <a href="/courses/" class="btn btn-primary">Browse Next Course</a>
+      </div>
+    </div>
+
+
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/config.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/auth.js"></script>
+<script src="/mitra-chat.js"></script>
+</body>
+</html>

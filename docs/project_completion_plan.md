@@ -32,7 +32,7 @@
 | S1-T21 | DNS: 4 A records + www CNAME → GitHub Pages | ✅ | Done — DNS check successful |
 | S1-T22 | HTTPS enforced in GitHub Pages settings | ✅ | Done — certificate issued |
 | S1-T23 | AWS S3 .env configured for asset uploads | ✅ | Done — .env copied |
-| S1-T24 | Cloudflare Worker deployed: mitra-projects-worker | ❌ | `wrangler deploy` |
+| S1-T24 | Cloudflare Worker deployed: mitra-projects-worker | ✅ | Done — Cloudflare Worker live |
 
 ---
 
@@ -47,10 +47,10 @@
 | S2-T2 | Python for Data (Pandas/NumPy) | 🔶 Stub | ❌ | ❌ | ❌ |
 | S2-T3 | Shell / Bash | 🔶 Stub | ❌ | ❌ | ❌ |
 | S2-T4 | SQL | 🔶 Stub | ❌ | ❌ | ❌ |
-| S2-T5 | Excel Formulas | 🔶 Stub | ❌ | ❌ | ❌ |
-| S2-T6 | C / C++ | 🔶 Stub | ❌ | ❌ | ❌ |
-| S2-T7 | JavaScript | 🔶 Stub | ❌ | ❌ | ❌ |
-| S2-T8 | Perl | 🔶 Stub | ❌ | ❌ | ❌ |
+| S2-T5 | Excel Formulas | ✅ | ❌ | ❌ | ❌ |
+| S2-T6 | C / C++ | ✅ | ❌ | ❌ | ❌ |
+| S2-T7 | JavaScript | ✅ | ❌ | ❌ | ❌ |
+| S2-T8 | Perl | ✅ | ❌ | ❌ | ❌ |
 
 ### Machine Learning Track — 10 tabs (OneNote layout)
 | ID | Tab | Content | Colab link | Quiz | Cheatsheet |
@@ -93,46 +93,46 @@
 ### Agentic AI & MCP Track — 7 tabs
 | ID | Tab | Content | Source | Quiz | Cheatsheet |
 |---|---|---|---|---|---|
-| S2-T35 | What is an Agent | 🔶 Stub | New | ❌ | ❌ |
-| S2-T36 | LangGraph | 🔶 Stub | Private: langchain-learning-guide | ❌ | ❌ |
-| S2-T37 | CrewAI | 🔶 Stub | Private: crewai-course-materials | ❌ | ❌ |
-| S2-T38 | MCP Protocol | 🔶 Stub | Private: mcp-learning-guide | ❌ | ❌ |
-| S2-T39 | OpenAI Assistants API | 🔶 Stub | New | ❌ | ❌ |
-| S2-T40 | Multi-Agent Systems | 🔶 Stub | New | ❌ | ❌ |
-| S2-T41 | Evaluation & Safety | 🔶 Stub | New | ❌ | ❌ |
+| S2-T35 | What is an Agent | ✅ | New | ❌ | ❌ |
+| S2-T36 | LangGraph | ✅ | Private: langchain-learning-guide | ❌ | ❌ |
+| S2-T37 | CrewAI | ✅ | Private: crewai-course-materials | ❌ | ❌ |
+| S2-T38 | MCP Protocol | ✅ | Private: mcp-learning-guide | ❌ | ❌ |
+| S2-T39 | OpenAI Assistants API | ✅ | New | ❌ | ❌ |
+| S2-T40 | Multi-Agent Systems | ✅ | New | ❌ | ❌ |
+| S2-T41 | Evaluation & Safety | ✅ | New | ❌ | ❌ |
 
 ### MLOps & Tools Track — 7 tabs
 | ID | Tab | Content | Source | Quiz | Cheatsheet |
 |---|---|---|---|---|---|
-| S2-T42 | Airflow Orchestration | 🔶 Stub | AIML-Lab 053 | ❌ | ❌ |
-| S2-T43 | Spark & Big Data | 🔶 Stub | spark-learning-guide | ❌ | ❌ |
-| S2-T44 | Experiment Tracking (MLflow) | 🔶 Stub | New | ❌ | ❌ |
-| S2-T45 | Kubernetes for ML | 🔶 Stub | New | ❌ | ❌ |
-| S2-T46 | Docker for ML | 🔶 Stub | New | ❌ | ❌ |
-| S2-T47 | AWS SageMaker | 🔶 Stub | New | ❌ | ❌ |
-| S2-T48 | CI/CD for Models | 🔶 Stub | New | ❌ | ❌ |
+| S2-T42 | Airflow Orchestration | ✅ | AIML-Lab 053 | ❌ | ❌ |
+| S2-T43 | Spark & Big Data | ✅ | spark-learning-guide | ❌ | ❌ |
+| S2-T44 | Experiment Tracking (MLflow) | ✅ | New | ❌ | ❌ |
+| S2-T45 | Kubernetes for ML | ✅ | New | ❌ | ❌ |
+| S2-T46 | Docker for ML | ✅ | New | ❌ | ❌ |
+| S2-T47 | AWS SageMaker | ✅ | New | ❌ | ❌ |
+| S2-T48 | CI/CD for Models | ✅ | New | ❌ | ❌ |
 
 ### Key Concepts & Tools Track — 8 tabs (NEW)
 | ID | Tab | Content | Notes |
 |---|---|---|---|
-| S2-T49 | GPU Training on Kaggle (free T4/P100) | ❌ | How to enable GPU, time limits, saving work |
-| S2-T50 | Google Colab — free & pro | ❌ | GPU usage, Drive mount, session persistence |
-| S2-T51 | AWS EC2 with GPU (p2/p3 instances) | ❌ | Setup guide, cost management, spot instances |
-| S2-T52 | PyTorch — foundations | ❌ | Tensors, autograd, training loop, GPU move |
-| S2-T53 | TensorFlow / Keras — foundations | ❌ | Model API, callbacks, saving, export |
-| S2-T54 | PyTorch vs TensorFlow — when to use which | ❌ | Side-by-side comparison, industry usage |
-| S2-T55 | Jupyter & VS Code for ML | ❌ | Notebook best practices, extensions, debugging |
-| S2-T56 | Git & GitHub for ML Projects | ❌ | .gitignore for models, DVC basics, clean commits |
+| S2-T49 | GPU Training on Kaggle (free T4/P100) | ✅ | How to enable GPU, time limits, saving work |
+| S2-T50 | Google Colab — free & pro | ✅ | GPU usage, Drive mount, session persistence |
+| S2-T51 | AWS EC2 with GPU (p2/p3 instances) | ✅ | Setup guide, cost management, spot instances |
+| S2-T52 | PyTorch — foundations | ✅ | Tensors, autograd, training loop, GPU move |
+| S2-T53 | TensorFlow / Keras — foundations | ✅ | Model API, callbacks, saving, export |
+| S2-T54 | PyTorch vs TensorFlow — when to use which | ✅ | Side-by-side comparison, industry usage |
+| S2-T55 | Jupyter & VS Code for ML | ✅ | Notebook best practices, extensions, debugging |
+| S2-T56 | Git & GitHub for ML Projects | ✅ | .gitignore for models, DVC basics, clean commits |
 
 ### Reinforcement Learning Track — 6 tabs (Planned later)
 | ID | Tab | Status |
 |---|---|---|
-| S2-T57 | What is RL | ❌ |
-| S2-T58 | Q-Learning | ❌ |
-| S2-T59 | Deep Q Networks | ❌ |
-| S2-T60 | Policy Gradients | ❌ |
-| S2-T61 | PPO | ❌ |
-| S2-T62 | Real-world RL | ❌ |
+| S2-T57 | What is RL | ✅ |
+| S2-T58 | Q-Learning | ✅ |
+| S2-T59 | Deep Q Networks | ✅ |
+| S2-T60 | Policy Gradients | ✅ |
+| S2-T61 | PPO | ✅ |
+| S2-T62 | Real-world RL | ✅ |
 
 ---
 

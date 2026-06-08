@@ -1,0 +1,114 @@
+{
+  "course_label": "MLOps & Tools",
+  "title": "Airflow Orchestration",
+  "questions": [
+    {
+      "question": "In Airflow, a DAG is:",
+      "options": [
+        "A data file",
+        "A Directed Acyclic Graph -- a workflow where tasks have dependencies but no cycles",
+        "A worker type",
+        "A database"
+      ],
+      "correct": "b",
+      "explanation": "Acyclic means no circular dependencies. Task A->B->C: C cannot circle back to A."
+    },
+    {
+      "question": "An Airflow Operator defines:",
+      "options": [
+        "The DAG schedule",
+        "A single task type -- PythonOperator, BashOperator, SQLOperator, etc.",
+        "The worker count",
+        "Only retry logic"
+      ],
+      "correct": "b",
+      "explanation": "Operators are templates for task types. PythonOperator runs a Python function."
+    },
+    {
+      "question": "The >> symbol in Airflow sets:",
+      "options": [
+        "Comparison",
+        "Task dependency: t1 >> t2 means t2 runs after t1 completes",
+        "String append",
+        "Bit shift"
+      ],
+      "correct": "b",
+      "explanation": "t1 >> t2 >> t3 is the most readable way to define a sequential pipeline."
+    },
+    {
+      "question": "Airflow XCom is used to:",
+      "options": [
+        "Communicate with external services",
+        "Pass small data values between tasks",
+        "Cross-compile code",
+        "Exchange API keys"
+      ],
+      "correct": "b",
+      "explanation": "ti.xcom_push(key='result', value=data) / ti.xcom_pull() passes data between tasks."
+    },
+    {
+      "question": "catchup=False in a DAG means:",
+      "options": [
+        "Never run",
+        "Do not backfill missed runs when a past start_date is used",
+        "Catch up on errors",
+        "Run twice per schedule"
+      ],
+      "correct": "b",
+      "explanation": "Without catchup=False, Airflow triggers runs for every missed interval since start_date."
+    },
+    {
+      "question": "Airflow is best suited for:",
+      "options": [
+        "Real-time streaming",
+        "Batch workflows with clear dependencies (ETL, ML pipelines, report generation)",
+        "Ad-hoc queries",
+        "Model serving"
+      ],
+      "correct": "b",
+      "explanation": "Airflow excels at scheduled, dependency-managed batch workflows."
+    },
+    {
+      "question": "The Airflow scheduler does:",
+      "options": [
+        "Runs tasks directly",
+        "Reads DAG files, determines which tasks are ready, and queues them for the executor",
+        "Stores data",
+        "Deploys models"
+      ],
+      "correct": "b",
+      "explanation": "The scheduler monitors DAGs and queues tasks. The executor actually runs them."
+    },
+    {
+      "question": "A Sensor in Airflow:",
+      "options": [
+        "Provides security",
+        "Waits for an external condition (file arrival, API response) before allowing downstream tasks",
+        "Monitors CPU",
+        "Scales workers"
+      ],
+      "correct": "b",
+      "explanation": "FileSensor, S3KeySensor, HttpSensor block execution until their condition is met."
+    },
+    {
+      "question": "Best practice for Airflow DAG code:",
+      "options": [
+        "Put all business logic in the DAG file",
+        "Keep DAG file thin (define structure); call scripts/modules for actual work"
+      ],
+      "correct": "b",
+      "explanation": "DAG files are parsed frequently. Heavy logic in DAG file slows the scheduler."
+    },
+    {
+      "question": "Airflow Variables and Connections store:",
+      "options": [
+        "Python code",
+        "Configuration values and external system credentials respectively",
+        "Model weights",
+        "DAG schedules"
+      ],
+      "correct": "b",
+      "explanation": "Variables for config. Connections for credentials. Avoid hardcoding in DAG files."
+    }
+  ]
+}

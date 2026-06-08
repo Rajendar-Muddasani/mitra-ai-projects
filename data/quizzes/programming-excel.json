@@ -1,0 +1,116 @@
+{
+  "course_label": "Programming",
+  "title": "Excel Formulas",
+  "questions": [
+    {
+      "question": "VLOOKUP's third argument specifies:",
+      "options": [
+        "The lookup column",
+        "The return column number",
+        "Whether to do exact match",
+        "The table range"
+      ],
+      "correct": "b",
+      "explanation": "Col index num: 1=first col, 2=second col of the range."
+    },
+    {
+      "question": "SUMIFS differs from SUMIF by:",
+      "options": [
+        "Being faster",
+        "Allowing multiple criteria simultaneously",
+        "Working with text only",
+        "Returning counts"
+      ],
+      "correct": "b",
+      "explanation": "SUMIF: one condition. SUMIFS: multiple AND conditions."
+    },
+    {
+      "question": "XLOOKUP improves over VLOOKUP by:",
+      "options": [
+        "Only works on Excel 365",
+        "Searches both directions, returns any column, handles not-found",
+        "Always faster",
+        "Works only with numbers"
+      ],
+      "correct": "b",
+      "explanation": "VLOOKUP only looks rightward and breaks when columns are inserted."
+    },
+    {
+      "question": "COUNTIFS counts rows where:",
+      "options": [
+        "Either criteria matches",
+        "Both criteria match simultaneously (AND logic)",
+        "range1 matches only",
+        "Criteria values are equal"
+      ],
+      "correct": "b",
+      "explanation": "All criteria must be simultaneously true."
+    },
+    {
+      "question": "To freeze the first row while scrolling:",
+      "options": [
+        "Format -> Lock Row",
+        "View -> Freeze Panes -> Freeze Top Row",
+        "Right-click -> Pin Row",
+        "Insert -> Header -> Freeze"
+      ],
+      "correct": "b",
+      "explanation": "View tab -> Freeze Panes -> Freeze Top Row."
+    },
+    {
+      "question": "INDEX-MATCH is preferred over VLOOKUP because:",
+      "options": [
+        "It is always faster",
+        "It can return values to the LEFT and is not affected by column insertions",
+        "Less typing",
+        "It is newer"
+      ],
+      "correct": "b",
+      "explanation": "VLOOKUP breaks if columns are inserted. INDEX-MATCH is more robust."
+    },
+    {
+      "question": "IFERROR(formula, value) does what?",
+      "options": [
+        "Shows errors in red",
+        "Returns value if the formula produces an error, otherwise the formula result",
+        "Counts errors",
+        "Ignores errors silently"
+      ],
+      "correct": "b",
+      "explanation": "Wraps formulas to handle #N/A, #DIV/0! gracefully."
+    },
+    {
+      "question": "A pivot table aggregates data by:",
+      "options": [
+        "Sorting alphabetically",
+        "Summarising grouped by selected fields without formulas",
+        "Filtering only",
+        "Adding calculated columns"
+      ],
+      "correct": "b",
+      "explanation": "Drag fields to Rows/Columns/Values for instant cross-tabulation."
+    },
+    {
+      "question": "INDIRECT() function is used to:",
+      "options": [
+        "Delete references",
+        "Convert a text string into a cell reference (dynamic references)",
+        "Create hyperlinks",
+        "Validate data"
+      ],
+      "correct": "b",
+      "explanation": "INDIRECT enables dynamic range references built from strings."
+    },
+    {
+      "question": "The $ symbol in $A$1 means:",
+      "options": [
+        "Dollar currency",
+        "Absolute reference -- row and column won't change when copied",
+        "Named range",
+        "Protected cell"
+      ],
+      "correct": "b",
+      "explanation": "$A$1=absolute. A1=relative. $A1=col absolute. A$1=row absolute."
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "course_label": "Reinforcement Learning",
+  "title": "Real-World RL Applications",
+  "questions": [
+    {
+      "question": "RLHF (Reinforcement Learning from Human Feedback) is used for:",
+      "options": [
+        "Only game playing",
+        "Aligning LLMs (ChatGPT, Claude) to human preferences by training on human-rated responses"
+      ],
+      "correct": "b",
+      "explanation": "Human labellers rate responses. A reward model is trained. PPO fine-tunes the LLM on the reward."
+    },
+    {
+      "question": "Recommendation systems use RL to:",
+      "options": [
+        "Only filter spam",
+        "Optimise long-term user engagement -- treating recommendation as sequential decision making"
+      ],
+      "correct": "b",
+      "explanation": "YouTube, TikTok, Netflix use RL to maximise watch time or satisfaction over sessions."
+    },
+    {
+      "question": "The main challenge of RL in robotics is:",
+      "options": [
+        "Too simple environments",
+        "Sim-to-real gap: policies learned in simulation often fail when deployed to real hardware"
+      ],
+      "correct": "b",
+      "explanation": "Physics simulators are imperfect. Domain randomisation and real-world fine-tuning help bridge the gap."
+    },
+    {
+      "question": "RL in ad bidding optimises:",
+      "options": [
+        "Click-through rate only",
+        "Bidding strategy across millions of auctions to maximise ROI given budget constraints"
+      ],
+      "correct": "b",
+      "explanation": "Each ad impression is a state; bid is the action; revenue or clicks is the reward."
+    },
+    {
+      "question": "Google's AlphaGo defeated the world champion at Go because:",
+      "options": [
+        "It memorised all games",
+        "Combining deep RL (self-play) with Monte Carlo Tree Search -- too many states for pure search"
+      ],
+      "correct": "b",
+      "explanation": "~10^170 possible board positions. MCTS + policy/value networks from RL was the breakthrough."
+    },
+    {
+      "question": "HVAC optimisation using RL:",
+      "options": [
+        "Is not practical",
+        "Reduces data centre energy consumption by 30%+ -- Google DeepMind demonstrated this"
+      ],
+      "correct": "b",
+      "explanation": "RL learns complex control policies for heating/cooling that account for thermal dynamics."
+    },
+    {
+      "question": "The reward function design challenge in real-world RL:",
+      "options": [
+        "Does not exist",
+        "Reward hacking: agent finds unexpected ways to maximise reward that violate the designer's intent"
+      ],
+      "correct": "b",
+      "explanation": "OpenAI boat racing agent learned to spin in circles to collect power-ups instead of racing."
+    },
+    {
+      "question": "Multi-agent RL (MARL) is needed when:",
+      "options": [
+        "Always",
+        "Multiple agents interact -- each agent's actions affect others (games, trading, traffic control)"
+      ],
+      "correct": "b",
+      "explanation": "OpenAI Five (5 Dota agents), traffic signal control, multi-robot coordination all use MARL."
+    },
+    {
+      "question": "Offline RL (batch RL) learns from:",
+      "options": [
+        "Real-time interaction only",
+        "A fixed dataset of historical transitions -- no environment interaction during training"
+      ],
+      "correct": "b",
+      "explanation": "Important when real-world interaction is expensive or dangerous (healthcare, autonomous driving)."
+    },
+    {
+      "question": "The biggest practical obstacle to RL deployment vs supervised ML:",
+      "options": [
+        "Lower accuracy",
+        "Sample inefficiency: RL often needs millions of environment interactions vs. a fixed labelled dataset"
+      ],
+      "correct": "b",
+      "explanation": "Supervised ML can use any historical data. RL needs to actively collect data through trial and error."
+    }
+  ]
+}
